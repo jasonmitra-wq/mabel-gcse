@@ -1,0 +1,171 @@
+{
+  "lesson": "alg-quadratics",
+  "source_file": "lessons/maths/alg-quadratics.json",
+  "lesson_md5": "1783973105fb599c98cd3644b38af485",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:28:44.846Z",
+  "specRefs_sent": [
+    "A4",
+    "A11",
+    "A18"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3637,
+    "output_tokens": 4358
+  },
+  "cost_usd": 0.101708,
+  "status": "OK",
+  "result": {
+    "lesson": "alg-quadratics",
+    "maths_errors": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "When it does factorise, find two numbers that multiply to ac and add to b, then write the two brackets.",
+        "correction": "This only works directly when a = 1, where ac = c and the brackets are (x + p)(x + q). When a ≠ 1 the two numbers cannot just be placed in brackets. Example: 2x² + 7x + 3 has ac = 6, so the numbers are 1 and 6, but the answer is not (x + 1)(x + 6). Use the numbers to split the middle term: 2x² + x + 6x + 3 = x(2x + 1) + 3(2x + 1) = (2x + 1)(x + 3)."
+      },
+      {
+        "field": "keyFacts[3].fact",
+        "text": "Always check solutions by substituting back into the original equation. Both values must make the equation equal zero.",
+        "correction": "A repeated root has only one value to check. Formula answers rounded to decimal places give only approximately zero when substituted back, not exactly zero. Example: x² + 4x + 1 = 0 gives x ≈ −0.27 or x ≈ −3.73. Substituting x = −0.27 gives about 0.0029. The fact should say exact solutions give 0 and rounded solutions give a value close to 0."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "A4",
+        "spec_text": "factorising quadratic expressions of the form x ^2 + bx + c , including the difference of two squares",
+        "why": "The difference of two squares (e.g. x² − 49 = (x + 7)(x − 7)) is never taught or mentioned."
+      },
+      {
+        "specRef": "A4",
+        "spec_text": "expanding products of two binomials",
+        "why": "Expanding (x + p)(x + q) is not taught. It is also not used to check the factorised form."
+      },
+      {
+        "specRef": "A4",
+        "spec_text": "Higher only: expanding products of two or more binomials • factorising quadratic expressions of the form ax ^2 + bx + c",
+        "why": "Factorising when a ≠ 1 is only hinted at in one incorrect sentence. Expanding three binomials is absent."
+      },
+      {
+        "specRef": "A4",
+        "spec_text": "simplify and manipulate algebraic expressions (including those involving surds",
+        "why": "The lesson never shows how to write quadratic formula answers in simplified surd form."
+      },
+      {
+        "specRef": "A4",
+        "spec_text": "Basic foundation: collecting like terms • multiplying a single term over a bracket • taking out common factors • simplifying expressions involving sums, products and powers, including the laws of indices",
+        "why": "None of this basic manipulation is taught. In particular, taking out a common factor (e.g. x² − 5x = x(x − 5)) is a standard way to solve quadratics with c = 0 and is not covered."
+      },
+      {
+        "specRef": "A11",
+        "spec_text": "identify and interpret roots, intercepts and turning points of quadratic functions graphically",
+        "why": "Graphs of quadratics, roots as x-intercepts, the y-intercept and turning points are not covered."
+      },
+      {
+        "specRef": "A11",
+        "spec_text": "Notes: including the symmetrical property of a quadratic",
+        "why": "The line of symmetry of a parabola is not mentioned."
+      },
+      {
+        "specRef": "A11",
+        "spec_text": "Higher only: deduce turning points by completing the square",
+        "why": "Completing the square and reading off the turning point are absent."
+      },
+      {
+        "specRef": "A18",
+        "spec_text": "find approximate solutions using a graph",
+        "why": "Solving a quadratic by reading a graph is not taught."
+      },
+      {
+        "specRef": "A18",
+        "spec_text": "Higher only: including those that require rearrangement including completing the square",
+        "why": "Neither rearranging to the form ax² + bx + c = 0 nor solving by completing the square is taught."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "A18",
+        "case": "Quadratic formula worked example",
+        "why": "The formula is stated but never fully worked through, and there is no example with a non-integer or decimal-place answer."
+      },
+      {
+        "specRef": "A4",
+        "case": "Negative b and/or negative c (e.g. x² − x − 12 = 0)",
+        "why": "The only example has both coefficients positive, so the sign rules for mixed-sign factor pairs are never shown."
+      },
+      {
+        "specRef": "A4",
+        "case": "Difference of two squares (e.g. x² − 25 = 0)",
+        "why": "This is required at Foundation and has no example."
+      },
+      {
+        "specRef": "A4",
+        "case": "Common factor with c = 0 (e.g. x² − 6x = 0)",
+        "why": "There is no example of factorising out x, which gives the root x = 0."
+      },
+      {
+        "specRef": "A4",
+        "case": "a ≠ 1 factorising (e.g. 3x² + 10x − 8 = 0)",
+        "why": "This is Higher content and has no example."
+      },
+      {
+        "specRef": "A18",
+        "case": "Rearrangement needed before solving (e.g. x² = 3x + 10)",
+        "why": "No example starts in a form other than ax² + bx + c = 0."
+      },
+      {
+        "specRef": "A11",
+        "case": "Completing the square",
+        "why": "There is no example of writing (x + p)² + q, solving with it or finding a turning point."
+      },
+      {
+        "specRef": "A18",
+        "case": "Solving from a graph",
+        "why": "No example reads roots from a parabola."
+      },
+      {
+        "specRef": "A11",
+        "case": "Repeated root / no real roots",
+        "why": "The discriminant cases are described, but no example shows a zero or negative discriminant."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "b² − 4ac is called the discriminant: if it is positive there are two solutions, zero gives one repeated solution, and negative means no real solutions.",
+        "why": "One sentence introduces a new term and three cases. It does not explain why: the discriminant sits under the square root, and ± adds or subtracts it."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "When it does factorise, find two numbers that multiply to ac and add to b, then write the two brackets.",
+        "why": "A whole second method is squeezed into the end of the formula explanation with no example. It also says 'ac', while the worked example uses 'the constant'."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "They appear in geometry (area equations), physics (projectile motion), and many Higher-tier problems — learning to factorise and apply the quadratic formula covers the vast majority of exam questions.",
+        "why": "This long sentence carries several ideas and names two methods before either is explained."
+      },
+      {
+        "field": "slides[2].steps[0].instruction",
+        "text": "Find two numbers that multiply to +6 (the constant) and add to +5 (the coefficient of x).",
+        "why": "The reason is not given. Expanding (x + p)(x + q) = x² + (p + q)x + pq is what makes this work."
+      },
+      {
+        "field": "keyFacts[0].fact",
+        "text": "Write them as (x + p)(x + q) = 0, then solve x = −p and x = −q.",
+        "why": "The step to x = −p is given without saying that one bracket must equal zero because the product is zero."
+      },
+      {
+        "field": "slides[3].mistakes[1].mistake",
+        "text": "Substituting into the quadratic formula with the wrong sign for b — e.g. for x² + 5x + 6 = 0, using b = +5 in the −b term of the formula to get (5 ± √1)/2 instead of using −b = −5 to get (−5 ± 1)/2.",
+        "why": "This is the first time the formula is applied in the lesson, and it appears inside a mistake. The √1 comes from 25 − 24 without that being shown."
+      }
+    ],
+    "not_checked": []
+  }
+}

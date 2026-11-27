@@ -32,3 +32,11 @@ Downloaded 2026-10-11.
 ## Geography (2026-11-19)
 
 Brief docs/briefs/2026-11-15-script-four-topics.md, step G-a. Downloaded 2026-11-19 from the exam board URL in the table (HTTP 200, application/pdf, 866 528 bytes, 40 pages). tools/extract-spec.py is tuned to the science specifications' 4.x headings and fonts and found no headings here, so data/spec/geography.md was made with plain pypdf text extraction, page by page: section 3.2.2 (The changing economic world) is laid out with its four key ideas as headings 3.2.2.1 to 3.2.2.4 (our numbers: the specification does not number its key ideas), then the whole document as plain text. tools/check-spec-sections.py was not run (it reads 4.x headings). specRef: g5-development 3.2.2.1 and 3.2.2.2; g5-nigeria 3.2.2.3; g5-uk-economy 3.2.2.4.
+
+## Maths (2026-11-26)
+
+Maths full audit, part B. Downloaded 2026-11-26 from https://filestore.aqa.org.uk/resources/mathematics/specifications/AQA-8300-SP-2015.PDF (HTTP 200, application/pdf, 826 805 bytes, 44 pages; printed "Version 1.0 12 September 2014"). md5 of PDF 5e8687b216f1ac18f5eabfe2d16387a3. Saved as data/spec/src/maths.pdf.
+
+data/spec/maths.md is made by `python tools/extract-maths-spec.py` (pypdf 6.19.0; tools/extract-spec.py reads the science 4.x layout and does not fit). Section 3 (printed pages 9–36): headings 3.1–3.6 and 3.x.y, then one `#### <ref> (<section>)` block per reference with its content split by column (Basic foundation / Additional foundation / Higher only) and Notes; the Appendix of DfE formulae (printed page 43) is added as plain text. All 97 references present: N1–N16, A1–A25, R1–R16, G1–G25, P1–P9, S1–S6, no gaps, no duplicates (the script's own count). md5 of .md af06f1a410564e29944cbb02ecc3e9aa. Known limits: the PDF's symbol font uses one glyph for π and θ (θ is restored after sin/cos/tan and in "θ = 0°"); stacked fractions come out as numerator and denominator side by side; the √ sign inside N8's surd example is lost; diagrams are images. tools/check-spec-sections.py was not run (it reads 4.x headings).
+
+specRef for the 41 maths subtopics is in data/maths-syllabus.json. There are 42 files in lessons/maths/: the 42nd is TEMPLATE.json, which has no subtopic. No subtopic has two files.

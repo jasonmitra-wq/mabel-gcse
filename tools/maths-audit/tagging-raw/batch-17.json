@@ -1,0 +1,177 @@
+{
+  "batch": 17,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 10416,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 1909,
+    "output_tokens_details": {
+      "thinking_tokens": 464
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "cost_usd": 0.079844,
+  "parsed": true,
+  "result": {
+    "results": [
+      {
+        "id": "tree-A02",
+        "subtopic": "prob-tree",
+        "also": "",
+        "why": "Two draws without replacement; multiply dependent probabilities."
+      },
+      {
+        "id": "tree-A03",
+        "subtopic": "prob-tree",
+        "also": "prob-combined",
+        "why": "Multiply probabilities of two independent events."
+      },
+      {
+        "id": "tree-A04",
+        "subtopic": "prob-tree",
+        "also": "",
+        "why": "Draw a tree diagram and add the routes for exactly one head."
+      },
+      {
+        "id": "tree-A05",
+        "subtopic": "prob-tree",
+        "also": "",
+        "why": "Two draws with replacement; multiply independent probabilities."
+      },
+      {
+        "id": "tree-B02",
+        "subtopic": "prob-tree",
+        "also": "",
+        "why": "Without replacement; add the two order routes."
+      },
+      {
+        "id": "tree-B03",
+        "subtopic": "prob-tree",
+        "also": "prob-conditional",
+        "why": "Tree with dependent branches; add the routes to passing part 2."
+      },
+      {
+        "id": "tree-B04",
+        "subtopic": "prob-tree",
+        "also": "prob-conditional",
+        "why": "Dependent-branch tree; total probability of a picnic."
+      },
+      {
+        "id": "tree-B05",
+        "subtopic": "prob-tree",
+        "also": "",
+        "why": "Without replacement; use the complement for at least one green."
+      },
+      {
+        "id": "tree-B06",
+        "subtopic": "prob-tree",
+        "also": "",
+        "why": "Without replacement; sum the same-colour routes."
+      },
+      {
+        "id": "tree-C01",
+        "subtopic": "prob-tree",
+        "also": "prob-conditional",
+        "why": "Two-stage tree, then reverse conditional (Bayes)."
+      },
+      {
+        "id": "tree-C02",
+        "subtopic": "prob-tree",
+        "also": "prob-conditional",
+        "why": "Dependent tree for total probability, then reverse conditional."
+      },
+      {
+        "id": "tree-C03",
+        "subtopic": "prob-tree",
+        "also": "",
+        "why": "Three-branch tree; add the routes giving red."
+      },
+      {
+        "id": "tree-C04",
+        "subtopic": "prob-conditional",
+        "also": "prob-tree",
+        "why": "Finds P(bag A given red) via Bayes from tree routes."
+      },
+      {
+        "id": "venn-A01",
+        "subtopic": "prob-venn",
+        "also": "prob-conditional",
+        "why": "Read Venn regions for a union and a conditional probability."
+      },
+      {
+        "id": "venn-A02",
+        "subtopic": "prob-venn",
+        "also": "",
+        "why": "Find a set probability and its complement from Venn regions."
+      },
+      {
+        "id": "venn-A03",
+        "subtopic": "prob-venn",
+        "also": "",
+        "why": "Find a set probability and a complement from the Venn diagram."
+      },
+      {
+        "id": "venn-A04",
+        "subtopic": "prob-venn",
+        "also": "",
+        "why": "Inclusion-exclusion to find the intersection and A only."
+      },
+      {
+        "id": "venn-A05",
+        "subtopic": "prob-venn",
+        "also": "",
+        "why": "Convert probabilities to counts in Venn regions."
+      },
+      {
+        "id": "venn-B01",
+        "subtopic": "prob-venn",
+        "also": "prob-conditional",
+        "why": "Venn probabilities including a conditional and neither."
+      },
+      {
+        "id": "venn-B02",
+        "subtopic": "prob-venn",
+        "also": "",
+        "why": "Build Venn regions from survey data to find neither and exactly one."
+      },
+      {
+        "id": "venn-B03",
+        "subtopic": "prob-venn",
+        "also": "prob-conditional",
+        "why": "Addition rule, complement and conditional probability."
+      },
+      {
+        "id": "venn-B04",
+        "subtopic": "prob-venn",
+        "also": "",
+        "why": "Three-set Venn; count the exactly-two regions."
+      },
+      {
+        "id": "venn-B05",
+        "subtopic": "prob-venn",
+        "also": "prob-conditional",
+        "why": "Venn counts for a conditional given a complement."
+      },
+      {
+        "id": "venn-B06",
+        "subtopic": "prob-venn",
+        "also": "prob-conditional",
+        "why": "Use the complement and addition rule, then a conditional."
+      },
+      {
+        "id": "venn-C01",
+        "subtopic": "prob-conditional",
+        "also": "prob-venn",
+        "why": "Independence: product rule and check that P(A|B) equals P(A)."
+      }
+    ]
+  }
+}

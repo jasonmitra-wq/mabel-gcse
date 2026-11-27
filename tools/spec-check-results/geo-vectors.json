@@ -1,0 +1,119 @@
+{
+  "lesson": "geo-vectors",
+  "source_file": "lessons/maths/geo-vectors.json",
+  "lesson_md5": "0f23853608417180b092c2e06c279882",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:38:46.467Z",
+  "specRefs_sent": [
+    "G24",
+    "G25"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3131,
+    "output_tokens": 3815
+  },
+  "cost_usd": 0.088824,
+  "status": "OK",
+  "result": {
+    "lesson": "geo-vectors",
+    "maths_errors": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Multiplying by a scalar k scales both components by k — this changes the magnitude but keeps the direction (or reverses it if k is negative).",
+        "correction": "Multiplying by k multiplies the length by |k|. The length does not change when k = 1 or k = −1, and when k = 0 the result is the zero vector, which has no direction. The statement should say: 'the length is multiplied by |k|; the direction stays the same if k > 0 and is reversed if k < 0.'"
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "G24",
+        "spec_text": "describe translations as 2D vectors",
+        "why": "The lesson never links column vectors to translating a shape. Nothing asks the student to describe a translation (object to image) with a column vector, or to apply one to a shape."
+      },
+      {
+        "specRef": "G25",
+        "spec_text": "diagrammatic and column representations of vectors",
+        "why": "Only column representation is used. Drawing a vector on a grid, reading a column vector from a drawn arrow, and showing a + b or ka as arrows on a diagram are not taught."
+      },
+      {
+        "specRef": "G25",
+        "spec_text": "use vectors to construct geometric arguments and proofs",
+        "why": "Parallel lines, midpoints and collinearity are only named (formula whenToUse, keyFacts[2]). The lesson does not teach how to write a vector path in terms of a and b, use ratios or midpoints on a line segment, or set out a proof."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "slides[1].formula",
+        "text": "Magnitude: |a| = √(x² + y²)",
+        "why": "AQA 8300 G24/G25 do not require the magnitude notation |a|. It sits among the five required operations as if it were core content, which could mislead the student about what is examined. (Pythagoras on a grid is assessed separately under G20.)"
+      }
+    ],
+    "cases_not_modelled": [
+      {
+        "specRef": "G24",
+        "case": "describing a translation of a shape as a column vector",
+        "why": "No worked example translates a shape or reads a translation vector from object to image."
+      },
+      {
+        "specRef": "G25",
+        "case": "diagrammatic vectors on a grid (drawing or reading a vector arrow)",
+        "why": "The only worked example is purely numerical column-vector arithmetic."
+      },
+      {
+        "specRef": "G25",
+        "case": "multiplication by a negative or fractional scalar",
+        "why": "Only 2a is shown. No example such as −3a or ½a, where sign or fraction handling is needed."
+      },
+      {
+        "specRef": "G25",
+        "case": "vector paths in a diagram (expressing a vector such as AB in terms of a and b)",
+        "why": "The formula slide says to 'break the journey into known vectors', but no example does this with letter vectors on a shape."
+      },
+      {
+        "specRef": "G25",
+        "case": "proving two lines are parallel",
+        "why": "Parallel is only stated in keyFacts[2]. No example shows one vector to be a scalar multiple of another."
+      },
+      {
+        "specRef": "G25",
+        "case": "proving three points are collinear",
+        "why": "Only stated in keyFacts[2]. There is no worked proof with a common point and a scalar multiple."
+      },
+      {
+        "specRef": "G25",
+        "case": "midpoints and ratios along a line segment",
+        "why": "Mentioned in slides[1].whenToUse ('finding midpoints using vectors') but never modelled."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "The same column vector applied to different starting points creates parallel, equal-length movements — so two vectors are equal if and only if they have the same column vector, regardless of where they start.",
+        "why": "One sentence carries three ideas: position-independence, parallel and equal length, and the condition for equality. It also uses 'if and only if' with no explanation."
+      },
+      {
+        "field": "slides[1].formula",
+        "text": "Column vector: (x over y) where x = horizontal shift (+ right, − left), y = vertical shift (+ up, − down)  |  Addition: a + b = (a₁ + b₁) over (a₂ + b₂)  |  Subtraction: a − b = (a₁ − b₁) over (a₂ − b₂)  |  Scalar multiplication: k·a = (ka₁) over (ka₂)  |  Magnitude: |a| = √(x² + y²)",
+        "why": "Five separate rules are packed into one line, separated by bars. The subscripts a₁, a₂ and the word 'over' (meaning stacked in a column) are used without being explained."
+      },
+      {
+        "field": "slides[3].mistakes[1].mistake",
+        "text": "Reversing the sign when finding −a or when subtracting — forgetting that −(−1) = +1 when subtracting a negative component.",
+        "why": "Read literally, the first clause names the correct method (reversing the sign to find −a) as the mistake. The real error, mishandling a double negative, only appears after the dash, so a first-time reader may be confused about what to avoid."
+      },
+      {
+        "field": "keyFacts[2].fact",
+        "text": "Three points are collinear if the vector between any two of them is a scalar multiple of the vector between another two.",
+        "why": "This is abstract with no example, for instance 'if AC = 3AB, then A, B, C are collinear because the vectors are parallel and share point A'."
+      }
+    ],
+    "not_checked": [
+      "slides[0].body: 'labelled with a bold letter (a) or an underlined letter (a)' — the bold/underline formatting is not visible in the JSON, so I cannot check that the two notations are shown differently.",
+      "slides[0].body and slides[3].mistakes[2]: the arrow notation over AB/BA cannot be seen in plain text, so I cannot check it is rendered."
+    ]
+  }
+}

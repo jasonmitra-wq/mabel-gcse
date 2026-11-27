@@ -1,0 +1,118 @@
+{
+  "lesson": "prob-basic",
+  "source_file": "lessons/maths/prob-basic.json",
+  "lesson_md5": "a17e77b2301ada300894a1f78b6f39e4",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:39:19.676Z",
+  "specRefs_sent": [
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3032,
+    "output_tokens": 2866
+  },
+  "cost_usd": 0.069448,
+  "status": "OK",
+  "result": {
+    "lesson": "prob-basic",
+    "maths_errors": [],
+    "false_mistakes": [
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "Not simplifying fractions — leaving P = 4/10 instead of 2/5.",
+        "why": "4/10 and 2/5 are the same probability, so leaving 4/10 is not a mathematical mistake. AQA mark schemes accept unsimplified equivalent fractions unless the question asks for the simplest form. The correction 'Always simplify probability fractions to their lowest terms' presents a convention as a rule.",
+        "mistaken_method_gives": "4/10, which equals 2/5 and is the correct probability."
+      }
+    ],
+    "missing_spec_content": [
+      {
+        "specRef": "P1",
+        "spec_text": "record, describe and analyse the frequency of outcomes of probability experiments using tables and frequency trees",
+        "why": "The lesson never covers recording experimental outcomes. It has no frequency tables and no frequency trees."
+      },
+      {
+        "specRef": "P2",
+        "spec_text": "apply ideas of randomness, fairness and equally likely events to calculate expected outcomes of multiple future experiments",
+        "why": "The lesson does not teach expected outcomes, that is, expected frequency = number of trials × probability. 'Fair' appears only in an exam tip."
+      },
+      {
+        "specRef": "P3",
+        "spec_text": "relate relative expected frequencies to theoretical probability, using appropriate language",
+        "why": "The lesson does not mention relative frequency (frequency ÷ number of trials) or how it compares with theoretical probability. The only probability words used are 'impossible' and 'certain'. 'Unlikely', 'even chance' and 'likely' are not taught."
+      },
+      {
+        "specRef": "P4",
+        "spec_text": "apply the property that the probabilities of an exhaustive set of mutually exclusive events sum to 1",
+        "why": "The lesson never uses or explains the terms 'exhaustive' and 'mutually exclusive'. It does not say that the sum-to-1 property needs events that do not overlap and that cover every possibility. It states the property only as 'every possible outcome'."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "P4",
+        "case": "finding a missing probability from a table that must sum to 1 (including an unknown such as x or 2x)",
+        "why": "The formula slide and key facts describe this, but no worked example shows it."
+      },
+      {
+        "specRef": "P1",
+        "case": "probabilities given or answered as decimals or percentages",
+        "why": "The worked example uses fractions only. The spec note says probabilities may be fractions, decimals or percentages."
+      },
+      {
+        "specRef": "P1",
+        "case": "completing or reading a frequency tree / frequency table from an experiment",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "P2",
+        "case": "calculating expected number of outcomes from a probability and a number of trials",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "P3",
+        "case": "calculating relative frequency from experimental results and comparing with theoretical probability",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "P4",
+        "case": "mutually exclusive events whose probabilities add",
+        "why": "No example adds probabilities of non-overlapping events, for example P(red or green)."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "Every probability is a number between 0 and 1 inclusive: 0 means impossible (it can never happen), 1 means certain (it always happens), and anything in between represents how likely the event is.",
+        "why": "This one sentence carries four ideas: the range, 'inclusive', the meaning of 0 and the meaning of 1. It also introduces P(not A) notation without explaining what 'not A' means."
+      },
+      {
+        "field": "slides[1].formula",
+        "text": "P(event) = number of favourable outcomes ÷ total number of equally likely outcomes  |  P(not A) = 1 − P(A)  |  Sum of all outcome probabilities = 1",
+        "why": "Three separate rules sit on one line separated by pipes. A first-time learner may read this as one formula."
+      },
+      {
+        "field": "slides[2].steps[2].instruction",
+        "text": "Calculate P(not green) using P(not A) = 1 − P(A). P(green) = 2/10 = 1/5.",
+        "why": "Working (finding P(green) and simplifying it) is hidden inside the instruction rather than shown as its own step. The working line then starts from 1/5 without showing where it came from."
+      },
+      {
+        "field": "slides[2].steps[1].working",
+        "text": "P(blue) = 5 ÷ 10 = 1/2",
+        "why": "The simplification from 5/10 to 1/2 is done without writing 5/10 or giving the reason (dividing top and bottom by 5)."
+      },
+      {
+        "field": "keyFacts[0].examTip",
+        "text": "If the probabilities in a question don't add to 1, use that to find a missing value before answering the main question.",
+        "why": "Read literally, this suggests probabilities might not add to 1. The intended meaning is 'if the given probabilities add to less than 1, the missing one is 1 minus their total', but that step is not stated."
+      }
+    ],
+    "not_checked": []
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "lesson": "stat-boxplots",
+  "source_file": "lessons/maths/stat-boxplots.json",
+  "lesson_md5": "19aad8e045daea42ab8ccde6f2cd2580",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-27T12:36:23.736Z",
+  "specRefs_sent": [
+    "S4"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3369,
+    "output_tokens": 4252
+  },
+  "cost_usd": 0.098516,
+  "status": "OK",
+  "result": {
+    "lesson": "stat-boxplots",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "Including the median value in both halves when finding Q1 and Q3 — using all 9 values for the lower half instead of just the 4 below the median.",
+        "correction": "The sentence contradicts itself. Including the median in both halves gives a lower half of 5 values (22, 25, 28, 31, 33), not all 9. Using all 9 values would just give the median, 33. Including the median gives Q1 = 28 and Q3 = 38, so IQR = 10, instead of 26.5, 40 and 13.5. Reword it to say 'putting the median into each half, giving 5 values per half'."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "a narrow box means the data is tightly clustered around the median",
+        "correction": "A narrow box only means the middle 50% of the data (between Q1 and Q3) is close together. It says nothing about the values outside the box, and the median need not sit in the centre of the box. It should read: 'a narrow box means the middle half of the data is close together'."
+      }
+    ],
+    "false_mistakes": [
+      {
+        "field": "slides[3].mistakes[1]",
+        "text": "Drawing the whisker to the wrong point — stretching it to an outlier far from the rest of the data, which makes the box plot misleading. / In a standard box plot, whiskers go to the minimum and maximum values.",
+        "why": "The correction admits that the standard box plot, which is the GCSE expectation, draws the whiskers to the minimum and maximum, even when those values are outliers. So stretching a whisker to an extreme value is the correct method, not a mistake.",
+        "mistaken_method_gives": "A correct standard box plot, with whiskers ending at the actual minimum and maximum. This is what AQA expects unless a question says otherwise."
+      }
+    ],
+    "missing_spec_content": [
+      {
+        "specRef": "S4",
+        "spec_text": "spread (range, including consideration of outliers)",
+        "why": "Range is never defined or used. Comparisons in the lesson use only the IQR. Range (maximum − minimum) is also readable from a box plot and is a required measure of spread. Outliers are mentioned but never explained (what an outlier is, or how it affects the range compared with the IQR)."
+      },
+      {
+        "specRef": "S4",
+        "spec_text": "interpret, analyse and compare the distributions of data sets",
+        "why": "The lesson never shows how to read values off a given box plot or how to make a full comparison of two box plots. Comparison appears only as a tip, with no worked example."
+      },
+      {
+        "specRef": "S4 Notes",
+        "spec_text": "students should know and understand the terms: primary data, secondary data, discrete data and continuous data",
+        "why": "None of these terms appear in the lesson. They may be taught elsewhere, but they are part of the section cited."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "slides[1].whenToUse",
+        "text": "Also used to describe the distribution of a data set and identify skew.",
+        "why": "Skew is not in the AQA 8300 S4 content. The term is not explained, so a first-time learner meets it without support."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "In some versions, outliers are shown as separate crosses and the whisker goes only to the last non-outlier value.",
+        "why": "Modified box plots with plotted outliers go beyond GCSE. No rule for deciding what counts as an outlier is given, so the student cannot apply this format and may be confused about which one to use."
+      }
+    ],
+    "cases_not_modelled": [
+      {
+        "specRef": "S4",
+        "case": "even number of data values",
+        "why": "The only example uses n = 9. With an even n the median is an average of two values and the halves split differently. This is never shown."
+      },
+      {
+        "specRef": "S4",
+        "case": "drawing a box plot on a scale",
+        "why": "The worked example stops at the five-number summary. No example draws the box plot itself."
+      },
+      {
+        "specRef": "S4",
+        "case": "reading values from a given box plot",
+        "why": "Exam questions often give a box plot and ask for the median, IQR or range. This is not modelled."
+      },
+      {
+        "specRef": "S4",
+        "case": "comparing two box plots in context",
+        "why": "Comparison appears only in keyFacts tips, with no worked example of a full two-statement comparison."
+      },
+      {
+        "specRef": "S4",
+        "case": "unsorted data",
+        "why": "The example data are already sorted, so the first step of ordering the data is never shown."
+      },
+      {
+        "specRef": "S4",
+        "case": "quartiles from a cumulative frequency graph or grouped data",
+        "why": "At Higher tier, box plots are often drawn from quartiles read off a cumulative frequency curve. This is not covered."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "A box plot (also called a box-and-whisker diagram) displays five key values from a data set in a single diagram: the minimum value, the lower quartile (Q1, which is the median of the lower half of the data), the median (the middle value of the whole data set), the upper quartile (Q3, which is the median of the upper half), and the maximum value.",
+        "why": "One sentence carries five definitions, with nested brackets. That is too many new ideas in one read."
+      },
+      {
+        "field": "slides[1].formula",
+        "text": "Five-number summary: Minimum, Q1 (Lower Quartile), Median (Q2), Q3 (Upper Quartile), Maximum  |  IQR = Q3 − Q1  |  Lower quartile = median of lower half  |  Upper quartile = median of upper half",
+        "why": "Four separate ideas are packed into one line with pipe separators. Q2 also appears without explanation."
+      },
+      {
+        "field": "slides[2].steps[2].working",
+        "text": "Upper half: 36, 38, 42, 47. Q3 = (38 + 42) ÷ 2 = 40. IQR = 40 − 26.5 = 13.5.",
+        "why": "The IQR calculation is added to the Q3 step, but the step's instruction does not mention it. Two results in one step."
+      },
+      {
+        "field": "keyFacts[1].examTip",
+        "text": "State which group has the higher median AND which has the smaller IQR, then explain what this means in context — e.g. 'Group A has a higher median score (56 vs 48) and a smaller IQR (12 vs 20), suggesting Group A performed better and more consistently'.",
+        "why": "A long sentence with an embedded example and bracketed figures. It is also unclear that 'better' depends on higher scores being good in this context."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "In some versions, outliers are shown as separate crosses and the whisker goes only to the last non-outlier value.",
+        "why": "It relies on the term 'outlier', which is never defined in the lesson."
+      }
+    ],
+    "not_checked": []
+  }
+}

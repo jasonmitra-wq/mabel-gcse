@@ -1,0 +1,88 @@
+RUN
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+num-integers | N1, N2, N3, N15 | 8860 | 2215 | 0.1689
+num-fractions | N2, N8, N10 | 9143 | 2286 | 0.1691
+num-percentages | N12, R9 | 8405 | 2102 | 0.1684
+num-powers-roots | N6, N7 | 7302 | 1826 | 0.1673
+num-standard-form | N9 | 7983 | 1996 | 0.1680
+num-bounds | N15, N16 | 8299 | 2075 | 0.1683
+num-ratio | N11, R4, R5, R6, R8 | 8588 | 2147 | 0.1686
+alg-expressions | A1, A3, A4 | 9586 | 2397 | 0.1696
+alg-equations | A17, A21 | 8177 | 2045 | 0.1682
+alg-inequalities | A22 | 7909 | 1978 | 0.1679
+alg-sequences | A23, A24, A25 | 8328 | 2082 | 0.1683
+alg-graphs | A9, A10, A12 | 9159 | 2290 | 0.1692
+alg-quadratics | A4, A11, A18 | 9706 | 2427 | 0.1697
+alg-simultaneous | A19, A21 | 7985 | 1997 | 0.1680
+alg-functions | A7, A20 | 7982 | 1996 | 0.1680
+rpr-ratio | R4, R5, R6, R8 | 8524 | 2131 | 0.1685
+rpr-proportion | R7, R10, R13 | 8080 | 2020 | 0.1681
+rpr-speed | R1, R11, R14 | 8260 | 2065 | 0.1683
+rpr-percentage-change | R9, R16 | 9435 | 2359 | 0.1694
+rpr-compound-measures | R1, R11 | 8239 | 2060 | 0.1682
+rpr-growth-decay | R16 | 8598 | 2150 | 0.1686
+geo-angles | G1, G3, G6 | 8969 | 2243 | 0.1690
+geo-shapes | G1, G3, G4, G12 | 9194 | 2299 | 0.1692
+geo-perimeter-area | G14, G16, G17, G18 | 8551 | 2138 | 0.1686
+geo-volume | G16, G17 | 8112 | 2028 | 0.1681
+geo-transformations | G7, G8, G24 | 8835 | 2209 | 0.1688
+geo-pythagoras | G20 | 8080 | 2020 | 0.1681
+geo-trigonometry | G20, G21 | 8694 | 2174 | 0.1687
+geo-circles | G9, G10, G17 | 9567 | 2392 | 0.1696
+geo-vectors | G24, G25 | 8685 | 2172 | 0.1687
+prob-basic | P1, P2, P3, P4 | 8269 | 2068 | 0.1683
+prob-combined | P6, P7, P8 | 8832 | 2208 | 0.1688
+prob-tree | P8 | 8801 | 2201 | 0.1688
+prob-venn | P6, P9 | 8532 | 2133 | 0.1685
+prob-conditional | P9 | 8711 | 2178 | 0.1687
+stat-averages | S4 | 9039 | 2260 | 0.1690
+stat-charts | S2, S3 | 8846 | 2212 | 0.1688
+stat-scatter | S6 | 11931 | 2983 | 0.1719
+stat-cumulative | S3, S4 | 9358 | 2340 | 0.1694
+stat-boxplots | S4 | 9343 | 2336 | 0.1693
+stat-sampling | S1, P2, P3 | 9338 | 2335 | 0.1693
+TOTAL 41 lesson(s) | 358235 chars | 89573 est. input tokens | 328000 output tokens assumed | $6.9183
+Rates: $4 per M input, $20 per M output; output assumed at the ceiling per lesson (8000 tokens).
+Model claude-opus-5-5 confirmed in /v1/models.
+num-integers: OK | in 3263 out 4843 | $0.1099 | maths_errors 2, false_mistakes 0, missing_spec_content 9, above_gcse 0, cases_not_modelled 11, density 6, not_checked 1
+num-fractions: OK | in 3455 out 3995 | $0.0937 | maths_errors 0, false_mistakes 0, missing_spec_content 9, above_gcse 0, cases_not_modelled 11, density 7, not_checked 0
+num-percentages: OK | in 3082 out 4111 | $0.0945 | maths_errors 2, false_mistakes 0, missing_spec_content 6, above_gcse 0, cases_not_modelled 8, density 5, not_checked 0
+num-powers-roots: OK | in 3054 out 3222 | $0.0767 | maths_errors 2, false_mistakes 0, missing_spec_content 7, above_gcse 0, cases_not_modelled 7, density 5, not_checked 0
+num-standard-form: OK | in 3119 out 4224 | $0.0970 | maths_errors 4, false_mistakes 0, missing_spec_content 3, above_gcse 0, cases_not_modelled 8, density 6, not_checked 0
+num-bounds: OK | in 3093 out 3541 | $0.0832 | maths_errors 1, false_mistakes 0, missing_spec_content 5, above_gcse 0, cases_not_modelled 9, density 4, not_checked 0
+num-ratio: OK | in 3154 out 3594 | $0.0845 | maths_errors 1, false_mistakes 1, missing_spec_content 7, above_gcse 0, cases_not_modelled 9, density 4, not_checked 0
+alg-expressions: OK | in 3565 out 5025 | $0.1148 | maths_errors 0, false_mistakes 0, missing_spec_content 10, above_gcse 0, cases_not_modelled 14, density 8, not_checked 0
+alg-equations: OK | in 3069 out 4921 | $0.1107 | maths_errors 6, false_mistakes 2, missing_spec_content 4, above_gcse 0, cases_not_modelled 7, density 8, not_checked 1
+alg-inequalities: OK | in 2933 out 3223 | $0.0762 | maths_errors 1, false_mistakes 0, missing_spec_content 5, above_gcse 0, cases_not_modelled 10, density 5, not_checked 0
+alg-sequences: OK | in 3115 out 4241 | $0.0973 | maths_errors 0, false_mistakes 1, missing_spec_content 7, above_gcse 1, cases_not_modelled 10, density 8, not_checked 0
+alg-graphs: OK | in 3454 out 4579 | $0.1054 | maths_errors 2, false_mistakes 1, missing_spec_content 5, above_gcse 1, cases_not_modelled 14, density 4, not_checked 0
+alg-quadratics: FAILED | fetch failed
+alg-simultaneous: FAILED | fetch failed
+alg-functions: FAILED | fetch failed
+rpr-ratio: FAILED | fetch failed
+rpr-proportion: FAILED | fetch failed
+rpr-speed: FAILED | fetch failed
+rpr-percentage-change: FAILED | fetch failed
+rpr-compound-measures: FAILED | fetch failed
+rpr-growth-decay: FAILED | fetch failed
+geo-angles: FAILED | fetch failed
+geo-shapes: FAILED | fetch failed
+geo-perimeter-area: FAILED | fetch failed
+geo-volume: FAILED | fetch failed
+geo-transformations: FAILED | fetch failed
+geo-pythagoras: FAILED | fetch failed
+geo-trigonometry: FAILED | fetch failed
+geo-circles: FAILED | fetch failed
+geo-vectors: FAILED | fetch failed
+prob-basic: FAILED | fetch failed
+prob-combined: FAILED | fetch failed
+prob-tree: FAILED | fetch failed
+prob-venn: FAILED | fetch failed
+prob-conditional: FAILED | fetch failed
+stat-averages: FAILED | fetch failed
+stat-charts: FAILED | fetch failed
+stat-scatter: FAILED | fetch failed
+stat-cumulative: FAILED | fetch failed
+stat-boxplots: FAILED | fetch failed
+stat-sampling: FAILED | fetch failed
+Actual total cost: $1.1438

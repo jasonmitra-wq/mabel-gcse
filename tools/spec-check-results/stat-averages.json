@@ -1,0 +1,139 @@
+{
+  "lesson": "stat-averages",
+  "source_file": "lessons/maths/stat-averages.json",
+  "lesson_md5": "b66387c4c84070232e6de17553aa5103",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:41:50.817Z",
+  "specRefs_sent": [
+    "S4"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3101,
+    "output_tokens": 2767
+  },
+  "cost_usd": 0.067744,
+  "status": "OK",
+  "result": {
+    "lesson": "stat-averages",
+    "maths_errors": [
+      {
+        "field": "slides[0].body",
+        "text": "the mode is simply the most common value and is most useful for categorical data like shoe sizes or colours",
+        "correction": "Shoe sizes are discrete numerical data, not categorical data. Colours are categorical. Say: 'most useful for categorical data such as colours, or for discrete data such as shoe sizes'."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Best when data has outliers (e.g. salaries, house prices) — the median is unaffected by extreme values.",
+        "correction": "The median is not 'unaffected'. It is resistant to extreme values: it changes far less than the mean, but adding an extreme value still shifts the middle position. Say 'the median is hardly affected by extreme values'. The same applies to 'so it ignores outliers' in slides[0].body."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "S4",
+        "spec_text": "appropriate measures of central tendency (median, mean, mode and modal class)",
+        "why": "The modal class for grouped data is never mentioned or taught."
+      },
+      {
+        "specRef": "S4",
+        "spec_text": "graphical representation involving discrete, continuous and grouped data",
+        "why": "Nothing on finding averages or range from frequency tables or grouped data, such as the mean from a frequency table, an estimated mean using midpoints, or the class containing the median. There is also no graphical representation."
+      },
+      {
+        "specRef": "S4",
+        "spec_text": "spread (range, including consideration of outliers)",
+        "why": "The lesson links outliers only to the choice of average. It never explains that the range is strongly affected by an outlier, or that you should consider removing or commenting on an outlier when quoting the range."
+      },
+      {
+        "specRef": "S4",
+        "spec_text": "interpret, analyse and compare the distributions of data sets",
+        "why": "Comparing two distributions in context (one average plus one measure of spread) appears only as an exam tip. It is never taught or modelled."
+      },
+      {
+        "specRef": "S4 Notes",
+        "spec_text": "students should know and understand the terms: primary data, secondary data, discrete data and continuous data",
+        "why": "These terms are not defined. 'Discrete data' is used in slides[1].formulaExplained without explanation, and primary, secondary and continuous data are absent."
+      },
+      {
+        "specRef": "S4 Higher only",
+        "spec_text": "including box plots • including quartiles and inter-quartile range",
+        "why": "Quartiles, inter-quartile range and box plots are not covered for Higher students."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "S4",
+        "case": "Median of an even number of values (average of the two middle values)",
+        "why": "The only worked example has 7 values. The even case appears only in text."
+      },
+      {
+        "specRef": "S4",
+        "case": "Data with an outlier: choosing and justifying the most appropriate average",
+        "why": "This is stated in the concept slide and keyFacts, but no worked example shows it."
+      },
+      {
+        "specRef": "S4",
+        "case": "Mean, mode and median from a frequency table",
+        "why": "No example uses a frequency table."
+      },
+      {
+        "specRef": "S4",
+        "case": "Grouped data: modal class and estimated mean",
+        "why": "No example uses grouped data."
+      },
+      {
+        "specRef": "S4",
+        "case": "Comparing two data sets in context using an average and the range",
+        "why": "This is only mentioned in an exam tip."
+      },
+      {
+        "specRef": "S4",
+        "case": "Data with no mode or more than one mode",
+        "why": "The only example has a single mode."
+      },
+      {
+        "specRef": "S4 Higher only",
+        "case": "Quartiles, IQR and box plots",
+        "why": "No example covers these."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "The median is the middle value when the data is sorted, so it ignores outliers and gives a more honest picture of what's 'typical'; the mode is simply the most common value and is most useful for categorical data like shoe sizes or colours.",
+        "why": "One sentence carries two separate definitions, a claim about outliers, a judgement about typicality and a data-type idea."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "The mean uses every value in the data so it's the best measure when the data is fairly even — but one very large or very small value (an outlier) can pull it away from the centre and make it misleading.",
+        "why": "This sentence defines outliers, explains when the mean is best and explains why it can mislead, all at once. 'Fairly even' is vague."
+      },
+      {
+        "field": "slides[1].formula",
+        "text": "Mean = sum of all values ÷ number of values  |  Median = middle value when data is sorted in order (average of the two middle values if there is an even number)  |  Mode = the value that appears most often  |  Range = largest value − smallest value",
+        "why": "Four definitions are packed into one pipe-separated line, with an even-case rule nested in brackets."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "For n values, the median is the ((n+1)/2)th value.",
+        "why": "The nested-bracket ordinal notation is not explained, and there is no example such as 'n = 7 gives (7+1)/2 = 4th' at that point. The long paragraph also mixes four measures and their uses."
+      },
+      {
+        "field": "slides[1].whenToUse",
+        "text": "Use mean for uniform numerical data",
+        "why": "'Uniform' is undefined and is easily confused with uniform distribution. It is unclear what the student should check for."
+      },
+      {
+        "field": "keyFacts[0].fact",
+        "text": "Mean = sum ÷ count. Use when data has no outliers. Median = middle value of sorted data. Use when outliers are present. Mode = most frequent value. Range = max − min.",
+        "why": "Four measures and two usage rules are compressed into a single fact."
+      }
+    ],
+    "not_checked": []
+  }
+}

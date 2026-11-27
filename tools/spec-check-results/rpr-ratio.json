@@ -1,0 +1,142 @@
+{
+  "lesson": "rpr-ratio",
+  "source_file": "lessons/maths/rpr-ratio.json",
+  "lesson_md5": "369cba91d9fff499a0fbeeea4f9a9825",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:30:26.257Z",
+  "specRefs_sent": [
+    "R4",
+    "R5",
+    "R6",
+    "R8"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3137,
+    "output_tokens": 3983
+  },
+  "cost_usd": 0.092208,
+  "status": "OK",
+  "result": {
+    "lesson": "rpr-ratio",
+    "maths_errors": [
+      {
+        "field": "keyFacts[0].examTip",
+        "text": "If your simplified ratio still has a common factor, you haven't found the true HCF. Check by trying 2, 3, 5 as factors.",
+        "correction": "Checking only 2, 3 and 5 does not prove a ratio is fully simplified. For example, 21:49 has no common factor of 2, 3 or 5, but it does have the common factor 7, so it simplifies to 3:7. Say instead: check that no number other than 1 divides every part. Try primes such as 2, 3, 5, 7 and 11, up to the smallest part."
+      },
+      {
+        "field": "keyFacts[2].examTip",
+        "text": "For ratio a:b with difference d: 1 part = d ÷ (a−b).",
+        "correction": "This only works when a is greater than b. If a is smaller than b, a−b is negative and the formula gives a negative part. State it as 1 part = d ÷ (larger ratio number − smaller ratio number)."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "R5",
+        "spec_text": "divide a given quantity into two parts in a given part : part or part : whole ratio",
+        "why": "Only part:part sharing is taught. There is nothing on part:whole ratios, for example 'one share is 3 out of every 8', or how part:whole relates to part:part."
+      },
+      {
+        "specRef": "R5",
+        "spec_text": "express the division of a quantity into two parts as a ratio",
+        "why": "The reverse process is not taught. There is no example of going from given amounts, such as £60 and £48, to a ratio in simplest form, 5:4."
+      },
+      {
+        "specRef": "R5",
+        "spec_text": "apply ratio to real contexts and problems (such as those involving conversion, comparison, scaling, mixing, concentrations) ... including better value or best-buy problems",
+        "why": "Contexts are only listed in passing in whenToUse. Conversion, scaling (for example recipes), mixing, concentrations and best-buy or better-value problems are not taught."
+      },
+      {
+        "specRef": "R6",
+        "spec_text": "express a multiplicative relationship between two quantities as a ratio or a fraction",
+        "why": "The lesson never shows that, for example, 'A is 3 times B' gives A:B = 3:1, or that B is 1/3 of A."
+      },
+      {
+        "specRef": "R8",
+        "spec_text": "relate ratios to fractions and to linear functions",
+        "why": "There is no link between ratios and fractions (for example, 5:4 means the first share is 5/9 of the total). There is also no link to linear functions (for example, y:x = 5:4 gives y = 5/4 x, a straight line through the origin)."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "R4",
+        "case": "Simplifying a ratio as a worked example",
+        "why": "Simplifying is only stated in the formula slide and key facts (30:18 → 5:3). No worked example shows the steps."
+      },
+      {
+        "specRef": "R4",
+        "case": "Simplifying ratios with different units (for example 50p : £2, or 40 cm : 2 m)",
+        "why": "Reduction to simplest form often needs the units made the same first. This is not shown."
+      },
+      {
+        "specRef": "R4",
+        "case": "Simplifying ratios that contain decimals or fractions (for example 1.5 : 2, or 1/2 : 3/4)",
+        "why": "Only whole-number ratios are shown."
+      },
+      {
+        "specRef": "R5",
+        "case": "Difference between shares given",
+        "why": "This appears only in commonMistakes[2] and keyFacts[2]. No worked example carries it through to the final shares (for example £56 difference in 5:3 gives 1 part = £28, so the shares are £140 and £84)."
+      },
+      {
+        "specRef": "R5",
+        "case": "One share given, find the other share or the total",
+        "why": "Only 'total given' sharing is modelled."
+      },
+      {
+        "specRef": "R5",
+        "case": "Part:whole ratio or fraction-of-total sharing",
+        "why": "No example works from a part:whole description."
+      },
+      {
+        "specRef": "R5",
+        "case": "Best buy or better value comparison",
+        "why": "The specification notes explicitly include these. None is modelled."
+      },
+      {
+        "specRef": "R5",
+        "case": "Scaling or recipe problems",
+        "why": "None is modelled."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "Ratios can be simplified by dividing all parts by their highest common factor (HCF), and used to share a total — by finding the value of one part first, then multiplying.",
+        "why": "One sentence carries two separate procedures, simplifying and sharing, plus the steps of sharing."
+      },
+      {
+        "field": "slides[1].formula",
+        "text": "Simplify: divide all parts by HCF | Share: one part = total ÷ (sum of ratio parts)",
+        "why": "Two unrelated rules are packed into one line, separated only by a '|' symbol."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "To share a total in a given ratio: add all the ratio numbers to find the total number of parts; divide the total quantity by this to find one part; then multiply one part by each ratio number to find each share.",
+        "why": "A three-step method is written as one sentence joined by semicolons. It would be clearer as a numbered list."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "10:6 still has HCF 2 → 5:3. Or find the HCF (6) at the start and divide in one step: 30÷6 : 18÷6 = 5:3.",
+        "why": "It uses an arrow instead of words and gives two alternative methods in one correction."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "find the difference in ratio parts (5−3=2), then 1 part = difference in value ÷ 2, then scale up for each share.",
+        "why": "It does not explain why the difference in parts matches the difference in money. 'Scale up' is not explained, and the shares (£140 and £84) are never worked out."
+      },
+      {
+        "field": "keyFacts[2].examTip",
+        "text": "For ratio a:b with difference d: 1 part = d ÷ (a−b). This is a different method from the standard sharing approach.",
+        "why": "It brings in letters a, b and d that are used nowhere else in the lesson, without a numerical example."
+      }
+    ],
+    "not_checked": []
+  }
+}

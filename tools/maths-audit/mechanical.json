@@ -1,0 +1,6102 @@
+{
+  "summary": {
+    "date": "2026-11-26",
+    "lessons": 41,
+    "skipped": [
+      {
+        "file": "TEMPLATE.json",
+        "why": "template with placeholder text, no subtopic"
+      }
+    ],
+    "chains_checked": 875,
+    "worked_example_checks": 79,
+    "mistake_items": 123,
+    "mistake_items_numeric": 68,
+    "faults": {
+      "WE_MISMATCH": 2,
+      "CORRECTION_WRONG": 0,
+      "FALSE_MISTAKE_items": 8,
+      "CLAIM_MISMATCH": 0,
+      "CHAIN_MISMATCH": 2,
+      "NE_EQUAL": 1,
+      "ARROW_ROOT_MISMATCH": 0,
+      "LITERAL_NOT_FOUND": 0,
+      "NO_FNS": 0
+    },
+    "density": {
+      "arrow_lines": 11,
+      "formula_pipe_slides": 28,
+      "slides_over_60_words": 161,
+      "sentences_over_20_words": 377
+    }
+  },
+  "lessons": [
+    {
+      "id": "alg-equations",
+      "topic": "M2",
+      "file": "lessons/maths/alg-equations.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 3,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 1,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 2
+      },
+      "faults": [
+        {
+          "type": "FALSE_MISTAKE",
+          "where": "commonMistakes.mistakes[0]",
+          "detail": "the mistaken method gives 5, which is the correct answer (dividing every term by 3 first: x + 7/3 = 22/3, so x = 15/3 = 5)"
+        },
+        {
+          "type": "FALSE_MISTAKE",
+          "where": "commonMistakes.mistakes[1]",
+          "detail": "the item's own text says it is correct: \"actually correct\""
+        },
+        {
+          "type": "FALSE_MISTAKE",
+          "where": "commonMistakes.mistakes[1]",
+          "detail": "the mistaken method gives 4, which is the correct answer (subtracting 3 from both sides is a legal move; 5x − 6 = 2x + 6 still gives x = 4)"
+        },
+        {
+          "type": "NE_EQUAL",
+          "where": "slides[3].mistakes[1].mistake",
+          "detail": "5(4)−3=17 ≠ 2(4)+9=17"
+        }
+      ],
+      "worked_example": [
+        {
+          "label": "root of 7x − 1 = 4x + 11",
+          "field": "conclusion",
+          "literal": "x = 4",
+          "computed": 4,
+          "stated": 4,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "step 1 result has the same root",
+          "field": "steps[0].result",
+          "literal": "3x − 1 = 11",
+          "computed": 4,
+          "stated": 4,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "step 2 result has the same root",
+          "field": "steps[1].result",
+          "literal": "3x = 12",
+          "computed": 4,
+          "stated": 4,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [
+            {
+              "type": "FALSE_MISTAKE",
+              "basis": "recompute",
+              "detail": "the mistaken method gives 5, which is the correct answer (dividing every term by 3 first: x + 7/3 = 22/3, so x = 15/3 = 5)"
+            }
+          ],
+          "correct": 5,
+          "mistaken": 4.999999999999998,
+          "how": "dividing every term by 3 first: x + 7/3 = 22/3, so x = 15/3 = 5"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [
+            {
+              "type": "FALSE_MISTAKE",
+              "basis": "text",
+              "detail": "the item's own text says it is correct: \"actually correct\""
+            },
+            {
+              "type": "FALSE_MISTAKE",
+              "basis": "recompute",
+              "detail": "the mistaken method gives 4, which is the correct answer (subtracting 3 from both sides is a legal move; 5x − 6 = 2x + 6 still gives x = 4)"
+            }
+          ],
+          "correct": 4,
+          "mistaken": 4,
+          "how": "subtracting 3 from both sides is a legal move; 5x − 6 = 2x + 6 still gives x = 4"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 4,
+          "mistaken": 2.3333333333333335,
+          "how": "−5 not multiplied by 3"
+        }
+      ],
+      "found_by_reading": [
+        "mistakes[1].mistake prints \"5(4)−3=17 ≠ 2(4)+9=17\" (17 ≠ 17)."
+      ],
+      "density": {
+        "arrow_lines": 2,
+        "arrow_line_list": [
+          {
+            "field": "slides[3].mistakes[2].correction",
+            "text": "Then 6x − 15 = 9 → 6x = 24 → x = 4."
+          },
+          {
+            "field": "keyFacts[1].fact",
+            "text": "Order of solving: expand brackets first → collect x terms on one side → collect constants on the other → divide by the coefficient of x."
+          }
+        ],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 3,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 66
+          },
+          {
+            "slide": 1,
+            "words": 60
+          },
+          {
+            "slide": 2,
+            "words": 119
+          },
+          {
+            "slide": 3,
+            "words": 243
+          }
+        ],
+        "sentences_over_20": 8,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 27,
+            "text": "The golden rule is: whatever you do to one side, you must do to the other — every move is a legal operation that preserv"
+          },
+          {
+            "field": "slides[3].mistakes[0].correction",
+            "words": 22,
+            "text": "For 3x + 7 = 22: subtract 7 to get 3x = 15, then divide by 3 to get x = 5."
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 50,
+            "text": "Moving a term to the wrong side — e.g. for 5x − 3 = 2x + 9, subtracting 3 from both sides instead of adding 3: writing 5"
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 23,
+            "text": "To move −3 to the other side, add 3 to both sides: 5x = 2x + 9 + 3 = 2x + 12."
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 36,
+            "text": "Expanding a bracket incorrectly before solving — e.g. solving 3(2x − 5) = 9 by writing 6x − 5 = 9 instead of 6x − 15 = 9"
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 23,
+            "text": "Every step must be a legal operation on the whole equation — adding, subtracting, multiplying or dividing both sides by "
+          },
+          {
+            "field": "keyFacts[1].fact",
+            "words": 26,
+            "text": "Order of solving: expand brackets first → collect x terms on one side → collect constants on the other → divide by the c"
+          },
+          {
+            "field": "keyFacts[2].fact",
+            "words": 24,
+            "text": "7x − 1 = 4x + 11), subtract the smaller x term from both sides to get all x on one side before solving."
+          }
+        ],
+        "keyfacts_words": 161
+      },
+      "chains_checked": 34
+    },
+    {
+      "id": "alg-expressions",
+      "topic": "M2",
+      "file": "lessons/maths/alg-expressions.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "(x + 3)(x − 4) expanded",
+          "field": "conclusion",
+          "literal": "= x² − x − 12",
+          "computed": "(x + 3)(x − 4)",
+          "stated": "x² − x − 12",
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "step 1: x(x − 4)",
+          "field": "steps[0].result",
+          "literal": "x² − 4x",
+          "computed": "x(x − 4)",
+          "stated": "x² − 4x",
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "step 2: 3(x − 4)",
+          "field": "steps[1].result",
+          "literal": "3x − 12",
+          "computed": "3(x − 4)",
+          "stated": "3x − 12",
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": "(x + 3)(x − 4)",
+          "mistaken": "x² − 12",
+          "how": "two products only"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": "(x − 5)(x − 3)",
+          "mistaken": "x² − 8x − 15",
+          "how": "−5 × −3 taken as −15"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": "4(3x − 2)",
+          "mistaken": "12x − 2",
+          "how": "only the first term multiplied"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 3
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 63
+          },
+          {
+            "slide": 1,
+            "words": 137
+          },
+          {
+            "slide": 2,
+            "words": 154
+          },
+          {
+            "slide": 3,
+            "words": 177
+          }
+        ],
+        "sentences_over_20": 13,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 23,
+            "text": "Expanding removes brackets by multiplying out; factorising reverses this by taking out a common factor; simplifying coll"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 35,
+            "text": "a(b + c) = ab + ac | (a + b)(c + d) = ac + ad + bc + bd | Factorising: find the HCF of all terms and take it outside the"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 21,
+            "text": "For double brackets, multiply each term in the first bracket by each term in the second — four multiplications in total."
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 28,
+            "text": "Factorising is the reverse: find the largest factor every term shares (the HCF), write it outside a bracket, and divide "
+          },
+          {
+            "field": "slides[2].steps[3].instruction",
+            "words": 21,
+            "text": "Check by factorising the result back — two numbers that multiply to −12 and add to −1 are −4 and +3."
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 30,
+            "text": "Expanding a double bracket with only two multiplications instead of four — e.g. writing (x + 3)(x − 4) = x² − 12, missin"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 37,
+            "text": "Sign error when multiplying two negatives — e.g. expanding (x − 5)(x − 3) and writing −5 × −3 = −15 instead of +15, givi"
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 24,
+            "text": "When both terms are negative, the constant at the end is always positive: (x − 5)(x − 3) = x² − 8x + 15."
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 25,
+            "text": "Expanding a single bracket by only multiplying the first term — e.g. writing 4(3x − 2) = 12x − 2 instead of 12x − 8."
+          },
+          {
+            "field": "slides[3].mistakes[2].correction",
+            "words": 26,
+            "text": "The factor outside multiplies every term inside the bracket without exception: 4(3x − 2) = 4 × 3x + 4 × (−2) = 12x − 8."
+          },
+          {
+            "field": "keyFacts[1].fact",
+            "words": 30,
+            "text": "Double brackets: (a + b)(c + d) = ac + ad + bc + bd — four multiplications, every term in the first bracket with every t"
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 21,
+            "text": "Use a 2×2 grid to avoid missing a product: x and +3 across the top, x and −4 down the side."
+          },
+          {
+            "field": "keyFacts[2].fact",
+            "words": 21,
+            "text": "To factorise, find the HCF of all terms and write it outside the bracket: 6x² + 9x = 3x(2x + 3)."
+          }
+        ],
+        "keyfacts_words": 175
+      },
+      "chains_checked": 20
+    },
+    {
+      "id": "alg-functions",
+      "topic": "M2",
+      "file": "lessons/maths/alg-functions.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "h(2)",
+          "field": "conclusion",
+          "literal": "h(2) = 7",
+          "computed": 7,
+          "stated": 7,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "h(−3)",
+          "field": "conclusion",
+          "literal": "h(−3) = −13",
+          "computed": -13,
+          "stated": -13,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 15,
+          "mistaken": null,
+          "how": "\"f times 5\" has no value"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "fg(3) order: no functions given, nothing to compute"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "inverse without swapping x and y"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 91
+          },
+          {
+            "slide": 1,
+            "words": 68
+          },
+          {
+            "slide": 2,
+            "words": 100
+          },
+          {
+            "slide": 3,
+            "words": 174
+          }
+        ],
+        "sentences_over_20": 9,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 21,
+            "text": "f(x) is function notation — it is simply a label for the rule that turns an input x into an output."
+          },
+          {
+            "field": "slides[0].body",
+            "words": 24,
+            "text": "If f(x) = 2x + 5, then f(3) means 'put 3 in for x and work out the result': 2(3) + 5 = 11."
+          },
+          {
+            "field": "slides[0].body",
+            "words": 25,
+            "text": "Different letters (g, h) are used when more than one function is involved in the same question, and the order you apply "
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 28,
+            "text": "Treating f(x) as f multiplied by x — e.g. seeing f(5) and trying to 'multiply f and 5' rather than substituting 5 in for"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 22,
+            "text": "Applying composite functions in the wrong order — e.g. for fg(3), applying f first then g, instead of g first then f."
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 29,
+            "text": "When finding an inverse, rearranging f(x) for x without swapping x and y first — leaving the answer as a rearranged vers"
+          },
+          {
+            "field": "keyFacts[0].fact",
+            "words": 21,
+            "text": "f(x) notation: the brackets hold the input, not a multiplication. f(3) means substitute x = 3 into the rule and evaluate"
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 26,
+            "text": "Write out the rule with x replaced: if f(x) = 4x − 1, write f(−3) = 4(−3) − 1 step by step to avoid sign errors."
+          },
+          {
+            "field": "keyFacts[3].fact",
+            "words": 33,
+            "text": "Iteration uses a recurrence relation of the form xₙ₊₁ = f(xₙ) to repeatedly apply a function, each output becoming the n"
+          }
+        ],
+        "keyfacts_words": 191
+      },
+      "chains_checked": 29
+    },
+    {
+      "id": "alg-graphs",
+      "topic": "M2",
+      "file": "lessons/maths/alg-graphs.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "y = −3x + 4 passes through (0, 4)",
+          "field": "conclusion",
+          "literal": "y = −3x + 4",
+          "computed": 4,
+          "stated": 4,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "gradient of y = −3x + 4",
+          "field": "steps[0].result",
+          "literal": "m = −3",
+          "computed": -3,
+          "stated": -3,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": [
+            5,
+            -2
+          ],
+          "mistaken": [
+            -2,
+            5
+          ],
+          "how": "swapped m and c"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "run ÷ rise gives the reciprocal gradient (wrong unless m = ±1)"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "x = my + c form"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 65
+          },
+          {
+            "slide": 1,
+            "words": 146
+          },
+          {
+            "slide": 2,
+            "words": 170
+          },
+          {
+            "slide": 3,
+            "words": 187
+          }
+        ],
+        "sentences_over_20": 13,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 23,
+            "text": "Every straight-line graph has an equation of the form y = mx + c, where every point on the line satisfies the equation."
+          },
+          {
+            "field": "slides[0].body",
+            "words": 22,
+            "text": "Drawing an equation as a graph turns algebra into a picture — you can see gradients, intercepts, and intersections at a "
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 31,
+            "text": "m is the gradient — how steep the line is, and which direction it slopes. m = (change in y) ÷ (change in x) between any "
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 37,
+            "text": "A positive m means the line goes up left to right; negative m means it goes down. c is the y-intercept — the value of y "
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 35,
+            "text": "To find the equation through two points: calculate m first using m = (y₂ − y₁) / (x₂ − x₁), then substitute one point an"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 33,
+            "text": "Reading the gradient and y-intercept from a given equation, writing the equation of a line from a graph or from two give"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 28,
+            "text": "Swapping gradient and y-intercept when reading from y = mx + c — e.g. reading y = 5x − 2 as gradient = −2 and y-intercep"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 22,
+            "text": "Calculating gradient upside down — using (x₂ − x₁) / (y₂ − y₁) instead of (y₂ − y₁) / (x₂ − x₁)."
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 31,
+            "text": "Gradient = rise ÷ run = (change in y) ÷ (change in x). y goes on top, x goes on the bottom: m = (y₂ − y₁) / (x₂ − x₁)."
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 30,
+            "text": "Writing the equation as x = my + c (mixing up x and y roles) — especially when a question asks for the equation of a ver"
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 22,
+            "text": "For 3y = 6x + 9, divide everything by 3: y = 2x + 3, so m = 2, c = 3."
+          },
+          {
+            "field": "keyFacts[1].fact",
+            "words": 22,
+            "text": "The order of the coordinates must be consistent — both must be point 1 or both point 2 in their respective fractions."
+          },
+          {
+            "field": "keyFacts[3].fact",
+            "words": 28,
+            "text": "To sketch a straight line: plot the y-intercept (0, c), then move right 1 unit and up m units to plot a second point, th"
+          }
+        ],
+        "keyfacts_words": 212
+      },
+      "chains_checked": 52
+    },
+    {
+      "id": "alg-inequalities",
+      "topic": "M2",
+      "file": "lessons/maths/alg-inequalities.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "boundary of 4x − 1 ≥ 2x + 5",
+          "field": "conclusion",
+          "literal": "x ≥ 3",
+          "computed": 3,
+          "stated": 3,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "direction: x = 4 satisfies, x = 2 does not",
+          "field": "conclusion",
+          "literal": "x ≥ 3",
+          "computed": 1,
+          "stated": 1,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "answer written as x = 3 instead of x ≥ 3"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": "−2x > 8 holds for x = −5 (x < −4)",
+          "mistaken": "x > −4 fails at x = 0",
+          "how": "not flipping the sign"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "open versus closed circle"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 2,
+        "arrow_line_list": [
+          {
+            "field": "keyFacts[0].examTip",
+            "text": "−3x < 12 → add 3x to both sides: 0 < 12 + 3x → 3x > −12 → x > −4."
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "text": "Match the circle to the symbol: ≤ or ≥ → filled in; < or > → hollow."
+          }
+        ],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 93
+          },
+          {
+            "slide": 1,
+            "words": 77
+          },
+          {
+            "slide": 2,
+            "words": 126
+          },
+          {
+            "slide": 3,
+            "words": 152
+          }
+        ],
+        "sentences_over_20": 11,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 26,
+            "text": "An inequality says one expression is greater than or less than another, so the solution is a whole range of values rathe"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 34,
+            "text": "You solve an inequality using the same inverse operations as an equation — with one critical exception: if you multiply "
+          },
+          {
+            "field": "slides[0].body",
+            "words": 24,
+            "text": "The solution is shown on a number line, with open circles for strict inequalities (< or >) and closed circles for ≤ or ≥"
+          },
+          {
+            "field": "slides[1].body",
+            "words": 48,
+            "text": "x > 3 means x is strictly greater than 3 (open circle at 3, arrow pointing right). x ≥ 3 means x is 3 or greater (closed"
+          },
+          {
+            "field": "slides[1].body",
+            "words": 23,
+            "text": "A double inequality such as −2 < x ≤ 5 means x is between −2 and 5, not including −2 but including 5."
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 24,
+            "text": "Solving correctly but writing the answer as an equation — e.g. getting x ≥ 3 but writing x = 3 as the final answer."
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 28,
+            "text": "Forgetting to flip the inequality sign when dividing by a negative number — e.g. solving −2x > 8 and writing x > −4 inst"
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 27,
+            "text": "Confusing open and closed circles on the number line — e.g. drawing a closed circle for x > 5 (which excludes 5) instead"
+          },
+          {
+            "field": "keyFacts[0].fact",
+            "words": 22,
+            "text": "Solve an inequality like an equation — but if you multiply or divide both sides by a negative, flip the inequality sign."
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 33,
+            "text": "To avoid the flip, rearrange so the x coefficient stays positive. −3x < 12 → add 3x to both sides: 0 < 12 + 3x → 3x > −1"
+          },
+          {
+            "field": "keyFacts[2].fact",
+            "words": 31,
+            "text": "For a double inequality such as −3 < x ≤ 2, list the integers satisfying it — remembering to check each endpoint: −3 is "
+          }
+        ],
+        "keyfacts_words": 156
+      },
+      "chains_checked": 12
+    },
+    {
+      "id": "alg-quadratics",
+      "topic": "M2",
+      "file": "lessons/maths/alg-quadratics.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "roots of x² + 5x + 6 = 0",
+          "field": "conclusion",
+          "literal": "x = −2 or x = −3",
+          "computed": [
+            -2,
+            -3
+          ],
+          "stated": [
+            -2,
+            -3
+          ],
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "factorised form",
+          "field": "steps[1].result",
+          "literal": "(x + 2)(x + 3) = 0",
+          "computed": "(x + 2)(x + 3)",
+          "stated": "x² + 5x + 6",
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": [
+            -2,
+            -3
+          ],
+          "mistaken": [
+            2,
+            3
+          ],
+          "how": "wrong signs in the brackets"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": [
+            -2,
+            -3
+          ],
+          "mistaken": [
+            3,
+            2
+          ],
+          "how": "+b in place of −b"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "stopping at the factorised form"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 3,
+        "arrow_line_list": [
+          {
+            "field": "slides[2].steps[0].working",
+            "text": "Factor pairs of 6: (1, 6) → sum 7; (2, 3) → sum 5 ✓."
+          },
+          {
+            "field": "slides[3].mistakes[2].correction",
+            "text": "Set each bracket equal to zero and solve: x + 2 = 0 → x = −2, and x + 3 = 0 → x = −3."
+          },
+          {
+            "field": "keyFacts[2].fact",
+            "text": "The discriminant b² − 4ac tells you the number of solutions: positive → 2 solutions; zero → 1 repeated solution; negative → no real solutions."
+          }
+        ],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 78
+          },
+          {
+            "slide": 1,
+            "words": 142
+          },
+          {
+            "slide": 2,
+            "words": 154
+          },
+          {
+            "slide": 3,
+            "words": 228
+          }
+        ],
+        "sentences_over_20": 11,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 24,
+            "text": "A quadratic equation is one where the highest power of x is 2, written in the form ax² + bx + c = 0."
+          },
+          {
+            "field": "slides[0].body",
+            "words": 29,
+            "text": "They appear in geometry (area equations), physics (projectile motion), and many Higher-tier problems — learning to facto"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 47,
+            "text": "a, b and c come from ax² + bx + c = 0 — match each coefficient carefully, including the sign. b² − 4ac is called the dis"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 32,
+            "text": "Any quadratic equation ax² + bx + c = 0 that cannot be factorised into integer brackets, or whenever the question says '"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 53,
+            "text": "Finding the correct pair of numbers but putting them in the brackets with the wrong signs — e.g. for x² + 5x + 6 = 0, wr"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 48,
+            "text": "Substituting into the quadratic formula with the wrong sign for b — e.g. for x² + 5x + 6 = 0, using b = +5 in the −b ter"
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 22,
+            "text": "Stopping after factorising — writing (x + 2)(x + 3) = 0 as the final answer without solving each bracket for x."
+          },
+          {
+            "field": "slides[3].mistakes[2].correction",
+            "words": 27,
+            "text": "Set each bracket equal to zero and solve: x + 2 = 0 → x = −2, and x + 3 = 0 → x = −3."
+          },
+          {
+            "field": "keyFacts[2].fact",
+            "words": 25,
+            "text": "The discriminant b² − 4ac tells you the number of solutions: positive → 2 solutions; zero → 1 repeated solution; negativ"
+          },
+          {
+            "field": "keyFacts[2].examTip",
+            "words": 22,
+            "text": "If it's negative, stop — the equation has no real solutions and you cannot take a square root of a negative number."
+          },
+          {
+            "field": "keyFacts[3].examTip",
+            "words": 21,
+            "text": "With two solutions from the formula, check both — it takes 30 seconds and guards against sign errors in the formula."
+          }
+        ],
+        "keyfacts_words": 198
+      },
+      "chains_checked": 43
+    },
+    {
+      "id": "alg-sequences",
+      "topic": "M2",
+      "file": "lessons/maths/alg-sequences.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 1,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 1
+      },
+      "faults": [
+        {
+          "type": "FALSE_MISTAKE",
+          "where": "commonMistakes.mistakes[2]",
+          "detail": "the mistaken method gives \"not a term\", which is the correct answer (listing 2, 7, …, 47, 52 shows 48 is skipped: the listing method reaches the right answer (slower, not wrong))"
+        }
+      ],
+      "worked_example": [
+        {
+          "label": "5n − 3 gives 2, 7, 12, 17",
+          "field": "conclusion",
+          "literal": "5n − 3",
+          "computed": "2,7,12,17",
+          "stated": "2,7,12,17",
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": "5n − 3",
+          "mistaken": "5n + 2",
+          "how": "first term as the constant"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": "5n − 3",
+          "mistaken": "n + 5",
+          "how": "d as a constant"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [
+            {
+              "type": "FALSE_MISTAKE",
+              "basis": "recompute",
+              "detail": "the mistaken method gives \"not a term\", which is the correct answer (listing 2, 7, …, 47, 52 shows 48 is skipped: the listing method reaches the right answer (slower, not wrong))"
+            }
+          ],
+          "correct": "not a term",
+          "mistaken": "not a term",
+          "how": "listing 2, 7, …, 47, 52 shows 48 is skipped: the listing method reaches the right answer (slower, not wrong)"
+        }
+      ],
+      "found_by_reading": [
+        "mistakes[2] calls listing terms a mistake; listing reaches the same answer (48 is not a term). It is slower, not wrong."
+      ],
+      "density": {
+        "arrow_lines": 1,
+        "arrow_line_list": [
+          {
+            "field": "slides[3].mistakes[2].correction",
+            "text": "Set nth term = value: 5n − 3 = 48 → 5n = 51 → n = 10.2."
+          }
+        ],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 72
+          },
+          {
+            "slide": 1,
+            "words": 145
+          },
+          {
+            "slide": 2,
+            "words": 132
+          },
+          {
+            "slide": 3,
+            "words": 210
+          }
+        ],
+        "sentences_over_20": 9,
+        "long_sentences": [
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 28,
+            "text": "The formula can also be written as a + (n − 1)d — start at the first term and add d a total of (n − 1) times."
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 23,
+            "text": "To find the constant: substitute n = 1 and set the result equal to the first term to solve for (a − d)."
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 44,
+            "text": "Finding a specific term without listing the whole sequence, checking whether a given value is a term (set nth term = val"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 37,
+            "text": "Using the first term as the constant instead of calculating it — e.g. for 2, 7, 12, 17, writing nth term = 5n + 2 (using"
+          },
+          {
+            "field": "slides[3].mistakes[0].correction",
+            "words": 25,
+            "text": "The constant is found by substituting n = 1 into dn + c = first term: 5(1) + c = 2 → c = −3."
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 35,
+            "text": "Finding the correct d but writing the coefficient wrong — e.g. for a sequence with d = 5, writing the nth term as n + 5 "
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 25,
+            "text": "To check if 48 is in the sequence 5n − 3, listing terms until reaching 48 rather than solving 5n − 3 = 48 algebraically."
+          },
+          {
+            "field": "keyFacts[1].fact",
+            "words": 21,
+            "text": "To check if a value is in the sequence, set the nth term equal to that value and solve for n."
+          },
+          {
+            "field": "keyFacts[1].fact",
+            "words": 21,
+            "text": "If n is a positive integer, the value is in the sequence; if n is fractional or negative, it is not."
+          }
+        ],
+        "keyfacts_words": 169
+      },
+      "chains_checked": 35
+    },
+    {
+      "id": "alg-simultaneous",
+      "topic": "M2",
+      "file": "lessons/maths/alg-simultaneous.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 1,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 1
+      },
+      "faults": [
+        {
+          "type": "FALSE_MISTAKE",
+          "where": "commonMistakes.mistakes[2]",
+          "detail": "the mistaken method gives 1, which is the correct answer (a correctly multiplied equation has the same solutions: substituting into it gives the same value (here x = 3 gives y = 1 both ways))"
+        }
+      ],
+      "worked_example": [
+        {
+          "label": "y from elimination",
+          "field": "steps[1].result",
+          "literal": "y = 5",
+          "computed": 5,
+          "stated": 5,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "x from 4x + y = 13",
+          "field": "steps[2].result",
+          "literal": "x = 2",
+          "computed": 2,
+          "stated": 2,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "check in equation 1",
+          "field": "steps[3].working",
+          "literal": "= 23",
+          "computed": 23,
+          "stated": 23,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "adding when the signs match leaves 8x, not 0x"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 10,
+          "mistaken": 5,
+          "how": "right-hand side not multiplied"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [
+            {
+              "type": "FALSE_MISTAKE",
+              "basis": "recompute",
+              "detail": "the mistaken method gives 1, which is the correct answer (a correctly multiplied equation has the same solutions: substituting into it gives the same value (here x = 3 gives y = 1 both ways))"
+            }
+          ],
+          "correct": 1,
+          "mistaken": 1,
+          "how": "a correctly multiplied equation has the same solutions: substituting into it gives the same value (here x = 3 gives y = 1 both ways)"
+        }
+      ],
+      "found_by_reading": [
+        "mistakes[2] says substituting into the multiplied equation introduces \"a factor-of-2 error\". A correctly multiplied equation has the same solutions, so substituting into it gives the right answer; the error only comes from a wrongly multiplied one (item 2)."
+      ],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 3,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 68
+          },
+          {
+            "slide": 1,
+            "words": 60
+          },
+          {
+            "slide": 2,
+            "words": 137
+          },
+          {
+            "slide": 3,
+            "words": 167
+          }
+        ],
+        "sentences_over_20": 8,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 30,
+            "text": "The solution is the one pair of values (x and y) that satisfies both equations at once — geometrically, it is the point "
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 29,
+            "text": "Adding equations when you should subtract — e.g. if both equations have +3y and you add them, you get 6y rather than 0y,"
+          },
+          {
+            "field": "slides[3].mistakes[0].correction",
+            "words": 24,
+            "text": "In equations 4x + 3y = 23 and 4x + y = 13, both x-coefficients are +4 (same sign), so subtract to get 0x."
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 44,
+            "text": "When multiplying to match coefficients, forgetting to multiply the right-hand side too — e.g. to make 2x − y = 5 match 4"
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 23,
+            "text": "Multiply every term in the equation, including the constant on the right: 2(2x − y) = 2(5) gives 4x − 2y = 10."
+          },
+          {
+            "field": "keyFacts[0].fact",
+            "words": 25,
+            "text": "Elimination: make the coefficient of one variable equal in both equations (multiply if needed), then subtract (same sign"
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 25,
+            "text": "Choose to eliminate the variable whose coefficient is easiest to match — often the one that is already equal or needs on"
+          },
+          {
+            "field": "keyFacts[2].examTip",
+            "words": 24,
+            "text": "Check your answer in both original equations — if one equation checks out but not the other, there is an error in your w"
+          }
+        ],
+        "keyfacts_words": 133
+      },
+      "chains_checked": 22
+    },
+    {
+      "id": "geo-angles",
+      "topic": "M4",
+      "file": "lessons/maths/geo-angles.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "co-interior with 68°",
+          "field": "conclusion",
+          "literal": "112°",
+          "computed": 112,
+          "stated": 112,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "alternate equal versus co-interior 180°"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "no reason written"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "parallel-line rules on non-parallel lines"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 7
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 86
+          },
+          {
+            "slide": 1,
+            "words": 152
+          },
+          {
+            "slide": 2,
+            "words": 98
+          },
+          {
+            "slide": 3,
+            "words": 139
+          }
+        ],
+        "sentences_over_20": 6,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 39,
+            "text": "A handful of rules govern almost every angle problem you'll meet: angles on a straight line always add to 180°, angles a"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 30,
+            "text": "When a line crosses two parallel lines it creates pairs of angles with special relationships — knowing those relationshi"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 47,
+            "text": "Angles on a straight line = 180° | Angles around a point = 360° | Angles in a triangle = 180° | Angles in a quadrilatera"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 39,
+            "text": "Parallel-line rules: corresponding angles (same position at each crossing, making an F-shape) are equal; alternate angle"
+          },
+          {
+            "field": "slides[2].steps[0].instruction",
+            "words": 21,
+            "text": "The two angles are on the same side of the transversal between the parallel lines — that makes them co-interior angles."
+          },
+          {
+            "field": "slides[3].mistakes[2].correction",
+            "words": 22,
+            "text": "The F, Z and C rules only apply when the lines are explicitly parallel (shown by arrows or stated in the question)."
+          }
+        ],
+        "keyfacts_words": 104
+      },
+      "chains_checked": 8
+    },
+    {
+      "id": "geo-circles",
+      "topic": "M4",
+      "file": "lessons/maths/geo-circles.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "112° ÷ 2",
+          "field": "conclusion",
+          "literal": "56°",
+          "computed": 56,
+          "stated": 56,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 56,
+          "mistaken": 224,
+          "how": "doubling"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "circumference and area formulas swapped"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "theorem not stated"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 7
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 91
+          },
+          {
+            "slide": 1,
+            "words": 190
+          },
+          {
+            "slide": 2,
+            "words": 130
+          },
+          {
+            "slide": 3,
+            "words": 147
+          }
+        ],
+        "sentences_over_20": 9,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 29,
+            "text": "A set of angle rules governs triangles and quadrilaterals drawn inside or on circles — these are circle theorems, and th"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 31,
+            "text": "You need to recognise the geometric setup in a diagram (e.g. two radii forming a triangle, an angle at the centre vs the"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 57,
+            "text": "Circumference = πd  or  2πr  |  Area = πr²  |  Angle at centre = 2 × angle at circumference (same arc)  |  Angle in a se"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 30,
+            "text": "For a circle of radius r (or diameter d = 2r): circumference is the distance all the way round (πd or equivalently 2πr);"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 24,
+            "text": "For angle theorems: an angle at the centre is exactly double the angle at the circumference when both are subtended by t"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 21,
+            "text": "Any question involving a circle diagram with points on the circumference, angles at the centre, chords, tangents, or a c"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 21,
+            "text": "Doubling the circumference angle to get the centre angle instead of halving the centre angle — getting 224° instead of 5"
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 26,
+            "text": "The semicircle rule is a special case of the centre theorem: the angle at the centre is 180° (a diameter), so the circum"
+          },
+          {
+            "field": "keyFacts[2].examTip",
+            "words": 21,
+            "text": "Draw the chord that creates the segment — angles in the same segment are on the same side of that chord."
+          }
+        ],
+        "keyfacts_words": 153
+      },
+      "chains_checked": 19
+    },
+    {
+      "id": "geo-perimeter-area",
+      "topic": "M4",
+      "file": "lessons/maths/geo-perimeter-area.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "trapezium area",
+          "field": "conclusion",
+          "literal": "42 cm²",
+          "computed": 42,
+          "stated": 42,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "slant height"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "b × h without the ½ (no numbers)"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "units"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 5
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 77
+          },
+          {
+            "slide": 1,
+            "words": 162
+          },
+          {
+            "slide": 2,
+            "words": 94
+          },
+          {
+            "slide": 3,
+            "words": 161
+          }
+        ],
+        "sentences_over_20": 9,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 27,
+            "text": "The two are completely different measurements, but exam questions often give you one and ask for the other, so make sure"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 36,
+            "text": "Rectangle: A = l × w  |  Triangle: A = ½ × b × h  |  Parallelogram: A = b × h  |  Trapezium: A = ½(a + b) × h  |  Circle"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 30,
+            "text": "For a trapezium, a and b are the two parallel sides and h is the perpendicular distance between them; halve the sum of t"
+          },
+          {
+            "field": "slides[3].mistakes[0].correction",
+            "words": 26,
+            "text": "If the diagram shows a slant side but not a vertical height, look for a small right-angle symbol or use Pythagoras to fi"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 23,
+            "text": "Forgetting to halve in the triangle formula — writing A = b × h instead of A = ½ × b × h."
+          },
+          {
+            "field": "keyFacts[0].fact",
+            "words": 24,
+            "text": "Area of a trapezium = ½(a + b) × h, where a and b are the parallel sides and h is the perpendicular height."
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 25,
+            "text": "This formula is given on the formula sheet — but you must correctly identify which sides are parallel and which measurem"
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 30,
+            "text": "In a non-right-angled triangle the height may be shown as a dashed line inside or outside the triangle — always measure "
+          },
+          {
+            "field": "keyFacts[2].examTip",
+            "words": 25,
+            "text": "Draw the split lines clearly on the diagram and label each part with its dimensions — this avoids using the wrong measur"
+          }
+        ],
+        "keyfacts_words": 140
+      },
+      "chains_checked": 14
+    },
+    {
+      "id": "geo-pythagoras",
+      "topic": "M4",
+      "file": "lessons/maths/geo-pythagoras.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "hypotenuse of 5, 12",
+          "field": "conclusion",
+          "literal": "13 cm",
+          "computed": 13,
+          "stated": 13,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 13,
+          "mistaken": 169,
+          "how": "no square root"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "adding when finding a shorter side (no numbers)"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "which side is the hypotenuse"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 86
+          },
+          {
+            "slide": 1,
+            "words": 130
+          },
+          {
+            "slide": 2,
+            "words": 104
+          },
+          {
+            "slide": 3,
+            "words": 169
+          }
+        ],
+        "sentences_over_20": 10,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 25,
+            "text": "Pythagoras' theorem says that in any right-angled triangle, the square of the longest side equals the sum of the squares"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 39,
+            "text": "The theorem lets you find any missing side as long as you know the other two, and it works in both directions: finding t"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 24,
+            "text": "a and b are the two shorter sides (the legs) and c is the hypotenuse — the side directly across from the right-angle sym"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 22,
+            "text": "Also used in coordinate geometry to find the distance between two points, and in 3D problems where you apply the theorem"
+          },
+          {
+            "field": "slides[2].steps[0].instruction",
+            "words": 25,
+            "text": "The right angle is between the two legs (5 cm and 12 cm), so the hypotenuse c is the unknown side opposite the right ang"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 21,
+            "text": "Squaring the hypotenuse instead of finding its square root — writing c = 169 instead of c = √169 = 13."
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 23,
+            "text": "Adding both squared values when finding a shorter side — using a² = b² + c² instead of a² = c² − b²."
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 23,
+            "text": "Not identifying which side is the hypotenuse before substituting — labelling a slant side as c when it isn't opposite th"
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 21,
+            "text": "Always label the hypotenuse c before writing the formula — it's the side you don't touch when identifying the right angl"
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 22,
+            "text": "If your answer for a shorter side comes out larger than the hypotenuse, you've added instead of subtracted — check your "
+          }
+        ],
+        "keyfacts_words": 130
+      },
+      "chains_checked": 19
+    },
+    {
+      "id": "geo-shapes",
+      "topic": "M4",
+      "file": "lessons/maths/geo-shapes.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "octagon angle sum",
+          "field": "conclusion",
+          "literal": "1080°",
+          "computed": 1080,
+          "stated": 1080,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "octagon interior angle",
+          "field": "conclusion",
+          "literal": "135°",
+          "computed": 135,
+          "stated": 135,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 1080,
+          "mistaken": 1440,
+          "how": "n × 180 (for the octagon)"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "interior versus exterior"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "regular formula on an irregular polygon"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 3
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 90
+          },
+          {
+            "slide": 1,
+            "words": 146
+          },
+          {
+            "slide": 2,
+            "words": 106
+          },
+          {
+            "slide": 3,
+            "words": 154
+          }
+        ],
+        "sentences_over_20": 6,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 25,
+            "text": "Every 2D polygon has a fixed angle sum that depends only on how many sides it has — not its size or whether it's regular"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 25,
+            "text": "For 3D shapes, you need to know the faces, edges and vertices because exam questions use them to set up surface area and"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 30,
+            "text": "Learning the key properties of quadrilaterals (which sides are equal, which angles are equal, which diagonals bisect) sa"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 38,
+            "text": "Sum of interior angles = (n − 2) × 180°  |  Each interior angle of a regular polygon = (n − 2) × 180° ÷ n  |  Each exter"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 22,
+            "text": "The exterior angles of any polygon always add to 360°, so each exterior angle of a regular polygon is 360° ÷ n."
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 22,
+            "text": "Applying the regular-polygon formula to an irregular polygon — dividing the angle sum by n even when the angles aren't a"
+          }
+        ],
+        "keyfacts_words": 120
+      },
+      "chains_checked": 15
+    },
+    {
+      "id": "geo-transformations",
+      "topic": "M4",
+      "file": "lessons/maths/geo-transformations.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "image of (1, 1)",
+          "field": "conclusion",
+          "literal": "(−3, 3)",
+          "computed": [
+            -3,
+            3
+          ],
+          "stated": [
+            -3,
+            3
+          ],
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "image of (3, 1)",
+          "field": "conclusion",
+          "literal": "(−1, 3)",
+          "computed": [
+            -1,
+            3
+          ],
+          "stated": [
+            -1,
+            3
+          ],
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "image of (3, 4)",
+          "field": "conclusion",
+          "literal": "(−1, 6)",
+          "computed": [
+            -1,
+            6
+          ],
+          "stated": [
+            -1,
+            6
+          ],
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "centre of rotation"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "vector direction"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "centre of enlargement"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 4
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 91
+          },
+          {
+            "slide": 1,
+            "words": 165
+          },
+          {
+            "slide": 2,
+            "words": 126
+          },
+          {
+            "slide": 3,
+            "words": 154
+          }
+        ],
+        "sentences_over_20": 6,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 30,
+            "text": "There are four types: translation (sliding without turning), reflection (flipping in a mirror line), rotation (turning a"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 25,
+            "text": "Describing a transformation fully means stating the type and every piece of information needed to reproduce it exactly —"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 44,
+            "text": "Translation: vector (x over y) where x is right (+) or left (−) and y is up (+) or down (−)  |  Reflection: the equation"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 24,
+            "text": "Translation uses a column vector — top number is the horizontal shift (positive = right), bottom number is the vertical "
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 22,
+            "text": "Using a scale factor for enlargement without locating the centre — drawing the enlarged shape in the wrong position on t"
+          },
+          {
+            "field": "keyFacts[2].examTip",
+            "words": 25,
+            "text": "A negative scale factor places the image on the opposite side of the centre — the shape is both scaled and flipped throu"
+          }
+        ],
+        "keyfacts_words": 142
+      },
+      "chains_checked": 16
+    },
+    {
+      "id": "geo-trigonometry",
+      "topic": "M4",
+      "file": "lessons/maths/geo-trigonometry.json",
+      "counts": {
+        "WE_MISMATCH": 1,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [
+        {
+          "type": "WE_MISMATCH",
+          "where": "workedExample.conclusion",
+          "detail": "15 sin 38°: computed 9.23, lesson states 9.24"
+        }
+      ],
+      "worked_example": [
+        {
+          "label": "15 sin 38°",
+          "field": "conclusion",
+          "literal": "approximately 9.24 cm",
+          "computed": 9.23,
+          "stated": 9.24,
+          "found": true,
+          "ok": false
+        },
+        {
+          "label": "sin 38°",
+          "field": "steps[2].working",
+          "literal": "sin 38° ≈ 0.6157",
+          "computed": 0.6157,
+          "stated": 0.6157,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "labelling sides"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "wrong ratio"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 0.6157,
+          "mistaken": 0.2964,
+          "how": "sin 38 in radians"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 3
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 82
+          },
+          {
+            "slide": 1,
+            "words": 150
+          },
+          {
+            "slide": 2,
+            "words": 141
+          },
+          {
+            "slide": 3,
+            "words": 157
+          }
+        ],
+        "sentences_over_20": 6,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 29,
+            "text": "The three ratios — sine, cosine and tangent — each relate the reference angle (the one you're working from, not the righ"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 24,
+            "text": "To use them you need to correctly label which side is opposite the angle, which is adjacent to it, and which is the hypo"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 23,
+            "text": "sin θ = Opposite ÷ Hypotenuse  (SOH)  |  cos θ = Adjacent ÷ Hypotenuse  (CAH)  |  tan θ = Opposite ÷ Adjacent  (TOA)"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 42,
+            "text": "Label the triangle from the reference angle θ (not the right angle): the Opposite side is directly across from θ; the Hy"
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 24,
+            "text": "Write O, A, H next to each side on the diagram before choosing a ratio — this one step prevents the most common errors."
+          },
+          {
+            "field": "keyFacts[2].examTip",
+            "words": 21,
+            "text": "If your trig answer looks unreasonably large or small, the first thing to check is whether your calculator is in degrees"
+          }
+        ],
+        "keyfacts_words": 146
+      },
+      "chains_checked": 19
+    },
+    {
+      "id": "geo-vectors",
+      "topic": "M4",
+      "file": "lessons/maths/geo-vectors.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "a + b",
+          "field": "conclusion",
+          "literal": "(2 over 5)",
+          "computed": [
+            2,
+            5
+          ],
+          "stated": [
+            2,
+            5
+          ],
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "2a − b",
+          "field": "conclusion",
+          "literal": "(7 over −2)",
+          "computed": [
+            7,
+            -2
+          ],
+          "stated": [
+            7,
+            -2
+          ],
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "adding across rows"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": [
+            1,
+            -4
+          ],
+          "mistaken": null,
+          "how": "−b components"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": [
+            -4,
+            2
+          ],
+          "mistaken": [
+            4,
+            -2
+          ],
+          "how": "BA taken as AB"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 5
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 139
+          },
+          {
+            "slide": 1,
+            "words": 185
+          },
+          {
+            "slide": 2,
+            "words": 117
+          },
+          {
+            "slide": 3,
+            "words": 164
+          }
+        ],
+        "sentences_over_20": 13,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 23,
+            "text": "A vector describes a movement that has both a size (magnitude) and a direction — unlike an ordinary number, which only h"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 40,
+            "text": "A column vector is written as two numbers stacked vertically in a bracket: the top number is the horizontal component (p"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 32,
+            "text": "Vectors are usually labelled with a bold letter (a) or an underlined letter (a), and the vector from point A to point B "
+          },
+          {
+            "field": "slides[0].body",
+            "words": 34,
+            "text": "The same column vector applied to different starting points creates parallel, equal-length movements — so two vectors ar"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 63,
+            "text": "Column vector: (x over y) where x = horizontal shift (+ right, − left), y = vertical shift (+ up, − down)  |  Addition: "
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 21,
+            "text": "To add two column vectors, add the top numbers together and the bottom numbers together separately — never mix the rows."
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 26,
+            "text": "Multiplying by a scalar k scales both components by k — this changes the magnitude but keeps the direction (or reverses "
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 21,
+            "text": "Any question involving vector paths across a diagram, proving lines are parallel, finding midpoints using vectors, or sh"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 24,
+            "text": "Adding the x-component to the y-component — writing a + b = (3 + 4) or combining the rows instead of keeping them separa"
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 24,
+            "text": "Confusing the direction of vector AB with BA — writing the vector from A to B as the negative of what it should be."
+          },
+          {
+            "field": "keyFacts[0].fact",
+            "words": 21,
+            "text": "A column vector (x over y) means move x units horizontally (+ = right) and y units vertically (+ = up)."
+          },
+          {
+            "field": "keyFacts[2].fact",
+            "words": 22,
+            "text": "Three points are collinear if the vector between any two of them is a scalar multiple of the vector between another two."
+          },
+          {
+            "field": "keyFacts[2].examTip",
+            "words": 25,
+            "text": "To prove collinearity in an exam: show one vector is a multiple of another and they share a common point — state both co"
+          }
+        ],
+        "keyfacts_words": 146
+      },
+      "chains_checked": 13
+    },
+    {
+      "id": "geo-volume",
+      "topic": "M4",
+      "file": "lessons/maths/geo-volume.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "cylinder volume ÷ π",
+          "field": "conclusion",
+          "literal": "176π",
+          "computed": 176,
+          "stated": 176,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "cylinder volume decimal",
+          "field": "conclusion",
+          "literal": "≈ 552.9",
+          "computed": 552.9203070318035,
+          "stated": 552.9,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "diameter for radius (no full example)"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "volume versus surface area"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "missing ⅓"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 6
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 75
+          },
+          {
+            "slide": 1,
+            "words": 152
+          },
+          {
+            "slide": 2,
+            "words": 91
+          },
+          {
+            "slide": 3,
+            "words": 153
+          }
+        ],
+        "sentences_over_20": 8,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 22,
+            "text": "The general rule for any prism is the same: find the area of the cross-section and multiply by the length (or height)."
+          },
+          {
+            "field": "slides[0].body",
+            "words": 25,
+            "text": "A cylinder is a circular prism, so its volume follows exactly the same logic — you just need the area of the circular fa"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 43,
+            "text": "Cuboid: V = l × w × h  |  Any prism: V = area of cross-section × length  |  Cylinder: V = πr²h  |  Cone: V = ⅓πr²h  |  S"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 21,
+            "text": "Any prism (triangular, hexagonal, etc.) has a constant cross-section shape; find that area and multiply by the length th"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 24,
+            "text": "A cylinder is a circular prism: the cross-section is a circle with area πr² (r is the radius), and h is the perpendicula"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 25,
+            "text": "Using the diameter instead of the radius in V = πr²h — substituting d = 8 when the question gives a diameter of 8 cm."
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 25,
+            "text": "Square the radius before multiplying by π and h — a common error is to write π × r × h, forgetting to square r."
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 29,
+            "text": "For a triangular prism, find the triangle area (½ × base × height) first, then multiply by the prism's length — don't tr"
+          }
+        ],
+        "keyfacts_words": 143
+      },
+      "chains_checked": 22
+    },
+    {
+      "id": "num-bounds",
+      "topic": "M1",
+      "file": "lessons/maths/num-bounds.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "lower bound",
+          "field": "steps[1].result",
+          "literal": "93.5 cm",
+          "computed": 93.5,
+          "stated": 93.5,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "upper bound",
+          "field": "steps[2].result",
+          "literal": "94.5 cm",
+          "computed": 94.5,
+          "stated": 94.5,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "notation: ≤ versus < at the upper bound"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": [
+            93.5,
+            94.5
+          ],
+          "mistaken": [
+            47,
+            141
+          ],
+          "how": "± half the measured value"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": [
+            3.65,
+            3.75
+          ],
+          "mistaken": [
+            3.2,
+            4.2
+          ],
+          "how": "± 0.5 for a 1 d.p. measurement"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 2
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 79
+          },
+          {
+            "slide": 1,
+            "words": 124
+          },
+          {
+            "slide": 2,
+            "words": 135
+          },
+          {
+            "slide": 3,
+            "words": 172
+          }
+        ],
+        "sentences_over_20": 9,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 30,
+            "text": "Every measurement is rounded to a given precision — a length of 8 cm to the nearest centimetre could actually be anywher"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 33,
+            "text": "Bounds define that range: the lower bound is the smallest value that rounds to the given measurement, and the upper boun"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 30,
+            "text": "The error interval is written as: lower bound ≤ value < upper bound — note the strict inequality at the upper end, becau"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 31,
+            "text": "Whenever a value is described as measured or rounded to a given degree of accuracy and you are asked for bounds, error i"
+          },
+          {
+            "field": "slides[2].steps[3].working",
+            "words": 29,
+            "text": "93.5 ≤ l < 94.5 — the lower bound uses ≤ (the lower bound itself rounds to 94), the upper bound uses < (94.5 would round"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 23,
+            "text": "Using ≤ at both ends of the error interval — writing 93.5 ≤ l ≤ 94.5 instead of 93.5 ≤ l < 94.5."
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 25,
+            "text": "Using half of the measured value instead of half of the precision — e.g. for a measurement of 94 cm, subtracting/adding "
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 30,
+            "text": "Confusing the precision when the measurement is given to decimal places — e.g. a length of 3.7 cm to 1 d.p. has precisio"
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 22,
+            "text": "The upper bound is the value that would round UP to the next level — it is not included in the range."
+          }
+        ],
+        "keyfacts_words": 113
+      },
+      "chains_checked": 14
+    },
+    {
+      "id": "num-fractions",
+      "topic": "M1",
+      "file": "lessons/maths/num-fractions.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "2¼ ÷ 1½",
+          "field": "conclusion",
+          "literal": "= 1½",
+          "computed": 1.5,
+          "stated": 1.5,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "step 3 simplified",
+          "field": "steps[2].result",
+          "literal": "3/2",
+          "computed": 1.5,
+          "stated": 1.5,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "quick check 1½ × 1½",
+          "field": "conclusion",
+          "literal": "1½ × 1½ = 9/4",
+          "computed": 2.25,
+          "stated": 2.25,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 0.5833333333333333,
+          "mistaken": 0.2857142857142857,
+          "how": "adding tops and bottoms"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 0.8333333333333334,
+          "mistaken": 1.2000000000000002,
+          "how": "flipping the first fraction"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 3.375,
+          "mistaken": 2.125,
+          "how": "whole parts and fraction parts multiplied separately"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 3
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 62
+          },
+          {
+            "slide": 1,
+            "words": 90
+          },
+          {
+            "slide": 2,
+            "words": 119
+          },
+          {
+            "slide": 3,
+            "words": 157
+          }
+        ],
+        "sentences_over_20": 7,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 26,
+            "text": "A fraction represents a part of a whole — the denominator tells you how many equal parts exist, the numerator tells you "
+          },
+          {
+            "field": "slides[0].body",
+            "words": 28,
+            "text": "Adding fractions requires a common denominator because you can only combine parts of the same size, but multiplying does"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 29,
+            "text": "Adding numerators and denominators separately when adding fractions — e.g. writing 1/3 + 1/4 = 2/7 instead of finding LC"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 25,
+            "text": "Flipping the first fraction instead of the second when dividing — e.g. for 5/8 ÷ 3/4, writing 8/5 × 3/4 instead of 5/8 ×"
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 46,
+            "text": "Forgetting to convert mixed numbers to improper fractions before multiplying or dividing — e.g. multiplying whole parts "
+          },
+          {
+            "field": "keyFacts[0].fact",
+            "words": 22,
+            "text": "To add or subtract fractions, find the lowest common denominator, convert both fractions, then combine numerators only —"
+          },
+          {
+            "field": "keyFacts[3].examTip",
+            "words": 24,
+            "text": "Always convert to improper fractions before multiplying or dividing mixed numbers — operating on the whole and fraction "
+          }
+        ],
+        "keyfacts_words": 154
+      },
+      "chains_checked": 16
+    },
+    {
+      "id": "num-integers",
+      "topic": "M1",
+      "file": "lessons/maths/num-integers.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "5.3864 to 2 d.p.",
+          "field": "conclusion",
+          "literal": "2 d.p. = 5.39",
+          "computed": 5.39,
+          "stated": 5.39,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "5.3864 to 2 s.f.",
+          "field": "conclusion",
+          "literal": "2 s.f. = 5.4",
+          "computed": 5.4,
+          "stated": 5.4,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 3.85,
+          "mistaken": 3.86,
+          "how": "rounding on the 2nd d.p. digit (5) itself rounds 3.85 up to 3.86"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "d.p. versus s.f. labels: 5.39 and 5.4 are both right answers to different questions"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 7,
+          "mistaken": 6.9,
+          "how": "dropping the carry"
+        }
+      ],
+      "found_by_reading": [
+        "mistakes[0].mistake says the student \"rounds up the 8, giving 3.86\"; rounding up the 8 would give 3.9. The digit rounded up to reach 3.86 is the 5."
+      ],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 3,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 56
+          },
+          {
+            "slide": 1,
+            "words": 64
+          },
+          {
+            "slide": 2,
+            "words": 111
+          },
+          {
+            "slide": 3,
+            "words": 176
+          }
+        ],
+        "sentences_over_20": 4,
+        "long_sentences": [
+          {
+            "field": "slides[1].body",
+            "words": 27,
+            "text": "If that digit is 5 or more, round the target digit up by 1; if it is 4 or less, leave it unchanged and drop everything a"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 53,
+            "text": "Looking at the digit in the rounding position rather than the one to its right — e.g. rounding 3.8512 to 2 d.p., the stu"
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 34,
+            "text": "Not carrying a round-up through all digits — e.g. rounding 6.96 to 1 d.p. and writing 6.9 because the student does not r"
+          },
+          {
+            "field": "keyFacts[3].fact",
+            "words": 23,
+            "text": "6.96 rounded to 1 d.p. is 7.0 — write 7.0, not just 7, to show the answer is given to 1 decimal place."
+          }
+        ],
+        "keyfacts_words": 146
+      },
+      "chains_checked": 3
+    },
+    {
+      "id": "num-percentages",
+      "topic": "M1",
+      "file": "lessons/maths/num-percentages.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "750 reduced by 40%",
+          "field": "conclusion",
+          "literal": "£450",
+          "computed": 450,
+          "stated": 450,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "40% of 750",
+          "field": "steps[2].working",
+          "literal": "= £300",
+          "computed": 300,
+          "stated": 300,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 450,
+          "mistaken": 300,
+          "how": "multiplier 0.40"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 80,
+          "mistaken": 76.80000000000001,
+          "how": "taking 20% off the new value"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 20,
+          "mistaken": 16.666666666666668,
+          "how": "dividing by the new value"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 62
+          },
+          {
+            "slide": 1,
+            "words": 98
+          },
+          {
+            "slide": 2,
+            "words": 94
+          },
+          {
+            "slide": 3,
+            "words": 181
+          }
+        ],
+        "sentences_over_20": 8,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 38,
+            "text": "Expressing things as percentages makes it easy to compare quantities with different sizes: a 30% discount on a £50 shirt"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 28,
+            "text": "Convert the percentage to a decimal multiplier: for an increase of p%, the multiplier is 1 + p/100; for a decrease of p%"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 22,
+            "text": "Applying the multiplier in one step is faster and less error-prone than finding the percentage amount separately and the"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 21,
+            "text": "For any percentage increase, decrease, or reverse percentage question — whenever a starting or ending value and a percen"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 25,
+            "text": "Using 0.40 as the multiplier for a 40% reduction instead of 0.60 — multiplying by 0.40 gives the discount amount (£300),"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 36,
+            "text": "Reversing a percentage change by subtracting the percentage from the new value — e.g. after a 20% rise the price is £96;"
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 22,
+            "text": "Subtracting a percentage from the new value gives the wrong answer because the percentage is of the original, not the ne"
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 35,
+            "text": "Dividing by the new value instead of the original when calculating percentage change — e.g. a rise from £50 to £60: stud"
+          }
+        ],
+        "keyfacts_words": 160
+      },
+      "chains_checked": 18
+    },
+    {
+      "id": "num-powers-roots",
+      "topic": "M1",
+      "file": "lessons/maths/num-powers-roots.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "5³ × 5² ÷ 5⁴",
+          "field": "conclusion",
+          "literal": "= 5",
+          "computed": 5,
+          "stated": 5,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "5³ × 5²",
+          "field": "steps[2].working",
+          "literal": "5³ × 5² = 3125",
+          "computed": 3125,
+          "stated": 3125,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 243,
+          "mistaken": 59049,
+          "how": "multiplying the bases"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 1024,
+          "mistaken": 4096,
+          "how": "multiplying the indices"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 1,
+          "mistaken": 0,
+          "how": "a⁰ = 0"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 5
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 68
+          },
+          {
+            "slide": 1,
+            "words": 94
+          },
+          {
+            "slide": 2,
+            "words": 88
+          },
+          {
+            "slide": 3,
+            "words": 120
+          }
+        ],
+        "sentences_over_20": 5,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 26,
+            "text": "A power (or index) tells you how many times to multiply a number by itself: 3⁴ means 3 × 3 × 3 × 3 = 81."
+          },
+          {
+            "field": "slides[0].body",
+            "words": 22,
+            "text": "These ideas appear throughout GCSE — in standard form, area, volume, and algebra — so the index laws are worth knowing c"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 23,
+            "text": "aᵐ × aⁿ = aᵐ⁺ⁿ | aᵐ ÷ aⁿ = aᵐ⁻ⁿ | (aᵐ)ⁿ = aᵐⁿ | a⁰ = 1 | a⁻ⁿ = 1/aⁿ"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 25,
+            "text": "Whenever you multiply, divide or raise expressions that share the same base — the base must be identical before you appl"
+          },
+          {
+            "field": "slides[3].mistakes[0].correction",
+            "words": 24,
+            "text": "When multiplying powers with the same base, keep the base and only add the indices: 3² × 3³ = 3⁵ = 243, not 9⁵."
+          }
+        ],
+        "keyfacts_words": 137
+      },
+      "chains_checked": 33
+    },
+    {
+      "id": "num-ratio",
+      "topic": "M1",
+      "file": "lessons/maths/num-ratio.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 2,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 1
+      },
+      "faults": [
+        {
+          "type": "FALSE_MISTAKE",
+          "where": "commonMistakes.mistakes[2]",
+          "detail": "the item's own text says it is correct: \"same answer here\""
+        },
+        {
+          "type": "FALSE_MISTAKE",
+          "where": "commonMistakes.mistakes[2]",
+          "detail": "the mistaken method gives 240, which is the correct answer (adding 40 g per extra serving is the unitary method (40 g per serving), which works for any number of servings, whole or not)"
+        }
+      ],
+      "worked_example": [
+        {
+          "label": "£270 in 5:4, first share",
+          "field": "conclusion",
+          "literal": "£150",
+          "computed": 150,
+          "stated": 150,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "£270 in 5:4, second share",
+          "field": "conclusion",
+          "literal": "£120",
+          "computed": 120,
+          "stated": 120,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 30,
+          "mistaken": 54,
+          "how": "dividing by the larger ratio number"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 35,
+          "mistaken": 8.75,
+          "how": "dividing the difference by total parts"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [
+            {
+              "type": "FALSE_MISTAKE",
+              "basis": "text",
+              "detail": "the item's own text says it is correct: \"same answer here\""
+            },
+            {
+              "type": "FALSE_MISTAKE",
+              "basis": "recompute",
+              "detail": "the mistaken method gives 240, which is the correct answer (adding 40 g per extra serving is the unitary method (40 g per serving), which works for any number of servings, whole or not)"
+            }
+          ],
+          "correct": 240,
+          "mistaken": 240,
+          "how": "adding 40 g per extra serving is the unitary method (40 g per serving), which works for any number of servings, whole or not"
+        }
+      ],
+      "found_by_reading": [
+        "mistakes[2] says the additive route \"fails for non-integer scaling\". Adding 40 g per serving is the unitary method; it gives the right answer for any number of servings."
+      ],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 79
+          },
+          {
+            "slide": 1,
+            "words": 108
+          },
+          {
+            "slide": 2,
+            "words": 96
+          },
+          {
+            "slide": 3,
+            "words": 211
+          }
+        ],
+        "sentences_over_20": 10,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 24,
+            "text": "The ratio 3:2 means for every 3 parts of the first quantity there are 2 of the second — the total is 5 parts."
+          },
+          {
+            "field": "slides[0].body",
+            "words": 30,
+            "text": "Ratios are used in recipes, maps, mixing materials, and sharing money, so the method of finding the value of one part is"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 22,
+            "text": "Any time you are sharing a total in a given ratio, or scaling a recipe or quantity up or down using proportion."
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 35,
+            "text": "Dividing the total by the largest ratio number instead of the sum — e.g. for £270 in ratio 5:4, dividing by 5 to get £54"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 42,
+            "text": "When the difference between shares is given, dividing by the total parts rather than the difference in parts — e.g. if p"
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 25,
+            "text": "If the difference between shares is given, find the difference in ratio parts first (5−3=2), then 1 part = difference ÷ "
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 58,
+            "text": "Using an additive approach to scale a recipe instead of multiplicative — e.g. a recipe for 4 serves uses 160 g of rice; "
+          },
+          {
+            "field": "keyFacts[0].fact",
+            "words": 28,
+            "text": "To share in ratio a:b — find the total parts (a+b), divide the total quantity by this to get one part, then multiply by "
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 21,
+            "text": "Divide by the HCF in one step — dividing by a smaller common factor just means you need to simplify again."
+          },
+          {
+            "field": "keyFacts[2].fact",
+            "words": 21,
+            "text": "To scale a quantity up or down using proportion, find the scale factor = (new amount) ÷ (original amount), then multiply"
+          }
+        ],
+        "keyfacts_words": 134
+      },
+      "chains_checked": 17
+    },
+    {
+      "id": "num-standard-form",
+      "topic": "M1",
+      "file": "lessons/maths/num-standard-form.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 1,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [
+        {
+          "type": "CHAIN_MISMATCH",
+          "where": "slides[2].conclusion",
+          "detail": "6.35 × 10⁶ ÷ 2.5 × 10³ = 2.54 × 10³"
+        }
+      ],
+      "worked_example": [
+        {
+          "label": "6,350,000 in standard form",
+          "field": "steps[0].result",
+          "literal": "6.35 × 10⁶",
+          "computed": 6350000,
+          "stated": 6350000,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "6.35 × 10⁶ ÷ 2.5 × 10³",
+          "field": "conclusion",
+          "literal": "2.54 × 10³.",
+          "computed": 2540,
+          "stated": 2540,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 356000,
+          "mistaken": "35.6 × 10⁴ (same value, not standard form)",
+          "how": "value equal, form wrong: a form mistake, not a false one"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 0.000034,
+          "mistaken": 34000,
+          "how": "positive power"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 4000,
+          "mistaken": 40000000,
+          "how": "adding powers"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 2,
+        "arrow_line_list": [
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "text": "Count the places carefully: 0.000034 → decimal moves 5 places right → 3.4 × 10⁻⁵."
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "text": "0.00049 → decimal moves 4 places right → 4.9 × 10⁻⁴."
+          }
+        ],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 70
+          },
+          {
+            "slide": 1,
+            "words": 116
+          },
+          {
+            "slide": 2,
+            "words": 133
+          },
+          {
+            "slide": 3,
+            "words": 143
+          }
+        ],
+        "sentences_over_20": 8,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 26,
+            "text": "It is the notation scientists use for distances between stars (enormous) and sizes of atoms (tiny), because it makes mul"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 30,
+            "text": "a is the coefficient — a number from 1 up to (but not including) 10. n is the power of 10 — positive for large numbers, "
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 25,
+            "text": "To convert: move the decimal point until one non-zero digit sits to its left; count the moves (left = positive n, right "
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 21,
+            "text": "Whenever a number is extremely large or extremely small — and whenever a question says 'give your answer in standard for"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 22,
+            "text": "Leaving the coefficient outside the range 1 ≤ a < 10 — e.g. writing 35.6 × 10⁴ instead of 3.56 × 10⁵."
+          },
+          {
+            "field": "slides[3].mistakes[0].correction",
+            "words": 22,
+            "text": "If it is 10 or more (or less than 1), adjust it by shifting the decimal point and changing the power accordingly."
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 21,
+            "text": "Using a positive power for a small number — e.g. writing 0.000034 as 3.4 × 10⁴ instead of 3.4 × 10⁻⁵."
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 21,
+            "text": "After every calculation in standard form, check the coefficient — it is the most common reason answers lose the final ma"
+          }
+        ],
+        "keyfacts_words": 152
+      },
+      "chains_checked": 19
+    },
+    {
+      "id": "prob-basic",
+      "topic": "M5",
+      "file": "lessons/maths/prob-basic.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 1,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 1,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 1
+      },
+      "faults": [
+        {
+          "type": "FALSE_MISTAKE",
+          "where": "commonMistakes.mistakes[2]",
+          "detail": "the mistaken method gives 0.4, which is the correct answer (4/10 and 2/5 are the same probability; an unsimplified fraction is not wrong unless the question asks for the simplest form)"
+        },
+        {
+          "type": "CHAIN_MISMATCH",
+          "where": "slides[3].mistakes[2].correction",
+          "detail": "4/10 ÷ 2 = 2/5"
+        }
+      ],
+      "worked_example": [
+        {
+          "label": "P(blue)",
+          "field": "conclusion",
+          "literal": "P(blue) = 1/2",
+          "computed": 0.5,
+          "stated": 0.5,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "P(not green)",
+          "field": "conclusion",
+          "literal": "P(not green) = 4/5",
+          "computed": 0.8,
+          "stated": 0.8,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 0.5,
+          "mistaken": 5,
+          "how": "count for probability"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 0.7,
+          "mistaken": 1.3,
+          "how": "1 + P(A)"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [
+            {
+              "type": "FALSE_MISTAKE",
+              "basis": "recompute",
+              "detail": "the mistaken method gives 0.4, which is the correct answer (4/10 and 2/5 are the same probability; an unsimplified fraction is not wrong unless the question asks for the simplest form)"
+            }
+          ],
+          "correct": 0.4,
+          "mistaken": 0.4,
+          "how": "4/10 and 2/5 are the same probability; an unsimplified fraction is not wrong unless the question asks for the simplest form"
+        }
+      ],
+      "found_by_reading": [
+        "mistakes[2] calls an unsimplified fraction (4/10) a mistake. It is the same value as 2/5; mark schemes accept equivalent fractions unless the question asks for simplest form."
+      ],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 3
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 89
+          },
+          {
+            "slide": 1,
+            "words": 148
+          },
+          {
+            "slide": 2,
+            "words": 93
+          },
+          {
+            "slide": 3,
+            "words": 121
+          }
+        ],
+        "sentences_over_20": 10,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 33,
+            "text": "Every probability is a number between 0 and 1 inclusive: 0 means impossible (it can never happen), 1 means certain (it a"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 23,
+            "text": "When you list every possible outcome of a situation, their probabilities must add up to exactly 1 — because something ha"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 26,
+            "text": "This means if you know the probability of an event, you can always find the probability of it not happening: P(not A) = "
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 28,
+            "text": "P(event) = number of favourable outcomes ÷ total number of equally likely outcomes  |  P(not A) = 1 − P(A)  |  Sum of al"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 23,
+            "text": "Count how many outcomes match the event you want (favourable outcomes) and divide by how many equally likely outcomes th"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 23,
+            "text": "This only works when all outcomes are equally likely — e.g. a fair die or a bag of identical objects except for colour."
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 21,
+            "text": "P(not A) = 1 − P(A) because A and not-A together cover every possibility, so their probabilities must add to 1."
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 25,
+            "text": "Also used whenever the question gives several probabilities and asks you to find the remaining one (use the fact that th"
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 22,
+            "text": "If the probabilities in a question don't add to 1, use that to find a missing value before answering the main question."
+          },
+          {
+            "field": "keyFacts[2].examTip",
+            "words": 25,
+            "text": "It's often faster to calculate P(not A) = 1 − P(A) than to count all the outcomes that aren't A, especially with large s"
+          }
+        ],
+        "keyfacts_words": 125
+      },
+      "chains_checked": 24
+    },
+    {
+      "id": "prob-combined",
+      "topic": "M5",
+      "file": "lessons/maths/prob-combined.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "P(sum 4) on two 1-3 spinners",
+          "field": "conclusion",
+          "literal": "= 1/3",
+          "computed": 0.3333333333333333,
+          "stated": 0.3333333333333333,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "add for AND"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "OR rule double-counting"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "missing outcomes"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 2
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 101
+          },
+          {
+            "slide": 1,
+            "words": 184
+          },
+          {
+            "slide": 2,
+            "words": 106
+          },
+          {
+            "slide": 3,
+            "words": 172
+          }
+        ],
+        "sentences_over_20": 9,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 40,
+            "text": "The rule you use depends on the relationship between the events: if two events cannot happen at the same time they are m"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 23,
+            "text": "If two events don't affect each other they are independent (e.g. flipping a coin and rolling a die), and you multiply th"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 26,
+            "text": "Independent events — AND rule: P(A and B) = P(A) × P(B)  |  Mutually exclusive events — OR rule: P(A or B) = P(A) + P(B)"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 28,
+            "text": "AND rule (multiply): use this when you want both events to happen and the events are independent — one outcome does not "
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 27,
+            "text": "OR rule (add): use this when you want either event to happen and the events are mutually exclusive — they cannot both ha"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 31,
+            "text": "Warning: the OR rule P(A or B) = P(A) + P(B) − P(A and B) is the general version; the simpler addition only works when A"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 21,
+            "text": "Any question asking for the probability of two events both occurring (multiply if independent) or either occurring (add "
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 26,
+            "text": "Using the OR rule P(A or B) = P(A) + P(B) when the events are not mutually exclusive — double-counting outcomes that are"
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 26,
+            "text": "If A and B can both happen at the same time, use the general rule: P(A or B) = P(A) + P(B) − P(A and B)."
+          }
+        ],
+        "keyfacts_words": 141
+      },
+      "chains_checked": 18
+    },
+    {
+      "id": "prob-conditional",
+      "topic": "M5",
+      "file": "lessons/maths/prob-conditional.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "P(Spanish | sport)",
+          "field": "conclusion",
+          "literal": "= 9/14",
+          "computed": 0.6428571428571429,
+          "stated": 0.6428571428571429,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 0.6428571428571429,
+          "mistaken": 0.225,
+          "how": "whole group"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 0.6428571428571429,
+          "mistaken": 0.375,
+          "how": "reversed condition"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "independence assumed"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 2
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 94
+          },
+          {
+            "slide": 1,
+            "words": 161
+          },
+          {
+            "slide": 2,
+            "words": 149
+          },
+          {
+            "slide": 3,
+            "words": 181
+          }
+        ],
+        "sentences_over_20": 11,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 23,
+            "text": "Conditional probability asks: given that one event has already happened (or is known to be true), what is the probabilit"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 23,
+            "text": "Knowing extra information restricts the sample space — you no longer consider all possible outcomes, only those consiste"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 38,
+            "text": "For example, if you know a card drawn is red, you're no longer considering all 52 cards — only the 26 red ones, so every"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 27,
+            "text": "P(A | B) is read as 'the probability of A given B' — given that B has already happened, what is the probability that A a"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 32,
+            "text": "In plain English: 'given that' means you already know B is true, so you only look at the outcomes where B has occurred, "
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 25,
+            "text": "From a table or Venn diagram: P(A | B) = n(A and B) ÷ n(B), where n means the count of items in that region."
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 22,
+            "text": "Any question using the phrase 'given that', 'knowing that', 'if it is known that', or 'find the probability that A, give"
+          },
+          {
+            "field": "slides[2].steps[0].instruction",
+            "words": 22,
+            "text": "Find the total number of students who play a sport (this is our restricted sample space — the condition 'plays a sport')"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 24,
+            "text": "Reversing the condition — finding P(plays sport | studies Spanish) = 9/24 when the question asks for P(studies Spanish |"
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 25,
+            "text": "Forgetting to check whether events are independent — applying the simple multiplication rule P(A) × P(B) when the questi"
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 22,
+            "text": "Identify the condition (what you already know) and use its count or probability as the denominator — not the total sampl"
+          }
+        ],
+        "keyfacts_words": 160
+      },
+      "chains_checked": 11
+    },
+    {
+      "id": "prob-tree",
+      "topic": "M5",
+      "file": "lessons/maths/prob-tree.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "P(both red) without replacement",
+          "field": "conclusion",
+          "literal": "= 2/15",
+          "computed": 0.13333333333333336,
+          "stated": 0.13333333333333333,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 0.13333333333333336,
+          "mistaken": 0.7333333333333334,
+          "how": "adding along branches"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 0.13333333333333336,
+          "mistaken": 0.12000000000000002,
+          "how": "same denominator"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 0.5333333333333334,
+          "mistaken": 0.2666666666666667,
+          "how": "one path only (for this bag)"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 3
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 115
+          },
+          {
+            "slide": 1,
+            "words": 178
+          },
+          {
+            "slide": 2,
+            "words": 119
+          },
+          {
+            "slide": 3,
+            "words": 176
+          }
+        ],
+        "sentences_over_20": 12,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 25,
+            "text": "Each branch is labelled with its probability, and the probabilities on any set of branches coming from the same point mu"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 40,
+            "text": "To find the probability of a particular sequence, multiply the probabilities along its path; to find the probability of "
+          },
+          {
+            "field": "slides[0].body",
+            "words": 21,
+            "text": "Whether an item is replaced before the next pick changes the probabilities on the second set of branches — always check."
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 37,
+            "text": "Probability of a path = multiply the branch probabilities along that path  |  Probability of an event = add the probabil"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 28,
+            "text": "For each complete path through the tree (one branch from each stage), multiply all the branch probabilities together — t"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 32,
+            "text": "If the event you want can be reached by more than one path, calculate each path probability separately and then add them"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 23,
+            "text": "Without replacement: after the first pick, one fewer item is in the bag, so the denominator decreases for the second set"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 24,
+            "text": "Also useful when the question asks for 'at least one' of an event — it's often easier to find P(none) and subtract from "
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 21,
+            "text": "Using the same denominator for both picks in a without-replacement question — writing 4/10 × 3/10 instead of 4/10 × 3/9."
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 22,
+            "text": "Without replacement means the total decreases by 1 after each pick, and the count of the picked colour also decreases by"
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 37,
+            "text": "Forgetting to add all paths when the event can happen in more than one way — only calculating one path for 'exactly one "
+          },
+          {
+            "field": "keyFacts[1].fact",
+            "words": 27,
+            "text": "Without replacement: the denominator on the second set of branches is one less than the first, and the numerator for the"
+          }
+        ],
+        "keyfacts_words": 150
+      },
+      "chains_checked": 8
+    },
+    {
+      "id": "prob-venn",
+      "topic": "M5",
+      "file": "lessons/maths/prob-venn.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "neither",
+          "field": "conclusion",
+          "literal": "5 students",
+          "computed": 5,
+          "stated": 5,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "P(French only)",
+          "field": "conclusion",
+          "literal": "= 11/30",
+          "computed": 0.36666666666666664,
+          "stated": 0.36666666666666664,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 11,
+          "mistaken": 18,
+          "how": "circle total in one region"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "outside region"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "∩ versus ∪"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 6
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 109
+          },
+          {
+            "slide": 1,
+            "words": 185
+          },
+          {
+            "slide": 2,
+            "words": 122
+          },
+          {
+            "slide": 3,
+            "words": 168
+          }
+        ],
+        "sentences_over_20": 8,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 60,
+            "text": "Each region has a specific meaning you must understand before calculating anything: the left-only region contains items "
+          },
+          {
+            "field": "slides[0].body",
+            "words": 23,
+            "text": "Every item in the diagram belongs to exactly one of these four regions, and all the numbers must add up to the total."
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 60,
+            "text": "A ∩ B (intersection) = items in both A and B  |  A ∪ B (union) = items in A or B or both  |  A' (complement) = items not"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 22,
+            "text": "The complement A' (read 'A prime' or 'not A') means everything outside circle A, including the outside region and the B-"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 23,
+            "text": "To find a probability from a Venn diagram, count the items in the relevant region and divide by the total number of item"
+          },
+          {
+            "field": "slides[3].mistakes[0].correction",
+            "words": 21,
+            "text": "The number in the French circle is split between the French-only region (18 − 7 = 11) and the intersection (7)."
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 21,
+            "text": "After filling the circles, sum all values inside the circles and subtract from the grand total to find the 'neither' cou"
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 26,
+            "text": "A common exam trap is giving you P(A), P(B) and P(A ∩ B) and asking for P(A ∪ B) — this formula is the direct route."
+          }
+        ],
+        "keyfacts_words": 135
+      },
+      "chains_checked": 19
+    },
+    {
+      "id": "rpr-compound-measures",
+      "topic": "M3",
+      "file": "lessons/maths/rpr-compound-measures.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "density 135 ÷ 50",
+          "field": "conclusion",
+          "literal": "2.7 g/cm³",
+          "computed": 2.7,
+          "stated": 2.7,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 2.7,
+          "mistaken": 0.37037037037037035,
+          "how": "V ÷ M"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "units"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "M = D ÷ V rearrangement (no numbers)"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 2
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 94
+          },
+          {
+            "slide": 1,
+            "words": 136
+          },
+          {
+            "slide": 2,
+            "words": 100
+          },
+          {
+            "slide": 3,
+            "words": 186
+          }
+        ],
+        "sentences_over_20": 7,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 21,
+            "text": "Density measures how much mass is packed into a given volume — a denser material feels heavier for the same size."
+          },
+          {
+            "field": "slides[0].body",
+            "words": 35,
+            "text": "Pressure measures how much force acts on a given area — a stiletto heel exerts much higher pressure than a flat shoe of "
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 26,
+            "text": "Both formulas follow the same triangle structure: the compound measure (D or P) is at the top — divide by it to isolate "
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 30,
+            "text": "Any question giving two of the three quantities (mass/volume/density or force/area/pressure) and asking for the third — "
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 27,
+            "text": "Dividing volume by mass instead of mass by volume — e.g. density = 50 ÷ 135 ≈ 0.37 g/cm³ instead of 135 ÷ 50 = 2.7 g/cm³"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 23,
+            "text": "Omitting or mixing up units — e.g. giving density as just '2.7' without g/cm³, or calculating in grams but stating units"
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 27,
+            "text": "Rearranging the formula incorrectly when finding mass or volume — e.g. to find mass, writing M = D ÷ V instead of M = D "
+          }
+        ],
+        "keyfacts_words": 122
+      },
+      "chains_checked": 34
+    },
+    {
+      "id": "rpr-growth-decay",
+      "topic": "M3",
+      "file": "lessons/maths/rpr-growth-decay.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "8000 × 0.85²",
+          "field": "conclusion",
+          "literal": "£5,780",
+          "computed": 5779.999999999999,
+          "stated": 5780,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 5779.999999999999,
+          "mistaken": 5600,
+          "how": "simple decay"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 0.85,
+          "mistaken": 1.15,
+          "how": "growth multiplier"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 2382.03,
+          "mistaken": 2380,
+          "how": "multiplier rounded to 1.19"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 1,
+        "arrow_line_list": [
+          {
+            "field": "slides[3].mistakes[0].correction",
+            "text": "Compound decay applies the multiplier to the current value each period: year 1 → 8000 × 0.85 = £6,800; year 2 → 6,800 × 0.85 = £5,780."
+          }
+        ],
+        "formula_pipes": 0,
+        "formula_pipe_parts": [],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 108
+          },
+          {
+            "slide": 1,
+            "words": 147
+          },
+          {
+            "slide": 2,
+            "words": 132
+          },
+          {
+            "slide": 3,
+            "words": 185
+          }
+        ],
+        "sentences_over_20": 10,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 23,
+            "text": "Compound growth applies the percentage to whatever the current total is, so the amount added gets bigger each period as "
+          },
+          {
+            "field": "slides[0].body",
+            "words": 38,
+            "text": "Over time the difference is enormous: a £1,000 investment at 5% simple interest gains exactly £50 every year; at 5% comp"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 36,
+            "text": "P is the starting (principal) amount. m is the multiplier — for r% growth, m = 1 + r/100; for r% decay, m = 1 − r/100. n"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 29,
+            "text": "The key distinction: growth gives m > 1 (the total increases each period); decay gives 0 < m < 1 (the total decreases ea"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 23,
+            "text": "Any question involving repeated percentage change over multiple periods — compound interest, population growth, radioact"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 25,
+            "text": "If the percentage is applied to the original amount only (not the running total), it is simple interest and you use I = "
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 34,
+            "text": "Using simple decay instead of compound — e.g. for a 15% annual depreciation over 2 years, subtracting 15% twice from the"
+          },
+          {
+            "field": "slides[3].mistakes[0].correction",
+            "words": 27,
+            "text": "Compound decay applies the multiplier to the current value each period: year 1 → 8000 × 0.85 = £6,800; year 2 → 6,800 × "
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 28,
+            "text": "Rounding the multiplier mⁿ to 2 decimal places before multiplying — e.g. rounding 1.06³ = 1.191016 to 1.19 and getting £"
+          },
+          {
+            "field": "keyFacts[2].fact",
+            "words": 25,
+            "text": "For compound decay, the quantity never reaches zero — each period removes a percentage of what remains, so the amount de"
+          }
+        ],
+        "keyfacts_words": 163
+      },
+      "chains_checked": 32
+    },
+    {
+      "id": "rpr-percentage-change",
+      "topic": "M3",
+      "file": "lessons/maths/rpr-percentage-change.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "decrease 160 → 120",
+          "field": "conclusion",
+          "literal": "25%",
+          "computed": 25,
+          "stated": 25,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 25,
+          "mistaken": 20,
+          "how": "dividing by the new value"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 500.00000000000006,
+          "mistaken": 455,
+          "how": "adding 30% back"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 2249.73,
+          "mistaken": 2240,
+          "how": "simple interest"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 4
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 84
+          },
+          {
+            "slide": 1,
+            "words": 164
+          },
+          {
+            "slide": 2,
+            "words": 98
+          },
+          {
+            "slide": 3,
+            "words": 196
+          }
+        ],
+        "sentences_over_20": 10,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 24,
+            "text": "Percentage change expresses an increase or decrease as a proportion of the original value, making it possible to compare"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 22,
+            "text": "The multiplier method is the most powerful tool: a 20% increase means multiply by 1.20; a 20% decrease means multiply by"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 28,
+            "text": "Compound interest applies the multiplier repeatedly — each year's interest is calculated on the new total, not just the "
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 29,
+            "text": "% change = (change ÷ original) × 100 | Increase multiplier = 1 + (r/100) | Decrease multiplier = 1 − (r/100) | Compound:"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 23,
+            "text": "For applying a % increase or decrease: multiply by 1 + r/100 (increase) or 1 − r/100 (decrease), where r is the percenta"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 27,
+            "text": "For compound interest or depreciation: A = P × mⁿ, where P is the starting amount, m is the multiplier, and n is the num"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 36,
+            "text": "Calculating % change between two values; applying a % increase or decrease to find a new value; finding the original val"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 34,
+            "text": "Dividing the change by the new value instead of the original — e.g. for a price rising from £40 to £50, calculating 10 ÷"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 40,
+            "text": "Reversing a percentage change by adding or subtracting the percentage directly — e.g. a TV costs £350 after a 30% reduct"
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 35,
+            "text": "Using simple interest instead of compound — e.g. for £2,000 at 4% for 3 years, calculating 4% × 3 = 12% total, giving £2"
+          }
+        ],
+        "keyfacts_words": 197
+      },
+      "chains_checked": 28
+    },
+    {
+      "id": "rpr-proportion",
+      "topic": "M3",
+      "file": "lessons/maths/rpr-proportion.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 1,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 1
+      },
+      "faults": [
+        {
+          "type": "FALSE_MISTAKE",
+          "where": "commonMistakes.mistakes[2]",
+          "detail": "the mistaken method gives 21, which is the correct answer (for y = kx, adding 3 × k to y(4) gives y(7) exactly: the additive method with the right \"value\" (k) is correct)"
+        }
+      ],
+      "worked_example": [
+        {
+          "label": "k",
+          "field": "steps[0].result",
+          "literal": "k = 3",
+          "computed": 3,
+          "stated": 3,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "y when x = 8",
+          "field": "conclusion",
+          "literal": "y = 24",
+          "computed": 24,
+          "stated": 24,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "y = kx used for inverse proportion (no numbers)"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 4,
+          "mistaken": 12,
+          "how": "x not squared"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [
+            {
+              "type": "FALSE_MISTAKE",
+              "basis": "recompute",
+              "detail": "the mistaken method gives 21, which is the correct answer (for y = kx, adding 3 × k to y(4) gives y(7) exactly: the additive method with the right \"value\" (k) is correct)"
+            }
+          ],
+          "correct": 21,
+          "mistaken": 21,
+          "how": "for y = kx, adding 3 × k to y(4) gives y(7) exactly: the additive method with the right \"value\" (k) is correct"
+        }
+      ],
+      "found_by_reading": [
+        "mistakes[2] calls an additive method a mistake for direct proportion. For y = kx, adding 3k when x goes from 4 to 7 gives the right y; \"some value\" is not defined, so the item does not show a real error."
+      ],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 3
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 75
+          },
+          {
+            "slide": 1,
+            "words": 149
+          },
+          {
+            "slide": 2,
+            "words": 115
+          },
+          {
+            "slide": 3,
+            "words": 201
+          }
+        ],
+        "sentences_over_20": 10,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 22,
+            "text": "Two quantities are in direct proportion when they increase and decrease together at the same rate — doubling one doubles"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 23,
+            "text": "They are in inverse proportion when one increases as the other decreases in exactly the opposite way — doubling one halv"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 26,
+            "text": "Direct: y = kx (or y ∝ x) | Inverse: y = k/x (or y ∝ 1/x) | Other: y = kxⁿ or y = k/xⁿ"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 22,
+            "text": "k is the constant of proportionality — it stays the same for all pairs of x and y values in the relationship."
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 32,
+            "text": "Whenever a question says 'y is directly/inversely proportional to x', or 'y is proportional to x²' — find k from the giv"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 31,
+            "text": "Confusing direct and inverse proportion — e.g. for y ∝ 1/x, writing y = kx (direct) instead of y = k/x, then getting k ="
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 42,
+            "text": "Forgetting to square x before finding k in y ∝ x² — e.g. for y = kx² with x = 3 and y = 36, writing k = 36 ÷ 3 = 12 inst"
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 22,
+            "text": "Square x first: y = kx² → k = y ÷ x² = 36 ÷ 3² = 36 ÷ 9 = 4."
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 45,
+            "text": "Using an additive method rather than finding k — e.g. for y = kx with x going from 4 to 7 (an increase of 3), adding 3 ×"
+          },
+          {
+            "field": "keyFacts[2].fact",
+            "words": 28,
+            "text": "For y ∝ xⁿ: write y = kxⁿ, substitute the given pair to find k (remember to calculate xⁿ first), then use y = kxⁿ for th"
+          }
+        ],
+        "keyfacts_words": 138
+      },
+      "chains_checked": 51
+    },
+    {
+      "id": "rpr-ratio",
+      "topic": "M3",
+      "file": "lessons/maths/rpr-ratio.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "£108 in 5:4, first share",
+          "field": "conclusion",
+          "literal": "£60",
+          "computed": 60,
+          "stated": 60,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "£108 in 5:4, second share",
+          "field": "conclusion",
+          "literal": "£48",
+          "computed": 48,
+          "stated": 48,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 12,
+          "mistaken": 21.6,
+          "how": "dividing by 5"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": "5:3",
+          "mistaken": "10:6",
+          "how": "stopping at 10:6"
+        },
+        {
+          "item": 3,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 28,
+          "mistaken": 7,
+          "how": "difference ÷ total parts"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 2
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 69
+          },
+          {
+            "slide": 1,
+            "words": 135
+          },
+          {
+            "slide": 2,
+            "words": 101
+          },
+          {
+            "slide": 3,
+            "words": 196
+          }
+        ],
+        "sentences_over_20": 10,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 31,
+            "text": "Ratios can be simplified by dividing all parts by their highest common factor (HCF), and used to share a total — by find"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 33,
+            "text": "To simplify a ratio, find the highest common factor of all the numbers and divide every part by it — the ratio 30 : 18 s"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 42,
+            "text": "To share a total in a given ratio: add all the ratio numbers to find the total number of parts; divide the total quantit"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 27,
+            "text": "Any time you need to write a ratio in its simplest form, or share a quantity (money, ingredients, length) between people"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 35,
+            "text": "Dividing the total by the largest ratio number instead of the sum — e.g. for £108 in ratio 5:4, dividing by 5 to get £21"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 31,
+            "text": "Dividing by a common factor that is not the HCF when simplifying, then stopping — e.g. simplifying 30:18 by dividing by "
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 44,
+            "text": "When the difference between shares is given, dividing by the total parts instead of the difference in parts — e.g. if on"
+          },
+          {
+            "field": "slides[3].mistakes[2].correction",
+            "words": 29,
+            "text": "If a difference between shares is given: find the difference in ratio parts (5−3=2), then 1 part = difference in value ÷"
+          },
+          {
+            "field": "keyFacts[1].fact",
+            "words": 28,
+            "text": "To share in ratio: find total parts (add all ratio numbers), then 1 part = total quantity ÷ total parts, then multiply e"
+          },
+          {
+            "field": "keyFacts[2].fact",
+            "words": 27,
+            "text": "If the difference between two shares is known, the difference in ratio parts is the key: 1 part = difference in value ÷ "
+          }
+        ],
+        "keyfacts_words": 141
+      },
+      "chains_checked": 13
+    },
+    {
+      "id": "rpr-speed",
+      "topic": "M3",
+      "file": "lessons/maths/rpr-speed.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 1,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 1
+      },
+      "faults": [
+        {
+          "type": "FALSE_MISTAKE",
+          "where": "commonMistakes.mistakes[1]",
+          "detail": "the mistaken method gives 25, which is the correct answer (mean of the two speeds: both legs take 2 h, so it gives the right answer here)"
+        }
+      ],
+      "worked_example": [
+        {
+          "label": "126 km in 1.5 h",
+          "field": "conclusion",
+          "literal": "84 km/h",
+          "computed": 84,
+          "stated": 84,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 1.3333333333333333,
+          "mistaken": 1.2,
+          "how": "minutes after the point"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [
+            {
+              "type": "FALSE_MISTAKE",
+              "basis": "recompute",
+              "detail": "the mistaken method gives 25, which is the correct answer (mean of the two speeds: both legs take 2 h, so it gives the right answer here)"
+            }
+          ],
+          "correct": 25,
+          "mistaken": 25,
+          "how": "mean of the two speeds: both legs take 2 h, so it gives the right answer here"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "time ÷ distance"
+        }
+      ],
+      "found_by_reading": [
+        "mistakes[1]: the example chosen makes the \"wrong\" method give the right answer (25 km/h both ways, because both legs take 2 hours)."
+      ],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 3
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 87
+          },
+          {
+            "slide": 1,
+            "words": 132
+          },
+          {
+            "slide": 2,
+            "words": 84
+          },
+          {
+            "slide": 3,
+            "words": 200
+          }
+        ],
+        "sentences_over_20": 10,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 28,
+            "text": "The units must be consistent: if speed is in km/h, distance must be in km and time must be in hours — convert minutes to"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 32,
+            "text": "Cover the one you want to find to see the formula: cover D to get S × T; cover S to get D ÷ T; cover T to get D ÷ S."
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 22,
+            "text": "For a journey in two parts, average speed = total distance ÷ total time — calculate each journey time separately, then a"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 27,
+            "text": "Any question involving speed, distance and time — finding one given the other two, converting between units of time, or "
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 22,
+            "text": "Converting minutes to hours incorrectly — e.g. treating 1 hour 20 minutes as 1.2 hours instead of 1.333... hours (1 + 20"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 35,
+            "text": "Calculating average speed as the mean of two speeds — e.g. for a journey of 40 km at 20 km/h then 60 km at 30 km/h, writ"
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 24,
+            "text": "Find each leg's time separately (t₁ = 40/20 = 2 h, t₂ = 60/30 = 2 h), then: 100 ÷ 4 = 25 km/h."
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 23,
+            "text": "Inverting the formula — calculating time ÷ distance instead of distance ÷ time for speed, giving an answer in hours/km i"
+          },
+          {
+            "field": "slides[3].mistakes[2].correction",
+            "words": 23,
+            "text": "Use the triangle: cover Speed, and what remains is D on top and T on the bottom — S = D ÷ T."
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 21,
+            "text": "Never write 1h 20min as 1.20 h — that treats 20 minutes as 20 hundredths of an hour, which is wrong."
+          }
+        ],
+        "keyfacts_words": 125
+      },
+      "chains_checked": 28
+    },
+    {
+      "id": "stat-averages",
+      "topic": "M6",
+      "file": "lessons/maths/stat-averages.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "mean",
+          "field": "conclusion",
+          "literal": "Mean ≈ 14.4",
+          "computed": 14.4,
+          "stated": 14.4,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "median",
+          "field": "conclusion",
+          "literal": "Median = 14",
+          "computed": 14,
+          "stated": 14,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "mode",
+          "field": "conclusion",
+          "literal": "Mode = 11",
+          "computed": 11,
+          "stated": 11,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "range",
+          "field": "conclusion",
+          "literal": "Range = 9",
+          "computed": 9,
+          "stated": 9,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 14,
+          "mistaken": 18,
+          "how": "middle of the unsorted list (for this data)"
+        },
+        {
+          "item": 2,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 14.428571428571429,
+          "mistaken": 16.833333333333332,
+          "how": "dividing by 6"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "position for value"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 4
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 123
+          },
+          {
+            "slide": 1,
+            "words": 213
+          },
+          {
+            "slide": 2,
+            "words": 135
+          },
+          {
+            "slide": 3,
+            "words": 146
+          }
+        ],
+        "sentences_over_20": 8,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 26,
+            "text": "An average is a single value that represents a whole data set, but there are three different averages and they don't alw"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 41,
+            "text": "The mean uses every value in the data so it's the best measure when the data is fairly even — but one very large or very"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 44,
+            "text": "The median is the middle value when the data is sorted, so it ignores outliers and gives a more honest picture of what's"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 50,
+            "text": "Mean = sum of all values ÷ number of values  |  Median = middle value when data is sorted in order (average of the two m"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 28,
+            "text": "Use mean for uniform numerical data; use median when outliers are present or suspected; use mode for categorical data or"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 28,
+            "text": "Dividing by the number of distinct values for the mean instead of the total count — e.g. dividing by 6 instead of 7 when"
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 30,
+            "text": "If a question asks which average best represents data that includes a very high or low value, the answer is almost alway"
+          },
+          {
+            "field": "keyFacts[2].examTip",
+            "words": 30,
+            "text": "Comparing two data sets: if the means are similar but one has a larger range, the data in that set is less consistent — "
+          }
+        ],
+        "keyfacts_words": 163
+      },
+      "chains_checked": 22
+    },
+    {
+      "id": "stat-boxplots",
+      "topic": "M6",
+      "file": "lessons/maths/stat-boxplots.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "Q1",
+          "field": "conclusion",
+          "literal": "26.5",
+          "computed": 26.5,
+          "stated": 26.5,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "median",
+          "field": "conclusion",
+          "literal": "33",
+          "computed": 33,
+          "stated": 33,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "Q3",
+          "field": "conclusion",
+          "literal": "40",
+          "computed": 40,
+          "stated": 40,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "IQR",
+          "field": "conclusion",
+          "literal": "IQR = 13.5",
+          "computed": 13.5,
+          "stated": 13.5,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 26.5,
+          "mistaken": 28,
+          "how": "lower half with the median included (22, 25, 28, 31, 33) gives Q1 = 28"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "whisker to an outlier"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "median only"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 4
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 130
+          },
+          {
+            "slide": 1,
+            "words": 187
+          },
+          {
+            "slide": 2,
+            "words": 175
+          },
+          {
+            "slide": 3,
+            "words": 180
+          }
+        ],
+        "sentences_over_20": 16,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 64,
+            "text": "A box plot (also called a box-and-whisker diagram) displays five key values from a data set in a single diagram: the min"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 26,
+            "text": "The box spans from Q1 to Q3 and contains the middle 50% of the data; the whiskers extend from the box to the minimum and"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 30,
+            "text": "The width of the box shows the interquartile range (IQR = Q3 − Q1) at a glance — a narrow box means the data is tightly "
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 34,
+            "text": "Five-number summary: Minimum, Q1 (Lower Quartile), Median (Q2), Q3 (Upper Quartile), Maximum  |  IQR = Q3 − Q1  |  Lower"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 22,
+            "text": "To find the five values from a sorted data set of n values: minimum is the first value; maximum is the last."
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 21,
+            "text": "For the lower quartile, take the lower half of the data (all values below the median position) and find their median."
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 25,
+            "text": "On a box plot, the vertical line inside the box marks the median; the left and right edges of the box are Q1 and Q3."
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 25,
+            "text": "Comparing two or more data sets — place box plots on the same scale to compare medians (typical value) and IQRs (spread/"
+          },
+          {
+            "field": "slides[2].question",
+            "words": 22,
+            "text": "The times (minutes) for 9 runners to finish a race, sorted in order: 22, 25, 28, 31, 33, 36, 38, 42, 47."
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 29,
+            "text": "Including the median value in both halves when finding Q1 and Q3 — using all 9 values for the lower half instead of just"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 26,
+            "text": "Drawing the whisker to the wrong point — stretching it to an outlier far from the rest of the data, which makes the box "
+          },
+          {
+            "field": "slides[3].mistakes[2].correction",
+            "words": 27,
+            "text": "A complete comparison needs at least two statements: compare the medians (which group has the higher typical value) AND "
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 23,
+            "text": "When drawing a box plot, use a ruler and mark all five points on a number line before drawing the box and whiskers."
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 22,
+            "text": "State which group has the higher median AND which has the smaller IQR, then explain what this means in context — e.g."
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 25,
+            "text": "'Group A has a higher median score (56 vs 48) and a smaller IQR (12 vs 20), suggesting Group A performed better and more"
+          },
+          {
+            "field": "keyFacts[2].fact",
+            "words": 21,
+            "text": "For n data values sorted in order: Q1 = median of the lower half; Q3 = median of the upper half."
+          }
+        ],
+        "keyfacts_words": 180
+      },
+      "chains_checked": 23
+    },
+    {
+      "id": "stat-charts",
+      "topic": "M6",
+      "file": "lessons/maths/stat-charts.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "Science sector",
+          "field": "conclusion",
+          "literal": "96°",
+          "computed": 96,
+          "stated": 96,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "Maths sector",
+          "field": "steps[2].instruction",
+          "literal": "= 144°",
+          "computed": 144,
+          "stated": 144,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "English sector",
+          "field": "steps[2].instruction",
+          "literal": "= 120°",
+          "computed": 120,
+          "stated": 120,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "numeric",
+          "verdicts": [],
+          "correct": 96,
+          "mistaken": 45,
+          "how": "360 ÷ frequency"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "histogram axis"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "bar height for frequency"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 3
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 106
+          },
+          {
+            "slide": 1,
+            "words": 155
+          },
+          {
+            "slide": 2,
+            "words": 103
+          },
+          {
+            "slide": 3,
+            "words": 153
+          }
+        ],
+        "sentences_over_20": 4,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 23,
+            "text": "Frequency polygons and histograms are for continuous data (things you measure, like height or time), where values fall i"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 37,
+            "text": "The key difference with histograms is that the area of each bar represents the frequency, not the height — so if class i"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 27,
+            "text": "Pie chart sector angle = (frequency ÷ total frequency) × 360°  |  Frequency density = frequency ÷ class width  |  Freque"
+          },
+          {
+            "field": "keyFacts[2].examTip",
+            "words": 28,
+            "text": "Drawing a bar chart for continuous data (e.g. height in cm ranges) is a common error — use a histogram instead and check"
+          }
+        ],
+        "keyfacts_words": 147
+      },
+      "chains_checked": 18
+    },
+    {
+      "id": "stat-cumulative",
+      "topic": "M6",
+      "file": "lessons/maths/stat-cumulative.json",
+      "counts": {
+        "WE_MISMATCH": 1,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [
+        {
+          "type": "WE_MISMATCH",
+          "where": "workedExample.conclusion",
+          "detail": "median by straight-line reading: computed 24, lesson states 26"
+        }
+      ],
+      "worked_example": [
+        {
+          "label": "cumulative frequencies",
+          "field": "steps[0].instruction",
+          "literal": "(10, 4), (20, 14), (30, 28), (40, 37), (50, 40)",
+          "computed": "4,14,28,37,40",
+          "stated": "4,14,28,37,40",
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "median by straight-line reading",
+          "field": "conclusion",
+          "literal": "approximately 26 minutes",
+          "computed": 24,
+          "stated": 26,
+          "found": true,
+          "ok": false
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "midpoints"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "reading from the table"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "IQR versus range"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 4
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 90
+          },
+          {
+            "slide": 1,
+            "words": 141
+          },
+          {
+            "slide": 2,
+            "words": 212
+          },
+          {
+            "slide": 3,
+            "words": 184
+          }
+        ],
+        "sentences_over_20": 11,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 30,
+            "text": "Cumulative frequency is a running total of frequencies — you add each frequency to all the ones before it, so the final "
+          },
+          {
+            "field": "slides[0].body",
+            "words": 32,
+            "text": "Once drawn, you can read off the median, lower quartile and upper quartile directly from the graph by going across from "
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 26,
+            "text": "Median position = n/2  |  Lower quartile (Q1) position = n/4  |  Upper quartile (Q3) position = 3n/4  |  Interquartile r"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 34,
+            "text": "For a data set of n values: read across from n/2 on the cumulative frequency axis to find the median; from n/4 to find t"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 26,
+            "text": "The IQR = Q3 − Q1 measures the spread of the middle 50% of the data and is less affected by outliers than the full range"
+          },
+          {
+            "field": "slides[2].steps[0].working",
+            "words": 34,
+            "text": "CF: up to 10 = 4; up to 20 = 4+10 = 14; up to 30 = 14+14 = 28; up to 40 = 28+9 = 37; up to 50 = 37+3 = 40."
+          },
+          {
+            "field": "slides[2].steps[2].instruction",
+            "words": 24,
+            "text": "Check: 20 is between CF values of 14 and 28, so the median should lie between 20 and 30 minutes — 26 is consistent."
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 26,
+            "text": "Using n/2 as the median when working with a cumulative frequency graph, but reading the x-value directly from the table "
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 26,
+            "text": "Read the median from the graph by going across from n/2 on the CF axis to the curve, then reading straight down to the h"
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 32,
+            "text": "Draw dotted lines on the CF graph for each quartile reading — examiners can see your method and may award marks for corr"
+          },
+          {
+            "field": "keyFacts[2].examTip",
+            "words": 22,
+            "text": "When comparing two groups, compare medians (typical value) AND IQRs (consistency) — and relate both back to the context "
+          }
+        ],
+        "keyfacts_words": 146
+      },
+      "chains_checked": 20
+    },
+    {
+      "id": "stat-sampling",
+      "topic": "M6",
+      "file": "lessons/maths/stat-sampling.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "P(A)",
+          "field": "conclusion",
+          "literal": "P(A) = 0.25",
+          "computed": 0.25,
+          "stated": 0.25,
+          "found": true,
+          "ok": true
+        },
+        {
+          "label": "expected frequency",
+          "field": "conclusion",
+          "literal": "87.5",
+          "computed": 87.5,
+          "stated": 87.5,
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "expected frequency for probability"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "small sample"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "biased selection"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 2
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 129
+          },
+          {
+            "slide": 1,
+            "words": 149
+          },
+          {
+            "slide": 2,
+            "words": 148
+          },
+          {
+            "slide": 3,
+            "words": 187
+          }
+        ],
+        "sentences_over_20": 11,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 28,
+            "text": "A population is every member of the group you're interested in — every student in a school, every fish in a lake, every "
+          },
+          {
+            "field": "slides[0].body",
+            "words": 24,
+            "text": "A sample is a smaller group chosen from the population to collect data from, because surveying the entire population is "
+          },
+          {
+            "field": "slides[0].body",
+            "words": 62,
+            "text": "For a sample to be useful, it must be representative — it should reflect the makeup of the whole population — and ideall"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 24,
+            "text": "Expected frequency = probability × number of trials  |  Relative frequency (estimated probability) = number of times eve"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 32,
+            "text": "Multiply the probability of the event by the total number of trials: if P(event) = 0.3 and you repeat the trial 200 time"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 23,
+            "text": "Relative frequency is the experimental probability estimated from data: divide the number of times the event happened by"
+          },
+          {
+            "field": "slides[2].steps[2].instruction",
+            "words": 25,
+            "text": "Expected frequency can be a decimal — it represents the average result over many repetitions, not an exact count for one"
+          },
+          {
+            "field": "slides[3].mistakes[0].correction",
+            "words": 21,
+            "text": "Keep them clearly separate: P(A) = 0.25 is the probability; 87.5 is how many times you'd expect A in 350 trials."
+          },
+          {
+            "field": "slides[3].mistakes[1].correction",
+            "words": 29,
+            "text": "If a sample of 10 shows 3 left-handed people, you shouldn't conclude that 30% of the whole population is left-handed — t"
+          },
+          {
+            "field": "slides[3].mistakes[2].mistake",
+            "words": 21,
+            "text": "Assuming a sample is representative just because it was chosen from the right group — ignoring how the sample was select"
+          },
+          {
+            "field": "slides[3].mistakes[2].correction",
+            "words": 22,
+            "text": "A truly representative sample requires a random selection method where every member of the population has an equal chanc"
+          }
+        ],
+        "keyfacts_words": 154
+      },
+      "chains_checked": 14
+    },
+    {
+      "id": "stat-scatter",
+      "topic": "M6",
+      "file": "lessons/maths/stat-scatter.json",
+      "counts": {
+        "WE_MISMATCH": 0,
+        "CORRECTION_WRONG": 0,
+        "FALSE_MISTAKE": 0,
+        "CLAIM_MISMATCH": 0,
+        "CHAIN_MISMATCH": 0,
+        "NE_EQUAL": 0,
+        "ARROW_ROOT_MISMATCH": 0,
+        "LITERAL_NOT_FOUND": 0,
+        "NO_FNS": 0,
+        "FALSE_MISTAKE_ITEMS": 0
+      },
+      "faults": [],
+      "worked_example": [
+        {
+          "label": "6 h inside 2 to 9 h",
+          "field": "conclusion",
+          "literal": "interpolation",
+          "computed": "interpolation",
+          "stated": "interpolation",
+          "found": true,
+          "ok": true
+        }
+      ],
+      "mistakes": [
+        {
+          "item": 1,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "causation"
+        },
+        {
+          "item": 2,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "line through origin"
+        },
+        {
+          "item": 3,
+          "kind": "concept",
+          "verdicts": [],
+          "note": "no context"
+        }
+      ],
+      "found_by_reading": [],
+      "density": {
+        "arrow_lines": 0,
+        "arrow_line_list": [],
+        "formula_pipes": 1,
+        "formula_pipe_parts": [
+          {
+            "slide": 1,
+            "parts": 3
+          }
+        ],
+        "slides_over_60": 4,
+        "slide_words": [
+          {
+            "slide": 0,
+            "words": 135
+          },
+          {
+            "slide": 1,
+            "words": 200
+          },
+          {
+            "slide": 2,
+            "words": 170
+          },
+          {
+            "slide": 3,
+            "words": 175
+          }
+        ],
+        "sentences_over_20": 14,
+        "long_sentences": [
+          {
+            "field": "slides[0].body",
+            "words": 27,
+            "text": "A scatter graph plots two variables against each other as a cloud of points, and the pattern of those points tells you w"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 36,
+            "text": "Positive correlation means that as one variable increases, the other tends to increase too — the points slope upward fro"
+          },
+          {
+            "field": "slides[0].body",
+            "words": 37,
+            "text": "Negative correlation means that as one variable increases, the other tends to decrease — the points slope downward from "
+          },
+          {
+            "field": "slides[0].body",
+            "words": 23,
+            "text": "No correlation means there is no consistent pattern — the points are scattered randomly with no clear direction (e.g. sh"
+          },
+          {
+            "field": "slides[1].formula",
+            "words": 49,
+            "text": "Line of best fit: drawn through the middle of the data cloud with roughly equal numbers of points above and below  |  In"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 34,
+            "text": "A line of best fit is a straight line drawn by eye that passes through the mean point (mean of x, mean of y) and balance"
+          },
+          {
+            "field": "slides[1].formulaExplained",
+            "words": 23,
+            "text": "Extrapolation extends the line beyond the data range to predict a value — this is less reliable because the trend may no"
+          },
+          {
+            "field": "slides[1].whenToUse",
+            "words": 25,
+            "text": "Any question asking you to describe the relationship between two variables, draw a line of best fit, or use the line to "
+          },
+          {
+            "field": "slides[2].question",
+            "words": 32,
+            "text": "Describe the correlation and comment on the reliability of using the line to predict sales on a day with 6 hours of suns"
+          },
+          {
+            "field": "slides[3].mistakes[0].mistake",
+            "words": 21,
+            "text": "Confusing correlation with causation — saying that sunshine causes ice cream sales to rise because the scatter graph sho"
+          },
+          {
+            "field": "slides[3].mistakes[1].mistake",
+            "words": 24,
+            "text": "Drawing the line of best fit through the origin (0, 0) because it 'looks right', rather than through the middle of the d"
+          },
+          {
+            "field": "keyFacts[0].examTip",
+            "words": 23,
+            "text": "Describe correlation in context every time — name the two variables and use language like 'tends to increase' rather tha"
+          },
+          {
+            "field": "keyFacts[1].examTip",
+            "words": 32,
+            "text": "If an exam question asks whether a conclusion is valid, and the conclusion says one thing 'causes' another based on a sc"
+          },
+          {
+            "field": "keyFacts[2].examTip",
+            "words": 23,
+            "text": "State whether a prediction is interpolation or extrapolation and explain why this affects reliability — examiners expect"
+          }
+        ],
+        "keyfacts_words": 128
+      },
+      "chains_checked": 0
+    }
+  ]
+}

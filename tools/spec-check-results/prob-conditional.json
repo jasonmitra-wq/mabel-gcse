@@ -1,0 +1,133 @@
+{
+  "lesson": "prob-conditional",
+  "source_file": "lessons/maths/prob-conditional.json",
+  "lesson_md5": "b80f08a50dba53f4507054605a392cbb",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:41:19.993Z",
+  "specRefs_sent": [
+    "P9"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3003,
+    "output_tokens": 3728
+  },
+  "cost_usd": 0.086572,
+  "status": "OK",
+  "result": {
+    "lesson": "prob-conditional",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "If the question says 'without replacement' or 'given that', the events are not independent.",
+        "correction": "The words 'given that' do not make events dependent. A question can say 'given that' about independent events, and then P(A | B) = P(A). For example, two dice: P(second shows 6 | first shows 6) = 1/6. Only the without-replacement part of the statement holds in general."
+      },
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "applying the simple multiplication rule P(A) × P(B) when the question involves 'without replacement' or a condition.",
+        "correction": "P(A) × P(B) is wrong only when the events are dependent. 'A condition' in the question does not on its own make the rule wrong. When events are dependent, the correct rule is P(A and B) = P(A) × P(B | A)."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "P9",
+        "spec_text": "calculate and interpret conditional probabilities through representation using expected frequencies",
+        "why": "The lesson never uses expected frequencies. There is no conversion of probabilities into counts (for example out of 100 or 1000 trials) to find a conditional probability."
+      },
+      {
+        "specRef": "P9",
+        "spec_text": "calculate and interpret conditional probabilities through representation using ... tree diagrams",
+        "why": "Tree diagrams are only mentioned in passing ('update the tree diagram denominators'). No tree diagram is drawn or used to find a conditional probability."
+      },
+      {
+        "specRef": "P9",
+        "spec_text": "calculate and interpret conditional probabilities through representation using ... Venn diagrams",
+        "why": "Venn diagrams are named in slides[1].formulaExplained and keyFacts[1] but never drawn or used."
+      },
+      {
+        "specRef": "P9",
+        "spec_text": "calculate and interpret conditional probabilities through representation using ... two-way tables",
+        "why": "No two-way table is shown. The worked example gives its data in sentences, not as a table."
+      },
+      {
+        "specRef": "P9",
+        "spec_text": "calculate and interpret conditional probabilities",
+        "why": "Interpretation is not taught. The lesson never explains what a conditional probability tells you, and never compares P(A | B) with P(A), for example to judge whether knowing B changes the likelihood of A."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "slides[1].formula",
+        "text": "P(A | B) = P(A and B) ÷ P(B)",
+        "why": "The specification requires conditional probability through representations (two-way tables, tree diagrams, Venn diagrams, expected frequencies), not the formal formula. This is A-level style. It is also never used with probabilities in the lesson, only with counts, so it may confuse more than help."
+      }
+    ],
+    "cases_not_modelled": [
+      {
+        "specRef": "P9",
+        "case": "Two-way table (reading the condition's row or column total as the denominator)",
+        "why": "keyFacts[1].examTip says 'Circle the row or column for the condition in a frequency table', but no worked example uses a table."
+      },
+      {
+        "specRef": "P9",
+        "case": "Venn diagram with an overlap region",
+        "why": "No worked example finds P(A | B) from a Venn diagram."
+      },
+      {
+        "specRef": "P9",
+        "case": "Tree diagram without replacement (second-branch probabilities change)",
+        "why": "slides[1].whenToUse and slides[3].mistakes[2] refer to this, but it is never shown."
+      },
+      {
+        "specRef": "P9",
+        "case": "Reverse conditional from a tree diagram (given the second outcome, find the probability of the first)",
+        "why": "This is a common Higher question type and is not modelled."
+      },
+      {
+        "specRef": "P9",
+        "case": "Using expected frequencies (for example a frequency tree out of 1000) to find a conditional probability",
+        "why": "The specification names expected frequencies explicitly. No example uses them."
+      },
+      {
+        "specRef": "P9",
+        "case": "Calculating with probabilities rather than counts (P(A and B) ÷ P(B) using decimals or fractions)",
+        "why": "The formula is introduced in probability form but the only example uses counts."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "Knowing extra information restricts the sample space — you no longer consider all possible outcomes, only those consistent with what you've been told.",
+        "why": "'Sample space' is used without being defined, and the sentence carries two ideas joined by a dash."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "For example, if you know a card drawn is red, you're no longer considering all 52 cards — only the 26 red ones, so every probability recalculated from that point must use 26 as the denominator, not 52.",
+        "why": "One sentence carries the example, the restriction and the rule about the denominator."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "B is the condition that restricts your sample space, so you divide by P(B) to rescale.",
+        "why": "'Rescale' is not explained. The reason for dividing by P(B) is asserted, not shown."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "P(A | B) is read as 'the probability of A given B' — given that B has already happened, what is the probability that A also happens?",
+        "why": "The whole field is a long paragraph packing notation, meaning, rescaling, a plain-English restatement and the count version together. It is hard to take in on one read."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "use conditional probability or update the tree diagram denominators.",
+        "why": "This relies on tree-diagram methods that the lesson never teaches."
+      }
+    ],
+    "not_checked": [
+      "slides[2].note: 'Numbers must differ from any question in the question bank for this subtopic.' The question bank was not provided.",
+      "keyFacts[2].examTip claim 'Swapping them is one of the most penalised errors in higher probability questions'. This cannot be verified from the materials given."
+    ]
+  }
+}

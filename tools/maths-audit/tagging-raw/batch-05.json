@@ -1,0 +1,177 @@
+{
+  "batch": 5,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 9690,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 1329,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "cost_usd": 0.06534,
+  "parsed": true,
+  "result": {
+    "results": [
+      {
+        "id": "fn-A04",
+        "subtopic": "alg-functions",
+        "also": "",
+        "why": "Evaluating a function by substitution."
+      },
+      {
+        "id": "fn-A05",
+        "subtopic": "alg-functions",
+        "also": "",
+        "why": "Evaluating a reciprocal function at given inputs."
+      },
+      {
+        "id": "fn-B02",
+        "subtopic": "alg-functions",
+        "also": "",
+        "why": "Composite function evaluation and formula."
+      },
+      {
+        "id": "fn-B03",
+        "subtopic": "alg-functions",
+        "also": "alg-quadratics",
+        "why": "Composite function then solving a quadratic equation."
+      },
+      {
+        "id": "fn-B04",
+        "subtopic": "alg-functions",
+        "also": "",
+        "why": "Finding and evaluating an inverse function."
+      },
+      {
+        "id": "fn-B05",
+        "subtopic": "alg-functions",
+        "also": "",
+        "why": "Composite of a function with itself."
+      },
+      {
+        "id": "fn-B06",
+        "subtopic": "alg-functions",
+        "also": "",
+        "why": "Evaluating composite functions in both orders."
+      },
+      {
+        "id": "fn-C02",
+        "subtopic": "alg-functions",
+        "also": "alg-equations",
+        "why": "Inverse function, then solving a linear equation."
+      },
+      {
+        "id": "fn-C03",
+        "subtopic": "alg-functions",
+        "also": "alg-equations",
+        "why": "Composite function, then solving a linear equation."
+      },
+      {
+        "id": "fn-C04",
+        "subtopic": "alg-functions",
+        "also": "alg-expressions",
+        "why": "Inverse of a rational function by rearranging."
+      },
+      {
+        "id": "gph-A03",
+        "subtopic": "alg-graphs",
+        "also": "",
+        "why": "Reading gradient and intercept from y = mx + c."
+      },
+      {
+        "id": "gph-A04",
+        "subtopic": "alg-graphs",
+        "also": "",
+        "why": "Substituting a point into a line equation."
+      },
+      {
+        "id": "gph-A05",
+        "subtopic": "alg-graphs",
+        "also": "",
+        "why": "Midpoint of a line segment from coordinates."
+      },
+      {
+        "id": "gph-B02",
+        "subtopic": "alg-graphs",
+        "also": "",
+        "why": "Equation of a line through two points."
+      },
+      {
+        "id": "gph-B03",
+        "subtopic": "alg-graphs",
+        "also": "",
+        "why": "Equation of a line through two points."
+      },
+      {
+        "id": "gph-B04",
+        "subtopic": "alg-graphs",
+        "also": "",
+        "why": "Equation of a parallel line through a point."
+      },
+      {
+        "id": "gph-B05",
+        "subtopic": "alg-graphs",
+        "also": "",
+        "why": "Line from gradient and point; find x-intercept."
+      },
+      {
+        "id": "gph-B06",
+        "subtopic": "alg-simultaneous",
+        "also": "alg-graphs",
+        "why": "Intersection of two lines via simultaneous equations."
+      },
+      {
+        "id": "gph-C01",
+        "subtopic": "alg-graphs",
+        "also": "",
+        "why": "Perpendicular bisector using gradients and midpoint."
+      },
+      {
+        "id": "gph-C02",
+        "subtopic": "alg-graphs",
+        "also": "",
+        "why": "Equation of a perpendicular line through a point."
+      },
+      {
+        "id": "gph-C03",
+        "subtopic": "alg-graphs",
+        "also": "alg-simultaneous",
+        "why": "Line through two points, then intersection with another line."
+      },
+      {
+        "id": "gph-C04",
+        "subtopic": "alg-graphs",
+        "also": "geo-pythagoras",
+        "why": "Coordinate geometry: length, midpoint and gradient."
+      },
+      {
+        "id": "ineq-A03",
+        "subtopic": "alg-inequalities",
+        "also": "",
+        "why": "Solving a linear inequality."
+      },
+      {
+        "id": "ineq-A04",
+        "subtopic": "alg-inequalities",
+        "also": "",
+        "why": "Solving a linear inequality."
+      },
+      {
+        "id": "ineq-A05",
+        "subtopic": "alg-inequalities",
+        "also": "",
+        "why": "Solving a double linear inequality."
+      }
+    ]
+  }
+}

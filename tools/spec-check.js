@@ -30,9 +30,10 @@ const crypto = require('crypto');
 
 const ROOT = path.join(__dirname, '..');
 const OUT_DIR = path.join(__dirname, 'spec-check-results');
-const SUBJECTS = ['biology', 'chemistry', 'physics', 'geography'];
+const SUBJECTS = ['biology', 'chemistry', 'physics', 'geography', 'maths'];
 const MODEL = 'claude-opus-5-5';
 const MAX_TOKENS = 16000;
+const MAX_TOKENS_MATHS = 8000;   // maths audit 2026-11-26: keeps the worst-case estimate for 41 lessons inside the $10 prompt cap
 const USD_IN = 4 / 1e6, USD_OUT = 20 / 1e6;
 const DEFAULT_CAP_USD = 2;
 const API = 'https://api.anthropic.com/v1';
@@ -58,6 +59,33 @@ Return JSON only, in exactly this shape, with empty arrays where there is nothin
   "factual_errors": [{ "field": "", "text": "", "correction": "", "basis": "spec" }],
   "wrong_terms": [{ "field": "", "text": "", "spec_term": "" }],
   "checkpoint_mismatch": [{ "checkpoint": "", "key_point": "", "why": "" }],
+  "not_checked": [] }`;
+
+// Maths (maths full audit, 2026-11-26): different fields. The lesson's worked
+// example, common mistakes and every equation are what is being checked.
+const SYSTEM_MATHS = `You are an independent GCSE Mathematics examiner. You check a lesson written for a 15-year-old against the specification sections it claims to teach.
+
+You receive two things only: the lesson as JSON, and the text of the specification sections (AQA GCSE Mathematics 8300; each reference lists Basic foundation, Additional foundation and Higher-only content). Work every calculation in the lesson yourself.
+
+Report:
+- maths_errors: any wrong working, wrong answer or wrong mathematical statement anywhere in the lesson (worked example steps, formulas, key facts, common mistakes). Give the correction.
+- false_mistakes: items under "Watch out for this" (commonMistakes) whose "mistake" is not actually a mistake: the method described reaches the correct answer, is a valid method, or the item's own text admits it is correct. Say what the "mistaken" method really gives.
+- missing_spec_content: content the specification sections require that the lesson does not teach.
+- above_gcse: content beyond what the specification requires that could confuse the student.
+- cases_not_modelled: kinds of question the specification section needs that no worked example in the lesson shows (for example "x on both sides", "brackets" or "fractions" for linear equations; "negative gradient" for straight lines). One entry per kind.
+- density: places a 15-year-old learning this for the first time could not follow in one read (too many steps in one line, chains of arrows, a sentence carrying several ideas, a step whose reason is not given).
+- not_checked: anything you could not check (diagrams or images you cannot see).
+
+Every finding must quote the exact lesson text it rests on and name the lesson field (for example "slides[2].steps[1].working"). Do not report tone or layout beyond density.
+
+Return JSON only, in exactly this shape, with empty arrays where there is nothing to report and no prose outside the JSON:
+{ "lesson": "<lesson id>",
+  "maths_errors": [{ "field": "", "text": "", "correction": "" }],
+  "false_mistakes": [{ "field": "", "text": "", "why": "", "mistaken_method_gives": "" }],
+  "missing_spec_content": [{ "specRef": "", "spec_text": "", "why": "" }],
+  "above_gcse": [{ "field": "", "text": "", "why": "" }],
+  "cases_not_modelled": [{ "specRef": "", "case": "", "why": "" }],
+  "density": [{ "field": "", "text": "", "why": "" }],
   "not_checked": [] }`;
 
 // --blocking-only: same reply shape, but only the three blocking categories are asked for.
@@ -173,12 +201,14 @@ function buildJob(st, filePath, opts = {}) {
     `Lesson id: ${st.id}\n\n<lesson_json>\n${JSON.stringify(lesson, null, 2)}\n</lesson_json>\n\n` +
     `<specification_sections>\n${spec}\n</specification_sections>` +
     (opts.decided ? `\n\nAlready decided — do not report these again:\n<already_decided>\n${opts.decided}\n</already_decided>` : '');
-  const system = SYSTEM + (opts.blockingOnly ? BLOCKING_NOTE : '');
+  const maths = st.subject === 'maths';
+  const system = maths ? SYSTEM_MATHS : SYSTEM + (opts.blockingOnly ? BLOCKING_NOTE : '');
+  const maxTokens = maths ? MAX_TOKENS_MATHS : MAX_TOKENS;
   const chars = system.length + user.length;
   const estIn = Math.ceil(chars / 4);
   return {
     id: st.id, subject: st.subject, refs, system, user, chars, estIn,
-    estUsd: estIn * USD_IN + MAX_TOKENS * USD_OUT,
+    estUsd: estIn * USD_IN + maxTokens * USD_OUT, maxTokens,
     lessonFile: path.relative(ROOT, lessonPath).replace(/\\/g, '/'),
     lessonMd5: crypto.createHash('md5').update(raw).digest('hex'),
     outName: filePath ? `${st.id}--${path.basename(filePath, '.json')}` : st.id,
@@ -215,7 +245,7 @@ async function callModel(job) {
   const res = await fetch(`${API}/messages`, {
     method: 'POST',
     headers: headers(),
-    body: JSON.stringify({ model: MODEL, max_tokens: MAX_TOKENS, system: job.system, messages: [{ role: 'user', content: job.user }] }),
+    body: JSON.stringify({ model: MODEL, max_tokens: job.maxTokens, system: job.system, messages: [{ role: 'user', content: job.user }] }),
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} ${await res.text()}`);
   return res.json();
@@ -229,6 +259,7 @@ function parseReply(text) {
 }
 
 const KEYS = ['missing_spec_content', 'above_gcse', 'factual_errors', 'wrong_terms', 'checkpoint_mismatch', 'not_checked'];
+const KEYS_MATHS = ['maths_errors', 'false_mistakes', 'missing_spec_content', 'above_gcse', 'cases_not_modelled', 'density', 'not_checked'];
 
 // ---------- main ----------
 
@@ -267,8 +298,8 @@ async function main() {
   }
   const totIn = jobs.reduce((s, j) => s + j.estIn, 0);
   console.log(`TOTAL ${jobs.length} lesson(s) | ${jobs.reduce((s, j) => s + j.chars, 0)} chars | ${totIn} est. input tokens | ` +
-    `${jobs.length * MAX_TOKENS} output tokens assumed | $${total.toFixed(4)}`);
-  console.log(`Rates: $4 per M input, $20 per M output; output assumed at the ${MAX_TOKENS}-token ceiling per lesson.`);
+    `${jobs.reduce((s, j) => s + j.maxTokens, 0)} output tokens assumed | $${total.toFixed(4)}`);
+  console.log(`Rates: $4 per M input, $20 per M output; output assumed at the ceiling per lesson (${[...new Set(jobs.map(j => j.maxTokens))].join('/')} tokens).`);
   if (!args.run) return;
 
   if (total > DEFAULT_CAP_USD && !(args.maxUsd !== null && total < args.maxUsd)) {
@@ -284,7 +315,13 @@ async function main() {
   }
 
   let spent = 0;
+  // Running cap: never start a call whose worst case would take the total past --max-usd (or the default cap).
+  const runCap = args.maxUsd !== null ? args.maxUsd : DEFAULT_CAP_USD;
   for (const j of jobs) {
+    if (spent + j.estUsd > runCap) {
+      console.log(`STOP before ${j.outName}: spent $${spent.toFixed(4)} + worst case $${j.estUsd.toFixed(4)} would pass $${runCap}.`);
+      break;
+    }
     const date = new Date().toISOString();
     const record = { lesson: j.id, source_file: j.lessonFile, lesson_md5: j.lessonMd5, model: MODEL, date, specRefs_sent: j.refs,
       blocking_only: args.blockingOnly, decided_file: args.decided || null };
@@ -301,7 +338,7 @@ async function main() {
         status = 'OK';
         record.status = status;
         record.result = parsed;
-        findings = KEYS.map(k => `${k} ${Array.isArray(parsed[k]) ? parsed[k].length : '?'}`).join(', ');
+        findings = (j.subject === 'maths' ? KEYS_MATHS : KEYS).map(k => `${k} ${Array.isArray(parsed[k]) ? parsed[k].length : '?'}`).join(', ');
       } else {
         status = 'FAILED';
         record.status = status;

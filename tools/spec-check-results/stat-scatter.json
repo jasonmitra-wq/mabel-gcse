@@ -1,0 +1,137 @@
+{
+  "lesson": "stat-scatter",
+  "source_file": "lessons/maths/stat-scatter.json",
+  "lesson_md5": "fd98c907b1efbf89a1b313cc243dfdb1",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-27T12:35:15.334Z",
+  "specRefs_sent": [
+    "S6"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3852,
+    "output_tokens": 4619
+  },
+  "cost_usd": 0.107788,
+  "status": "OK",
+  "result": {
+    "lesson": "stat-scatter",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[0].correction",
+        "text": "Both could be caused by a third variable (e.g. hot weather), or the relationship could be coincidence.",
+        "correction": "In this example the third-variable illustration does not work. Hot weather does not cause sunshine; sunshine is a main cause of hot weather. So 'hot weather' is not an independent common cause of both sunshine hours and ice cream sales. Use a genuine confounder example, such as 'ice cream sales and the number of drownings are positively correlated, but both are caused by hot weather'. Keep the point that correlation alone does not prove causation."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "The line of best fit must pass through the mean point (x̄, ȳ) and balance points above and below.",
+        "correction": "At GCSE a line of best fit is drawn by eye. It should follow the trend with roughly equal numbers of points either side. Passing through the mean point is a helpful guide, not a requirement, so 'must' overstates it. A by-eye line that misses (x̄, ȳ) slightly is still acceptable."
+      },
+      {
+        "field": "slides[2].steps[2].working",
+        "text": "Because 6 hours is within the data range, the estimate of £140 is reasonably reliable.",
+        "correction": "Being within the data range is necessary but not enough on its own. Reliability also depends on the strength of the correlation and on how many data points there are (only 8 here). A fuller answer: 'reasonably reliable because 6 hours is within the data range (interpolation), although only 8 days were sampled'."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "S6",
+        "spec_text": "use and interpret scatter graphs of bivariate data",
+        "why": "The lesson never shows how to plot bivariate data as a scatter graph (choosing axes, plotting each pair as a point). It only describes what a finished graph looks like."
+      },
+      {
+        "specRef": "S6",
+        "spec_text": "draw estimated lines of best fit",
+        "why": "The lesson describes what a line of best fit is, but gives no procedure for drawing one: ruler, follow the trend, roughly equal points either side, ignore outliers, do not force it through the origin. The worked example says the line 'is drawn' without showing it."
+      },
+      {
+        "specRef": "S6",
+        "spec_text": "make predictions",
+        "why": "The lesson never shows how to read a prediction from a line of best fit (go up from the x-value to the line, then across to the y-axis). The worked example simply gives the value £140."
+      },
+      {
+        "specRef": "S6 Notes",
+        "spec_text": "students should know and understand the terms: ... weak correlation and strong correlation",
+        "why": "Weak and strong correlation appear only in one sentence in slides[1].formulaExplained. They are missing from the concept slide and keyFacts. Students are never shown how to describe the strength of correlation."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "A line of best fit is a straight line drawn by eye that passes through the mean point (mean of x, mean of y)",
+        "why": "AQA S6 does not require the mean point. Introducing it without explaining how to calculate it may confuse a student meeting the topic for the first time."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "must pass through the mean point (x̄, ȳ)",
+        "why": "The x̄, ȳ notation is not used in GCSE S6 content and is not explained in the lesson."
+      }
+    ],
+    "cases_not_modelled": [
+      {
+        "specRef": "S6",
+        "case": "Plotting points to complete a scatter graph",
+        "why": "No example plots data pairs on a scatter graph."
+      },
+      {
+        "specRef": "S6",
+        "case": "Drawing a line of best fit",
+        "why": "No example shows a line of best fit being drawn on given data."
+      },
+      {
+        "specRef": "S6",
+        "case": "Reading an estimate from a line of best fit",
+        "why": "The only worked example gives the estimate (£140) rather than showing how to read it from the line."
+      },
+      {
+        "specRef": "S6",
+        "case": "Extrapolation (prediction outside the data range) and why it is unreliable",
+        "why": "The only worked example is an interpolation. No example shows a value outside the range and explains the danger."
+      },
+      {
+        "specRef": "S6",
+        "case": "Negative correlation",
+        "why": "The only worked example has positive correlation."
+      },
+      {
+        "specRef": "S6",
+        "case": "No correlation, and weak versus strong correlation",
+        "why": "No example asks the student to judge whether there is a correlation, or how strong it is."
+      },
+      {
+        "specRef": "S6",
+        "case": "Judging whether a causal claim from a scatter graph is valid",
+        "why": "Causation appears only in commonMistakes and keyFacts. No worked example models answering a question that asks whether a conclusion is valid."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "Positive correlation means that as one variable increases, the other tends to increase too — the points slope upward from left to right (e.g. the taller someone is, the longer their arm span tends to be).",
+        "why": "One sentence carries a definition, a visual description and an example joined by a dash and a bracket. The next two sentences repeat this pattern, giving three dense definitions in a row."
+      },
+      {
+        "field": "slides[1].formula",
+        "text": "Line of best fit: drawn through the middle of the data cloud with roughly equal numbers of points above and below  |  Interpolation: reading a value from inside the range of the data — reliable  |  Extrapolation: reading a value from outside the range of the data — unreliable",
+        "why": "Three separate definitions are packed into one line with pipe separators, each followed by a dash clause. This is hard to take in on one read."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "A line of best fit is a straight line drawn by eye that passes through the mean point (mean of x, mean of y) and balances the scatter of points above and below it.",
+        "why": "This sentence introduces 'drawn by eye', 'mean point' and 'balances' together. The mean point is not explained (how to find it, or why it matters)."
+      },
+      {
+        "field": "slides[3].mistakes[0].correction",
+        "text": "Correlation shows that two variables tend to move together — it does not mean one causes the other. Both could be caused by a third variable (e.g. hot weather), or the relationship could be coincidence.",
+        "why": "Several ideas (tendency, causation, confounding variable, coincidence) arrive at once. The 'third variable' idea is given without explanation, and its example does not fit the sunshine context."
+      }
+    ],
+    "not_checked": [
+      "slides[2].question refers to 'A scatter graph' showing sunshine hours and ice cream sales for 8 days, but no graph or data is provided. I could not check that the data shows positive correlation, that the data range is 2 to 9 hours, or that the line gives £140 at 6 hours."
+    ]
+  }
+}

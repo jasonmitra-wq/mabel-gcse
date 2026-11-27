@@ -1,0 +1,177 @@
+{
+  "batch": 20,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 10331,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 2355,
+    "output_tokens_details": {
+      "thinking_tokens": 834
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "cost_usd": 0.088424,
+  "parsed": true,
+  "result": {
+    "results": [
+      {
+        "id": "stat-scatter-A02",
+        "subtopic": "stat-averages",
+        "also": "stat-scatter",
+        "why": "Calculating two means to find the mean point"
+      },
+      {
+        "id": "stat-scatter-A03",
+        "subtopic": "stat-scatter",
+        "also": "",
+        "why": "Identify negative correlation and interpret it in context"
+      },
+      {
+        "id": "stat-scatter-A04",
+        "subtopic": "alg-graphs",
+        "also": "stat-scatter",
+        "why": "Equation of a straight line through two points"
+      },
+      {
+        "id": "stat-scatter-A05",
+        "subtopic": "stat-scatter",
+        "also": "alg-graphs",
+        "why": "Estimate a value from a line of best fit"
+      },
+      {
+        "id": "stat-scatter-B02",
+        "subtopic": "stat-scatter",
+        "also": "",
+        "why": "Predictions from line of best fit; interpolation versus extrapolation"
+      },
+      {
+        "id": "stat-scatter-B03",
+        "subtopic": "stat-scatter",
+        "also": "stat-averages",
+        "why": "Mean point, estimate from the line, interpolation"
+      },
+      {
+        "id": "stat-scatter-B04",
+        "subtopic": "stat-scatter",
+        "also": "",
+        "why": "Predicted value from the line of best fit and its residual"
+      },
+      {
+        "id": "stat-scatter-B05",
+        "subtopic": "stat-scatter",
+        "also": "",
+        "why": "Prediction, reliability of extrapolation, strength of correlation"
+      },
+      {
+        "id": "stat-scatter-B06",
+        "subtopic": "stat-scatter",
+        "also": "",
+        "why": "Using a model line to predict and judge validity"
+      },
+      {
+        "id": "stat-scatter-C01",
+        "subtopic": "stat-scatter",
+        "also": "",
+        "why": "Rank correlation coefficient measures correlation"
+      },
+      {
+        "id": "stat-scatter-C02",
+        "subtopic": "stat-scatter",
+        "also": "",
+        "why": "Regression line: mean point, prediction, extrapolation reliability"
+      },
+      {
+        "id": "stat-scatter-C03",
+        "subtopic": "stat-scatter",
+        "also": "alg-graphs",
+        "why": "Calculating a regression line from summary statistics"
+      },
+      {
+        "id": "stat-scatter-C04",
+        "subtopic": "stat-scatter",
+        "also": "",
+        "why": "Interpret correlation; correlation does not imply causation"
+      },
+      {
+        "id": "cum-A01",
+        "subtopic": "stat-cumulative",
+        "also": "",
+        "why": "IQR and percentages from cumulative frequency quartiles"
+      },
+      {
+        "id": "cum-B01",
+        "subtopic": "stat-averages",
+        "also": "stat-boxplots",
+        "why": "Comparing distributions using median and IQR"
+      },
+      {
+        "id": "stat-cumulative-A02",
+        "subtopic": "stat-cumulative",
+        "also": "",
+        "why": "Quartiles estimated from a cumulative frequency table"
+      },
+      {
+        "id": "stat-cumulative-A03",
+        "subtopic": "stat-cumulative",
+        "also": "",
+        "why": "IQR and count above Q3 from cumulative frequency graph"
+      },
+      {
+        "id": "stat-cumulative-A04",
+        "subtopic": "stat-cumulative",
+        "also": "",
+        "why": "Build cumulative frequency and estimate the median"
+      },
+      {
+        "id": "stat-cumulative-A05",
+        "subtopic": "stat-cumulative",
+        "also": "",
+        "why": "Percentiles from a cumulative frequency graph"
+      },
+      {
+        "id": "stat-cumulative-B02",
+        "subtopic": "stat-cumulative",
+        "also": "",
+        "why": "Median and count estimates from cumulative frequencies"
+      },
+      {
+        "id": "stat-cumulative-B03",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "Box plot IQR and outlier fence"
+      },
+      {
+        "id": "stat-cumulative-B04",
+        "subtopic": "stat-averages",
+        "also": "stat-boxplots",
+        "why": "Compare distributions using median and IQR"
+      },
+      {
+        "id": "stat-cumulative-B05",
+        "subtopic": "stat-cumulative",
+        "also": "",
+        "why": "Percentile estimate using cumulative frequencies"
+      },
+      {
+        "id": "stat-cumulative-B06",
+        "subtopic": "stat-cumulative",
+        "also": "",
+        "why": "Estimate counts between values from cumulative frequencies"
+      },
+      {
+        "id": "stat-cumulative-C01",
+        "subtopic": "stat-averages",
+        "also": "stat-cumulative",
+        "why": "Grouped estimated mean, median estimate and skew"
+      }
+    ]
+  }
+}

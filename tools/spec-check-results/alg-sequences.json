@@ -1,0 +1,173 @@
+{
+  "lesson": "alg-sequences",
+  "source_file": "lessons/maths/alg-sequences.json",
+  "lesson_md5": "1b667e92dc3b84f474f17c4d1b951873",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T17:37:01.161Z",
+  "specRefs_sent": [
+    "A23",
+    "A24",
+    "A25"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3115,
+    "output_tokens": 4241
+  },
+  "cost_usd": 0.09728,
+  "status": "OK",
+  "result": {
+    "lesson": "alg-sequences",
+    "maths_errors": [],
+    "false_mistakes": [
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "To check if 48 is in the sequence 5n − 3, listing terms until reaching 48 rather than solving 5n − 3 = 48 algebraically.",
+        "why": "Listing terms is a valid method and reaches the correct conclusion. The sequence 5n − 3 goes 2, 7, 12, …, 47, 52. It passes 48 without hitting it, so 48 is not a term. Listing is slower, but it is not a mistake. The claim in the correction that the algebraic method 'never misses a term' suggests listing can miss one, but careful listing does not.",
+        "mistaken_method_gives": "Listing gives …, 42, 47, 52. It jumps from 47 to 52, so 48 is not a term. This is the same correct answer the algebra gives (n = 10.2, not an integer)."
+      }
+    ],
+    "missing_spec_content": [
+      {
+        "specRef": "A23",
+        "spec_text": "generate terms of a sequence from either a term-to-term or a position-to-term rule",
+        "why": "Generating a sequence is only mentioned in passing in whenToUse ('or generating a sequence from its rule'). The lesson never teaches how to generate terms from a term-to-term rule or from a position-to-term rule."
+      },
+      {
+        "specRef": "A23",
+        "spec_text": "Notes: including from patterns and diagrams.",
+        "why": "The lesson does not teach getting a sequence from a pattern or diagram, such as matchstick patterns."
+      },
+      {
+        "specRef": "A24",
+        "spec_text": "recognise and use sequences of triangular, square and cube numbers and simple arithmetic progressions",
+        "why": "Triangular, square and cube number sequences are not mentioned anywhere."
+      },
+      {
+        "specRef": "A24",
+        "spec_text": "including Fibonacci-type sequences, quadratic sequences, and simple geometric progressions rn where n is an integer and r is a rational number > 0",
+        "why": "Fibonacci-type and quadratic sequences are not mentioned. Geometric progressions get only a one-line definition and a formula. There is no recognition or use of simple progressions rⁿ, including rational r such as 1/2."
+      },
+      {
+        "specRef": "A24",
+        "spec_text": "Higher only: including other sequences including where r is a surd",
+        "why": "Geometric sequences with a surd common ratio (for example 1, √2, 2, 2√2, …) are not covered."
+      },
+      {
+        "specRef": "A24",
+        "spec_text": "Notes: other recursive sequences will be defined in the question.",
+        "why": "The lesson does not show how to work with a recursive (term-to-term) rule given in a question."
+      },
+      {
+        "specRef": "A25",
+        "spec_text": "Higher only: including quadratic sequences",
+        "why": "The lesson does not teach finding the nth term of a quadratic sequence (second differences, an² + bn + c)."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyFacts[2].fact",
+        "text": "For a geometric sequence with first term a and common ratio r, the nth term = a × rⁿ⁻¹. The exponent is n − 1, not n.",
+        "why": "The specification asks students to recognise and use simple geometric progressions rⁿ. It does not require the general formula a × rⁿ⁻¹. Presenting this general formula as a key fact (also in slides[1].formulaExplained) goes beyond what is required and may confuse a student learning the topic for the first time."
+      }
+    ],
+    "cases_not_modelled": [
+      {
+        "specRef": "A25",
+        "case": "Decreasing arithmetic sequence (negative common difference)",
+        "why": "The only worked example (2, 7, 12, 17) is increasing. No example shows a sequence such as 20, 17, 14, … giving −3n + 23."
+      },
+      {
+        "specRef": "A25",
+        "case": "Positive constant term",
+        "why": "The worked example gives a negative constant (c = −3). No example shows a case where c is positive, such as 7, 10, 13 → 3n + 4."
+      },
+      {
+        "specRef": "A25",
+        "case": "Checking whether a given number is a term",
+        "why": "This is covered only inside a commonMistakes correction and a keyFacts examTip. It has no step-by-step worked example."
+      },
+      {
+        "specRef": "A23",
+        "case": "Generating terms from a position-to-term rule",
+        "why": "No worked example substitutes n = 1, 2, 3, … into a given nth term to list terms."
+      },
+      {
+        "specRef": "A23",
+        "case": "Generating terms from a term-to-term rule",
+        "why": "No worked example applies a rule such as 'multiply by 2 then add 1' to produce terms."
+      },
+      {
+        "specRef": "A23",
+        "case": "Sequence from a pattern or diagram",
+        "why": "No worked example builds a sequence from a picture pattern."
+      },
+      {
+        "specRef": "A24",
+        "case": "Geometric sequence",
+        "why": "No worked example finds the next terms or the ratio of a geometric sequence."
+      },
+      {
+        "specRef": "A24",
+        "case": "Fibonacci-type sequence",
+        "why": "No worked example adds the previous two terms to continue a sequence."
+      },
+      {
+        "specRef": "A24",
+        "case": "Recognising special sequences (triangular, square, cube)",
+        "why": "No example identifies or continues these sequences."
+      },
+      {
+        "specRef": "A25",
+        "case": "nth term of a quadratic sequence (Higher)",
+        "why": "No worked example uses second differences to find an² + bn + c."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "d is the common difference (how much the sequence goes up or down each term). a is the first term. The formula can also be written as a + (n − 1)d — start at the first term and add d a total of (n − 1) times. To find the constant: substitute n = 1 and set the result equal to the first term to solve for (a − d). For geometric sequences, the nth term = a × rⁿ⁻¹ where r is the common ratio.",
+        "why": "One block carries several ideas: the variable definitions, an alternative form of the formula, a method for finding the constant, and a separate geometric formula. It is also confusing to 'solve for (a − d)' when a and d are already known."
+      },
+      {
+        "field": "slides[1].formula / slides[2].steps[1].instruction",
+        "text": "nth term = dn + (a − d)  …  The nth term has the form 5n + c.",
+        "why": "The formula slide uses (a − d) for the constant, but the worked example switches to c without saying that c = a − d. A first-time learner may not link the two."
+      },
+      {
+        "field": "slides[1].whenToUse",
+        "text": "Finding a specific term without listing the whole sequence, checking whether a given value is a term (set nth term = value and solve for n — if n is a positive integer, it is a term), or generating a sequence from its rule.",
+        "why": "One sentence lists three uses and embeds a full method with a condition inside brackets."
+      },
+      {
+        "field": "slides[3].mistakes[0].correction",
+        "text": "5(1) + c = 2 → c = −3. Do not use the first term directly as c — it only works when d = 0.",
+        "why": "The arrow skips the step 5 + c = 2. The claim 'it only works when d = 0' is given without a reason (d + a = a only if d = 0)."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "5n − 3 = 48 → 5n = 51 → n = 10.2.",
+        "why": "This is a chain of arrows with no reasons given for each step (add 3 to both sides, divide by 5)."
+      },
+      {
+        "field": "keyFacts[1].examTip",
+        "text": "5n − 3 = 47 → n = 10. Integer → yes. 5n − 3 = 49 → n = 10.4. Not integer → no.",
+        "why": "The equations are solved in a single arrow with the working hidden, and two examples are compressed into arrow shorthand."
+      },
+      {
+        "field": "slides[2].steps[2].working",
+        "text": "Check n = 3: 15 − 3 = 12 ✓.",
+        "why": "The substitution 5(3) = 15 is skipped, unlike the n = 2 check just before it."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "An arithmetic sequence goes up (or down) by the same amount each time — called the common difference. A geometric sequence multiplies by the same number each time — called the common ratio.",
+        "why": "Four new terms are introduced in quick succession (arithmetic, common difference, geometric, common ratio) with no example numbers to anchor them."
+      }
+    ],
+    "not_checked": []
+  }
+}

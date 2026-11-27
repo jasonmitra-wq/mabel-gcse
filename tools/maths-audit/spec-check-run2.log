@@ -1,0 +1,48 @@
+RUN
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+alg-quadratics | A4, A11, A18 | 9706 | 2427 | 0.1697
+alg-simultaneous | A19, A21 | 7985 | 1997 | 0.1680
+alg-functions | A7, A20 | 7982 | 1996 | 0.1680
+rpr-ratio | R4, R5, R6, R8 | 8524 | 2131 | 0.1685
+rpr-proportion | R7, R10, R13 | 8080 | 2020 | 0.1681
+rpr-speed | R1, R11, R14 | 8260 | 2065 | 0.1683
+rpr-percentage-change | R9, R16 | 9435 | 2359 | 0.1694
+rpr-compound-measures | R1, R11 | 8239 | 2060 | 0.1682
+rpr-growth-decay | R16 | 8598 | 2150 | 0.1686
+geo-angles | G1, G3, G6 | 8969 | 2243 | 0.1690
+geo-shapes | G1, G3, G4, G12 | 9194 | 2299 | 0.1692
+geo-perimeter-area | G14, G16, G17, G18 | 8551 | 2138 | 0.1686
+geo-volume | G16, G17 | 8112 | 2028 | 0.1681
+geo-transformations | G7, G8, G24 | 8835 | 2209 | 0.1688
+geo-pythagoras | G20 | 8080 | 2020 | 0.1681
+geo-trigonometry | G20, G21 | 8694 | 2174 | 0.1687
+geo-circles | G9, G10, G17 | 9567 | 2392 | 0.1696
+geo-vectors | G24, G25 | 8685 | 2172 | 0.1687
+prob-basic | P1, P2, P3, P4 | 8269 | 2068 | 0.1683
+prob-combined | P6, P7, P8 | 8832 | 2208 | 0.1688
+prob-tree | P8 | 8801 | 2201 | 0.1688
+prob-venn | P6, P9 | 8532 | 2133 | 0.1685
+prob-conditional | P9 | 8711 | 2178 | 0.1687
+stat-averages | S4 | 9039 | 2260 | 0.1690
+stat-charts | S2, S3 | 8846 | 2212 | 0.1688
+stat-scatter | S6 | 11931 | 2983 | 0.1719
+stat-cumulative | S3, S4 | 9358 | 2340 | 0.1694
+stat-boxplots | S4 | 9343 | 2336 | 0.1693
+stat-sampling | S1, P2, P3 | 9338 | 2335 | 0.1693
+TOTAL 29 lesson(s) | 256496 chars | 64134 est. input tokens | 232000 output tokens assumed | $4.8965
+Rates: $4 per M input, $20 per M output; output assumed at the ceiling per lesson (8000 tokens).
+Model claude-opus-5-5 confirmed in /v1/models.
+alg-quadratics: OK | in 3637 out 4358 | $0.1017 | maths_errors 2, false_mistakes 0, missing_spec_content 10, above_gcse 0, cases_not_modelled 9, density 6, not_checked 0
+alg-simultaneous: OK | in 2855 out 4278 | $0.0970 | maths_errors 3, false_mistakes 1, missing_spec_content 4, above_gcse 0, cases_not_modelled 8, density 7, not_checked 0
+alg-functions: OK | in 3067 out 3420 | $0.0807 | maths_errors 1, false_mistakes 1, missing_spec_content 2, above_gcse 0, cases_not_modelled 7, density 5, not_checked 0
+rpr-ratio: OK | in 3137 out 3983 | $0.0922 | maths_errors 2, false_mistakes 0, missing_spec_content 5, above_gcse 0, cases_not_modelled 8, density 6, not_checked 0
+rpr-proportion: OK | in 3082 out 4161 | $0.0955 | maths_errors 2, false_mistakes 1, missing_spec_content 4, above_gcse 0, cases_not_modelled 8, density 5, not_checked 0
+rpr-speed: OK | in 3131 out 4936 | $0.1112 | maths_errors 4, false_mistakes 1, missing_spec_content 7, above_gcse 0, cases_not_modelled 9, density 6, not_checked 1
+rpr-percentage-change: OK | in 3395 out 4479 | $0.1032 | maths_errors 2, false_mistakes 0, missing_spec_content 8, above_gcse 0, cases_not_modelled 10, density 9, not_checked 0
+rpr-compound-measures: OK | in 3134 out 3714 | $0.0868 | maths_errors 3, false_mistakes 0, missing_spec_content 5, above_gcse 0, cases_not_modelled 7, density 5, not_checked 1
+rpr-growth-decay: OK | in 3259 out 3120 | $0.0754 | maths_errors 1, false_mistakes 0, missing_spec_content 2, above_gcse 0, cases_not_modelled 6, density 6, not_checked 0
+geo-angles: OK | in 3173 out 4720 | $0.1071 | maths_errors 2, false_mistakes 0, missing_spec_content 9, above_gcse 0, cases_not_modelled 11, density 6, not_checked 1
+geo-shapes: OK | in 3347 out 4592 | $0.1052 | maths_errors 2, false_mistakes 0, missing_spec_content 10, above_gcse 0, cases_not_modelled 8, density 6, not_checked 0
+geo-perimeter-area: OK | in 3100 out 3454 | $0.0815 | maths_errors 1, false_mistakes 0, missing_spec_content 8, above_gcse 0, cases_not_modelled 13, density 5, not_checked 0
+geo-volume: OK | in 3002 out 3564 | $0.0833 | maths_errors 1, false_mistakes 0, missing_spec_content 5, above_gcse 0, cases_not_modelled 11, density 4, not_checked 1
+geo-transformations: OK | in 3128 out 4017 | $0.0929 | maths_errors 2, false_mistakes 0, missing_spec_content 4, above_gcse 0, cases_not_modelled 9, density 6, not_checked 0

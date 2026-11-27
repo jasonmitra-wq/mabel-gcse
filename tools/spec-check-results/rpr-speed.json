@@ -1,0 +1,175 @@
+{
+  "lesson": "rpr-speed",
+  "source_file": "lessons/maths/rpr-speed.json",
+  "lesson_md5": "9ccd01f1ac6a1631c19e940d7ad908b3",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:31:37.316Z",
+  "specRefs_sent": [
+    "R1",
+    "R11",
+    "R14"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3131,
+    "output_tokens": 4936
+  },
+  "cost_usd": 0.111244,
+  "status": "OK",
+  "result": {
+    "lesson": "rpr-speed",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[0].correction",
+        "text": "Never just place the minutes after a decimal point — that only works for exact half-hours.",
+        "correction": "Putting the minutes after a decimal point does not work for half-hours either. 1 hour 30 minutes is 1.5 h, not 1.30 h. It only works for whole hours, where there are 0 minutes. The rule is always minutes ÷ 60."
+      },
+      {
+        "field": "keyFacts[2].examTip",
+        "text": "The average of two speeds is not the average speed. Always use total distance ÷ total time.",
+        "correction": "This is stated as always true, but it is not. When the same amount of time is spent at each speed, the mean of the speeds equals the average speed. The lesson's own example shows this: 2 h at 20 km/h and 2 h at 30 km/h gives 25 km/h either way. Say instead: 'The average of two speeds is not in general the average speed; only total distance ÷ total time is always correct.'"
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "The shortcut of averaging speeds only gives the right answer by coincidence in specific cases.",
+        "correction": "It is not a coincidence. Averaging the speeds always gives the right answer when the times spent at each speed are equal, and that is exactly the case in this example. Say: 'it only works when equal times are spent at each speed.'"
+      },
+      {
+        "field": "slides[0].body",
+        "text": "Average speed over a whole journey is always total distance ÷ total time, not the average of the individual speeds.",
+        "correction": "The first part is correct. The words 'not the average of the individual speeds' are too absolute, because the two are equal when the times at each speed are equal. Say 'not, in general, the average of the individual speeds.'"
+      }
+    ],
+    "false_mistakes": [
+      {
+        "field": "slides[3].mistakes[1].mistake",
+        "text": "Calculating average speed as the mean of two speeds — e.g. for a journey of 40 km at 20 km/h then 60 km at 30 km/h, writing (20 + 30) ÷ 2 = 25 km/h.",
+        "why": "Both legs take 2 hours (40 ÷ 20 = 2, 60 ÷ 30 = 2). Because the times are equal, the mean of the speeds is the correct average speed. The item's own correction works out 100 ÷ 4 = 25 km/h, the same answer as the 'mistake'. An example where the times differ is needed, e.g. 60 km at 20 km/h (3 h) then 60 km at 30 km/h (2 h): the true average is 120 ÷ 5 = 24 km/h, but the mean of the speeds is 25 km/h.",
+        "mistaken_method_gives": "25 km/h, which is the correct average speed for this journey."
+      }
+    ],
+    "missing_spec_content": [
+      {
+        "specRef": "R1",
+        "spec_text": "change freely between related standard units (eg time, length, area, volume/capacity, mass) and compound units (eg speed, rates of pay, prices) in numerical contexts",
+        "why": "The only conversion taught is minutes to hours. Missing: hours to minutes (e.g. turning a time answer of 2.4 h into 2 h 24 min), seconds to hours, length conversions (m to km), and converting compound units such as km/h to m/s and back."
+      },
+      {
+        "specRef": "R1",
+        "spec_text": "compound units (eg density, pressure) in numerical and algebraic contexts",
+        "why": "Density and pressure are not mentioned. Compound units are never used in an algebraic context (e.g. a distance of 3x km)."
+      },
+      {
+        "specRef": "R11",
+        "spec_text": "use compound units such as speed, rates of pay, unit pricing",
+        "why": "Only speed is covered. Rates of pay and unit pricing are not taught."
+      },
+      {
+        "specRef": "R11",
+        "spec_text": "use compound units such as density and pressure",
+        "why": "Density = mass ÷ volume and pressure = force ÷ area are not taught."
+      },
+      {
+        "specRef": "R11",
+        "spec_text": "Notes: including making comparisons.",
+        "why": "There is no comparison of rates, e.g. deciding which of two vehicles is faster when given in different units, or which pack is better value."
+      },
+      {
+        "specRef": "R14",
+        "spec_text": "interpret the gradient of a straight-line graph as a rate of change",
+        "why": "Distance–time graphs, and the fact that their gradient is the speed, are not taught."
+      },
+      {
+        "specRef": "R14",
+        "spec_text": "recognise and interpret graphs that illustrate direct and inverse proportion",
+        "why": "Not covered. For example: distance is directly proportional to time at a fixed speed, and time is inversely proportional to speed for a fixed distance."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "R11",
+        "case": "Finding distance given speed and time (D = S × T)",
+        "why": "The only worked example finds speed. D = S × T appears only as a check."
+      },
+      {
+        "specRef": "R11",
+        "case": "Finding time given distance and speed, and turning a decimal-hours answer into hours and minutes",
+        "why": "No worked example finds time or converts a result like 2.4 h into 2 h 24 min."
+      },
+      {
+        "specRef": "R11",
+        "case": "Average speed for a multi-stage journey with unequal times",
+        "why": "This is only touched on in commonMistakes, and that example has equal times, so it never shows why the speeds cannot simply be averaged."
+      },
+      {
+        "specRef": "R1",
+        "case": "Times whose minutes do not give a terminating decimal (e.g. 20 min = 1/3 h)",
+        "why": "The worked example uses 30 min = 0.5 h. Working with 1/3 h or 4/3 h, and avoiding early rounding, is never modelled."
+      },
+      {
+        "specRef": "R1",
+        "case": "Converting speed between km/h and m/s",
+        "why": "No example converts a compound unit."
+      },
+      {
+        "specRef": "R11",
+        "case": "Comparing two rates",
+        "why": "The spec notes require comparisons, and no example shows one."
+      },
+      {
+        "specRef": "R11",
+        "case": "Density / pressure calculations",
+        "why": "No examples are given."
+      },
+      {
+        "specRef": "R11",
+        "case": "Rates of pay / unit pricing",
+        "why": "No examples are given."
+      },
+      {
+        "specRef": "R14",
+        "case": "Reading speed as the gradient of a distance–time graph",
+        "why": "No graph example is given."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Cover the one you want to find to see the formula: cover D to get S × T; cover S to get D ÷ T; cover T to get D ÷ S.",
+        "why": "The triangle is never shown or described (D on top, S and T underneath), so 'cover' means nothing to a first-time learner. It also packs three rules into one sentence."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Time must be in the same unit throughout — convert minutes to hours by dividing by 60 (e.g. 45 min = 0.75 h, not 0.45 h). For a journey in two parts, average speed = total distance ÷ total time — calculate each journey time separately, then add.",
+        "why": "One paragraph carries unit consistency, the minutes conversion, a counter-example and the multi-stage method, each joined by dashes. 'then add' does not say that the distances must be added too."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "The units must be consistent: if speed is in km/h, distance must be in km and time must be in hours — convert minutes to hours before substituting.",
+        "why": "Three ideas are in one sentence. The slide also has four sentences in total, against its own limit of three."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "Find each leg's time separately (t₁ = 40/20 = 2 h, t₂ = 60/30 = 2 h), then: 100 ÷ 4 = 25 km/h.",
+        "why": "It never says that 100 = 40 + 60 or that 4 = 2 + 2. The subscript notation t₁, t₂ is also introduced without explanation."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "Use the triangle: cover Speed, and what remains is D on top and T on the bottom — S = D ÷ T.",
+        "why": "It depends on a triangle layout that the lesson never shows."
+      },
+      {
+        "field": "keyFacts[1].fact",
+        "text": "1h 20min = 1.333... h.",
+        "why": "The recurring decimal is given with no working (20 ÷ 60 = 1/3). There is no advice to keep it as 4/3 or to use the calculator's exact value rather than rounding."
+      }
+    ],
+    "not_checked": [
+      "The lesson refers to 'the triangle' in slides[1] and slides[3].mistakes[2], but no diagram is supplied, so its layout could not be checked."
+    ]
+  }
+}

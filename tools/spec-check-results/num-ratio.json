@@ -1,0 +1,150 @@
+{
+  "lesson": "num-ratio",
+  "source_file": "lessons/maths/num-ratio.json",
+  "lesson_md5": "7a2b542dc1f2af2a7f0d1400cfb4d995",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T17:34:43.839Z",
+  "specRefs_sent": [
+    "N11",
+    "R4",
+    "R5",
+    "R6",
+    "R8"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3154,
+    "output_tokens": 3594
+  },
+  "cost_usd": 0.084496,
+  "status": "OK",
+  "result": {
+    "lesson": "num-ratio",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "(same answer here, but fails for non-integer scaling)",
+        "correction": "The method described does not fail for non-integer scaling. It finds the amount per serving (160 ÷ 4 = 40 g) and adds 40 g for each extra serving, so it always gives the correct answer. For example, scaling from 4 to 5 servings gives 160 + 1 × 40 = 200 g, and 160 × 5/4 = 200 g. A genuinely additive error would be adding the same amount to the quantity as was added to the number of servings, for example 160 + 2 = 162 g."
+      }
+    ],
+    "false_mistakes": [
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "Using an additive approach to scale a recipe instead of multiplicative — e.g. a recipe for 4 serves uses 160 g of rice; to scale to 6 serves, adding 2 × 40 g = 80 g to get 240 g, instead of multiplying 160 g × (6/4) = 240 g (same answer here, but fails for non-integer scaling).",
+        "why": "Adding 2 × 40 g is the unitary method: find one serving (40 g) and add two more servings. This is valid multiplicative reasoning, and the item itself admits it gives the same answer. It works for any number of servings.",
+        "mistaken_method_gives": "240 g, which is correct. In general it always gives the correct scaled amount (original + extra servings × amount per serving)."
+      }
+    ],
+    "missing_spec_content": [
+      {
+        "specRef": "N11",
+        "spec_text": "identify and work with fractions in ratio problems",
+        "why": "The lesson never links ratio to fractions. For example, it never shows that in 5:4 the first share is 5/9 of the total, or how to turn a fraction statement into a ratio."
+      },
+      {
+        "specRef": "R4",
+        "spec_text": "use ratio notation, including reduction to simplest form",
+        "why": "Simplifying appears only as a one-line key fact (24:36 to 2:3). The lesson does not teach simplifying ratios that have different units, decimals or fractions."
+      },
+      {
+        "specRef": "R5",
+        "spec_text": "divide a given quantity into two parts in a given part : part or part : whole ratio",
+        "why": "Only part:part sharing is taught. Part:whole ratios (for example, 'the first share is 5/9 of the whole') are not covered."
+      },
+      {
+        "specRef": "R5",
+        "spec_text": "express the division of a quantity into two parts as a ratio",
+        "why": "The reverse process (given two parts, write the division as a ratio) is not taught."
+      },
+      {
+        "specRef": "R5",
+        "spec_text": "apply ratio to real contexts and problems (such as those involving conversion, comparison, scaling, mixing, concentrations) ... including better value or best-buy problems",
+        "why": "Conversion, comparison, mixing, concentration and best-buy problems are not taught. Scaling is only mentioned in text."
+      },
+      {
+        "specRef": "R6",
+        "spec_text": "express a multiplicative relationship between two quantities as a ratio or a fraction",
+        "why": "The lesson does not teach writing statements such as 'A is three times B' as A:B = 3:1 or A = 3B."
+      },
+      {
+        "specRef": "R8",
+        "spec_text": "relate ratios to fractions and to linear functions",
+        "why": "Neither the link to fractions nor the link to linear functions is taught. For example, the lesson never shows that a ratio y:x = k:1 gives y = kx, a straight line through the origin."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "R4",
+        "case": "simplifying a ratio",
+        "why": "No worked example shows the HCF method. This includes ratios needing a unit conversion first, or ratios with decimals or fractions."
+      },
+      {
+        "specRef": "R5",
+        "case": "difference between shares given",
+        "why": "This appears only as a common mistake, with no fully worked solution (70 ÷ 2 = 35, so the shares are 175 and 105)."
+      },
+      {
+        "specRef": "R5",
+        "case": "one share given, find the other share or the total",
+        "why": "No example works backwards from a known share."
+      },
+      {
+        "specRef": "R5",
+        "case": "part:whole ratio",
+        "why": "No example uses a ratio expressed against the whole."
+      },
+      {
+        "specRef": "R5",
+        "case": "scaling a recipe (proportion)",
+        "why": "Scaling is described in the formula slide, the mistakes and a key fact, but no worked example shows it."
+      },
+      {
+        "specRef": "R5",
+        "case": "best buy / better value",
+        "why": "The spec notes explicitly include best-buy problems, and none is modelled."
+      },
+      {
+        "specRef": "R5",
+        "case": "conversion / mixing / concentration contexts",
+        "why": "No worked example uses these contexts."
+      },
+      {
+        "specRef": "N11",
+        "case": "fractions in ratio problems",
+        "why": "No example converts between a ratio and a fraction of the total."
+      },
+      {
+        "specRef": "R8",
+        "case": "ratio as a linear function / graph",
+        "why": "No example relates a ratio to a straight-line graph or to y = kx."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Then multiply one part by each ratio number to find each share. This works for any ratio with any number of parts. For proportion questions (scaling up or down), find a scale factor by dividing the new quantity by the original.",
+        "why": "Two different methods (sharing and scaling) are packed into one paragraph under one formula. The scale-factor idea is introduced in a single sentence with no example."
+      },
+      {
+        "field": "slides[3].mistakes[1].mistake",
+        "text": "When the difference between shares is given, dividing by the total parts rather than the difference in parts — e.g. if person A gets £70 more than B in ratio 5:3, dividing £70 by 8 instead of by 2 (the difference 5−3=2).",
+        "why": "A new question type, its setup and the error are all carried in one sentence. A first-time learner has not seen this type of question solved."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "then 1 part = difference ÷ 2, then scale up.",
+        "why": "'scale up' is not explained. The final shares are never calculated, and it does not say why the difference in parts matches the difference in money."
+      },
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "to scale to 6 serves, adding 2 × 40 g = 80 g to get 240 g, instead of multiplying 160 g × (6/4) = 240 g (same answer here, but fails for non-integer scaling).",
+        "why": "Two calculations, a comparison and a caveat are all in one line. The origin of the 40 g (160 ÷ 4) is not stated."
+      }
+    ],
+    "not_checked": []
+  }
+}

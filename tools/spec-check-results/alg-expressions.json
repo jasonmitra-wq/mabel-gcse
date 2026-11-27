@@ -1,0 +1,195 @@
+{
+  "lesson": "alg-expressions",
+  "source_file": "lessons/maths/alg-expressions.json",
+  "lesson_md5": "1d12df5d9b942907f04ffd359b9f08bd",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T17:35:13.632Z",
+  "specRefs_sent": [
+    "A1",
+    "A3",
+    "A4"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3565,
+    "output_tokens": 5025
+  },
+  "cost_usd": 0.11476,
+  "status": "OK",
+  "result": {
+    "lesson": "alg-expressions",
+    "maths_errors": [],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "A1",
+        "spec_text": "use and interpret algebraic notation, including: ab in place of a × b; 3y in place of y + y + y and 3 × y; a^2 in place of a × a, a^3 in place of a × a × a, a^2b in place of a × a × b; a/b in place of a ÷ b; coefficients written as fractions rather than as decimals; brackets",
+        "why": "The lesson uses this notation (x², 3x, 4x) but never explains it. It does not show that ab means a × b, that 3y means y + y + y, that a²b means a × a × b, that a/b means a ÷ b, or that coefficients are written as fractions rather than decimals."
+      },
+      {
+        "specRef": "A1",
+        "spec_text": "Notes: it is expected that answers will be given in their simplest form without an explicit instruction to do so.",
+        "why": "The lesson does not tell the student that answers must always be fully simplified even when the question does not ask for it."
+      },
+      {
+        "specRef": "A3",
+        "spec_text": "understand and use the concepts and vocabulary of expressions, equations, formulae, inequalities, terms and factors",
+        "why": "Only 'expression' is defined ('combines numbers and letters using operations, but has no equals sign'). Equation, formula, inequality, term and factor are never defined or told apart."
+      },
+      {
+        "specRef": "A3",
+        "spec_text": "Additional foundation: to include identities",
+        "why": "Identities (for example (x + 3)(x − 4) ≡ x² − x − 12, true for all x) are not mentioned. Neither is the ≡ symbol or how an identity differs from an equation."
+      },
+      {
+        "specRef": "A4",
+        "spec_text": "simplifying expressions involving sums, products and powers, including the laws of indices",
+        "why": "No laws of indices (for example x³ × x⁴ = x⁷, x⁶ ÷ x² = x⁴, (x²)³ = x⁶). Simplifying products such as 3x × 4y is not taught either."
+      },
+      {
+        "specRef": "A4",
+        "spec_text": "factorising quadratic expressions of the form x^2 + bx + c, including the difference of two squares",
+        "why": "Factorising x² + bx + c is used in worked example step 4 but never taught. The difference of two squares (x² − a² = (x + a)(x − a)) is absent. slides[1].formula only teaches factorising by taking out the HCF."
+      },
+      {
+        "specRef": "A4",
+        "spec_text": "simplify and manipulate algebraic expressions (including those involving surds)",
+        "why": "Surds in algebraic expressions (for example expanding (2 + √3)(1 − √3)) are not covered."
+      },
+      {
+        "specRef": "A4",
+        "spec_text": "Higher only: expanding products of two or more binomials",
+        "why": "Expanding three binomials (for example (x + 1)(x + 2)(x − 3)) is not covered."
+      },
+      {
+        "specRef": "A4",
+        "spec_text": "Higher only: factorising quadratic expressions of the form ax^2 + bx + c",
+        "why": "Factorising quadratics with leading coefficient other than 1 (for example 2x² + 7x + 3) is not covered."
+      },
+      {
+        "specRef": "A4",
+        "spec_text": "Higher only: (including those involving surds and algebraic fractions)",
+        "why": "Simplifying algebraic fractions is only mentioned in passing in slides[1].whenToUse ('simplify a fraction involving algebra'). It is never taught."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "A4",
+        "case": "Expanding a single bracket (multiplying a single term over a bracket), including a letter outside, e.g. 3x(2x − 5)",
+        "why": "The only worked example is a double bracket. Single-bracket expansion appears only inside a commonMistakes correction with a number outside."
+      },
+      {
+        "specRef": "A4",
+        "case": "Expanding and simplifying two brackets with a negative multiplier, e.g. 3(x + 2) − 2(x − 1)",
+        "why": "No example shows a negative term outside a bracket changing the signs inside."
+      },
+      {
+        "specRef": "A4",
+        "case": "Collecting like terms in a multi-term expression, e.g. 5a + 3b − 2a + 4b",
+        "why": "Collecting like terms is only stated in a key fact. No worked example shows it."
+      },
+      {
+        "specRef": "A4",
+        "case": "Factorising by taking out a common factor (numeric and algebraic HCF)",
+        "why": "The only instance is a one-line key fact (6x² + 9x = 3x(2x + 3)) with no steps showing how the HCF 3x is found."
+      },
+      {
+        "specRef": "A4",
+        "case": "Simplifying using the laws of indices",
+        "why": "No example of multiplying or dividing powers, or of a power of a power."
+      },
+      {
+        "specRef": "A4",
+        "case": "Factorising x² + bx + c into two brackets",
+        "why": "Used only as a check in step 4. No example starts from a quadratic and factorises it."
+      },
+      {
+        "specRef": "A4",
+        "case": "Difference of two squares",
+        "why": "No example such as x² − 49 = (x + 7)(x − 7)."
+      },
+      {
+        "specRef": "A4",
+        "case": "Squaring a binomial, e.g. (x + 5)²",
+        "why": "No example shows that (x + 5)² must be written as (x + 5)(x + 5), giving x² + 10x + 25, not x² + 25."
+      },
+      {
+        "specRef": "A4",
+        "case": "Binomials with coefficient of x other than 1, e.g. (2x + 1)(3x − 2)",
+        "why": "The worked example only has x in each bracket."
+      },
+      {
+        "specRef": "A4",
+        "case": "Expressions involving surds",
+        "why": "No example expands or simplifies an expression containing a surd."
+      },
+      {
+        "specRef": "A4",
+        "case": "Expanding three binomials (Higher)",
+        "why": "No example."
+      },
+      {
+        "specRef": "A4",
+        "case": "Factorising ax² + bx + c with a ≠ 1 (Higher)",
+        "why": "No example."
+      },
+      {
+        "specRef": "A4",
+        "case": "Simplifying algebraic fractions (Higher)",
+        "why": "No example."
+      },
+      {
+        "specRef": "A3",
+        "case": "Identifying expression / equation / formula / identity / inequality",
+        "why": "No example asks the student to classify or tell these apart."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "Expanding removes brackets by multiplying out; factorising reverses this by taking out a common factor; simplifying collects like terms into the shortest form.",
+        "why": "One sentence defines three separate skills, joined by semicolons. A first-time learner cannot take in all three in one read."
+      },
+      {
+        "field": "slides[1].formula",
+        "text": "a(b + c) = ab + ac | (a + b)(c + d) = ac + ad + bc + bd | Factorising: find the HCF of all terms and take it outside the bracket",
+        "why": "Two formulas and a written rule are packed into one line separated by pipes."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Factorising is the reverse: find the largest factor every term shares (the HCF), write it outside a bracket, and divide each term by it to fill the inside.",
+        "why": "Three procedural steps in one sentence, with no example. It is also not explained that the HCF can include letters as well as numbers."
+      },
+      {
+        "field": "slides[1].whenToUse",
+        "text": "Factorising: whenever you need to reverse an expanded expression or simplify a fraction involving algebra.",
+        "why": "The HCF method taught on this slide cannot reverse a double-bracket expansion. Simplifying algebraic fractions is never explained, so this sentence points to things the student has not been shown."
+      },
+      {
+        "field": "slides[2].steps[3].instruction",
+        "text": "Check by factorising the result back — two numbers that multiply to −12 and add to −1 are −4 and +3.",
+        "why": "This uses a method the lesson never teaches (factorising x² + bx + c). It gives no reason why the numbers must multiply to −12 and add to −1."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "When both terms are negative, the constant at the end is always positive",
+        "why": "'Both terms' is ambiguous. It means the two number terms in the brackets, not the x terms."
+      },
+      {
+        "field": "keyFacts[1].examTip",
+        "text": "Use a 2×2 grid to avoid missing a product: x and +3 across the top, x and −4 down the side.",
+        "why": "The grid is never drawn, and the tip refers to the earlier example's numbers without saying which example."
+      },
+      {
+        "field": "keyFacts[2].fact",
+        "text": "To factorise, find the HCF of all terms and write it outside the bracket: 6x² + 9x = 3x(2x + 3).",
+        "why": "The answer jumps straight to 3x. It never shows the HCF of 6 and 9 being 3, that x is common to both terms, or the division of each term by 3x."
+      }
+    ],
+    "not_checked": []
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "lesson": "num-powers-roots",
+  "source_file": "lessons/maths/num-powers-roots.json",
+  "lesson_md5": "6fca657a5258d9744257b3b60dec1e39",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T17:33:11.309Z",
+  "specRefs_sent": [
+    "N6",
+    "N7"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3054,
+    "output_tokens": 3222
+  },
+  "cost_usd": 0.076656,
+  "status": "OK",
+  "result": {
+    "lesson": "num-powers-roots",
+    "maths_errors": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Any base to the power zero equals 1.",
+        "correction": "Only a non-zero base to the power zero equals 1. 0⁰ is not defined at GCSE. The formula line should read a⁰ = 1 (a ≠ 0), which matches the later wording in keyFacts[3] and slides[3].mistakes[2].correction."
+      },
+      {
+        "field": "slides[1].formula",
+        "text": "a⁰ = 1",
+        "correction": "State the condition: a⁰ = 1 for a ≠ 0."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "N6",
+        "spec_text": "use positive integer powers and associated real roots (square, cube and higher)",
+        "why": "The only root shown is a square root (√81 = 9). Cube roots and higher roots (for example ∛64 = 4, ⁴√81 = 3) are not taught or shown."
+      },
+      {
+        "specRef": "N6",
+        "spec_text": "recognise powers of 2, 3, 4, 5",
+        "why": "No list or practice of recognising powers of 2, 3, 4 and 5 (for example 32 = 2⁵, 243 = 3⁵, 64 = 4³, 625 = 5⁴)."
+      },
+      {
+        "specRef": "N6",
+        "spec_text": "including square numbers up to 15 × 15",
+        "why": "Square numbers up to 225 are not mentioned."
+      },
+      {
+        "specRef": "N6",
+        "spec_text": "Students should know that 1000 = 10 3 and 1 million = 106",
+        "why": "Powers of 10 (1000 = 10³, 1 million = 10⁶) are not taught. Standard form is mentioned only in passing."
+      },
+      {
+        "specRef": "N6",
+        "spec_text": "Higher only: estimate powers and roots of any given positive number",
+        "why": "Estimating powers and roots (for example √50 is between 7 and 8) is not covered."
+      },
+      {
+        "specRef": "N7",
+        "spec_text": "calculate with roots",
+        "why": "The lesson does not teach calculating with roots (for example √9 × √16, ∛8 + √25, or roots as inverses within calculations) beyond the single fact √81 = 9."
+      },
+      {
+        "specRef": "N7",
+        "spec_text": "Higher only: calculate with fractional indices",
+        "why": "Fractional indices (a^(1/n) = ⁿ√a, a^(m/n) = (ⁿ√a)ᵐ) are not taught. For example, 8^(2/3) = 4 is never shown."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "N7",
+        "case": "negative index",
+        "why": "Negative indices appear only in the formula and keyFacts. No worked example evaluates a negative power such as 5⁻² = 1/25, or gives an answer that ends with a negative index."
+      },
+      {
+        "specRef": "N7",
+        "case": "power of a power (brackets)",
+        "why": "(aᵐ)ⁿ = aᵐⁿ is stated but no worked example uses it."
+      },
+      {
+        "specRef": "N7",
+        "case": "zero index",
+        "why": "a⁰ = 1 is stated but not shown arising in a worked calculation."
+      },
+      {
+        "specRef": "N6",
+        "case": "cube and higher roots",
+        "why": "No worked example finds a cube root or higher root."
+      },
+      {
+        "specRef": "N7",
+        "case": "calculating with roots",
+        "why": "No worked example combines roots in a calculation."
+      },
+      {
+        "specRef": "N7",
+        "case": "fractional indices (Higher)",
+        "why": "No worked example evaluates a fractional index."
+      },
+      {
+        "specRef": "N6",
+        "case": "estimating powers and roots (Higher)",
+        "why": "No worked example estimates a root or power of a non-perfect number."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[2].steps[2].instruction",
+        "text": "Verify by expanding: 5³=125, 5²=25, 125×25=3125; 5⁴=625; 3125÷625=5. ✓",
+        "why": "Five separate calculations are packed into one line with semicolons. A first-time learner cannot follow this in one read."
+      },
+      {
+        "field": "slides[1].formula",
+        "text": "aᵐ × aⁿ = aᵐ⁺ⁿ | aᵐ ÷ aⁿ = aᵐ⁻ⁿ | (aᵐ)ⁿ = aᵐⁿ | a⁰ = 1 | a⁻ⁿ = 1/aⁿ",
+        "why": "Five laws are given on one line separated only by bars."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "A negative index means take the reciprocal: a⁻ⁿ = 1/aⁿ.",
+        "why": "'Reciprocal' is used without explanation, and there is no numerical illustration at this point."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "This follows from the division law: aⁿ ÷ aⁿ = a⁰ = 1.",
+        "why": "The reason aⁿ ÷ aⁿ = 1 (any non-zero number divided by itself is 1) is not stated, so the justification jumps a step."
+      },
+      {
+        "field": "keyFacts[1].examTip",
+        "text": "If the result is a negative index, e.g. 2³ ÷ 2⁵ = 2⁻² = 1/4 — do not write 0 or a negative number.",
+        "why": "The chain skips the step 2⁻² = 1/2², and the sentence carries both an example and a warning in one go."
+      }
+    ],
+    "not_checked": []
+  }
+}

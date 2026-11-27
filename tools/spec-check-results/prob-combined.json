@@ -1,0 +1,147 @@
+{
+  "lesson": "prob-combined",
+  "source_file": "lessons/maths/prob-combined.json",
+  "lesson_md5": "e89eef23465646e44c1b424a40670a4b",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:39:44.151Z",
+  "specRefs_sent": [
+    "P6",
+    "P7",
+    "P8"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3205,
+    "output_tokens": 4446
+  },
+  "cost_usd": 0.10174,
+  "status": "OK",
+  "result": {
+    "lesson": "prob-combined",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[0].correction",
+        "text": "'Both happen' = multiply. 'Either happens' = add. The words tell you which rule to use.",
+        "correction": "The word 'or' alone does not tell you to add. Simple addition only works when the events are mutually exclusive. Example: flip a coin and roll a die. P(head or 6) = 1/2 + 1/6 − 1/12 = 7/12, not 1/2 + 1/6 = 2/3. Likewise, 'and' means P(A) × P(B) only for independent events. The lesson's own next mistake (slides[3].mistakes[1]) contradicts this sentence."
+      },
+      {
+        "field": "keyFacts[0].examTip",
+        "text": "If the question says 'both', 'and', or involves two separate trials (two coins, two dice), multiply the probabilities.",
+        "correction": "Multiplying gives the probability of one particular combined outcome only. Some questions about two trials need more than this. Example: P(one head and one tail from two coins) = 1/2 × 1/2 + 1/2 × 1/2 = 1/2, not 1/4. Example: P(at least one 6 from two dice) = 1 − (5/6)² = 11/36. For dependent events, the second probability must be the conditional one, not P(B)."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "P6",
+        "spec_text": "enumerate sets and combinations of sets systematically, using tables, grids, Venn diagrams",
+        "why": "Venn diagrams are not taught anywhere in the lesson. Systematic enumeration is only touched on by the grid advice."
+      },
+      {
+        "specRef": "P6",
+        "spec_text": "Additional foundation: including using tree diagrams",
+        "why": "Tree diagrams are not mentioned or taught."
+      },
+      {
+        "specRef": "P8",
+        "spec_text": "calculate the probability of independent and dependent combined events, including using tree diagrams and other representations",
+        "why": "Dependent events (for example, picking without replacement) are not taught at all. Tree diagrams are also absent."
+      },
+      {
+        "specRef": "P8",
+        "spec_text": "and know the underlying assumptions",
+        "why": "The lesson never says what assumptions lie behind its calculations. Examples are fair or equally likely outcomes, independence of trials, and replacement or non-replacement. The independence assumption is not discussed as an assumption."
+      },
+      {
+        "specRef": "P8",
+        "spec_text": "including knowing when to add and when to multiply two or more probabilities",
+        "why": "Only two events are covered. Combining three or more probabilities is not taught. Combining multiply-then-add (for example, summing the branches of a tree) is not taught either."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Warning: the OR rule P(A or B) = P(A) + P(B) − P(A and B) is the general version; the simpler addition only works when A and B cannot both happen.",
+        "why": "The given spec sections do not require the general addition law as a formula. GCSE normally handles overlapping events by counting in a Venn diagram or sample space. Here it is given with no example, so it may confuse a first-time learner."
+      }
+    ],
+    "cases_not_modelled": [
+      {
+        "specRef": "P8",
+        "case": "Independent events using the AND (multiply) rule",
+        "why": "There is no worked example of multiplying probabilities. It appears only as a one-line illustration in formulaExplained."
+      },
+      {
+        "specRef": "P8",
+        "case": "Mutually exclusive events using the OR (add) rule",
+        "why": "Only a one-line illustration is given. There is no worked example."
+      },
+      {
+        "specRef": "P8",
+        "case": "Dependent events (without replacement)",
+        "why": "This is required by the spec, and no example shows it."
+      },
+      {
+        "specRef": "P6/P8",
+        "case": "Tree diagrams",
+        "why": "This is required by the spec, and no example shows it."
+      },
+      {
+        "specRef": "P6",
+        "case": "Venn diagrams",
+        "why": "This is required by the spec, and no example shows it."
+      },
+      {
+        "specRef": "P7",
+        "case": "Sample space for two experiments with different numbers of outcomes (for example, coin and die, or die and spinner)",
+        "why": "The only sample space shown is 3 × 3 with two identical spinners."
+      },
+      {
+        "specRef": "P8",
+        "case": "'At least one' questions using 1 − P(none)",
+        "why": "This is a standard combined-events question type, and it is not shown."
+      },
+      {
+        "specRef": "P8",
+        "case": "Combining more than two probabilities, or adding the products of several outcomes",
+        "why": "The spec says 'two or more probabilities', and no example shows this."
+      },
+      {
+        "specRef": "P8",
+        "case": "Events that are not mutually exclusive (overlapping 'or')",
+        "why": "The general rule is mentioned but never worked through."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "The rule you use depends on the relationship between the events: if two events cannot happen at the same time they are mutually exclusive (e.g. rolling a 3 and rolling a 5 on one die), and you add their probabilities. If two events don't affect each other they are independent (e.g. flipping a coin and rolling a die), and you multiply their probabilities.",
+        "why": "The first sentence defines mutually exclusive, gives an example and states the add rule, all after a colon. The next sentence does the same for independent events. That is four new ideas in two long sentences."
+      },
+      {
+        "field": "slides[1].formula",
+        "text": "Independent events — AND rule: P(A and B) = P(A) × P(B)  |  Mutually exclusive events — OR rule: P(A or B) = P(A) + P(B)",
+        "why": "Two different rules with two different conditions are packed onto one line, separated only by '|'."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Warning: the OR rule P(A or B) = P(A) + P(B) − P(A and B) is the general version; the simpler addition only works when A and B cannot both happen.",
+        "why": "It introduces a new formula with a new term, P(A and B) for events that are not independent. It gives no reason for the subtraction and no example."
+      },
+      {
+        "field": "slides[2].steps[0].working",
+        "text": "(1,1) (1,2) (1,3) | (2,1) (2,2) (2,3) | (3,1) (3,2) (3,3)",
+        "why": "The instruction says 'Draw the sample space', but a list split by '|' is shown instead of a grid. The meaning of '|' is not explained. This also contradicts the lesson's own advice to draw a grid rather than list outcomes."
+      },
+      {
+        "field": "slides[3].mistakes[1].mistake",
+        "text": "Using the OR rule P(A or B) = P(A) + P(B) when the events are not mutually exclusive — double-counting outcomes that are in both events.",
+        "why": "It does not explain why adding double-counts. There is no example of an outcome that lies in both events."
+      }
+    ],
+    "not_checked": []
+  }
+}

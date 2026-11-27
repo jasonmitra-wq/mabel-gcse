@@ -1,0 +1,167 @@
+{
+  "lesson": "geo-shapes",
+  "source_file": "lessons/maths/geo-shapes.json",
+  "lesson_md5": "caec89afed877d6da64ad0b98f902f9f",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:34:32.960Z",
+  "specRefs_sent": [
+    "G1",
+    "G3",
+    "G4",
+    "G12"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3347,
+    "output_tokens": 4592
+  },
+  "cost_usd": 0.105228,
+  "status": "OK",
+  "result": {
+    "lesson": "geo-shapes",
+    "maths_errors": [
+      {
+        "field": "keyFacts[2].fact",
+        "text": "A rhombus has 4 equal sides but angles are not 90°.",
+        "correction": "A rhombus is any quadrilateral with 4 equal sides. Its angles need not be 90°, but they can be: a square is a special rhombus. Say instead: 'A rhombus has 4 equal sides; its angles do not have to be 90°. A square is a rhombus with right angles.'"
+      },
+      {
+        "field": "slides[3].mistakes[0].correction",
+        "text": "That's the check — if n = 3 gives 180°, your formula is right.",
+        "correction": "Checking one value does not prove a formula is right. For example, n × 60° also gives 180° when n = 3, and it is wrong for n = 4 (240° instead of 360°). Say: 'Check with a triangle (180°) and a quadrilateral (360°).'"
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "G3",
+        "spec_text": "apply the properties of angles at a point, angles at a point on a straight line, vertically opposite angles",
+        "why": "Only 'they form a straight line' appears in passing. The lesson does not teach angles at a point (360°), angles on a straight line (180°) or vertically opposite angles."
+      },
+      {
+        "specRef": "G3",
+        "spec_text": "understand and use alternate and corresponding angles on parallel lines",
+        "why": "The lesson does not mention parallel-line angles at all."
+      },
+      {
+        "specRef": "G3",
+        "spec_text": "derive and use the sum of angles in a triangle (eg to deduce and use the angle sum in any polygon, and to derive properties of regular polygons)",
+        "why": "The lesson assumes 180° for each triangle and never derives it. It also does not show how the triangle split gives (n − 2) triangles, or how to work out the properties of a regular polygon, such as finding n from an exterior angle."
+      },
+      {
+        "specRef": "G4",
+        "spec_text": "derive and apply the properties and definitions of: special types of quadrilaterals, including square, rectangle, parallelogram, trapezium, kite and rhombus",
+        "why": "Parallelogram, trapezium and kite are never described. Square, rectangle and rhombus get only partial properties: no parallel sides, no symmetry, and no square or parallelogram diagonals."
+      },
+      {
+        "specRef": "G4",
+        "spec_text": "knowing names and properties of isosceles, equilateral, scalene, right-angled, acute-angled, obtuse-angled triangles",
+        "why": "The lesson does not cover the types of triangle."
+      },
+      {
+        "specRef": "G4",
+        "spec_text": "knowing names and using the polygons: pentagon, hexagon, octagon and decagon",
+        "why": "Decagon is not mentioned. Polygon names are not linked to their numbers of sides, except for the octagon in the worked example."
+      },
+      {
+        "specRef": "G12",
+        "spec_text": "identify properties of the faces, surfaces, edges and vertices of: cubes, cuboids, prisms, cylinders, pyramids, cones and spheres",
+        "why": "The concept slide says faces, edges and vertices matter but never teaches them. No 3D shape properties are given, including curved surfaces for the cylinder, cone and sphere."
+      },
+      {
+        "specRef": "G1",
+        "spec_text": "use conventional terms and notations: points, lines, vertices, edges, planes, parallel lines, perpendicular lines, right angles, polygons, regular polygons and polygons with reflection and/or rotation symmetries",
+        "why": "The lesson does not define these terms or their notation, such as the arrow marks for parallel lines or the square symbol for a right angle. It does not cover reflection or rotation symmetry of polygons."
+      },
+      {
+        "specRef": "G1",
+        "spec_text": "use the standard conventions for labelling and referring to the sides and angles of triangles",
+        "why": "The lesson does not teach labelling such as angle ABC or side AB."
+      },
+      {
+        "specRef": "G1",
+        "spec_text": "draw diagrams from written description",
+        "why": "The lesson does not cover this."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "G3",
+        "case": "Finding the number of sides of a regular polygon from a given exterior or interior angle",
+        "why": "This is a common question for 'derive properties of regular polygons'. The only worked example goes from n to the angles."
+      },
+      {
+        "specRef": "G3",
+        "case": "Missing angle in an irregular polygon",
+        "why": "The commonMistakes slide says 'you need the individual angle values to find a missing one' but no example shows how."
+      },
+      {
+        "specRef": "G3",
+        "case": "Angles at a point, on a straight line, and vertically opposite angles",
+        "why": "No example."
+      },
+      {
+        "specRef": "G3",
+        "case": "Alternate and corresponding angles on parallel lines",
+        "why": "No example."
+      },
+      {
+        "specRef": "G3",
+        "case": "Missing angle in a triangle, including isosceles base angles",
+        "why": "No example."
+      },
+      {
+        "specRef": "G4",
+        "case": "Using quadrilateral properties (sides, angles, diagonals) to find a missing length or angle",
+        "why": "No example."
+      },
+      {
+        "specRef": "G12",
+        "case": "Counting faces, edges and vertices of a 3D shape such as a prism or pyramid",
+        "why": "No example."
+      },
+      {
+        "specRef": "G1",
+        "case": "Identifying lines of symmetry or order of rotational symmetry of a polygon",
+        "why": "No example."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formula",
+        "text": "Sum of interior angles = (n − 2) × 180°  |  Each interior angle of a regular polygon = (n − 2) × 180° ÷ n  |  Each exterior angle of a regular polygon = 360° ÷ n",
+        "why": "Three formulas are packed onto one line, separated by bars. A first-time learner cannot easily tell which applies when."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Any polygon can be split into (n − 2) triangles, each contributing 180°, giving the total interior angle sum.",
+        "why": "The reason for (n − 2) is not given. The student needs to be told the triangles are drawn from one vertex, which cannot join to itself or its two neighbours. There is also no diagram."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "Learning the key properties of quadrilaterals (which sides are equal, which angles are equal, which diagonals bisect) saves time because you can read off information directly rather than calculating it.",
+        "why": "One sentence carries several ideas. 'Which diagonals bisect' is unclear because it does not say what they bisect."
+      },
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "Using (n − 2) × 180 without subtracting 2 — writing n × 180 instead.",
+        "why": "It states the correct formula and then says 'without subtracting 2', which is confusing on first read. Simpler: 'Writing n × 180° instead of (n − 2) × 180°.'"
+      },
+      {
+        "field": "keyFacts[2].fact",
+        "text": "A square has 4 equal sides and 4 right angles. A rhombus has 4 equal sides but angles are not 90°. A rectangle has equal diagonals; a rhombus has diagonals that bisect at right angles.",
+        "why": "Three shapes and mixed side, angle and diagonal properties are in one fact. They are not organised shape by shape, so the student cannot see which properties each shape has."
+      },
+      {
+        "field": "slides[2].steps[2].instruction",
+        "text": "Check using the exterior angle: 360° ÷ 8 = 45°. Interior + exterior should = 180°.",
+        "why": "The calculation of the exterior angle is hidden in the instruction instead of the working. The reason the two angles add to 180° (they lie on a straight line) is not restated here."
+      }
+    ],
+    "not_checked": []
+  }
+}

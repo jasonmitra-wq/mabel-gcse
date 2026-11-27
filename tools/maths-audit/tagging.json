@@ -1,0 +1,1104 @@
+{
+  "date": "2026-11-26",
+  "model": "claude-opus-5-5",
+  "questions": 600,
+  "answered": 600,
+  "missing": [],
+  "mismatches": [
+    {
+      "id": "pct-C01",
+      "tag": "num-percentages",
+      "suggested": "rpr-percentage-change",
+      "also": "rpr-growth-decay",
+      "why": "Compound interest using a repeated multiplier",
+      "question": "A savings account pays 3.5% compound interest per year. Jake invests £4,000 for 3 years. How much does he have at the end, to the nearest pe"
+    },
+    {
+      "id": "pct-C02",
+      "tag": "num-percentages",
+      "suggested": "rpr-percentage-change",
+      "also": "rpr-growth-decay",
+      "why": "Repeated percentage decrease, which is compound decay",
+      "question": "The population of a town decreased by 4% each year for 2 years. Starting population was 25,000. What is the population after 2 years? Round "
+    },
+    {
+      "id": "frc-C02",
+      "tag": "num-fractions",
+      "suggested": "alg-expressions",
+      "also": "num-fractions",
+      "why": "Adding algebraic fractions into a single fraction",
+      "question": "Work out 3/(x+1) + 2/(x−2). Give your answer as a single fraction."
+    },
+    {
+      "id": "rat-B03",
+      "tag": "rpr-ratio",
+      "suggested": "rpr-proportion",
+      "also": "",
+      "why": "Direct proportion using y = kx",
+      "question": "y is directly proportional to x. When x = 4, y = 10. Find y when x = 7."
+    },
+    {
+      "id": "rat-C01",
+      "tag": "rpr-ratio",
+      "suggested": "rpr-proportion",
+      "also": "",
+      "why": "Inverse proportion using y = k/x",
+      "question": "y is inversely proportional to x. When x = 5, y = 4. Find y when x = 8."
+    },
+    {
+      "id": "rat-C02",
+      "tag": "rpr-ratio",
+      "suggested": "rpr-proportion",
+      "also": "",
+      "why": "Direct proportion to a square",
+      "question": "p is proportional to q². When p = 75, q = 5. Find p when q = 8."
+    },
+    {
+      "id": "rat-C03",
+      "tag": "rpr-ratio",
+      "suggested": "rpr-proportion",
+      "also": "",
+      "why": "Direct proportion to x squared using constant k",
+      "question": "y is directly proportional to x². When x = 3, y = 36. Find y when x = 5."
+    },
+    {
+      "id": "eq-C01",
+      "tag": "alg-equations",
+      "suggested": "alg-simultaneous",
+      "also": "",
+      "why": "Linear simultaneous equations by substitution",
+      "question": "Solve the simultaneous equations: 3x + 2y = 16 and x − y = 2."
+    },
+    {
+      "id": "eq-C02",
+      "tag": "alg-equations",
+      "suggested": "alg-quadratics",
+      "also": "",
+      "why": "Solving a quadratic by factorising",
+      "question": "Solve x² + 3x − 10 = 0."
+    },
+    {
+      "id": "sub-B02",
+      "tag": "alg-expressions",
+      "suggested": "alg-equations",
+      "also": "alg-expressions",
+      "why": "Rearranging a simple formula using inverse operations.",
+      "question": "Make u the subject of v = u + at."
+    },
+    {
+      "id": "sub-B03",
+      "tag": "alg-expressions",
+      "suggested": "alg-equations",
+      "also": "num-powers-roots",
+      "why": "Rearranging a formula, which needs a square root.",
+      "question": "Make r the subject of A = πr²."
+    },
+    {
+      "id": "sub-C01",
+      "tag": "alg-expressions",
+      "suggested": "alg-equations",
+      "also": "alg-expressions",
+      "why": "Changing the subject when it appears twice; needs factorising out x.",
+      "question": "Make x the subject of y = (3x + 2)/(x − 4)."
+    },
+    {
+      "id": "sub-C02",
+      "tag": "alg-expressions",
+      "suggested": "alg-quadratics",
+      "also": "",
+      "why": "Solving a quadratic with the quadratic formula.",
+      "question": "Use the quadratic formula to solve 2x² − 5x − 3 = 0. Give answers to 2 d.p."
+    },
+    {
+      "id": "int-B01",
+      "tag": "num-integers",
+      "suggested": "num-bounds",
+      "also": "",
+      "why": "Using upper bounds to find a maximum product.",
+      "question": "A = 3.7 (1 d.p.), B = 12 (2 s.f.). Find the maximum possible value of A × B."
+    },
+    {
+      "id": "eq-C04",
+      "tag": "alg-equations",
+      "suggested": "alg-quadratics",
+      "also": "alg-equations",
+      "why": "Forms a quadratic from area and solves by factorising",
+      "question": "A rectangle has length (x + 4) cm and width (x − 1) cm. Its area is 24 cm². Find x and state the dimensions."
+    },
+    {
+      "id": "gph-B06",
+      "tag": "alg-graphs",
+      "suggested": "alg-simultaneous",
+      "also": "alg-graphs",
+      "why": "Intersection of two lines via simultaneous equations.",
+      "question": "Find the coordinates of the intersection of the lines y = 3x − 4 and y = x + 2."
+    },
+    {
+      "id": "seq-C01",
+      "tag": "alg-sequences",
+      "suggested": "alg-equations",
+      "also": "alg-sequences",
+      "why": "Equate two nth terms and solve linear equation",
+      "question": "Find the value(s) of n where the sequence 4n + 3 and the sequence 3n + 7 have the same value."
+    },
+    {
+      "id": "seq-C03",
+      "tag": "alg-sequences",
+      "suggested": "alg-quadratics",
+      "also": "alg-sequences",
+      "why": "Form and factorise quadratic from geometric sum",
+      "question": "A geometric sequence has first term 2 and common ratio r. The sum of the first 3 terms is 26. Find r."
+    },
+    {
+      "id": "seq-C04",
+      "tag": "alg-sequences",
+      "suggested": "alg-simultaneous",
+      "also": "alg-sequences",
+      "why": "Solve simultaneous equations from arithmetic sequence conditions",
+      "question": "An arithmetic sequence has first term a and common difference d. The 4th term is 19 and the sum of the first 6 terms is 78. Find a and d."
+    },
+    {
+      "id": "quad-A04",
+      "tag": "alg-quadratics",
+      "suggested": "alg-expressions",
+      "also": "",
+      "why": "Expanding a squared bracket, no solving involved",
+      "question": "Expand (x + 3)². State the coefficient of x and the constant term."
+    },
+    {
+      "id": "pch-A01",
+      "tag": "rpr-percentage-change",
+      "suggested": "num-percentages",
+      "also": "rpr-percentage-change",
+      "why": "Single percentage increase using a multiplier.",
+      "question": "A house was worth £180,000. It increased in value by 15%. Find its new value."
+    },
+    {
+      "id": "pch-A02",
+      "tag": "rpr-percentage-change",
+      "suggested": "num-percentages",
+      "also": "",
+      "why": "Reverse percentage to find the original price.",
+      "question": "A TV costs £350 after a 30% reduction. What was the original price?"
+    },
+    {
+      "id": "pch-A03",
+      "tag": "rpr-percentage-change",
+      "suggested": "num-percentages",
+      "also": "",
+      "why": "Finds 20% of an amount and subtracts it.",
+      "question": "A jacket costs £65. In a sale it is reduced by 20%. What is the sale price?"
+    },
+    {
+      "id": "pch-A05",
+      "tag": "rpr-percentage-change",
+      "suggested": "num-percentages",
+      "also": "",
+      "why": "Reverse percentage after a 25% increase.",
+      "question": "After a 25% increase, a price is £75. What was the original price?"
+    },
+    {
+      "id": "pch-B06",
+      "tag": "rpr-percentage-change",
+      "suggested": "num-percentages",
+      "also": "",
+      "why": "Reverse percentage to remove VAT.",
+      "question": "VAT is charged at 20%. A TV costs £540 including VAT. What is the price before VAT?"
+    },
+    {
+      "id": "pch-C02",
+      "tag": "rpr-percentage-change",
+      "suggested": "rpr-growth-decay",
+      "also": "",
+      "why": "Exponential growth: when does the population first exceed 8000.",
+      "question": "A population of 4000 bacteria grows at 12% per hour. After how many complete hours does the population first exceed 8000?"
+    },
+    {
+      "id": "grd-A01",
+      "tag": "rpr-growth-decay",
+      "suggested": "rpr-percentage-change",
+      "also": "rpr-growth-decay",
+      "why": "Compound interest multiplier applied for one year",
+      "question": "A savings account earns 6% compound interest per year. £3000 is invested. What is the total after 1 year?"
+    },
+    {
+      "id": "grd-A04",
+      "tag": "rpr-growth-decay",
+      "suggested": "rpr-percentage-change",
+      "also": "rpr-growth-decay",
+      "why": "Depreciation as a percentage decrease multiplier",
+      "question": "A car was bought for £15 000. It depreciates by 18% per year. What is its value after 1 year?"
+    },
+    {
+      "id": "grd-B01",
+      "tag": "rpr-growth-decay",
+      "suggested": "rpr-percentage-change",
+      "also": "rpr-growth-decay",
+      "why": "Compound interest formula over four years",
+      "question": "£4000 is invested at 5% compound interest per year. Calculate the total after 4 years to the nearest penny."
+    },
+    {
+      "id": "grd-B05",
+      "tag": "rpr-growth-decay",
+      "suggested": "rpr-percentage-change",
+      "also": "rpr-growth-decay",
+      "why": "Compound percentage increase over five years",
+      "question": "The value of a house increased by 8% each year for 5 years. It was originally worth £175 000. Find the value after 5 years to the nearest po"
+    },
+    {
+      "id": "shp-A01",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "",
+      "why": "Scale factor of similar triangles",
+      "question": "Two triangles are similar. The smaller has sides 3 cm, 4 cm, 5 cm. The longer side of the larger is 15 cm. Find the scale factor and the oth"
+    },
+    {
+      "id": "shp-A02",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "geo-angles",
+      "why": "Triangle congruence condition SSS",
+      "question": "Explain why these two triangles are congruent: Triangle 1 has sides 5 cm, 7 cm, 9 cm. Triangle 2 has sides 9 cm, 5 cm, 7 cm."
+    },
+    {
+      "id": "shp-B01",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "geo-perimeter-area",
+      "why": "Length scale factor from an area ratio of similar shapes",
+      "question": "Two similar shapes have area ratio 9 : 25. The smaller shape has perimeter 24 cm. Find the perimeter of the larger shape."
+    },
+    {
+      "id": "shp-A03",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "geo-angles",
+      "why": "Triangle congruence condition SAS",
+      "question": "Two triangles share two equal sides of 6 cm and 9 cm with an included angle of 50°. Which congruence condition applies?"
+    },
+    {
+      "id": "shp-A04",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "geo-perimeter-area",
+      "why": "Area scale factor of similar shapes",
+      "question": "Two similar shapes have a length scale factor of 4. What is the area scale factor?"
+    },
+    {
+      "id": "shp-A05",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "",
+      "why": "Scale factor of similar rectangles",
+      "question": "Two similar rectangles have lengths 5 cm and 15 cm. The smaller has width 3 cm. Find the width of the larger."
+    },
+    {
+      "id": "shp-B02",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "",
+      "why": "Similar triangles formed by a parallel line",
+      "question": "In triangle ABC, DE is parallel to BC where D is on AB and E is on AC. AD = 4 cm, DB = 6 cm and BC = 15 cm. Find DE."
+    },
+    {
+      "id": "shp-B03",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "geo-volume",
+      "why": "Volume and area scale factors of similar solids",
+      "question": "Two similar solids have volume ratio 27 : 125. Find the length scale factor and the surface area ratio."
+    },
+    {
+      "id": "shp-B04",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "geo-volume",
+      "why": "Volume scale factor of similar cones",
+      "question": "Two similar cones have radii 3 cm and 5 cm. The smaller has volume 36π cm³. Find the volume of the larger cone."
+    },
+    {
+      "id": "shp-B05",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "geo-perimeter-area",
+      "why": "Length scale factor from an area ratio",
+      "question": "Two similar triangles: the larger has area 75 cm² and the smaller has area 27 cm². A side of the smaller triangle is 6 cm. Find the correspo"
+    },
+    {
+      "id": "shp-B06",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "geo-volume",
+      "why": "Volume scale factor with unit conversion",
+      "question": "A small model of a building has height 8 cm and volume 160 cm³. The real building is 20 m tall. Find the volume of the real building in m³."
+    },
+    {
+      "id": "shp-C01",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "geo-volume",
+      "why": "Area to length to volume scale factors",
+      "question": "Two similar pyramids have surface areas 36 cm² and 100 cm². The larger pyramid has volume 500 cm³. Find the volume of the smaller pyramid."
+    },
+    {
+      "id": "shp-C02",
+      "tag": "geo-shapes",
+      "suggested": "geo-angles",
+      "also": "geo-shapes",
+      "why": "Congruence proof using alternate angles and equal sides (G6).",
+      "question": "Prove that triangles ABE and CDE are congruent, given that AB is parallel to CD, AB = CD, and E is the intersection of AC and BD."
+    },
+    {
+      "id": "shp-C03",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "geo-perimeter-area",
+      "why": "Similar triangles; area scale factor from length scale factor.",
+      "question": "In triangle ABC, D lies on AB and E lies on AC such that DE is parallel to BC. AD = 5 cm, AB = 8 cm and the area of triangle ADE = 25 cm². F"
+    },
+    {
+      "id": "shp-C04",
+      "tag": "geo-shapes",
+      "suggested": "geo-transformations",
+      "also": "geo-volume",
+      "why": "Similar solids; area and volume scale factors.",
+      "question": "Two similar cylinders have heights 4 cm and 10 cm. The total surface area of the smaller is 96π cm². Find: (a) the total surface area of the"
+    },
+    {
+      "id": "av-B01",
+      "tag": "geo-volume",
+      "suggested": "geo-perimeter-area",
+      "also": "",
+      "why": "Total surface area of a cone.",
+      "question": "A cone has radius 5 cm and slant height 13 cm. Find the total surface area (curved + base). Use π = 3.14."
+    },
+    {
+      "id": "av-B04",
+      "tag": "geo-volume",
+      "suggested": "geo-perimeter-area",
+      "also": "",
+      "why": "Surface area of a sphere.",
+      "question": "Find the surface area of a sphere with radius 5 cm. Give your answer to 3 significant figures."
+    },
+    {
+      "id": "av-C01",
+      "tag": "geo-volume",
+      "suggested": "geo-perimeter-area",
+      "also": "geo-pythagoras",
+      "why": "Composite surface area; slant height found by Pythagoras.",
+      "question": "A solid is made of a cone (radius 6 cm, height 8 cm) on top of a cylinder (radius 6 cm, height 10 cm). Find the total surface area. Use π = "
+    },
+    {
+      "id": "pyth-C03",
+      "tag": "geo-pythagoras",
+      "suggested": "alg-quadratics",
+      "also": "geo-pythagoras",
+      "why": "Expand, factorise and solve a quadratic set up from Pythagoras.",
+      "question": "In a right-angled triangle, the two shorter sides are x cm and (x + 7) cm. The hypotenuse is (x + 8) cm. Find x and all three sides."
+    },
+    {
+      "id": "cth-C02",
+      "tag": "geo-circles",
+      "suggested": "geo-angles",
+      "also": "geo-circles",
+      "why": "Solved using the angle sum of triangle CBD.",
+      "question": "Two circles intersect at points A and B. C is a point on the first circle and D is a point on the second circle, with C, A, D collinear. The"
+    },
+    {
+      "id": "cth-C03",
+      "tag": "geo-circles",
+      "suggested": "geo-trigonometry",
+      "also": "geo-circles",
+      "why": "Tangent-radius right angle, then Pythagoras and tan give PT and the angle.",
+      "question": "O is the centre of a circle. The tangent at P meets line OQ produced at T. OP = 5 cm and OT = 13 cm. Find PT and hence find angle POT."
+    },
+    {
+      "id": "prb-B01",
+      "tag": "prob-basic",
+      "suggested": "prob-venn",
+      "also": "",
+      "why": "Union/intersection counting to find how many study neither.",
+      "question": "In a class of 30, 18 study French, 12 study Spanish, and 5 study both. How many study neither? Find P(studies neither)."
+    },
+    {
+      "id": "prb-B03",
+      "tag": "prob-basic",
+      "suggested": "prob-venn",
+      "also": "",
+      "why": "Addition rule for overlapping sets; union of dog and cat owners",
+      "question": "In a survey of 40 students, 15 own a dog, 10 own a cat, and 6 own both a dog and a cat. A student is chosen at random. Find P(owns a dog or "
+    },
+    {
+      "id": "prb-B05",
+      "tag": "prob-basic",
+      "suggested": "prob-venn",
+      "also": "prob-basic",
+      "why": "Addition rule for overlapping events: red or queen",
+      "question": "A card is drawn at random from a standard 52-card pack. Find P(red queen) and P(red or queen), each as simplified fractions."
+    },
+    {
+      "id": "prb-C01",
+      "tag": "prob-basic",
+      "suggested": "prob-conditional",
+      "also": "",
+      "why": "Conditional probabilities from a two-way table",
+      "question": "A two-way table shows 60 students classified by gender and subject preference. Boys: 18 prefer maths, 12 prefer English (30 boys total). Gir"
+    },
+    {
+      "id": "prb-C03",
+      "tag": "prob-basic",
+      "suggested": "prob-tree",
+      "also": "alg-equations",
+      "why": "Solve for n, then two draws without replacement",
+      "question": "A bag has n red counters and 4 white counters. The probability of drawing a red counter is 2/3. Find n. Hence find P(drawing two red counter"
+    },
+    {
+      "id": "prb-C04",
+      "tag": "prob-basic",
+      "suggested": "prob-combined",
+      "also": "prob-basic",
+      "why": "Biased die probabilities, then independent combined throws",
+      "question": "A biased die has P(6) = 1/4. All other faces (1 to 5) are equally likely. (a) Find P(not 6). (b) Find P(1). (c) The die is thrown twice inde"
+    },
+    {
+      "id": "comb-A05",
+      "tag": "prob-combined",
+      "suggested": "prob-tree",
+      "also": "prob-combined",
+      "why": "Two draws with replacement",
+      "question": "A bag has 2 red and 3 blue balls. A ball is drawn, its colour noted, then replaced. A second ball is drawn. Find P(both red) as a fraction."
+    },
+    {
+      "id": "comb-C01",
+      "tag": "prob-combined",
+      "suggested": "prob-conditional",
+      "also": "prob-combined",
+      "why": "Conditional probability formula used to test independence",
+      "question": "Events A and B satisfy: P(A) = 0.4, P(B) = 0.25, P(A and B) = 0.1. Find P(A|B) and P(B|A). Hence determine whether A and B are independent, "
+    },
+    {
+      "id": "comb-C03",
+      "tag": "prob-combined",
+      "suggested": "prob-venn",
+      "also": "prob-basic",
+      "why": "Set notation with complements for mutually exclusive events",
+      "question": "Events A and B are mutually exclusive. P(A) = 0.3 and P(A or B) = 0.7. Find P(B) and P(A' and B'). Hence find P(A' or B)."
+    },
+    {
+      "id": "comb-C04",
+      "tag": "prob-combined",
+      "suggested": "prob-conditional",
+      "also": "prob-combined",
+      "why": "Conditional probability on a restricted two-dice sample space",
+      "question": "Two fair dice are rolled. Given that both dice show different numbers, find P(the sum exceeds 9). Give your answer as a simplified fraction."
+    },
+    {
+      "id": "tree-C04",
+      "tag": "prob-tree",
+      "suggested": "prob-conditional",
+      "also": "prob-tree",
+      "why": "Finds P(bag A given red) via Bayes from tree routes.",
+      "question": "Bag A contains 4 red and 1 blue ball. Bag B contains 2 red and 3 blue balls. A fair coin is tossed: if heads, a ball is drawn from bag A; if"
+    },
+    {
+      "id": "venn-C01",
+      "tag": "prob-venn",
+      "suggested": "prob-conditional",
+      "also": "prob-venn",
+      "why": "Independence: product rule and check that P(A|B) equals P(A).",
+      "question": "In a universal set n(xi) = 60. P(A) = 1/3, P(B) = 2/5. Events A and B are independent. Find n(A and B). Verify independence using P(A|B) and"
+    },
+    {
+      "id": "venn-C03",
+      "tag": "prob-venn",
+      "suggested": "prob-conditional",
+      "also": "prob-venn",
+      "why": "Uses the conditional probability formula and tests independence",
+      "question": "P(A and B) = 0.15, P(A|B) = 0.6. Find P(B). Given P(A) = 0.4, find P(B|A) and determine whether A and B are independent."
+    },
+    {
+      "id": "venn-C04",
+      "tag": "prob-venn",
+      "suggested": "prob-combined",
+      "also": "prob-venn",
+      "why": "Addition rule for mutually exclusive versus independent events",
+      "question": "P(A) = 0.5 and P(B) = 0.4. Calculate P(A or B) under two scenarios: (i) A and B are mutually exclusive; (ii) A and B are independent. Show t"
+    },
+    {
+      "id": "cond-B06",
+      "tag": "prob-conditional",
+      "suggested": "prob-tree",
+      "also": "prob-conditional",
+      "why": "Sequential dependent events multiplied along branches",
+      "question": "A factory produces items, 5% of which are defective. Items go through two quality checks: check 1 catches 80% of defective items; check 2 (o"
+    },
+    {
+      "id": "stat-charts-A03",
+      "tag": "stat-charts",
+      "suggested": "stat-averages",
+      "also": "",
+      "why": "Range and total of data",
+      "question": "Monthly rainfall: Jan = 45 mm, Feb = 30 mm, Mar = 55 mm, Apr = 25 mm. Find (a) the range and (b) the total rainfall."
+    },
+    {
+      "id": "stat-charts-B04",
+      "tag": "stat-charts",
+      "suggested": "stat-cumulative",
+      "also": "stat-averages",
+      "why": "Class frequencies from cumulative frequencies, then modal class",
+      "question": "Cumulative frequencies: ≤10: 5, ≤20: 18, ≤30: 29, ≤40: 40. Find the individual class frequencies and state the modal class."
+    },
+    {
+      "id": "stat-charts-B06",
+      "tag": "stat-charts",
+      "suggested": "prob-conditional",
+      "also": "prob-basic",
+      "why": "Conditional probability from a two-way table",
+      "question": "A two-way table shows 80 students. Boys: 20 prefer maths, 15 prefer English (35 total). Girls: 18 prefer maths, 27 prefer English (45 total)"
+    },
+    {
+      "id": "stat-charts-C03",
+      "tag": "stat-charts",
+      "suggested": "num-percentages",
+      "also": "",
+      "why": "Percentages of amounts and a combined percentage",
+      "question": "School A has 180 students; 45% chose an animal charity. School B has 240 students; 30% chose an animal charity. Find (a) the number from eac"
+    },
+    {
+      "id": "stat-scatter-A02",
+      "tag": "stat-scatter",
+      "suggested": "stat-averages",
+      "also": "stat-scatter",
+      "why": "Calculating two means to find the mean point",
+      "question": "Eight students’ heights (cm) and weights (kg) are recorded: heights 150, 155, 160, 162, 168, 172, 175, 180; weights 52, 55, 60, 63, 68, 70, "
+    },
+    {
+      "id": "stat-scatter-A04",
+      "tag": "stat-scatter",
+      "suggested": "alg-graphs",
+      "also": "stat-scatter",
+      "why": "Equation of a straight line through two points",
+      "question": "A line of best fit passes through the points (10, 5) and (40, 20). Find its equation in the form y = mx + c."
+    },
+    {
+      "id": "cum-B01",
+      "tag": "stat-cumulative",
+      "suggested": "stat-averages",
+      "also": "stat-boxplots",
+      "why": "Comparing distributions using median and IQR",
+      "question": "Group A: median 55, IQR 20. Group B: median 62, IQR 35. Compare the distributions."
+    },
+    {
+      "id": "stat-cumulative-B03",
+      "tag": "stat-cumulative",
+      "suggested": "stat-boxplots",
+      "also": "",
+      "why": "Box plot IQR and outlier fence",
+      "question": "A box plot is drawn from: min = 12, Q1 = 18, median = 25, Q3 = 35, max = 48. (a) Find the IQR. (b) Find the upper outlier fence. (c) Are the"
+    },
+    {
+      "id": "stat-cumulative-B04",
+      "tag": "stat-cumulative",
+      "suggested": "stat-averages",
+      "also": "stat-boxplots",
+      "why": "Compare distributions using median and IQR",
+      "question": "Group X (n=60): median = 42, IQR = 18. Group Y (n=60): median = 36, IQR = 28. Write a full comparison of the two distributions."
+    },
+    {
+      "id": "stat-cumulative-C01",
+      "tag": "stat-cumulative",
+      "suggested": "stat-averages",
+      "also": "stat-cumulative",
+      "why": "Grouped estimated mean, median estimate and skew",
+      "question": "Grouped data: 0<x≤20: f=6, 20<x≤40: f=14, 40<x≤60: f=24, 60<x≤80: f=16. Total = 60. Find (a) the estimated mean and (b) an estimate for the "
+    },
+    {
+      "id": "stat-cumulative-C03",
+      "tag": "stat-cumulative",
+      "suggested": "stat-boxplots",
+      "also": "stat-cumulative",
+      "why": "IQR and outlier fences from given quartiles",
+      "question": "A dataset of n = 50 values has Q1 = 16 and Q3 = 35 (from a cumulative frequency graph). Min = 2, max = 58. (a) Find the IQR. (b) Find the ou"
+    },
+    {
+      "id": "stat-cumulative-C04",
+      "tag": "stat-cumulative",
+      "suggested": "stat-boxplots",
+      "also": "stat-cumulative",
+      "why": "Outlier fence and box plot features from quartiles",
+      "question": "From a cumulative frequency graph for 100 people: Q1 = 28, Q3 = 52, max = 74, min = 8. (a) Find the IQR. (b) Find the upper outlier fence. ("
+    },
+    {
+      "id": "pct-B04",
+      "tag": "num-percentages",
+      "suggested": "rpr-percentage-change",
+      "also": "num-percentages",
+      "why": "Calculate a percentage loss",
+      "question": "A phone is bought for £240 and sold for £204. Calculate the percentage loss."
+    },
+    {
+      "id": "pct-B05",
+      "tag": "num-percentages",
+      "suggested": "rpr-percentage-change",
+      "also": "",
+      "why": "Successive percentage changes using multipliers",
+      "question": "A price of £400 increases by 25%, then decreases by 20%. What is the final price?"
+    },
+    {
+      "id": "pct-B06",
+      "tag": "num-percentages",
+      "suggested": "rpr-percentage-change",
+      "also": "",
+      "why": "Successive percentage increase and decrease",
+      "question": "A coat costs £150. It is increased by 40%, then reduced by 10% in a sale. Find the final price."
+    },
+    {
+      "id": "pct-C03",
+      "tag": "num-percentages",
+      "suggested": "rpr-percentage-change",
+      "also": "",
+      "why": "Repeated percentage change with multipliers",
+      "question": "A house is valued at £180,000. In year 1 it increases in value by 8%. In year 2 it decreases by 5%. What is its value at the end of year 2?"
+    },
+    {
+      "id": "pct-C04",
+      "tag": "num-percentages",
+      "suggested": "rpr-percentage-change",
+      "also": "",
+      "why": "Compound interest over two years",
+      "question": "£750 is invested at 6% compound interest per year. How much interest has been earned after 2 years?"
+    },
+    {
+      "id": "int-B02",
+      "tag": "num-integers",
+      "suggested": "num-bounds",
+      "also": "",
+      "why": "Error interval from rounding to 2 s.f.",
+      "question": "A number n is given as 380 correct to 2 significant figures. Write down the error interval for n."
+    },
+    {
+      "id": "int-B05",
+      "tag": "num-integers",
+      "suggested": "num-fractions",
+      "also": "",
+      "why": "Converting a recurring decimal to a fraction.",
+      "question": "Express 0.363636... as a fraction in its simplest form."
+    },
+    {
+      "id": "int-B06",
+      "tag": "num-integers",
+      "suggested": "num-bounds",
+      "also": "",
+      "why": "Minimum product found using lower bounds.",
+      "question": "x = 8.4 and y = 3.7, both given to 1 decimal place. Find the minimum value of x × y."
+    },
+    {
+      "id": "int-C01",
+      "tag": "num-integers",
+      "suggested": "num-bounds",
+      "also": "",
+      "why": "Upper bound of a quotient.",
+      "question": "n = 6500 given to 2 significant figures. Find the upper bound of 1000 ÷ n. Give your answer to 3 significant figures."
+    },
+    {
+      "id": "int-C02",
+      "tag": "num-integers",
+      "suggested": "num-bounds",
+      "also": "",
+      "why": "Combining bounds in a compound expression.",
+      "question": "x = 4.7 and y = 2.3, both correct to 1 decimal place. Find the upper bound of (x + y) ÷ (x − y). Give your answer to 3 significant figures."
+    },
+    {
+      "id": "int-C03",
+      "tag": "num-integers",
+      "suggested": "num-fractions",
+      "also": "",
+      "why": "Converting a recurring decimal to a fraction.",
+      "question": "Express 0.414141... as a fraction in its simplest form. Show your working."
+    },
+    {
+      "id": "int-C04",
+      "tag": "num-integers",
+      "suggested": "num-bounds",
+      "also": "num-standard-form",
+      "why": "Upper bound of an area, answer given in standard form.",
+      "question": "A square has side length 24 m, measured to the nearest metre. Find the upper bound of the area of the square. Give your answer in standard f"
+    },
+    {
+      "id": "pow-B04",
+      "tag": "num-powers-roots",
+      "suggested": "alg-expressions",
+      "also": "num-powers-roots",
+      "why": "Simplifying an algebraic product using index laws.",
+      "question": "Simplify 6x³y² × 2x²y³."
+    },
+    {
+      "id": "pow-B06",
+      "tag": "num-powers-roots",
+      "suggested": "alg-expressions",
+      "also": "num-powers-roots",
+      "why": "Power of a power in an algebraic expression.",
+      "question": "Simplify (2x²)³ × x⁴."
+    },
+    {
+      "id": "nrt-C04",
+      "tag": "num-ratio",
+      "suggested": "rpr-proportion",
+      "also": "num-ratio",
+      "why": "Scaling a recipe by direct proportion",
+      "question": "A recipe for 8 people requires 320 g of butter. Ben wants to make the recipe for 14 people. He has 480 g of butter. Does he have enough? Sho"
+    }
+  ],
+  "arrow_density": {
+    "count": 36,
+    "questions": [
+      {
+        "id": "stf-A03",
+        "where": [
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "eq-B03",
+        "where": [
+          "steps[1].explanation"
+        ]
+      },
+      {
+        "id": "eq-C01",
+        "where": [
+          "steps[1].explanation",
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "seq-A02",
+        "where": [
+          "steps[1].explanation",
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "sim-A01",
+        "where": [
+          "workedExample.steps[0]"
+        ]
+      },
+      {
+        "id": "sim-A02",
+        "where": [
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "fn-B03",
+        "where": [
+          "steps[1].explanation",
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "fn-C02",
+        "where": [
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "fn-C03",
+        "where": [
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "fn-C04",
+        "where": [
+          "workedExample.steps[0]"
+        ]
+      },
+      {
+        "id": "gph-B03",
+        "where": [
+          "steps[1].explanation"
+        ]
+      },
+      {
+        "id": "gph-B04",
+        "where": [
+          "steps[1].explanation"
+        ]
+      },
+      {
+        "id": "gph-C03",
+        "where": [
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "ineq-B06",
+        "where": [
+          "workedExample.steps[0]"
+        ]
+      },
+      {
+        "id": "seq-C01",
+        "where": [
+          "workedExample.steps[0]"
+        ]
+      },
+      {
+        "id": "seq-C02",
+        "where": [
+          "workedExample.steps[0]"
+        ]
+      },
+      {
+        "id": "seq-C04",
+        "where": [
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "sim-B06",
+        "where": [
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "sim-C01",
+        "where": [
+          "workedExample.steps[0]"
+        ]
+      },
+      {
+        "id": "sim-C02",
+        "where": [
+          "steps[0].explanation",
+          "workedExample.steps[0]",
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "sim-C04",
+        "where": [
+          "workedExample.steps[0]",
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "quad-B04",
+        "where": [
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "quad-C03",
+        "where": [
+          "workedExample.steps[0]"
+        ]
+      },
+      {
+        "id": "quad-C04",
+        "where": [
+          "workedExample.steps[2]"
+        ]
+      },
+      {
+        "id": "pro-A01",
+        "where": [
+          "steps[0].explanation"
+        ]
+      },
+      {
+        "id": "pro-A02",
+        "where": [
+          "steps[0].explanation"
+        ]
+      },
+      {
+        "id": "ang-B05",
+        "where": [
+          "steps[0].explanation",
+          "workedExample.steps[0]"
+        ]
+      },
+      {
+        "id": "ang-B06",
+        "where": [
+          "workedExample.steps[0]"
+        ]
+      },
+      {
+        "id": "ang-C01",
+        "where": [
+          "workedExample.steps[1]"
+        ]
+      },
+      {
+        "id": "ang-C03",
+        "where": [
+          "steps[0].explanation"
+        ]
+      },
+      {
+        "id": "shp-B02",
+        "where": [
+          "steps[2].explanation"
+        ]
+      },
+      {
+        "id": "shp-C02",
+        "where": [
+          "steps[3].explanation"
+        ]
+      },
+      {
+        "id": "tr-C03",
+        "where": [
+          "workedExample.steps[0]"
+        ]
+      },
+      {
+        "id": "pyth-C03",
+        "where": [
+          "steps[3].explanation"
+        ]
+      },
+      {
+        "id": "int-B03",
+        "where": [
+          "steps[0].explanation"
+        ]
+      },
+      {
+        "id": "pow-C03",
+        "where": [
+          "steps[2].explanation"
+        ]
+      }
+    ]
+  },
+  "calls": [
+    {
+      "batch": 1,
+      "cost_usd": 0.072928,
+      "ok": true
+    },
+    {
+      "batch": 2,
+      "cost_usd": 0.067948,
+      "ok": true
+    },
+    {
+      "batch": 3,
+      "cost_usd": 0.071948,
+      "ok": true
+    },
+    {
+      "batch": 4,
+      "cost_usd": 0.073604,
+      "ok": true
+    },
+    {
+      "batch": 5,
+      "cost_usd": 0.06534,
+      "ok": true
+    },
+    {
+      "batch": 6,
+      "cost_usd": 0.074428,
+      "ok": true
+    },
+    {
+      "batch": 7,
+      "cost_usd": 0.075292,
+      "ok": true
+    },
+    {
+      "batch": 8,
+      "cost_usd": 0.059648,
+      "ok": true
+    },
+    {
+      "batch": 9,
+      "cost_usd": 0.082092,
+      "ok": true
+    },
+    {
+      "batch": 10,
+      "cost_usd": 0.083292,
+      "ok": true
+    },
+    {
+      "batch": 11,
+      "cost_usd": 0.074992,
+      "ok": true
+    },
+    {
+      "batch": 12,
+      "cost_usd": 0.074748,
+      "ok": true
+    },
+    {
+      "batch": 13,
+      "cost_usd": 0.077972,
+      "ok": true
+    },
+    {
+      "batch": 14,
+      "cost_usd": 0.075004,
+      "ok": true
+    },
+    {
+      "batch": 15,
+      "cost_usd": 0.07444,
+      "ok": true
+    },
+    {
+      "batch": 16,
+      "cost_usd": 0.084472,
+      "ok": true
+    },
+    {
+      "batch": 17,
+      "cost_usd": 0.079844,
+      "ok": true
+    },
+    {
+      "batch": 18,
+      "cost_usd": 0.076952,
+      "ok": true
+    },
+    {
+      "batch": 19,
+      "cost_usd": 0.071552,
+      "ok": true
+    },
+    {
+      "batch": 20,
+      "cost_usd": 0.088424,
+      "ok": true
+    },
+    {
+      "batch": 21,
+      "cost_usd": 0.067104,
+      "ok": true
+    },
+    {
+      "batch": 22,
+      "cost_usd": 0.0744,
+      "ok": true
+    },
+    {
+      "batch": 23,
+      "cost_usd": 0.077092,
+      "ok": true
+    },
+    {
+      "batch": 24,
+      "cost_usd": 0.0792,
+      "ok": true
+    }
+  ],
+  "cost_usd": 1.8027
+}

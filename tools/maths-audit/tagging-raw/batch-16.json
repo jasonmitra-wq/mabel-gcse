@@ -1,0 +1,177 @@
+{
+  "batch": 16,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 10413,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 2141,
+    "output_tokens_details": {
+      "thinking_tokens": 791
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "cost_usd": 0.084472,
+  "parsed": true,
+  "result": {
+    "results": [
+      {
+        "id": "prb-B03",
+        "subtopic": "prob-venn",
+        "also": "",
+        "why": "Addition rule for overlapping sets; union of dog and cat owners"
+      },
+      {
+        "id": "prb-B04",
+        "subtopic": "prob-basic",
+        "also": "alg-equations",
+        "why": "Mutually exclusive probabilities and complement; form and solve an equation"
+      },
+      {
+        "id": "prb-B05",
+        "subtopic": "prob-venn",
+        "also": "prob-basic",
+        "why": "Addition rule for overlapping events: red or queen"
+      },
+      {
+        "id": "prb-B06",
+        "subtopic": "prob-basic",
+        "also": "stat-sampling",
+        "why": "Experimental probability, expected frequency and judging fairness"
+      },
+      {
+        "id": "prb-C01",
+        "subtopic": "prob-conditional",
+        "also": "",
+        "why": "Conditional probabilities from a two-way table"
+      },
+      {
+        "id": "prb-C02",
+        "subtopic": "prob-basic",
+        "also": "",
+        "why": "Exhaustive mutually exclusive probabilities sum to 1"
+      },
+      {
+        "id": "prb-C03",
+        "subtopic": "prob-tree",
+        "also": "alg-equations",
+        "why": "Solve for n, then two draws without replacement"
+      },
+      {
+        "id": "prb-C04",
+        "subtopic": "prob-combined",
+        "also": "prob-basic",
+        "why": "Biased die probabilities, then independent combined throws"
+      },
+      {
+        "id": "comb-A01",
+        "subtopic": "prob-combined",
+        "also": "",
+        "why": "Sample space for a coin and a die"
+      },
+      {
+        "id": "comb-B01",
+        "subtopic": "prob-combined",
+        "also": "",
+        "why": "Independent events: multiplication and addition rules"
+      },
+      {
+        "id": "comb-A02",
+        "subtopic": "prob-combined",
+        "also": "",
+        "why": "Independent repeated spins: multiply probabilities"
+      },
+      {
+        "id": "comb-A03",
+        "subtopic": "prob-combined",
+        "also": "",
+        "why": "Two-dice sample space and sum probability"
+      },
+      {
+        "id": "comb-A04",
+        "subtopic": "prob-combined",
+        "also": "",
+        "why": "List outcomes of two coin tosses"
+      },
+      {
+        "id": "comb-A05",
+        "subtopic": "prob-tree",
+        "also": "prob-combined",
+        "why": "Two draws with replacement"
+      },
+      {
+        "id": "comb-B02",
+        "subtopic": "prob-combined",
+        "also": "",
+        "why": "Independent events with complements; exactly one occurs"
+      },
+      {
+        "id": "comb-B03",
+        "subtopic": "prob-combined",
+        "also": "",
+        "why": "Complement method for two dice"
+      },
+      {
+        "id": "comb-B04",
+        "subtopic": "prob-combined",
+        "also": "",
+        "why": "Independent events; at least one via complement"
+      },
+      {
+        "id": "comb-B05",
+        "subtopic": "prob-combined",
+        "also": "",
+        "why": "Independent events with fractions; and/or rules"
+      },
+      {
+        "id": "comb-B06",
+        "subtopic": "prob-combined",
+        "also": "",
+        "why": "Three independent flips; at least one via complement"
+      },
+      {
+        "id": "comb-C01",
+        "subtopic": "prob-conditional",
+        "also": "prob-combined",
+        "why": "Conditional probability formula used to test independence"
+      },
+      {
+        "id": "comb-C02",
+        "subtopic": "prob-combined",
+        "also": "",
+        "why": "Three independent events; all, none, at least one"
+      },
+      {
+        "id": "comb-C03",
+        "subtopic": "prob-venn",
+        "also": "prob-basic",
+        "why": "Set notation with complements for mutually exclusive events"
+      },
+      {
+        "id": "comb-C04",
+        "subtopic": "prob-conditional",
+        "also": "prob-combined",
+        "why": "Conditional probability on a restricted two-dice sample space"
+      },
+      {
+        "id": "tree-A01",
+        "subtopic": "prob-tree",
+        "also": "",
+        "why": "Two draws with replacement"
+      },
+      {
+        "id": "tree-B01",
+        "subtopic": "prob-tree",
+        "also": "",
+        "why": "Without replacement; add both branch routes"
+      }
+    ]
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "lesson": "num-integers",
+  "source_file": "lessons/maths/num-integers.json",
+  "lesson_md5": "c9315f4b5288879a2f410e379bd8a3f2",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T17:31:26.218Z",
+  "specRefs_sent": [
+    "N1",
+    "N2",
+    "N3",
+    "N15"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3263,
+    "output_tokens": 4843
+  },
+  "cost_usd": 0.109912,
+  "status": "OK",
+  "result": {
+    "lesson": "num-integers",
+    "maths_errors": [
+      {
+        "field": "slides[1].body",
+        "text": "If that digit is 5 or more, round the target digit up by 1; if it is 4 or less, leave it unchanged and drop everything after. This same rule applies whether you are rounding to decimal places (d.p.) or significant figures (s.f.).",
+        "correction": "\"Drop everything after\" is only right for digits after the decimal point. Digits before the decimal point must be replaced by zeros as placeholders. For example, 34 560 to 2 s.f. is 35 000, not 35, and 3 412 to 1 s.f. is 3 000, not 3. The rule also says to \"round the target digit up by 1\" without saying that a 9 becomes 0 and carries 1 to the left (e.g. 6.96 → 7.0)."
+      },
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "the student sees 5 in the 2nd d.p. position and rounds up the 8, giving 3.86",
+        "correction": "In 3.8512 the 8 is the 1st d.p. digit and the 5 is the 2nd d.p. digit, which is the target digit. A student who wrongly treats the 5 as the deciding digit rounds up the 5 (5 → 6), giving 3.86. Rounding up the 8 would give 3.9. The text should say \"rounds up the 5\". The correct answer of 3.85 is right."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "N1",
+        "spec_text": "order positive and negative integers, decimals and fractions use the symbols =, ≠, <, >, ≤, ≥ ... including use of a number line",
+        "why": "The lesson defines integers but never shows how to order integers, decimals or fractions. It does not use the symbols =, ≠, <, >, ≤, ≥ and has no number line."
+      },
+      {
+        "specRef": "N2",
+        "spec_text": "apply the four operations, including formal written methods, to integers, decimals and simple fractions (proper and improper), and mixed numbers – all both positive and negative",
+        "why": "There is no calculation with integers or decimals: no adding, subtracting, multiplying or dividing negative numbers, and no written methods for decimals."
+      },
+      {
+        "specRef": "N2",
+        "spec_text": "understand and use place value (eg when working with very large or very small numbers, and when calculating with decimals)",
+        "why": "Place value is never explained. This matters for rounding too, because the lesson never explains placeholder zeros."
+      },
+      {
+        "specRef": "N2",
+        "spec_text": "Knowledge and understanding of terms used in household finance, for example profit, loss, cost price, selling price, debit, credit, balance, income tax, VAT and interest rate",
+        "why": "None of these terms appear in the lesson, and there are no questions set in context."
+      },
+      {
+        "specRef": "N3",
+        "spec_text": "recognise and use relationships between operations, including inverse operations (eg cancellation to simplify calculations and expressions)",
+        "why": "Inverse operations are not taught."
+      },
+      {
+        "specRef": "N3",
+        "spec_text": "use conventional notation for priority of operations, including brackets, powers, roots and reciprocals",
+        "why": "Order of operations (brackets, powers, roots, reciprocals) is not taught."
+      },
+      {
+        "specRef": "N15",
+        "spec_text": "use inequality notation to specify simple error intervals due to truncation or rounding",
+        "why": "Error intervals and truncation are not taught."
+      },
+      {
+        "specRef": "N15",
+        "spec_text": "Students should know not to round values during intermediate steps of a calculation.",
+        "why": "The lesson never tells the student to keep full accuracy until the final answer."
+      },
+      {
+        "specRef": "N15",
+        "spec_text": "round numbers and measures to an appropriate degree of accuracy ... including appropriate rounding for questions set in context",
+        "why": "Rounding is only shown to a stated number of d.p. or s.f. The lesson never shows how to choose a sensible accuracy, or how to round in context (e.g. money to 2 d.p., or rounding up a number of buses)."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "N15",
+        "case": "Rounding where the deciding digit is 4 or less (digit stays the same)",
+        "why": "Both parts of the only worked example round up."
+      },
+      {
+        "specRef": "N15",
+        "case": "Rounding large numbers to significant figures with placeholder zeros (e.g. 34 560 to 2 s.f.)",
+        "why": "No example rounds a whole number or the digits before the decimal point, and the rule given would lead the student to drop those digits."
+      },
+      {
+        "specRef": "N15",
+        "case": "Significant figures for numbers less than 1 (leading zeros)",
+        "why": "This case appears only as a one-line key fact (0.0047), never as a worked example."
+      },
+      {
+        "specRef": "N15",
+        "case": "Rounding with a carry (9 rounding up)",
+        "why": "6.96 → 7.0 appears only in the mistakes and key facts. No worked example shows the step-by-step carry."
+      },
+      {
+        "specRef": "N15",
+        "case": "Rounding to the nearest whole number / 10 / 100 / 1000",
+        "why": "This is not shown anywhere."
+      },
+      {
+        "specRef": "N15",
+        "case": "Error intervals for rounding and for truncation",
+        "why": "This is not shown anywhere."
+      },
+      {
+        "specRef": "N15",
+        "case": "Rounding a final answer in context without rounding intermediate values",
+        "why": "This is not shown anywhere."
+      },
+      {
+        "specRef": "N1",
+        "case": "Ordering negative numbers and decimals using inequality symbols / a number line",
+        "why": "This is not shown anywhere."
+      },
+      {
+        "specRef": "N2",
+        "case": "Four operations with negative integers",
+        "why": "This is not shown anywhere."
+      },
+      {
+        "specRef": "N2",
+        "case": "Written multiplication / division with decimals",
+        "why": "This is not shown anywhere."
+      },
+      {
+        "specRef": "N3",
+        "case": "Priority of operations (brackets, powers, roots)",
+        "why": "This is not shown anywhere."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].body",
+        "text": "If that digit is 5 or more, round the target digit up by 1; if it is 4 or less, leave it unchanged and drop everything after.",
+        "why": "One sentence carries two branches and a dropping rule. \"Target digit\" is used without saying it means the last digit you keep."
+      },
+      {
+        "field": "slides[2].steps[0].working",
+        "text": "5.3|8|64 — the 2nd d.p. digit is 8.",
+        "why": "The bar notation is not explained, and the step never says why the 8 is the 2nd decimal place (count digits after the point)."
+      },
+      {
+        "field": "slides[2].steps[2].working",
+        "text": "5 is the 1st s.f., 3 is the 2nd s.f. The deciding digit is 8. Since 8 ≥ 5, round up: 3 becomes 4.",
+        "why": "It does not say why 8 is the deciding digit (it is the 3rd s.f., one to the right of the 2nd). Three ideas are packed into one step."
+      },
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "Looking at the digit in the rounding position rather than the one to its right — e.g. rounding 3.8512 to 2 d.p., the student sees 5 in the 2nd d.p. position and rounds up the 8, giving 3.86, when the deciding digit is actually 1 (the 3rd d.p.) and the answer is 3.85.",
+        "why": "This is one very long sentence holding the general error, the example, the wrong answer, the reason and the correct answer. The wording about which digit is rounded is also confusing."
+      },
+      {
+        "field": "keyFacts[1].fact",
+        "text": "If it is 5 or more, round up; if 4 or less, round down.",
+        "why": "\"Round down\" may be read as making the digit smaller. It actually means leaving the kept digit unchanged, and the lesson does not say so here."
+      },
+      {
+        "field": "keyFacts[2].examTip",
+        "text": "0.0047 to 1 s.f. is 0.005, not 0.0 — the first significant figure is 4.",
+        "why": "It is not explained where \"0.0\" comes from (counting the leading zero as the first s.f.). It also does not show that the deciding digit 7 rounds the 4 up to 5."
+      }
+    ],
+    "not_checked": [
+      "slides[2].note: \"Numbers must differ from any question in the question bank for this subtopic.\" The question bank was not provided, so this could not be verified."
+    ]
+  }
+}

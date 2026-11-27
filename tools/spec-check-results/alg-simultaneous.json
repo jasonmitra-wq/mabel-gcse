@@ -1,0 +1,152 @@
+{
+  "lesson": "alg-simultaneous",
+  "source_file": "lessons/maths/alg-simultaneous.json",
+  "lesson_md5": "d5d7d9e7d52f235f47ee7218d7889d53",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:29:21.421Z",
+  "specRefs_sent": [
+    "A19",
+    "A21"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 2855,
+    "output_tokens": 4278
+  },
+  "cost_usd": 0.09698,
+  "status": "OK",
+  "result": {
+    "lesson": "alg-simultaneous",
+    "maths_errors": [
+      {
+        "field": "slides[1].body",
+        "text": "Elimination removes one variable by making its coefficient equal in both equations, then adding or subtracting. If the matching coefficients have the same sign, subtract one equation from the other. If they have opposite signs, add the equations.",
+        "correction": "Coefficients that are equal cannot have opposite signs, so the rule contradicts itself. Say: make the size of one variable's coefficient the same in both equations, ignoring sign. For example, +2y and −2y. Then subtract if the signs are the same and add if they are different."
+      },
+      {
+        "field": "keyFacts[0].fact",
+        "text": "Elimination: make the coefficient of one variable equal in both equations (multiply if needed), then subtract (same signs) or add (opposite signs) to remove it.",
+        "correction": "This has the same contradiction. It should say 'make the size of the coefficient of one variable the same in both equations (ignoring sign)'."
+      },
+      {
+        "field": "keyFacts[2].fact",
+        "text": "After finding one variable, always substitute back into an original equation (not a modified version) to find the second.",
+        "correction": "A correctly multiplied equation is equivalent to the original, so substituting into it gives the same answer. For example, 4x − 2y = 10 and 2x − y = 5 give the same x for any y. Using an original equation is good practice because it avoids carrying forward a slip made when multiplying. It is not a mathematical requirement."
+      }
+    ],
+    "false_mistakes": [
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "Substituting the found value back into the modified (multiplied) equation rather than one of the originals, introducing a factor-of-2 error.",
+        "why": "Multiplying every term of an equation by 2 gives an equivalent equation with exactly the same solutions. Substituting into it cannot introduce a factor-of-2 error, provided the multiplication itself was done correctly.",
+        "mistaken_method_gives": "The correct value. For example, with y = 3: 4x − 2(3) = 10 gives x = 4, and the original 2x − 3 = 5 also gives x = 4."
+      }
+    ],
+    "missing_spec_content": [
+      {
+        "specRef": "A19",
+        "spec_text": "find approximate solutions using a graph",
+        "why": "The lesson only says the solution is where two lines intersect. It never shows how to read an approximate solution from a graph, and it calls graphs slower: \"Solving them algebraically is far quicker than drawing graphs\"."
+      },
+      {
+        "specRef": "A19",
+        "spec_text": "Higher only: including linear/quadratic",
+        "why": "No linear/quadratic systems are taught. The substitution method needed for them is also never taught."
+      },
+      {
+        "specRef": "A21",
+        "spec_text": "derive an equation (or two simultaneous equations), solve the equation(s) and interpret the solution",
+        "why": "The lesson never shows forming simultaneous equations from a worded or geometric situation, or interpreting the solution in context."
+      },
+      {
+        "specRef": "A21",
+        "spec_text": "translate simple situations or procedures into algebraic expressions or formulae",
+        "why": "The lesson does not teach translating situations into algebra."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "A19",
+        "case": "multiplying one equation to match coefficients",
+        "why": "The only worked example already has matching x-coefficients (\"no multiplication needed\"). Multiplication appears only in the common mistakes."
+      },
+      {
+        "specRef": "A19",
+        "case": "multiplying both equations to match coefficients",
+        "why": "No example needs both equations scaled, for example 3x + 2y and 2x + 5y."
+      },
+      {
+        "specRef": "A19",
+        "case": "opposite signs, so add the equations",
+        "why": "The add rule is stated but never demonstrated. The only example uses subtraction."
+      },
+      {
+        "specRef": "A19",
+        "case": "negative or fractional solutions",
+        "why": "The only example gives positive integers (x = 2, y = 5), although slide 0 mentions non-integer answers."
+      },
+      {
+        "specRef": "A19",
+        "case": "equations not lined up (rearranging before eliminating)",
+        "why": "The example has both equations already in the form ax + by = c."
+      },
+      {
+        "specRef": "A19",
+        "case": "solving graphically / reading an approximate intersection",
+        "why": "No example uses a graph."
+      },
+      {
+        "specRef": "A19",
+        "case": "linear/quadratic by substitution (Higher)",
+        "why": "Not shown."
+      },
+      {
+        "specRef": "A21",
+        "case": "word problem / context requiring forming the equations",
+        "why": "No example sets up equations from a situation or interprets the answer."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "The solution is the one pair of values (x and y) that satisfies both equations at once — geometrically, it is the point where two lines intersect on a graph.",
+        "why": "One sentence carries two ideas: the algebraic meaning and the graphical meaning. 'Geometrically' and the link from an equation to a line are not explained."
+      },
+      {
+        "field": "slides[1].body",
+        "text": "Elimination removes one variable by making its coefficient equal in both equations, then adding or subtracting.",
+        "why": "'Coefficient' and 'variable' are used without definition. The sentence also packs in the whole method."
+      },
+      {
+        "field": "slides[2].steps[0].working",
+        "text": "(4x + 3y) − (4x + y) = 23 − 13. So 2y = 10.",
+        "why": "It does not show 4x − 4x = 0 or 3y − y = 2y. It also does not explain why subtracting left sides and right sides keeps the equation true."
+      },
+      {
+        "field": "slides[2].steps[2].working",
+        "text": "4x + 5 = 13. 4x = 8. x = 2.",
+        "why": "Three steps sit in one line with no reasons given (subtract 5 from both sides, then divide by 4)."
+      },
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "Adding equations when you should subtract — e.g. if both equations have +3y and you add them, you get 6y rather than 0y, so the variable is not eliminated.",
+        "why": "One long sentence combines the error, an example and the consequence."
+      },
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "introducing a factor-of-2 error",
+        "why": "The phrase is unexplained, and the claim is false (see false_mistakes)."
+      },
+      {
+        "field": "keyFacts[0].fact",
+        "text": "Elimination: make the coefficient of one variable equal in both equations (multiply if needed), then subtract (same signs) or add (opposite signs) to remove it.",
+        "why": "The whole procedure is packed into one sentence with two parenthetical conditions."
+      }
+    ],
+    "not_checked": []
+  }
+}

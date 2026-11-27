@@ -1,0 +1,137 @@
+{
+  "lesson": "rpr-compound-measures",
+  "source_file": "lessons/maths/rpr-compound-measures.json",
+  "lesson_md5": "94424b718fcd8397c4d6e3aa6241cf80",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:32:54.841Z",
+  "specRefs_sent": [
+    "R1",
+    "R11"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3134,
+    "output_tokens": 3714
+  },
+  "cost_usd": 0.086816,
+  "status": "OK",
+  "result": {
+    "lesson": "rpr-compound-measures",
+    "maths_errors": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Both formulas follow the same triangle structure: the compound measure (D or P) is at the top — divide by it to isolate mass/volume or force/area.",
+        "correction": "In the formula triangle, M (or F) goes at the top, with D and V (or P and A) on the bottom. You do not divide by D to find mass: M = D × V and F = P × A. Dividing only applies to volume and area: V = M ÷ D and A = F ÷ P."
+      },
+      {
+        "field": "keyFacts[0].examTip",
+        "text": "Draw the D|MV triangle: D on top, M and V on the bottom. Cover the unknown to read off the formula.",
+        "correction": "The triangle has M on top, with D and V on the bottom. With D on top, covering M would give D ÷ V, which is wrong; the correct result is M = D × V. This tip also contradicts commonMistakes[2], which correctly says 'Cover M → D × V'."
+      },
+      {
+        "field": "keyFacts[1].examTip",
+        "text": "Same triangle pattern as density: P on top, F and A on the bottom.",
+        "correction": "F goes on top, with P and A on the bottom. Covering F gives F = P × A; covering P gives P = F ÷ A; covering A gives A = F ÷ P."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "R1",
+        "spec_text": "change freely between related standard units (eg time, length, area, volume/capacity, mass) and compound units (eg speed, rates of pay, prices) in numerical contexts",
+        "why": "The lesson only says 'If units are mixed, convert first'. It never teaches how to convert, for example kg to g, m³ to cm³ (×1 000 000), cm² to m² (÷10 000), or g/cm³ to kg/m³ (×1000)."
+      },
+      {
+        "specRef": "R1",
+        "spec_text": "compound units (eg density, pressure) in numerical and algebraic contexts",
+        "why": "No algebraic context is taught, for example a density or pressure given as an expression, or forming and solving an equation from D = M/V."
+      },
+      {
+        "specRef": "R11",
+        "spec_text": "Notes: including making comparisons.",
+        "why": "The lesson never teaches comparing compound measures, for example deciding which material is denser or which arrangement gives the greater pressure."
+      },
+      {
+        "specRef": "R11",
+        "spec_text": "use compound units such as speed, rates of pay, unit pricing",
+        "why": "The Basic foundation compound units in R11 (speed, rates of pay, unit pricing) are not taught. The lesson covers only density and pressure."
+      },
+      {
+        "specRef": "R11",
+        "spec_text": "use compound units such as density and pressure",
+        "why": "Pressure is only stated as a formula. No pressure calculation is taught or worked, and no pressure units are used in any example."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "R11",
+        "case": "Calculating pressure (P = F ÷ A)",
+        "why": "The only worked example is a density calculation. There is no pressure example."
+      },
+      {
+        "specRef": "R11",
+        "case": "Rearranging to find mass or volume",
+        "why": "The worked example finds density directly. Finding M = D × V appears only as a check step, and V = M ÷ D is never worked."
+      },
+      {
+        "specRef": "R11",
+        "case": "Rearranging to find force or area",
+        "why": "F = P × A and A = F ÷ P are stated but never worked."
+      },
+      {
+        "specRef": "R1",
+        "case": "Unit conversion before or after calculating (e.g. cm² to m², g/cm³ to kg/m³)",
+        "why": "The worked example uses consistent units, so no conversion is shown."
+      },
+      {
+        "specRef": "R11",
+        "case": "Comparison question (e.g. which of two objects is denser)",
+        "why": "The spec notes require comparisons, but no example compares two measures."
+      },
+      {
+        "specRef": "R1",
+        "case": "Algebraic context",
+        "why": "No example uses algebraic expressions for mass, volume, force or area."
+      },
+      {
+        "specRef": "R11",
+        "case": "Multi-step density problem (e.g. combined mass or density of a mixture or alloy)",
+        "why": "This is a common exam style that needs mass = density × volume for each part followed by a total. It is not shown."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "For density: D = M ÷ V (g/cm³ or kg/m³). Rearrange to find mass (M = D × V) or volume (V = M ÷ D). For pressure: P = F ÷ A (N/m² or N/cm²). Rearrange to find force (F = P × A) or area (A = F ÷ P). Both formulas follow the same triangle structure: the compound measure (D or P) is at the top — divide by it to isolate mass/volume or force/area. Units must be consistent throughout each calculation.",
+        "why": "One paragraph carries two formulas, four rearrangements, two sets of units, the triangle method and a units rule. The triangle sentence is also confusing because it is wrong."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "Cover M → D × V. Cover V → M ÷ D. Cover D → M ÷ V.",
+        "why": "This is a chain of arrows that relies on a triangle the student never sees. It also conflicts with the triangle layout given in keyFacts."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "Alternatively, write D = M/V and multiply both sides by V to get M = D × V.",
+        "why": "Multiplying both sides by V first gives D × V = M. The step of then reading or swapping the sides is not stated."
+      },
+      {
+        "field": "slides[2].steps[3].instruction",
+        "text": "Check by reversing: mass = density × volume = 2.7 × 50 = 135 g ✓.",
+        "why": "The instruction holds the whole working and repeats it in the working field. It also uses M = D × V, a rearrangement the example never explains."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "Pressure measures how much force acts on a given area — a stiletto heel exerts much higher pressure than a flat shoe of the same weight because the force is concentrated on a tiny area.",
+        "why": "One sentence carries a definition, a comparison and a reason. 'A flat shoe of the same weight' is also misleading: the force comes from the wearer's weight, not the shoe's."
+      }
+    ],
+    "not_checked": [
+      "No diagram of the formula triangle is supplied; only the text descriptions of the triangle could be checked."
+    ]
+  }
+}

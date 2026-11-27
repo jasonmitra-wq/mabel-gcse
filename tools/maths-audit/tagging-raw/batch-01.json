@@ -1,0 +1,177 @@
+{
+  "batch": 1,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 8797,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 1887,
+    "output_tokens_details": {
+      "thinking_tokens": 550
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "cost_usd": 0.072928,
+  "parsed": true,
+  "result": {
+    "results": [
+      {
+        "id": "pct-A01",
+        "subtopic": "num-percentages",
+        "also": "",
+        "why": "Percentage decrease of an amount using a single discount"
+      },
+      {
+        "id": "pct-A02",
+        "subtopic": "num-percentages",
+        "also": "",
+        "why": "Finding a percentage of a quantity"
+      },
+      {
+        "id": "pct-A03",
+        "subtopic": "num-percentages",
+        "also": "",
+        "why": "Percentage increase using a multiplier"
+      },
+      {
+        "id": "pct-B01",
+        "subtopic": "num-percentages",
+        "also": "rpr-percentage-change",
+        "why": "Expressing a change as a percentage of the original"
+      },
+      {
+        "id": "pct-B02",
+        "subtopic": "num-percentages",
+        "also": "",
+        "why": "Reverse percentage: divide by the multiplier to find the original"
+      },
+      {
+        "id": "pct-B03",
+        "subtopic": "num-percentages",
+        "also": "",
+        "why": "Reverse percentage after a reduction"
+      },
+      {
+        "id": "pct-C01",
+        "subtopic": "rpr-percentage-change",
+        "also": "rpr-growth-decay",
+        "why": "Compound interest using a repeated multiplier"
+      },
+      {
+        "id": "pct-C02",
+        "subtopic": "rpr-percentage-change",
+        "also": "rpr-growth-decay",
+        "why": "Repeated percentage decrease, which is compound decay"
+      },
+      {
+        "id": "frc-A01",
+        "subtopic": "num-fractions",
+        "also": "",
+        "why": "Adding fractions with a common denominator"
+      },
+      {
+        "id": "frc-A02",
+        "subtopic": "num-fractions",
+        "also": "",
+        "why": "Subtracting fractions using the lowest common denominator"
+      },
+      {
+        "id": "frc-A03",
+        "subtopic": "num-fractions",
+        "also": "",
+        "why": "Multiplying fractions"
+      },
+      {
+        "id": "frc-B01",
+        "subtopic": "num-fractions",
+        "also": "",
+        "why": "Multiplying mixed numbers"
+      },
+      {
+        "id": "frc-B02",
+        "subtopic": "num-fractions",
+        "also": "",
+        "why": "Dividing fractions"
+      },
+      {
+        "id": "frc-B03",
+        "subtopic": "num-fractions",
+        "also": "",
+        "why": "Adding mixed numbers"
+      },
+      {
+        "id": "frc-C01",
+        "subtopic": "num-fractions",
+        "also": "num-powers-roots",
+        "why": "Rationalising a surd denominator (spec N8)"
+      },
+      {
+        "id": "frc-C02",
+        "subtopic": "alg-expressions",
+        "also": "num-fractions",
+        "why": "Adding algebraic fractions into a single fraction"
+      },
+      {
+        "id": "rat-A01",
+        "subtopic": "rpr-ratio",
+        "also": "",
+        "why": "Sharing a quantity in a given ratio"
+      },
+      {
+        "id": "rat-A02",
+        "subtopic": "rpr-ratio",
+        "also": "",
+        "why": "Simplifying a ratio using the HCF"
+      },
+      {
+        "id": "rat-A03",
+        "subtopic": "rpr-ratio",
+        "also": "",
+        "why": "Applying a mixing ratio to a real context"
+      },
+      {
+        "id": "rat-B01",
+        "subtopic": "rpr-ratio",
+        "also": "",
+        "why": "Ratio problem given the difference between shares"
+      },
+      {
+        "id": "rat-B02",
+        "subtopic": "rpr-ratio",
+        "also": "rpr-proportion",
+        "why": "Scaling a recipe proportionally"
+      },
+      {
+        "id": "rat-B03",
+        "subtopic": "rpr-proportion",
+        "also": "",
+        "why": "Direct proportion using y = kx"
+      },
+      {
+        "id": "rat-C01",
+        "subtopic": "rpr-proportion",
+        "also": "",
+        "why": "Inverse proportion using y = k/x"
+      },
+      {
+        "id": "rat-C02",
+        "subtopic": "rpr-proportion",
+        "also": "",
+        "why": "Direct proportion to a square"
+      },
+      {
+        "id": "rat-A04",
+        "subtopic": "rpr-ratio",
+        "also": "",
+        "why": "Sharing a quantity in a given ratio"
+      }
+    ]
+  }
+}

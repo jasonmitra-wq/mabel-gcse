@@ -1,0 +1,138 @@
+{
+  "lesson": "rpr-proportion",
+  "source_file": "lessons/maths/rpr-proportion.json",
+  "lesson_md5": "79e07e6d269b095fb8d614c4c5ffc3b2",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:31:00.424Z",
+  "specRefs_sent": [
+    "R7",
+    "R10",
+    "R13"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3082,
+    "output_tokens": 4161
+  },
+  "cost_usd": 0.095548,
+  "status": "OK",
+  "result": {
+    "lesson": "rpr-proportion",
+    "maths_errors": [
+      {
+        "field": "slides[0].body",
+        "text": "Two quantities are in direct proportion when they increase and decrease together at the same rate — doubling one doubles the other.",
+        "correction": "Direct proportion does not mean the quantities change 'at the same rate'. In the lesson's own example, y = 3x, y increases 3 times as fast as x. The correct statement is that y is always the same multiple of x (y = kx). This means y/x is constant, and if one is multiplied by a number, the other is multiplied by the same number."
+      },
+      {
+        "field": "slides[3].mistakes[0].correction",
+        "text": "Direct proportion: as x increases, y increases (y = kx). Inverse proportion: as x increases, y decreases (y = k/x).",
+        "correction": "This is presented as the way to tell the two apart, but it is not a correct test. y = x + 5 increases with x but is not direct proportion. y = 10 − x decreases as x increases but is not inverse proportion. The defining tests are: y/x is constant (direct), or xy is constant (inverse). Equivalently, multiplying x by a number multiplies y by that number (direct) or divides y by it (inverse)."
+      }
+    ],
+    "false_mistakes": [
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "Using an additive method rather than finding k — e.g. for y = kx with x going from 4 to 7 (an increase of 3), adding 3 × (some value) to y instead of finding k = y/x and calculating y = k × 7.",
+        "why": "For y = kx, an increase of 3 in x always gives an increase of 3k in y. So 'adding 3 × (some value) to y' is a valid method when the value is k, the amount y goes up per 1 unit of x. The described method is not in itself a mistake. The real error is adding 3 directly to y, or adding a multiple that is not k, and the item does not say that. The correction's claim 'Proportion is always multiplicative' therefore overstates the case.",
+        "mistaken_method_gives": "With k as the value: if x = 4, y = 12 (k = 3), then y = 12 + 3 × 3 = 21. This equals 3 × 7 = 21, the correct answer."
+      }
+    ],
+    "missing_spec_content": [
+      {
+        "specRef": "R7",
+        "spec_text": "understand and use proportion as equality of ratios",
+        "why": "The lesson only says 'The ratio y/x is the same for every pair of values' and gives no teaching on proportion as equality of ratios. It does not show, for example, 5 : 15 = 8 : y, or a scale-factor or unitary method that solves a proportion without first finding k."
+      },
+      {
+        "specRef": "R10",
+        "spec_text": "solve problems involving direct and inverse proportion, including graphical and algebraic representations",
+        "why": "Graphical representations are not taught at all. Nothing explains that direct proportion gives a straight line through the origin with gradient k, or that inverse proportion gives the curve y = k/x. Problem solving in context is also not taught. Recipes, currency and speed are named in slides[0].body, but no contextual problem is worked."
+      },
+      {
+        "specRef": "R13",
+        "spec_text": "understand that X is inversely proportional to Y is equivalent to X is proportional to 1/Y",
+        "why": "slides[1].formula writes 'Inverse: y = k/x (or y ∝ 1/x)' but never explains why 'inversely proportional to x' means the same as 'proportional to 1/x'."
+      },
+      {
+        "specRef": "R13",
+        "spec_text": "interpret equations that describe direct and inverse proportion",
+        "why": "No part of the lesson asks the student to read a given equation, such as y = 7/x or P = 2.5t, and decide which kind of proportion it shows, or what k means in context."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "R10",
+        "case": "inverse proportion (y = k/x)",
+        "why": "The only worked example is direct proportion. The student never sees k = xy found and used."
+      },
+      {
+        "specRef": "R13",
+        "case": "proportion to a power or root (e.g. y ∝ x², y ∝ x³, y ∝ √x)",
+        "why": "y ∝ x² appears only in a common-mistake item. No worked example shows it."
+      },
+      {
+        "specRef": "R13",
+        "case": "inverse proportion to a power (e.g. y ∝ 1/x²)",
+        "why": "'y = k/xⁿ' is listed in slides[1].formula but never modelled."
+      },
+      {
+        "specRef": "R10",
+        "case": "finding x given y (working backwards from the equation)",
+        "why": "The worked example only finds y from x."
+      },
+      {
+        "specRef": "R10",
+        "case": "contextual word problem (e.g. recipe scaling, currency, workers and time)",
+        "why": "Contexts are named in slides[0].body but none is worked."
+      },
+      {
+        "specRef": "R10",
+        "case": "graphical proportion (reading k from, or recognising, a graph)",
+        "why": "No example uses a graph."
+      },
+      {
+        "specRef": "R7",
+        "case": "solving using equality of ratios or the unitary method without k",
+        "why": "Every method shown goes through the constant k."
+      },
+      {
+        "specRef": "R13",
+        "case": "constructing and stating the equation as the final answer (e.g. 'find a formula for y in terms of x')",
+        "why": "This Higher requirement is only implied by the result 'k = 3, so y = 3x'. It is not shown as a question type in its own right."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formula",
+        "text": "Direct: y = kx (or y ∝ x) | Inverse: y = k/x (or y ∝ 1/x) | Other: y = kxⁿ or y = k/xⁿ",
+        "why": "Six relationships are packed into one line separated by bars. The symbol ∝ and the notation xⁿ are used without saying what they mean ('is proportional to'; 'x to the power n')."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "k is the constant of proportionality — it stays the same for all pairs of x and y values in the relationship. To find k: substitute a given pair of values into the equation and solve. For direct proportion (y = kx), k = y ÷ x. For inverse proportion (y = k/x), k = y × x. Once k is known, the equation gives any other value. For proportion involving powers (e.g. y ∝ x², write y = kx² and find k the same way.",
+        "why": "This is one paragraph carrying the definition of k, the general method, two rearrangements and an extension to powers. It does not explain why k = y × x for inverse proportion (multiplying both sides of y = k/x by x)."
+      },
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "Confusing direct and inverse proportion — e.g. for y ∝ 1/x, writing y = kx (direct) instead of y = k/x, then getting k = y/x instead of k = yx.",
+        "why": "One sentence holds two linked errors and four expressions. There are no numbers to make it concrete."
+      },
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "adding 3 × (some value) to y instead of finding k = y/x and calculating y = k × 7",
+        "why": "'Some value' is vague, so a first-time learner cannot tell what the wrong method actually is. No y-value is given to try it with."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "Square x first: y = kx² → k = y ÷ x² = 36 ÷ 3² = 36 ÷ 9 = 4. Then y = 4x².",
+        "why": "This is a chain with an arrow and four equals signs on one line. The rearrangement from y = kx² to k = y ÷ x² is not explained."
+      }
+    ],
+    "not_checked": []
+  }
+}

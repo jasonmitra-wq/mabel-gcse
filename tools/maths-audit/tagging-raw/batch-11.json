@@ -1,0 +1,177 @@
+{
+  "batch": 11,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 9548,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 1840,
+    "output_tokens_details": {
+      "thinking_tokens": 435
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "cost_usd": 0.074992,
+  "parsed": true,
+  "result": {
+    "results": [
+      {
+        "id": "ang-B01",
+        "subtopic": "geo-angles",
+        "also": "alg-equations",
+        "why": "Uses the polygon interior angle sum to find the number of sides"
+      },
+      {
+        "id": "ang-A03",
+        "subtopic": "geo-angles",
+        "also": "",
+        "why": "Angles in a triangle sum to 180°"
+      },
+      {
+        "id": "ang-A04",
+        "subtopic": "geo-angles",
+        "also": "",
+        "why": "Exterior angles of a regular polygon"
+      },
+      {
+        "id": "ang-A05",
+        "subtopic": "geo-angles",
+        "also": "",
+        "why": "Interior angle sum of a polygon"
+      },
+      {
+        "id": "ang-B02",
+        "subtopic": "geo-angles",
+        "also": "alg-equations",
+        "why": "Triangle angle sum gives a linear equation"
+      },
+      {
+        "id": "ang-B03",
+        "subtopic": "geo-angles",
+        "also": "alg-equations",
+        "why": "Exterior angle theorem of a triangle"
+      },
+      {
+        "id": "ang-B04",
+        "subtopic": "geo-angles",
+        "also": "",
+        "why": "Interior and exterior angles of a regular polygon"
+      },
+      {
+        "id": "ang-B05",
+        "subtopic": "geo-angles",
+        "also": "alg-equations",
+        "why": "Alternate angles on parallel lines are equal"
+      },
+      {
+        "id": "ang-B06",
+        "subtopic": "geo-angles",
+        "also": "alg-equations",
+        "why": "Pentagon angle sum forms an equation"
+      },
+      {
+        "id": "ang-C01",
+        "subtopic": "geo-angles",
+        "also": "alg-sequences",
+        "why": "Polygon angle sum combined with an arithmetic progression"
+      },
+      {
+        "id": "ang-C02",
+        "subtopic": "geo-angles",
+        "also": "alg-equations",
+        "why": "Quadrilateral angle sum forms an equation"
+      },
+      {
+        "id": "ang-C03",
+        "subtopic": "geo-angles",
+        "also": "alg-equations",
+        "why": "Interior and exterior angles of a regular polygon"
+      },
+      {
+        "id": "ang-C04",
+        "subtopic": "geo-angles",
+        "also": "alg-equations",
+        "why": "Exterior angle theorem and angles on a straight line"
+      },
+      {
+        "id": "shp-A01",
+        "subtopic": "geo-transformations",
+        "also": "",
+        "why": "Scale factor of similar triangles"
+      },
+      {
+        "id": "shp-A02",
+        "subtopic": "geo-transformations",
+        "also": "geo-angles",
+        "why": "Triangle congruence condition SSS"
+      },
+      {
+        "id": "shp-B01",
+        "subtopic": "geo-transformations",
+        "also": "geo-perimeter-area",
+        "why": "Length scale factor from an area ratio of similar shapes"
+      },
+      {
+        "id": "shp-A03",
+        "subtopic": "geo-transformations",
+        "also": "geo-angles",
+        "why": "Triangle congruence condition SAS"
+      },
+      {
+        "id": "shp-A04",
+        "subtopic": "geo-transformations",
+        "also": "geo-perimeter-area",
+        "why": "Area scale factor of similar shapes"
+      },
+      {
+        "id": "shp-A05",
+        "subtopic": "geo-transformations",
+        "also": "",
+        "why": "Scale factor of similar rectangles"
+      },
+      {
+        "id": "shp-B02",
+        "subtopic": "geo-transformations",
+        "also": "",
+        "why": "Similar triangles formed by a parallel line"
+      },
+      {
+        "id": "shp-B03",
+        "subtopic": "geo-transformations",
+        "also": "geo-volume",
+        "why": "Volume and area scale factors of similar solids"
+      },
+      {
+        "id": "shp-B04",
+        "subtopic": "geo-transformations",
+        "also": "geo-volume",
+        "why": "Volume scale factor of similar cones"
+      },
+      {
+        "id": "shp-B05",
+        "subtopic": "geo-transformations",
+        "also": "geo-perimeter-area",
+        "why": "Length scale factor from an area ratio"
+      },
+      {
+        "id": "shp-B06",
+        "subtopic": "geo-transformations",
+        "also": "geo-volume",
+        "why": "Volume scale factor with unit conversion"
+      },
+      {
+        "id": "shp-C01",
+        "subtopic": "geo-transformations",
+        "also": "geo-volume",
+        "why": "Area to length to volume scale factors"
+      }
+    ]
+  }
+}

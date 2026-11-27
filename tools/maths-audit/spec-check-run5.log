@@ -1,0 +1,8 @@
+RUN
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+stat-charts | S2, S3 | 8846 | 2212 | 0.1688
+TOTAL 1 lesson(s) | 8846 chars | 2212 est. input tokens | 8000 output tokens assumed | $0.1688
+Rates: $4 per M input, $20 per M output; output assumed at the ceiling per lesson (8000 tokens).
+Model claude-opus-5-5 confirmed in /v1/models.
+stat-charts: OK | in 3105 out 5694 | $0.1263 | maths_errors 5, false_mistakes 0, missing_spec_content 8, above_gcse 0, cases_not_modelled 13, density 7, not_checked 2
+Actual total cost: $0.1263

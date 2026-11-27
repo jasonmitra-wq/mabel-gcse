@@ -1,0 +1,140 @@
+{
+  "lesson": "num-percentages",
+  "source_file": "lessons/maths/num-percentages.json",
+  "lesson_md5": "157af3716c4bb08ae95833bcbb1b9c67",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T17:32:37.370Z",
+  "specRefs_sent": [
+    "N12",
+    "R9"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3082,
+    "output_tokens": 4111
+  },
+  "cost_usd": 0.094548,
+  "status": "OK",
+  "result": {
+    "lesson": "num-percentages",
+    "maths_errors": [
+      {
+        "field": "keyFacts[2].examTip",
+        "text": "If something costs £92.40 after a 10% discount, the original = £92.40 ÷ 0.90 = £102.67, not £92.40 − 9.24.",
+        "correction": "£92.40 ÷ 0.90 = £102.666… = £102.67 is correct. The wrong method it warns against is the wrong one. Nobody subtracts to undo a discount: £92.40 − £9.24 = £83.16, which is less than the sale price. The real mistake when reversing a decrease is adding 10% of the new value back on: £92.40 + £9.24 = £101.64, not £102.67. The tip should read 'not £92.40 + £9.24 = £101.64'."
+      },
+      {
+        "field": "keyFacts[2].fact",
+        "text": "To reverse a percentage change (find the original value): divide the new value by the multiplier. Never subtract the percentage from the new value.",
+        "correction": "The rule only covers reversing an increase. It should say: never add or subtract the percentage of the new value. After a decrease, the tempting error is adding the percentage of the new value back on. Either way, the percentage is of the original value, not the new one."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "N12",
+        "spec_text": "interpret fractions and percentages as operators",
+        "why": "Fractions as operators are never taught. The lesson also discourages them: keyFacts[0].examTip says \"do not try to do it in your head as a fraction\". This contradicts the specification, which treats fraction operators as a valid method."
+      },
+      {
+        "specRef": "R9",
+        "spec_text": "interpret percentages and percentage changes as a fraction or a decimal",
+        "why": "Only decimal conversion is taught. Writing a percentage as a fraction (for example 40% = 40/100 = 2/5) is never shown."
+      },
+      {
+        "specRef": "R9",
+        "spec_text": "express one quantity as a percentage of another",
+        "why": "There is no teaching of writing A as a percentage of B (A ÷ B × 100). Only the percentage change formula appears, in commonMistakes and keyFacts."
+      },
+      {
+        "specRef": "R9",
+        "spec_text": "compare two quantities using percentages",
+        "why": "The concept slide claims percentages make comparison easy, but the lesson never shows how to compare two quantities using percentages."
+      },
+      {
+        "specRef": "R9",
+        "spec_text": "work with percentages greater than 100%",
+        "why": "Not mentioned anywhere. Examples would be 150% of a quantity, or an increase multiplier above 2."
+      },
+      {
+        "specRef": "R9",
+        "spec_text": "simple interest including in financial mathematics",
+        "why": "Simple interest is not taught at all."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "R9",
+        "case": "percentage increase using a multiplier greater than 1",
+        "why": "The only worked example is a decrease (multiplier 0.60). No increase is worked through."
+      },
+      {
+        "specRef": "R9",
+        "case": "original value (reverse percentage) problem",
+        "why": "Reversing is only described in formulaExplained, commonMistakes and keyFacts. No worked example shows dividing by the multiplier step by step."
+      },
+      {
+        "specRef": "R9",
+        "case": "calculating a percentage change from two values",
+        "why": "The formula appears only in commonMistakes[2] and keyFacts[3]. No worked example shows it."
+      },
+      {
+        "specRef": "R9",
+        "case": "expressing one quantity as a percentage of another",
+        "why": "No worked example."
+      },
+      {
+        "specRef": "R9",
+        "case": "comparing two quantities using percentages",
+        "why": "No worked example."
+      },
+      {
+        "specRef": "R9",
+        "case": "percentages greater than 100%",
+        "why": "No worked example."
+      },
+      {
+        "specRef": "R9",
+        "case": "simple interest",
+        "why": "No worked example."
+      },
+      {
+        "specRef": "N12",
+        "case": "using a fraction as an operator (e.g. 3/5 of a quantity)",
+        "why": "No worked example uses a fraction operator."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Convert the percentage to a decimal multiplier: for an increase of p%, the multiplier is 1 + p/100; for a decrease of p%, it is 1 − p/100. Applying the multiplier in one step is faster and less error-prone than finding the percentage amount separately and then adding or subtracting. To reverse a percentage change, divide by the multiplier instead of multiplying.",
+        "why": "Three ideas are packed into three sentences: the increase multiplier, the decrease multiplier, and reversing. Reversing is stated with no reason and no numerical example, so a first-time learner cannot see why dividing works."
+      },
+      {
+        "field": "slides[3].mistakes[1].mistake",
+        "text": "Reversing a percentage change by subtracting the percentage from the new value — e.g. after a 20% rise the price is £96; student calculates £96 × 0.80 = £76.80 instead of £96 ÷ 1.20 = £80.",
+        "why": "The text says 'subtracting' but the working shows multiplying by 0.80. The student must work out for themselves that ×0.80 is the same as subtracting 20%. It also brings in the 1.20 multiplier without deriving it."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "Subtracting a percentage from the new value gives the wrong answer because the percentage is of the original, not the new value.",
+        "why": "The key reason is given in a single clause, with no numbers. For example: 20% of £80 is £16, but 20% of £96 is £19.20."
+      },
+      {
+        "field": "keyFacts[2].examTip",
+        "text": "not £92.40 − 9.24",
+        "why": "It does not explain where 9.24 comes from (10% of £92.40). It also gives no result for the wrong method, so the student cannot compare it with £102.67."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "Expressing things as percentages makes it easy to compare quantities with different sizes: a 30% discount on a £50 shirt and a 30% discount on a £200 coat are calculated the same way, just on different starting values.",
+        "why": "The example shows the same calculation being applied twice, not a comparison of quantities. The sentence claims one idea and illustrates another."
+      }
+    ],
+    "not_checked": []
+  }
+}

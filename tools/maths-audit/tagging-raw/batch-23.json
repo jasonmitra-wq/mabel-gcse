@@ -1,0 +1,177 @@
+{
+  "batch": 23,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 9743,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 1906,
+    "output_tokens_details": {
+      "thinking_tokens": 574
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "cost_usd": 0.077092,
+  "parsed": true,
+  "result": {
+    "results": [
+      {
+        "id": "stf-B05",
+        "subtopic": "num-standard-form",
+        "also": "",
+        "why": "Adding numbers in standard form and giving the answer in standard form."
+      },
+      {
+        "id": "stf-B06",
+        "subtopic": "num-standard-form",
+        "also": "rpr-speed",
+        "why": "Dividing in standard form, set in a speed-distance-time context."
+      },
+      {
+        "id": "stf-C03",
+        "subtopic": "num-standard-form",
+        "also": "",
+        "why": "Multiplying and subtracting numbers in standard form."
+      },
+      {
+        "id": "stf-C04",
+        "subtopic": "num-standard-form",
+        "also": "",
+        "why": "Dividing standard form numbers with negative powers."
+      },
+      {
+        "id": "int-A04",
+        "subtopic": "num-integers",
+        "also": "",
+        "why": "Rounding to the nearest 10,000."
+      },
+      {
+        "id": "int-A05",
+        "subtopic": "num-integers",
+        "also": "",
+        "why": "Rounding to significant figures."
+      },
+      {
+        "id": "int-B02",
+        "subtopic": "num-bounds",
+        "also": "",
+        "why": "Error interval from rounding to 2 s.f."
+      },
+      {
+        "id": "int-B03",
+        "subtopic": "num-integers",
+        "also": "",
+        "why": "Estimating by rounding to 1 significant figure."
+      },
+      {
+        "id": "int-B04",
+        "subtopic": "num-integers",
+        "also": "",
+        "why": "Order of operations with decimals, then rounding."
+      },
+      {
+        "id": "int-B05",
+        "subtopic": "num-fractions",
+        "also": "",
+        "why": "Converting a recurring decimal to a fraction."
+      },
+      {
+        "id": "int-B06",
+        "subtopic": "num-bounds",
+        "also": "",
+        "why": "Minimum product found using lower bounds."
+      },
+      {
+        "id": "int-C01",
+        "subtopic": "num-bounds",
+        "also": "",
+        "why": "Upper bound of a quotient."
+      },
+      {
+        "id": "int-C02",
+        "subtopic": "num-bounds",
+        "also": "",
+        "why": "Combining bounds in a compound expression."
+      },
+      {
+        "id": "int-C03",
+        "subtopic": "num-fractions",
+        "also": "",
+        "why": "Converting a recurring decimal to a fraction."
+      },
+      {
+        "id": "int-C04",
+        "subtopic": "num-bounds",
+        "also": "num-standard-form",
+        "why": "Upper bound of an area, answer given in standard form."
+      },
+      {
+        "id": "pow-A04",
+        "subtopic": "num-powers-roots",
+        "also": "",
+        "why": "Division law for indices, giving a negative power."
+      },
+      {
+        "id": "pow-A05",
+        "subtopic": "num-powers-roots",
+        "also": "",
+        "why": "Evaluating a negative index."
+      },
+      {
+        "id": "pow-B02",
+        "subtopic": "num-powers-roots",
+        "also": "",
+        "why": "Rewriting as powers of 2 and applying index laws."
+      },
+      {
+        "id": "pow-B03",
+        "subtopic": "num-powers-roots",
+        "also": "",
+        "why": "Evaluating a fractional index."
+      },
+      {
+        "id": "pow-B04",
+        "subtopic": "alg-expressions",
+        "also": "num-powers-roots",
+        "why": "Simplifying an algebraic product using index laws."
+      },
+      {
+        "id": "pow-B05",
+        "subtopic": "num-powers-roots",
+        "also": "",
+        "why": "Evaluating fractional indices."
+      },
+      {
+        "id": "pow-B06",
+        "subtopic": "alg-expressions",
+        "also": "num-powers-roots",
+        "why": "Power of a power in an algebraic expression."
+      },
+      {
+        "id": "pow-C01",
+        "subtopic": "num-powers-roots",
+        "also": "num-fractions",
+        "why": "Simplifying and adding surds."
+      },
+      {
+        "id": "pow-C02",
+        "subtopic": "num-powers-roots",
+        "also": "num-fractions",
+        "why": "Rationalising a surd denominator."
+      },
+      {
+        "id": "pow-C03",
+        "subtopic": "num-powers-roots",
+        "also": "alg-equations",
+        "why": "Equating indices after writing both sides with a common base."
+      }
+    ]
+  }
+}

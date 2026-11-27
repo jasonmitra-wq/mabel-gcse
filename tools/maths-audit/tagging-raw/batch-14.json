@@ -1,0 +1,177 @@
+{
+  "batch": 14,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 10496,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 1651,
+    "output_tokens_details": {
+      "thinking_tokens": 232
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "cost_usd": 0.075004,
+  "parsed": true,
+  "result": {
+    "results": [
+      {
+        "id": "trig-B01",
+        "subtopic": "geo-trigonometry",
+        "also": "",
+        "why": "Inverse cosine to find an angle in a right triangle"
+      },
+      {
+        "id": "trig-A03",
+        "subtopic": "geo-trigonometry",
+        "also": "",
+        "why": "Inverse sine from opposite and hypotenuse"
+      },
+      {
+        "id": "trig-A04",
+        "subtopic": "geo-trigonometry",
+        "also": "",
+        "why": "Inverse cosine from adjacent and hypotenuse"
+      },
+      {
+        "id": "trig-A05",
+        "subtopic": "geo-trigonometry",
+        "also": "",
+        "why": "Tan ratio to find the opposite side"
+      },
+      {
+        "id": "trig-B02",
+        "subtopic": "geo-trigonometry",
+        "also": "",
+        "why": "Sine ratio to find a height in context"
+      },
+      {
+        "id": "trig-B03",
+        "subtopic": "geo-trigonometry",
+        "also": "",
+        "why": "Tan with an angle of elevation to find a height"
+      },
+      {
+        "id": "trig-B04",
+        "subtopic": "geo-trigonometry",
+        "also": "",
+        "why": "Inverse cosine to find an angle in a named triangle"
+      },
+      {
+        "id": "trig-B05",
+        "subtopic": "geo-trigonometry",
+        "also": "",
+        "why": "Sin and cos resolve a bearing into components"
+      },
+      {
+        "id": "trig-B06",
+        "subtopic": "geo-trigonometry",
+        "also": "geo-pythagoras",
+        "why": "Pythagoras for the side, then tan for the angle"
+      },
+      {
+        "id": "trig-C01",
+        "subtopic": "geo-trigonometry",
+        "also": "",
+        "why": "Two elevation angles combined in tan equations"
+      },
+      {
+        "id": "trig-C02",
+        "subtopic": "geo-trigonometry",
+        "also": "geo-pythagoras",
+        "why": "Multi-step right-triangle trig with an angle bisector"
+      },
+      {
+        "id": "trig-C03",
+        "subtopic": "geo-trigonometry",
+        "also": "",
+        "why": "Two elevation angles solved with tan equations"
+      },
+      {
+        "id": "trig-C04",
+        "subtopic": "geo-trigonometry",
+        "also": "",
+        "why": "Cosine rule and sine rule in a non-right triangle"
+      },
+      {
+        "id": "cth-A01",
+        "subtopic": "geo-circles",
+        "also": "",
+        "why": "Angle at centre is twice the angle at circumference"
+      },
+      {
+        "id": "cth-B01",
+        "subtopic": "geo-circles",
+        "also": "",
+        "why": "Opposite angles of a cyclic quadrilateral sum to 180°"
+      },
+      {
+        "id": "cth-A02",
+        "subtopic": "geo-circles",
+        "also": "",
+        "why": "Angle at the centre theorem"
+      },
+      {
+        "id": "cth-A03",
+        "subtopic": "geo-circles",
+        "also": "",
+        "why": "Cyclic quadrilateral opposite angles"
+      },
+      {
+        "id": "cth-A04",
+        "subtopic": "geo-circles",
+        "also": "geo-angles",
+        "why": "Angle in a semicircle, then angle sum of a triangle"
+      },
+      {
+        "id": "cth-A05",
+        "subtopic": "geo-circles",
+        "also": "geo-pythagoras",
+        "why": "Tangent is perpendicular to radius, then Pythagoras"
+      },
+      {
+        "id": "cth-B02",
+        "subtopic": "geo-circles",
+        "also": "geo-angles",
+        "why": "Isosceles triangle of radii, then angle at the centre"
+      },
+      {
+        "id": "cth-B03",
+        "subtopic": "geo-circles",
+        "also": "",
+        "why": "Intersecting chords theorem"
+      },
+      {
+        "id": "cth-B04",
+        "subtopic": "geo-circles",
+        "also": "",
+        "why": "Alternate segment theorem"
+      },
+      {
+        "id": "cth-B05",
+        "subtopic": "geo-circles",
+        "also": "",
+        "why": "Angle at the centre theorem"
+      },
+      {
+        "id": "cth-B06",
+        "subtopic": "geo-circles",
+        "also": "",
+        "why": "Angles in the same segment test for concyclic points"
+      },
+      {
+        "id": "cth-C01",
+        "subtopic": "geo-circles",
+        "also": "geo-angles",
+        "why": "Isosceles radius triangles combined with the angle at the centre"
+      }
+    ]
+  }
+}

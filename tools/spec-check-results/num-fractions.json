@@ -1,0 +1,170 @@
+{
+  "lesson": "num-fractions",
+  "source_file": "lessons/maths/num-fractions.json",
+  "lesson_md5": "5816d87d84999ea979a0045a4d3fcd07",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T17:32:04.946Z",
+  "specRefs_sent": [
+    "N2",
+    "N8",
+    "N10"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3455,
+    "output_tokens": 3995
+  },
+  "cost_usd": 0.09372,
+  "status": "OK",
+  "result": {
+    "lesson": "num-fractions",
+    "maths_errors": [],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "N2",
+        "spec_text": "apply the four operations ... to integers, decimals and simple fractions (proper and improper), and mixed numbers – all both positive and negative",
+        "why": "The lesson never works with negative fractions or negative mixed numbers, for example -2/3 + 1/4 or -1½ × 2/5. Every fraction in the lesson is positive."
+      },
+      {
+        "specRef": "N2",
+        "spec_text": "Notes: including questions set in context.",
+        "why": "No fraction question is set in context, for example a fraction of an amount or sharing a quantity. Every example is a bare calculation."
+      },
+      {
+        "specRef": "N2",
+        "spec_text": "understand and use place value (eg when working with very large or very small numbers, and when calculating with decimals)",
+        "why": "The lesson does not cover place value or calculating with decimals. This is reasonable for a fractions-only subtopic, but the section is not fully covered."
+      },
+      {
+        "specRef": "N2",
+        "spec_text": "Knowledge and understanding of terms used in household finance, for example profit, loss, cost price, selling price, debit, credit, balance, income tax, VAT and interest rate.",
+        "why": "None of these terms appear in the lesson."
+      },
+      {
+        "specRef": "N10",
+        "spec_text": "work interchangeably with terminating decimals and their corresponding fractions (such as 3.5 and 7/2 or 0.375 and 3/8)",
+        "why": "The lesson never converts between fractions and terminating decimals."
+      },
+      {
+        "specRef": "N10",
+        "spec_text": "Notes: including ordering.",
+        "why": "The lesson does not teach ordering fractions, for example by using a common denominator or converting to decimals."
+      },
+      {
+        "specRef": "N10",
+        "spec_text": "Higher only: change recurring decimals into their corresponding fractions and vice versa",
+        "why": "Recurring decimals are not covered."
+      },
+      {
+        "specRef": "N8",
+        "spec_text": "Additional foundation: calculate exactly with multiples of π",
+        "why": "Exact calculation with π is not covered."
+      },
+      {
+        "specRef": "N8",
+        "spec_text": "Higher only: calculate exactly with surds simplify surd expressions involving squares ... and rationalise denominators",
+        "why": "Surds are not covered."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "N2 / N8",
+        "case": "Adding fractions with different denominators",
+        "why": "The only worked example is a division. Addition appears only as a one-line correction inside commonMistakes ('4/12 + 3/12 = 7/12'), with no step-by-step working."
+      },
+      {
+        "specRef": "N2 / N8",
+        "case": "Subtracting fractions",
+        "why": "No subtraction is shown anywhere in the lesson."
+      },
+      {
+        "specRef": "N2 / N8",
+        "case": "Multiplying fractions",
+        "why": "Multiplication appears only inside the division example and in a common-mistake answer ('9/4 × 3/2 = 27/8 = 3⅜'). There is no worked example of a multiplication question."
+      },
+      {
+        "specRef": "N2",
+        "case": "Adding or subtracting mixed numbers",
+        "why": "No example adds or subtracts mixed numbers, for example 3⅓ − 1¾, which needs either conversion to improper fractions or regrouping."
+      },
+      {
+        "specRef": "N2",
+        "case": "Negative fractions or mixed numbers",
+        "why": "The specification says 'all both positive and negative', but no example uses a negative value."
+      },
+      {
+        "specRef": "N2",
+        "case": "Integer combined with a fraction",
+        "why": "No example such as 4 × 2/3 or 5 ÷ 3/4 shows writing a whole number as a fraction over 1."
+      },
+      {
+        "specRef": "N2 / N8",
+        "case": "Cancelling before multiplying",
+        "why": "keyFacts[1].examTip recommends 'cancelling diagonally', but no example shows it. The worked example multiplies first and simplifies afterwards."
+      },
+      {
+        "specRef": "N2 / N8",
+        "case": "Common denominator where one denominator is a multiple of the other",
+        "why": "No example such as 1/3 + 5/6 shows that the larger denominator can serve as the lowest common denominator."
+      },
+      {
+        "specRef": "N2",
+        "case": "Fraction question in context",
+        "why": "No word problem using fractions is modelled."
+      },
+      {
+        "specRef": "N10",
+        "case": "Fraction to terminating decimal and back",
+        "why": "No example converts between fractions and decimals, for example 3/8 = 0.375."
+      },
+      {
+        "specRef": "N10",
+        "case": "Ordering fractions",
+        "why": "No example orders a set of fractions."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formula",
+        "text": "Add/Subtract: find LCD, convert, then ±numerators | Multiply: top × top, bottom × bottom | Divide: Keep, Change, Flip",
+        "why": "Three procedures are packed into one line, separated by pipes, using the abbreviation 'LCD' and the symbol '±numerators'. A first-time learner cannot unpack this in one read."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "Adding fractions requires a common denominator because you can only combine parts of the same size, but multiplying does not — you are scaling one fraction by another.",
+        "why": "One sentence carries three ideas: why a common denominator is needed, that multiplication does not need one, and that multiplication means scaling. The scaling idea is stated but not explained."
+      },
+      {
+        "field": "slides[2].steps[2].instruction / working",
+        "text": "Multiply and simplify: numerators 9×2=18, denominators 4×3=12. Simplify 18/12. / 18/12 — HCF(18,12) = 6. Divide both by 6: 18÷6=3, 12÷6=2.",
+        "why": "Multiplying and simplifying are combined in one step. HCF is used without being explained, and the reason for dividing by the HCF is not given."
+      },
+      {
+        "field": "slides[2].steps[1].instruction",
+        "text": "Apply Keep, Change, Flip: keep 9/4, change ÷ to ×, flip 3/2 to 2/3.",
+        "why": "The step gives no reason why dividing is the same as multiplying by the reciprocal, so the method appears as an unexplained trick."
+      },
+      {
+        "field": "slides[2].conclusion",
+        "text": "Quick check: 1½ × 1½ = 9/4 = 2¼ ✓",
+        "why": "It does not say why multiplying the answer by the divisor checks a division. The calculation 1½ × 1½ = 9/4 is also not shown."
+      },
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "Forgetting to convert mixed numbers to improper fractions before multiplying or dividing — e.g. multiplying whole parts and fraction parts separately: 2¼ × 1½ treated as (2×1) + (1/4 × 1/2) = 2 + 1/8 = 2⅛ instead of 9/4 × 3/2 = 27/8 = 3⅜.",
+        "why": "A single sentence holds the wrong method, its full working, the correct method and its full working, including a conversion (27/8 = 3⅜) that is not shown."
+      },
+      {
+        "field": "keyFacts[1].examTip",
+        "text": "Simplify by cancelling diagonally before multiplying — it keeps numbers smaller and reduces errors.",
+        "why": "'Cancelling diagonally' is not defined or demonstrated anywhere in the lesson."
+      }
+    ],
+    "not_checked": []
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "lesson": "geo-circles",
+  "source_file": "lessons/maths/geo-circles.json",
+  "lesson_md5": "b5078736fc905bfc8078d11fa4c83536",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:38:01.951Z",
+  "specRefs_sent": [
+    "G9",
+    "G10",
+    "G17"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3412,
+    "output_tokens": 5307
+  },
+  "cost_usd": 0.119788,
+  "status": "OK",
+  "result": {
+    "lesson": "geo-circles",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "Doubling the circumference angle to get the centre angle instead of halving the centre angle — getting 224° instead of 56°.",
+        "correction": "Doubling the circumference angle (56°) gives 56° × 2 = 112°, which is the correct centre angle, not 224°. The answer 224° comes from doubling the centre angle (112° × 2 = 224°). The mistake should read: 'Doubling the centre angle instead of halving it — getting 224° instead of 56°.'"
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Two angles in the same segment (same side of a chord) are equal.",
+        "correction": "Being on the same side of a chord is not enough. The angles must be subtended by that chord: their arms must go to the two ends of the chord. Correct version: 'Angles subtended by the same chord (or arc) at points on the circumference in the same segment are equal.'"
+      }
+    ],
+    "false_mistakes": [
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "Doubling the circumference angle to get the centre angle instead of halving the centre angle",
+        "why": "As worded, the 'mistake' is a valid method. Doubling the circumference angle is exactly how you find the centre angle (centre = 2 × circumference). The error that actually produces 224° is doubling the centre angle.",
+        "mistaken_method_gives": "56° × 2 = 112°, the correct angle AOB."
+      }
+    ],
+    "missing_spec_content": [
+      {
+        "specRef": "G9",
+        "spec_text": "identify and apply circle definitions and properties, including: centre, radius, chord, diameter, circumference",
+        "why": "Radius, diameter and chord are used but never defined. The only definition given is 'circumference is the distance all the way round' (slides[1].formulaExplained). There is no explanation of what a chord is, or that a diameter is a chord through the centre."
+      },
+      {
+        "specRef": "G9",
+        "spec_text": "including: tangent, arc, sector and segment",
+        "why": "'Sector' does not appear anywhere in the lesson. 'Arc' is used ('same arc', 'major arc') without a definition. 'Segment' is only hinted at ('same side of a chord'). 'Tangent' is used without a definition: the lesson does not say it is a line that touches the circle at exactly one point."
+      },
+      {
+        "specRef": "G10",
+        "spec_text": "apply and prove the standard circle theorems ... and use them to prove related results",
+        "why": "No proof of any theorem is given or modelled, for example proving the centre theorem using isosceles triangles formed by radii. Using theorems to prove related results is also not taught."
+      },
+      {
+        "specRef": "G10",
+        "spec_text": "tangents from an external point are equal in length",
+        "why": "Not mentioned anywhere in the lesson."
+      },
+      {
+        "specRef": "G10",
+        "spec_text": "the perpendicular from the centre to a chord bisects the chord",
+        "why": "Not mentioned anywhere in the lesson."
+      },
+      {
+        "specRef": "G10",
+        "spec_text": "alternate segment theorem",
+        "why": "Not mentioned anywhere in the lesson."
+      },
+      {
+        "specRef": "G17",
+        "spec_text": "calculate perimeters of 2D shapes, including circles areas of circles and composite shapes",
+        "why": "The formulas are stated but no perimeter or area calculation is taught. Composite shapes (for example semicircle plus rectangle) are not covered, and including the straight edge in the perimeter of a semicircle is not mentioned."
+      },
+      {
+        "specRef": "G17",
+        "spec_text": "Solutions in terms of π may be asked for.",
+        "why": "Leaving an answer in terms of π is not mentioned."
+      },
+      {
+        "specRef": "G17",
+        "spec_text": "surface area and volume of spheres, pyramids, cones and composite solids ... including frustums",
+        "why": "No surface area or volume content appears in the lesson."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "G10",
+        "case": "Finding the centre angle from a given circumference angle (doubling)",
+        "why": "The only worked example goes from centre to circumference."
+      },
+      {
+        "specRef": "G10",
+        "case": "Reflex angle at the centre / point C on the minor arc",
+        "why": "The only example puts C on the major arc, and the reflex-angle case is not shown."
+      },
+      {
+        "specRef": "G10",
+        "case": "Angle in a semicircle",
+        "why": "Stated but no worked example."
+      },
+      {
+        "specRef": "G10",
+        "case": "Angles in the same segment",
+        "why": "Stated but no worked example."
+      },
+      {
+        "specRef": "G10",
+        "case": "Opposite angles of a cyclic quadrilateral",
+        "why": "Stated but no worked example."
+      },
+      {
+        "specRef": "G10",
+        "case": "Tangent perpendicular to radius",
+        "why": "Stated but no worked example, for example a tangent-radius triangle with an angle sum."
+      },
+      {
+        "specRef": "G10",
+        "case": "Isosceles triangle formed by two radii",
+        "why": "Mentioned in slides[0].body ('two radii forming a triangle') but never modelled."
+      },
+      {
+        "specRef": "G10",
+        "case": "Tangents from an external point",
+        "why": "Not modelled."
+      },
+      {
+        "specRef": "G10",
+        "case": "Perpendicular from centre bisects a chord (often with Pythagoras)",
+        "why": "Not modelled."
+      },
+      {
+        "specRef": "G10",
+        "case": "Alternate segment theorem",
+        "why": "Not modelled."
+      },
+      {
+        "specRef": "G10",
+        "case": "Multi-step problem combining two or more theorems with reasons",
+        "why": "The only example uses one theorem in one step."
+      },
+      {
+        "specRef": "G10",
+        "case": "Proof of a circle theorem",
+        "why": "Not modelled."
+      },
+      {
+        "specRef": "G17",
+        "case": "Calculating circumference from a radius or diameter",
+        "why": "No numerical example."
+      },
+      {
+        "specRef": "G17",
+        "case": "Calculating area when the diameter is given (halving first)",
+        "why": "Only described in an exam tip, never worked."
+      },
+      {
+        "specRef": "G17",
+        "case": "Answer in terms of π",
+        "why": "Not modelled."
+      },
+      {
+        "specRef": "G17",
+        "case": "Perimeter/area of composite shapes (e.g. semicircle on a rectangle)",
+        "why": "Not modelled."
+      },
+      {
+        "specRef": "G17",
+        "case": "Surface area/volume of spheres, cones, pyramids, frustums",
+        "why": "Not modelled."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formula",
+        "text": "Circumference = πd  or  2πr  |  Area = πr²  |  Angle at centre = 2 × angle at circumference (same arc)  |  Angle in a semicircle = 90°  |  Angles in the same segment are equal  |  Opposite angles of a cyclic quadrilateral add to 180°  |  Tangent is perpendicular to radius at the point of contact",
+        "why": "Seven separate rules in one line, mixing mensuration with five different theorems. A first-time learner cannot take this in at once."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "For angle theorems: an angle at the centre is exactly double the angle at the circumference when both are subtended by the same arc. An angle inscribed in a semicircle is always 90°. Two angles in the same segment (same side of a chord) are equal. In a cyclic quadrilateral (all four vertices on the circle), opposite angles add to 180°. A tangent meets the radius at exactly 90°.",
+        "why": "Five theorems in one paragraph with no diagram. 'Subtended', 'inscribed' and 'segment' are used without explanation."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "A set of angle rules governs triangles and quadrilaterals drawn inside or on circles — these are circle theorems, and they all follow from the symmetry of the circle.",
+        "why": "One sentence carries several ideas: what the rules apply to, their name, and why they are true. The claim 'follow from the symmetry' is never explained."
+      },
+      {
+        "field": "slides[2].steps[0].instruction",
+        "text": "both are subtended by arc AB",
+        "why": "'Subtended' is a key term that is never defined anywhere in the lesson."
+      },
+      {
+        "field": "keyFacts[2].examTip",
+        "text": "If they're on opposite sides, they are supplementary (add to 180°), not equal.",
+        "why": "This introduces a new result with no reason given. It actually comes from the cyclic quadrilateral rule, and the lesson never makes that link."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "Circumference = distance around the edge → 2πr or πd (one factor of r). Area = space inside → πr² (r squared).",
+        "why": "Arrow chains and the bracketed idea 'one factor of r' are not explained."
+      },
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "Doubling the circumference angle to get the centre angle instead of halving the centre angle — getting 224° instead of 56°.",
+        "why": "The wording contradicts the numbers given, so a student cannot work out what the error actually is."
+      }
+    ],
+    "not_checked": []
+  }
+}

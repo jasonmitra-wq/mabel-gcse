@@ -1,0 +1,203 @@
+{
+  "lesson": "stat-charts",
+  "source_file": "lessons/maths/stat-charts.json",
+  "lesson_md5": "5bdfaa88265d3d0408025b7c1563a896",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-27T12:37:43.141Z",
+  "specRefs_sent": [
+    "S2",
+    "S3"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3105,
+    "output_tokens": 5694
+  },
+  "cost_usd": 0.1263,
+  "status": "OK",
+  "result": {
+    "lesson": "stat-charts",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[0].correction",
+        "text": "Dividing 360 by the frequency only gives the right answer if the total happens to be 360.",
+        "correction": "This is false. If the total is 360, the correct angle is (f ÷ 360) × 360 = f degrees, not 360 ÷ f. For example, f = 8 gives 8°, but 360 ÷ 8 = 45°. The value 360 ÷ f equals (f ÷ total) × 360 only when total = f², for example f = 8 with a total of 64. The sentence should say that dividing 360 by the frequency is never the method. Divide the frequency by the total, then multiply by 360°."
+      },
+      {
+        "field": "slides[2].steps[1].working",
+        "text": "(8 ÷ 30) × 360° = 0.2667 × 360° = 96°",
+        "correction": "0.2667 × 360 = 96.012, not exactly 96. The exact working is 8/30 = 4/15, and 4/15 × 360 = 96°. Alternatively, 360 ÷ 30 = 12° per student, and 8 × 12 = 96°. Using a rounded decimal and then writing '=' is inaccurate and models premature rounding."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "Frequency polygons and histograms are for continuous data (things you measure, like height or time)",
+        "correction": "Incomplete and misleading. Specification S3 says histograms are for grouped discrete data as well as continuous data. Frequency polygons can also be drawn for grouped discrete data."
+      },
+      {
+        "field": "keyFacts[1].examTip",
+        "text": "If class widths are all equal, histograms look like bar charts — but the y-axis is still technically frequency density.",
+        "correction": "When class widths are equal, a histogram may use frequency on the vertical axis, and this is accepted at GCSE. The lesson's own slides[1].whenToUse says 'check whether class widths are equal before deciding which axis label to use', which contradicts this tip. Also, a histogram still has no gaps between bars, unlike a bar chart."
+      },
+      {
+        "field": "keyFacts[2].fact",
+        "text": "Frequency polygons join the midpoints of histogram bars.",
+        "correction": "Imprecise. A frequency polygon plots each frequency at the midpoint of its class interval, which is the midpoint of the top of each bar when drawn over a histogram. The points are then joined with straight lines. 'Midpoints of histogram bars' could be read as the centres of the bars."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "S2",
+        "spec_text": "pictograms for categorical data",
+        "why": "Pictograms (keys, partial symbols) are never mentioned or taught."
+      },
+      {
+        "specRef": "S2",
+        "spec_text": "vertical line charts for ungrouped discrete numerical data",
+        "why": "Vertical line charts are not mentioned. The lesson groups discrete data with bar charts only."
+      },
+      {
+        "specRef": "S2",
+        "spec_text": "interpret and construct tables ... including frequency tables",
+        "why": "Constructing and interpreting frequency tables (tallying, completing tables, two-way tables) is not taught."
+      },
+      {
+        "specRef": "S2",
+        "spec_text": "including tables and line [graphs] for time series data",
+        "why": "Time series and line graphs (plotting, reading, describing trends) are absent."
+      },
+      {
+        "specRef": "S2",
+        "spec_text": "interpret and construct ... bar charts",
+        "why": "Bar charts are named, but there is no teaching of how to construct them (axes, labels, equal widths, gaps) or interpret them. Composite and dual bar charts are not covered."
+      },
+      {
+        "specRef": "S2",
+        "spec_text": "interpret and construct ... pie charts",
+        "why": "Only constructing a sector angle is taught. Interpreting a pie chart (finding a frequency from an angle, or comparing pie charts with different totals) is not taught."
+      },
+      {
+        "specRef": "S3",
+        "spec_text": "cumulative frequency graphs",
+        "why": "Cumulative frequency graphs (plotting at upper class boundaries, reading the median, quartiles and IQR) are entirely missing."
+      },
+      {
+        "specRef": "S3",
+        "spec_text": "construct and interpret diagrams for grouped discrete data",
+        "why": "The lesson presents histograms as for continuous data only. Grouped discrete data is not addressed."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "S2",
+        "case": "Interpreting a pie chart: finding a frequency from a given angle",
+        "why": "The only worked example goes from frequency to angle."
+      },
+      {
+        "specRef": "S2",
+        "case": "Pie chart where angles are not whole numbers or the total does not divide 360 neatly",
+        "why": "The example uses 30, which gives 12° per item. Rounding is mentioned in keyFacts[0].examTip but never shown."
+      },
+      {
+        "specRef": "S2",
+        "case": "Constructing or reading a bar chart",
+        "why": "No bar chart example is given."
+      },
+      {
+        "specRef": "S2",
+        "case": "Pictogram with a key and partial symbols",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "S2",
+        "case": "Vertical line chart for ungrouped discrete data",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "S2",
+        "case": "Time series line graph",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "S2",
+        "case": "Completing or interpreting a frequency or two-way table",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "S2",
+        "case": "Choosing a suitable diagram for given data",
+        "why": "This is described in prose only. No worked decision is shown."
+      },
+      {
+        "specRef": "S3",
+        "case": "Calculating frequency density and drawing a histogram with unequal class intervals",
+        "why": "The formula is given but never applied in a worked example."
+      },
+      {
+        "specRef": "S3",
+        "case": "Reading frequencies from a given histogram (area method), including part of a class",
+        "why": "This is only described in the commonMistakes slide."
+      },
+      {
+        "specRef": "S3",
+        "case": "Histogram with equal class intervals",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "S3",
+        "case": "Cumulative frequency graph: plotting at upper bounds and reading the median and quartiles",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "S3",
+        "case": "Frequency polygon from grouped data",
+        "why": "It is mentioned in slides[0].body and keyFacts[2] but never shown."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "The key difference with histograms is that the area of each bar represents the frequency, not the height — so if class intervals are unequal, you must use frequency density rather than frequency on the vertical axis.",
+        "why": "One sentence introduces area representing frequency, unequal intervals and frequency density, before frequency density has been defined."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "The area of each bar (height × width = frequency density × class width) gives the frequency.",
+        "why": "A chain of equalities sits inside brackets in the middle of a sentence, so the student must hold several substitutions at once."
+      },
+      {
+        "field": "slides[2].steps[2].instruction",
+        "text": "Check: all three sector angles should sum to 360°. Maths: (12/30)×360 = 144°. English: (10/30)×360 = 120°.",
+        "why": "Two new calculations are packed into the instruction rather than shown as working. A first-time learner may not see where 144° and 120° come from."
+      },
+      {
+        "field": "slides[2].steps[1].working",
+        "text": "(8 ÷ 30) × 360° = 0.2667 × 360° = 96°",
+        "why": "A rounded recurring decimal appears without explanation, and the step to 96° is not justified. The '360 ÷ 30 = 12° per student' method would be clearer."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "Using frequency instead makes narrow bars look proportionally smaller than they should.",
+        "why": "No reason is given. The more noticeable effect is that wide bars look too large, and the student cannot work out why from this sentence."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "The height alone is only the frequency if all class widths are equal (and equal to 1).",
+        "why": "The bracketed condition is stated without explanation. The student is not told that frequency density × 1 = frequency density."
+      },
+      {
+        "field": "keyFacts[1].fact",
+        "text": "Histogram y-axis = frequency density = frequency ÷ class width. Frequency = frequency density × class width (area of bar).",
+        "why": "Two rearranged formulas and the area idea are chained with repeated '=' signs in one short fact."
+      }
+    ],
+    "not_checked": [
+      "The lesson contains no diagrams or images, so no drawn chart could be checked for accuracy.",
+      "Whether the worked example numbers differ from the question bank (slides[2].note) cannot be checked, because the question bank was not supplied."
+    ]
+  }
+}

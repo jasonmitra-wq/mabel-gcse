@@ -1,0 +1,28 @@
+RUN: 600 questions, 24 batches of 25, est. worst case $2.0868 (output at 3000-token ceiling), cap $2.5
+Free count: 36 questions have a step explanation or worked-example step with more than one "→".
+batch 1/24: OK | in 8797 out 1887 | $0.0729
+batch 2/24: OK | in 9157 out 1566 | $0.0679
+batch 3/24: OK | in 8907 out 1816 | $0.0719
+batch 4/24: OK | in 8971 out 1886 | $0.0736
+batch 5/24: OK | in 9690 out 1329 | $0.0653
+batch 6/24: OK | in 10062 out 1709 | $0.0744
+batch 7/24: OK | in 9938 out 1777 | $0.0753
+batch 8/24: OK | in 9167 out 1149 | $0.0596
+batch 9/24: OK | in 9603 out 2184 | $0.0821
+batch 10/24: OK | in 10283 out 2108 | $0.0833
+batch 11/24: OK | in 9548 out 1840 | $0.0750
+batch 12/24: OK | in 9732 out 1791 | $0.0747
+batch 13/24: OK | in 10333 out 1832 | $0.0780
+batch 14/24: OK | in 10496 out 1651 | $0.0750
+batch 15/24: OK | in 10085 out 1705 | $0.0744
+batch 16/24: OK | in 10413 out 2141 | $0.0845
+batch 17/24: OK | in 10416 out 1909 | $0.0798
+batch 18/24: OK | in 10358 out 1776 | $0.0770
+batch 19/24: OK | in 9953 out 1587 | $0.0716
+batch 20/24: OK | in 10331 out 2355 | $0.0884
+batch 21/24: OK | in 10151 out 1325 | $0.0671
+batch 22/24: OK | in 9760 out 1768 | $0.0744
+batch 23/24: OK | in 9743 out 1906 | $0.0771
+batch 24/24: OK | in 9715 out 2017 | $0.0792
+answered 600/600; tag differs for 93; eq-C01: alg-simultaneous
+Actual total cost: $1.8027

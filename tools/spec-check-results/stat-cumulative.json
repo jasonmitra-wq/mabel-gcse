@@ -1,0 +1,137 @@
+{
+  "lesson": "stat-cumulative",
+  "source_file": "lessons/maths/stat-cumulative.json",
+  "lesson_md5": "9e23d7522ddf7a596d42b684cd7c6783",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-27T12:35:55.823Z",
+  "specRefs_sent": [
+    "S3",
+    "S4"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3353,
+    "output_tokens": 3326
+  },
+  "cost_usd": 0.079932,
+  "status": "OK",
+  "result": {
+    "lesson": "stat-cumulative",
+    "maths_errors": [
+      {
+        "field": "slides[2].steps[1].working",
+        "text": "CF = 20 falls between the points (20, 14) and (30, 28). Reading down from the curve at CF = 20 gives approximately 26 minutes.",
+        "correction": "CF = 20 is 6 of the 14 students in the 20–30 class above CF 14. Estimate = 20 + (6/14) × 10 ≈ 24.3 minutes. A smooth curve through these points would also give about 24 minutes, not 26. Median ≈ 24 minutes."
+      },
+      {
+        "field": "slides[2].steps[1].result",
+        "text": "Median ≈ 26 minutes",
+        "correction": "Median ≈ 24 minutes (20 + 6/14 × 10 ≈ 24.3)."
+      },
+      {
+        "field": "slides[2].steps[2].result",
+        "text": "Median ≈ 26 minutes ✓",
+        "correction": "Median ≈ 24 minutes. The check in this step only confirms that the value lies in the 20–30 class. That is too weak to catch the wrong reading."
+      },
+      {
+        "field": "slides[2].conclusion",
+        "text": "The median time is approximately 26 minutes.",
+        "correction": "The median time is approximately 24 minutes."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "S3",
+        "spec_text": "histograms with equal and unequal class intervals",
+        "why": "Histograms (frequency density = frequency ÷ class width) are not taught anywhere in the lesson."
+      },
+      {
+        "specRef": "S3",
+        "spec_text": "construct and interpret ... cumulative frequency graphs, and know their appropriate use",
+        "why": "No curve is ever drawn or shown. The lesson never explains how to draw a smooth curve through the plotted points, and never says when a cumulative frequency graph is the right diagram to use."
+      },
+      {
+        "specRef": "S4",
+        "spec_text": "Higher only: • including box plots",
+        "why": "Box plots are not mentioned. This includes drawing a box plot from the quartiles read off a cumulative frequency graph."
+      },
+      {
+        "specRef": "S4",
+        "spec_text": "appropriate measures of central tendency (median, mean, mode and modal class) and spread (range, including consideration of outliers)",
+        "why": "Only the median is covered. Mean, mode, modal class, and range with outliers are not taught."
+      },
+      {
+        "specRef": "S4",
+        "spec_text": "students should know and understand the terms: primary data, secondary data, discrete data and continuous data",
+        "why": "None of these terms are defined. The lesson relies on continuous data without explaining what it is."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "S4",
+        "case": "Reading lower and upper quartiles and calculating the IQR",
+        "why": "The formula slide gives n/4 and 3n/4, but the worked example only finds the median. The example data would give Q1 at CF 10 and Q3 at CF 30, and neither is shown."
+      },
+      {
+        "specRef": "S3",
+        "case": "Reading from the data axis to the CF axis (e.g. how many students took less than / more than 35 minutes)",
+        "why": "This is a very common interpretation question. No worked example shows it, including subtracting from n for 'more than'."
+      },
+      {
+        "specRef": "S3",
+        "case": "Starting the curve at the lowest class boundary with CF 0 (here (0, 0))",
+        "why": "The plotted points listed start at (10, 4). The starting point is never mentioned, but exam mark schemes expect it."
+      },
+      {
+        "specRef": "S4",
+        "case": "Comparing two distributions using medians and IQRs in context",
+        "why": "Comparing is advised in whenToUse and keyFacts[2].examTip, but no example shows a written comparison."
+      },
+      {
+        "specRef": "S4",
+        "case": "Drawing a box plot from cumulative frequency readings",
+        "why": "Box plots are not shown at all."
+      },
+      {
+        "specRef": "S3",
+        "case": "Histogram with unequal class widths (frequency density)",
+        "why": "No histogram example is given."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "Once drawn, you can read off the median, lower quartile and upper quartile directly from the graph by going across from the relevant cumulative frequency value and down to the data axis.",
+        "why": "One sentence introduces three new terms and a two-direction reading method, with no picture to follow."
+      },
+      {
+        "field": "slides[2].steps[0].instruction",
+        "text": "Build the cumulative frequency table by adding a running total. Plot points at the upper class boundary of each interval: (10, 4), (20, 14), (30, 28), (40, 37), (50, 40).",
+        "why": "It gives the coordinates before the working that produces them. Building the table and plotting the points are two separate tasks squeezed into one instruction."
+      },
+      {
+        "field": "slides[2].steps[1].working",
+        "text": "Reading down from the curve at CF = 20 gives approximately 26 minutes.",
+        "why": "No curve is shown and no reason is given for the value. A student cannot see where 26 comes from, and cannot check it."
+      },
+      {
+        "field": "slides[3].mistakes[1].mistake",
+        "text": "Using n/2 as the median when working with a cumulative frequency graph, but reading the x-value directly from the table row where CF first exceeds n/2.",
+        "why": "The wording is convoluted. Using n/2 is correct, so 'Using n/2 as the median... but' makes the actual mistake unclear. Also, 'n/2 as the median' confuses the median's position with its value."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Plot points at the upper class boundary of each interval — never the midpoint. The IQR = Q3 − Q1 measures the spread of the middle 50% of the data and is less affected by outliers than the full range.",
+        "why": "Plotting rules, the meaning of IQR, and outliers are packed together. The ideas behind 'middle 50%' and outliers are not explained."
+      }
+    ],
+    "not_checked": [
+      "No cumulative frequency curve or diagram is included. The graph reading in slides[2].steps[1] was checked only by linear interpolation between (20, 14) and (30, 28)."
+    ]
+  }
+}

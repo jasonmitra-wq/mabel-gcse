@@ -1,0 +1,175 @@
+{
+  "lesson": "alg-equations",
+  "source_file": "lessons/maths/alg-equations.json",
+  "lesson_md5": "4f145a7dbc6a042175ad25e60478a062",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T17:35:53.349Z",
+  "specRefs_sent": [
+    "A17",
+    "A21"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3069,
+    "output_tokens": 4921
+  },
+  "cost_usd": 0.110696,
+  "status": "OK",
+  "result": {
+    "lesson": "alg-equations",
+    "maths_errors": [
+      {
+        "field": "slides[0].body",
+        "text": "Linear equations (no x² or higher) always have exactly one solution.",
+        "correction": "This is false. 2x + 1 = 2x + 3 has no solution. 2(x + 1) = 2x + 2 is true for every x. A linear equation has exactly one solution only when the x terms do not cancel out."
+      },
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "This leaves a fraction on the left and gives the wrong answer.",
+        "correction": "Dividing first gives the right answer. From x + 7/3 = 22/3, take 7/3 from both sides: x = 22/3 − 7/3 = 15/3 = 5. This is the same as the lesson's answer."
+      },
+      {
+        "field": "slides[3].mistakes[0].correction",
+        "text": "Always deal with addition and subtraction first (remove constants from the x side), then divide.",
+        "correction": "'Always' is too strong. Dividing first is valid and is sometimes the neatest route. For 3(x + 2) = 12, dividing by 3 gives x + 2 = 4, so x = 2. Taking away constants first is a sensible habit, not a rule of algebra."
+      },
+      {
+        "field": "slides[3].mistakes[1].mistake",
+        "text": "Check: 5(4)−3=17 ≠ 2(4)+9=17",
+        "correction": "Both sides equal 17, so the '≠' sign is wrong. It should read 5(4) − 3 = 17 = 2(4) + 9."
+      },
+      {
+        "field": "keyFacts[0].examTip",
+        "text": "adding, subtracting, multiplying or dividing both sides by the same value.",
+        "correction": "Multiplying or dividing both sides must use a non-zero value. Dividing by zero is undefined. Multiplying both sides by zero turns any equation into 0 = 0, so the equation is lost."
+      },
+      {
+        "field": "keyFacts[1].examTip",
+        "text": "Undo operations in reverse order: addition/subtraction first, multiplication/division last.",
+        "correction": "This is not true for every equation. It only describes equations like 3x + 7 = 22, where x was multiplied first and then had something added. For (x + 7)/3 = 5 the reverse order is to multiply by 3 first, then subtract 7. The order depends on how the equation was built."
+      }
+    ],
+    "false_mistakes": [
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "Dividing before subtracting — e.g. solving 3x + 7 = 22 by dividing first: x + 7/3 = 22/3. This leaves a fraction on the left and gives the wrong answer.",
+        "why": "Dividing every term on both sides by 3 is a legal step that keeps the balance. It gives fractions to work with, but it does not give a wrong answer.",
+        "mistaken_method_gives": "x = 22/3 − 7/3 = 15/3 = 5, which is correct."
+      },
+      {
+        "field": "slides[3].mistakes[1].mistake",
+        "text": "for 5x − 3 = 2x + 9, subtracting 3 from both sides instead of adding 3: writing 5x − 3 − 3 = 2x + 9 − 3, giving 5x − 6 = 2x + 6 and x = 4. ... that's actually correct here, but the method is flawed.",
+        "why": "Subtracting 3 from both sides is a legal step, so the method is not flawed. It just does not remove the constant from the left side. The item itself admits the answer is correct.",
+        "mistaken_method_gives": "5x − 6 = 2x + 6, so 3x = 12 and x = 4, which is correct."
+      }
+    ],
+    "missing_spec_content": [
+      {
+        "specRef": "A17",
+        "spec_text": "find approximate solutions using a graph",
+        "why": "The lesson only solves equations algebraically. It never shows how to read an approximate solution from a graph."
+      },
+      {
+        "specRef": "A21",
+        "spec_text": "translate simple situations or procedures into algebraic expressions or formulae",
+        "why": "Every question in the lesson is already written as an equation. Turning words or a situation into algebra is never taught."
+      },
+      {
+        "specRef": "A21",
+        "spec_text": "derive an equation (or two simultaneous equations), solve the equation(s) and interpret the solution",
+        "why": "The lesson never derives an equation from a problem. It never interprets a solution in context. It never mentions simultaneous equations."
+      },
+      {
+        "specRef": "A21",
+        "spec_text": "including the solution of geometrical problems and problems set in context",
+        "why": "The lesson has no geometrical problems (for example angles or perimeter) and no problems set in context."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "A17",
+        "case": "brackets",
+        "why": "The spec notes say 'including use of brackets'. Brackets appear only in a common-mistake item, not in a worked example."
+      },
+      {
+        "specRef": "A17",
+        "case": "unknown on one side only (basic two-step equation)",
+        "why": "The only worked example has x on both sides. The Basic foundation case, such as 3x + 7 = 22, is never worked as an example."
+      },
+      {
+        "specRef": "A17",
+        "case": "fractions (e.g. x/4 + 3 = 7 or (x + 2)/3 = 5)",
+        "why": "No worked example has the unknown divided by a number, so solving by multiplying is never shown."
+      },
+      {
+        "specRef": "A17",
+        "case": "negative or non-integer solution",
+        "why": "The worked example has a positive whole-number answer (x = 4). The student never sees how to handle an answer like x = −3 or x = 7/2."
+      },
+      {
+        "specRef": "A17",
+        "case": "negative coefficient of x / x term on the right after collecting",
+        "why": "No example shows a negative x term, such as 5 − 2x = 11. No example ends with x collected on the right-hand side."
+      },
+      {
+        "specRef": "A17",
+        "case": "approximate solution from a graph",
+        "why": "No example reads a solution from a graph."
+      },
+      {
+        "specRef": "A21",
+        "case": "forming and solving an equation from a context or geometry problem",
+        "why": "No example sets up an equation from words or a diagram and then interprets the answer."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[2].steps[0].working",
+        "text": "7x − 4x − 1 = 11. So 3x − 1 = 11.",
+        "why": "The −4x appears on the left, but nothing shows what happened to the right side. A beginner needs to see 7x − 1 − 4x = 4x + 11 − 4x first, to understand why the 4x vanishes on the right."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "The golden rule is: whatever you do to one side, you must do to the other — every move is a legal operation that preserves the balance.",
+        "why": "One sentence carries three ideas: the rule, 'legal operation' and 'preserves the balance'. 'Legal operation' is never explained."
+      },
+      {
+        "field": "slides[1].body",
+        "text": "Think of the equation as a series of operations applied to x. To isolate x, undo those operations in reverse order",
+        "why": "This is abstract with no example of what 'reverse order' means for an actual equation. 'Isolate' is not defined."
+      },
+      {
+        "field": "slides[3].mistakes[1].mistake",
+        "text": "writing 5x − 3 − 3 = 2x + 9 − 3, giving 5x − 6 = 2x + 6 and x = 4. Check: 5(4)−3=17 ≠ 2(4)+9=17 — that's actually correct here, but the method is flawed.",
+        "why": "A long chain of working, a contradictory check and a self-reversal all sit in one item. A first-time learner cannot tell what the mistake actually is."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "To move −3 to the other side, add 3 to both sides: 5x = 2x + 9 + 3 = 2x + 12. Then 3x = 12, x = 4.",
+        "why": "The line skips the step 3x = 12, which comes from subtracting 2x from both sides, without saying so. It also uses the phrase 'move to the other side', which the lesson avoids elsewhere."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "Then 6x − 15 = 9 → 6x = 24 → x = 4.",
+        "why": "This is a chain of arrows with no reason given for each step (add 15 to both sides; divide both sides by 6)."
+      },
+      {
+        "field": "keyFacts[1].fact",
+        "text": "Order of solving: expand brackets first → collect x terms on one side → collect constants on the other → divide by the coefficient of x.",
+        "why": "Four steps are joined by arrows in one line. 'Coefficient' is used without being defined."
+      },
+      {
+        "field": "slides[3].mistakes[0].correction",
+        "text": "remove constants from the x side",
+        "why": "'Constants' and 'the x side' are not explained anywhere in the lesson."
+      }
+    ],
+    "not_checked": [
+      "slides[2].note says the worked example numbers 'must differ from any question in the question bank for this subtopic'. The question bank was not provided, so this could not be checked."
+    ]
+  }
+}

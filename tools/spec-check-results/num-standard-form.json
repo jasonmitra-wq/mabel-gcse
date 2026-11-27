@@ -1,0 +1,139 @@
+{
+  "lesson": "num-standard-form",
+  "source_file": "lessons/maths/num-standard-form.json",
+  "lesson_md5": "e4d3b0d1f180b24592a842bb1ebc8351",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T17:33:37.389Z",
+  "specRefs_sent": [
+    "N9"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3119,
+    "output_tokens": 4224
+  },
+  "cost_usd": 0.096956,
+  "status": "OK",
+  "result": {
+    "lesson": "num-standard-form",
+    "maths_errors": [
+      {
+        "field": "slides[0].body",
+        "text": "The key discipline is always keeping the coefficient strictly between 1 and 10.",
+        "correction": "The coefficient can equal 1. The condition is 1 ≤ a < 10, as the formula slide and keyFacts[0] state. For example, 1 × 10⁴ is valid standard form. 'Strictly between 1 and 10' would wrongly exclude a = 1."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "Standard form expresses any number as a × 10ⁿ, where 1 ≤ a < 10 and n is an integer.",
+        "correction": "Not every number fits this form. Zero cannot be written with 1 ≤ a < 10, and negative numbers need a minus sign in front (for example −3 × 10²). Say instead: 'any positive number'."
+      },
+      {
+        "field": "slides[2].conclusion",
+        "text": "6.35 × 10⁶ ÷ 2.5 × 10³ = 2.54 × 10³.",
+        "correction": "Without brackets, normal order of operations reads this left to right as (6.35 × 10⁶ ÷ 2.5) × 10³ = 2.54 × 10⁹. Write (6.35 × 10⁶) ÷ (2.5 × 10³) = 2.54 × 10³. The commonMistakes slide already uses this bracketed notation."
+      },
+      {
+        "field": "keyFacts[1].fact",
+        "text": "Large numbers have positive powers of 10 (decimal moved left). Small numbers have negative powers (decimal moved right).",
+        "correction": "This leaves out numbers from 1 up to (but not including) 10. These have n = 0 (for example 7.2 = 7.2 × 10⁰). Precisely: numbers of 10 or more have a positive power, numbers from 1 to below 10 have power 0, and numbers between 0 and 1 have a negative power. slides[1].formulaExplained has the same gap: 'positive for large numbers, negative for small ones'."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "N9",
+        "spec_text": "Interpret calculator displays.",
+        "why": "The lesson never shows how a calculator displays standard form (for example 2.54E3 or 2.54×10³ on screen). It never shows how to read or enter such values either."
+      },
+      {
+        "specRef": "N9",
+        "spec_text": "with and without a calculator",
+        "why": "The lesson does not separate calculator and non-calculator methods. Step 2 states '6.35 ÷ 2.5 = 2.54' with no non-calculator working. There is also no guidance on using a calculator for standard form calculations."
+      },
+      {
+        "specRef": "N9",
+        "spec_text": "calculate with and interpret standard form A × 10 ^n",
+        "why": "Interpreting standard form is not taught. This includes converting numbers with negative powers back to ordinary numbers and comparing or ordering numbers given in standard form. Only one conversion back to an ordinary number appears, for a positive power (slides[2].steps[3])."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "N9",
+        "case": "Converting a small number (less than 1) to standard form with a negative power",
+        "why": "This appears only in commonMistakes and keyFacts tips. No worked example shows the steps."
+      },
+      {
+        "specRef": "N9",
+        "case": "Converting standard form back to an ordinary number with a negative power (e.g. 4.7 × 10⁻³ = 0.0047)",
+        "why": "Only the positive-power direction is shown, briefly, in slides[2].steps[3]."
+      },
+      {
+        "specRef": "N9",
+        "case": "Multiplication in standard form",
+        "why": "Multiplication is described in slides[1] and keyFacts[2], but the only worked example is a division."
+      },
+      {
+        "specRef": "N9",
+        "case": "Calculation where the coefficient leaves the range and must be adjusted (e.g. (4 × 10³) × (5 × 10²) = 20 × 10⁵ = 2 × 10⁶, or a division giving a coefficient below 1)",
+        "why": "In the worked example the coefficient (2.54) is already valid, so the adjustment step that commonMistakes[0] warns about is never demonstrated."
+      },
+      {
+        "specRef": "N9",
+        "case": "Calculations involving negative powers (e.g. (3 × 10⁻⁴) × (2 × 10⁶))",
+        "why": "Adding or subtracting powers when one is negative is never shown."
+      },
+      {
+        "specRef": "N9",
+        "case": "Addition or subtraction in standard form",
+        "why": "keyFacts[3] states a method, but no worked example shows it."
+      },
+      {
+        "specRef": "N9",
+        "case": "Comparing or ordering numbers in standard form",
+        "why": "This is part of interpreting standard form, and no example is shown."
+      },
+      {
+        "specRef": "N9",
+        "case": "Reading a calculator display",
+        "why": "This is required by the spec notes and is not modelled."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "To convert: move the decimal point until one non-zero digit sits to its left; count the moves (left = positive n, right = negative n). To multiply in standard form: multiply the coefficients and add the powers. To divide: divide the coefficients and subtract the powers.",
+        "why": "One paragraph carries three separate procedures: converting, multiplying and dividing. The parenthetical 'left = positive n, right = negative n' is a compressed rule with no example or reason."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "multiply the coefficients and add the powers ... divide the coefficients and subtract the powers",
+        "why": "No reason is given for adding or subtracting powers, for example 10³ × 10² = 1000 × 100 = 10⁵. A first-time learner is left with a rule to memorise rather than understand."
+      },
+      {
+        "field": "slides[2].steps[0].working",
+        "text": "Count moves: 6 places left → power = +6.",
+        "why": "The arrow chain replaces the reasoning. The student is not told why moving left gives a positive power: 6.35 must be multiplied by 10 six times to get back to 6,350,000."
+      },
+      {
+        "field": "slides[2].steps[1].working",
+        "text": "6.35 ÷ 2.5 = 2.54",
+        "why": "This is not an obvious division, and no working or calculator note is given. A student working without a calculator cannot follow how 2.54 is reached."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "0.000034 → decimal moves 5 places right → 3.4 × 10⁻⁵.",
+        "why": "This chain of arrows compresses the conversion. It does not show which digit the point stops after or why the power is negative."
+      },
+      {
+        "field": "keyFacts[1].examTip",
+        "text": "0.00049 → decimal moves 4 places right → 4.9 × 10⁻⁴.",
+        "why": "This is the same arrow-chain compression with no explanation of the counting."
+      }
+    ],
+    "not_checked": []
+  }
+}

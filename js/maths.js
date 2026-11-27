@@ -23,6 +23,17 @@ const Maths = (() => {
   let _testQIdx        = 0;
   let _testResults     = [];      // { stepsTotal, stepsCorrect } per question
 
+  // Lesson gate (maths full audit, 2026-11-26): the 41 lesson files have
+  // never been recomputed. While the flag is on, a subtopic whose lesson is
+  // not in MATHS_LESSONS_CHECKED skips the notes and goes to its questions.
+  // Flag off: lessons open as before.
+  const MATHS_LESSON_GATE     = true;
+  const MATHS_LESSONS_CHECKED = [];
+  const GATED_LESSON_MSG = "Notes for this topic are being checked. Let's go straight to questions, and I'll explain anything you get wrong.";
+  function _lessonOpen(subtopicId) {
+    return !MATHS_LESSON_GATE || MATHS_LESSONS_CHECKED.includes(subtopicId);
+  }
+
   // Lesson mode state
   let _lessonData         = null;
   let _lessonSlideIdx     = 0;
@@ -208,6 +219,10 @@ const Maths = (() => {
         _restoreSteps('Back where you left off.');
         return;
       }
+    }
+    if (hasLesson && !_lessonOpen(subtopicId)) {
+      _startQuestion(subtopicId, subtopicName, topicCode, GATED_LESSON_MSG);
+      return;
     }
     if (hasLesson) {
       try {

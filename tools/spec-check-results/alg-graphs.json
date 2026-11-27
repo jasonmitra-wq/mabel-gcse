@@ -1,0 +1,174 @@
+{
+  "lesson": "alg-graphs",
+  "source_file": "lessons/maths/alg-graphs.json",
+  "lesson_md5": "65915f3655817394cfccacb615f45c26",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T17:37:35.828Z",
+  "specRefs_sent": [
+    "A9",
+    "A10",
+    "A12"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3454,
+    "output_tokens": 4579
+  },
+  "cost_usd": 0.105396,
+  "status": "OK",
+  "result": {
+    "lesson": "alg-graphs",
+    "maths_errors": [
+      {
+        "field": "slides[0].body",
+        "text": "Every straight-line graph has an equation of the form y = mx + c, where every point on the line satisfies the equation.",
+        "correction": "Not every straight line can be written as y = mx + c. Vertical lines have equations of the form x = k and cannot be written as y = mx + c. The lesson itself says this in slides[3].mistakes[2].correction. The sentence should say 'Every non-vertical straight line…'."
+      },
+      {
+        "field": "keyFacts[0].fact",
+        "text": "Read them directly from the equation without rearranging.",
+        "correction": "This is only true when the equation is already in the form y = mx + c. Otherwise you must rearrange first. The examTip in the same entry says so: 'For 3y = 6x + 9, divide everything by 3'. The same applies to equations such as 2x + y = 7, where m = −2, not 2. The fact should say: 'Once the equation is in the form y = mx + c, read m and c directly.'"
+      }
+    ],
+    "false_mistakes": [
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "Writing the equation as x = my + c (mixing up x and y roles) — especially when a question asks for the equation of a vertical or near-vertical line.",
+        "why": "For a vertical line, writing the equation as 'x = …' is exactly right. The item's own correction says a vertical line 'is always of the form x = k', which is x = my + c with m = 0. More generally, x = my + c (for example x = 2y + 1) is a valid equation of a straight line. It is just not in the y = mx + c form. Nothing in the item explains what the student would actually get wrong.",
+        "mistaken_method_gives": "For a vertical line it gives the correct equation x = k. For other lines it gives a correct equation in a non-standard form (for example x = 2y + 1, which is y = ½x − ½)."
+      }
+    ],
+    "missing_spec_content": [
+      {
+        "specRef": "A9",
+        "spec_text": "plot graphs of equations that correspond to straight-line graphs in the coordinate plane",
+        "why": "The lesson does not teach plotting from a table of values: choosing x values, working out y and plotting the coordinates. It only describes sketching from the intercept and gradient (keyFacts[3])."
+      },
+      {
+        "specRef": "A10",
+        "spec_text": "identify and interpret gradients and intercepts of linear functions graphically and algebraically",
+        "why": "The lesson does not teach reading the gradient and intercept from a drawn graph (counting squares, rise over run). It also does not teach interpreting what the gradient or intercept means in context, such as a rate of change or a starting value."
+      },
+      {
+        "specRef": "A12",
+        "spec_text": "recognise, sketch and interpret graphs of linear functions and quadratic functions",
+        "why": "Quadratic graphs are not taught at all: the parabola shape, the turning point, roots, the line of symmetry, or plotting y = x² + bx + c. This is despite the title 'straight lines and curves'."
+      },
+      {
+        "specRef": "A12",
+        "spec_text": "including simple cubic functions and the reciprocal y = 1/x function with x ≠ 0",
+        "why": "Cubic and reciprocal graphs (their shapes, and the asymptotes of y = 1/x) are not taught."
+      },
+      {
+        "specRef": "A12",
+        "spec_text": "including exponential functions y = k^x for positive values of k, and the trigonometric functions (with arguments in degrees) y = sin x, y = cos x and y = tan x for angles of any size",
+        "why": "Exponential and trigonometric graphs (Higher) are not taught."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "keyFacts[3].examTip",
+        "text": "moving right 1 means moving DOWN by |m|",
+        "why": "The modulus notation |m| is not part of the GCSE specification and is not explained. It could confuse a student. Saying 'down by 3 for gradient −3' would be clearer."
+      }
+    ],
+    "cases_not_modelled": [
+      {
+        "specRef": "A9",
+        "case": "Equation of the line through two given points",
+        "why": "The method is described in slides[1].formulaExplained, but no worked example calculates m from two points and then substitutes to find c."
+      },
+      {
+        "specRef": "A9",
+        "case": "Line through a point not on the y-axis with a given gradient (c must be found by substitution)",
+        "why": "The only worked example uses (0, 4), so c is read off directly. No example substitutes a point such as (2, 5) to find c."
+      },
+      {
+        "specRef": "A9",
+        "case": "Identifying or finding a parallel line",
+        "why": "This is stated in keyFacts[2] but never worked, for example 'find the line parallel to y = 2x + 1 through (3, 4)'."
+      },
+      {
+        "specRef": "A9",
+        "case": "Identifying or finding a perpendicular line (Higher)",
+        "why": "Only the rule and the 2/3 → −3/2 tip are given. No worked example finds a perpendicular line's equation."
+      },
+      {
+        "specRef": "A9",
+        "case": "Plotting a straight line from a table of values",
+        "why": "No example completes a table of values and plots the points."
+      },
+      {
+        "specRef": "A10",
+        "case": "Equation not in y = mx + c form needing rearrangement (e.g. 2y − 4x = 6 or 3x + y = 5)",
+        "why": "This is only mentioned in keyFacts[0].examTip, and only for a simple divide-by-3 case. No example involves moving x terms across, which also changes the sign of the gradient."
+      },
+      {
+        "specRef": "A10",
+        "case": "Reading the gradient and intercept from a drawn graph",
+        "why": "No example works from a graph."
+      },
+      {
+        "specRef": "A10",
+        "case": "Interpreting gradient and intercept in a real-life context",
+        "why": "No example interprets what m or c means in context."
+      },
+      {
+        "specRef": "A9",
+        "case": "Fractional gradient",
+        "why": "No example has a non-integer gradient, so moving 'right 1, up m' is awkward. No example uses 'right 3, up 2' for m = 2/3."
+      },
+      {
+        "specRef": "A12",
+        "case": "Quadratic graphs",
+        "why": "No example plots or sketches a quadratic."
+      },
+      {
+        "specRef": "A12",
+        "case": "Cubic graphs",
+        "why": "No example plots or sketches a cubic."
+      },
+      {
+        "specRef": "A12",
+        "case": "Reciprocal graph y = 1/x",
+        "why": "No example shows the reciprocal graph."
+      },
+      {
+        "specRef": "A12",
+        "case": "Exponential graphs y = k^x (Higher)",
+        "why": "No example shows an exponential graph."
+      },
+      {
+        "specRef": "A12",
+        "case": "Trigonometric graphs y = sin x, cos x, tan x (Higher)",
+        "why": "No example shows a trigonometric graph."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "m is the gradient — how steep the line is, and which direction it slopes. m = (change in y) ÷ (change in x) between any two points on the line. A positive m means the line goes up left to right; negative m means it goes down. c is the y-intercept — the value of y where the line crosses the y-axis (i.e. when x = 0). To find the equation through two points: calculate m first using m = (y₂ − y₁) / (x₂ − x₁), then substitute one point and m into y = mx + c to find c.",
+        "why": "One paragraph carries five ideas: what gradient means, the gradient formula, the sign of the gradient, the intercept, and a full two-point method. The two-point method appears without any example, and the subscript notation is introduced without explanation."
+      },
+      {
+        "field": "slides[2].steps[3].working",
+        "text": "At x = 1: y = −3 + 4 = 1. At x = 2: y = −6 + 4 = −2. Change = −2 − 1 = −3 for Δx = 1 ✓.",
+        "why": "Several calculations are packed into one line, and the symbol Δx is used without ever being explained. The instruction in the same step uses x = 2 while the working also brings in x = 1, so the reasoning is split across two fields."
+      },
+      {
+        "field": "keyFacts[1].fact",
+        "text": "The order of the coordinates must be consistent — both must be point 1 or both point 2 in their respective fractions.",
+        "why": "The wording is unclear. 'Both must be point 1 or both point 2 in their respective fractions' does not clearly say that whichever point you subtract on top, you must also subtract on the bottom. A short example would help."
+      },
+      {
+        "field": "keyFacts[2].fact",
+        "text": "Perpendicular lines have gradients that multiply to −1: m₁ × m₂ = −1, so m₂ = −1/m₁.",
+        "why": "This moves from the product rule to the rearranged reciprocal formula with no reason and no numerical example. It also does not say the rule fails when one line is horizontal."
+      }
+    ],
+    "not_checked": []
+  }
+}

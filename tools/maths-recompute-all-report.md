@@ -1,6 +1,6 @@
 # Maths answer check
 
-Generated 2026-10-17 by tools/maths-recompute.js. Read-only: no question was changed.
+Generated 2026-11-26 by tools/maths-recompute.js. Read-only: no question was changed.
 
 All 600 questions, 1706 steps. Checked by the app: 1376; checkType skip: 330.  
 Checked steps: ok 1376, ambiguous 0, wrong 0, mismatch 0.  
@@ -570,7 +570,7 @@ Error rate (wrong + mismatch over checked steps): 0/1376 = 0.0%. Questions with 
 | spd-C01 | 3 | Check: after 30 min, how far has A gone? (km) | 9 | 9 | ok |  |
 | spd-C02 | 0 | Let the distance from X to Y be d km. Write an expression for the time | 0 | — | skip |  |
 | spd-C02 | 1 | Write an equation for the total journey time. | 0 | — | skip |  |
-| spd-C02 | 2 | Solve: find the value of d/120 by combining fractions. What is the com | 0 | — | skip |  |
+| spd-C02 | 2 | Combine d/60 + d/40 into one fraction of d. | 0 | — | skip |  |
 | spd-C02 | 3 | Find d (the one-way distance in km). | 120 | 120 | ok |  |
 | spd-C03 | 0 | Find the distance during acceleration (0 to 20 m/s in 10 s). Area of t | 100 | 100 | ok |  |
 | spd-C03 | 1 | Find the distance at constant speed (20 m/s for 30 s). Area of rectang | 600 | 600 | ok |  |

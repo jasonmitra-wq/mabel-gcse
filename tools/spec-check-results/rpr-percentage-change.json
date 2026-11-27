@@ -1,0 +1,180 @@
+{
+  "lesson": "rpr-percentage-change",
+  "source_file": "lessons/maths/rpr-percentage-change.json",
+  "lesson_md5": "2a9c65b2279da5a36684dac47dc461f5",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:32:17.826Z",
+  "specRefs_sent": [
+    "R9",
+    "R16"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3395,
+    "output_tokens": 4479
+  },
+  "cost_usd": 0.10316,
+  "status": "OK",
+  "result": {
+    "lesson": "rpr-percentage-change",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "Simple interest adds the same fixed amount each time; compound always gives a higher result.",
+        "correction": "Compound interest is not always higher. Over one period, simple and compound interest give the same total (for example, £2,000 at 4% for 1 year gives £2,080 either way). Compound interest only gives the higher total when there are 2 or more periods and the rate is positive."
+      },
+      {
+        "field": "keyFacts[3].fact",
+        "text": "Compound interest gives a larger total because each period's interest is added to the running total before the next calculation.",
+        "correction": "This is true only for 2 or more periods with a positive rate. For a single period the two totals are equal."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "R9",
+        "spec_text": "define percentage as ‘number of parts per hundred’",
+        "why": "The lesson never says what a percentage is. It starts straight from percentage change."
+      },
+      {
+        "specRef": "R9",
+        "spec_text": "interpret percentages and percentage changes as a fraction or a decimal, and interpret these multiplicatively",
+        "why": "Decimal multipliers appear (1.20, 0.80), but the lesson never explains why 20% equals 0.20 or 1/5. Fraction equivalents are never shown."
+      },
+      {
+        "specRef": "R9",
+        "spec_text": "express one quantity as a percentage of another",
+        "why": "Only percentage change is taught. Writing one quantity as a percentage of another (for example, 30 out of 120 as a percentage) is never taught."
+      },
+      {
+        "specRef": "R9",
+        "spec_text": "compare two quantities using percentages",
+        "why": "The concept slide mentions comparing changes fairly, but no method or example of comparing two quantities using percentages is given."
+      },
+      {
+        "specRef": "R9",
+        "spec_text": "work with percentages greater than 100%",
+        "why": "Percentages above 100% (for example, a 150% increase giving multiplier 2.5, or 'new value is 120% of old') are never mentioned."
+      },
+      {
+        "specRef": "R9",
+        "spec_text": "simple interest including in financial mathematics",
+        "why": "Simple interest appears only as the formula 'I = PRT/100' in keyFacts. The letters P, R and T are never defined, and no method is taught."
+      },
+      {
+        "specRef": "R16",
+        "spec_text": "set up, solve and interpret the answers in growth and decay problems, including compound interest",
+        "why": "A = P × mⁿ is stated, but setting up a growth or decay problem and interpreting the answer is not taught. Examples of what is missing: depreciation, population growth, or working out how many years until a value passes a target."
+      },
+      {
+        "specRef": "R16",
+        "spec_text": "and work with general iterative processes",
+        "why": "Iterative processes (repeatedly applying a rule, such as u(n+1) = 1.05u(n) − 20) are not mentioned at all."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "R9",
+        "case": "Percentage increase",
+        "why": "The only worked example is a percentage decrease (£160 to £120)."
+      },
+      {
+        "specRef": "R9",
+        "case": "Applying a percentage increase or decrease to find a new value with a multiplier",
+        "why": "No worked example starts from an original value and a percentage and finds the new value."
+      },
+      {
+        "specRef": "R9",
+        "case": "Reverse percentage (original value problems)",
+        "why": "This appears only inside a common-mistake item (£350 ÷ 0.70). There is no step-by-step worked example."
+      },
+      {
+        "specRef": "R9",
+        "case": "Expressing one quantity as a percentage of another",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "R9",
+        "case": "Percentages greater than 100%",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "R9",
+        "case": "Simple interest calculation",
+        "why": "This appears only as a one-line wrong-method illustration inside a common mistake. There is no worked example."
+      },
+      {
+        "specRef": "R16",
+        "case": "Compound interest",
+        "why": "This appears only inside a common-mistake item. There is no worked example showing A = P × mⁿ with substitution."
+      },
+      {
+        "specRef": "R16",
+        "case": "Depreciation or decay (multiplier less than 1 over several periods)",
+        "why": "Depreciation is named in the formula slide but never modelled."
+      },
+      {
+        "specRef": "R16",
+        "case": "Finding the number of periods (for example, 'after how many years will it exceed £X?')",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "R16",
+        "case": "General iterative processes (Higher)",
+        "why": "No example is given."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formula",
+        "text": "% change = (change ÷ original) × 100 | Increase multiplier = 1 + (r/100) | Decrease multiplier = 1 − (r/100) | Compound: A = P × mⁿ",
+        "why": "Four separate formulas are packed into one line with pipe separators. A first-time learner cannot take these in at once."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "To find percentage change: subtract original from new to get the change, divide by the original, then multiply by 100. If positive it is an increase; if negative it is a decrease. For applying a % increase or decrease: multiply by 1 + r/100 (increase) or 1 − r/100 (decrease), where r is the percentage. For compound interest or depreciation: A = P × mⁿ, where P is the starting amount, m is the multiplier, and n is the number of periods. For reverse percentage (finding the original): divide the known value by the multiplier.",
+        "why": "One paragraph explains four different methods. Reverse percentage is introduced here without any formula on the slide."
+      },
+      {
+        "field": "slides[2].steps[0].working",
+        "text": "Change = original − new = £160 − £120 = £40.",
+        "why": "This contradicts the formula slide ('subtract original from new') and keyFacts[0] ('Change = new − original'). Those give −40, which signals a decrease. The switch of sign convention is not explained."
+      },
+      {
+        "field": "slides[2].steps[3].instruction",
+        "text": "Check using the multiplier: a 25% decrease means multiplying by 0.75. £160 × 0.75 = £120 ✓.",
+        "why": "The instruction already contains the full working. It also uses the multiplier idea without saying why 25% off gives 0.75."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "Compound interest applies the multiplier repeatedly — each year's interest is calculated on the new total, not just the original, so the amount grows faster than simple interest.",
+        "why": "One sentence carries three ideas: repeated multiplier, interest on the new total, and comparison with simple interest. Simple interest has not been defined at this point."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "Adding the same percentage back undoes a percentage of the wrong base.",
+        "why": "The phrase is too compressed to follow. It needs to say that 30% of £350 is smaller than 30% of the original £500, so adding it back falls short."
+      },
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "calculating 4% × 3 = 12% total, giving £2,240 instead of applying the multiplier 1.04 three times to get £2,249.73.",
+        "why": "Both methods are compressed into one line with no intermediate values. The compound working (2000 × 1.04³ = 2000 × 1.124864) is not shown."
+      },
+      {
+        "field": "keyFacts[3].fact",
+        "text": "Simple interest gives the same fixed amount each period (I = PRT/100).",
+        "why": "P, R and T are never defined anywhere in the lesson."
+      },
+      {
+        "field": "keyFacts[2].examTip",
+        "text": "do not round intermediate answers or compound errors build up",
+        "why": "'Compound' here means 'add up', not compound interest. This ambiguous wording could confuse the learner in a compound interest lesson."
+      }
+    ],
+    "not_checked": []
+  }
+}

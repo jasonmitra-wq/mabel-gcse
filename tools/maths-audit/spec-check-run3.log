@@ -1,0 +1,36 @@
+RUN
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+geo-pythagoras | G20 | 8080 | 2020 | 0.1681
+geo-trigonometry | G20, G21 | 8694 | 2174 | 0.1687
+geo-circles | G9, G10, G17 | 9567 | 2392 | 0.1696
+geo-vectors | G24, G25 | 8685 | 2172 | 0.1687
+prob-basic | P1, P2, P3, P4 | 8269 | 2068 | 0.1683
+prob-combined | P6, P7, P8 | 8832 | 2208 | 0.1688
+prob-tree | P8 | 8801 | 2201 | 0.1688
+prob-venn | P6, P9 | 8532 | 2133 | 0.1685
+prob-conditional | P9 | 8711 | 2178 | 0.1687
+stat-averages | S4 | 9039 | 2260 | 0.1690
+stat-charts | S2, S3 | 8846 | 2212 | 0.1688
+stat-scatter | S6 | 11931 | 2983 | 0.1719
+stat-cumulative | S3, S4 | 9358 | 2340 | 0.1694
+stat-boxplots | S4 | 9343 | 2336 | 0.1693
+stat-sampling | S1, P2, P3 | 9338 | 2335 | 0.1693
+TOTAL 15 lesson(s) | 136026 chars | 34012 est. input tokens | 120000 output tokens assumed | $2.5360
+Rates: $4 per M input, $20 per M output; output assumed at the ceiling per lesson (8000 tokens).
+Model claude-opus-5-5 confirmed in /v1/models.
+geo-pythagoras: OK | in 2957 out 2992 | $0.0717 | maths_errors 1, false_mistakes 0, missing_spec_content 3, above_gcse 0, cases_not_modelled 7, density 3, not_checked 1
+geo-trigonometry: OK | in 3343 out 3963 | $0.0926 | maths_errors 4, false_mistakes 1, missing_spec_content 3, above_gcse 1, cases_not_modelled 6, density 3, not_checked 0
+geo-circles: OK | in 3412 out 5307 | $0.1198 | maths_errors 2, false_mistakes 1, missing_spec_content 9, above_gcse 0, cases_not_modelled 17, density 7, not_checked 0
+geo-vectors: OK | in 3131 out 3815 | $0.0888 | maths_errors 1, false_mistakes 0, missing_spec_content 3, above_gcse 1, cases_not_modelled 7, density 4, not_checked 2
+prob-basic: OK | in 3032 out 2866 | $0.0694 | maths_errors 0, false_mistakes 1, missing_spec_content 4, above_gcse 0, cases_not_modelled 6, density 5, not_checked 0
+prob-combined: OK | in 3205 out 4446 | $0.1017 | maths_errors 2, false_mistakes 0, missing_spec_content 5, above_gcse 1, cases_not_modelled 9, density 5, not_checked 0
+prob-tree: OK | in 3007 out 2474 | $0.0615 | maths_errors 1, false_mistakes 0, missing_spec_content 3, above_gcse 0, cases_not_modelled 6, density 5, not_checked 0
+prob-venn: OK | in 3102 out 4129 | $0.0950 | maths_errors 1, false_mistakes 0, missing_spec_content 3, above_gcse 1, cases_not_modelled 10, density 5, not_checked 2
+prob-conditional: OK | in 3003 out 3728 | $0.0866 | maths_errors 2, false_mistakes 0, missing_spec_content 5, above_gcse 1, cases_not_modelled 6, density 5, not_checked 2
+stat-averages: OK | in 3101 out 2767 | $0.0677 | maths_errors 2, false_mistakes 0, missing_spec_content 6, above_gcse 0, cases_not_modelled 7, density 6, not_checked 0
+stat-charts: FAILED | fetch failed
+stat-scatter: FAILED | fetch failed
+stat-cumulative: FAILED | fetch failed
+stat-boxplots: FAILED | fetch failed
+stat-sampling: FAILED | fetch failed
+Actual total cost: $0.8549

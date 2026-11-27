@@ -1,0 +1,130 @@
+{
+  "lesson": "num-bounds",
+  "source_file": "lessons/maths/num-bounds.json",
+  "lesson_md5": "f673427fd0f6aeabd4b7049b3800e3a9",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T17:34:13.957Z",
+  "specRefs_sent": [
+    "N15",
+    "N16"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3093,
+    "output_tokens": 3541
+  },
+  "cost_usd": 0.083192,
+  "status": "OK",
+  "result": {
+    "lesson": "num-bounds",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "The measured value itself does not determine the bounds — the rounding unit does.",
+        "correction": "Taken literally this is false. The bounds are 94 − 0.5 and 94 + 0.5, so they depend on the measured value. What the rounding unit alone decides is the amount added and subtracted (half the precision). Reword to: \"The amount you add and subtract comes from the rounding unit, not from the measured value.\""
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "N15",
+        "spec_text": "Basic foundation: round numbers and measures to an appropriate degree of accuracy (eg to a specified number of decimal places or significant figures)",
+        "why": "The lesson never teaches how to round a number to a given number of decimal places or significant figures. It assumes the student can already do this and only works backwards from a rounded value."
+      },
+      {
+        "specRef": "N15",
+        "spec_text": "Additional foundation: use inequality notation to specify simple error intervals due to truncation or rounding",
+        "why": "Truncation is not mentioned anywhere. The formula 'measured value ± ½ × precision' does not work for truncation: 8.3 truncated to 1 d.p. gives 8.3 ≤ x < 8.4. The student is given no method for this case."
+      },
+      {
+        "specRef": "N15",
+        "spec_text": "Notes: including appropriate rounding for questions set in context. Students should know not to round values during intermediate steps of a calculation.",
+        "why": "Neither rounding sensibly in context (for example, giving an answer to a suitable accuracy) nor keeping full accuracy during intermediate steps is taught."
+      },
+      {
+        "specRef": "N16",
+        "spec_text": "Higher only: including upper and lower bounds",
+        "why": "At Higher tier this means using bounds in calculations: the greatest or least value of a sum, difference, product or quotient, and choosing a suitable degree of accuracy by comparing upper and lower bounds. slides[1].whenToUse mentions 'the greatest/least possible value of a calculation', but the lesson never teaches how to do it."
+      },
+      {
+        "specRef": "N16",
+        "spec_text": "Additional foundation: apply and interpret limits of accuracy",
+        "why": "The lesson only finds bounds for a single value. It never applies or interprets limits of accuracy in a problem, for example checking whether items will fit or stating what a result tells you."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "N15",
+        "case": "Error interval from truncation",
+        "why": "No example shows truncation, which needs a different interval from rounding."
+      },
+      {
+        "specRef": "N15",
+        "case": "Rounding to significant figures (e.g. 3400 to 2 s.f.)",
+        "why": "No worked example works out the precision from significant figures, where the unit may be 100, 0.01 and so on."
+      },
+      {
+        "specRef": "N15",
+        "case": "Rounding to decimal places in a worked example",
+        "why": "The only decimal case (3.7 cm to 1 d.p.) appears as a common mistake. It is never worked step by step."
+      },
+      {
+        "specRef": "N15",
+        "case": "Rounding to the nearest 10, 100 or other non-unit precision (e.g. nearest 5)",
+        "why": "The only worked example uses a precision of 1."
+      },
+      {
+        "specRef": "N15",
+        "case": "Rounding a number to a given accuracy (forward direction)",
+        "why": "No example rounds a number. Every example starts from a value that is already rounded."
+      },
+      {
+        "specRef": "N16",
+        "case": "Bounds of a sum or difference (e.g. upper bound of a − b uses UB of a and LB of b)",
+        "why": "Not modelled, although the formula slide promises it."
+      },
+      {
+        "specRef": "N16",
+        "case": "Bounds of a product or quotient (e.g. upper bound of a ÷ b uses UB of a and LB of b)",
+        "why": "Not modelled. This is a standard Higher question."
+      },
+      {
+        "specRef": "N16",
+        "case": "Choosing a suitable degree of accuracy from upper and lower bounds",
+        "why": "Not modelled. This is a standard Higher question."
+      },
+      {
+        "specRef": "N16",
+        "case": "Interpreting limits of accuracy in context",
+        "why": "Not modelled. There is no example that uses bounds to make a decision or reach a conclusion."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "Bounds define that range: the lower bound is the smallest value that rounds to the given measurement, and the upper bound is the smallest value that would round up to the next value.",
+        "why": "One sentence defines 'bounds', the lower bound and the upper bound. The upper-bound definition is also hard to follow: the upper bound is described as a value that does not round to the measurement, and the sentence never says that it is excluded from the interval."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "The error interval is written as: lower bound ≤ value < upper bound — note the strict inequality at the upper end, because the upper bound itself would round up.",
+        "why": "One sentence gives the notation, introduces the term 'strict inequality' without explaining it, and gives the reason for using it."
+      },
+      {
+        "field": "slides[2].steps[3].working",
+        "text": "93.5 ≤ l < 94.5 — the lower bound uses ≤ (the lower bound itself rounds to 94), the upper bound uses < (94.5 would round up to 95).",
+        "why": "One line holds the answer and two separate reasons in brackets. The variable l appears here for the first time without being defined."
+      },
+      {
+        "field": "keyFacts[0].examTip",
+        "text": "Identify the precision (the rounding unit) first — it determines the ±0.5 unit adjustment.",
+        "why": "'±0.5 unit adjustment' can be read as 'always add and subtract 0.5'. That is exactly the mistake warned against in slides[3].mistakes[2] (±0.05 for 1 d.p.). It should say 'half of the rounding unit'."
+      }
+    ],
+    "not_checked": []
+  }
+}

@@ -166,3 +166,79 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-11-19 | g5-development | OK | missing_spec_content 1, above_gcse 1, factual_errors 5, wrong_terms 0, checkpoint_mismatch 0, not_checked 3 | 9939/3667 | $0.1131
 - 2026-11-19 | g5-nigeria | OK | missing_spec_content 1, above_gcse 0, factual_errors 3, wrong_terms 0, checkpoint_mismatch 0, not_checked 3 | 8901/2961 | $0.0948
 - 2026-11-19 | g5-uk-economy | OK | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 4 | 8389/2800 | $0.0896
+- 2026-11-26 | num-integers | OK | maths_errors 2, false_mistakes 0, missing_spec_content 9, above_gcse 0, cases_not_modelled 11, density 6, not_checked 1 | 3263/4843 | $0.1099
+- 2026-11-26 | num-fractions | OK | maths_errors 0, false_mistakes 0, missing_spec_content 9, above_gcse 0, cases_not_modelled 11, density 7, not_checked 0 | 3455/3995 | $0.0937
+- 2026-11-26 | num-percentages | OK | maths_errors 2, false_mistakes 0, missing_spec_content 6, above_gcse 0, cases_not_modelled 8, density 5, not_checked 0 | 3082/4111 | $0.0945
+- 2026-11-26 | num-powers-roots | OK | maths_errors 2, false_mistakes 0, missing_spec_content 7, above_gcse 0, cases_not_modelled 7, density 5, not_checked 0 | 3054/3222 | $0.0767
+- 2026-11-26 | num-standard-form | OK | maths_errors 4, false_mistakes 0, missing_spec_content 3, above_gcse 0, cases_not_modelled 8, density 6, not_checked 0 | 3119/4224 | $0.0970
+- 2026-11-26 | num-bounds | OK | maths_errors 1, false_mistakes 0, missing_spec_content 5, above_gcse 0, cases_not_modelled 9, density 4, not_checked 0 | 3093/3541 | $0.0832
+- 2026-11-26 | num-ratio | OK | maths_errors 1, false_mistakes 1, missing_spec_content 7, above_gcse 0, cases_not_modelled 9, density 4, not_checked 0 | 3154/3594 | $0.0845
+- 2026-11-26 | alg-expressions | OK | maths_errors 0, false_mistakes 0, missing_spec_content 10, above_gcse 0, cases_not_modelled 14, density 8, not_checked 0 | 3565/5025 | $0.1148
+- 2026-11-26 | alg-equations | OK | maths_errors 6, false_mistakes 2, missing_spec_content 4, above_gcse 0, cases_not_modelled 7, density 8, not_checked 1 | 3069/4921 | $0.1107
+- 2026-11-26 | alg-inequalities | OK | maths_errors 1, false_mistakes 0, missing_spec_content 5, above_gcse 0, cases_not_modelled 10, density 5, not_checked 0 | 2933/3223 | $0.0762
+- 2026-11-26 | alg-sequences | OK | maths_errors 0, false_mistakes 1, missing_spec_content 7, above_gcse 1, cases_not_modelled 10, density 8, not_checked 0 | 3115/4241 | $0.0973
+- 2026-11-26 | alg-graphs | OK | maths_errors 2, false_mistakes 1, missing_spec_content 5, above_gcse 1, cases_not_modelled 14, density 4, not_checked 0 | 3454/4579 | $0.1054
+- 2026-11-26 | alg-quadratics | FAILED | fetch failed | – | –
+- 2026-11-26 | alg-simultaneous | FAILED | fetch failed | – | –
+- 2026-11-26 | alg-functions | FAILED | fetch failed | – | –
+- 2026-11-26 | rpr-ratio | FAILED | fetch failed | – | –
+- 2026-11-26 | rpr-proportion | FAILED | fetch failed | – | –
+- 2026-11-26 | rpr-speed | FAILED | fetch failed | – | –
+- 2026-11-26 | rpr-percentage-change | FAILED | fetch failed | – | –
+- 2026-11-26 | rpr-compound-measures | FAILED | fetch failed | – | –
+- 2026-11-26 | rpr-growth-decay | FAILED | fetch failed | – | –
+- 2026-11-26 | geo-angles | FAILED | fetch failed | – | –
+- 2026-11-26 | geo-shapes | FAILED | fetch failed | – | –
+- 2026-11-26 | geo-perimeter-area | FAILED | fetch failed | – | –
+- 2026-11-26 | geo-volume | FAILED | fetch failed | – | –
+- 2026-11-26 | geo-transformations | FAILED | fetch failed | – | –
+- 2026-11-26 | geo-pythagoras | FAILED | fetch failed | – | –
+- 2026-11-26 | geo-trigonometry | FAILED | fetch failed | – | –
+- 2026-11-26 | geo-circles | FAILED | fetch failed | – | –
+- 2026-11-26 | geo-vectors | FAILED | fetch failed | – | –
+- 2026-11-26 | prob-basic | FAILED | fetch failed | – | –
+- 2026-11-26 | prob-combined | FAILED | fetch failed | – | –
+- 2026-11-26 | prob-tree | FAILED | fetch failed | – | –
+- 2026-11-26 | prob-venn | FAILED | fetch failed | – | –
+- 2026-11-26 | prob-conditional | FAILED | fetch failed | – | –
+- 2026-11-26 | stat-averages | FAILED | fetch failed | – | –
+- 2026-11-26 | stat-charts | FAILED | fetch failed | – | –
+- 2026-11-26 | stat-scatter | FAILED | fetch failed | – | –
+- 2026-11-26 | stat-cumulative | FAILED | fetch failed | – | –
+- 2026-11-26 | stat-boxplots | FAILED | fetch failed | – | –
+- 2026-11-26 | stat-sampling | FAILED | fetch failed | – | –
+- 2026-11-26 | alg-quadratics | OK | maths_errors 2, false_mistakes 0, missing_spec_content 10, above_gcse 0, cases_not_modelled 9, density 6, not_checked 0 | 3637/4358 | $0.1017
+- 2026-11-26 | alg-simultaneous | OK | maths_errors 3, false_mistakes 1, missing_spec_content 4, above_gcse 0, cases_not_modelled 8, density 7, not_checked 0 | 2855/4278 | $0.0970
+- 2026-11-26 | alg-functions | OK | maths_errors 1, false_mistakes 1, missing_spec_content 2, above_gcse 0, cases_not_modelled 7, density 5, not_checked 0 | 3067/3420 | $0.0807
+- 2026-11-26 | rpr-ratio | OK | maths_errors 2, false_mistakes 0, missing_spec_content 5, above_gcse 0, cases_not_modelled 8, density 6, not_checked 0 | 3137/3983 | $0.0922
+- 2026-11-26 | rpr-proportion | OK | maths_errors 2, false_mistakes 1, missing_spec_content 4, above_gcse 0, cases_not_modelled 8, density 5, not_checked 0 | 3082/4161 | $0.0955
+- 2026-11-26 | rpr-speed | OK | maths_errors 4, false_mistakes 1, missing_spec_content 7, above_gcse 0, cases_not_modelled 9, density 6, not_checked 1 | 3131/4936 | $0.1112
+- 2026-11-26 | rpr-percentage-change | OK | maths_errors 2, false_mistakes 0, missing_spec_content 8, above_gcse 0, cases_not_modelled 10, density 9, not_checked 0 | 3395/4479 | $0.1032
+- 2026-11-26 | rpr-compound-measures | OK | maths_errors 3, false_mistakes 0, missing_spec_content 5, above_gcse 0, cases_not_modelled 7, density 5, not_checked 1 | 3134/3714 | $0.0868
+- 2026-11-26 | rpr-growth-decay | OK | maths_errors 1, false_mistakes 0, missing_spec_content 2, above_gcse 0, cases_not_modelled 6, density 6, not_checked 0 | 3259/3120 | $0.0754
+- 2026-11-26 | geo-angles | OK | maths_errors 2, false_mistakes 0, missing_spec_content 9, above_gcse 0, cases_not_modelled 11, density 6, not_checked 1 | 3173/4720 | $0.1071
+- 2026-11-26 | geo-shapes | OK | maths_errors 2, false_mistakes 0, missing_spec_content 10, above_gcse 0, cases_not_modelled 8, density 6, not_checked 0 | 3347/4592 | $0.1052
+- 2026-11-26 | geo-perimeter-area | OK | maths_errors 1, false_mistakes 0, missing_spec_content 8, above_gcse 0, cases_not_modelled 13, density 5, not_checked 0 | 3100/3454 | $0.0815
+- 2026-11-26 | geo-volume | OK | maths_errors 1, false_mistakes 0, missing_spec_content 5, above_gcse 0, cases_not_modelled 11, density 4, not_checked 1 | 3002/3564 | $0.0833
+- 2026-11-26 | geo-transformations | OK | maths_errors 2, false_mistakes 0, missing_spec_content 4, above_gcse 0, cases_not_modelled 9, density 6, not_checked 0 | 3128/4017 | $0.0929
+- 2026-11-26 | geo-pythagoras | OK | maths_errors 1, false_mistakes 0, missing_spec_content 3, above_gcse 0, cases_not_modelled 7, density 3, not_checked 1 | 2957/2992 | $0.0717
+- 2026-11-26 | geo-trigonometry | OK | maths_errors 4, false_mistakes 1, missing_spec_content 3, above_gcse 1, cases_not_modelled 6, density 3, not_checked 0 | 3343/3963 | $0.0926
+- 2026-11-26 | geo-circles | OK | maths_errors 2, false_mistakes 1, missing_spec_content 9, above_gcse 0, cases_not_modelled 17, density 7, not_checked 0 | 3412/5307 | $0.1198
+- 2026-11-26 | geo-vectors | OK | maths_errors 1, false_mistakes 0, missing_spec_content 3, above_gcse 1, cases_not_modelled 7, density 4, not_checked 2 | 3131/3815 | $0.0888
+- 2026-11-26 | prob-basic | OK | maths_errors 0, false_mistakes 1, missing_spec_content 4, above_gcse 0, cases_not_modelled 6, density 5, not_checked 0 | 3032/2866 | $0.0694
+- 2026-11-26 | prob-combined | OK | maths_errors 2, false_mistakes 0, missing_spec_content 5, above_gcse 1, cases_not_modelled 9, density 5, not_checked 0 | 3205/4446 | $0.1017
+- 2026-11-26 | prob-tree | OK | maths_errors 1, false_mistakes 0, missing_spec_content 3, above_gcse 0, cases_not_modelled 6, density 5, not_checked 0 | 3007/2474 | $0.0615
+- 2026-11-26 | prob-venn | OK | maths_errors 1, false_mistakes 0, missing_spec_content 3, above_gcse 1, cases_not_modelled 10, density 5, not_checked 2 | 3102/4129 | $0.0950
+- 2026-11-26 | prob-conditional | OK | maths_errors 2, false_mistakes 0, missing_spec_content 5, above_gcse 1, cases_not_modelled 6, density 5, not_checked 2 | 3003/3728 | $0.0866
+- 2026-11-26 | stat-averages | OK | maths_errors 2, false_mistakes 0, missing_spec_content 6, above_gcse 0, cases_not_modelled 7, density 6, not_checked 0 | 3101/2767 | $0.0677
+- 2026-11-26 | stat-charts | FAILED | fetch failed | – | –
+- 2026-11-27 | stat-scatter | FAILED | fetch failed | – | –
+- 2026-11-27 | stat-cumulative | FAILED | fetch failed | – | –
+- 2026-11-27 | stat-boxplots | FAILED | fetch failed | – | –
+- 2026-11-27 | stat-sampling | FAILED | fetch failed | – | –
+- 2026-11-27 | stat-charts | FAILED | fetch failed | – | –
+- 2026-11-27 | stat-scatter | OK | maths_errors 3, false_mistakes 0, missing_spec_content 4, above_gcse 2, cases_not_modelled 7, density 4, not_checked 1 | 3852/4619 | $0.1078
+- 2026-11-27 | stat-cumulative | OK | maths_errors 4, false_mistakes 0, missing_spec_content 5, above_gcse 0, cases_not_modelled 6, density 5, not_checked 1 | 3353/3326 | $0.0799
+- 2026-11-27 | stat-boxplots | OK | maths_errors 2, false_mistakes 1, missing_spec_content 3, above_gcse 2, cases_not_modelled 6, density 5, not_checked 0 | 3369/4252 | $0.0985
+- 2026-11-27 | stat-sampling | OK | maths_errors 2, false_mistakes 0, missing_spec_content 3, above_gcse 0, cases_not_modelled 6, density 4, not_checked 0 | 3155/3645 | $0.0855
+- 2026-11-27 | stat-charts | OK | maths_errors 5, false_mistakes 0, missing_spec_content 8, above_gcse 0, cases_not_modelled 13, density 7, not_checked 2 | 3105/5694 | $0.1263

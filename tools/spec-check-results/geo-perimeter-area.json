@@ -1,0 +1,172 @@
+{
+  "lesson": "geo-perimeter-area",
+  "source_file": "lessons/maths/geo-perimeter-area.json",
+  "lesson_md5": "c797fcaa21259ab7c1923644ab289bc8",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:35:10.379Z",
+  "specRefs_sent": [
+    "G14",
+    "G16",
+    "G17",
+    "G18"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3100,
+    "output_tokens": 3454
+  },
+  "cost_usd": 0.08148,
+  "status": "OK",
+  "result": {
+    "lesson": "geo-perimeter-area",
+    "maths_errors": [
+      {
+        "field": "keyFacts[0].examTip",
+        "text": "This formula is given on the formula sheet — but you must correctly identify which sides are parallel and which measurement is the perpendicular height.",
+        "correction": "The trapezium area formula is not given on the AQA 8300 formulae sheet. G16 says students must 'know and apply' it, so it has to be learned. The tip should read: 'You must learn this formula. It is not given in the exam.'"
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "G17",
+        "spec_text": "know the formulae: circumference of a circle = 2 π r = π d",
+        "why": "Circumference is never stated or taught anywhere in the lesson. Only the area of a circle appears."
+      },
+      {
+        "specRef": "G17",
+        "spec_text": "calculate perimeters of 2D shapes, including circles",
+        "why": "Perimeter is defined in slides[0].body, but no method is taught. There is nothing on finding missing sides or on the perimeter of circles, semicircles or composite shapes, even though the lesson's title is 'Perimeter and area'."
+      },
+      {
+        "specRef": "G17",
+        "spec_text": "areas of circles and composite shapes",
+        "why": "The circle area appears only as a formula on the formula slide. Composite shapes get one line of advice, with no method shown, and keyFacts[2] mentions only rectangles and triangles, leaving out circles, semicircles and other parts."
+      },
+      {
+        "specRef": "G17",
+        "spec_text": "Solutions in terms of π may be asked for.",
+        "why": "The lesson never mentions giving an answer as a multiple of π."
+      },
+      {
+        "specRef": "G18",
+        "spec_text": "calculate arc lengths, angles and areas of sectors of circles",
+        "why": "Arc length and sector area are not covered at all."
+      },
+      {
+        "specRef": "G16",
+        "spec_text": "volume of cuboids and other right prisms (including cylinders)",
+        "why": "Volume is not covered at all."
+      },
+      {
+        "specRef": "G17",
+        "spec_text": "surface area and volume of spheres, pyramids, cones and composite solids ... including frustums",
+        "why": "Surface area and volume of solids are not covered."
+      },
+      {
+        "specRef": "G14",
+        "spec_text": "use standard units of measure and related concepts (length, area, volume/capacity ...)",
+        "why": "The lesson says to convert to the same unit, but it never teaches how, for example 1 cm = 10 mm. It also never shows that area units convert by the square of the length factor (1 m² = 10 000 cm²)."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "G17",
+        "case": "Perimeter of a polygon (adding side lengths, including finding missing sides)",
+        "why": "There is no perimeter worked example."
+      },
+      {
+        "specRef": "G17",
+        "case": "Circumference of a circle (using 2πr or πd)",
+        "why": "There is no worked example."
+      },
+      {
+        "specRef": "G17",
+        "case": "Perimeter of a composite shape that includes a semicircle or quarter circle",
+        "why": "There is no worked example."
+      },
+      {
+        "specRef": "G17",
+        "case": "Area of a circle, including the radius/diameter distinction",
+        "why": "This appears only as a formula. Nothing is worked through."
+      },
+      {
+        "specRef": "G17",
+        "case": "Answer given in terms of π",
+        "why": "There is no worked example."
+      },
+      {
+        "specRef": "G16",
+        "case": "Area of a triangle (including an obtuse triangle where the height falls outside the shape)",
+        "why": "The only worked example is a trapezium."
+      },
+      {
+        "specRef": "G16",
+        "case": "Area of a parallelogram where a slant side is also given",
+        "why": "There is no worked example, even though the lesson warns about this exact trap."
+      },
+      {
+        "specRef": "G17",
+        "case": "Area of a compound shape by adding parts",
+        "why": "This is described in words only."
+      },
+      {
+        "specRef": "G17",
+        "case": "Area of a shape with a cut-out, found by subtracting",
+        "why": "This is described in words only."
+      },
+      {
+        "specRef": "G16",
+        "case": "Working backwards from a given area to find a missing length",
+        "why": "There is no worked example."
+      },
+      {
+        "specRef": "G14",
+        "case": "Converting units, including area units (cm² to m²)",
+        "why": "There is no worked example."
+      },
+      {
+        "specRef": "G18",
+        "case": "Arc length and sector area",
+        "why": "There is no worked example."
+      },
+      {
+        "specRef": "G16",
+        "case": "Volume of a prism or cylinder",
+        "why": "There is no worked example."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formula",
+        "text": "Rectangle: A = l × w  |  Triangle: A = ½ × b × h  |  Parallelogram: A = b × h  |  Trapezium: A = ½(a + b) × h  |  Circle: A = πr²",
+        "why": "Five formulae run together on one line, separated only by bars. It is hard to take in on first reading."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "For a trapezium, a and b are the two parallel sides and h is the perpendicular distance between them; halve the sum of the parallel sides and multiply by height.",
+        "why": "One sentence defines three variables and also gives a three-step procedure."
+      },
+      {
+        "field": "slides[1].whenToUse",
+        "text": "Compound shapes: split into simpler shapes, find each area separately, then add (or subtract for cut-outs).",
+        "why": "This packs a whole method into one line with no example. The add-or-subtract choice sits in a bracket with no reason given."
+      },
+      {
+        "field": "slides[3].mistakes[0].correction",
+        "text": "look for a small right-angle symbol or use Pythagoras to find the perpendicular height.",
+        "why": "It mentions using Pythagoras but does not show how, or which triangle to use. A first-time learner cannot act on this."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "A triangle is exactly half a parallelogram with the same base and height. Always include the ½. Writing ½bh and then dividing by 2 again is a common double-error — do one or the other.",
+        "why": "This brings in a second, different mistake inside the correction for the first. 'Do one or the other' is not explained (multiply by ½ or divide by 2)."
+      }
+    ],
+    "not_checked": []
+  }
+}

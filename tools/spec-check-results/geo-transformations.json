@@ -1,0 +1,141 @@
+{
+  "lesson": "geo-transformations",
+  "source_file": "lessons/maths/geo-transformations.json",
+  "lesson_md5": "c4072f2e5bdc53a31b1a98e06b92c2ce",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:36:10.964Z",
+  "specRefs_sent": [
+    "G7",
+    "G8",
+    "G24"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3128,
+    "output_tokens": 4017
+  },
+  "cost_usd": 0.092852,
+  "status": "OK",
+  "result": {
+    "lesson": "geo-transformations",
+    "maths_errors": [
+      {
+        "field": "keyFacts[2].fact",
+        "text": "For an enlargement, scale factor = image length ÷ object length.",
+        "correction": "Dividing lengths only gives the size of the scale factor, which is always positive. The same lesson teaches negative scale factors in keyFacts[2].examTip. The fact should say: 'image length ÷ object length gives the size of the scale factor; if the image is on the opposite side of the centre, the scale factor is negative (e.g. −2).'"
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "For enlargement, image distance from centre = scale factor × object distance from centre.",
+        "correction": "A distance cannot be negative, so this rule fails for a negative scale factor. State it for positive scale factors, or say: 'image distance = size of scale factor × object distance, measured in the opposite direction if the scale factor is negative.'"
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "G7",
+        "spec_text": "identify, describe and construct congruent and similar shapes, including on coordinate axes, by considering rotation, reflection, translation and enlargement",
+        "why": "The lesson never says which transformations give congruent images (translation, reflection, rotation) and which give similar images (enlargement). The words 'congruent' and 'similar' do not appear."
+      },
+      {
+        "specRef": "G7",
+        "spec_text": "Higher only: including negative scale factors",
+        "why": "Negative scale factors appear only as a one-line exam tip (keyFacts[2].examTip). There is no explanation of how to construct the image (the ray goes back through the centre) and no example."
+      },
+      {
+        "specRef": "G8",
+        "spec_text": "Higher only: describe the changes and invariance achieved by combinations of rotations, reflections and translations",
+        "why": "The lesson does not mention combinations of transformations, the single transformation equivalent to a combination, or invariant points and lines."
+      },
+      {
+        "specRef": "G7",
+        "spec_text": "identify, describe ... by considering rotation, reflection, translation and enlargement",
+        "why": "The lesson lists what to state but never teaches how to find it: how to find a centre of rotation, how to find a mirror line, or how to find a centre of enlargement by drawing lines back through matching points of the image and object."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "G24",
+        "case": "Describing a translation (finding the column vector from an object and its image)",
+        "why": "The only worked example performs a translation from a given vector. It never works backwards from object and image to the vector."
+      },
+      {
+        "specRef": "G7",
+        "case": "Reflection in a line (e.g. x = a, y = b, y = x, y = −x)",
+        "why": "No worked example of performing or describing a reflection."
+      },
+      {
+        "specRef": "G7",
+        "case": "Rotation about a given centre (performing it)",
+        "why": "No worked example rotates a shape about a point."
+      },
+      {
+        "specRef": "G7",
+        "case": "Describing a rotation (finding angle, direction and centre)",
+        "why": "No worked example finds the centre of rotation."
+      },
+      {
+        "specRef": "G7",
+        "case": "Enlargement by a positive whole-number scale factor from a centre",
+        "why": "No worked example of enlargement."
+      },
+      {
+        "specRef": "G7",
+        "case": "Enlargement by a fractional scale factor",
+        "why": "Required at Additional foundation. Mentioned only in words, never modelled."
+      },
+      {
+        "specRef": "G7",
+        "case": "Enlargement by a negative scale factor",
+        "why": "Required at Higher. Mentioned only in an exam tip, never modelled."
+      },
+      {
+        "specRef": "G7",
+        "case": "Describing an enlargement (finding the scale factor and the centre)",
+        "why": "No worked example finds a centre of enlargement from an object and its image."
+      },
+      {
+        "specRef": "G8",
+        "case": "Combination of two transformations described as a single transformation, with invariant points",
+        "why": "Required at Higher. Not shown anywhere."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formula",
+        "text": "Translation: vector (x over y) where x is right (+) or left (−) and y is up (+) or down (−)  |  Reflection: the equation of the mirror line  |  Rotation: angle, direction (clockwise/anticlockwise), centre of rotation  |  Enlargement: scale factor, centre of enlargement",
+        "why": "Four transformations and their requirements are packed into one line separated by pipes. This is hard to read in one go and would be clearer as four separate lines."
+      },
+      {
+        "field": "slides[1].formula / slides[2].question",
+        "text": "vector (x over y) ... Translate it by the vector (−4 over 2)",
+        "why": "'(−4 over 2)' looks like a fraction. keyFacts[1].examTip then tells the student not to write it as a fraction, but the lesson never shows the proper column-vector layout."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Enlargement needs the scale factor (if it's between 0 and 1, the image is smaller) and the centre point. For enlargement, image distance from centre = scale factor × object distance from centre.",
+        "why": "One short passage carries three ideas: what to state, fractional scale factors, and the distance rule. The distance rule is given with no example."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "For each vertex of the object, draw a ray from the centre of enlargement through the vertex and extend it. The image vertex sits on that ray at a distance equal to scale factor × original distance from the centre.",
+        "why": "This is a whole construction method given only in words, with no grid example. A first-time learner is unlikely to be able to carry it out from this text alone."
+      },
+      {
+        "field": "keyFacts[2].examTip",
+        "text": "A negative scale factor places the image on the opposite side of the centre — the shape is both scaled and flipped through the centre.",
+        "why": "'Flipped' suggests a reflection, but the image is actually turned through 180° about the centre. Higher-only content is introduced in one sentence with no explanation or example."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "There are four types: translation (sliding without turning), reflection (flipping in a mirror line), rotation (turning around a fixed point), and enlargement (scaling up or down from a centre point).",
+        "why": "Four new terms, each with its own definition, are introduced in a single sentence."
+      }
+    ],
+    "not_checked": []
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "lesson": "prob-tree",
+  "source_file": "lessons/maths/prob-tree.json",
+  "lesson_md5": "4146db84691104c17b59f7811d0f4628",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:40:21.723Z",
+  "specRefs_sent": [
+    "P8"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3007,
+    "output_tokens": 2474
+  },
+  "cost_usd": 0.061508,
+  "status": "OK",
+  "result": {
+    "lesson": "prob-tree",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "For 'exactly one red': P(R,B) + P(B,R) = both paths must be included.",
+        "correction": "The equals sign joins a calculation to a sentence, which is not a valid mathematical statement. It should read: P(exactly one red) = P(R,B) + P(B,R) = 4/10 × 6/9 + 6/10 × 4/9 = 24/90 + 24/90 = 48/90 = 8/15."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "P8",
+        "spec_text": "calculate the probability of independent and dependent combined events",
+        "why": "The title says 'with and without replacement'. However, the lesson only teaches the dependent case (without replacement). Independent events, such as picking with replacement or two separate experiments, are never explained. The lesson never says that with replacement the second-branch probabilities stay the same as the first. The words 'independent' and 'dependent' are never defined or linked to replacement."
+      },
+      {
+        "specRef": "P8",
+        "spec_text": "and know the underlying assumptions",
+        "why": "The lesson does not teach the assumptions behind the calculation. These are: the selection is random so each item is equally likely; multiplying works because the second probability is conditional on (or independent of) the first; and the paths are mutually exclusive, which is why they can be added. The phrase 'mutually exclusive' is used once in slides[1].formulaExplained but never explained."
+      },
+      {
+        "specRef": "P8",
+        "spec_text": "including using tree diagrams and other representations",
+        "why": "Only tree diagrams are taught. Other representations of combined events are not mentioned, such as sample space diagrams, two-way tables and listing outcomes systematically."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "P8",
+        "case": "with replacement / independent events",
+        "why": "No worked example shows a tree where the second set of branches keeps the same probabilities as the first (e.g. 4/10 × 4/10)."
+      },
+      {
+        "specRef": "P8",
+        "case": "event reached by more than one path (adding path probabilities)",
+        "why": "The only worked example uses a single path (Red then Red). The spec note 'knowing when to add and when to multiply' needs an example such as 'exactly one red' or 'both the same colour', where path probabilities are added. This appears only in commonMistakes and is never worked through."
+      },
+      {
+        "specRef": "P8",
+        "case": "'at least one' using 1 − P(none)",
+        "why": "Mentioned in slides[1].whenToUse ('find P(none) and subtract from 1') but no example shows it."
+      },
+      {
+        "specRef": "P8",
+        "case": "probabilities given as decimals for non-bag contexts",
+        "why": "Exam questions often give branch probabilities directly (e.g. P(rain) = 0.3, P(late | rain) = 0.4). No example uses decimals or a context other than counters in a bag."
+      },
+      {
+        "specRef": "P8",
+        "case": "finding a missing branch probability",
+        "why": "keyFacts[2] says to use 'sum to 1' to find a missing branch, but no example shows this."
+      },
+      {
+        "specRef": "P8",
+        "case": "three-stage tree",
+        "why": "The lesson says 'two or more events' and 'multi-stage', but only a two-stage tree is modelled."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[2].steps[0].instruction",
+        "text": "Set up the tree. First branch: Red (4/10) or Blue (6/10). Second branch from Red: Red (3/9) or Blue (6/9). Second branch from Blue: Red (4/9) or Blue (5/9).",
+        "why": "Six branch probabilities are given in one run of text with no tree drawn. A first-time learner cannot picture the tree's structure from this description, and the reasons for each fraction come only afterwards in 'working'."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "To find the probability of a particular sequence, multiply the probabilities along its path; to find the probability of an event that can happen in more than one way, add the probabilities of all the paths that lead to it.",
+        "why": "One sentence carries both the multiply rule and the add rule, joined by a semicolon. This is hard to separate on one read."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "this uses the OR rule for mutually exclusive paths",
+        "why": "It names 'the OR rule' and 'mutually exclusive' without explaining either term or why the paths are mutually exclusive."
+      },
+      {
+        "field": "slides[1].whenToUse",
+        "text": "it's often easier to find P(none) and subtract from 1",
+        "why": "It introduces the complement method in passing, with no reason or example, so the student cannot follow why this works."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "P(R,B) + P(B,R) = both paths must be included.",
+        "why": "It uses new notation P(R,B) without explaining it, and the misuse of '=' makes the line confusing."
+      }
+    ],
+    "not_checked": []
+  }
+}

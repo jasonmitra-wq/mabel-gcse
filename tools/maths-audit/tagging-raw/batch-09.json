@@ -1,0 +1,177 @@
+{
+  "batch": 9,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 9603,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 2184,
+    "output_tokens_details": {
+      "thinking_tokens": 784
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "cost_usd": 0.082092,
+  "parsed": true,
+  "result": {
+    "results": [
+      {
+        "id": "spd-C02",
+        "subtopic": "rpr-speed",
+        "also": "alg-equations",
+        "why": "Time = distance/speed; forms and solves a linear equation in d."
+      },
+      {
+        "id": "spd-C03",
+        "subtopic": "rpr-speed",
+        "also": "",
+        "why": "Distance found as the area under a speed-time graph."
+      },
+      {
+        "id": "spd-C04",
+        "subtopic": "rpr-speed",
+        "also": "",
+        "why": "Closing-speed meeting problem using speed, distance and time."
+      },
+      {
+        "id": "pch-A01",
+        "subtopic": "num-percentages",
+        "also": "rpr-percentage-change",
+        "why": "Single percentage increase using a multiplier."
+      },
+      {
+        "id": "pch-A02",
+        "subtopic": "num-percentages",
+        "also": "",
+        "why": "Reverse percentage to find the original price."
+      },
+      {
+        "id": "pch-B01",
+        "subtopic": "rpr-percentage-change",
+        "also": "",
+        "why": "Compound interest over 3 years."
+      },
+      {
+        "id": "pch-A03",
+        "subtopic": "num-percentages",
+        "also": "",
+        "why": "Finds 20% of an amount and subtracts it."
+      },
+      {
+        "id": "pch-A04",
+        "subtopic": "rpr-percentage-change",
+        "also": "",
+        "why": "Calculates a percentage increase from two values."
+      },
+      {
+        "id": "pch-A05",
+        "subtopic": "num-percentages",
+        "also": "",
+        "why": "Reverse percentage after a 25% increase."
+      },
+      {
+        "id": "pch-B02",
+        "subtopic": "rpr-percentage-change",
+        "also": "num-percentages",
+        "why": "Simple interest over several years."
+      },
+      {
+        "id": "pch-B03",
+        "subtopic": "rpr-percentage-change",
+        "also": "",
+        "why": "Compound interest using a repeated multiplier."
+      },
+      {
+        "id": "pch-B04",
+        "subtopic": "rpr-percentage-change",
+        "also": "rpr-growth-decay",
+        "why": "Repeated depreciation using a decrease multiplier."
+      },
+      {
+        "id": "pch-B05",
+        "subtopic": "rpr-percentage-change",
+        "also": "",
+        "why": "Successive percentage increase then decrease."
+      },
+      {
+        "id": "pch-B06",
+        "subtopic": "num-percentages",
+        "also": "",
+        "why": "Reverse percentage to remove VAT."
+      },
+      {
+        "id": "pch-C01",
+        "subtopic": "rpr-percentage-change",
+        "also": "num-powers-roots",
+        "why": "Finds a compound interest rate using a cube root."
+      },
+      {
+        "id": "pch-C02",
+        "subtopic": "rpr-growth-decay",
+        "also": "",
+        "why": "Exponential growth: when does the population first exceed 8000."
+      },
+      {
+        "id": "pch-C03",
+        "subtopic": "rpr-percentage-change",
+        "also": "",
+        "why": "Combined multipliers for successive percentage changes."
+      },
+      {
+        "id": "pch-C04",
+        "subtopic": "rpr-percentage-change",
+        "also": "",
+        "why": "Repeated growth then repeated decay with multipliers."
+      },
+      {
+        "id": "cmp-A01",
+        "subtopic": "rpr-compound-measures",
+        "also": "",
+        "why": "Density = mass ÷ volume."
+      },
+      {
+        "id": "cmp-A02",
+        "subtopic": "rpr-compound-measures",
+        "also": "",
+        "why": "Pressure = force ÷ area."
+      },
+      {
+        "id": "cmp-B01",
+        "subtopic": "rpr-compound-measures",
+        "also": "",
+        "why": "Rearranges the density formula, then recalculates density."
+      },
+      {
+        "id": "cmp-A03",
+        "subtopic": "rpr-compound-measures",
+        "also": "",
+        "why": "Calculates density from mass and volume."
+      },
+      {
+        "id": "cmp-A04",
+        "subtopic": "rpr-compound-measures",
+        "also": "",
+        "why": "Calculates pressure from force and area."
+      },
+      {
+        "id": "cmp-A05",
+        "subtopic": "rpr-compound-measures",
+        "also": "",
+        "why": "Rearranges the density formula to find mass."
+      },
+      {
+        "id": "cmp-B02",
+        "subtopic": "rpr-compound-measures",
+        "also": "",
+        "why": "Average density from total mass and total volume."
+      }
+    ]
+  }
+}

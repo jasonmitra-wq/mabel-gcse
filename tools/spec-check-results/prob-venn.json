@@ -1,0 +1,139 @@
+{
+  "lesson": "prob-venn",
+  "source_file": "lessons/maths/prob-venn.json",
+  "lesson_md5": "093a4b9284875f8ca7674101495e7625",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:40:43.436Z",
+  "specRefs_sent": [
+    "P6",
+    "P9"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3102,
+    "output_tokens": 4129
+  },
+  "cost_usd": 0.094988,
+  "status": "OK",
+  "result": {
+    "lesson": "prob-venn",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[1].mistake",
+        "text": "Forgetting the 'outside' region — placing all items inside the circles and getting a total that's too high.",
+        "correction": "If you forget the outside region, the numbers in the diagram add up to too little, not too much. In the worked example the circles hold 11 + 7 + 7 = 25, which is 5 short of 30. The real mistake is that the diagram's total is too low, so the 'neither' count is missing. Alternatively, a student forces the circle values up to make them reach the grand total, which makes them wrong. Either way the stated consequence 'a total that's too high' is incorrect."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "P6",
+        "spec_text": "enumerate sets and combinations of sets systematically, using tables, grids, Venn diagrams",
+        "why": "Only Venn diagrams are taught. Systematic listing of outcomes, sample-space tables and grids are not covered. Enumerating the actual elements of sets (for example listing which numbers belong in A, B, A ∩ B, A ∪ B and A') is not taught. The universal set symbol ξ, used on exam Venn diagrams, is never introduced; the lesson only calls it 'the rectangle'."
+      },
+      {
+        "specRef": "P6",
+        "spec_text": "Additional foundation: including using tree diagrams",
+        "why": "Tree diagrams are not mentioned anywhere in the lesson."
+      },
+      {
+        "specRef": "P9",
+        "spec_text": "calculate and interpret conditional probabilities through representation using expected frequencies with two-way tables, tree diagrams and Venn diagrams",
+        "why": "Conditional probability is not taught at all. There is no P(A | B) idea, no 'given that' questions and no restricting the denominator to one circle. Two-way tables, tree diagrams and expected frequencies are also missing."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "slides[1].formula",
+        "text": "P(A ∩ B) = n(A ∩ B) ÷ total",
+        "why": "The n(…) notation for 'number of elements' is not used in AQA GCSE papers and is never defined in the lesson. A student meeting it for the first time may think n is a variable to be multiplied. Writing 'number in A ∩ B ÷ total' says the same thing in plain words."
+      }
+    ],
+    "cases_not_modelled": [
+      {
+        "specRef": "P6",
+        "case": "Listing the elements of sets (for example ξ = {1,…,12}, A = multiples of 3, B = even numbers) and placing them in a Venn diagram",
+        "why": "The only worked example uses frequencies. Placing actual elements into regions is the core of 'enumerate sets' and is never shown."
+      },
+      {
+        "specRef": "P6",
+        "case": "Finding P(A ∪ B) from a Venn diagram",
+        "why": "Union is defined and the addition formula is given, but no worked example calculates a union probability."
+      },
+      {
+        "specRef": "P6",
+        "case": "Finding P(A ∩ B) from a Venn diagram",
+        "why": "The example finds P(French only), not the probability of the intersection."
+      },
+      {
+        "specRef": "P6",
+        "case": "Finding a complement probability P(A') from a Venn diagram",
+        "why": "The key facts warn that A' includes the B-only region, but no example counts A' or uses 1 − P(A)."
+      },
+      {
+        "specRef": "P6",
+        "case": "Venn diagram where an unknown region must be found algebraically (for example the intersection is x)",
+        "why": "This is a common question type and is not modelled."
+      },
+      {
+        "specRef": "P6",
+        "case": "Venn diagram filled with probabilities rather than frequencies",
+        "why": "All examples use counts. Working with decimal or fraction probabilities that sum to 1 is not shown."
+      },
+      {
+        "specRef": "P6",
+        "case": "Sample-space table or grid for two events",
+        "why": "Tables and grids are named in the specification but no example uses one."
+      },
+      {
+        "specRef": "P6",
+        "case": "Tree diagram",
+        "why": "Additional foundation content with no example."
+      },
+      {
+        "specRef": "P9",
+        "case": "Conditional probability from a Venn diagram (for example P(French | German) = 7/14)",
+        "why": "No example restricts the denominator to one set."
+      },
+      {
+        "specRef": "P9",
+        "case": "Conditional probability from a two-way table or tree diagram using expected frequencies",
+        "why": "Not modelled anywhere."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "the left-only region contains items in set A but not B; the right-only region contains items in B but not A; the overlapping (intersection) region contains items in both A and B; and the outside region (inside the rectangle but outside both circles) contains items in neither set.",
+        "why": "A single sentence defines four regions and introduces the term 'intersection', with nothing drawn to look at. This is hard to hold in mind in one read."
+      },
+      {
+        "field": "slides[1].formula",
+        "text": "A ∩ B (intersection) = items in both A and B  |  A ∪ B (union) = items in A or B or both  |  A' (complement) = items not in A  |  P(A ∩ B) = n(A ∩ B) ÷ total  |  P(A ∪ B) = P(A) + P(B) − P(A ∩ B)  |  P(A') = 1 − P(A)",
+        "why": "Three new symbols and three probability formulas are packed into one line separated by bars, with no example of any of them."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B) avoids double-counting the intersection.",
+        "why": "The reason is asserted rather than shown. It does not explain that the overlap is included in both P(A) and P(B), so adding them counts it twice."
+      },
+      {
+        "field": "slides[2].steps[0].instruction",
+        "text": "Fill the Venn diagram. The intersection (both) = 7. French only = 18 − 7 = 11. German only = 14 − 7 = 7.",
+        "why": "Three placements and two subtractions are in one step. The reason for subtracting 7 (the 18 French students already include the 7 who do both) is not stated."
+      },
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "Writing the total for a circle (e.g. 18) in the intersection region instead of only the 'both' count (7), then double-counting items.",
+        "why": "This describes putting 18 in the intersection, but the correction is about putting 11 in the French-only region. The usual error is writing 18 in the A-only region. The mismatch makes the mistake hard to picture."
+      }
+    ],
+    "not_checked": [
+      "No Venn diagram image is included or described visually. Whether a diagram is rendered alongside the worked example, and whether it matches 11, 7, 7 and 5, could not be checked.",
+      "The note 'Numbers must differ from any question in the question bank for this subtopic' could not be checked because the question bank was not provided."
+    ]
+  }
+}

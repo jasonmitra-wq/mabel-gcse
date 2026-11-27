@@ -1,0 +1,106 @@
+{
+  "lesson": "geo-pythagoras",
+  "source_file": "lessons/maths/geo-pythagoras.json",
+  "lesson_md5": "670315cd50cdf136139c4b63ef17daad",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:37:03.501Z",
+  "specRefs_sent": [
+    "G20"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 2957,
+    "output_tokens": 2992
+  },
+  "cost_usd": 0.071668,
+  "status": "OK",
+  "result": {
+    "lesson": "geo-pythagoras",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "Squaring the hypotenuse instead of finding its square root — writing c = 169 instead of c = √169 = 13.",
+        "correction": "Writing c = 169 does not square the hypotenuse. It leaves the answer as c² and misses the final square-root step. Reword to: \"Forgetting to take the square root — writing c = 169 (which is c²) instead of c = √169 = 13.\""
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "G20 (Additional foundation)",
+        "spec_text": "know the formulae for: ... the trigonometric ratios, sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse and tan θ = opposite/adjacent",
+        "why": "The lesson teaches only Pythagoras' theorem. The trigonometric ratios required in the same section are never stated or explained."
+      },
+      {
+        "specRef": "G20 (Additional foundation)",
+        "spec_text": "apply them to find angles and lengths in right-angled triangles in two dimensional figures",
+        "why": "Finding angles (which needs trigonometry and inverse trigonometry) is not taught at all. Lengths are only found in a bare triangle, not inside other 2D figures such as rectangles or isosceles triangles."
+      },
+      {
+        "specRef": "G20 (Higher only)",
+        "spec_text": "apply them to find angles and lengths in right-angled triangles and, where possible, general triangles in two and three dimensional figures",
+        "why": "slides[1].whenToUse only mentions \"3D problems where you apply the theorem twice\". No 3D method is taught, and nothing covers general (non-right-angled) triangles, for example by splitting them into right-angled triangles."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "G20",
+        "case": "Finding a shorter side (subtracting squares)",
+        "why": "The only worked example finds the hypotenuse. The subtraction case a = √(c² − b²) is described but never worked through."
+      },
+      {
+        "specRef": "G20",
+        "case": "Non-integer answer needing rounding (or a surd)",
+        "why": "The only example uses the triple 5, 12, 13. No example shows rounding a non-exact square root to a given accuracy."
+      },
+      {
+        "specRef": "G20",
+        "case": "Right-angled triangle within a 2D figure or context (e.g. rectangle diagonal, height of an isosceles triangle, ladder problem)",
+        "why": "The specification says \"in two dimensional figures\". No example requires spotting a right-angled triangle inside a shape or a worded context."
+      },
+      {
+        "specRef": "G20",
+        "case": "Distance between two coordinate points",
+        "why": "Mentioned in slides[1].whenToUse (\"find the distance between two points\") but never modelled."
+      },
+      {
+        "specRef": "G20 (Higher only)",
+        "case": "3D Pythagoras (e.g. space diagonal of a cuboid)",
+        "why": "Mentioned in slides[1].whenToUse but no worked example applies the theorem twice in 3D."
+      },
+      {
+        "specRef": "G20",
+        "case": "Finding a missing length using sin, cos or tan",
+        "why": "Trigonometry for lengths is not modelled anywhere."
+      },
+      {
+        "specRef": "G20",
+        "case": "Finding a missing angle using inverse sin, cos or tan",
+        "why": "Finding angles is required by the specification and not modelled."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "The theorem lets you find any missing side as long as you know the other two, and it works in both directions: finding the hypotenuse (add the squares) or finding a shorter side (subtract one square from the other).",
+        "why": "One sentence carries three ideas. \"Subtract one square from the other\" does not say which square to subtract from which. The student needs to know it is the hypotenuse squared minus the known shorter side squared."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "To find c: c = √(a² + b²). To find a missing shorter side: a = √(c² − b²). Always identify c first by locating the right angle; the hypotenuse is the side that doesn't touch the right angle. The theorem only works in right-angled triangles.",
+        "why": "Two rearrangements are given with no explanation of how they come from a² + b² = c². Several separate rules are packed into a short paragraph."
+      },
+      {
+        "field": "keyFacts[0].examTip",
+        "text": "it's the side you don't touch when identifying the right angle",
+        "why": "This phrasing is confusing. It should say the hypotenuse is the side that does not touch the right angle (the side opposite it)."
+      }
+    ],
+    "not_checked": [
+      "slides[2].note: \"Numbers must differ from any question in the question bank for this subtopic.\" The question bank was not provided, so this could not be checked."
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "lesson": "geo-trigonometry",
+  "source_file": "lessons/maths/geo-trigonometry.json",
+  "lesson_md5": "85cb199411afdcc0db6a938ff4a63d07",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:37:28.361Z",
+  "specRefs_sent": [
+    "G20",
+    "G21"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3343,
+    "output_tokens": 3963
+  },
+  "cost_usd": 0.092632,
+  "status": "OK",
+  "result": {
+    "lesson": "geo-trigonometry",
+    "maths_errors": [
+      {
+        "field": "slides[2].steps[2].working",
+        "text": "sin 38° ≈ 0.6157. O = 15 × 0.6157 ≈ 9.24",
+        "correction": "sin 38° = 0.615661… so O = 15 × 0.615661… = 9.2349… = 9.23 cm (3 s.f.). The answer 9.24 comes from rounding sin 38° to 0.6157 before multiplying. Keep the full calculator value until the final step. The step result, the conclusion ('approximately 9.24 cm') and slides[2].steps[2].result ('9.24 cm (3 s.f.)') should all read 9.23 cm."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "In radians, sin 38 gives approximately 0.2955 (not 0.6157).",
+        "correction": "sin(38 radians) ≈ 0.2964. 38 − 12π ≈ 0.3009, and sin 0.3009 ≈ 0.2964. The value 0.2955 is sin(0.3), not sin 38."
+      },
+      {
+        "field": "keyFacts[1].examTip",
+        "text": "Don't divide H by sin θ — that's the inverse formula for finding H, not O.",
+        "correction": "H ÷ sin θ is not the formula for finding H. From sin θ = O ÷ H, the hypotenuse is H = O ÷ sin θ. Dividing H by sin θ does not give any side of the triangle."
+      },
+      {
+        "field": "slides[1].whenToUse",
+        "text": "Any right-angled triangle where one angle (not the right angle) and one side are known. Choose the trig ratio that links the two sides involved in the question — one known and one unknown.",
+        "correction": "Trigonometry is also used when two sides are known and an angle is missing. In that case both sides are known and you use an inverse function. The formulaExplained on the same slide even mentions this case. The condition should be: a right-angled triangle where either one acute angle and one side are known (to find a side), or two sides are known (to find an angle)."
+      }
+    ],
+    "false_mistakes": [
+      {
+        "field": "slides[3].mistakes[0].mistake",
+        "text": "Mislabelling adjacent and opposite — labelling the side next to the right angle (not the reference angle) as 'opposite'.",
+        "why": "Both shorter sides touch the right angle, so the opposite side is always next to the right angle. Labelling 'the side next to the right angle' as opposite is therefore often correct. The real error is labelling the side next to θ as opposite, or labelling from the right angle (which would make the hypotenuse 'opposite').",
+        "mistaken_method_gives": "When the chosen side is the leg across from θ, it gives the correct opposite side. It is only wrong when the chosen side is the leg touching θ."
+      }
+    ],
+    "missing_spec_content": [
+      {
+        "specRef": "G21",
+        "spec_text": "know the exact values of sin θ and cos θ for θ = 0°, 30°, 45°, 60° and 90° know the exact value of tan θ for θ = 0°, 30°, 45°, 60°",
+        "why": "The lesson gives no exact trig values at all, and gives no way to derive them (for example from special triangles)."
+      },
+      {
+        "specRef": "G20",
+        "spec_text": "know the formulae for: Pythagoras' theorem, a^2 + b^2 = c^2",
+        "why": "Pythagoras' theorem sits in the same specification statement but is never stated or used in the lesson."
+      },
+      {
+        "specRef": "G20 (Higher only)",
+        "spec_text": "apply them to find angles and lengths in right-angled triangles and, where possible, general triangles in two and three dimensional figures",
+        "why": "The lesson covers only a single 2D right-angled triangle. It does not apply trigonometry to right-angled triangles inside 3D shapes, or to general triangles split into right-angled triangles."
+      }
+    ],
+    "above_gcse": [
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "In radians, sin 38 gives approximately 0.2955 (not 0.6157).",
+        "why": "Radians are not on the GCSE specification. Quoting a radian value (which is also wrong) may confuse the student. Advice to check that the calculator shows 'D' is enough."
+      }
+    ],
+    "cases_not_modelled": [
+      {
+        "specRef": "G20",
+        "case": "finding a missing angle using an inverse function (sin⁻¹, cos⁻¹, tan⁻¹)",
+        "why": "The specification requires finding angles, but no worked example finds one."
+      },
+      {
+        "specRef": "G20",
+        "case": "unknown side in the denominator (e.g. finding the hypotenuse, H = O ÷ sin θ)",
+        "why": "The only example multiplies. Dividing by the trig value is the commonly failed case, and it is not shown."
+      },
+      {
+        "specRef": "G20",
+        "case": "using cos (CAH)",
+        "why": "Only SOH is modelled."
+      },
+      {
+        "specRef": "G20",
+        "case": "using tan (TOA)",
+        "why": "Only SOH is modelled."
+      },
+      {
+        "specRef": "G20 (Higher only)",
+        "case": "right-angled triangle within a 3D figure",
+        "why": "No 3D example is given."
+      },
+      {
+        "specRef": "G21",
+        "case": "non-calculator question using exact trig values",
+        "why": "No example uses exact values such as sin 30° = 1/2."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Label the triangle from the reference angle θ (not the right angle): the Opposite side is directly across from θ; the Hypotenuse is the longest side, always opposite the right angle; the Adjacent side is next to θ but isn't the hypotenuse. SOH: sine equals Opposite over Hypotenuse. CAH: ... To find a missing side: rearrange the ratio (e.g. Opposite = sin θ × Hypotenuse). To find a missing angle: use the inverse function (e.g. θ = sin⁻¹(Opposite ÷ Hypotenuse)).",
+        "why": "One paragraph carries side labelling, all three ratios, rearranging and inverse functions. The first sentence alone defines three sides, separated by semicolons. A first-time learner cannot take this in at one read."
+      },
+      {
+        "field": "slides[2].steps[1].working",
+        "text": "O = H × sin θ = 15 × sin 38°",
+        "why": "The rearrangement is stated without its reason. The step 'multiply both sides of sin θ = O ÷ H by H' is never shown."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "To find a missing angle: use the inverse function (e.g. θ = sin⁻¹(Opposite ÷ Hypotenuse)).",
+        "why": "The inverse function and the sin⁻¹ notation are introduced with no explanation of what they do, and no example shows them in use."
+      }
+    ],
+    "not_checked": []
+  }
+}

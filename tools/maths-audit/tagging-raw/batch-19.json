@@ -1,0 +1,177 @@
+{
+  "batch": 19,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 9953,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 1587,
+    "output_tokens_details": {
+      "thinking_tokens": 334
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "cost_usd": 0.071552,
+  "parsed": true,
+  "result": {
+    "results": [
+      {
+        "id": "stat-averages-B03",
+        "subtopic": "stat-averages",
+        "also": "",
+        "why": "Uses mean to find totals before and after changing values"
+      },
+      {
+        "id": "stat-averages-B04",
+        "subtopic": "stat-averages",
+        "also": "stat-charts",
+        "why": "Mean and median read from a stem-and-leaf diagram"
+      },
+      {
+        "id": "stat-averages-B05",
+        "subtopic": "stat-averages",
+        "also": "",
+        "why": "Finds a missing value from a known mean"
+      },
+      {
+        "id": "stat-averages-B06",
+        "subtopic": "stat-averages",
+        "also": "",
+        "why": "Estimated mean and modal class from grouped frequency"
+      },
+      {
+        "id": "stat-averages-C01",
+        "subtopic": "stat-averages",
+        "also": "",
+        "why": "Missing value from mean, then checks the median"
+      },
+      {
+        "id": "stat-averages-C02",
+        "subtopic": "stat-averages",
+        "also": "",
+        "why": "Unknown frequency found from grouped data with estimated mean"
+      },
+      {
+        "id": "stat-averages-C03",
+        "subtopic": "stat-averages",
+        "also": "",
+        "why": "Combined mean of two groups"
+      },
+      {
+        "id": "stat-averages-C04",
+        "subtopic": "stat-averages",
+        "also": "",
+        "why": "Missing value from mean, then checks the median"
+      },
+      {
+        "id": "chr-A01",
+        "subtopic": "stat-charts",
+        "also": "",
+        "why": "Calculates pie chart angles"
+      },
+      {
+        "id": "chr-B01",
+        "subtopic": "stat-charts",
+        "also": "",
+        "why": "Histogram frequency from frequency density"
+      },
+      {
+        "id": "stat-charts-A02",
+        "subtopic": "stat-charts",
+        "also": "",
+        "why": "Calculates pie chart angles"
+      },
+      {
+        "id": "stat-charts-A03",
+        "subtopic": "stat-averages",
+        "also": "",
+        "why": "Range and total of data"
+      },
+      {
+        "id": "stat-charts-A04",
+        "subtopic": "stat-charts",
+        "also": "",
+        "why": "Calculates pie chart angles"
+      },
+      {
+        "id": "stat-charts-A05",
+        "subtopic": "stat-charts",
+        "also": "",
+        "why": "Missing pie chart angle expressed as a fraction"
+      },
+      {
+        "id": "stat-charts-B02",
+        "subtopic": "stat-charts",
+        "also": "",
+        "why": "Histogram frequencies from frequency densities"
+      },
+      {
+        "id": "stat-charts-B03",
+        "subtopic": "stat-charts",
+        "also": "",
+        "why": "Histogram frequencies from frequency densities"
+      },
+      {
+        "id": "stat-charts-B04",
+        "subtopic": "stat-cumulative",
+        "also": "stat-averages",
+        "why": "Class frequencies from cumulative frequencies, then modal class"
+      },
+      {
+        "id": "stat-charts-B05",
+        "subtopic": "stat-charts",
+        "also": "",
+        "why": "Interprets a pie chart sector as a frequency"
+      },
+      {
+        "id": "stat-charts-B06",
+        "subtopic": "prob-conditional",
+        "also": "prob-basic",
+        "why": "Conditional probability from a two-way table"
+      },
+      {
+        "id": "stat-charts-C01",
+        "subtopic": "stat-charts",
+        "also": "num-ratio",
+        "why": "Compares pie chart sectors as fractions"
+      },
+      {
+        "id": "stat-charts-C02",
+        "subtopic": "stat-charts",
+        "also": "stat-averages",
+        "why": "Histogram frequency densities plus an estimated mean"
+      },
+      {
+        "id": "stat-charts-C03",
+        "subtopic": "num-percentages",
+        "also": "",
+        "why": "Percentages of amounts and a combined percentage"
+      },
+      {
+        "id": "stat-charts-C04",
+        "subtopic": "stat-charts",
+        "also": "",
+        "why": "Frequency density for a histogram bar"
+      },
+      {
+        "id": "sct-A01",
+        "subtopic": "stat-scatter",
+        "also": "",
+        "why": "Identifies correlation type; correlation is not causation"
+      },
+      {
+        "id": "sct-B01",
+        "subtopic": "stat-scatter",
+        "also": "alg-graphs",
+        "why": "Estimates a value from a line of best fit"
+      }
+    ]
+  }
+}

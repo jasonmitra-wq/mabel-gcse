@@ -1,0 +1,117 @@
+{
+  "lesson": "alg-functions",
+  "source_file": "lessons/maths/alg-functions.json",
+  "lesson_md5": "65cc32eb944d8667a5e976048e99dcc9",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:29:56.408Z",
+  "specRefs_sent": [
+    "A7",
+    "A20"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3067,
+    "output_tokens": 3420
+  },
+  "cost_usd": 0.080668,
+  "status": "OK",
+  "result": {
+    "lesson": "alg-functions",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "Skipping the swap gives you f(x) back, not its inverse.",
+        "correction": "Rearranging y = f(x) to make x the subject does not give f(x) back. It gives the inverse rule written in terms of y. For f(x) = 2x + 5 it gives x = (y − 5)/2, which is f⁻¹. Renaming y as x then gives f⁻¹(x) = (x − 5)/2. This is the same answer the swap method gives."
+      }
+    ],
+    "false_mistakes": [
+      {
+        "field": "slides[3].mistakes[2].mistake",
+        "text": "When finding an inverse, rearranging f(x) for x without swapping x and y first — leaving the answer as a rearranged version of the original function rather than f⁻¹(x).",
+        "why": "Rearranging y = f(x) for x is a standard, valid way to find an inverse. The 'rearranged version' is the inverse rule, only with y as the input letter. The only extra step needed is to rename the variable at the end; the swap does not have to come first.",
+        "mistaken_method_gives": "For f(x) = 2x + 5: y = 2x + 5 gives x = (y − 5)/2. Writing x for the input gives f⁻¹(x) = (x − 5)/2, which is correct."
+      }
+    ],
+    "missing_spec_content": [
+      {
+        "specRef": "A20",
+        "spec_text": "find approximate solutions to equations numerically using iteration",
+        "why": "Iteration appears only as one keyFact. No slide explains how an equation is rearranged into the form x = g(x). No slide explains why the iterates approach a solution, or when to stop (for example, when successive values agree to the required accuracy). No slide explains how the final value is stated as an approximate solution of the original equation."
+      },
+      {
+        "specRef": "A20",
+        "spec_text": "including the use of suffix notation in recursive formulae",
+        "why": "The keyFact uses 'xₙ₊₁ = f(xₙ)' and 'x₀' but never explains what the subscripts n, n+1 and 0 mean. A student meeting suffix notation for the first time is not taught how to read it."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "A7",
+        "case": "Evaluating a composite function at a number, e.g. fg(3)",
+        "why": "Composite functions are only described in slides[1] and the commonMistakes. No worked example computes the inner value and then applies the outer function."
+      },
+      {
+        "specRef": "A7",
+        "case": "Finding a composite function as an algebraic expression, e.g. fg(x) in terms of x, and comparing fg with gf",
+        "why": "Slides[1] states 'fg and gf usually give different answers', but no example shows this."
+      },
+      {
+        "specRef": "A7",
+        "case": "Finding an inverse function f⁻¹(x) algebraically",
+        "why": "The method is stated three times but never carried out on an actual function."
+      },
+      {
+        "specRef": "A7",
+        "case": "Working backwards from an output to an input, e.g. solve f(x) = k",
+        "why": "Interpreting functions with inputs and outputs includes reversing the process. No example shows it."
+      },
+      {
+        "specRef": "A7",
+        "case": "Substituting into a non-linear function, e.g. f(x) = x² − 3 with a negative input",
+        "why": "The only worked example uses a linear function. The sign error when squaring a negative input is not modelled."
+      },
+      {
+        "specRef": "A20",
+        "case": "Carrying out an iteration from x₀ to a stated approximate solution",
+        "why": "There is no worked example of iteration at all. No example shows calculating x₁, x₂, x₃, keeping decimal places, or deciding the solution to a given accuracy."
+      },
+      {
+        "specRef": "A20",
+        "case": "Showing that a rearranged equation x = g(x) comes from the original equation",
+        "why": "This is a common exam part (for example, 'show that x³ + 2x − 5 = 0 can be written as x = …'). It is not shown."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "Different letters (g, h) are used when more than one function is involved in the same question, and the order you apply them matters enormously.",
+        "why": "This introduces applying several functions in order before composition has been explained. The student cannot yet tell what 'order you apply them' means."
+      },
+      {
+        "field": "slides[1].body",
+        "text": "A composite function fg(x) means apply g first, then apply f to the result: fg(x) = f(g(x)). Order matters — fg and gf usually give different answers. The inverse function f⁻¹(x) undoes f: if f turns 3 into 11, then f⁻¹ turns 11 back into 3. To find f⁻¹(x): write y = f(x), swap x and y, then rearrange to make y the subject.",
+        "why": "Two new ideas (composite and inverse) and a three-step algorithm are packed into one paragraph with no example of either. No reason is given for why swapping x and y produces the inverse."
+      },
+      {
+        "field": "slides[1].body",
+        "text": "The inverse function f⁻¹(x) undoes f",
+        "why": "The notation f⁻¹ is not explained. A first-time reader may take the −1 as a power, meaning 1/f(x), and nothing warns against this."
+      },
+      {
+        "field": "keyFacts[3].fact",
+        "text": "Iteration uses a recurrence relation of the form xₙ₊₁ = f(xₙ) to repeatedly apply a function, each output becoming the next input, in order to home in on a root of an equation.",
+        "why": "One sentence carries several new ideas: the term 'recurrence relation', suffix notation, repeated application, output becoming input, and convergence to a root. None of these is taught elsewhere in the lesson."
+      },
+      {
+        "field": "keyFacts[2].examTip",
+        "text": "Check by verifying f(f⁻¹(x)) = x — applying a function then its inverse should return the original input.",
+        "why": "This relies on composing a function with its inverse algebraically, which the lesson never demonstrates. The student is not shown how to carry out the check."
+      }
+    ],
+    "not_checked": []
+  }
+}

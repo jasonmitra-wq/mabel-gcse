@@ -1,0 +1,177 @@
+{
+  "batch": 21,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 10151,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 1325,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "cost_usd": 0.067104,
+  "parsed": true,
+  "result": {
+    "results": [
+      {
+        "id": "stat-cumulative-C02",
+        "subtopic": "stat-cumulative",
+        "also": "",
+        "why": "Estimate medians and IQRs from cumulative frequency tables"
+      },
+      {
+        "id": "stat-cumulative-C03",
+        "subtopic": "stat-boxplots",
+        "also": "stat-cumulative",
+        "why": "IQR and outlier fences from given quartiles"
+      },
+      {
+        "id": "stat-cumulative-C04",
+        "subtopic": "stat-boxplots",
+        "also": "stat-cumulative",
+        "why": "Outlier fence and box plot features from quartiles"
+      },
+      {
+        "id": "stat-boxplots-A01",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "Read IQR and range from box plot"
+      },
+      {
+        "id": "stat-boxplots-A02",
+        "subtopic": "stat-boxplots",
+        "also": "stat-averages",
+        "why": "Compare medians and IQRs of distributions"
+      },
+      {
+        "id": "stat-boxplots-A03",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "IQR and proportion of data within box"
+      },
+      {
+        "id": "stat-boxplots-A04",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "IQR and range from box plot values"
+      },
+      {
+        "id": "stat-boxplots-A05",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "Identify quartiles and compare box halves"
+      },
+      {
+        "id": "stat-boxplots-B01",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "Apply outlier rule using IQR fence"
+      },
+      {
+        "id": "stat-boxplots-B02",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "Compare two five-number summaries"
+      },
+      {
+        "id": "stat-boxplots-B03",
+        "subtopic": "stat-boxplots",
+        "also": "stat-averages",
+        "why": "Find five-number summary from raw data"
+      },
+      {
+        "id": "stat-boxplots-B04",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "Outlier test using upper fence"
+      },
+      {
+        "id": "stat-boxplots-B05",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "Determine skew from box plot quartiles"
+      },
+      {
+        "id": "stat-boxplots-B06",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "IQR and counts of values by quartile"
+      },
+      {
+        "id": "stat-boxplots-C01",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "Outlier fence and skewness from five-number summary"
+      },
+      {
+        "id": "stat-boxplots-C02",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "Full comparison of two box plot summaries"
+      },
+      {
+        "id": "stat-boxplots-C03",
+        "subtopic": "stat-boxplots",
+        "also": "",
+        "why": "Find Q3 from IQR and count within box"
+      },
+      {
+        "id": "stat-boxplots-C04",
+        "subtopic": "stat-boxplots",
+        "also": "stat-averages",
+        "why": "Skewness from box plot and mean vs median"
+      },
+      {
+        "id": "stat-sampling-A01",
+        "subtopic": "stat-sampling",
+        "also": "",
+        "why": "Stratified sample allocation by proportion"
+      },
+      {
+        "id": "stat-sampling-A02",
+        "subtopic": "stat-sampling",
+        "also": "num-percentages",
+        "why": "Sample size and estimating population defects"
+      },
+      {
+        "id": "stat-sampling-A03",
+        "subtopic": "stat-sampling",
+        "also": "",
+        "why": "Estimate population count from sample proportion"
+      },
+      {
+        "id": "stat-sampling-A04",
+        "subtopic": "stat-sampling",
+        "also": "",
+        "why": "Systematic sampling interval and selection"
+      },
+      {
+        "id": "stat-sampling-A05",
+        "subtopic": "stat-sampling",
+        "also": "",
+        "why": "Systematic sample size and last selected"
+      },
+      {
+        "id": "stat-sampling-B01",
+        "subtopic": "stat-sampling",
+        "also": "",
+        "why": "Stratified sample across four departments"
+      },
+      {
+        "id": "stat-sampling-B02",
+        "subtopic": "stat-sampling",
+        "also": "",
+        "why": "Identify sampling method, bias and improvement"
+      }
+    ]
+  }
+}

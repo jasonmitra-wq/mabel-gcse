@@ -1,0 +1,16 @@
+RUN
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+stat-charts | S2, S3 | 8846 | 2212 | 0.1688
+stat-scatter | S6 | 11931 | 2983 | 0.1719
+stat-cumulative | S3, S4 | 9358 | 2340 | 0.1694
+stat-boxplots | S4 | 9343 | 2336 | 0.1693
+stat-sampling | S1, P2, P3 | 9338 | 2335 | 0.1693
+TOTAL 5 lesson(s) | 48816 chars | 12206 est. input tokens | 40000 output tokens assumed | $0.8488
+Rates: $4 per M input, $20 per M output; output assumed at the ceiling per lesson (8000 tokens).
+Model claude-opus-5-5 confirmed in /v1/models.
+stat-charts: FAILED | fetch failed
+stat-scatter: OK | in 3852 out 4619 | $0.1078 | maths_errors 3, false_mistakes 0, missing_spec_content 4, above_gcse 2, cases_not_modelled 7, density 4, not_checked 1
+stat-cumulative: OK | in 3353 out 3326 | $0.0799 | maths_errors 4, false_mistakes 0, missing_spec_content 5, above_gcse 0, cases_not_modelled 6, density 5, not_checked 1
+stat-boxplots: OK | in 3369 out 4252 | $0.0985 | maths_errors 2, false_mistakes 1, missing_spec_content 3, above_gcse 2, cases_not_modelled 6, density 5, not_checked 0
+stat-sampling: OK | in 3155 out 3645 | $0.0855 | maths_errors 2, false_mistakes 0, missing_spec_content 3, above_gcse 0, cases_not_modelled 6, density 4, not_checked 0
+Actual total cost: $0.3718

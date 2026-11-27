@@ -1,0 +1,139 @@
+{
+  "lesson": "alg-inequalities",
+  "source_file": "lessons/maths/alg-inequalities.json",
+  "lesson_md5": "93b8743d6ab7007d206407df0a56e651",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T17:36:34.907Z",
+  "specRefs_sent": [
+    "A22"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 2933,
+    "output_tokens": 3223
+  },
+  "cost_usd": 0.076192,
+  "status": "OK",
+  "result": {
+    "lesson": "alg-inequalities",
+    "maths_errors": [
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "If you prefer, keep x positive throughout by rearranging first.",
+        "correction": "It is the coefficient of x that must stay positive, not x itself. In this example the answer is x < −4, so x is negative. Reword as: \"keep the number in front of x positive by rearranging first\"."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "A22 (Higher only)",
+        "spec_text": "solve linear inequalities in one or two variable(s)",
+        "why": "Only one-variable inequalities are taught. There is nothing on inequalities in two variables, such as y > 2x + 1."
+      },
+      {
+        "specRef": "A22 (Higher only)",
+        "spec_text": "and quadratic inequalities in one variable",
+        "why": "Quadratic inequalities (e.g. x² < 9, or x² − x − 6 > 0 solved by factorising and checking which regions work) are not mentioned anywhere."
+      },
+      {
+        "specRef": "A22 (Higher only)",
+        "spec_text": "represent the solution set ... using set notation",
+        "why": "Set notation, such as {x : x ≥ 3}, is never introduced."
+      },
+      {
+        "specRef": "A22 (Higher only)",
+        "spec_text": "represent the solution set ... on a graph",
+        "why": "Showing inequalities as regions on a graph is not taught."
+      },
+      {
+        "specRef": "A22 (Notes)",
+        "spec_text": "In graphical work the convention of a dashed line for strict inequalities and a solid line for an included inequality will be required.",
+        "why": "The dashed/solid line convention for graphs is not mentioned."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "A22",
+        "case": "negative coefficient of x (sign flip)",
+        "why": "The only worked example divides by a positive number. The sign flip appears only in a common mistake and a key-fact tip, never as a full worked example."
+      },
+      {
+        "specRef": "A22",
+        "case": "brackets",
+        "why": "No worked example expands brackets, e.g. 3(x − 2) < 12."
+      },
+      {
+        "specRef": "A22",
+        "case": "fractions",
+        "why": "No worked example has a fraction, e.g. (x + 1)/4 ≥ 2."
+      },
+      {
+        "specRef": "A22",
+        "case": "solving a double inequality",
+        "why": "No worked example solves something like −3 < 2x + 1 ≤ 7 by doing the same operation to all three parts."
+      },
+      {
+        "specRef": "A22",
+        "case": "listing integer solutions",
+        "why": "Key fact 3 asks the student to list the integers that satisfy −3 < x ≤ 2, but never lists them (−2, −1, 0, 1, 2) or shows the method."
+      },
+      {
+        "specRef": "A22",
+        "case": "strict inequality on a number line (open circle)",
+        "why": "The only number line drawn is for x ≥ 3, with a closed circle. No example draws an open circle."
+      },
+      {
+        "specRef": "A22",
+        "case": "double inequality on a number line",
+        "why": "The lesson never shows a number line with two circles joined by a line segment, e.g. for −2 < x ≤ 5."
+      },
+      {
+        "specRef": "A22 (Higher only)",
+        "case": "quadratic inequality",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "A22 (Higher only)",
+        "case": "two-variable inequality shown as a region on a graph",
+        "why": "No example is given."
+      },
+      {
+        "specRef": "A22 (Higher only)",
+        "case": "answer written in set notation",
+        "why": "No example is given."
+      }
+    ],
+    "density": [
+      {
+        "field": "keyFacts[0].examTip",
+        "text": "−3x < 12 → add 3x to both sides: 0 < 12 + 3x → 3x > −12 → x > −4.",
+        "why": "This is a chain of arrows with several steps on one line. The step from 0 < 12 + 3x to 3x > −12 silently subtracts 12 and swaps the two sides (which reverses the symbol), and neither reason is given. A first-time learner will not follow it in one read."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "Dividing (or multiplying) by a negative number reverses the inequality: −2x > 8 → x < −4.",
+        "why": "The arrow hides the actual step, dividing both sides by −2. The working 8 ÷ (−2) = −4 is not shown."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "You solve an inequality using the same inverse operations as an equation — with one critical exception: if you multiply or divide both sides by a negative number, the inequality sign must flip direction.",
+        "why": "One sentence carries the general method, an exception and a rule. It gives no reason or small example (e.g. 2 < 3 but −2 > −3) to explain why the sign flips."
+      },
+      {
+        "field": "keyFacts[2].fact",
+        "text": "For a double inequality such as −3 < x ≤ 2, list the integers satisfying it — remembering to check each endpoint: −3 is excluded (strict <), 2 is included (≤).",
+        "why": "The sentence asks the student to list integers, check endpoints and recall two symbol meanings, but never states the resulting list."
+      },
+      {
+        "field": "slides[1].body",
+        "text": "A double inequality such as −2 < x ≤ 5 means x is between −2 and 5, not including −2 but including 5.",
+        "why": "The same paragraph describes number lines for single inequalities, but never says how this double inequality is drawn (open circle at −2, closed circle at 5, line between them)."
+      }
+    ],
+    "not_checked": []
+  }
+}

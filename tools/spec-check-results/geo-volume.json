@@ -1,0 +1,142 @@
+{
+  "lesson": "geo-volume",
+  "source_file": "lessons/maths/geo-volume.json",
+  "lesson_md5": "6c7774a43940397b2b501c435d21465f",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:35:38.789Z",
+  "specRefs_sent": [
+    "G16",
+    "G17"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3002,
+    "output_tokens": 3564
+  },
+  "cost_usd": 0.083288,
+  "status": "OK",
+  "result": {
+    "lesson": "geo-volume",
+    "maths_errors": [
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Cone and pyramid volumes are one-third of the corresponding prism or cylinder with the same base.",
+        "correction": "Incomplete condition. A cone or pyramid has one-third of the volume of the prism or cylinder with the same base AND the same perpendicular height. Without equal heights the statement is false. slides[3].mistakes[2].correction states the condition correctly ('same base and height'), so the two places disagree."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "G17",
+        "spec_text": "Additional foundation: surface area and volume of spheres, pyramids, cones and composite solids",
+        "why": "Surface area is not taught for any solid. The lesson only says 'Surface area is a different calculation (sum of all face areas)'. The curved surface area of a cone (πrl, with slant height l) and the surface area of a sphere (4πr²) are absent."
+      },
+      {
+        "specRef": "G17",
+        "spec_text": "Additional foundation: surface area and volume of spheres, pyramids, cones and composite solids",
+        "why": "Composite solids are not mentioned at all. An example would be a cylinder topped with a hemisphere, where the volume is found by adding or subtracting parts."
+      },
+      {
+        "specRef": "G17",
+        "spec_text": "Notes: including frustums.",
+        "why": "Frustums (a large cone minus a small cone) are not taught."
+      },
+      {
+        "specRef": "G16",
+        "spec_text": "Basic foundation: know and apply formulae to calculate: area of triangles, parallelograms, trapezia",
+        "why": "The triangle area appears only in passing in keyFacts[1].examTip. Areas of parallelograms and trapezia, which are needed for prism cross-sections, are not taught."
+      },
+      {
+        "specRef": "G17",
+        "spec_text": "Basic foundation: know the formulae: circumference of a circle = 2πr = πd ... calculate perimeters of 2D shapes, including circles areas of circles and composite shapes",
+        "why": "Circumference, perimeter and areas of composite 2D shapes are not taught. πr² appears only as a step inside the cylinder formula."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "G16",
+        "case": "Volume of a cuboid",
+        "why": "The formula is stated but there is no worked example."
+      },
+      {
+        "specRef": "G16",
+        "case": "Non-circular prism: find the cross-section area (e.g. a triangle or trapezium), then multiply by the length",
+        "why": "This is described only in keyFacts[1]. No example is worked."
+      },
+      {
+        "specRef": "G16",
+        "case": "Cylinder where the diameter is given and must be halved",
+        "why": "This is flagged as a mistake but never modelled in an example."
+      },
+      {
+        "specRef": "G16",
+        "case": "Working backwards: find a missing length or radius from a given volume",
+        "why": "Every 'apply' item runs forwards only. No inverse use of a formula is shown."
+      },
+      {
+        "specRef": "G17",
+        "case": "Volume of a cone",
+        "why": "The formula is given but there is no worked example."
+      },
+      {
+        "specRef": "G17",
+        "case": "Volume of a sphere or hemisphere",
+        "why": "The formula is given but there is no worked example."
+      },
+      {
+        "specRef": "G17",
+        "case": "Volume of a pyramid",
+        "why": "The formula is given but there is no worked example."
+      },
+      {
+        "specRef": "G17",
+        "case": "Composite solid volume",
+        "why": "Not shown anywhere."
+      },
+      {
+        "specRef": "G17",
+        "case": "Frustum",
+        "why": "Not shown anywhere."
+      },
+      {
+        "specRef": "G17",
+        "case": "Surface area of a sphere, cone, pyramid or prism",
+        "why": "Not shown anywhere."
+      },
+      {
+        "specRef": "G17",
+        "case": "Answer rounded to a stated accuracy (decimal rather than in terms of π)",
+        "why": "The only example asks for terms of π. The decimal 552.9 is given without working."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[1].formula",
+        "text": "Cuboid: V = l × w × h  |  Any prism: V = area of cross-section × length  |  Cylinder: V = πr²h  |  Cone: V = ⅓πr²h  |  Sphere: V = (4/3)πr³  |  Pyramid: V = ⅓ × base area × height",
+        "why": "Six formulae are packed into one line separated by bars. A first-time learner cannot take them all in at one read."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "Cone and pyramid volumes are one-third of the corresponding prism or cylinder with the same base.",
+        "why": "The fact is stated with no reason or illustration. The new idea of comparing with a 'corresponding' shape is left unexplained."
+      },
+      {
+        "field": "slides[0].body",
+        "text": "A cylinder is a circular prism, so its volume follows exactly the same logic — you just need the area of the circular face first.",
+        "why": "One sentence carries three ideas: a cylinder is a prism, the prism rule applies, and you must find the circle area first."
+      },
+      {
+        "field": "slides[2].conclusion",
+        "text": "The volume of the cylinder is 176π cm³ (≈ 552.9 cm³).",
+        "why": "The decimal value appears without its step (176 × π = 552.92…, rounded to 1 d.p.)."
+      }
+    ],
+    "not_checked": [
+      "slides[3].mistakes[2].correction 'These formulae are given on the formula sheet' and keyFacts[2].fact 'All three are given on the formula sheet' (cone, sphere, pyramid): the supplied specification sections do not say which formulae are provided in the exam, so this could not be verified. The pyramid formula in particular may not be provided."
+    ]
+  }
+}

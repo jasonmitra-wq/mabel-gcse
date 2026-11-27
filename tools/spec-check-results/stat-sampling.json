@@ -1,0 +1,111 @@
+{
+  "lesson": "stat-sampling",
+  "source_file": "lessons/maths/stat-sampling.json",
+  "lesson_md5": "492a6c10d5fbb8c5b4569703850dd32d",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-27T12:37:01.442Z",
+  "specRefs_sent": [
+    "S1",
+    "P2",
+    "P3"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3155,
+    "output_tokens": 3645
+  },
+  "cost_usd": 0.08552,
+  "status": "OK",
+  "result": {
+    "lesson": "stat-sampling",
+    "maths_errors": [
+      {
+        "field": "slides[2].steps[2].working",
+        "text": "In practice, the spinner would land on A approximately 87 or 88 times.",
+        "correction": "The arithmetic (0.25 × 350 = 87.5) is right, but this sentence is wrong. In a real set of 350 spins the number of A's varies and could easily be, say, 80 or 95. The correct statement is: 'You would expect the spinner to land on A about 87.5 times (roughly 87 or 88). The actual number in one set of 350 spins may be different.' As written, the step contradicts the lesson's own keyFacts[1].examTip: 'Expected frequency is not guaranteed'. The same wording appears in slides[2].steps[2].result ('≈ 87 or 88 times') and slides[2].conclusion ('approximately 87–88 times')."
+      },
+      {
+        "field": "slides[3].mistakes[1].correction",
+        "text": "the sample is too small to be representative",
+        "correction": "This mixes up two separate ideas. Sample size affects how reliable (how variable) an estimate is. Whether a sample is representative depends on how it was selected. A small random sample can still be representative, and a large biased sample is not. Better wording: 'a sample of 10 is too small to give a reliable estimate'."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "S1",
+        "spec_text": "infer properties of populations or distributions from a sample",
+        "why": "The lesson defines population and sample and warns about small or biased samples. It never shows how to make an inference, for example scaling a sample proportion up to the population ('15 out of 60 sampled students cycle; estimate how many of the 900 students cycle'). The only numerical example is a spinner experiment, not a population sample."
+      },
+      {
+        "specRef": "P2",
+        "spec_text": "apply ideas of randomness, fairness and equally likely events to calculate expected outcomes",
+        "why": "Fairness and equally likely events are not taught. Nothing shows finding a theoretical probability from equally likely outcomes (for example a fair dice, P(6) = 1/6) and then an expected frequency. Nothing shows using results to decide whether a dice or spinner is fair or biased. 'Randomness' appears only in the sampling sense in slides[0].body."
+      },
+      {
+        "specRef": "P3",
+        "spec_text": "relate relative expected frequencies to theoretical probability, using appropriate language and the 0 to 1 probability scale",
+        "why": "The probability-scale words (impossible, unlikely, even chance, likely, certain) are not taught. The 0 to 1 scale appears only in passing in slides[3].mistakes[0].correction ('Probability is always between 0 and 1'). The lesson never compares a relative frequency with a known theoretical probability in an example. The spinner in the worked example is biased, so it has no theoretical value to compare against."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "S1",
+        "case": "Estimating a population quantity from a sample proportion",
+        "why": "No worked example scales a sample result up to a population total. This is the core inference skill in S1."
+      },
+      {
+        "specRef": "S1",
+        "case": "Criticising a sampling method / stating limitations of a given sample",
+        "why": "keyFacts[0].examTip tells the student what to look for ('is the sample too small? Is it randomly selected?'). No worked example applies this to a described survey."
+      },
+      {
+        "specRef": "P2",
+        "case": "Expected frequency from a theoretical probability with equally likely outcomes (fair dice/coin/spinner)",
+        "why": "The only expected-frequency calculation uses an estimated probability from a biased spinner (slides[2].steps[1].working). The 0.3 × 200 line in slides[1].formulaExplained is a bare calculation, not a fairness or equally-likely scenario."
+      },
+      {
+        "specRef": "P2",
+        "case": "Deciding whether a dice/spinner is fair by comparing observed and expected frequencies",
+        "why": "Fairness is in the specification, but no example shows comparing results with what a fair object would give."
+      },
+      {
+        "specRef": "P3",
+        "case": "Comparing relative frequency with theoretical probability, including the effect of more trials",
+        "why": "slides[1].formulaExplained states that 'relative frequency tends towards the true theoretical probability'. No example shows this, for example relative frequencies after 20, 100 and 500 trials compared with 1/6."
+      },
+      {
+        "specRef": "P3",
+        "case": "Relative frequency from a frequency table, and probabilities given as fractions",
+        "why": "slides[1].whenToUse mentions 'a frequency table', but the only example uses a single count (50 out of 200) and decimals only. No fraction probability is multiplied by a number of trials."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "For a sample to be useful, it must be representative — it should reflect the makeup of the whole population — and ideally it should be chosen randomly so that every member of the population has an equal chance of being included; a biased sample (where some groups are more likely to be chosen) leads to conclusions that don't reflect the population.",
+        "why": "One sentence introduces four new ideas: representative, random selection, equal chance and bias. It uses dashes, a semicolon and a bracket, which is too much for a first read."
+      },
+      {
+        "field": "slides[1].formula",
+        "text": "Expected frequency = probability × number of trials  |  Relative frequency (estimated probability) = number of times event occurred ÷ total number of trials",
+        "why": "Two different formulas are squeezed onto one line, separated only by '|'. A first-time learner may read them as one formula or mix them up. They should be shown separately."
+      },
+      {
+        "field": "slides[2].steps[2].instruction",
+        "text": "Interpret the answer. Expected frequency can be a decimal — it represents the average result over many repetitions, not an exact count for one set of 350 spins.",
+        "why": "'Average result over many repetitions' means repeating the whole set of 350 spins many times. That is a second layer of repetition that is not explained, and it is easy to misread."
+      },
+      {
+        "field": "keyFacts[2].fact",
+        "text": "As the number of trials increases, relative frequency converges on the true probability.",
+        "why": "'Converges' is not defined anywhere in the lesson. slides[1] uses 'tends towards' for the same idea. Plain wording such as 'gets closer to' would be clearer."
+      }
+    ],
+    "not_checked": []
+  }
+}

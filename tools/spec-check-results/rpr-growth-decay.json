@@ -1,0 +1,109 @@
+{
+  "lesson": "rpr-growth-decay",
+  "source_file": "lessons/maths/rpr-growth-decay.json",
+  "lesson_md5": "e49db5ec6ee1453115ae2d4e187a99ab",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-26T22:33:25.617Z",
+  "specRefs_sent": [
+    "R16"
+  ],
+  "blocking_only": false,
+  "decided_file": null,
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 3259,
+    "output_tokens": 3120
+  },
+  "cost_usd": 0.075436,
+  "status": "OK",
+  "result": {
+    "lesson": "rpr-growth-decay",
+    "maths_errors": [
+      {
+        "field": "keyFacts[1].fact",
+        "text": "Compound interest: the interest is calculated on the growing total. Compound always gives a larger result over time.",
+        "correction": "This is not true 'always'. For growth at the same rate, compound and simple interest give the same total after the first period (for example £1,000 at 5% gives £1,050 either way). Compound only gives more from the second period onward. For decay the sentence is unclear. Compound depreciation leaves a larger value than simple depreciation (the lesson's own £5,780 against £5,600), but compound loses a smaller total amount. Correct statement: for growth at the same rate, compound interest equals simple interest after one period and is larger after every later period."
+      }
+    ],
+    "false_mistakes": [],
+    "missing_spec_content": [
+      {
+        "specRef": "R16",
+        "spec_text": "Higher only: and work with general iterative processes",
+        "why": "The lesson does not mention iterative processes at all. It never shows a rule applied repeatedly to the previous output (for example uₙ₊₁ = 0.9uₙ + 20, or a population that changes by a percentage and then has a fixed amount added). It also never links A = P × mⁿ to iterating 'multiply by m' as a general process."
+      },
+      {
+        "specRef": "R16",
+        "spec_text": "Additional foundation: set up, solve and interpret the answers in growth and decay problems",
+        "why": "The lesson only teaches forward substitution into A = P × mⁿ. It does not teach interpreting answers, such as rounding money sensibly, explaining what an answer means in context, or judging whether the model is still reasonable. It also does not teach setting up problems where the unknown is not A."
+      }
+    ],
+    "above_gcse": [],
+    "cases_not_modelled": [
+      {
+        "specRef": "R16",
+        "case": "compound interest (growth multiplier m > 1)",
+        "why": "The specification names compound interest explicitly, but the only worked example is depreciation (decay). Growth with 1 + r/100 appears only in a common mistake: 'rounding 1.06³ = 1.191016 to 1.19 and getting £2,380 instead of £2,382.03'."
+      },
+      {
+        "specRef": "R16",
+        "case": "finding the number of periods n (for example 'after how many years will the value first fall below £X')",
+        "why": "This is solved by trial or repeated multiplication. No example shows it."
+      },
+      {
+        "specRef": "R16",
+        "case": "finding the original amount P (reverse problem, dividing by mⁿ)",
+        "why": "No example works backwards from a final amount."
+      },
+      {
+        "specRef": "R16",
+        "case": "finding the rate or multiplier from given values",
+        "why": "No example finds m or r from a start and end value."
+      },
+      {
+        "specRef": "R16",
+        "case": "comparing simple and compound interest in a single question",
+        "why": "The difference is described in slides[0].body and in a common mistake, but no worked example calculates both and compares them."
+      },
+      {
+        "specRef": "R16",
+        "case": "general iterative process (Higher)",
+        "why": "No example applies an iterative formula step by step."
+      }
+    ],
+    "density": [
+      {
+        "field": "slides[0].body",
+        "text": "Over time the difference is enormous: a £1,000 investment at 5% simple interest gains exactly £50 every year; at 5% compound it gains £50 in year one, £52.50 in year two, £55.13 in year three, and so on.",
+        "why": "One sentence holds two models and four figures. The £52.50 and £55.13 are not worked (5% of £1,050 and 5% of £1,102.50), so the student cannot see where they come from."
+      },
+      {
+        "field": "slides[1].formulaExplained",
+        "text": "m is the multiplier — for r% growth, m = 1 + r/100; for r% decay, m = 1 − r/100. n is the number of periods (years, months, etc.). Apply the multiplier once per period by raising it to the power n. The key distinction: growth gives m > 1 (the total increases each period); decay gives 0 < m < 1 (the total decreases each period, but never reaches zero).",
+        "why": "Four variables, two multiplier formulas, the meaning of the power, inequalities on m and the 'never reaches zero' idea are all packed into one paragraph. The reason why 'raising it to the power n' is the same as applying the multiplier once per period is not shown (0.85 × 0.85 = 0.85²)."
+      },
+      {
+        "field": "slides[3].mistakes[0].correction",
+        "text": "year 1 → 8000 × 0.85 = £6,800; year 2 → 6,800 × 0.85 = £5,780. The deduction gets smaller each year because the base shrinks.",
+        "why": "This is a chain of arrows. The claim that the 'deduction gets smaller' is not backed by the actual deductions (£1,200 then £1,020)."
+      },
+      {
+        "field": "slides[3].mistakes[2].correction",
+        "text": "Every intermediate rounding compounds the error.",
+        "why": "The reason is stated without explanation. It also reuses 'compounds' in a different sense from compound interest, which could confuse a first-time reader."
+      },
+      {
+        "field": "keyFacts[2].fact",
+        "text": "each period removes a percentage of what remains, so the amount decreases more slowly over time.",
+        "why": "This is ambiguous. The percentage removed stays the same, and it is the amount removed each period that gets smaller. The student may read 'decreases more slowly' as the rate changing."
+      },
+      {
+        "field": "keyFacts[2].examTip",
+        "text": "This is exponential decay: the graph curves and flattens.",
+        "why": "It refers to a graph that the lesson never shows or describes."
+      }
+    ],
+    "not_checked": []
+  }
+}

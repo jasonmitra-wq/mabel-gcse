@@ -1,0 +1,318 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 18679,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11829,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 7328
+    },
+    "iterations": [
+      {
+        "input_tokens": 18679,
+        "output_tokens": 11829,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.622592,
+  "seconds": 109,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from the last lesson. What is in the nucleus of an atom?\",\"what\":\"The lesson opens by testing an earlier lesson she may not have had. Nothing in this lesson has told her what protons, neutrons or electrons are, so a first-time learner can only guess.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.1\",\"quote\":\"This lesson is about the radiation that comes out of the nucleus, the tiny centre, of some atoms\",\"what\":\"\\\"Radiation\\\" is used in the welcome but is not explained until 1.2b.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"1.1b\",\"quote\":\"Second: what does the atomic number of an atom count?\",\"what\":\"\\\"Atomic number\\\", \\\"protons\\\" and \\\"neutrons\\\" are asked about before the lesson has explained any of them. They are only ever explained in the replies to this question, yet the rest of the lesson depends on them.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.1b don't know (first time)\",\"quote\":\"The atomic number decides the element, and that is set by the protons.\",\"what\":\"The hint is circular and muddled: \\\"that\\\" could mean the element or the atomic number, and \\\"element\\\" has not been explained. It would not help a girl who does not know.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"1.1b right answer\",\"quote\":\"the atomic number counts the protons, and it decides the element. The mass number counts protons plus neutrons.\",\"what\":\"Three terms (atomic number, element, mass number) arrive in one reply. Mass number is only met on this branch and the \\\"both\\\" branch, so a girl who chose \\\"Its neutrons\\\" or said don't know never gets it here.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.4b\",\"quote\":\"Radioactive decay is random: you cannot predict which nucleus will decay next, or when.\",\"what\":\"The message immediately before the question says you cannot predict which nucleus decays next. The question \\\"Which one will decay first?\\\" with the answer \\\"No one can tell\\\" just asks for that sentence back.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.7\",\"quote\":\"1 Bq is one decay each second.\",\"what\":\"The definition is given in the message just before \\\"A source has an activity of 300 Bq. What does that mean?\\\", so she only has to swap 1 for 300.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.6\",\"quote\":\"clicks for each bit of radiation that reaches it\",\"what\":\"\\\"Bit of radiation\\\" is loose. She should be told it clicks each time an alpha particle, beta particle or ray enters it; the lesson file says it counts decays.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.6b\",\"quote\":\"The number of clicks each second is the count rate. It is less than the activity, because radiation goes out in all directions and the tube only catches some of it.\",\"what\":\"Detector, Geiger-Muller tube and count rate are told in two messages and never asked about anywhere, not even in the quiz. Nothing checks she can tell count rate from activity.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"1.10b\",\"quote\":\"The nucleus's mass number, protons plus neutrons, falls by 4. Its atomic number falls by 2. A different atomic number means a different element.\",\"what\":\"Three ideas in one message: mass number falls by 4, atomic number falls by 2, and a new element forms. For some girls it is also the first definition of mass number.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.11\",\"quote\":\"The nucleus's mass number, protons plus neutrons, falls by 4.\",\"what\":\"The rule is stated in the message straight before the question, so the question is only the subtraction 226 − 4.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.12\",\"quote\":\"An ion is an atom that has lost or gained electrons.\",\"what\":\"It does not say an ion is charged, which is the point of the word. Charge is never introduced anywhere in the lesson.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.15 wrong answer (smoke)\",\"quote\":\"Not quite: radioactive decay never stops.\",\"what\":\"This is not right as physics: a source's activity falls with time. It should say the source gives out radiation all the time, whether or not there is smoke.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.16\",\"quote\":\"Yes: your line makes every point. You have this: an alpha particle is 2 protons and 2 neutrons. You have this: a sheet of paper stops it.\",\"what\":\"The own-words feedback reads like a machine checklist with \\\"You have this:\\\" twice. It just recites the mark scheme rather than responding to what she wrote.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.2\",\"quote\":\"Where does an electron in the nucleus come from?\",\"what\":\"She was told at 1.1a that electrons are outside the nucleus; this wording says there is an electron in the nucleus. It should ask how a nucleus can give out an electron when it has none.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"2.3\",\"quote\":\"In beta decay, one neutron is lost and one proton is gained. The number of protons plus neutrons, the mass number, stays the same. The atomic number goes up by 1.\",\"what\":\"Three ideas in one message, with no pause to let her work out either number change for herself.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"2.4\",\"quote\":\"The atomic number goes up by 1.\",\"what\":\"The rule is stated in the message straight before the question, so the question is only 6 + 1.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"2.4\",\"quote\":\"Carbon-14 has atomic number 6.\",\"what\":\"The \\\"-14\\\" way of naming a nucleus is never explained as the mass number, here or later (radium-226, radon-222, potassium-40). She may wonder what the 14 is.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"2.6\",\"quote\":\"Paper does not stop beta. A sheet of aluminium a few millimetres thick does.\",\"what\":\"The very next message asks which radiation gets through paper but not a few mm of aluminium. The answer has just been given word for word.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F15\",\"turn\":\"2.7\",\"quote\":\"the atomic number goes up by 1 and the mass number stays the same\",\"what\":\"Two separate points are joined as one marking point, so a line with only one of them cannot be credited cleanly. The feedback \\\"You have this: a neutron turns into a proton (and an electron).\\\" also reads oddly with its bracket.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.2\",\"quote\":\"Gamma rays have no mass and no charge.\",\"what\":\"\\\"Charge\\\" has not been mentioned at all: she has not been told protons, electrons, alpha or beta particles are charged. \\\"No charge\\\" means nothing to her here.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.1 to 3.3\",\"quote\":\"Gamma rays have no mass and no charge.\",\"what\":\"Five told messages in a row (3.1, 3.1b, 3.2, 3.2b, 3.3) with only Next to press before any question. She is likely to tap through without reading.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"3.3\",\"quote\":\"Gamma is weakly ionising: it makes few ions, so it travels a long way through air and through the body. Thick lead or thick concrete reduces it a lot, but never stops it completely.\",\"what\":\"Several ideas in one message: weakly ionising, long range, passes through the body, lead and concrete reduce it, never fully stopped.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.6\",\"quote\":\"compare how far each kind penetrates, its range in air and how strongly it ionises\",\"what\":\"\\\"Range in air\\\" is used without saying it means how far the radiation travels in air. The same message takes care to explain \\\"penetrate\\\".\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"3.9\",\"quote\":\"In one line: what is gamma radiation, and what does lead do to it?\",\"what\":\"Key point 3 is closed without its danger being taught: that gamma can pass into the body from outside and damage organs and DNA. Choosing a radiation for a job (3.6, 3.7) is told but never asked about.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.9\",\"quote\":\"Yes: your line makes every point. You have this: gamma is electromagnetic radiation (waves from the nucleus). You have this: thick lead reduces it but does not stop it completely.\",\"what\":\"The same mechanical \\\"You have this:\\\" feedback as at 1.16, with a bracketed mark-scheme phrase read back to her.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"4.4\",\"quote\":\"Man-made sources include medical X-rays, fallout from nuclear weapons tests, and nuclear accidents.\",\"what\":\"The message just before the question names both wrong options as man-made, and radon was called the biggest natural source three messages earlier. The question needs no thought.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.5b\",\"quote\":\"Dose is measured in sieverts (Sv). A smaller unit is the millisievert (mSv): 1000 mSv = 1 Sv.\",\"what\":\"Dose and its units are told and never used or asked about, not even a simple conversion. It will not stick.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.6 right answer\",\"quote\":\"Your job matters too: working with X-rays adds to your dose.\",\"what\":\"A new fact from the key point is slipped into the reply to a right answer only. A girl who answers wrongly or says don't know never hears that her job affects her dose.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"4.8b\",\"quote\":\"Radium-226 gives out an alpha particle and becomes radon-222: ²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He. The arrow means \\\"becomes\\\". A decay written with symbols like this is called a nuclear equation.\",\"what\":\"Her first full equation, the meaning of the arrow and the new term \\\"nuclear equation\\\" all come in one message.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.9\",\"quote\":\"Its bottom number is −1, which keeps the bottom numbers balanced when a neutron turns into a proton.\",\"what\":\"She was told at 4.7 that the bottom number is the atomic number, the count of protons, so −1 will puzzle her. \\\"It keeps the numbers balanced\\\" is circular; the real reason, the electron's charge opposite to a proton's, is never given.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"4.12\",\"quote\":\"Yes: your line makes every point. You have this: the top numbers (mass numbers) add up the same on each side. You have this: the bottom numbers (atomic numbers) add up the same on each side.\",\"what\":\"The same mechanical \\\"You have this:\\\" feedback again, long and repetitive.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole script\",\"quote\":\"The picture puts all three side by side: alpha ends at the paper, beta ends at the aluminium, and some gamma still gets through the lead.\",\"what\":\"There is nothing hands-on in 76 steps and only this one picture: no absorber to try, no Geiger counter to listen to, no picture of a nucleus or alpha particle. It is tap Next and pick one of three throughout, and she is likely to get bored.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"The end (summary)\",\"quote\":\"Summary, point 4 of 4: In a nuclear equation, the mass numbers on each side add up to the same total, and so do the atomic numbers.\",\"what\":\"The summary leaves out much of what was taught: unstable nuclei and random decay, activity in becquerels, ionising, background radiation and dose. Each point only repeats the model \\\"good line\\\" word for word.\",\"severity\":\"minor\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":1},{\"fault\":\"F3\",\"instances\":5},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"F8\",\"instances\":6},{\"fault\":\"P6\",\"instances\":4},{\"fault\":\"F15\",\"instances\":1},{\"fault\":\"P4\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":14}],\"overall\":\"Not as it stands. The physics is mostly sound and the don't-know steps do get easier, but the lesson opens by quizzing her on protons, neutrons and atomic number that it never teaches, and it uses \\\"charge\\\" and a bottom number of −1 with no explanation. Several questions (1.4b, 2.6, 4.4) are answered by the message just before them, many messages carry three ideas, and there is nothing to do except tap Next and pick from three, with one picture in the whole lesson. I would want the opening recall turned into teaching, the −1 and \\\"decay never stops\\\" lines corrected, the give-away questions reworked and the gamma danger added before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from the last lesson. What is in the nucleus of an atom?",
+      "what": "The lesson opens by testing an earlier lesson she may not have had. Nothing in this lesson has told her what protons, neutrons or electrons are, so a first-time learner can only guess.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1",
+      "quote": "This lesson is about the radiation that comes out of the nucleus, the tiny centre, of some atoms",
+      "what": "\"Radiation\" is used in the welcome but is not explained until 1.2b.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1b",
+      "quote": "Second: what does the atomic number of an atom count?",
+      "what": "\"Atomic number\", \"protons\" and \"neutrons\" are asked about before the lesson has explained any of them. They are only ever explained in the replies to this question, yet the rest of the lesson depends on them.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1b don't know (first time)",
+      "quote": "The atomic number decides the element, and that is set by the protons.",
+      "what": "The hint is circular and muddled: \"that\" could mean the element or the atomic number, and \"element\" has not been explained. It would not help a girl who does not know.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.1b right answer",
+      "quote": "the atomic number counts the protons, and it decides the element. The mass number counts protons plus neutrons.",
+      "what": "Three terms (atomic number, element, mass number) arrive in one reply. Mass number is only met on this branch and the \"both\" branch, so a girl who chose \"Its neutrons\" or said don't know never gets it here.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.4b",
+      "quote": "Radioactive decay is random: you cannot predict which nucleus will decay next, or when.",
+      "what": "The message immediately before the question says you cannot predict which nucleus decays next. The question \"Which one will decay first?\" with the answer \"No one can tell\" just asks for that sentence back.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.7",
+      "quote": "1 Bq is one decay each second.",
+      "what": "The definition is given in the message just before \"A source has an activity of 300 Bq. What does that mean?\", so she only has to swap 1 for 300.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.6",
+      "quote": "clicks for each bit of radiation that reaches it",
+      "what": "\"Bit of radiation\" is loose. She should be told it clicks each time an alpha particle, beta particle or ray enters it; the lesson file says it counts decays.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.6b",
+      "quote": "The number of clicks each second is the count rate. It is less than the activity, because radiation goes out in all directions and the tube only catches some of it.",
+      "what": "Detector, Geiger-Muller tube and count rate are told in two messages and never asked about anywhere, not even in the quiz. Nothing checks she can tell count rate from activity.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "1.10b",
+      "quote": "The nucleus's mass number, protons plus neutrons, falls by 4. Its atomic number falls by 2. A different atomic number means a different element.",
+      "what": "Three ideas in one message: mass number falls by 4, atomic number falls by 2, and a new element forms. For some girls it is also the first definition of mass number.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.11",
+      "quote": "The nucleus's mass number, protons plus neutrons, falls by 4.",
+      "what": "The rule is stated in the message straight before the question, so the question is only the subtraction 226 − 4.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.12",
+      "quote": "An ion is an atom that has lost or gained electrons.",
+      "what": "It does not say an ion is charged, which is the point of the word. Charge is never introduced anywhere in the lesson.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.15 wrong answer (smoke)",
+      "quote": "Not quite: radioactive decay never stops.",
+      "what": "This is not right as physics: a source's activity falls with time. It should say the source gives out radiation all the time, whether or not there is smoke.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.16",
+      "quote": "Yes: your line makes every point. You have this: an alpha particle is 2 protons and 2 neutrons. You have this: a sheet of paper stops it.",
+      "what": "The own-words feedback reads like a machine checklist with \"You have this:\" twice. It just recites the mark scheme rather than responding to what she wrote.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.2",
+      "quote": "Where does an electron in the nucleus come from?",
+      "what": "She was told at 1.1a that electrons are outside the nucleus; this wording says there is an electron in the nucleus. It should ask how a nucleus can give out an electron when it has none.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "2.3",
+      "quote": "In beta decay, one neutron is lost and one proton is gained. The number of protons plus neutrons, the mass number, stays the same. The atomic number goes up by 1.",
+      "what": "Three ideas in one message, with no pause to let her work out either number change for herself.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.4",
+      "quote": "The atomic number goes up by 1.",
+      "what": "The rule is stated in the message straight before the question, so the question is only 6 + 1.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.4",
+      "quote": "Carbon-14 has atomic number 6.",
+      "what": "The \"-14\" way of naming a nucleus is never explained as the mass number, here or later (radium-226, radon-222, potassium-40). She may wonder what the 14 is.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.6",
+      "quote": "Paper does not stop beta. A sheet of aluminium a few millimetres thick does.",
+      "what": "The very next message asks which radiation gets through paper but not a few mm of aluminium. The answer has just been given word for word.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F15",
+      "turn": "2.7",
+      "quote": "the atomic number goes up by 1 and the mass number stays the same",
+      "what": "Two separate points are joined as one marking point, so a line with only one of them cannot be credited cleanly. The feedback \"You have this: a neutron turns into a proton (and an electron).\" also reads oddly with its bracket.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.2",
+      "quote": "Gamma rays have no mass and no charge.",
+      "what": "\"Charge\" has not been mentioned at all: she has not been told protons, electrons, alpha or beta particles are charged. \"No charge\" means nothing to her here.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.1 to 3.3",
+      "quote": "Gamma rays have no mass and no charge.",
+      "what": "Five told messages in a row (3.1, 3.1b, 3.2, 3.2b, 3.3) with only Next to press before any question. She is likely to tap through without reading.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.3",
+      "quote": "Gamma is weakly ionising: it makes few ions, so it travels a long way through air and through the body. Thick lead or thick concrete reduces it a lot, but never stops it completely.",
+      "what": "Several ideas in one message: weakly ionising, long range, passes through the body, lead and concrete reduce it, never fully stopped.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.6",
+      "quote": "compare how far each kind penetrates, its range in air and how strongly it ionises",
+      "what": "\"Range in air\" is used without saying it means how far the radiation travels in air. The same message takes care to explain \"penetrate\".",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "3.9",
+      "quote": "In one line: what is gamma radiation, and what does lead do to it?",
+      "what": "Key point 3 is closed without its danger being taught: that gamma can pass into the body from outside and damage organs and DNA. Choosing a radiation for a job (3.6, 3.7) is told but never asked about.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.9",
+      "quote": "Yes: your line makes every point. You have this: gamma is electromagnetic radiation (waves from the nucleus). You have this: thick lead reduces it but does not stop it completely.",
+      "what": "The same mechanical \"You have this:\" feedback as at 1.16, with a bracketed mark-scheme phrase read back to her.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.4",
+      "quote": "Man-made sources include medical X-rays, fallout from nuclear weapons tests, and nuclear accidents.",
+      "what": "The message just before the question names both wrong options as man-made, and radon was called the biggest natural source three messages earlier. The question needs no thought.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.5b",
+      "quote": "Dose is measured in sieverts (Sv). A smaller unit is the millisievert (mSv): 1000 mSv = 1 Sv.",
+      "what": "Dose and its units are told and never used or asked about, not even a simple conversion. It will not stick.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.6 right answer",
+      "quote": "Your job matters too: working with X-rays adds to your dose.",
+      "what": "A new fact from the key point is slipped into the reply to a right answer only. A girl who answers wrongly or says don't know never hears that her job affects her dose.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "4.8b",
+      "quote": "Radium-226 gives out an alpha particle and becomes radon-222: ²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He. The arrow means \"becomes\". A decay written with symbols like this is called a nuclear equation.",
+      "what": "Her first full equation, the meaning of the arrow and the new term \"nuclear equation\" all come in one message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.9",
+      "quote": "Its bottom number is −1, which keeps the bottom numbers balanced when a neutron turns into a proton.",
+      "what": "She was told at 4.7 that the bottom number is the atomic number, the count of protons, so −1 will puzzle her. \"It keeps the numbers balanced\" is circular; the real reason, the electron's charge opposite to a proton's, is never given.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "4.12",
+      "quote": "Yes: your line makes every point. You have this: the top numbers (mass numbers) add up the same on each side. You have this: the bottom numbers (atomic numbers) add up the same on each side.",
+      "what": "The same mechanical \"You have this:\" feedback again, long and repetitive.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole script",
+      "quote": "The picture puts all three side by side: alpha ends at the paper, beta ends at the aluminium, and some gamma still gets through the lead.",
+      "what": "There is nothing hands-on in 76 steps and only this one picture: no absorber to try, no Geiger counter to listen to, no picture of a nucleus or alpha particle. It is tap Next and pick one of three throughout, and she is likely to get bored.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "The end (summary)",
+      "quote": "Summary, point 4 of 4: In a nuclear equation, the mass numbers on each side add up to the same total, and so do the atomic numbers.",
+      "what": "The summary leaves out much of what was taught: unstable nuclei and random decay, activity in becquerels, ionising, background radiation and dose. Each point only repeats the model \"good line\" word for word.",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 14
+    },
+    {
+      "fault": "F8",
+      "instances": 6
+    },
+    {
+      "fault": "F3",
+      "instances": 5
+    },
+    {
+      "fault": "P6",
+      "instances": 4
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "F15",
+      "instances": 1
+    },
+    {
+      "fault": "P4",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it stands. The physics is mostly sound and the don't-know steps do get easier, but the lesson opens by quizzing her on protons, neutrons and atomic number that it never teaches, and it uses \"charge\" and a bottom number of −1 with no explanation. Several questions (1.4b, 2.6, 4.4) are answered by the message just before them, many messages carry three ideas, and there is nothing to do except tap Next and pick from three, with one picture in the whole lesson. I would want the opening recall turned into teaching, the −1 and \"decay never stops\" lines corrected, the give-away questions reworked and the gamma danger added before she uses it."
+}

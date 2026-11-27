@@ -94,25 +94,25 @@
     {
      "id": "1.5",
      "type": "say",
-     "text": "Then, in 1897, J.J. Thomson discovered the electron: a tiny particle with a negative charge. It came from inside atoms, so atoms could be divided after all."
+     "text": "Then, in 1897, J.J. Thomson discovered the electron: a tiny particle with a negative charge. It came from inside atoms, so atoms could be divided after all. Yet an atom as a whole has no overall charge."
     },
     {
      "id": "1.6",
      "type": "ask",
      "kind": "tap",
-     "question": "An atom has no overall charge, yet it contains negative electrons. What else must an atom contain?",
+     "question": "An atom contains negative electrons, but has no overall charge. What else must it contain?",
      "options": [
       {
        "text": "Even more electrons",
        "branch": "more"
       },
       {
-       "text": "Some positive charge",
-       "branch": "right"
-      },
-      {
        "text": "Nothing else",
        "branch": "nothing"
+      },
+      {
+       "text": "Some positive charge",
+       "branch": "right"
       }
      ],
      "right": "Yes: positive charge must balance the negative electrons, so the atom has no overall charge.",
@@ -189,17 +189,27 @@
     {
      "id": "2.2",
      "type": "say",
-     "text": "The test used alpha particles: tiny, fast particles with a positive charge. They come from a radioactive source, a material whose atoms give them out on their own. The next lesson is about these."
+     "text": "The test used alpha particles: tiny, fast particles with a positive charge."
+    },
+    {
+     "id": "2.2b",
+     "type": "say",
+     "text": "Alpha particles come from a radioactive source, a material whose atoms give them out on their own. The next lesson is about radioactive sources."
     },
     {
      "id": "2.3",
      "type": "say",
-     "text": "Geiger and Marsden fired alpha particles at a very thin sheet of gold foil. A screen flashed where each one landed. Particles sent off in different directions are scattered, so this is the alpha particle scattering experiment."
+     "text": "Geiger and Marsden fired alpha particles at a very thin sheet of gold foil. A screen around it flashed wherever an alpha particle landed."
+    },
+    {
+     "id": "2.3b",
+     "type": "say",
+     "text": "Particles sent off in different directions are scattered, so this is called the alpha particle scattering experiment."
     },
     {
      "id": "2.3c",
      "type": "say",
-     "text": "In the plum pudding model, the positive charge is spread thinly through the whole atom. So it could only give a fast alpha particle a weak push."
+     "text": "Remember: in the plum pudding model, the positive charge is spread thinly through the whole atom."
     },
     {
      "id": "2.4",
@@ -236,13 +246,13 @@
     {
      "id": "2.5",
      "type": "say",
-     "text": "What really happened? Most alpha particles did go straight through the foil."
+     "text": "What really happened? Most alpha particles went straight through the foil without being turned at all."
     },
     {
      "id": "2.6",
      "type": "ask",
      "kind": "tap",
-     "question": "What does that first result tell you about an atom?",
+     "question": "Most went straight through, not turned at all. What does that tell you about an atom?",
      "options": [
       {
        "text": "Most of it is empty space",
@@ -271,19 +281,19 @@
      "answerWhy": "Most alpha particles went straight through, so most of an atom is empty space."
     },
     {
-     "id": "2.6b",
-     "type": "say",
-     "text": "Deflected means pushed off a straight path."
-    },
-    {
      "id": "2.7",
      "type": "say",
-     "text": "But a few alpha particles were deflected through large angles. So the positive charge is not spread out: it is packed into a small region at the centre, which repels the positive alpha particles strongly."
+     "text": "Deflected means pushed off a straight path. A few alpha particles were deflected through large angles. So the positive charge is not spread out: it is packed into a small region at the centre, which repels the positive alpha particles strongly."
     },
     {
      "id": "2.8",
      "type": "say",
-     "text": "And a very small number bounced almost straight back. Only something tiny and very dense could do that. Rutherford called this tiny, dense, positive centre the nucleus."
+     "text": "A very small number of alpha particles bounced almost straight back. Turning a fast particle right round needs a lot of mass and charge packed together: the centre must be dense."
+    },
+    {
+     "id": "2.8b",
+     "type": "say",
+     "text": "And so few came back that the centre must be tiny: only the alpha particles aimed almost straight at it were turned back. Rutherford called this tiny, dense, positive centre the nucleus."
     },
     {
      "id": "2.9",
@@ -295,19 +305,19 @@
      "id": "2.10",
      "type": "ask",
      "kind": "tap",
-     "question": "Why did only a very few alpha particles bounce back?",
+     "question": "Which alpha particles bounced back?",
      "options": [
       {
        "text": "Only those that hit an electron",
        "branch": "electron"
       },
       {
-       "text": "Only those heading almost straight at the nucleus",
-       "branch": "right"
-      },
-      {
        "text": "Only the slowest ones",
        "branch": "slow"
+      },
+      {
+       "text": "Only those heading almost straight at the nucleus",
+       "branch": "right"
       }
      ],
      "right": "Yes: the nucleus is tiny, so very few alpha particles head straight at it. Those are repelled back before they reach it.",
@@ -326,7 +336,7 @@
     {
      "id": "2.11",
      "type": "say",
-     "text": "The plum pudding model could not explain this evidence, so scientists replaced it. The new model has a tiny, positive nucleus at the centre, with the electrons around it. It is called the nuclear model."
+     "text": "The plum pudding model could not explain this evidence, so scientists replaced it. The new model is called the nuclear model: a nucleus at the centre, with the electrons around it."
     },
     {
      "id": "2.12",
@@ -377,7 +387,7 @@
      "wrong": {
       "other": "Not quite: in the nucleus.",
       "electrons": "Not quite: electrons have very little mass. Only something dense could send alpha particles back: most of the mass is packed into the tiny nucleus.",
-      "spread": "Not quite: that was the plum pudding idea. In the nuclear model, most of the mass is packed into the tiny nucleus."
+      "spread": "Not quite: in the nuclear model, most of the mass is packed into the tiny nucleus."
      },
      "idk": [
       {
@@ -399,7 +409,12 @@
     {
      "id": "3.5",
      "type": "say",
-     "text": "Relative mass compares each particle's mass with a proton's, which counts as 1. A neutron has the same mass as a proton, so its relative mass is 1 too. An electron is far lighter: its relative mass is very small, almost 0."
+     "text": "Relative mass compares each particle's mass with a proton's, which counts as 1. A neutron has the same mass as a proton, so its relative mass is 1 too."
+    },
+    {
+     "id": "3.5b",
+     "type": "say",
+     "text": "An electron is far lighter than a proton: its relative mass is very small, almost 0."
     },
     {
      "id": "3.6",
@@ -441,12 +456,12 @@
     {
      "id": "3.8",
      "type": "say",
-     "text": "The number of protons in an atom is its atomic number. It decides which element the atom is, such as carbon or gold: every carbon atom has 6 protons."
+     "text": "The number of protons in an atom is its atomic number. Carbon and gold are elements: each is made of atoms with one particular atomic number. Every carbon atom has 6 protons."
     },
     {
      "id": "3.9",
      "type": "say",
-     "text": "The number of protons plus neutrons is the mass number. So the number of neutrons = mass number − atomic number."
+     "text": "The number of protons plus neutrons is the mass number. The number in a name like carbon-12 is the mass number. The number of neutrons = mass number − atomic number."
     },
     {
      "id": "3.10",
@@ -515,13 +530,18 @@
     {
      "id": "3.13b",
      "type": "say",
-     "text": "If an atom loses an electron, it has one more proton than electrons, so it has an overall positive charge. A particle with an overall charge is called an ion. A lithium atom that loses one electron is written Li⁺."
+     "text": "If an atom loses an electron, it has one more proton than electrons, so it has an overall positive charge. A particle with an overall charge is called an ion."
+    },
+    {
+     "id": "3.13d",
+     "type": "say",
+     "text": "Li is the symbol for lithium. A lithium atom that loses one electron is written Li⁺: the small + shows its positive charge."
     },
     {
      "id": "3.13c",
      "type": "ask",
      "kind": "tap",
-     "question": "A sodium atom gains one electron. What overall charge does it now have?",
+     "question": "A chlorine atom gains one electron. What overall charge does it now have?",
      "options": [
       {
        "text": "Positive",
@@ -628,8 +648,8 @@
      "type": "own",
      "prompt": "In one line: what are isotopes?",
      "points": [
-      "atoms with the same number of protons",
-      "but different numbers of neutrons"
+      "isotopes have the same number of protons",
+      "isotopes have different numbers of neutrons"
      ],
      "idk": "No problem. A good line would be: isotopes are atoms of the same element, with the same number of protons but different numbers of neutrons."
     }
@@ -658,6 +678,11 @@
      "id": "4.4",
      "type": "say",
      "text": "When an electron absorbs electromagnetic radiation, it takes in energy and moves to a higher energy level, further from the nucleus."
+    },
+    {
+     "id": "4.4b",
+     "type": "say",
+     "text": "To emit means to give out."
     },
     {
      "id": "4.6",
@@ -700,7 +725,7 @@
     {
      "id": "4.7",
      "type": "say",
-     "text": "The protons and neutrons you met earlier were found after Rutherford's nucleus. Experiments showed that the positive charge of a nucleus is made of a whole number of smaller particles, each with the same charge: the protons."
+     "text": "The protons and neutrons you met earlier were found after Rutherford's nucleus. Experiments showed that the charge of a nucleus always comes in equal lumps. So it must be carried by identical particles, each with the same positive charge: the protons."
     },
     {
      "id": "4.8",

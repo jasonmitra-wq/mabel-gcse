@@ -1,0 +1,265 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 19249,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11452,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 8016
+    },
+    "iterations": [
+      {
+        "input_tokens": 19249,
+        "output_tokens": 11452,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.6120720000000001,
+  "seconds": 111,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"new\",\"turn\":\"2.6\",\"quote\":\"What does that first result tell you about an atom?\",\"what\":\"At 2.4 she was told the plum pudding model also predicts nearly all go straight through, so this result cannot by itself tell her the atom is mostly empty space. She can only guess the button, and the right reply (\\\"Yes: most of an atom is empty space.\\\") just repeats it with no reason.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F2\",\"turn\":\"2.6\",\"quote\":\"that first result\",\"what\":\"Nothing has told her there will be several results, so \\\"first\\\" has nothing to refer to. Say \\\"Most went straight through. What does that tell you…\\\".\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.8\",\"quote\":\"Only something tiny and very dense could do that.\",\"what\":\"This is asserted with no reasoning, and \\\"do that\\\" is muddled because it was the alpha particles that bounced. She is not told that tiny follows from so few coming back, or that dense follows from needing a lot of mass and charge in one place to turn a fast particle round.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"2.8\",\"quote\":\"And a very small number bounced almost straight back.\",\"what\":\"The message opens with \\\"And\\\" and never says a small number of what; alpha particles are not named in it.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.4\",\"quote\":\"So it could only give a fast alpha particle a weak push.\",\"what\":\"The message just before the question all but gives the answer; the right reply simply repeats \\\"a weak push hardly turns a fast particle\\\". She has very little to work out.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"2.2\",\"quote\":\"The test used alpha particles: tiny, fast particles with a positive charge. They come from a radioactive source, a material whose atoms give them out on their own.\",\"what\":\"Two new terms, alpha particles and radioactive source, arrive in one message.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"2.2\",\"quote\":\"The next lesson is about these.\",\"what\":\"\\\"These\\\" could mean alpha particles, radioactive sources or atoms; she cannot tell which.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"2.3\",\"quote\":\"A screen flashed where each one landed. Particles sent off in different directions are scattered, so this is the alpha particle scattering experiment.\",\"what\":\"The gold foil, the detecting screen, the meaning of \\\"scattered\\\" and the name of the experiment are all in one message, with no picture of the set-up.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.6b\",\"quote\":\"Deflected means pushed off a straight path.\",\"what\":\"A bare definition on its own, wedged between the first and second results, breaks the story. It would sit better inside 2.7 where the word is first used.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.10\",\"quote\":\"Why did only a very few alpha particles bounce back?\",\"what\":\"The options (\\\"Only those heading almost straight at the nucleus\\\", \\\"Only the slowest ones\\\") answer \\\"which ones bounced back?\\\", not \\\"why?\\\". The question and its answers do not fit together.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P5\",\"turn\":\"1.9\",\"quote\":\"A pupil draws the plum pudding model with all the positive charge in one small dot in the middle. What is wrong with the drawing?\",\"what\":\"She is asked to judge a drawing of the plum pudding model but has never been shown one. Key point 1 has no picture at all.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.7\",\"quote\":\"like plums in a pudding\",\"what\":\"Many 15-year-olds have never seen a plum pudding, so the comparison may not help. The don't-know hint (\\\"A pudding is not a small dot: it fills the bowl\\\") leans on it further.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.6\",\"quote\":\"An atom has no overall charge, yet it contains negative electrons.\",\"what\":\"That an atom has no overall charge is a new fact slipped into the question; she has not been told it before.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.10\",\"quote\":\"Yes: your line makes every point. You have this: the atom is a ball of positive charge, spread out evenly. You have this: negative electrons are dotted through it.\",\"what\":\"The feedback is stilted, saying \\\"You have this:\\\" twice and reading the facts back to her yet again. The same pattern recurs at 2.12, 3.18 and 4.10.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.12\",\"quote\":\"The new model has a tiny, positive nucleus at the centre, with the electrons around it.\",\"what\":\"2.11 states both marking points (tiny nucleus at the centre, positive) immediately before 2.12 asks her to write them in her own words.\",\"severity\":\"minor\"},{\"fault\":\"P5\",\"turn\":\"2.9\",\"quote\":\"The picture shows these results around one nucleus.\",\"what\":\"The only picture in key point 2 arrives after all three results have been told and shows them all at once. There is no picture of the foil, source and screen.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.3 \\\"Spread evenly through the atom\\\"\",\"quote\":\"Not quite: that was the plum pudding idea.\",\"what\":\"The lesson only ever said the plum pudding model spread the charge; it never said anything about where its mass was. This reply brings in a claim she has not been taught.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"3.5\",\"quote\":\"Relative mass compares each particle's mass with a proton's, which counts as 1. A neutron has the same mass as a proton, so its relative mass is 1 too. An electron is far lighter: its relative mass is very small, almost 0.\",\"what\":\"A new term and three particles' values are in one message; that is a lot to take in at once.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.8\",\"quote\":\"It decides which element the atom is, such as carbon or gold\",\"what\":\"\\\"Element\\\" is used without saying what it means; it assumes her chemistry.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.10\",\"quote\":\"Carbon-12 has atomic number 6 and mass number 12.\",\"what\":\"The name \\\"carbon-12\\\" is used without ever saying that the 12 in the name is the mass number. The same goes for carbon-14 at 3.15.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.13b\",\"quote\":\"A particle with an overall charge is called an ion. A lithium atom that loses one electron is written Li⁺.\",\"what\":\"Three ideas are in one message, and the notation is not explained: she is not told Li is the symbol for lithium or that the small + at the top right shows the charge.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.13c\",\"quote\":\"A sodium atom gains one electron. What overall charge does it now have?\",\"what\":\"Sodium atoms lose an electron to become Na⁺; they do not gain one. This sets up a wrong picture she will have to unlearn in chemistry; use chlorine or fluorine instead.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.18 (None)\",\"quote\":\"Here is what a good line says. Atoms with the same number of protons. But different numbers of neutrons.\",\"what\":\"The model answer is two broken fragments, not a sentence, and it does not say \\\"isotopes are…\\\". The \\\"all\\\" reply has the same problem: \\\"You have this: but different numbers of neutrons.\\\"\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"4.6\",\"quote\":\"Emit electromagnetic radiation\",\"what\":\"\\\"Emit\\\" first appears in an answer button; it is only explained (\\\"gives out\\\") in the reply afterwards.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.7\",\"quote\":\"Experiments showed that the positive charge of a nucleus is made of a whole number of smaller particles, each with the same charge: the protons.\",\"what\":\"A charge \\\"made of a whole number of smaller particles\\\" is specification wording that a 15-year-old will not follow. Say the nucleus's charge always comes in equal lumps, so it must be carried by identical particles: protons.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"Summary, points 2 and 3 of 4\",\"quote\":\"Summary, point 3 of 4: Isotopes are atoms of the same element, with the same number of protons but different numbers of neutrons.\",\"what\":\"The summary only repeats the four own-words answers. It leaves out that most particles went straight through so the atom is mostly empty space, and everything in key point 3 except isotopes, and it says nothing about Bohr's energy levels.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P14\",\"turn\":\"whole script\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on anywhere: no scattering activity where she fires alpha particles or changes the aim. It is all Next buttons and three-option questions, which is what bored Mabel (M1).\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"new\",\"instances\":11},{\"fault\":\"F2\",\"instances\":3},{\"fault\":\"F3\",\"instances\":4},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"F8\",\"instances\":2},{\"fault\":\"P5\",\"instances\":2},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"P14\",\"instances\":1}],\"overall\":\"Not quite as it is. The lesson is pitched well for a first-time learner, with short messages, varied don't-know replies and sound physics in most places, but the heart of key point 2 has a logic gap: she is told the plum pudding model also predicts 'nearly all straight through', then asked to conclude 'mostly empty space' from that same result, and 'only something tiny and very dense could do that' is asserted with no reason. I would fix 2.6 and 2.8, reword the 2.10 options, add a plum pudding picture, change the sodium ion example and tidy the fragment feedback at 3.18 before she uses it. The summary is thin and there is nothing hands-on, so I would also want an interactive scattering activity to hold her interest.\"}",
+  "findings": [
+    {
+      "fault": "new",
+      "turn": "2.6",
+      "quote": "What does that first result tell you about an atom?",
+      "what": "At 2.4 she was told the plum pudding model also predicts nearly all go straight through, so this result cannot by itself tell her the atom is mostly empty space. She can only guess the button, and the right reply (\"Yes: most of an atom is empty space.\") just repeats it with no reason.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.6",
+      "quote": "that first result",
+      "what": "Nothing has told her there will be several results, so \"first\" has nothing to refer to. Say \"Most went straight through. What does that tell you…\".",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8",
+      "quote": "Only something tiny and very dense could do that.",
+      "what": "This is asserted with no reasoning, and \"do that\" is muddled because it was the alpha particles that bounced. She is not told that tiny follows from so few coming back, or that dense follows from needing a lot of mass and charge in one place to turn a fast particle round.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.8",
+      "quote": "And a very small number bounced almost straight back.",
+      "what": "The message opens with \"And\" and never says a small number of what; alpha particles are not named in it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.4",
+      "quote": "So it could only give a fast alpha particle a weak push.",
+      "what": "The message just before the question all but gives the answer; the right reply simply repeats \"a weak push hardly turns a fast particle\". She has very little to work out.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "2.2",
+      "quote": "The test used alpha particles: tiny, fast particles with a positive charge. They come from a radioactive source, a material whose atoms give them out on their own.",
+      "what": "Two new terms, alpha particles and radioactive source, arrive in one message.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.2",
+      "quote": "The next lesson is about these.",
+      "what": "\"These\" could mean alpha particles, radioactive sources or atoms; she cannot tell which.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "2.3",
+      "quote": "A screen flashed where each one landed. Particles sent off in different directions are scattered, so this is the alpha particle scattering experiment.",
+      "what": "The gold foil, the detecting screen, the meaning of \"scattered\" and the name of the experiment are all in one message, with no picture of the set-up.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.6b",
+      "quote": "Deflected means pushed off a straight path.",
+      "what": "A bare definition on its own, wedged between the first and second results, breaks the story. It would sit better inside 2.7 where the word is first used.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.10",
+      "quote": "Why did only a very few alpha particles bounce back?",
+      "what": "The options (\"Only those heading almost straight at the nucleus\", \"Only the slowest ones\") answer \"which ones bounced back?\", not \"why?\". The question and its answers do not fit together.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P5",
+      "turn": "1.9",
+      "quote": "A pupil draws the plum pudding model with all the positive charge in one small dot in the middle. What is wrong with the drawing?",
+      "what": "She is asked to judge a drawing of the plum pudding model but has never been shown one. Key point 1 has no picture at all.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.7",
+      "quote": "like plums in a pudding",
+      "what": "Many 15-year-olds have never seen a plum pudding, so the comparison may not help. The don't-know hint (\"A pudding is not a small dot: it fills the bowl\") leans on it further.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.6",
+      "quote": "An atom has no overall charge, yet it contains negative electrons.",
+      "what": "That an atom has no overall charge is a new fact slipped into the question; she has not been told it before.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10",
+      "quote": "Yes: your line makes every point. You have this: the atom is a ball of positive charge, spread out evenly. You have this: negative electrons are dotted through it.",
+      "what": "The feedback is stilted, saying \"You have this:\" twice and reading the facts back to her yet again. The same pattern recurs at 2.12, 3.18 and 4.10.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.12",
+      "quote": "The new model has a tiny, positive nucleus at the centre, with the electrons around it.",
+      "what": "2.11 states both marking points (tiny nucleus at the centre, positive) immediately before 2.12 asks her to write them in her own words.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P5",
+      "turn": "2.9",
+      "quote": "The picture shows these results around one nucleus.",
+      "what": "The only picture in key point 2 arrives after all three results have been told and shows them all at once. There is no picture of the foil, source and screen.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3 \"Spread evenly through the atom\"",
+      "quote": "Not quite: that was the plum pudding idea.",
+      "what": "The lesson only ever said the plum pudding model spread the charge; it never said anything about where its mass was. This reply brings in a claim she has not been taught.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.5",
+      "quote": "Relative mass compares each particle's mass with a proton's, which counts as 1. A neutron has the same mass as a proton, so its relative mass is 1 too. An electron is far lighter: its relative mass is very small, almost 0.",
+      "what": "A new term and three particles' values are in one message; that is a lot to take in at once.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.8",
+      "quote": "It decides which element the atom is, such as carbon or gold",
+      "what": "\"Element\" is used without saying what it means; it assumes her chemistry.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.10",
+      "quote": "Carbon-12 has atomic number 6 and mass number 12.",
+      "what": "The name \"carbon-12\" is used without ever saying that the 12 in the name is the mass number. The same goes for carbon-14 at 3.15.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.13b",
+      "quote": "A particle with an overall charge is called an ion. A lithium atom that loses one electron is written Li⁺.",
+      "what": "Three ideas are in one message, and the notation is not explained: she is not told Li is the symbol for lithium or that the small + at the top right shows the charge.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.13c",
+      "quote": "A sodium atom gains one electron. What overall charge does it now have?",
+      "what": "Sodium atoms lose an electron to become Na⁺; they do not gain one. This sets up a wrong picture she will have to unlearn in chemistry; use chlorine or fluorine instead.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.18 (None)",
+      "quote": "Here is what a good line says. Atoms with the same number of protons. But different numbers of neutrons.",
+      "what": "The model answer is two broken fragments, not a sentence, and it does not say \"isotopes are…\". The \"all\" reply has the same problem: \"You have this: but different numbers of neutrons.\"",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.6",
+      "quote": "Emit electromagnetic radiation",
+      "what": "\"Emit\" first appears in an answer button; it is only explained (\"gives out\") in the reply afterwards.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.7",
+      "quote": "Experiments showed that the positive charge of a nucleus is made of a whole number of smaller particles, each with the same charge: the protons.",
+      "what": "A charge \"made of a whole number of smaller particles\" is specification wording that a 15-year-old will not follow. Say the nucleus's charge always comes in equal lumps, so it must be carried by identical particles: protons.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "Summary, points 2 and 3 of 4",
+      "quote": "Summary, point 3 of 4: Isotopes are atoms of the same element, with the same number of protons but different numbers of neutrons.",
+      "what": "The summary only repeats the four own-words answers. It leaves out that most particles went straight through so the atom is mostly empty space, and everything in key point 3 except isotopes, and it says nothing about Bohr's energy levels.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole script",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on anywhere: no scattering activity where she fires alpha particles or changes the aim. It is all Next buttons and three-option questions, which is what bored Mabel (M1).",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 12
+    },
+    {
+      "fault": "F3",
+      "instances": 4
+    },
+    {
+      "fault": "F2",
+      "instances": 3
+    },
+    {
+      "fault": "F8",
+      "instances": 2
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "P5",
+      "instances": 2
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "Not quite as it is. The lesson is pitched well for a first-time learner, with short messages, varied don't-know replies and sound physics in most places, but the heart of key point 2 has a logic gap: she is told the plum pudding model also predicts 'nearly all straight through', then asked to conclude 'mostly empty space' from that same result, and 'only something tiny and very dense could do that' is asserted with no reason. I would fix 2.6 and 2.8, reword the 2.10 options, add a plum pudding picture, change the sodium ion example and tidy the fragment feedback at 3.18 before she uses it. The summary is thin and there is nothing hands-on, so I would also want an interactive scattering activity to hold her interest."
+}

@@ -10,7 +10,7 @@
     {
      "id": "1.1",
      "type": "say",
-     "text": "Welcome! This lesson is about the radiation that comes out of the nucleus, the tiny centre, of some atoms: what it is, what stops it, and where it comes from."
+     "text": "Welcome! This lesson is about what comes out of the nucleus, the tiny centre, of some atoms: what it is, what stops it, and where it comes from."
     },
     {
      "id": "1.1a",
@@ -63,18 +63,18 @@
        "branch": "right"
       }
      ],
-     "right": "Yes: the atomic number counts the protons, and it decides the element. The mass number counts protons plus neutrons.",
+     "right": "Yes: the atomic number counts the protons.",
      "wrong": {
       "other": "Not quite: its protons.",
       "both": "Not quite: protons plus neutrons is the mass number. The atomic number counts the protons only.",
-      "neutrons": "Not quite: the atomic number counts the protons, and it decides the element."
+      "neutrons": "Not quite: the atomic number counts the protons."
      },
      "idk": [
       {
-       "hint": "The atomic number decides the element, and that is set by the protons."
+       "hint": "The atomic number counts one kind of particle: the kind with a positive charge."
       }
      ],
-     "answerWhy": "The atomic number is the number of protons, which decides the element."
+     "answerWhy": "The atomic number is the number of protons in the nucleus."
     },
     {
      "id": "1.2",
@@ -100,33 +100,33 @@
      "id": "1.4b",
      "type": "ask",
      "kind": "tap",
-     "question": "Two identical unstable nuclei sit side by side. Which one will decay first?",
+     "question": "A stable nucleus and an unstable nucleus sit side by side. Which one will give out radiation?",
      "options": [
       {
-       "text": "The one on the left",
-       "branch": "left"
-      },
-      {
-       "text": "Both at the same moment",
-       "branch": "same"
-      },
-      {
-       "text": "No one can tell",
+       "text": "The unstable one",
        "branch": "right"
+      },
+      {
+       "text": "The stable one",
+       "branch": "stable"
+      },
+      {
+       "text": "Both of them",
+       "branch": "both"
       }
      ],
-     "right": "Yes: decay is random, so no one can tell which will go first.",
+     "right": "Yes: only an unstable nucleus decays, giving out radiation.",
      "wrong": {
-      "other": "Not quite: no one can tell.",
-      "left": "Not quite: position makes no difference. Decay is random, so no one can tell which goes first.",
-      "same": "Not quite: being identical does not make them decay together. Decay is random, so no one can tell which goes first."
+      "other": "Not quite: the unstable one.",
+      "stable": "Not quite: a stable nucleus stays as it is. Only an unstable nucleus gives out radiation as it changes.",
+      "both": "Not quite: a stable nucleus stays as it is. Only the unstable one gives out radiation."
      },
      "idk": [
       {
-       "hint": "Random means it cannot be predicted."
+       "hint": "Unstable means it cannot stay as it is forever."
       }
      ],
-     "answerWhy": "Radioactive decay is random, so you cannot tell which nucleus will decay first."
+     "answerWhy": "Only an unstable nucleus gives out radiation as it decays."
     },
     {
      "id": "1.5a",
@@ -146,44 +146,77 @@
     {
      "id": "1.7",
      "type": "ask",
-     "kind": "tap",
-     "question": "A source has an activity of 300 Bq. What does that mean?",
-     "options": [
+     "kind": "number",
+     "question": "A source has an activity of 300 Bq. How many of its nuclei decay in one minute (60 seconds)?",
+     "answer": {
+      "value": 18000,
+      "unit": "nuclei",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
       {
-       "text": "300 nuclei are in the source",
-       "branch": "number"
+       "value": 300,
+       "branch": "second"
       },
       {
-       "text": "It will last 300 seconds",
-       "branch": "time"
-      },
-      {
-       "text": "300 nuclei decay each second",
-       "branch": "right"
+       "value": 5,
+       "branch": "divide"
       }
      ],
-     "right": "Yes: 300 decays every second.",
+     "right": "Yes: 300 each second × 60 seconds = 18000.",
      "wrong": {
-      "other": "Not quite: 300 nuclei decay each second.",
-      "number": "Not quite: activity is not how many nuclei there are. It is how many decay each second: 300.",
-      "time": "Not quite: activity is a rate, not a time. 300 Bq means 300 nuclei decay each second."
+      "other": "Not quite: 18000. 300 × 60 = 18000.",
+      "second": "Not quite: 18000. 300 decay each second, and a minute is 60 seconds: 300 × 60 = 18000.",
+      "divide": "Not quite: 18000. Multiply, do not divide: 300 each second × 60 seconds = 18000."
      },
      "idk": [
       {
-       "hint": "1 Bq is one decay each second, so 300 Bq is 300 of them each second."
+       "hint": "300 Bq means 300 decays each second. Multiply by the 60 seconds in a minute."
       }
      ],
-     "answerWhy": "An activity of 300 Bq means 300 nuclei decay each second."
+     "answerWhy": "300 Bq is 300 decays each second, so in 60 seconds: 300 × 60 = 18000."
     },
     {
      "id": "1.6",
      "type": "say",
-     "text": "A detector is a device that senses radiation. A Geiger-Muller tube is a detector that clicks for each bit of radiation that reaches it."
+     "text": "A detector is a device that senses radiation. A Geiger-Muller tube is a detector that clicks each time radiation enters it."
     },
     {
      "id": "1.6b",
      "type": "say",
-     "text": "The number of clicks each second is the count rate. It is less than the activity, because radiation goes out in all directions and the tube only catches some of it."
+     "text": "The number of clicks each second is the count rate."
+    },
+    {
+     "id": "1.6c",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A source has an activity of 500 Bq. A Geiger-Muller tube beside it records a count rate of 40 each second. Why is the count rate lower?",
+     "options": [
+      {
+       "text": "The source has stopped decaying",
+       "branch": "stopped"
+      },
+      {
+       "text": "The tube only catches some of the radiation",
+       "branch": "right"
+      },
+      {
+       "text": "The tube is broken",
+       "branch": "broken"
+      }
+     ],
+     "right": "Yes: radiation goes out in all directions, and the tube only catches the part that comes its way.",
+     "wrong": {
+      "other": "Not quite: the tube only catches some of the radiation.",
+      "stopped": "Not quite: it is still decaying 500 times a second. Radiation goes out in all directions, and the tube only catches the part that comes its way.",
+      "broken": "Not quite: a working tube reads less too. Radiation goes out in all directions, and the tube only catches the part that comes its way."
+     },
+     "idk": [
+      {
+       "hint": "The source sends radiation out in every direction, but the tube sits on one side."
+      }
+     ],
+     "answerWhy": "Radiation goes out in all directions, so the tube only catches some of it: the count rate is lower than the activity."
     },
     {
      "id": "1.9",
@@ -203,7 +236,7 @@
     {
      "id": "1.10b",
      "type": "say",
-     "text": "The nucleus's mass number, protons plus neutrons, falls by 4. Its atomic number falls by 2. A different atomic number means a different element."
+     "text": "Remember: the mass number counts protons plus neutrons."
     },
     {
      "id": "1.11",
@@ -239,9 +272,14 @@
      "answerWhy": "An alpha particle has a mass number of 4, so the new mass number is 226 − 4 = 222."
     },
     {
+     "id": "1.11b",
+     "type": "say",
+     "text": "In alpha decay, then, the mass number falls by 4 and the atomic number falls by 2. A different atomic number means a different element."
+    },
+    {
      "id": "1.12",
      "type": "say",
-     "text": "An ion is an atom that has lost or gained electrons."
+     "text": "An ion is an atom that has lost or gained electrons, so it has an electric charge."
     },
     {
      "id": "1.12b",
@@ -281,7 +319,7 @@
      "wrong": {
       "other": "Not quite: alpha only travels a few cm in air.",
       "notion": "Not quite: alpha is highly ionising. It is safe because alpha only travels a few cm in air, so it never reaches you.",
-      "smoke": "Not quite: radioactive decay never stops. It is safe because alpha only travels a few cm in air, so it never reaches you."
+      "smoke": "Not quite: the source gives out radiation all the time, smoke or not. It is safe because alpha only travels a few cm in air."
      },
      "idk": [
       {
@@ -319,18 +357,18 @@
     {
      "id": "2.2",
      "type": "say",
-     "text": "Where does an electron in the nucleus come from? A neutron turns into a proton and an electron. The new electron shoots out as the beta particle; the proton stays behind."
+     "text": "How can a nucleus give out an electron when it has none? A neutron in it turns into a proton and an electron. The new electron shoots out as the beta particle; the proton stays behind."
     },
     {
      "id": "2.3",
      "type": "say",
-     "text": "In beta decay, one neutron is lost and one proton is gained. The number of protons plus neutrons, the mass number, stays the same. The atomic number goes up by 1."
+     "text": "In beta decay, one neutron is lost and one proton is gained."
     },
     {
      "id": "2.4",
      "type": "ask",
      "kind": "tap",
-     "question": "Carbon-14 has atomic number 6. It gives out a beta particle. What is the atomic number of the new nucleus?",
+     "question": "Carbon-14 (mass number 14) has atomic number 6. It gives out a beta particle. What is the atomic number of the new nucleus?",
      "options": [
       {
        "text": "7",
@@ -347,9 +385,9 @@
      ],
      "right": "Yes: 7. A neutron became a proton, so 6 + 1 = 7. Atomic number 7 is nitrogen.",
      "wrong": {
-      "other": "Not quite: 7. The atomic number goes up by 1.",
+      "other": "Not quite: 7. The nucleus gains one proton.",
       "down": "Not quite: in beta decay a neutron turns into a proton, so the nucleus gains a proton: 6 + 1 = 7.",
-      "same": "Not quite: the mass number stays the same, but the atomic number goes up by 1, because a neutron became a proton: 7."
+      "same": "Not quite: the nucleus gains a proton, because a neutron became a proton: 6 + 1 = 7."
      },
      "idk": [
       {
@@ -359,54 +397,55 @@
      "answerWhy": "A neutron turns into a proton, so the atomic number goes up by 1: 6 + 1 = 7."
     },
     {
-     "id": "2.5",
+     "id": "2.4b",
      "type": "say",
-     "text": "Beta is less ionising than alpha. So it keeps its energy for longer and travels further: about 1 m in air."
+     "text": "In beta decay the atomic number goes up by 1. One neutron became one proton, so the total of protons plus neutrons, the mass number, stays the same."
     },
     {
-     "id": "2.5b",
+     "id": "2.5",
      "type": "say",
-     "text": "Paper does not stop beta. A sheet of aluminium a few millimetres thick does."
+     "text": "Beta is less ionising than alpha. It keeps its energy for longer, so it travels further: about 1 m in air, and it gets through paper."
     },
     {
      "id": "2.6",
      "type": "ask",
      "kind": "tap",
-     "question": "Radiation from a source gets through paper but not through a few mm of aluminium. Which kind is it?",
+     "question": "Beta gets through paper. Which of these could stop it?",
      "options": [
       {
-       "text": "Alpha",
-       "branch": "alpha"
+       "text": "A thin sheet of card",
+       "branch": "card"
       },
       {
-       "text": "It could be either",
-       "branch": "either"
-      },
-      {
-       "text": "Beta",
+       "text": "Aluminium a few mm thick",
        "branch": "right"
+      },
+      {
+       "text": "Nothing can stop it",
+       "branch": "nothing"
       }
      ],
-     "right": "Yes: paper stops alpha, so radiation that gets through paper but not aluminium is beta.",
+     "right": "Yes: a sheet of aluminium a few millimetres thick stops beta.",
      "wrong": {
-      "other": "Not quite: beta.",
-      "alpha": "Not quite: paper stops alpha, so alpha could not get through it. Getting through paper but not aluminium is beta.",
-      "either": "Not quite: alpha cannot get through paper at all. Getting through paper but not aluminium is beta."
+      "other": "Not quite: aluminium a few mm thick.",
+      "card": "Not quite: card is hardly more than paper. A sheet of aluminium a few millimetres thick stops beta.",
+      "nothing": "Not quite: beta can be stopped: a sheet of aluminium a few millimetres thick does it."
      },
      "idk": [
       {
-       "hint": "Paper stops alpha. This radiation got through the paper."
+       "hint": "Beta needs something stronger than paper or card, but not a thick wall. One option is a metal sheet."
       }
      ],
-     "answerWhy": "Paper stops alpha, so radiation that passes paper but is stopped by aluminium is beta."
+     "answerWhy": "A sheet of aluminium a few millimetres thick stops beta."
     },
     {
      "id": "2.7",
      "type": "own",
      "prompt": "In one line: how does a nucleus change when it gives out a beta particle?",
      "points": [
-      "a neutron turns into a proton (and an electron)",
-      "the atomic number goes up by 1 and the mass number stays the same"
+      "a neutron turns into a proton",
+      "the atomic number goes up by 1",
+      "the mass number stays the same"
      ],
      "idk": "No problem. A good line would be: in beta decay a neutron turns into a proton, so the atomic number goes up by 1 and the mass number stays the same."
     }
@@ -427,9 +466,41 @@
      "text": "Waves of energy that travel like light are called electromagnetic radiation. Radio waves and X-rays are other kinds. Gamma rays come from a nucleus."
     },
     {
+     "id": "3.1c",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Gamma rays are a kind of electromagnetic radiation. Which of these is too?",
+     "options": [
+      {
+       "text": "Light",
+       "branch": "right"
+      },
+      {
+       "text": "Sound",
+       "branch": "sound"
+      },
+      {
+       "text": "An alpha particle",
+       "branch": "alpha"
+      }
+     ],
+     "right": "Yes: light is electromagnetic radiation too, with far less energy than gamma.",
+     "wrong": {
+      "other": "Not quite: light.",
+      "sound": "Not quite: sound is a vibration of the air, not electromagnetic radiation. Light is electromagnetic radiation, like gamma.",
+      "alpha": "Not quite: an alpha particle is a particle, 2 protons and 2 neutrons. Light is electromagnetic radiation, like gamma."
+     },
+     "idk": [
+      {
+       "hint": "Electromagnetic radiation is waves of energy that travel like light."
+      }
+     ],
+     "answerWhy": "Light is electromagnetic radiation, the same family as gamma rays."
+    },
+    {
      "id": "3.2",
      "type": "say",
-     "text": "Gamma rays have no mass and no charge."
+     "text": "Alpha and beta particles carry an electric charge. Gamma rays have no mass and no charge."
     },
     {
      "id": "3.2b",
@@ -439,7 +510,12 @@
     {
      "id": "3.3",
      "type": "say",
-     "text": "Gamma is weakly ionising: it makes few ions, so it travels a long way through air and through the body. Thick lead or thick concrete reduces it a lot, but never stops it completely."
+     "text": "Gamma is weakly ionising: it makes few ions, so it travels a long way through air and through the body. From outside the body, gamma can pass in and damage organs and DNA."
+    },
+    {
+     "id": "3.3b",
+     "type": "say",
+     "text": "Thick lead or thick concrete reduces gamma a lot, but never stops it completely."
     },
     {
      "id": "3.5",
@@ -448,16 +524,16 @@
      "question": "A detector picks up radiation that has come through a few millimetres of aluminium. Which kind is it?",
      "options": [
       {
+       "text": "Gamma",
+       "branch": "right"
+      },
+      {
        "text": "Beta",
        "branch": "beta"
       },
       {
        "text": "Alpha",
        "branch": "alpha"
-      },
-      {
-       "text": "Gamma",
-       "branch": "right"
       }
      ],
      "right": "Yes: aluminium stops alpha and beta, so only gamma gets through.",
@@ -482,12 +558,44 @@
     {
      "id": "3.6",
      "type": "say",
-     "text": "To penetrate means to get through something. To choose radiation for a job, compare how far each kind penetrates, its range in air and how strongly it ionises."
+     "text": "To penetrate means to get through something. To choose radiation for a job, compare how far each kind penetrates, its range in air (how far it travels in air) and how strongly it ionises."
     },
     {
      "id": "3.7",
      "type": "say",
      "text": "For example, doctors can put a source inside a patient to see an organ. Its radiation must get out to a detector outside the body, so they use gamma: alpha and beta would be absorbed inside the body."
+    },
+    {
+     "id": "3.7b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A paper mill checks the thickness of its paper by sending radiation through it to a detector. Which kind should it use?",
+     "options": [
+      {
+       "text": "Alpha",
+       "branch": "alpha"
+      },
+      {
+       "text": "Beta",
+       "branch": "right"
+      },
+      {
+       "text": "Gamma",
+       "branch": "gamma"
+      }
+     ],
+     "right": "Yes: beta gets through paper, and thicker paper lets less through, so the reading shows the thickness.",
+     "wrong": {
+      "other": "Not quite: beta.",
+      "alpha": "Not quite: paper stops alpha completely, so the reading would not change with thickness. Beta gets through, and thicker paper lets less through.",
+      "gamma": "Not quite: gamma passes through paper almost unchanged, so the reading would hardly move. Beta gets through, and thicker paper lets less through."
+     },
+     "idk": [
+      {
+       "hint": "Paper stops one kind completely, and another kind passes straight through. Neither of those would show a change."
+      }
+     ],
+     "answerWhy": "Beta gets through paper, and thicker paper absorbs more of it, so the count shows the thickness."
     },
     {
      "id": "3.8",
@@ -496,16 +604,16 @@
      "question": "Which radiation is the most strongly ionising?",
      "options": [
       {
-       "text": "Alpha",
-       "branch": "right"
-      },
-      {
        "text": "Gamma",
        "branch": "gamma"
       },
       {
        "text": "Beta",
        "branch": "beta"
+      },
+      {
+       "text": "Alpha",
+       "branch": "right"
       }
      ],
      "right": "Yes: alpha is the most ionising, then beta, then gamma.",
@@ -553,6 +661,38 @@
      "text": "Another natural source is cosmic rays: radiation from space. Rocks, buildings, food and drink add a little more."
     },
     {
+     "id": "4.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which of these is man-made?",
+     "options": [
+      {
+       "text": "Radon gas from rocks",
+       "branch": "radon"
+      },
+      {
+       "text": "Cosmic rays from space",
+       "branch": "cosmic"
+      },
+      {
+       "text": "Medical X-rays",
+       "branch": "right"
+      }
+     ],
+     "right": "Yes: X-rays are made by machines, so they are man-made.",
+     "wrong": {
+      "other": "Not quite: medical X-rays.",
+      "radon": "Not quite: radon seeps out of rocks, so it is natural. X-rays are made by machines in hospitals: man-made.",
+      "cosmic": "Not quite: cosmic rays come from space, so they are natural. X-rays are made by machines in hospitals: man-made."
+     },
+     "idk": [
+      {
+       "hint": "Man-made means made by people. One option is made by a machine."
+      }
+     ],
+     "answerWhy": "Medical X-rays are man-made; radon and cosmic rays are natural."
+    },
+    {
      "id": "4.3b",
      "type": "say",
      "text": "Fallout is radioactive dust that spreads through the air after a nuclear explosion or accident, then slowly settles."
@@ -560,39 +700,7 @@
     {
      "id": "4.3",
      "type": "say",
-     "text": "Man-made sources include medical X-rays, fallout from nuclear weapons tests, and nuclear accidents."
-    },
-    {
-     "id": "4.4",
-     "type": "ask",
-     "kind": "tap",
-     "question": "Which of these is a natural source of background radiation?",
-     "options": [
-      {
-       "text": "Medical X-rays",
-       "branch": "xray"
-      },
-      {
-       "text": "Radon gas from rocks",
-       "branch": "right"
-      },
-      {
-       "text": "A nuclear accident",
-       "branch": "accident"
-      }
-     ],
-     "right": "Yes: radon comes out of rocks, so it is natural.",
-     "wrong": {
-      "other": "Not quite: radon gas from rocks.",
-      "xray": "Not quite: X-rays are made by machines in hospitals, so they are man-made. Radon gas comes from rocks: natural.",
-      "accident": "Not quite: an accident at a nuclear power station is man-made. Radon gas comes from rocks: natural."
-     },
-     "idk": [
-      {
-       "hint": "One of these would exist even if people had never built anything."
-      }
-     ],
-     "answerWhy": "Radon gas from rocks is natural; X-rays and nuclear accidents are man-made."
+     "text": "Other man-made sources are fallout from nuclear weapons tests, and nuclear accidents."
     },
     {
      "id": "4.5",
@@ -605,25 +713,53 @@
      "text": "Dose is measured in sieverts (Sv). A smaller unit is the millisievert (mSv): 1000 mSv = 1 Sv."
     },
     {
+     "id": "4.5c",
+     "type": "ask",
+     "kind": "number",
+     "question": "A hospital worker receives a dose of 2.5 mSv. What is that in sieverts (Sv)?",
+     "answer": {
+      "value": 0.0025,
+      "unit": "Sv",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 2500,
+       "branch": "times"
+      }
+     ],
+     "right": "Yes: 2.5 ÷ 1000 = 0.0025 Sv.",
+     "wrong": {
+      "other": "Not quite: 0.0025 Sv. 2.5 ÷ 1000 = 0.0025.",
+      "times": "Not quite: 0.0025 Sv. A sievert is the bigger unit, so divide: 2.5 ÷ 1000 = 0.0025 Sv."
+     },
+     "idk": [
+      {
+       "hint": "1000 mSv make 1 Sv, so divide the number of mSv by 1000."
+      }
+     ],
+     "answerWhy": "1000 mSv = 1 Sv, so 2.5 mSv = 2.5 ÷ 1000 = 0.0025 Sv."
+    },
+    {
      "id": "4.6",
      "type": "ask",
      "kind": "tap",
      "question": "Two people live in different parts of the UK. Why might one of them get a bigger background dose?",
      "options": [
       {
-       "text": "More radon comes out of the rocks where they live",
-       "branch": "right"
-      },
-      {
        "text": "More people live near them",
        "branch": "people"
+      },
+      {
+       "text": "More radon comes out of the rocks where they live",
+       "branch": "right"
       },
       {
        "text": "They use more electricity",
        "branch": "electric"
       }
      ],
-     "right": "Yes: some rocks give out more radon than others. Your job matters too: working with X-rays adds to your dose.",
+     "right": "Yes: some rocks give out more radon than others.",
      "wrong": {
       "other": "Not quite: more radon comes out of the rocks where they live.",
       "people": "Not quite: other people do not give out radiation. Some rocks give out more radon, so where you live matters.",
@@ -637,9 +773,14 @@
      "answerWhy": "Some rocks give out more radon than others, so your background dose depends on where you live."
     },
     {
+     "id": "4.6b",
+     "type": "say",
+     "text": "Your job matters too: working with X-rays, for example, adds to your dose."
+    },
+    {
      "id": "4.7",
      "type": "say",
-     "text": "Now the numbers in decay. In a symbol like ²²⁶₈₈Ra, Ra is the element (radium). The top number is the mass number and the bottom number is the atomic number."
+     "text": "Now the numbers in decay. In a symbol like ²²⁶₈₈Ra, Ra is the element (radium). The top number is the mass number and the bottom number is the atomic number. In a name like radium-226, the number is the mass number."
     },
     {
      "id": "4.8",
@@ -649,7 +790,12 @@
     {
      "id": "4.8b",
      "type": "say",
-     "text": "Radium-226 gives out an alpha particle and becomes radon-222: ²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He. The arrow means \"becomes\". A decay written with symbols like this is called a nuclear equation."
+     "text": "Radium-226 gives out an alpha particle and becomes radon-222: ²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He."
+    },
+    {
+     "id": "4.8d",
+     "type": "say",
+     "text": "The arrow means \"becomes\". A decay written with symbols like this is called a nuclear equation."
     },
     {
      "id": "4.8c",
@@ -697,7 +843,7 @@
     {
      "id": "4.9",
      "type": "say",
-     "text": "A beta particle is written ⁰₋₁e. Its mass is so small that its top number is 0. Its bottom number is −1, which keeps the bottom numbers balanced when a neutron turns into a proton."
+     "text": "A beta particle is an electron, written ⁰₋₁e. Its mass is so small that its top number is 0. Its bottom number is −1, because its charge is −1: the opposite of a proton's +1."
     },
     {
      "id": "4.9b",
@@ -711,12 +857,12 @@
      "question": "Potassium-40, ⁴⁰₁₉K, gives out a beta particle. Ca is calcium, Cl is chlorine and Ar is argon. Which is the new nucleus?",
      "options": [
       {
-       "text": "³⁶₁₇Cl",
-       "branch": "alpha"
-      },
-      {
        "text": "⁴⁰₂₀Ca",
        "branch": "right"
+      },
+      {
+       "text": "³⁶₁₇Cl",
+       "branch": "alpha"
       },
       {
        "text": "⁴⁰₁₈Ar",
@@ -762,12 +908,12 @@
        "branch": "w1"
       },
       {
-       "text": "A helium atom with its electrons",
-       "branch": "w2"
-      },
-      {
        "text": "2 protons and 2 neutrons",
        "branch": "right"
+      },
+      {
+       "text": "A helium atom with its electrons",
+       "branch": "w2"
       }
      ],
      "right": "Yes: 2 protons and 2 neutrons, a helium nucleus.",
@@ -791,12 +937,12 @@
        "branch": "w1"
       },
       {
-       "text": "Gamma",
-       "branch": "w2"
-      },
-      {
        "text": "Alpha",
        "branch": "right"
+      },
+      {
+       "text": "Gamma",
+       "branch": "w2"
       }
      ],
      "right": "Yes: paper stops alpha.",
@@ -816,16 +962,16 @@
      "question": "Quiz, question 3 of 6: in beta decay, what happens to the mass number?",
      "options": [
       {
-       "text": "It stays the same",
-       "branch": "right"
-      },
-      {
        "text": "It falls by 4",
        "branch": "w1"
       },
       {
        "text": "It goes up by 1",
        "branch": "w2"
+      },
+      {
+       "text": "It stays the same",
+       "branch": "right"
       }
      ],
      "right": "Yes: it stays the same; the atomic number goes up by 1.",
@@ -845,12 +991,12 @@
      "question": "Quiz, question 4 of 6: which is a man-made source of background radiation?",
      "options": [
       {
-       "text": "Cosmic rays",
-       "branch": "w1"
-      },
-      {
        "text": "Medical X-rays",
        "branch": "right"
+      },
+      {
+       "text": "Cosmic rays",
+       "branch": "w1"
       },
       {
        "text": "Radon gas",
@@ -878,12 +1024,12 @@
        "branch": "w1"
       },
       {
-       "text": "It goes up by 1",
-       "branch": "w2"
-      },
-      {
        "text": "It stays the same",
        "branch": "right"
+      },
+      {
+       "text": "It goes up by 1",
+       "branch": "w2"
       }
      ],
      "right": "Yes: gamma has no mass and no charge, so both numbers stay the same.",

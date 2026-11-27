@@ -34,7 +34,7 @@
      "right": "Yes: activity is the number of decays each second, in becquerels (Bq).",
      "wrong": {
       "other": "Not quite: the number of nuclei that decay each second.",
-      "range": "Not quite: that is how far it reaches. Activity is the number of nuclei that decay each second.",
+      "range": "Not quite: how far radiation travels is its range, a different idea. Activity is the number of nuclei that decay each second.",
       "number": "Not quite: activity is a rate: the number of nuclei that decay each second."
      },
      "idk": [
@@ -51,23 +51,23 @@
      "question": "Second: can you predict which nucleus in a source will decay next?",
      "options": [
       {
-       "text": "No: decay is random",
+       "text": "No",
        "branch": "right"
       },
       {
-       "text": "Yes: the biggest one",
-       "branch": "biggest"
+       "text": "Yes: the one that has been there longest",
+       "branch": "oldest"
       },
       {
-       "text": "Yes: the oldest one",
-       "branch": "oldest"
+       "text": "Yes: the one nearest the edge",
+       "branch": "edge"
       }
      ],
-     "right": "Right: radioactive decay is random.",
+     "right": "Right: decay is random, so no one can predict which nucleus goes next.",
      "wrong": {
-      "other": "Not quite: decay is random.",
-      "biggest": "Not quite: radioactive decay is random: there is no way to tell which nucleus goes next.",
-      "oldest": "Not quite: radioactive decay is random: there is no way to tell which nucleus goes next."
+      "other": "Not quite: no. Decay is random.",
+      "oldest": "Not quite: a nucleus does not wear out with age. Decay is random, so no one can predict which goes next.",
+      "edge": "Not quite: position makes no difference. Decay is random, so no one can predict which goes next."
      },
      "idk": [
       {
@@ -79,12 +79,17 @@
     {
      "id": "1.2",
      "type": "say",
-     "text": "Now this lesson. A sample of radioactive material holds billions of nuclei. With so many, the overall rate of decay can be predicted well."
+     "text": "Now this lesson. Each decay is like one coin toss: you cannot predict it. But toss a million coins and almost exactly half land heads. In the same way, a sample holds billions of nuclei, so the overall rate of decay can be predicted."
     },
     {
      "id": "1.3a",
      "type": "say",
-     "text": "Remember: isotopes are atoms of the same element with different numbers of neutrons. A radioactive isotope is one whose nuclei are unstable, so they decay."
+     "text": "Remember: isotopes are atoms of the same element with different numbers of neutrons."
+    },
+    {
+     "id": "1.3c",
+     "type": "say",
+     "text": "A radioactive isotope is one whose nuclei are unstable, so they decay."
     },
     {
      "id": "1.3",
@@ -94,7 +99,12 @@
     {
      "id": "1.4",
      "type": "say",
-     "text": "The count rate is the number of decays a detector records each second. The activity and the count rate fall in step with the number of unstable nuclei. So the half-life is also the time for the activity, or the count rate, to fall to half."
+     "text": "A detector, such as a Geiger-Muller tube, counts the radiation reaching it. The count rate is the number of decays it records each second."
+    },
+    {
+     "id": "1.4b",
+     "type": "say",
+     "text": "The activity and the count rate fall as the unstable nuclei are used up. So the half-life is also the time for the activity, or the count rate, to fall to half."
     },
     {
      "id": "1.5",
@@ -118,7 +128,7 @@
      "right": "Yes: one half-life has passed, so the activity has halved: 800 ÷ 2 = 400 Bq.",
      "wrong": {
       "other": "Not quite: 400 Bq.",
-      "zero": "Not quite: after one half-life only half the unstable nuclei have decayed. The activity halves: 800 ÷ 2 = 400 Bq.",
+      "zero": "No: after one half-life only half the unstable nuclei have decayed. The activity halves: 800 ÷ 2 = 400 Bq.",
       "twice": "Not quite: 200 Bq is after two half-lives, 4 hours. After 2 hours it has halved once: 400 Bq."
      },
      "idk": [
@@ -131,40 +141,60 @@
     {
      "id": "1.6",
      "type": "say",
-     "text": "The activity halves again with each half-life. A₀ stands for the starting activity. After 1 half-life the activity is A₀ ÷ 2; after 2 half-lives, A₀ ÷ 4; after 3, A₀ ÷ 8."
+     "text": "A₀ stands for the starting activity."
+    },
+    {
+     "id": "1.6b",
+     "type": "say",
+     "text": "After 1 half-life the activity is A₀ ÷ 2; after 2, A₀ ÷ 4; after 3, A₀ ÷ 8. After n half-lives, it is A₀ × (½)ⁿ."
+    },
+    {
+     "id": "1.6c",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A source starts at 640 Bq. Its half-life is 5 days. What is its activity after 15 days?",
+     "steps": [
+      "Count the half-lives: 15 ÷ 5 = 3 half-lives.",
+      "Halve 3 times: 640 → 320 → 160 → 80.",
+      "Or use A₀ × (½)ⁿ: 640 × (½)³ = 640 ÷ 8 = 80 Bq."
+     ],
+     "answer": {
+      "value": 80,
+      "unit": "Bq"
+     }
     },
     {
      "id": "1.7",
      "type": "ask",
      "kind": "number",
-     "question": "A source starts at 640 Bq. Its half-life is 5 days. What is its activity after 15 days, in Bq?",
+     "question": "Your turn. A source starts at 960 Bq. Its half-life is 4 hours. What is its activity after 12 hours, in Bq?",
      "answer": {
-      "value": 80,
+      "value": 120,
       "unit": "Bq",
       "tolerance": 0.01
      },
      "wrongValues": [
       {
-       "value": 213.33,
+       "value": 320,
        "branch": "third"
       },
       {
-       "value": 160,
+       "value": 240,
        "branch": "two"
       }
      ],
-     "right": "Yes: 15 days is 3 half-lives: 640 → 320 → 160 → 80 Bq.",
+     "right": "Yes: 12 hours is 3 half-lives: 960 → 480 → 240 → 120 Bq.",
      "wrong": {
-      "other": "Not quite: 80 Bq. 15 ÷ 5 = 3 half-lives: 640 → 320 → 160 → 80 Bq.",
-      "third": "Not quite: 80 Bq. Do not divide by 3. 15 days is 3 half-lives, so halve 3 times: 640 → 320 → 160 → 80 Bq.",
-      "two": "Not quite: 80 Bq. 15 ÷ 5 = 3 half-lives, so halve 3 times: 640 → 320 → 160 → 80 Bq."
+      "other": "Not quite: 120 Bq. 12 ÷ 4 = 3 half-lives: 960 → 480 → 240 → 120 Bq.",
+      "third": "Not quite: 120 Bq. Do not divide by 3. 12 hours is 3 half-lives, so halve 3 times: 960 → 480 → 240 → 120 Bq.",
+      "two": "Not quite: 120 Bq. 12 ÷ 4 = 3 half-lives, so halve 3 times: 960 → 480 → 240 → 120 Bq."
      },
      "idk": [
       {
-       "hint": "First count the half-lives: 15 ÷ 5. Then halve 640 that many times."
+       "hint": "First count the half-lives: 12 ÷ 4. Then halve 960 that many times."
       }
      ],
-     "answerWhy": "15 days is 3 half-lives, so 640 → 320 → 160 → 80 Bq."
+     "answerWhy": "12 hours is 3 half-lives, so 960 → 480 → 240 → 120 Bq."
     },
     {
      "id": "1.8",
@@ -274,13 +304,13 @@
      "id": "2.4",
      "type": "say",
      "picture": "p4-decay-graph",
-     "text": "The picture shows a decay graph. The activity falls from 800 Bq to 400 Bq in 2 hours, and from 400 Bq to 200 Bq in another 2 hours. So the half-life is 2 hours."
+     "text": "The picture shows a decay graph. Its labels show one way to read the half-life from it: two hours each time."
     },
     {
      "id": "2.5",
      "type": "ask",
      "kind": "tap",
-     "question": "On another decay graph, the activity is 900 Bq at 0 hours and 450 Bq at 5 hours. At what time will it be 225 Bq?",
+     "question": "Readings from another decay graph: the activity is 900 Bq at 0 hours and 450 Bq at 5 hours. At what time will it be 225 Bq?",
      "options": [
       {
        "text": "10 hours",
@@ -317,15 +347,15 @@
      "id": "2.7",
      "type": "ask",
      "kind": "number",
-     "question": "You draw a decay graph starting at 800 Bq, with a half-life of 2 hours. What activity do you plot at 4 hours, in Bq?",
+     "question": "You draw a decay graph starting at 600 Bq, with a half-life of 3 hours. What activity do you plot at 6 hours, in Bq?",
      "answer": {
-      "value": 200,
+      "value": 150,
       "unit": "Bq",
       "tolerance": 0.01
      },
      "wrongValues": [
       {
-       "value": 400,
+       "value": 300,
        "branch": "once"
       },
       {
@@ -333,18 +363,18 @@
        "branch": "zero"
       }
      ],
-     "right": "Yes: 4 hours is 2 half-lives: 800 → 400 → 200 Bq.",
+     "right": "Yes: 6 hours is 2 half-lives: 600 → 300 → 150 Bq.",
      "wrong": {
-      "other": "Not quite: 200 Bq. 800 → 400 → 200 Bq.",
-      "once": "Not quite: 200 Bq. 4 hours is 2 half-lives, so halve twice: 800 → 400 → 200 Bq.",
-      "zero": "Not quite: 200 Bq. The activity halves, it does not run out: 800 → 400 → 200 Bq."
+      "other": "Not quite: 150 Bq. 600 → 300 → 150 Bq.",
+      "once": "Not quite: 150 Bq. 6 hours is 2 half-lives, so halve twice: 600 → 300 → 150 Bq.",
+      "zero": "Not quite: 150 Bq. The activity halves, it does not run out: 600 → 300 → 150 Bq."
      },
      "idk": [
       {
-       "hint": "4 hours is 2 half-lives, so halve 800 twice."
+       "hint": "6 hours is 2 half-lives, so halve 600 twice."
       }
      ],
-     "answerWhy": "4 hours is 2 half-lives, so the point is at 800 → 400 → 200 Bq."
+     "answerWhy": "6 hours is 2 half-lives, so the point is at 150 Bq."
     },
     {
      "id": "2.8",
@@ -373,11 +403,6 @@
      "text": "A tracer is a radioactive isotope put into the body, swallowed or injected, so doctors can see an organ working. A camera outside the body picks up its radiation."
     },
     {
-     "id": "3.2b",
-     "type": "say",
-     "text": "Remember from the last lesson: alpha is stopped by paper or skin, beta by a few millimetres of aluminium, and gamma passes through the body."
-    },
-    {
      "id": "3.3",
      "type": "ask",
      "kind": "tap",
@@ -399,39 +424,44 @@
      "right": "Yes: gamma passes out through the body to the camera.",
      "wrong": {
       "other": "Not quite: gamma.",
-      "alpha": "Not quite: alpha is stopped inside the body, so the camera outside would see nothing. Gamma passes out of the body.",
+      "alpha": "Not quite: alpha is stopped by skin and inside the body, so the camera outside would see nothing. Gamma passes out of the body.",
       "beta": "Not quite: beta is mostly stopped inside the body. Gamma passes out of the body to the camera."
      },
      "idk": [
       {
-       "hint": "The camera is outside the body. Only one kind of radiation passes through the body."
+       "hint": "The camera is outside the body. Alpha is stopped by skin, beta by a few mm of aluminium; the third kind passes through the body."
       }
      ],
      "answerWhy": "A tracer must give out gamma, which passes out of the body to the camera."
     },
     {
+     "id": "3.4",
+     "type": "say",
+     "text": "A dose is how much radiation a person receives."
+    },
+    {
      "id": "3.5",
      "type": "ask",
      "kind": "tap",
-     "question": "A dose is how much radiation a person receives. A tracer is only needed for a few hours. Why choose one with a short half-life?",
+     "question": "A tracer is only needed for a few hours. Why choose one with a short half-life?",
      "options": [
       {
-       "text": "So its activity soon falls and the dose stays low",
+       "text": "Its activity soon falls",
        "branch": "right"
       },
       {
-       "text": "So it gives out more radiation over the years",
-       "branch": "more"
+       "text": "It gives out stronger radiation",
+       "branch": "stronger"
       },
       {
-       "text": "So it stays in the body longer",
+       "text": "It stays in the body longer",
        "branch": "longer"
       }
      ],
      "right": "Yes: its activity falls quickly after the scan, so the patient's total dose stays low.",
      "wrong": {
-      "other": "Not quite: so its activity soon falls and the dose stays low.",
-      "more": "Not quite: that would raise the dose. A short half-life means the activity soon falls, keeping the dose low.",
+      "other": "Not quite: its activity soon falls.",
+      "stronger": "Not quite: half-life is not about how strong the radiation is. A short half-life means the activity soon falls, so the patient's dose stays low.",
       "longer": "Not quite: half-life is not how long it stays in the body. A short half-life means its activity soon falls, so the dose stays low."
      },
      "idk": [
@@ -444,7 +474,12 @@
     {
      "id": "3.6",
      "type": "say",
-     "text": "A tumour is a lump of cancer cells."
+     "text": "Cancer is a disease in which cells grow and divide out of control."
+    },
+    {
+     "id": "3.6b",
+     "type": "say",
+     "text": "A lump of these cells is called a tumour."
     },
     {
      "id": "3.7",
@@ -454,7 +489,7 @@
     {
      "id": "3.8",
      "type": "say",
-     "text": "Remember: ionising radiation knocks electrons off atoms, which can damage healthy cells. So doctors use radiation only when the benefit is bigger than the risk: a scan can find an illness early, and radiotherapy can cure a cancer."
+     "text": "Remember: ionising radiation can damage healthy cells, so every medical use of radiation carries a risk."
     },
     {
      "id": "3.8b",
@@ -475,10 +510,10 @@
        "branch": "never"
       }
      ],
-     "right": "Yes: the benefit is bigger than the risk.",
+     "right": "Yes: the benefit is bigger than the risk. A scan can find an illness early, and radiotherapy can cure a cancer.",
      "wrong": {
       "other": "Not quite: curing a cancer is worth more than the risk.",
-      "harmless": "Not quite: it can harm healthy cells. Doctors use it because curing a cancer is worth more than that risk.",
+      "harmless": "No: it can harm healthy cells. Doctors use it because curing a cancer is worth more than that risk.",
       "never": "Not quite: some healthy cells are always hit. Doctors use it because curing a cancer is worth more than that risk."
      },
      "idk": [
@@ -491,16 +526,22 @@
     {
      "id": "3.9",
      "type": "say",
-     "text": "People's feeling of how dangerous something is, its perceived risk, can differ from the real risk the data show. To judge a medical use, compare patients who have it with patients who do not."
+     "text": "How dangerous people feel something is, called perceived risk, can be bigger or smaller than the real risk."
+    },
+    {
+     "id": "3.9b",
+     "type": "say",
+     "text": "To judge a treatment, compare the data: how patients do with the treatment, and how they do without it."
     },
     {
      "id": "3.10",
      "type": "own",
-     "prompt": "In one line: why do doctors use radiation in medicine, even though it carries a risk?",
+     "prompt": "In one line: why does a medical tracer give out gamma, and have a short half-life?",
      "points": [
-      "the benefit (finding or curing an illness) is bigger than the risk"
+      "gamma passes out of the body to the camera",
+      "a short half-life keeps the patient's dose low"
      ],
-     "idk": "No problem. A good line would be: doctors use radiation in medicine when the benefit, such as finding or curing an illness, is bigger than the risk."
+     "idk": "No problem. A good line would be: a medical tracer gives out gamma so it passes out of the body to the camera, and has a short half-life to keep the dose low."
     }
    ]
   },
@@ -512,11 +553,6 @@
      "id": "4.1",
      "type": "say",
      "text": "Being exposed to radiation from a source is called irradiation. Standing near a radioactive rock irradiates you."
-    },
-    {
-     "id": "4.2",
-     "type": "say",
-     "text": "An irradiated object does not become radioactive. Take the source away, or put a shield in between, and the irradiation stops."
     },
     {
      "id": "4.3",
@@ -561,6 +597,11 @@
      "answerWhy": "The fruit was irradiated, not contaminated, so it does not become radioactive."
     },
     {
+     "id": "4.5b",
+     "type": "say",
+     "text": "Take an irradiating source away, or put a shield in between, and the irradiation stops."
+    },
+    {
      "id": "4.6",
      "type": "say",
      "text": "Why is radiation dangerous? When it ionises atoms in the cells of your body, it can damage their DNA: the instructions inside each cell."
@@ -573,7 +614,17 @@
     {
      "id": "4.8",
      "type": "say",
-     "text": "The risk grows with the dose, and with how ionising the radiation is. Skin stops alpha from outside, but inside the body nothing stops it. Alpha is the most ionising, so contamination with an alpha source is the biggest danger."
+     "text": "The risk grows with the dose, and with how ionising the radiation is."
+    },
+    {
+     "id": "4.8b",
+     "type": "say",
+     "text": "Outside the body, alpha is stopped by the skin before it reaches living cells. Inside the body, it is stopped within the living tissue itself, so all its ionising happens there."
+    },
+    {
+     "id": "4.8c",
+     "type": "say",
+     "text": "Contamination with an alpha source is therefore the biggest danger."
     },
     {
      "id": "4.9",
@@ -615,17 +666,49 @@
     {
      "id": "4.10",
      "type": "say",
-     "text": "In general, a short half-life gives a high activity at first: very dangerous, but not for long. A long half-life gives a lower activity that stays a hazard for a very long time."
+     "text": "For the same number of nuclei, a short half-life gives a high activity at first: very dangerous, but not for long. A tracer is safe because only a tiny amount is used and it soon dies away. A long half-life gives a lower activity that stays a hazard for a very long time."
     },
     {
      "id": "4.12",
      "type": "say",
-     "text": "To protect yourself: keep your distance, use shielding such as lead or concrete, and keep the time near a source short. Handle sources with tongs, never bare hands."
+     "text": "There are three ways to protect yourself from a source: keep your distance, use shielding such as lead or concrete, and keep your time near it short."
+    },
+    {
+     "id": "4.12b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "You must move a radioactive source across a lab. Which way is safest?",
+     "options": [
+      {
+       "text": "Pick it up in gloves",
+       "branch": "gloves"
+      },
+      {
+       "text": "Use long tongs and work quickly",
+       "branch": "right"
+      },
+      {
+       "text": "Hold it close to read its label",
+       "branch": "close"
+      }
+     ],
+     "right": "Yes: tongs give distance, and working quickly keeps the time short.",
+     "wrong": {
+      "other": "Not quite: use long tongs and work quickly.",
+      "gloves": "Not quite: gloves alone keep your hands close to it. Long tongs add distance and working quickly cuts the time.",
+      "close": "Not quite: that cuts your distance. Long tongs keep it away from you, and working quickly cuts the time."
+     },
+     "idk": [
+      {
+       "hint": "The three ways to stay safe are distance, shielding and short time."
+      }
+     ],
+     "answerWhy": "Long tongs keep the source at a distance and working quickly keeps the time short."
     },
     {
      "id": "4.13",
      "type": "say",
-     "text": "Studies of how radiation affects people are published, so other scientists can check them. This checking is called peer review."
+     "text": "To know how dangerous radiation is, scientists study its effects on people. They publish their results so other scientists can check them: this checking is called peer review."
     },
     {
      "id": "4.14",
@@ -652,10 +735,21 @@
       "unit": "Bq",
       "tolerance": 0.01
      },
-     "wrongValues": [],
+     "wrongValues": [
+      {
+       "value": 600,
+       "branch": "once"
+      },
+      {
+       "value": 400,
+       "branch": "third"
+      }
+     ],
      "right": "Yes: 6 hours is 2 half-lives: 1200 → 600 → 300 Bq.",
      "wrong": {
-      "other": "Not quite: 300 Bq. 6 hours is 2 half-lives: 1200 → 600 → 300 Bq."
+      "other": "Not quite: 300 Bq. 6 hours is 2 half-lives: 1200 → 600 → 300 Bq.",
+      "once": "Not quite: 600 Bq is after one half-life, 3 hours. After 6 hours it has halved twice: 300 Bq.",
+      "third": "Not quite: do not divide by 3. 6 hours is 2 half-lives: 1200 → 600 → 300 Bq."
      },
      "idk": [],
      "answerWhy": "6 ÷ 3 = 2 half-lives, so 1200 → 600 → 300 Bq.",
@@ -668,15 +762,15 @@
      "question": "Quiz, question 2 of 6: what is half-life?",
      "options": [
       {
-       "text": "The time for the number of unstable nuclei to halve",
-       "branch": "right"
-      },
-      {
        "text": "Half the time a source lasts",
        "branch": "w1"
       },
       {
-       "text": "The time for the radiation to halve",
+       "text": "The time for the number of unstable nuclei to halve",
+       "branch": "right"
+      },
+      {
+       "text": "The time for a source to become safe",
        "branch": "w2"
       }
      ],
@@ -684,7 +778,7 @@
      "wrong": {
       "other": "Not quite: the time for the number of unstable nuclei to halve.",
       "w1": "Not quite: a source never quite runs out. Half-life is the time for the number of unstable nuclei to halve.",
-      "w2": "Not quite: say what halves: the number of unstable nuclei, or the activity."
+      "w2": "Not quite: a source can stay a hazard for many half-lives. Half-life is the time for the number of unstable nuclei to halve."
      },
      "idk": [],
      "answerWhy": "Half-life is the time for the number of unstable nuclei, or the activity, to halve.",
@@ -701,12 +795,12 @@
        "branch": "w1"
       },
       {
-       "text": "Gamma",
-       "branch": "right"
-      },
-      {
        "text": "Beta",
        "branch": "w2"
+      },
+      {
+       "text": "Gamma",
+       "branch": "right"
       }
      ],
      "right": "Yes: gamma passes out of the body.",
@@ -726,16 +820,16 @@
      "question": "Quiz, question 4 of 6: a lab coat has radioactive dust on it. What is this?",
      "options": [
       {
+       "text": "Contamination",
+       "branch": "right"
+      },
+      {
        "text": "Irradiation",
        "branch": "w1"
       },
       {
        "text": "Ionisation",
        "branch": "w2"
-      },
-      {
-       "text": "Contamination",
-       "branch": "right"
       }
      ],
      "right": "Yes: radioactive atoms on the coat are contamination.",
@@ -752,12 +846,8 @@
      "id": "4.20",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 5 of 6: on a decay graph, how does the curve end?",
+     "question": "Quiz, question 5 of 6: on a decay graph, what happens to the curve as time goes on?",
      "options": [
-      {
-       "text": "It gets close to zero but never reaches it",
-       "branch": "right"
-      },
       {
        "text": "It reaches zero after two half-lives",
        "branch": "w1"
@@ -765,16 +855,20 @@
       {
        "text": "It levels off halfway down",
        "branch": "w2"
+      },
+      {
+       "text": "It gets closer to zero but never reaches it",
+       "branch": "right"
       }
      ],
      "right": "Yes: halving never reaches zero.",
      "wrong": {
-      "other": "Not quite: it gets close to zero but never reaches it.",
+      "other": "Not quite: it gets closer to zero but never reaches it.",
       "w1": "Not quite: after two half-lives a quarter is left. The curve never reaches zero.",
       "w2": "Not quite: it keeps halving towards zero, but never reaches it."
      },
      "idk": [],
-     "answerWhy": "The activity keeps halving, so the curve gets close to zero but never reaches it.",
+     "answerWhy": "The activity keeps halving, so the curve gets closer to zero but never reaches it.",
      "quiz": true
     },
     {
@@ -784,26 +878,26 @@
      "question": "Quiz, question 6 of 6: why is swallowing an alpha source so dangerous?",
      "options": [
       {
+       "text": "Alpha is the most ionising",
+       "branch": "right"
+      },
+      {
        "text": "Alpha passes right through the body",
        "branch": "w1"
       },
       {
        "text": "Alpha has the longest half-life",
        "branch": "w2"
-      },
-      {
-       "text": "Alpha is the most ionising, and inside the body skin cannot stop it",
-       "branch": "right"
       }
      ],
-     "right": "Yes: inside, alpha ionises a lot, right next to the cells.",
+     "right": "Yes: inside the body all of alpha's ionising happens in living tissue.",
      "wrong": {
-      "other": "Not quite: alpha is the most ionising, and inside the body skin cannot stop it.",
-      "w1": "Not quite: alpha is stopped easily, by paper or skin. It is dangerous inside because it is the most ionising.",
+      "other": "Not quite: alpha is the most ionising.",
+      "w1": "Not quite: alpha is stopped within the body tissue. It is dangerous inside because it is the most ionising.",
       "w2": "Not quite: half-life depends on the isotope, not the radiation. Alpha is dangerous inside because it is the most ionising."
      },
      "idk": [],
-     "answerWhy": "Alpha is the most ionising radiation; inside the body no skin stops it reaching the cells.",
+     "answerWhy": "Alpha is the most ionising radiation, and inside the body it is stopped within living tissue, so all its ionising happens there.",
      "quiz": true
     },
     {

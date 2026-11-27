@@ -588,3 +588,16 @@ tools/check-transcript.js, proven by tools/check-polish.js (each fails with the 
   only $1,360 a year, compared with $54,550 in the UK" with no year (both are 2025). The slides now give the year; the script does not.
   **RESOLVED 2026-11-27 (brief docs/briefs/2026-11-27-phase-c-physics.md, step 0.5):** now "only $1,360 a year in 2025, compared
   with $54,550 in the UK"; TeachScript.VERSION 8 (teach-script v24); walk 0.
+
+## Phase C P4 (2026-11-27, brief docs/briefs/2026-11-27-phase-c-physics.md)
+
+- Open, shared teach-mode code (STOP rule, not changed): js/teach-script.js order() shows a tap question's options in a fixed
+  order from h % (k + 1) with an LCG, whose low bits repeat (the fault fixed for slide checkpoints in 32aa117 and for
+  lesson-extras in 790c0bb). Across the 20 scripted lessons the right answer is shown at position 1/2/3/4 as 0/200/109/0:
+  never first. The script reviewer noticed it in p4-nuclear-fission ("the right answer is the middle button"). The fix is the
+  same as CP_SHUFFLE (take r from h >>> 16, behind a flag). P4's four scripts work round it: each right option is stored where
+  order() shows it in a rotating position (P4 now 25/23/21 over the four scripts). Needs Jason's go-ahead for the shared fix.
+- Open, shared teach-mode code: own-words feedback is built by js/teach-script.js as "Yes: your line makes every point. You have
+  this: … You have this: …" / "Still needed: …". Every P4 review flagged it as stilted (round 2: 7 findings). Not a script change.
+- Open: P4 has no hands-on widget (every review's P14). A chain-reaction or absorber widget would be new shared code.
+

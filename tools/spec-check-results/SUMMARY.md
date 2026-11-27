@@ -242,3 +242,6 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-11-27 | stat-boxplots | OK | maths_errors 2, false_mistakes 1, missing_spec_content 3, above_gcse 2, cases_not_modelled 6, density 5, not_checked 0 | 3369/4252 | $0.0985
 - 2026-11-27 | stat-sampling | OK | maths_errors 2, false_mistakes 0, missing_spec_content 3, above_gcse 0, cases_not_modelled 6, density 4, not_checked 0 | 3155/3645 | $0.0855
 - 2026-11-27 | stat-charts | OK | maths_errors 5, false_mistakes 0, missing_spec_content 8, above_gcse 0, cases_not_modelled 13, density 7, not_checked 2 | 3105/5694 | $0.1263
+- 2026-11-27 | g5-development | OK | missing_spec_content 1, above_gcse 3, factual_errors 1, wrong_terms 1, checkpoint_mismatch 0, not_checked 7 | 11333/5599 | $0.1573
+- 2026-11-27 | g5-nigeria | OK | missing_spec_content 0, above_gcse 0, factual_errors 3, wrong_terms 0, checkpoint_mismatch 1, not_checked 4 | 10853/4872 | $0.1409
+- 2026-11-27 | g5-uk-economy | OK | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 6 | 9413/3010 | $0.0979

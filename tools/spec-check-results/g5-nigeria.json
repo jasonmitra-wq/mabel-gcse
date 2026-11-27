@@ -1,58 +1,59 @@
 {
   "lesson": "g5-nigeria",
   "source_file": "lessons/geography/g5-nigeria.json",
-  "lesson_md5": "606f8679d144685f7b6b456a453d6d48",
+  "lesson_md5": "ed083f5f2206c4ce4377ccbdedeafb6f",
   "model": "claude-opus-5-5",
-  "date": "2026-11-19T12:32:10.123Z",
+  "date": "2026-11-27T14:30:13.711Z",
   "specRefs_sent": [
     "3.2.2.3"
   ],
-  "blocking_only": true,
+  "blocking_only": false,
   "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 8901,
-    "output_tokens": 2961
+    "input_tokens": 10853,
+    "output_tokens": 4872
   },
-  "cost_usd": 0.094824,
+  "cost_usd": 0.140852,
   "status": "OK",
   "result": {
     "lesson": "g5-nigeria",
-    "missing_spec_content": [
-      {
-        "specRef": "3.2.2.3",
-        "spec_text": "the changing political and trading relationships with the wider world",
-        "why": "The lesson covers changing trading relationships but not changing political relationships. The only political link is China lending money and building infrastructure: \"China has also lent money and built roads and railways, though some worry this leaves Nigeria in debt\" (keyPoints[3].content). Nigeria's political links with the wider world are not taught, for example its Commonwealth membership and suspension, and its roles in the African Union, the UN and peacekeeping. keyPoints[0].content mentions British rule and military governments only as internal context, not as changing relationships with other countries."
-      }
-    ],
+    "missing_spec_content": [],
     "above_gcse": [],
     "factual_errors": [
       {
-        "field": "keyPoints[3].tutor_note",
-        "text": "Aid is given, not lent: do not confuse it with loans or investment.",
-        "correction": "Aid can include loans on easier terms than normal (concessional loans, low or no interest). Much multilateral aid from the World Bank, which the lesson itself uses as its example in keyPoints[3].content, is lent rather than given. Aid should be distinguished from commercial loans and investment, not from all loans.",
+        "field": "keyPoints[1].content",
+        "text": "The <strong>primary sector</strong> takes raw materials from the land or sea: farming, fishing, oil. The <strong>secondary sector</strong> makes things in factories: <strong>manufacturing</strong>. ... In 2025 services made up about 58% of Nigeria's economy, industry about 16% and farming about 23%.",
+        "correction": "The lesson's source is World Bank NV.IND.TOTL.ZS, and that 'industry' share includes mining and quarrying (oil and gas extraction), construction and utilities, not only manufacturing. So it does not match the lesson's sector definitions, where oil is primary and the secondary sector is manufacturing. The 'farming about 23%' figure also includes forestry and fishing. Presented this way, a student could read 16% as the size of the secondary (manufacturing) sector and conclude that oil sits outside it. The lesson should say that the 16% 'industry' figure includes oil and gas, or should not map it onto the primary/secondary/tertiary split.",
         "basis": "own knowledge"
       },
       {
-        "field": "commonMistakes[4]",
-        "text": "Confusing aid with loans, investment or TNCs. Aid is given.",
-        "correction": "Aid includes grants and also concessional (low-interest) loans, for example from the World Bank. Calling every loan 'not aid' is wrong. The distinction is between aid and commercial loans or investment.",
+        "field": "keyPoints[2].content",
+        "text": "<strong>Unilever</strong> makes soap, food and drinks in factories in Nigeria.",
+        "correction": "In 2023 Unilever Nigeria announced that it was leaving the home care and skin cleansing (soap) categories in Nigeria and would focus on food and personal care. It is therefore out of date to say that Unilever makes soap in Nigeria. The same claim appears in keyPoints[2].writeBullets[1]: 'Unilever: soap and food factories'.",
         "basis": "own knowledge"
       },
       {
-        "field": "intro",
-        "text": "It earns most of its money from selling oil abroad, yet many of its people are still poor.",
-        "correction": "Oil and gas make up most of Nigeria's export earnings (the lesson's own figure is about 86% of goods exports), but only a small share of its GDP. Most of Nigeria's economic output comes from services and agriculture. The sentence should say oil earns most of its export money, not most of its money.",
+        "field": "keyPoints[0].content",
+        "text": "Most people in the north are Muslim and most in the south are Christian.",
+        "correction": "This oversimplifies. The south-east is mainly Christian. The south-west (Yoruba area) is religiously mixed, with a very large Muslim population that is roughly comparable in size to its Christian population. A safer statement is: the north is mainly Muslim, the south-east mainly Christian, and the south-west mixed. The same claim appears in keyPoints[0].writeBullets[4] and revisionCardBullets[2] ('Muslim north, Christian south').",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [],
-    "checkpoint_mismatch": [],
+    "checkpoint_mismatch": [
+      {
+        "checkpoint": "4: \"How has Nigeria's quality of life changed as its economy has developed?\" correct answer \"Life expectancy has risen, but the north has gained less than the south\"",
+        "key_point": "keyPoints[4].content: \"But the gains are <strong>uneven</strong>. The south, with the oil and Lagos, is richer. The north has more poverty, fewer children in school and has suffered attacks by the armed group <strong>Boko Haram</strong>.\"",
+        "why": "The key point describes differences in levels between north and south: the south is richer and the north has more poverty and fewer children in school. It gives no figures or statement showing that the north's quality of life has improved less over time. The correct option and correctFeedback ('the poorer north has gained less than the south') make a claim about change that the key point does not directly support."
+      }
+    ],
     "not_checked": [
-      "Diagram 'g5-nigeria-context' (keyPoints[0].diagram): cannot see the image.",
-      "Diagram 'g5-nigeria-oil-balance' (keyPoints[2].diagram): cannot see the image.",
-      "The figures in sources[] are attributed to World Bank indicators: population about 238 million, GDP about $291 billion, GNI per head $1,360, fuel about 86% of goods exports, life expectancy 47 to 55, infant mortality 95 to 70. I could not open the URLs to check the exact values. The infant mortality figure for 2000 (95 per 1,000) looks lower than other estimates I know of (around 110), so it is worth confirming against the source."
+      "Diagram 'g5-nigeria-context' (keyPoints[0] and keyPoints[4].pictures). The image could not be seen; only the caption and label text were checked.",
+      "Diagram 'g5-nigeria-oil-balance' (keyPoints[2] and keyPoints[2].pictures). The image could not be seen; only the caption and label text were checked.",
+      "The exact values of the World Bank figures cited in 'sources' could not be checked against the live data. These are population about 238 million, GDP about $291 billion, GNI per head $1,360, fuel about 86% of goods exports, life expectancy 47 (2000) to 55 (2024), infant mortality 95 to 70 per 1,000, and sector shares 58% / 16% / 23% with farming about 34% of jobs.",
+      "The Shell Nigeria home page claim (sale of SPDC to Renaissance Africa Energy Company completed 13 March 2025; Bonga deep-water production continues) could not be checked against the cited page."
     ]
   }
 }

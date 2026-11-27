@@ -1,22 +1,22 @@
 {
   "lesson": "g5-development",
   "source_file": "lessons/geography/g5-development.json",
-  "lesson_md5": "c20f78d7029ce114e5cdbcd38d362746",
+  "lesson_md5": "bdd41323e6edbf0cac95d2e9225f32ad",
   "model": "claude-opus-5-5",
-  "date": "2026-11-19T12:31:36.024Z",
+  "date": "2026-11-27T14:29:23.349Z",
   "specRefs_sent": [
     "3.2.2.1",
     "3.2.2.2"
   ],
-  "blocking_only": true,
+  "blocking_only": false,
   "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 9939,
-    "output_tokens": 3667
+    "input_tokens": 11333,
+    "output_tokens": 5599
   },
-  "cost_usd": 0.113096,
+  "cost_usd": 0.157312,
   "status": "OK",
   "result": {
     "lesson": "g5-development",
@@ -24,54 +24,50 @@
       {
         "specRef": "3.2.2.2",
         "spec_text": "An example of how the growth of tourism in an LIC or NEE helps to reduce the development gap.",
-        "why": "The lesson's example places Kenya in a different category: \"In Kenya, a lower-middle-income country, about 2 million tourists came in 2019\" (keyPoints[4].content). It never says Kenya is an LIC or an NEE, so a student cannot tell that the example meets the spec requirement. The lesson also gives figures for a single year only (2019). It does not show the growth of tourism over time, which is what the spec asks for."
+        "why": "The tourism example is Kenya, but the lesson never identifies Kenya as an LIC or an NEE. keyPoints[1].content calls it \"lower-middle income\" and keyPoints[4].content calls it \"a poorer country that is growing fast\". Kenya is not on the lesson's own NEE list (\"China, India, Brazil and Nigeria\"). A student cannot see that the example meets the specification's LIC/NEE requirement."
       }
     ],
     "above_gcse": [
       {
-        "field": "examTips[3]",
-        "text": "Learn the difference: the range is highest minus lowest; the interquartile range is the upper quartile minus the lower quartile.",
-        "why": "Neither 3.2.2.1 nor 3.2.2.2 requires this statistical content, and the lesson teaches nothing that links to it. It could confuse a student revising development."
+        "field": "keyPoints[1].content",
+        "text": "In between are middle income countries, split into upper-middle and lower-middle. Kenya is lower-middle income",
+        "why": "The specification works with LIC/NEE categories, and the lesson also uses HIC. Adding the World Bank upper-middle and lower-middle bands, and placing the case-study country in one of them, could confuse the student about which category to use in the exam."
+      },
+      {
+        "field": "keyPoints[5].content",
+        "text": "<strong>Extreme poverty</strong> means living on less than $3 a day (in 2021 prices).",
+        "why": "Neither the poverty-line definition nor the idea of fixed-year prices is in the specification sections. \"In 2021 prices\" refers to a purchasing-power-parity adjustment that is not explained and could confuse a 15-year-old."
+      },
+      {
+        "field": "keyPoints[5].content",
+        "text": "The United Nations has set <strong>Sustainable Development Goals</strong>. These are targets for every country to end poverty and hunger and improve health and schooling.",
+        "why": "The Sustainable Development Goals are not required by 3.2.2.1 or 3.2.2.2. This content, and the whole key point \"Is the development gap closing?\", goes beyond the specification text supplied."
       }
     ],
     "factual_errors": [
       {
-        "field": "keyPoints[0].content",
-        "text": "A <strong>rate</strong> is always \"per\" something: births, deaths or infant deaths for every 1,000 people (or 1,000 births) each year.",
-        "correction": "Not every development rate is per 1,000 per year. The literacy rate, which the lesson itself lists and defines as \"the share of adults who can read and write\", is a percentage. Birth, death and infant mortality rates are per 1,000 per year; other rates are not.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[0].writeBullets[3]",
-        "text": "A rate is per 1,000 people (or births) per year",
-        "correction": "This holds only for birth, death and infant mortality rates. The literacy rate is a percentage of adults.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[4].content",
-        "text": "Under one international scheme, 36 countries have had debts cancelled.",
-        "correction": "Somalia reached the HIPC completion point in December 2023. That makes 37 of the 39 eligible countries receiving full HIPC relief, not 36. In addition, HIPC relief reduces debt; it does not necessarily cancel all of it.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[4].writeBullets[4]",
-        "text": "Debt relief: cancelled debt frees money for health and schools; 36 countries helped",
-        "correction": "37 of the 39 eligible countries had received full HIPC relief after Somalia reached completion point in December 2023.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "commonMistakes[3]",
-        "text": "Aid is money, goods or skills given, not lent or earned.",
-        "correction": "Aid can include loans. Official development assistance covers concessional (low-interest) loans as well as grants, so aid is not only gifts.",
+        "field": "keyPoints[3].keyTerms[1].def",
+        "text": "Raw materials sold before anything is made from them, such as crops, oil or metal ores. They earn far less than manufactured goods.",
+        "correction": "As a blanket statement this is misleading, especially with oil as the example, because oil exports earn some countries very large sums. The accurate point is that primary products usually have low value added and unstable prices, so countries that rely on them tend to earn less and less reliably than countries exporting manufactured goods.",
         "basis": "own knowledge"
       }
     ],
-    "wrong_terms": [],
+    "wrong_terms": [
+      {
+        "field": "keyPoints[1].content",
+        "text": "Kenya is lower-middle income",
+        "spec_term": "LIC or NEE"
+      }
+    ],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "Diagram 'g5-brandt-line' (keyPoints[1].diagram) could not be viewed.",
-      "Diagram 'g5-development-gap-causes' (keyPoints[3].diagram) could not be viewed.",
-      "Sourced figures dated 2025–2026 could not be verified against the live World Bank, IMF or Grameen Bank sources: GNI per head 2025 (USA $88,810, UK $54,550, Nigeria $1,360, Niger $750), the Grameen Bank figures for August 2026, and extreme poverty of 10% in 2024 at $3.00/day."
+      "Diagram \"g5-brandt-line\" (keyPoints[1].diagram and keyPoints[1].pictures) could not be seen. Its labels (\"NORTH — richer\", \"SOUTH — poorer\", \"Japan\", \"Australia\", \"NZ\") suggest the usual layout, but where the line is drawn could not be checked.",
+      "Diagram \"g5-development-gap-causes\" (keyPoints[3].diagram) could not be seen.",
+      "The 2025 GNI per head figures in keyPoints[0].content and keyPoints[1].content (\"$88,810 in the USA, $54,550 in the UK, $1,360 in Nigeria and $750 in Niger\", \"$2,200 in 2025\") are dated later than data available to me. They are plausible in scale but could not be verified.",
+      "The 2024 life expectancy and infant mortality figures (\"about 84 years in Japan and 55 in Nigeria\"; intro: \"about 2 babies in every 1,000\" in Japan, \"about 70 in every 1,000\" in Nigeria) are plausible but could not be checked against the cited 2024 data.",
+      "The extreme poverty figures in keyPoints[5].content (\"from about 43% in 1990 to about 10% in 2024\") depend on the World Bank's revised $3.00 line. They are plausible but not verified.",
+      "The HIPC statement in keyPoints[4].content (\"most of the 39 poor countries that qualified have had much of their debt cancelled\") is consistent with my knowledge, but the source note's count of 36 could not be checked. My own knowledge suggests 37 had reached completion point after Somalia in 2023.",
+      "The Grameen Bank and Kenya tourism figures in keyPoints[4].content (\"about 1.2 million ... in 2015 and about 2 million in 2019\", \"$1.76 billion, about 15%\") are plausible but were not verified against the cited sources."
     ]
   }
 }

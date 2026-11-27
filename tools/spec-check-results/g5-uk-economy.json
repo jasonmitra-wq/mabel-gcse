@@ -1,21 +1,21 @@
 {
   "lesson": "g5-uk-economy",
   "source_file": "lessons/geography/g5-uk-economy.json",
-  "lesson_md5": "b2600d9d93c4ad9bc21ce4b6448949ca",
+  "lesson_md5": "baa2e7b33e184b57562b7dcee5e6c856",
   "model": "claude-opus-5-5",
-  "date": "2026-11-19T12:32:37.551Z",
+  "date": "2026-11-27T14:30:56.263Z",
   "specRefs_sent": [
     "3.2.2.4"
   ],
-  "blocking_only": true,
+  "blocking_only": false,
   "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 8389,
-    "output_tokens": 2800
+    "input_tokens": 9413,
+    "output_tokens": 3010
   },
-  "cost_usd": 0.089556,
+  "cost_usd": 0.097852,
   "status": "OK",
   "result": {
     "lesson": "g5-uk-economy",
@@ -23,19 +23,21 @@
     "above_gcse": [],
     "factual_errors": [
       {
-        "field": "keyPoints[4].content",
-        "text": "on average, people in London and the South East earn more, live longer and are more likely to have a job than people in much of the north, Wales and Northern Ireland",
-        "correction": "London and the South East do have higher average earnings and longer life expectancy. They do not both have better job chances. The South East has a low unemployment rate. London's unemployment rate is among the highest of any UK region, and its employment rate is not above all northern regions. Northern Ireland usually has one of the lowest unemployment rates in the UK. The divide in jobs is better described as wages, types of job and economic inactivity, not as London people being more likely to have a job.",
+        "field": "keyPoints[0].writeBullets[0]",
+        "text": "Deindustrialisation: decline of coal, steel, shipbuilding, textiles; resources ran out, machines replaced workers",
+        "correction": "UK coal did not run out. Large reserves were left unmined because deep mining became uneconomic compared with cheaper imported coal, and pits were closed. Some iron ore deposits were worked out or became too low-grade to use. The bullet should say that resources became too costly to extract or were cheaper to import, not that they ran out. keyPoints[0].content (\"Coal and iron ore ran out or became costly to dig\") is closer to correct, but still suggests coal ran out.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "Diagram 'g5-uk-sector-shift' (keyPoints[1].diagram): image not visible, so its content was not checked.",
-      "Diagram 'g5-uk-north-south' (keyPoints[4].diagram): image not visible, so its content was not checked.",
-      "keyPoints[1].content: \"In 2025 services made up about 73% of the UK's economy, manufacturing about 8% and farming, forestry and fishing under 1%. The UK's GNI per head was $54,550.\" These 2025 World Bank values could not be checked against the cited source. The proportions are plausible for recent years.",
-      "keyPoints[2].content: \"It aims to run on renewable energy, such as solar and wind power, and to cut its waste. Part of the site has been made into a wildlife reserve with the Derbyshire Wildlife Trust.\" The current wording of Toyota's cited web pages could not be checked."
+      "Diagram \"g5-uk-sector-shift\" (keyPoints[1].diagram) could not be seen.",
+      "Diagram \"g5-uk-north-south\" (keyPoints[4].diagram) could not be seen.",
+      "sources[0] and keyPoints[1].content: \"The UK's GNI per head was $54,550\" (2025, World Bank). I could not check this exact value. It is plausible but goes beyond what I can confirm.",
+      "sources[1] and keyPoints[1].content: \"In 2025 services made up about 73% of the UK's economy, manufacturing about 8% and farming, forestry and fishing under 1%\". These match recent World Bank shares in broad terms, but I could not check the exact 2025 values.",
+      "sources[2] and keyPoints[2].content: the Toyota Burnaston details (\"aims to run on renewable energy, such as solar and wind power\"; \"wildlife reserve with the Derbyshire Wildlife Trust\"). These depend on the Toyota UK web pages as opened on 2026-11-19, which I could not access.",
+      "keyPoints[4].content: \"HS2, a high-speed line, is being built from London to Birmingham; its planned northern sections were cancelled\" and \"Heathrow has plans for a third runway\". These are correct as far as I know, but the project status may have changed after my knowledge."
     ]
   }
 }

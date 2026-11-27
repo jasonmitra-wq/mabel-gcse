@@ -551,6 +551,26 @@ tools/check-transcript.js, proven by tools/check-polish.js (each fails with the 
   (g5-development keys [0, 3] want [0..5]; g5-nigeria [2, 4] want [0..4]; g5-uk-economy [1, 3] want [0..5]). Not changed, per
   the brief. It fires on 149 of the 197 files scanned, of which 20 are *.script.json files the scanner reads as lessons, so 129 of
   177 lessons. Planning chat to decide: is the rule wrong (a checkpoint after every key point) or the lessons (fewer checkpoints by design)?
+  **RESOLVED 2026-11-27 (Jason):** the rule stands: every key point has a checkpoint, and lessons are fixed to meet it. G5's 11 missing
+  checkpoints were added (brief docs/briefs/2026-11-27-g5-checkpoints-and-next.md); the ERROR count fell 149 → 146 and G5 has none.
 - Open (tool): the scanner reads lessons/<subject>/*.script.json as switched-off lessons (empty content, keys []), inflating its counts.
 - Open: check-transcript F3/F4 fire on live answers to her questions (p2-power-energy "charge flow", "energy transferred";
   p3-pressure "work out" read as the term "work"). The answers are correct and on subject; the check does not separate live answers.
+
+## G5 checkpoints (2026-11-27, brief docs/briefs/2026-11-27-g5-checkpoints-and-next.md)
+
+- Open, blocks S5 for G5: spec-check 2026-11-27 gives checkpoint_mismatch on the existing g5-nigeria checkpoint 4. Its right answer and
+  feedback say "the north has gained less than the south", a claim about change; keyPoints[4] only says the south is richer and the
+  north has more poverty (levels, not change). Not changed: the brief keeps the existing six checkpoints as they are. A possible fix is
+  "Life expectancy has risen, but the north is still poorer than the south" (with matching feedback). Needs Jason's go-ahead.
+- Open (not triaged, outside this brief): the same spec-check run's other findings on existing G5 content. factual_errors 5:
+  g5-development keyTerm "Primary products" ("They earn far less than manufactured goods", misleading with oil as the example);
+  g5-nigeria keyPoints[1] (the 16% "industry" share includes oil and gas, so it does not map onto the lesson's secondary sector),
+  keyPoints[2] (Unilever said in 2023 it was leaving soap in Nigeria), keyPoints[0] ("Christian south": the south-west is mixed);
+  g5-uk-economy keyPoints[0] and writeBullets[0] (UK coal did not run out; pits became uneconomic). All rest on the model's own
+  knowledge. Also missing_spec_content 1 (Kenya not named as an LIC or NEE for 3.2.2.2), above_gcse 3, wrong_terms 1 (g5-development).
+  Full text: tools/spec-check-results/g5-*.json.
+- Tool: tools/check-rewrite.js fails any lesson whose checkpoints gain a key ("checkpoints: keys changed"), so a brief that adds
+  checkpoints can never get "0 failed" from it. This time the 11 new keys were removed and the files were byte-identical to 30d9a54.
+  Writing missing checkpoints in Physics P4–P8 (Next list) will hit this again; the planning chat may want an "added checkpoint keys
+  allowed" option.

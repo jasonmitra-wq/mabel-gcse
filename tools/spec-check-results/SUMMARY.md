@@ -245,3 +245,4 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-11-27 | g5-development | OK | missing_spec_content 1, above_gcse 3, factual_errors 1, wrong_terms 1, checkpoint_mismatch 0, not_checked 7 | 11333/5599 | $0.1573
 - 2026-11-27 | g5-nigeria | OK | missing_spec_content 0, above_gcse 0, factual_errors 3, wrong_terms 0, checkpoint_mismatch 1, not_checked 4 | 10853/4872 | $0.1409
 - 2026-11-27 | g5-uk-economy | OK | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 6 | 9413/3010 | $0.0979
+- 2026-11-27 | g5-nigeria | OK | missing_spec_content 1, above_gcse 0, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 5 | 10859/4162 | $0.1267

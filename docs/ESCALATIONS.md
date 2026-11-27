@@ -563,6 +563,8 @@ tools/check-transcript.js, proven by tools/check-polish.js (each fails with the 
   feedback say "the north has gained less than the south", a claim about change; keyPoints[4] only says the south is richer and the
   north has more poverty (levels, not change). Not changed: the brief keeps the existing six checkpoints as they are. A possible fix is
   "Life expectancy has risen, but the north is still poorer than the south" (with matching feedback). Needs Jason's go-ahead.
+  **RESOLVED 2026-11-27 (Jason: "Yes, reword it"):** reworded to "Life expectancy has risen, but the north is poorer than the south"
+  (feedback matched; "still" dropped on the lesson-auditor's finding). spec-check g5-nigeria re-run: checkpoint_mismatch 0.
 - Open (not triaged, outside this brief): the same spec-check run's other findings on existing G5 content. factual_errors 5:
   g5-development keyTerm "Primary products" ("They earn far less than manufactured goods", misleading with oil as the example);
   g5-nigeria keyPoints[1] (the 16% "industry" share includes oil and gas, so it does not map onto the lesson's secondary sector),
@@ -574,3 +576,8 @@ tools/check-transcript.js, proven by tools/check-polish.js (each fails with the 
   checkpoints can never get "0 failed" from it. This time the 11 new keys were removed and the files were byte-identical to 30d9a54.
   Writing missing checkpoints in Physics P4–P8 (Next list) will hit this again; the planning chat may want an "added checkpoint keys
   allowed" option.
+- Open (lesson-auditor tools/audit-runs/5aa74c9-1.md, older text, not changed): g5-nigeria keyPoints[4].memTip "the south gains
+  most" and script step 5.8 idk line "with the north gaining less than the south" keep the claim about change that checkpoint 4
+  dropped; keyPoints[4].content gives "$1,360" with no year (writeBullets and sources say 2025); picture label and script step 5.6
+  say "fewer girls finish school" where the content says "fewer children in school". A script change needs the walk and the
+  script audit again.

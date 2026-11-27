@@ -1,9 +1,9 @@
 {
   "lesson": "g5-nigeria",
   "source_file": "lessons/geography/g5-nigeria.json",
-  "lesson_md5": "ed083f5f2206c4ce4377ccbdedeafb6f",
+  "lesson_md5": "4a6029b89a8466f6593ef3c323a8fd93",
   "model": "claude-opus-5-5",
-  "date": "2026-11-27T14:30:13.711Z",
+  "date": "2026-11-27T15:09:11.059Z",
   "specRefs_sent": [
     "3.2.2.3"
   ],
@@ -12,48 +12,43 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 10853,
-    "output_tokens": 4872
+    "input_tokens": 10859,
+    "output_tokens": 4162
   },
-  "cost_usd": 0.140852,
+  "cost_usd": 0.126676,
   "status": "OK",
   "result": {
     "lesson": "g5-nigeria",
-    "missing_spec_content": [],
+    "missing_spec_content": [
+      {
+        "specRef": "3.2.2.3 Key idea",
+        "spec_text": "Some LICs and NEEs are experiencing rapid economic development which leads to significant social, environmental and cultural change.",
+        "why": "Social and environmental change are covered. Cultural change caused by development is not taught as an effect of development. Nollywood and music appear only as industries and as global importance. Ethnic and religious groups appear only as background context, not as things that are changing."
+      }
+    ],
     "above_gcse": [],
     "factual_errors": [
       {
         "field": "keyPoints[1].content",
-        "text": "The <strong>primary sector</strong> takes raw materials from the land or sea: farming, fishing, oil. The <strong>secondary sector</strong> makes things in factories: <strong>manufacturing</strong>. ... In 2025 services made up about 58% of Nigeria's economy, industry about 16% and farming about 23%.",
-        "correction": "The lesson's source is World Bank NV.IND.TOTL.ZS, and that 'industry' share includes mining and quarrying (oil and gas extraction), construction and utilities, not only manufacturing. So it does not match the lesson's sector definitions, where oil is primary and the secondary sector is manufacturing. The 'farming about 23%' figure also includes forestry and fishing. Presented this way, a student could read 16% as the size of the secondary (manufacturing) sector and conclude that oil sits outside it. The lesson should say that the 16% 'industry' figure includes oil and gas, or should not map it onto the primary/secondary/tertiary split.",
+        "text": "In 2025 services made up about 58% of Nigeria's economy, industry about 16% and farming about 23%.",
+        "correction": "In the World Bank data used, 'industry' (NV.IND.TOTL.ZS) includes oil and gas extraction, construction and utilities as well as manufacturing. The same key point classes oil as primary ('The primary sector takes raw materials from the land or sea: farming, fishing, oil'). Students will therefore wrongly read 16% as the secondary or manufacturing share and 23% as the whole primary sector. In this classification, farming 23% is only part of the primary sector, and oil sits inside the 16%.",
         "basis": "own knowledge"
       },
       {
         "field": "keyPoints[2].content",
         "text": "<strong>Unilever</strong> makes soap, food and drinks in factories in Nigeria.",
-        "correction": "In 2023 Unilever Nigeria announced that it was leaving the home care and skin cleansing (soap) categories in Nigeria and would focus on food and personal care. It is therefore out of date to say that Unilever makes soap in Nigeria. The same claim appears in keyPoints[2].writeBullets[1]: 'Unilever: soap and food factories'.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "Most people in the north are Muslim and most in the south are Christian.",
-        "correction": "This oversimplifies. The south-east is mainly Christian. The south-west (Yoruba area) is religiously mixed, with a very large Muslim population that is roughly comparable in size to its Christian population. A safer statement is: the north is mainly Muslim, the south-east mainly Christian, and the south-west mixed. The same claim appears in keyPoints[0].writeBullets[4] and revisionCardBullets[2] ('Muslim north, Christian south').",
+        "correction": "In 2023 Unilever Nigeria announced it was leaving the home care and skin cleansing categories (which include soaps and detergents) to focus on personal care, beauty and food. The claim that it makes soap in Nigeria is out of date. The 'drinks' claim is also doubtful, as Unilever sold its tea business in 2022. The same claim appears in keyPoints[2].writeBullets: 'Unilever: soap and food factories'.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [],
-    "checkpoint_mismatch": [
-      {
-        "checkpoint": "4: \"How has Nigeria's quality of life changed as its economy has developed?\" correct answer \"Life expectancy has risen, but the north has gained less than the south\"",
-        "key_point": "keyPoints[4].content: \"But the gains are <strong>uneven</strong>. The south, with the oil and Lagos, is richer. The north has more poverty, fewer children in school and has suffered attacks by the armed group <strong>Boko Haram</strong>.\"",
-        "why": "The key point describes differences in levels between north and south: the south is richer and the north has more poverty and fewer children in school. It gives no figures or statement showing that the north's quality of life has improved less over time. The correct option and correctFeedback ('the poorer north has gained less than the south') make a claim about change that the key point does not directly support."
-      }
-    ],
+    "checkpoint_mismatch": [],
     "not_checked": [
-      "Diagram 'g5-nigeria-context' (keyPoints[0] and keyPoints[4].pictures). The image could not be seen; only the caption and label text were checked.",
-      "Diagram 'g5-nigeria-oil-balance' (keyPoints[2] and keyPoints[2].pictures). The image could not be seen; only the caption and label text were checked.",
-      "The exact values of the World Bank figures cited in 'sources' could not be checked against the live data. These are population about 238 million, GDP about $291 billion, GNI per head $1,360, fuel about 86% of goods exports, life expectancy 47 (2000) to 55 (2024), infant mortality 95 to 70 per 1,000, and sector shares 58% / 16% / 23% with farming about 34% of jobs.",
-      "The Shell Nigeria home page claim (sale of SPDC to Renaissance Africa Energy Company completed 13 March 2025; Bonga deep-water production continues) could not be checked against the cited page."
+      "Diagram 'g5-nigeria-context' (keyPoints[0].diagram and keyPoints[4].pictures): the image itself cannot be seen. Only its labels and captions were checked.",
+      "Diagram 'g5-nigeria-oil-balance' (keyPoints[2].diagram and pictures): the image itself cannot be seen. Only its labels were checked.",
+      "Exact values of the sourced World Bank figures dated 2025 or 2024 could not be confirmed: population about 238 million, GDP about $291 billion, GNI per head $1,360, fuel about 86% of goods exports, sector shares 58/16/23% and farming about 34% of jobs. The 2025 GDP and sector shares in particular depend on Nigeria's 2025 GDP rebasing.",
+      "Life expectancy (47 in 2000, 55 in 2024) and infant mortality (95 in 2000, 70 in 2024): these are plausible but the exact values could not be checked. Some published series give a higher infant mortality figure for 2000.",
+      "Shell figure: completion date of the SPDC sale to Renaissance Africa Energy Company (13 March 2025) and current Bonga deep-water operations. Taken from the cited source and consistent with my knowledge, but not checked against the live page."
     ]
   }
 }

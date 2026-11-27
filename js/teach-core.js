@@ -17,6 +17,11 @@
 // false keeps the old Haiku request exactly. js/app.js (through teach.js),
 // tools/teach-sim.js and tools/site-test.js all read the model from here.
 const TUTOR_SONNET = true;
+// Flag TAP_ORDER_FIX (brief 2026-11-27, option-order shuffle), on: the tap-question shuffle multiplies with
+// Math.imul (exact 32-bit) and reads the generator's high bits (h >>> 16). The old float multiply lost the low bits
+// and h % (k + 1) read only those, so with 4 options the first stored option was shown last 4,993 times in 5,000.
+// false keeps every order exactly as at d7ef746 (tools/check-tap-order.js).
+const TAP_ORDER_FIX = true;
 const TUTOR_MODEL_SONNET = 'claude-sonnet-5-5';
 const TUTOR_MODEL_HAIKU  = 'claude-haiku-4-5-20251001';
 // The model fields of a tutor request. Sonnet 5.5 thinks by default, and its
@@ -2743,7 +2748,7 @@ function create(env) {
     // Options in a fixed, shuffled order (the lesson file tends to put the answer first).
     let h = 0; for (const ch of String(q.question)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
     const idx = q.options.map((o, k) => k);
-    for (let k = idx.length - 1; k > 0; k--) { h = (h * 1103515245 + 12345) >>> 0; const r = h % (k + 1); [idx[k], idx[r]] = [idx[r], idx[k]]; }
+    for (let k = idx.length - 1; k > 0; k--) { h = TAP_ORDER_FIX ? (Math.imul(h, 1103515245) + 12345) >>> 0 : (h * 1103515245 + 12345) >>> 0; const r = (TAP_ORDER_FIX ? h >>> 16 : h) % (k + 1); [idx[k], idx[r]] = [idx[r], idx[k]]; }
     return idx;
   }
   function _pickOption(text, opts) {

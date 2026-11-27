@@ -13,6 +13,11 @@
    ============================================================ */
 const WidgetView = (() => {
   const M = WidgetModels;
+  // Flag TAP_ORDER_FIX (brief 2026-11-27, option-order shuffle), on: the tap-question shuffle multiplies with
+  // Math.imul (exact 32-bit) and reads the generator's high bits (h >>> 16). The old float multiply lost the low bits
+  // and h % (k + 1) read only those, so with 4 options the first stored option was shown last 4,993 times in 5,000.
+  // false keeps every order exactly as at d7ef746 (tools/check-tap-order.js).
+  const TAP_ORDER_FIX = true;
   const css = `
     .wdg { background:var(--s2); border:1px solid var(--border2); border-radius:12px; padding:0.8rem; margin:0.5rem 0; max-width:100%; }
     .wdg svg { display:block; width:100%; height:auto; touch-action:none; }
@@ -271,7 +276,7 @@ const WidgetView = (() => {
   function _order(q) {
     let h = 0; for (const ch of String(q.question)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
     const idx = q.options.map((o, k) => k);
-    for (let k = idx.length - 1; k > 0; k--) { h = (h * 1103515245 + 12345) >>> 0; const r = h % (k + 1); [idx[k], idx[r]] = [idx[r], idx[k]]; }
+    for (let k = idx.length - 1; k > 0; k--) { h = TAP_ORDER_FIX ? (Math.imul(h, 1103515245) + 12345) >>> 0 : (h * 1103515245 + 12345) >>> 0; const r = (TAP_ORDER_FIX ? h >>> 16 : h) % (k + 1); [idx[k], idx[r]] = [idx[r], idx[k]]; }
     return idx;
   }
   function withPredicts(el, id, options) {

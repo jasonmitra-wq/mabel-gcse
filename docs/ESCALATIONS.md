@@ -597,6 +597,18 @@ tools/check-transcript.js, proven by tools/check-polish.js (each fails with the 
   never first. The script reviewer noticed it in p4-nuclear-fission ("the right answer is the middle button"). The fix is the
   same as CP_SHUFFLE (take r from h >>> 16, behind a flag). P4's four scripts work round it: each right option is stored where
   order() shows it in a rotating position (P4 now 25/23/21 over the four scripts). Needs Jason's go-ahead for the shared fix.
+  **RESOLVED 2026-11-27 (engine option order; Jason "yes"; brief docs/briefs/2026-11-27-tap-order-fix.md):** flag `TAP_ORDER_FIX`
+  (on) in js/teach-script.js, js/teach-core.js, js/widgets/widgets.js and js/pilot/pilot.js: the generator multiplies with
+  Math.imul and r is taken from h >>> 16. tools/check-tap-order.js PASS. Right answer shown at position 1/2/3 over the 374
+  three-option scripted questions: flag off 25/219/130, flag on 131/117/126; teach-core (35 four-option) 0/0/0/35 → 11/8/11/5;
+  widgets (15) 0/3/0/12 → 6/0/6/3; flag off identical to d7ef746 everywhere. The P4 scripts were left as stored (24/22/23);
+  shown now 21/25/23.
+- Open (site tests after TAP_ORDER_FIX, 2026-11-27; all 24 PASS; not from option order, which changes only the button order):
+  check-transcript findings in script text or the live answer to her question. p2-series-parallel T13 F3 "total resistance"
+  before it is explained; p1-efficiency T43 F7 (after "don't know" to "Why does efficiency matter?" a new question) and T46 F15
+  (the answer to her question, "In other words: …"); p1-heating T3 F3 "temperature"; p3-pressure T13 F3/F4 ("you work out",
+  read as the term "work") and T18 F6 (the answer to "why does it stay round" opens by repeating it); p4-nuclear-model T12 F6
+  (own-words template, item above). Runs: tools/site-test-runs/2026-11-27/.
 - Open, shared teach-mode code: own-words feedback is built by js/teach-script.js as "Yes: your line makes every point. You have
   this: … You have this: …" / "Still needed: …". Every P4 review flagged it as stilted (round 2: 7 findings). Not a script change.
   The p4-nuclear-model site test (2026-11-27) shows the same template tripping check-transcript F6 (echo): she wrote "ball of

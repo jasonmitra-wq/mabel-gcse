@@ -13,6 +13,11 @@
    ============================================================ */
 const Pilot = (() => {
   const T = PilotTests;
+  // Flag TAP_ORDER_FIX (brief 2026-11-27, option-order shuffle), on: the tap-question shuffle multiplies with
+  // Math.imul (exact 32-bit) and reads the generator's high bits (h >>> 16). The old float multiply lost the low bits
+  // and h % (k + 1) read only those, so with 4 options the first stored option was shown last 4,993 times in 5,000.
+  // false keeps every order exactly as at d7ef746 (tools/check-tap-order.js).
+  const TAP_ORDER_FIX = true;
   const LESSON_IDS = [T.LESSONS.cv, T.LESSONS.comp];
   const POST = { [T.LESSONS.cv]: 'post-cv', [T.LESSONS.comp]: 'post-comp' };
   const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -220,7 +225,7 @@ const Pilot = (() => {
   function _order(text, n) {
     let h = 0; for (const ch of String(text)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
     const idx = [...Array(n).keys()];
-    for (let k = n - 1; k > 0; k--) { h = (h * 1103515245 + 12345) >>> 0; const r = h % (k + 1); [idx[k], idx[r]] = [idx[r], idx[k]]; }
+    for (let k = n - 1; k > 0; k--) { h = TAP_ORDER_FIX ? (Math.imul(h, 1103515245) + 12345) >>> 0 : (h * 1103515245 + 12345) >>> 0; const r = (TAP_ORDER_FIX ? h >>> 16 : h) % (k + 1); [idx[k], idx[r]] = [idx[r], idx[k]]; }
     return idx;
   }
   // The right answer of an item, in words.

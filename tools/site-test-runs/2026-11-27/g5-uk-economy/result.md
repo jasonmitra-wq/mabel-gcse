@@ -1,0 +1,262 @@
+# Site test: g5-uk-economy (lesson, 2026-11-27)
+
+**PASS** · cost $0.0512 (33 tool calls, 33 calls from the site; tutor claude-sonnet-5-5 $0.0220)
+
+## Judge
+
+```json
+{
+  "broken": [],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": []
+}
+```
+
+## Transcript checks (tools/check-transcript.js)
+
+none
+
+## Transcript
+
+    Lesson g5-uk-economy (Geography › The Changing Economic World › The UK economy — change, north-south divide, development).
+    [screenshot 01-home-laptop.png] home
+    [screenshot 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-geography-laptop.png] topics-geography
+    [screenshot 04-lessons-g5-laptop.png] lessons-G5
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! This lesson is about how the UK's economy has changed, what the new economy looks like, and how the change affects the environment, the countryside and different regions.
+    [screenshot 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (tapped "Next")
+    T1: First, two quick questions from the last lesson. An economy has sectors: primary takes raw materials, secondary makes things, tertiary provides services. Which sector is a car factory in?
+    [side picture after T1: none; newest in the chat: none]
+    S2 (ask): whats raw materials
+    T2: Now, the question again: First, two quick questions from the last lesson. An economy has sectors: primary takes raw materials, secondary makes things, tertiary provides services. Which sector is a car factory in?
+      [T2 shown first: Raw materials are natural things taken from the ground, sea or land before anything is made from them, such as coal, iron ore or crops. The primary sector is the one that collects them. The lesson names coal and iron ore as examples.]
+    S3 (try, tapped the button): secondary
+    T3: Second: a nurse works in which sector?
+    [screenshot 06-exchange-3-laptop.png] exchange-3
+      [T3 shown first: Yes: secondary, or manufacturing.]
+    S4 (ask): whats a service
+    T4: Have a go at the question: Second: a nurse works in which sector?
+      [T4 shown first: A service is work that helps people instead of making a physical product, such as banking, which the lesson says the UK moved towards. The UK's economy shifted from making things, like coal, steel and ships, to providing services. The lesson doesn't give a full list of services, so more detail comes later in the course.]
+    S5 (try, tapped the button): tertiary
+    T5: Now this lesson. In the past, many people in Britain worked in coal mines, steelworks, shipyards and textile mills: heavy, dirty work. These old industries are called traditional industries.
+      [T5 shown first: Yes: a nurse provides a service, so tertiary.]
+    S6 (tapped "Next")
+    T6: The decline of these industries and of factory work, and the loss of their jobs, is called deindustrialisation. Coal and iron ore, the rock iron is made from, ran out or became costly to dig, and machines replaced many workers.
+    [screenshot 07-exchange-6-laptop.png] exchange-6
+    S7 (tapped "Next")
+    T7: The way countries have become more connected through trade, travel and communication is called globalisation.
+    S8 (tapped "Next")
+    T8: Predict: with globalisation, goods made abroad could easily be shipped to the UK. What would that do to many UK factories?
+    S9 (try): many closed
+    T9: The government's choices, its policies, mattered too. Governments stopped paying to keep open industries that cost more to run than they earned, such as coal mines, and encouraged service industries such as banking instead.
+    [screenshot 08-exchange-9-laptop.png] exchange-9
+      [T9 shown first: Yes: factories abroad paid lower wages, so they could make goods more cheaply, and many UK factories closed.]
+    S10 (tapped "Next")
+    T10: Three causes, then, changed the UK's economy: deindustrialisation, globalisation and government policies.
+    S11 (tapped "Next")
+    T11: Whole towns built around a mine or a steelworks lost their main employer. Some, in places such as South Yorkshire and South Wales, still have high unemployment.
+    S12 (tapped "Next")
+    T12: In one line: give the three causes of economic change in the UK.
+    [screenshot 09-exchange-12-laptop.png] exchange-12
+    S13 (ask): whats south yorkshire
+    T13: No worries. In one line: give the three causes of economic change in the UK.
+    S14 (try): deindustrialisation globalisation goverment
+    T14: An economy where most people work in services, not factories, mines or farms, is called a post-industrial economy. The UK is one.
+    [counter now "1/6 covered" after T14; AI calls from the site so far: 9, $0.0052]
+      [T14 shown first: Yes: your line makes every point. You have this: deindustrialisation. You have this: globalisation. You have this: government policies.]
+    S15 (tapped "Next")
+    T15: In 2025 services made up about 73% of the UK's economy, manufacturing about 8%, and farming, forestry and fishing under 1%.
+    [screenshot 10-exchange-15-laptop.png] exchange-15
+    S16 (tapped "Next")
+    T16: The UK's GNI per head, its mean income per person, was $54,550 a year in 2025.
+    S17 (tapped "Next")
+    T17: The growing parts are information technology, finance (banking and insurance, especially in London), other services such as retail (shops) and health, and research.
+    S18 (tapped "Next")
+    T18: Work based on knowledge and research is called the quaternary sector: a fourth sector, after primary, secondary and tertiary.
+    [screenshot 11-exchange-18-laptop.png] exchange-18
+    S19 (tapped "Next")
+    T19: Which job is in the quaternary sector?
+    S20 (idk): idk
+    T20: The quaternary sector is about knowledge and research. Which job is research?
+      [T20 easier step]
+    S21 (try): scientist researching medicines
+    T21: A group of research and high-tech companies built together, usually next to a university, is called a science park.
+    [screenshot 12-exchange-21-laptop.png] exchange-21
+      [T21 shown first: Yes: research is knowledge work, the quaternary sector.]
+    S22 (tapped "Next")
+    T22: Firms in a science park can share ideas with the university and hire its graduates, students who have finished their degrees. They also want main roads nearby, space to grow and green surroundings.
+    S23 (tapped "Next")
+    T23: Cambridge Science Park, beside the University of Cambridge and close to main roads, is home to many technology and medical research companies.
+    S24 (tapped "Next")
+    T24: A group of offices and small, clean workshops on the edge of a town, near main roads, is called a business park.
+    [screenshot 13-exchange-24-laptop.png] exchange-24
+    S25 (tapped "Next")
+    T25: Which site would suit a new science park best?
+    S26 (idk): idk
+    T26: Science parks want a university, good roads and space. Which site has them?
+      [T26 easier step]
+    S27 (idk): idk
+    T27: In one line: what is the UK's post-industrial economy based on?
+    [screenshot 14-exchange-27-laptop.png] exchange-27
+      [T27 shown first: No problem. A site next to a university and a motorway junction gives ideas, graduates and easy access.]
+    S28 (try): services finance tehnology
+    T28: Industry can harm the physical environment. Old mines and steelworks left scarred land, waste heaps and polluted rivers. Factories still use energy, make waste and give off pollution.
+    [counter now "2/6 covered" after T28; AI calls from the site so far: 13, $0.0060]
+      [T28 shown first: Partly there. You have this: services. Still needed: knowledge and research work (the quaternary sector).]
+    S29 (tapped "Next")
+    T29: Industry that does as little harm as possible to the environment, so it stays healthy for the future, is called environmentally sustainable.
+    S30 (tapped "Next")
+    T30: Burning coal, oil or gas, called fossil fuels, for power gives off carbon dioxide, a gas that warms the climate.
+    [screenshot 15-exchange-30-laptop.png] exchange-30
+    S31 (tapped "Next")
+    T31: Energy from sources that do not run out, such as the Sun and the wind, is called renewable energy. Making electricity from the Sun or wind gives off no carbon dioxide.
+    S32 (tapped "Next")
+    T32: Toyota's car factory at Burnaston, near Derby, is one example of more sustainable industry. It aims to run on solar and wind power and to cut its waste.
+    S33 (tapped "Next")
+    T33: Part of the Burnaston site has been made into a wildlife reserve, together with the Derbyshire Wildlife Trust.
+    [screenshot 16-exchange-33-laptop.png] exchange-33
+    S34 (tapped "Next")
+    T34: Why does running on solar and wind power make the Burnaston factory more sustainable?
+    S35 (idk): idk
+    T35: Solar and wind replace burning fuel. Does that mean more or less carbon dioxide?
+      [T35 easier step]
+    S36 (try, tapped the button): it burns less fossil fuel, so it gives off less carbon dioxide
+    T36: No factory is completely green. Building it, and bringing in materials and workers, still uses energy and causes pollution.
+    [screenshot 17-exchange-36-laptop.png] exchange-36
+      [T36 shown first: Yes: less fossil fuel burned means less carbon dioxide.]
+    S37 (tapped "Next")
+    T37: In one line: give one way modern industry can be more environmentally sustainable, and say how it helps.
+    S38 (try): use renewabel energy less polution
+    T38: Rural means in the countryside. The rural landscape is changing in two different ways.
+    [counter now "3/6 covered" after T38; AI calls from the site so far: 15, $0.0065]
+      [T38 shown first: Yes: your line makes every point. You have this: a way, such as renewable energy, less waste or a wildlife reserve. You have this: how it helps, such as less carbon dioxide or more wildlife.]
+    S39 (tapped "Next")
+    T39: In an area of population growth, such as South Cambridgeshire, near Cambridge, people move in because jobs and good transport are close.
+    [screenshot 18-exchange-39-laptop.png] exchange-39
+    S40 (tapped "Next")
+    T40: In South Cambridgeshire new housing estates are built and house prices rise, so some local young people cannot afford to buy. Traffic gets busier, but village shops and schools gain customers and pupils.
+    S41 (tapped "Next")
+    T41: People, especially the young, leaving the countryside for towns and cities is called rural depopulation. It happens in the Outer Hebrides, islands off north-west Scotland.
+    S42 (tapped "Next")
+    T42: In the Outer Hebrides, young people leave to find work and study, so the population that stays is older. Shops, schools and bus services close because too few people use them.
+    [screenshot 19-exchange-42-laptop.png] exchange-42
+    S43 (tapped "Next")
+    T43: A village has a growing number of empty homes, and its bus service has just been cut. Which kind of area is it more likely to be?
+    S44 (ask): whats rural depopulation
+    T44: Back to the question: A village has a growing number of empty homes, and its bus service has just been cut. Which kind of area is it more likely to be?
+      [T44 shown first: Rural depopulation is when the number of people living in the countryside keeps falling. The lesson doesn't use that exact term, but it describes the idea: in places like the Outer Hebrides, young people leave to find work and study, the people who stay are older, and shops, schools and bus services close.]
+    S45 (try): an area of population decline like the outer hebrides
+    T45: Tourism and wind farms bring some new jobs to the Outer Hebrides.
+    [screenshot 20-exchange-45-laptop.png] exchange-45
+      [T45 shown first: Yes: empty homes and fewer services are signs of people leaving.]
+    S46 (tapped "Next")
+    T46: In one line: give one change where the rural population is growing and one where it is falling.
+    S47 (try): south cambridgeshire growing outer hebrides falling
+    T47: The basic networks a country needs to work, such as roads, railways, ports and airports, are called infrastructure.
+    [counter now "4/6 covered" after T47; AI calls from the site so far: 21, $0.0112]
+      [T47 shown first: Here is what a good line says. Where it is growing, such as rising house prices or new estates. Where it is falling, such as schools, shops or buses closing.]
+    S48 (tapped "Next")
+    T48: Better infrastructure can help the economy: firms can move goods and people more easily, and building new projects creates jobs.
+    [screenshot 21-exchange-48-laptop.png] exchange-48
+    S49 (tapped "Next")
+    T49: Busy motorways and main roads are widened. HS2, a high-speed railway, is being built from London to Birmingham; its planned northern sections were cancelled.
+    S50 (tapped "Next")
+    T50: Liverpool2 is a new deep-water dock at the Port of Liverpool for the biggest container ships, which carry goods in large metal boxes. Bigger ships carry more goods each trip, which makes trade cheaper.
+    S51 (tapped "Next")
+    T51: Heathrow airport has plans for a third runway. Supporters say it would bring more flights and trade; opponents worry about noise, pollution and cost.
+    [screenshot 22-exchange-51-laptop.png] exchange-51
+    S52 (tapped "Next")
+    T52: Why could Liverpool2 help the economy of north-west England?
+    S53 (try): bigger ships cheaper trade
+    T53: The gap in wealth and health between the generally richer south-east of England and much of the rest of the UK is called the north–south divide. On average, people in London and the South East earn more and live longer.
+      [T53 shown first: Yes: cheaper, easier trade attracts firms and jobs to the area.]
+    S54 (tapped "Next")
+    T54: Much of the post-industrial growth came to the south, while many northern towns lost their traditional industries.
+    [screenshot 23-exchange-54-laptop.png] exchange-54
+    S55 (tapped "Next")
+    T55: Handing powers and money from the national government to a region or city, such as an elected mayor in Greater Manchester, is called devolution. It is one strategy to close the divide.
+    S56 (tapped "Next")
+    T56: An area where the government gives businesses lower taxes and simpler rules, to encourage them to set up there, is called an enterprise zone.
+    S57 (tapped "Next")
+    T57: Better transport between northern cities is another strategy to close the divide.
+    [screenshot 24-exchange-57-laptop.png] exchange-57
+    S58 (tapped "Next")
+    T58: The government wants a car parts firm to open in a poor northern town. Which strategy would help most?
+    S59 (try, tapped the button): making the town an enterprise zone
+    T59: In one line: name two strategies to reduce the north–south divide.
+      [T59 shown first: Yes: lower taxes there make the town more attractive to the firm.]
+    S60 (try): devolution and enterprise zones
+    T60: The UK is linked to the rest of the world in many ways.
+    [screenshot 25-exchange-60-laptop.png] exchange-60
+    [counter now "5/6 covered" after T60; AI calls from the site so far: 25, $0.0120]
+      [T60 shown first: Yes: your line makes every point. You have this: one strategy, such as devolution, enterprise zones or better transport. You have this: a second, different strategy.]
+    S61 (tapped "Next")
+    T61: Trade: the UK buys and sells goods and services worldwide, and London is one of the world's biggest centres for banking and finance.
+    S62 (tapped "Next")
+    T62: Culture: British music, films, television, football and the English language are known around the world.
+    S63 (tapped "Next")
+    T63: Transport: airports such as Heathrow and ports such as Felixstowe connect the UK to every continent.
+    [screenshot 26-exchange-63-laptop.png] exchange-63
+    S64 (tapped "Next")
+    T64: Electronic communication: undersea internet cables link the UK to Europe and North America.
+    S65 (tapped "Next")
+    T65: The European Union, or EU, is a group of European countries that trade freely with each other. The UK left it, so trade with the EU now has more checks and paperwork, though the EU is still a major partner.
+    S66 (tapped "Next")
+    T66: The Commonwealth is a group of countries, most of them once ruled by Britain, that work together on trade, development and shared values. The UK is a member: a political link, countries working together through a group.
+    [screenshot 27-exchange-66-laptop.png] exchange-66
+    S67 (tapped "Next")
+    T67: Which of these is a political link between the UK and other countries?
+    S68 (try, tapped the button): membership of the commonwealth
+    T68: In one line: how has leaving the EU changed the UK's trade with the EU?
+      [T68 shown first: Yes: the Commonwealth is a group of countries working together, a political and economic link.]
+    S69 (try): more checks and paperwork
+    T69: Now for a short quiz: six questions on the whole lesson. Take your time.
+    [screenshot 28-exchange-69-laptop.png] exchange-69
+      [T69 shown first: Yes: your line makes the point. You have this: trade with the EU now has more checks and paperwork.]
+    S70 (tapped "Next")
+    T70: Quiz, question 1 of 6: which of these is a traditional industry?
+    S71 (try, tapped the button): coal mining
+    T71: Quiz, question 2 of 6: what is a post-industrial economy?
+      [T71 shown first: Yes: coal mining.]
+    S72 (try, tapped the button): one where most people work in services
+    T72: Quiz, question 3 of 6: what is the north–south divide?
+    [screenshot 29-exchange-72-laptop.png] exchange-72
+      [T72 shown first: Yes: most people work in services.]
+    S73 (ask): is that the same as devolution
+    T73: Now, the question again: Quiz, question 3 of 6: what is the north–south divide?
+      [T73 shown first: The north–south divide and devolution are not the same thing. Devolution is one of the strategies for tackling the gap: it means giving more power and money to elected city mayors, such as in Greater Manchester. To answer the question, think about what the divide itself is, using the clue in its name.]
+    S74 (try, tapped the button): the gap in wealth and health between the south-east and much of the rest of the uk
+    T74: Quiz, question 4 of 6: which is an example of more sustainable industry?
+      [T74 shown first: Yes: on average the south-east is richer and people live longer.]
+    S75 (idk): idk
+    T75: Quiz, question 5 of 6: what is rural depopulation?
+    [screenshot 30-exchange-75-laptop.png] exchange-75
+      [T75 shown first: Toyota at Burnaston uses renewable energy, a sustainable example.]
+    S76 (what): wdym
+    T76: Have a go at the question: Quiz, question 5 of 6: what is rural depopulation?
+      [T76 shown first: In other words: what is happening to a country area when its number of people goes down. "Rural" means the countryside, and "depopulation" means the population getting smaller. So it is asking you to describe that change in your own words.]
+    S77 (try): people leaving countryside
+    T77: Quiz, question 6 of 6: which group is the UK still a member of?
+      [T77 shown first: Yes: people, especially the young, leaving the countryside.]
+    S78 (try, tapped the button): the commonwealth
+    T78: That's the end of the quiz: you got 5 out of 6.
+    [screenshot 31-exchange-78-laptop.png] exchange-78
+      [T78 shown first: Yes: the Commonwealth.]
+    S79 (tapped "Next")
+    T79: The lesson is finished. Tap a button to go on.
+      [T79 shown first: Summary, point 1 of 6: The UK's economy changed because of deindustrialisation, globalisation and government policies.]
+      [T79 shown first: Summary, point 2 of 6: The UK's post-industrial economy is mostly services, with growing knowledge and research work in places such as science parks.]
+      [T79 shown first: Summary, point 3 of 6: A factory such as Toyota at Burnaston can use solar and wind power, which means less carbon dioxide from burning fuel.]
+      [T79 shown first: Summary, point 4 of 6: In growing South Cambridgeshire house prices rise, while in the shrinking Outer Hebrides schools close as young people leave.]
+      [T79 shown first: Summary, point 5 of 6: Two strategies to reduce the north–south divide are devolution to city mayors and enterprise zones with lower taxes.]
+      [T79 shown first: Summary, point 6 of 6: Since leaving the EU, UK trade with the EU has more checks and paperwork, though the EU is still a major partner.]
+    [counter now "6/6 covered" after T79; AI calls from the site so far: 33, $0.0225]
+    S80 (closing): ok thx
+    T80: You're welcome. Tap "Go to the slides" or "Home" when you are ready.
+    S81 (closing, tapped the button): go to the slides
+    [S81 left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]
+    [screenshot 32-end-laptop.png] end
+    [tutor-side time: 0.8 minutes over 80 exchanges]

@@ -20,6 +20,11 @@
   else root.TeachScript = factory();
 })(typeof self !== 'undefined' ? self : this, function () {
   const SCRIPTED = true;
+  // Flag TAP_ORDER_FIX (brief 2026-11-27, option-order shuffle), on: the tap-question shuffle multiplies with
+  // Math.imul (exact 32-bit) and reads the generator's high bits (h >>> 16). The old float multiply lost the low bits
+  // and h % (k + 1) read only those, so with 4 options the first stored option was shown last 4,993 times in 5,000.
+  // false keeps every order exactly as at d7ef746 (tools/check-tap-order.js).
+  const TAP_ORDER_FIX = true;
   const SCRIPTED_LESSONS = ['p2-current-voltage', 'p2-components', 'p2-series-parallel', 'p2-domestic', 'p2-power-energy', 'p2-static', 'p1-energy-stores', 'p1-kinetic-potential', 'p1-conservation', 'p1-efficiency', 'p1-power', 'p1-heating', 'p1-national-grid', 'p3-particle-model', 'p3-density', 'p3-changes-of-state', 'p3-pressure', 'g5-development', 'g5-nigeria', 'g5-uk-economy', 'p4-nuclear-model', 'p4-radioactivity', 'p4-half-life', 'p4-nuclear-fission'];
   const MAX_WORDS = 60;
   const FB = { feedback: true };   // a reply to her answer (the checks let a correction say the rule again)
@@ -68,7 +73,7 @@
   function order(question, n) {
     let h = 0; for (const ch of String(question)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
     const idx = Array.from({ length: n }, (_, k) => k);
-    for (let k = n - 1; k > 0; k--) { h = (h * 1103515245 + 12345) >>> 0; const r = h % (k + 1); [idx[k], idx[r]] = [idx[r], idx[k]]; }
+    for (let k = n - 1; k > 0; k--) { h = TAP_ORDER_FIX ? (Math.imul(h, 1103515245) + 12345) >>> 0 : (h * 1103515245 + 12345) >>> 0; const r = (TAP_ORDER_FIX ? h >>> 16 : h) % (k + 1); [idx[k], idx[r]] = [idx[r], idx[k]]; }
     return idx;
   }
   // Her answer as a number: the last number she typed ("2 times 5 so 10" is 10).

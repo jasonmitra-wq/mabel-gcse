@@ -181,7 +181,7 @@ const results = [];
 for (const subject of fs.readdirSync(path.join(ROOT, 'lessons')).sort()) {
   const dir = path.join(ROOT, 'lessons', subject);
   if (!fs.statSync(dir).isDirectory() || SKIP_SUBJECTS.includes(subject)) continue;
-  for (const f of fs.readdirSync(dir).filter(x => x.endsWith('.json') && x !== 'TEMPLATE.json').sort()) {
+  for (const f of fs.readdirSync(dir).filter(x => x.endsWith('.json') && !x.endsWith('.script.json') && x !== 'TEMPLATE.json').sort()) {
     const id = f.replace(/\.json$/, '');
     const reach = teach.has(id) ? 'teach' : (liveSubjects.has(subject) && available[id]) ? 'live' : 'off';
     const { findings, grade: g } = auditLesson(path.join(dir, f), subject, reach === 'teach');

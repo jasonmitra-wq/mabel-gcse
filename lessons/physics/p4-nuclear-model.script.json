@@ -1,0 +1,903 @@
+{
+ "lesson": "p4-nuclear-model",
+ "version": 1,
+ "about": "The scripted AI lesson for p4-nuclear-model (2026-11-27, Phase C, brief docs/briefs/2026-11-27-phase-c-physics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p2-static and p3-density.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "Thomson's plum pudding model",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about what is inside an atom, and how scientists found out without ever seeing one."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from earlier lessons. Two objects both have a positive charge. What do they do to each other?",
+     "options": [
+      {
+       "text": "They repel each other",
+       "branch": "right"
+      },
+      {
+       "text": "They attract each other",
+       "branch": "attract"
+      },
+      {
+       "text": "Nothing happens",
+       "branch": "nothing"
+      }
+     ],
+     "right": "Yes: like charges repel, so two positive charges push each other away.",
+     "wrong": {
+      "other": "Not quite: they repel. Like charges push each other away.",
+      "attract": "Not quite: opposite charges attract. Two positive charges are alike, so they repel: they push each other away.",
+      "nothing": "Not quite: charges always push or pull on each other. Two positive charges are alike, so they repel."
+     },
+     "idk": [
+      {
+       "hint": "Opposite charges attract. Are two positive charges opposite, or alike?"
+      }
+     ],
+     "answerWhy": "Like charges repel, so two positive charges push each other away."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: a small lead weight and a big cork have the same mass. Which is denser?",
+     "options": [
+      {
+       "text": "The lead weight",
+       "branch": "right"
+      },
+      {
+       "text": "The cork",
+       "branch": "cork"
+      },
+      {
+       "text": "They are equally dense",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: the lead packs the same mass into a much smaller space.",
+     "wrong": {
+      "other": "Not quite: the lead weight. Same mass in less space means denser.",
+      "cork": "Not quite: the cork spreads its mass through more space. The lead packs the same mass into a small space, so it is denser.",
+      "same": "Not quite: density is mass in each cm³, not mass alone. The lead fits the same mass into less space, so it is denser."
+     },
+     "idk": [
+      {
+       "hint": "Dense means a lot of mass in a small space. Which one is smaller?"
+      }
+     ],
+     "answerWhy": "The lead weight has the same mass in a smaller space, so it is denser."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. Everything is made of atoms. An atom is far too small to see, even with a microscope."
+    },
+    {
+     "id": "1.2b",
+     "type": "say",
+     "text": "Carbon and gold are two of the elements. A carbon atom is different from a gold atom."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "Scientists cannot look inside an atom, so they use a model: a picture or idea that explains what they cannot see. When new evidence does not fit a model, the model is changed."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "About 200 years ago, atoms were thought to be tiny spheres that could not be divided into anything smaller."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "Then, in 1897, J.J. Thomson discovered the electron: a tiny particle with a negative charge. It came from inside atoms, so atoms could be divided after all."
+    },
+    {
+     "id": "1.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "An atom has no overall charge, yet it contains negative electrons. What else must an atom contain?",
+     "options": [
+      {
+       "text": "Some positive charge",
+       "branch": "right"
+      },
+      {
+       "text": "Even more electrons",
+       "branch": "more"
+      },
+      {
+       "text": "Nothing else",
+       "branch": "nothing"
+      }
+     ],
+     "right": "Yes: positive charge must balance the negative electrons, so the atom has no overall charge.",
+     "wrong": {
+      "other": "Not quite: some positive charge, to balance the electrons.",
+      "more": "Not quite: more electrons would make it more negative. To cancel the negative charge, the atom must also hold positive charge.",
+      "nothing": "Not quite: electrons alone would give the atom a negative charge. Something positive must cancel it out."
+     },
+     "idk": [
+      {
+       "hint": "The electrons are negative, but the atom is not. What kind of charge would cancel a negative charge?"
+      }
+     ],
+     "answerWhy": "The negative electrons must be balanced by positive charge, so the atom has no overall charge."
+    },
+    {
+     "id": "1.7",
+     "type": "say",
+     "text": "Thomson's answer, in 1904: the atom is a ball of positive charge, spread out evenly. The electrons are dotted through it, like plums in a pudding. This is called the plum pudding model."
+    },
+    {
+     "id": "1.8",
+     "type": "say",
+     "text": "In the plum pudding model, the negative electrons balance the spread-out positive charge. So the whole atom has no overall charge."
+    },
+    {
+     "id": "1.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "In the plum pudding model, where is the positive charge?",
+     "options": [
+      {
+       "text": "Spread evenly through the whole atom",
+       "branch": "right"
+      },
+      {
+       "text": "Packed into a tiny centre",
+       "branch": "centre"
+      },
+      {
+       "text": "Carried by the electrons",
+       "branch": "electrons"
+      }
+     ],
+     "right": "Yes: the positive charge is the pudding, spread through the whole atom.",
+     "wrong": {
+      "other": "Not quite: it is spread evenly through the whole atom.",
+      "centre": "Not quite: that idea came later. In the plum pudding model the positive charge is spread through the whole atom, like the pudding.",
+      "electrons": "Not quite: the electrons are the negative plums. The positive charge is the pudding, spread through the whole atom."
+     },
+     "idk": [
+      {
+       "hint": "Think of the pudding itself. Is it in one small lump, or spread all through?"
+      }
+     ],
+     "answerWhy": "In the plum pudding model, the positive charge is spread evenly through the whole atom, with electrons dotted through it."
+    },
+    {
+     "id": "1.10",
+     "type": "own",
+     "prompt": "In one line: what did the plum pudding model say an atom is like?",
+     "points": [
+      "a ball (sphere) of positive charge, spread out",
+      "with negative electrons dotted through it"
+     ],
+     "idk": "No problem. A good line would be: a ball of spread-out positive charge, with negative electrons dotted through it like plums in a pudding."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Rutherford's alpha particle scattering experiment",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "A good model predicts what an experiment will show. In 1909, Geiger and Marsden, working with Ernest Rutherford, tested the plum pudding model."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "A radioactive source is a material that gives out radiation on its own. The next lesson is about it."
+    },
+    {
+     "id": "2.2b",
+     "type": "say",
+     "text": "The source Geiger and Marsden used gave out alpha particles: tiny particles with a positive charge, moving very fast."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "Geiger and Marsden fired a beam of alpha particles at a very thin sheet of gold foil. A screen that flashed when hit showed where each particle went. This is the alpha particle scattering experiment."
+    },
+    {
+     "id": "2.3b",
+     "type": "say",
+     "text": "Deflected means pushed off a straight path, like a ball glancing off a wall."
+    },
+    {
+     "id": "2.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "If the plum pudding model were right, what would the alpha particles do?",
+     "options": [
+      {
+       "text": "Nearly all go straight through, barely deflected",
+       "branch": "right"
+      },
+      {
+       "text": "Many bounce straight back",
+       "branch": "back"
+      },
+      {
+       "text": "All get stuck in the foil",
+       "branch": "stuck"
+      }
+     ],
+     "right": "Yes: the positive charge is spread so thinly that nothing pushes hard on an alpha particle.",
+     "wrong": {
+      "other": "Not quite: nearly all would go straight through, barely deflected.",
+      "back": "Not quite: in the plum pudding model the positive charge is spread thinly. Nothing in it could push hard enough to send an alpha particle back.",
+      "stuck": "Not quite: the foil is very thin and the positive charge spread out. So nearly all would pass straight through, barely deflected."
+     },
+     "idk": [
+      {
+       "hint": "In the plum pudding model, the positive charge is spread thinly. Could anything push an alpha particle hard?"
+      }
+     ],
+     "answerWhy": "The spread-out positive charge could not push hard, so nearly all alpha particles would go straight through."
+    },
+    {
+     "id": "2.5",
+     "type": "say",
+     "text": "What really happened: most alpha particles went straight through the foil. A few were deflected through large angles. A very small number bounced almost straight back."
+    },
+    {
+     "id": "2.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "What does the first result tell you about an atom?",
+     "options": [
+      {
+       "text": "Most of it is empty space",
+       "branch": "right"
+      },
+      {
+       "text": "It has no charge anywhere",
+       "branch": "nocharge"
+      },
+      {
+       "text": "The foil had holes in it",
+       "branch": "holes"
+      }
+     ],
+     "right": "Yes: most of an atom is empty space.",
+     "wrong": {
+      "other": "Not quite: most of an atom is empty space.",
+      "nocharge": "Not quite: some alpha particles were deflected, so there is charge. Most went straight through because most of the atom is empty space.",
+      "holes": "Not quite: the foil was a solid sheet of gold atoms. The particles passed through the atoms themselves, so most of an atom is empty space."
+     },
+     "idk": [
+      {
+       "hint": "If an alpha particle meets nothing on its way, it goes straight on. What must most of the atom be?"
+      }
+     ],
+     "answerWhy": "Most alpha particles went straight through, so most of an atom is empty space."
+    },
+    {
+     "id": "2.7",
+     "type": "say",
+     "text": "The second result: a few large deflections. So the positive charge is not spread out: it is packed into a small region at the centre. That region repels the positive alpha particles strongly."
+    },
+    {
+     "id": "2.8",
+     "type": "say",
+     "text": "A very few bounced back. Only something tiny and dense could do that: dense means a lot of mass in a small space. Rutherford called this tiny, dense, positive centre the nucleus."
+    },
+    {
+     "id": "2.9",
+     "type": "say",
+     "picture": "p4-alpha-scattering",
+     "text": "The picture shows these results around one nucleus. It is not to scale: a real nucleus is far smaller than this."
+    },
+    {
+     "id": "2.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Why did only a very few alpha particles bounce back?",
+     "options": [
+      {
+       "text": "Only those heading almost straight at the nucleus",
+       "branch": "right"
+      },
+      {
+       "text": "Only those that hit an electron",
+       "branch": "electron"
+      },
+      {
+       "text": "Only the slowest ones",
+       "branch": "slow"
+      }
+     ],
+     "right": "Yes: the nucleus is tiny, so very few alpha particles head straight at it. Those are repelled back before they reach it.",
+     "wrong": {
+      "other": "Not quite: only those heading almost straight at the tiny nucleus.",
+      "electron": "Not quite: electrons are far too light to turn an alpha particle back. Only the few heading almost straight at the tiny, positive nucleus were pushed back.",
+      "slow": "Not quite: it was about aim, not speed. The nucleus is tiny, so only the few heading almost straight at it were pushed back."
+     },
+     "idk": [
+      {
+       "hint": "The nucleus is tiny. Would many alpha particles be aimed straight at it?"
+      }
+     ],
+     "answerWhy": "The nucleus is so tiny that only a very few alpha particles head almost straight at it, and those are repelled back."
+    },
+    {
+     "id": "2.11",
+     "type": "say",
+     "text": "The plum pudding model could not explain this evidence, so it was replaced. The new model has a tiny, positive nucleus at the centre, with the electrons around it. It is called the nuclear model."
+    },
+    {
+     "id": "2.12",
+     "type": "own",
+     "prompt": "In one line: what did the alpha particles that bounced back show?",
+     "points": [
+      "there is a tiny (small) nucleus at the centre",
+      "the nucleus is dense or holds the positive charge (most of the mass)"
+     ],
+     "idk": "No problem. A good line would be: there is a tiny, dense nucleus at the centre that holds the positive charge."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Structure of the atom — protons, neutrons and electrons",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Now the nuclear model in numbers. An atom has a radius of about 1 × 10⁻¹⁰ m. That is standard form: it means 0.0000000001 m."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "The radius of the nucleus is less than 1/10 000 of the radius of the atom. Yet most of the mass of the atom is in the nucleus."
+    },
+    {
+     "id": "3.3",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Where is most of the mass of an atom?",
+     "options": [
+      {
+       "text": "In the nucleus",
+       "branch": "right"
+      },
+      {
+       "text": "In the electrons",
+       "branch": "electrons"
+      },
+      {
+       "text": "Spread evenly through the atom",
+       "branch": "spread"
+      }
+     ],
+     "right": "Yes: most of the mass is in the tiny nucleus.",
+     "wrong": {
+      "other": "Not quite: in the nucleus.",
+      "electrons": "Not quite: electrons have very little mass. Most of the mass is packed into the tiny nucleus.",
+      "spread": "Not quite: that was the plum pudding idea. In the nuclear model, most of the mass is packed into the tiny nucleus."
+     },
+     "idk": [
+      {
+       "hint": "The alpha particles that bounced back hit something dense. Where was it?"
+      }
+     ],
+     "answerWhy": "Most of the mass of an atom is in its tiny nucleus."
+    },
+    {
+     "id": "3.4",
+     "type": "say",
+     "text": "The nucleus is made of two kinds of particle. A proton is a particle with a positive charge."
+    },
+    {
+     "id": "3.4b",
+     "type": "say",
+     "text": "A neutron is a particle with no charge. Protons and neutrons are both in the nucleus."
+    },
+    {
+     "id": "3.5",
+     "type": "say",
+     "text": "Relative mass compares masses without using kilograms. A proton has relative mass 1, and a neutron also has relative mass 1. An electron has a very small relative mass."
+    },
+    {
+     "id": "3.6",
+     "type": "say",
+     "text": "Relative charge compares charges in the same way. A proton has relative charge +1, a neutron 0 and an electron −1. The electrons are outside the nucleus."
+    },
+    {
+     "id": "3.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which particle is outside the nucleus?",
+     "options": [
+      {
+       "text": "The electron",
+       "branch": "right"
+      },
+      {
+       "text": "The proton",
+       "branch": "proton"
+      },
+      {
+       "text": "The neutron",
+       "branch": "neutron"
+      }
+     ],
+     "right": "Yes: protons and neutrons are in the nucleus; electrons are outside it.",
+     "wrong": {
+      "other": "Not quite: the electron.",
+      "proton": "Not quite: protons are in the nucleus. The electrons are outside it.",
+      "neutron": "Not quite: neutrons are in the nucleus, with the protons. The electrons are outside it."
+     },
+     "idk": [
+      {
+       "hint": "The nucleus holds the positive particles and the ones with no charge. Which particle is left?"
+      }
+     ],
+     "answerWhy": "Protons and neutrons are in the nucleus; electrons are outside it."
+    },
+    {
+     "id": "3.8",
+     "type": "say",
+     "text": "The number of protons in an atom is its atomic number. It decides the element: every carbon atom has 6 protons."
+    },
+    {
+     "id": "3.9",
+     "type": "say",
+     "text": "The number of protons plus neutrons is the mass number. So the number of neutrons = mass number − atomic number."
+    },
+    {
+     "id": "3.10",
+     "type": "say",
+     "text": "An atom has as many electrons as protons. The +1s and −1s cancel, so an atom has no overall charge."
+    },
+    {
+     "id": "3.11",
+     "type": "say",
+     "picture": "p4-atom-structure",
+     "text": "The picture shows a lithium atom, not to scale. It has 3 protons, so its atomic number is 3. It has 4 neutrons, so its mass number is 3 + 4 = 7. It has 3 electrons."
+    },
+    {
+     "id": "3.12",
+     "type": "ask",
+     "kind": "number",
+     "question": "An atom has atomic number 11 and mass number 23. How many neutrons does it have?",
+     "answer": {
+      "value": 12,
+      "unit": "neutrons",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 34,
+       "branch": "add"
+      },
+      {
+       "value": 23,
+       "branch": "mass"
+      },
+      {
+       "value": 11,
+       "branch": "protons"
+      }
+     ],
+     "right": "Yes: 12. Neutrons = mass number − atomic number = 23 − 11 = 12.",
+     "wrong": {
+      "other": "Not quite: 12. Neutrons = mass number − atomic number = 23 − 11 = 12.",
+      "add": "Not quite: 12. Subtract, do not add: neutrons = mass number − atomic number = 23 − 11 = 12.",
+      "mass": "Not quite: 12. The mass number counts protons and neutrons together. Take away the 11 protons: 23 − 11 = 12.",
+      "protons": "Not quite: 12. 11 is the number of protons. Neutrons = 23 − 11 = 12."
+     },
+     "idk": [
+      {
+       "hint": "Neutrons = mass number − atomic number. Work out 23 − 11."
+      }
+     ],
+     "answerWhy": "Neutrons = mass number − atomic number = 23 − 11 = 12."
+    },
+    {
+     "id": "3.13",
+     "type": "say",
+     "text": "The symbol for an atom shows both numbers. For carbon-12 it is ¹²₆C. The mass number, 12, is at the top. The atomic number, 6, is at the bottom."
+    },
+    {
+     "id": "3.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "How many protons does ²³⁸₉₂U have?",
+     "options": [
+      {
+       "text": "92",
+       "branch": "right"
+      },
+      {
+       "text": "238",
+       "branch": "mass"
+      },
+      {
+       "text": "146",
+       "branch": "neutrons"
+      }
+     ],
+     "right": "Yes: 92, the bottom number, the atomic number.",
+     "wrong": {
+      "other": "Not quite: 92, the bottom number.",
+      "mass": "Not quite: 238 is the mass number, at the top: protons plus neutrons. The protons are the bottom number, 92.",
+      "neutrons": "Not quite: 146 is the number of neutrons, 238 − 92. The protons are the bottom number, 92."
+     },
+     "idk": [
+      {
+       "hint": "The atomic number counts the protons. Is it the top number or the bottom one?"
+      }
+     ],
+     "answerWhy": "The bottom number is the atomic number, which counts the protons: 92."
+    },
+    {
+     "id": "3.15",
+     "type": "say",
+     "text": "Isotopes are atoms of the same element with different numbers of neutrons. Carbon-12 and carbon-14 both have 6 protons. Carbon-12 has 6 neutrons and carbon-14 has 8."
+    },
+    {
+     "id": "3.16",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which pair are isotopes of the same element?",
+     "options": [
+      {
+       "text": "¹²₆C and ¹⁴₆C",
+       "branch": "right"
+      },
+      {
+       "text": "¹⁴₆C and ¹⁴₇N",
+       "branch": "samemass"
+      },
+      {
+       "text": "¹²₆C and ²⁴₁₂Mg",
+       "branch": "double"
+      }
+     ],
+     "right": "Yes: both have 6 protons, so both are carbon, but they have different numbers of neutrons.",
+     "wrong": {
+      "other": "Not quite: ¹²₆C and ¹⁴₆C.",
+      "samemass": "Not quite: these have the same mass number but different atomic numbers, so they are different elements. Isotopes have the same bottom number: ¹²₆C and ¹⁴₆C.",
+      "double": "Not quite: 12 protons is a different element from 6 protons. Isotopes have the same bottom number: ¹²₆C and ¹⁴₆C."
+     },
+     "idk": [
+      {
+       "hint": "Isotopes have the same number of protons. Which pair has the same bottom number?"
+      }
+     ],
+     "answerWhy": "Isotopes have the same atomic number (bottom number) but different mass numbers: ¹²₆C and ¹⁴₆C."
+    },
+    {
+     "id": "3.17",
+     "type": "say",
+     "text": "An atom can lose or gain electrons. Then it is no longer neutral: it is an ion, a particle with a charge. A lithium atom that loses one electron becomes a positive ion, written Li⁺."
+    },
+    {
+     "id": "3.18",
+     "type": "own",
+     "prompt": "In one line: what are isotopes?",
+     "points": [
+      "atoms with the same number of protons (same element or atomic number)",
+      "with different numbers of neutrons (different mass number)"
+     ],
+     "idk": "No problem. A good line would be: isotopes are atoms of the same element, with the same number of protons but different numbers of neutrons."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Energy levels and later changes to the model",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "Niels Bohr improved the nuclear model. He said the electrons orbit the nucleus only at certain fixed distances. His calculations agreed with the results of experiments."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "Each fixed distance is an energy level. The further a level is from the nucleus, the higher its energy."
+    },
+    {
+     "id": "4.3",
+     "type": "say",
+     "text": "Electromagnetic radiation is energy that travels as waves, like light. Radio waves and X-rays are other kinds."
+    },
+    {
+     "id": "4.4",
+     "type": "say",
+     "text": "When an electron absorbs electromagnetic radiation, it gains energy and moves to a higher energy level, further from the nucleus."
+    },
+    {
+     "id": "4.4b",
+     "type": "say",
+     "text": "When an electron emits electromagnetic radiation, it gives out energy and moves to a lower energy level, closer to the nucleus."
+    },
+    {
+     "id": "4.5",
+     "type": "say",
+     "picture": "p4-energy-levels",
+     "text": "The picture shows both moves: absorbing takes the electron up a level, and emitting brings it down."
+    },
+    {
+     "id": "4.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "An electron changes level, and its energy falls. What does it do?",
+     "options": [
+      {
+       "text": "It emits electromagnetic radiation",
+       "branch": "right"
+      },
+      {
+       "text": "It absorbs electromagnetic radiation",
+       "branch": "absorb"
+      },
+      {
+       "text": "It joins the nucleus",
+       "branch": "nucleus"
+      }
+     ],
+     "right": "Yes: moving down a level, the electron gives out energy as electromagnetic radiation.",
+     "wrong": {
+      "other": "Not quite: it emits electromagnetic radiation.",
+      "absorb": "Not quite: absorbing gives an electron energy and moves it up. Moving down, it gives energy out: it emits radiation.",
+      "nucleus": "Not quite: it stays outside the nucleus, on a lower level. Moving down, it gives energy out: it emits radiation."
+     },
+     "idk": [
+      {
+       "hint": "A lower level has less energy. Does the electron gain energy or give it out?"
+      }
+     ],
+     "answerWhy": "Moving to a lower energy level, the electron gives out energy: it emits electromagnetic radiation."
+    },
+    {
+     "id": "4.7",
+     "type": "say",
+     "text": "Later experiments showed that the positive charge of a nucleus is shared by smaller particles, each with the same charge. These are the protons."
+    },
+    {
+     "id": "4.8",
+     "type": "say",
+     "text": "About 20 years after the nucleus was accepted, James Chadwick showed that the nucleus also holds neutrons."
+    },
+    {
+     "id": "4.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which model came straight after the plum pudding model?",
+     "options": [
+      {
+       "text": "The nuclear model, with a tiny nucleus",
+       "branch": "right"
+      },
+      {
+       "text": "Bohr's model, with energy levels",
+       "branch": "bohr"
+      },
+      {
+       "text": "Tiny spheres that cannot be divided",
+       "branch": "spheres"
+      }
+     ],
+     "right": "Yes: the scattering experiment replaced the plum pudding with the nuclear model.",
+     "wrong": {
+      "other": "Not quite: the nuclear model.",
+      "bohr": "Not quite: Bohr improved the nuclear model, so his came later. Straight after the plum pudding came Rutherford's nuclear model.",
+      "spheres": "Not quite: that idea came before the electron was found. Straight after the plum pudding came the nuclear model."
+     },
+     "idk": [
+      {
+       "hint": "Which experiment showed the plum pudding model was wrong, and what did it lead to?"
+      }
+     ],
+     "answerWhy": "The alpha scattering experiment replaced the plum pudding model with the nuclear model; Bohr improved that later."
+    },
+    {
+     "id": "4.10",
+     "type": "own",
+     "prompt": "In one line: why has the model of the atom changed over time?",
+     "points": [
+      "new evidence (experiments) that the old model could not explain"
+     ],
+     "idk": "No problem. A good line would be: each time experiments found new evidence the old model could not explain, the model was changed."
+    },
+    {
+     "id": "4.11",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "4.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: in the scattering experiment, what did most alpha particles do?",
+     "options": [
+      {
+       "text": "Went straight through",
+       "branch": "right"
+      },
+      {
+       "text": "Bounced back",
+       "branch": "w1"
+      },
+      {
+       "text": "Stopped in the foil",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: most went straight through, so most of an atom is empty space.",
+     "wrong": {
+      "other": "Not quite: most went straight through.",
+      "w1": "Not quite: only a very few bounced back. Most went straight through, because most of an atom is empty space.",
+      "w2": "Not quite: most went straight through, because most of an atom is empty space."
+     },
+     "idk": [],
+     "answerWhy": "Most alpha particles went straight through, so most of an atom is empty space.",
+     "quiz": true
+    },
+    {
+     "id": "4.13",
+     "type": "ask",
+     "kind": "number",
+     "question": "Quiz, question 2 of 6: ²⁷₁₃Al is an aluminium atom. How many neutrons does it have?",
+     "answer": {
+      "value": 14,
+      "unit": "neutrons",
+      "tolerance": 0.01
+     },
+     "wrongValues": [],
+     "right": "Yes: 27 − 13 = 14 neutrons.",
+     "wrong": {
+      "other": "Not quite: 14. Neutrons = 27 − 13 = 14."
+     },
+     "idk": [],
+     "answerWhy": "Neutrons = mass number − atomic number = 27 − 13 = 14.",
+     "quiz": true
+    },
+    {
+     "id": "4.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: what is the relative charge of a neutron?",
+     "options": [
+      {
+       "text": "0",
+       "branch": "right"
+      },
+      {
+       "text": "+1",
+       "branch": "w1"
+      },
+      {
+       "text": "−1",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: 0. A neutron has no charge.",
+     "wrong": {
+      "other": "Not quite: 0.",
+      "w1": "Not quite: +1 is a proton. A neutron has no charge: 0.",
+      "w2": "Not quite: −1 is an electron. A neutron has no charge: 0."
+     },
+     "idk": [],
+     "answerWhy": "A neutron has no charge, so its relative charge is 0.",
+     "quiz": true
+    },
+    {
+     "id": "4.15",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: which pair are isotopes of the same element?",
+     "options": [
+      {
+       "text": "³⁵₁₇Cl and ³⁷₁₇Cl",
+       "branch": "right"
+      },
+      {
+       "text": "⁴⁰₁₈Ar and ⁴⁰₂₀Ca",
+       "branch": "w1"
+      },
+      {
+       "text": "¹⁶₈O and ³²₁₆S",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: both have 17 protons, but 18 and 20 neutrons.",
+     "wrong": {
+      "other": "Not quite: ³⁵₁₇Cl and ³⁷₁₇Cl.",
+      "w1": "Not quite: different atomic numbers, 18 and 20, so different elements. ³⁵₁₇Cl and ³⁷₁₇Cl both have 17 protons.",
+      "w2": "Not quite: different atomic numbers, 8 and 16, so different elements. ³⁵₁₇Cl and ³⁷₁₇Cl both have 17 protons."
+     },
+     "idk": [],
+     "answerWhy": "Isotopes have the same atomic number: ³⁵₁₇Cl and ³⁷₁₇Cl both have 17 protons.",
+     "quiz": true
+    },
+    {
+     "id": "4.16",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: an electron absorbs electromagnetic radiation. Where does it go?",
+     "options": [
+      {
+       "text": "To a higher energy level, further out",
+       "branch": "right"
+      },
+      {
+       "text": "To a lower energy level, closer in",
+       "branch": "w1"
+      },
+      {
+       "text": "Into the nucleus",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: absorbing moves it up, further from the nucleus.",
+     "wrong": {
+      "other": "Not quite: to a higher energy level, further out.",
+      "w1": "Not quite: that is what happens when it emits radiation. Absorbing moves it up, further from the nucleus.",
+      "w2": "Not quite: it stays outside the nucleus. Absorbing moves it up a level, further out."
+     },
+     "idk": [],
+     "answerWhy": "Absorbing electromagnetic radiation moves an electron to a higher energy level, further from the nucleus.",
+     "quiz": true
+    },
+    {
+     "id": "4.17",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: what did Bohr add to the nuclear model?",
+     "options": [
+      {
+       "text": "Electrons at fixed distances (energy levels)",
+       "branch": "right"
+      },
+      {
+       "text": "A nucleus at the centre",
+       "branch": "w1"
+      },
+      {
+       "text": "Positive charge spread through the atom",
+       "branch": "w2"
+      }
+     ],
+     "right": "Yes: Bohr put the electrons at fixed distances, called energy levels.",
+     "wrong": {
+      "other": "Not quite: electrons at fixed distances.",
+      "w1": "Not quite: the nucleus came from the scattering experiment. Bohr added electrons at fixed distances: energy levels.",
+      "w2": "Not quite: that was the plum pudding model. Bohr added electrons at fixed distances: energy levels."
+     },
+     "idk": [],
+     "answerWhy": "Bohr said electrons orbit the nucleus at fixed distances: energy levels.",
+     "quiz": true
+    },
+    {
+     "id": "4.18",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

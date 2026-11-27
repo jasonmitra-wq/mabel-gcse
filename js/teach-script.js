@@ -20,7 +20,7 @@
   else root.TeachScript = factory();
 })(typeof self !== 'undefined' ? self : this, function () {
   const SCRIPTED = true;
-  const SCRIPTED_LESSONS = ['p2-current-voltage', 'p2-components', 'p2-series-parallel', 'p2-domestic', 'p2-power-energy', 'p2-static', 'p1-energy-stores', 'p1-kinetic-potential', 'p1-conservation', 'p1-efficiency', 'p1-power', 'p1-heating', 'p1-national-grid', 'p3-particle-model', 'p3-density', 'p3-changes-of-state', 'p3-pressure', 'g5-development', 'g5-nigeria', 'g5-uk-economy'];
+  const SCRIPTED_LESSONS = ['p2-current-voltage', 'p2-components', 'p2-series-parallel', 'p2-domestic', 'p2-power-energy', 'p2-static', 'p1-energy-stores', 'p1-kinetic-potential', 'p1-conservation', 'p1-efficiency', 'p1-power', 'p1-heating', 'p1-national-grid', 'p3-particle-model', 'p3-density', 'p3-changes-of-state', 'p3-pressure', 'g5-development', 'g5-nigeria', 'g5-uk-economy', 'p4-nuclear-model', 'p4-radioactivity', 'p4-half-life', 'p4-nuclear-fission'];
   const MAX_WORDS = 60;
   const FB = { feedback: true };   // a reply to her answer (the checks let a correction say the rule again)
   // Flag SCRIPT_POLISH (brief docs/briefs/2026-11-18-shared-script-fixes.md), on by default; in Node, env SCRIPT_POLISH=0
@@ -421,5 +421,5 @@
     return { start, reply, calls, show, shown, points: kps.length };
   }
 
-  return { create, uses, SCRIPTED, SCRIPTED_LESSONS, SCRIPT_POLISH, order, IDK, ownFeedback, summaryLines, plainAnswer, idkOpener, VERSION: 8 };
+  return { create, uses, SCRIPTED, SCRIPTED_LESSONS, SCRIPT_POLISH, order, IDK, ownFeedback, summaryLines, plainAnswer, idkOpener, VERSION: 9 };
 });

@@ -599,5 +599,7 @@ tools/check-transcript.js, proven by tools/check-polish.js (each fails with the 
   order() shows it in a rotating position (P4 now 25/23/21 over the four scripts). Needs Jason's go-ahead for the shared fix.
 - Open, shared teach-mode code: own-words feedback is built by js/teach-script.js as "Yes: your line makes every point. You have
   this: … You have this: …" / "Still needed: …". Every P4 review flagged it as stilted (round 2: 7 findings). Not a script change.
+  The p4-nuclear-model site test (2026-11-27) shows the same template tripping check-transcript F6 (echo): she wrote "ball of
+  positive charge" and the reply read back "You have this: the atom is a ball of positive charge, spread out evenly."
 - Open: P4 has no hands-on widget (every review's P14). A chain-reaction or absorber widget would be new shared code.
 

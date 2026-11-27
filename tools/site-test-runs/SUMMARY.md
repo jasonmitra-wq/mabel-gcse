@@ -130,3 +130,5 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-11-25 | g5-development | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-25/g5-development | $0.0557
 - 2026-11-25 | g5-nigeria | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-25/g5-nigeria | $0.0427
 - 2026-11-25 | g5-uk-economy | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-25/g5-uk-economy | $0.0528
+- 2026-11-26 | g5-nigeria | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-26/g5-nigeria | $0.0423
+- 2026-11-27 | g5-nigeria | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-27/g5-nigeria | $0.0413

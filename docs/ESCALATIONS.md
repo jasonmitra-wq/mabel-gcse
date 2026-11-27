@@ -586,3 +586,5 @@ tools/check-transcript.js, proven by tools/check-polish.js (each fails with the 
   idk "The north is poorer than the south." Walk 0; site test PASS.
 - Open (lesson-auditor tools/audit-runs/782b0f2-1.md, outside that brief's lines): g5-nigeria script step 1.3 says "its GNI per head is
   only $1,360 a year, compared with $54,550 in the UK" with no year (both are 2025). The slides now give the year; the script does not.
+  **RESOLVED 2026-11-27 (brief docs/briefs/2026-11-27-phase-c-physics.md, step 0.5):** now "only $1,360 a year in 2025, compared
+  with $54,550 in the UK"; TeachScript.VERSION 8 (teach-script v24); walk 0.

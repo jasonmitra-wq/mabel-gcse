@@ -164,3 +164,30 @@ data/exam/g5-outcomes.md (local).
 No published research on misconceptions about Nigeria, TNCs or the UK economy turned up in the sources reached; the
 evidence is the examiner reports (E85, E90, E92 to E95: generic TNC answers, "traditional industries" not understood,
 "regional" not understood, the "jobs and money" catch-all, figures ignored or copied).
+
+## Phase C, P4 Atomic structure (nuclear model, radioactivity, half-life, fission and fusion)
+
+Brief docs/briefs/2026-11-27-phase-c-physics.md, step B1. Sources opened on
+2026-11-27 (IOPSpark misconception pages, found through its sitemap and read in
+the browser pane); the wording is ours. Outside the pilot, as for M15–M38.
+Examiner errors E96 to E111 are in data/exam/p4-outcomes.md (local).
+
+| Id | Misconception (our words) | Lesson | Source (opened) |
+|---|---|---|---|
+| M39 | An irradiated object becomes radioactive (irradiated food is radioactive); radiation itself is "radioactive" and is given out again later. Irradiation not told apart from contamination. | p4-half-life | IOPSpark, "Many students do not clearly distinguish between irradiation and contamination of an object": https://spark.iop.org/many-students-do-not-clearly-distinguish-between-irradiation-and-contamination-object ; examiner reports 1H-JUN23 05.5, 1H-JUN25 07.2 (E101) |
+| M40 | After one half-life the sample has half its mass or volume, as if the decayed atoms vanish; in fact each decayed nucleus becomes a different nucleus and stays. | p4-half-life | IOPSpark, "Students may think that a sample of radioactive material would have half its original mass or volume after one half-life": https://spark.iop.org/students-may-think-sample-radioactive-material-would-have-half-its-original-mass-or-volume-after |
+| M41 | Only large, heavy nuclei (uranium, plutonium) can be radioactive; a light isotope such as carbon-14 cannot be. | p4-radioactivity | IOPSpark, "Some students think only large nuclei can be radioactive": https://spark.iop.org/some-students-think-only-large-nuclei-can-be-radioactive |
+| M42 | Radiation is artificial: it comes only from nuclear power stations, bombs and hospitals, not from rocks, the air or space. | p4-radioactivity | IOPSpark, "Some students think that (ionising) radiation only stems from nuclear power plants": https://spark.iop.org/some-students-think-ionising-radiation-only-stems-nuclear-power-plants ; "Many students are confused by the nature of radiation in general and some think it is artificial": https://spark.iop.org/many-students-are-confused-nature-radiation-general-and-some-think-it-artificial ; examiner reports 1F-JUN24 06.1, 1H-NOV20 05.1 (E108) |
+| M43 | All radiation is harmful and useful only for weapons or power; the medical uses (tracers, radiotherapy) and the idea of weighing benefit against risk are unknown. | p4-half-life | IOPSpark, "Many students are aware that radiation can cause cancer but few are aware of beneficial uses": https://spark.iop.org/many-students-are-aware-radiation-can-cause-cancer-few-are-aware-beneficial-uses ; "Students' views about the risk of radiation and radioactive materials are based more strongly on everyday information than scientific ideas": https://spark.iop.org/students-views-about-risk-radiation-and-radioactive-materials-are-based-more-strongly-everyday |
+| M44 | Atom models mixed together: electrons inside the nucleus, a Bohr model with no nucleus, a plum pudding with a centre; the order and evidence of the models confused. | p4-nuclear-model | IOPSpark, "Many students hold a range of atom models, including hybrid models consisting of combinations of different models and incorrect ideas": https://spark.iop.org/many-students-hold-range-atom-models-including-hybrid-models-consisting-combinations-different ; examiner reports 1H-JUN23 08.5, 1F-JUN23 02.7 (E106) |
+| M45 | Ionising and non-ionising radiation not told apart; "radiation" means only nuclear radiation, so light and radio waves are not radiation, and ionisation is something that happens to cells. | p4-radioactivity, p4-half-life | IOPSpark, "Many students are unable to distinguish between non-ionising and ionising radiation and many do not think of light as 'radiation'": https://spark.iop.org/many-students-are-unable-distinguish-between-non-ionising-and-ionising-radiation-and-many-do-not ; examiner reports 1H-JUN22 07.3, 1H-JUN23 05.6 (E102) |
+| M46 | A nuclear power station is as dangerous as a nuclear bomb: controlled and uncontrolled chain reactions not told apart. | p4-nuclear-fission | IOPSpark, "Students' views about the risk of radiation…" (example given there): https://spark.iop.org/students-views-about-risk-radiation-and-radioactive-materials-are-based-more-strongly-everyday ; examiner report 1H-JUN25 05.4 (E109) |
+
+## Not found (P4)
+
+No IOPSpark misconception page was found on fission, fusion, nuclear equations,
+energy levels or the alpha scattering experiment itself; the evidence there is
+the examiner reports (E105 to E107, E109, E110: electrons said to deflect alpha
+particles, absorption and emission the wrong way round, a neutron that "hits"
+rather than is absorbed, "atoms fuse").
+

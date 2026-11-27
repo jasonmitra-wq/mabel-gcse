@@ -6,7 +6,7 @@
   "introTips": [
     "Fission is what happens inside every nuclear power station today. It is proven technology.",
     "Fusion powers stars such as the Sun. But we cannot yet use it to make electricity on a large scale.",
-    "In a chain reaction, each fission releases neutrons that can trigger more fissions. Without control, this becomes an explosion (atomic bomb). Under control, it powers a reactor.",
+    "In a chain reaction, each fission releases neutrons that can trigger more fissions. The explosion of a nuclear weapon comes from an uncontrolled chain reaction. Under control, it powers a reactor.",
     "Fusion joins two light nuclei. Some of their mass may be converted into the energy of radiation."
   ],
   "intro": "Some large nuclei can split apart. Some light nuclei can join together. Both release a huge amount of energy. Splitting a nucleus is called fission. It is used in nuclear power stations. Joining nuclei is called fusion. It powers stars such as the Sun. Scientists have been trying to use fusion on Earth for many years. It is one of the biggest engineering challenges in history.",
@@ -66,7 +66,19 @@
         }
       ],
       "memTip": "Fission = split. Large nucleus + neutron → two smaller nuclei + 2–3 neutrons + enormous energy.",
-      "tutor_note": "Be able to describe the process step by step. Use this order. Neutron absorbed → nucleus splits → new nuclei + more neutrons + energy."
+      "tutor_note": "Be able to describe the process step by step. Use this order. Neutron absorbed → nucleus splits → new nuclei + more neutrons + energy.",
+      "pictures": [
+        {
+          "diagram": "p4-fission",
+          "caption": "A uranium-235 nucleus absorbs a neutron and splits into two smaller nuclei. It gives out 2 or 3 neutrons.",
+          "labels": [
+            "neutron",
+            "U-235",
+            "smaller nucleus",
+            "2 or 3 neutrons"
+          ]
+        }
+      ]
     },
     {
       "heading": "Chain reactions and controlling fission",
@@ -88,7 +100,19 @@
         }
       ],
       "memTip": "Reactor = controlled chain reaction, steady energy. Weapon = uncontrolled chain reaction, explosion.",
-      "tutor_note": "Be able to draw or describe the chain reaction diagram: one fission → 2–3 neutrons → more fissions. Show why it multiplies."
+      "tutor_note": "Be able to draw or describe the chain reaction diagram: one fission → 2–3 neutrons → more fissions. Show why it multiplies.",
+      "pictures": [
+        {
+          "diagram": "p4-chain-reaction",
+          "caption": "Each fission releases neutrons that can cause more fissions.",
+          "labels": [
+            "1 fission",
+            "3 fissions",
+            "Uncontrolled",
+            "Controlled"
+          ]
+        }
+      ]
     },
     {
       "heading": "Nuclear fusion",
@@ -110,7 +134,18 @@
         }
       ],
       "memTip": "Fusion = join. Light + light → heavier + energy.",
-      "tutor_note": "Be clear on the direction. Fission splits a large nucleus. Fusion joins two light nuclei to make a heavier one."
+      "tutor_note": "Be clear on the direction. Fission splits a large nucleus. Fusion joins two light nuclei to make a heavier one.",
+      "pictures": [
+        {
+          "diagram": "p4-fusion",
+          "caption": "Two light nuclei join to form a heavier nucleus, and energy is released.",
+          "labels": [
+            "light nucleus",
+            "heavier nucleus",
+            "energy released"
+          ]
+        }
+      ]
     },
     {
       "heading": "Comparing fission and fusion",

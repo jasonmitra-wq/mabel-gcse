@@ -1,0 +1,9 @@
+RUN
+Mode: --blocking-only (missing_spec_content, above_gcse, factual_errors)
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+p4-nuclear-fission | 4.4.4.1, 4.4.4.2 | 18329 | 4583 | 0.3383
+TOTAL 1 lesson(s) | 18329 chars | 4583 est. input tokens | 16000 output tokens assumed | $0.3383
+Rates: $4 per M input, $20 per M output; output assumed at the ceiling per lesson (16000 tokens).
+Model claude-opus-5-5 confirmed in /v1/models.
+p4-nuclear-fission: OK | in 6837 out 1835 | $0.0640 | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 3
+Actual total cost: $0.0640

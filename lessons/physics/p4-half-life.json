@@ -98,7 +98,19 @@
         }
       ],
       "memTip": "Pick any two points where the activity halves. The time between them is the half-life. Check it is the same anywhere on the curve.",
-      "tutor_note": "Practise both reading half-life from graphs AND drawing decay curves. Both come up in exams."
+      "tutor_note": "Practise both reading half-life from graphs AND drawing decay curves. Both come up in exams.",
+      "pictures": [
+        {
+          "diagram": "p4-decay-graph",
+          "caption": "The activity halves every 2 hours, so the half-life is 2 hours.",
+          "labels": [
+            "activity (Bq)",
+            "time (hours)",
+            "800 Bq → 400 Bq takes 2 hours",
+            "half-life = 2 hours"
+          ]
+        }
+      ]
     },
     {
       "heading": "Uses of nuclear radiation",
@@ -127,7 +139,7 @@
     },
     {
       "heading": "Contamination, irradiation and radiation dangers",
-      "content": "<strong>Irradiation</strong>: exposing an object to nuclear radiation. <strong>The irradiated object does not become radioactive.</strong> If the source is outside, removing or shielding it stops the irradiation. Example: standing near a radioactive rock.\n\n<strong>Contamination</strong>: the unwanted presence of materials containing radioactive atoms on other materials. On a person, it may be on skin or clothes, or swallowed or breathed in. The hazard comes from the decay of the contaminating atoms. A contaminated object carries the radioactive material with it. The material keeps irradiating you, even when you move away from other sources. Contamination is much harder to deal with. The type of radiation affects the hazard. It is very dangerous if it is an alpha emitter. Alpha is highly ionising inside the body.\n\n<strong>Why radiation is dangerous</strong>:\n- ionising radiation knocks electrons off atoms in body cells\n- this damages DNA, causing mutations\n- mutations can cause cancer (uncontrolled cell division)\n- mutations in reproductive cells can be passed on to children\nThe risk grows with the dose and depends on the type of radiation. Alpha is the most ionising, so it is the most dangerous inside the body.\n\n<strong>Half-life and hazard</strong>: radioactive isotopes have a very wide range of half-lives. For the same number of nuclei, a short half-life means a high activity at first. It is very dangerous, but only for a short time. A long half-life means a lower activity. But it stays a hazard for a very long time.\n\nProtection: distance, shielding (lead or concrete) and keeping exposure time short.\n\n<strong>Sharing results</strong>: studies of how radiation affects people are published and shared with other scientists. Then other scientists can check the findings. This is called <strong>peer review</strong>.",
+      "content": "<strong>Irradiation</strong>: exposing an object to nuclear radiation. <strong>The irradiated object does not become radioactive.</strong> If the source is outside, removing or shielding it stops the irradiation. Example: standing near a radioactive rock.\n\n<strong>Contamination</strong>: the unwanted presence of materials containing radioactive atoms on other materials. On a person, it may be on skin or clothes, or swallowed or breathed in. The hazard comes from the decay of the contaminating atoms. A contaminated object carries the radioactive material with it. The material keeps irradiating you, even when you move away from other sources. Contamination is much harder to deal with. The type of radiation affects the hazard. It is very dangerous if it is an alpha emitter. Alpha is highly ionising inside the body.\n\n<strong>Why radiation is dangerous</strong>:\n- ionising radiation knocks electrons off atoms in body cells\n- this damages DNA, causing mutations\n- mutations can cause cancer (uncontrolled cell division)\n- mutations in reproductive cells can be passed on to children\nThe risk grows with the dose and depends on the type of radiation. Alpha is the most ionising, so it is the most dangerous inside the body.\n\n<strong>Half-life and hazard</strong>: radioactive isotopes have a very wide range of half-lives. They run from less than 1 × 10⁻³ s (a thousandth of a second) to more than 1 × 10⁹ years (a billion years). For the same number of nuclei, a short half-life means a high activity at first. It is very dangerous, but only for a short time. A long half-life means a lower activity. But it stays a hazard for a very long time.\n\nProtection: distance, shielding (lead or concrete) and keeping exposure time short.\n\n<strong>Sharing results</strong>: studies of how radiation affects people are published and shared with other scientists. Then other scientists can check the findings. This is called <strong>peer review</strong>.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -241,7 +253,7 @@
   "examTips": [
     "To find half-life from a graph: pick a clear starting point and halve the activity. Read both times from the x-axis and subtract. Check your answer by repeating from the second point.",
     "After n half-lives: remaining activity = initial × (½)ⁿ. If you are not confident with powers, build a step-by-step table.",
-    "For 'why gamma for a medical tracer' questions: (1) gamma passes through tissue. So it can be detected outside the body. (2) A short half-life means the dose falls quickly after the scan.",
+    "For 'why gamma for a medical tracer' questions: (1) gamma passes through tissue. So it can be detected outside the body. (2) A short half-life means the activity falls quickly after the scan, so the total dose stays low.",
     "Contamination is harder to deal with than irradiation, because the source stays with you. Mention this when explaining why alpha contamination is so dangerous.",
     "In evaluation questions, use the data given. Weigh the benefit of the use against the risk from the radiation."
   ],

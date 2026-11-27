@@ -107,6 +107,14 @@ mark-scheme part tagged 4.3, 141 parts) and data/exam/p3-outcomes.md
 (question types and mark-scheme points by section, examiner-named errors E67
 to E81).
 
+## P4 Atomic structure (2026-11-27)
+
+Brief docs/briefs/2026-11-27-phase-c-physics.md, Phase C step B1: no new
+downloads (P4 is on Paper 1, already held). From the same files, local and
+gitignored: data/exam/p4-ms-extract.txt (every mark-scheme part tagged 4.4,
+120 parts) and data/exam/p4-outcomes.md (question types and mark-scheme points
+by section, examiner-named errors E96 to E111).
+
 ## Geography Paper 2 (8035/2) for G5 (2026-11-19)
 
 Brief docs/briefs/2026-11-15-script-four-topics.md, step G-b. 24 files from the exam board, taken from the Geography 8035 "Assessment resources" page (its full listing of 171 resources, all pages read). Every file matched the SHA-1 the board lists in its URL. Standard-print papers, mark schemes, examiner reports and inserts only (modified papers not downloaded). June 2018 and June 2019 are not listed by the board; the specimen has "answers and commentary" in place of an examiner report. Section B (The changing economic world) is question 02. Text extracted page by page with Python 3.14.3 and pypdf. Notes made from them, local: data/exam/g5-qp-extract.txt (68 Section B question stems) and data/exam/g5-outcomes.md (question types, examiner errors E82 to E95).

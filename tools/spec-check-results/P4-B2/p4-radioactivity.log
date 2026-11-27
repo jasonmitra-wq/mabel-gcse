@@ -1,0 +1,9 @@
+RUN
+Mode: --blocking-only (missing_spec_content, above_gcse, factual_errors)
+lesson | specRefs sent | input chars | est. input tokens | est. cost (USD)
+p4-radioactivity | 4.4.2.1, 4.4.2.2, 4.4.3.1 | 25179 | 6295 | 0.3452
+TOTAL 1 lesson(s) | 25179 chars | 6295 est. input tokens | 16000 output tokens assumed | $0.3452
+Rates: $4 per M input, $20 per M output; output assumed at the ceiling per lesson (16000 tokens).
+Model claude-opus-5-5 confirmed in /v1/models.
+p4-radioactivity: OK | in 9384 out 2419 | $0.0859 | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 1
+Actual total cost: $0.0859

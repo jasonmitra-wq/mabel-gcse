@@ -246,3 +246,7 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-11-27 | g5-nigeria | OK | missing_spec_content 0, above_gcse 0, factual_errors 3, wrong_terms 0, checkpoint_mismatch 1, not_checked 4 | 10853/4872 | $0.1409
 - 2026-11-27 | g5-uk-economy | OK | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 6 | 9413/3010 | $0.0979
 - 2026-11-27 | g5-nigeria | OK | missing_spec_content 1, above_gcse 0, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 5 | 10859/4162 | $0.1267
+- 2026-11-27 | p4-nuclear-model | OK | missing_spec_content 0, above_gcse 0, factual_errors 2, wrong_terms 0, checkpoint_mismatch 0, not_checked 4 | 9756/2845 | $0.0959
+- 2026-11-27 | p4-radioactivity | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 1 | 9384/2419 | $0.0859
+- 2026-11-27 | p4-half-life | OK | missing_spec_content 1, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 1 | 8817/2388 | $0.0830
+- 2026-11-27 | p4-nuclear-fission | OK | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 3 | 6837/1835 | $0.0640

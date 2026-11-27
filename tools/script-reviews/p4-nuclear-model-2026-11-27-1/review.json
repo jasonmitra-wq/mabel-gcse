@@ -1,0 +1,326 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 18625,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11258,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 6672
+    },
+    "iterations": [
+      {
+        "input_tokens": 18625,
+        "output_tokens": 11258,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.5993200000000001,
+  "seconds": 108,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"new\",\"turn\":\"1.1a don't know (first time)\",\"quote\":\"Opposite charges attract. Are two positive charges opposite, or alike?\",\"what\":\"The hint asks 'opposite or alike?' but the buttons are still attract / repel / nothing happens, so she cannot answer the question asked. She has also not been told that like charges repel, so 'alike' does not get her to the answer.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.2b\",\"quote\":\"Carbon and gold are two of the elements.\",\"what\":\"'Elements' is used without saying what an element is. The message has no clear purpose at this point and leaves her wondering why carbon and gold matter.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"1.8\",\"quote\":\"In the plum pudding model, the negative electrons balance the spread-out positive charge. So the whole atom has no overall charge.\",\"what\":\"This is the same fact she was given in the reply to 1.6 ('positive charge must balance the negative electrons, so the atom has no overall charge'), said again two messages later.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"1.9\",\"quote\":\"In the plum pudding model, where is the positive charge?\",\"what\":\"The message just before said 'the spread-out positive charge', and 1.7 said 'a ball of positive charge, spread out evenly'. She only has to copy the words from the line above.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.10 (all / some / none)\",\"quote\":\"Yes: your line makes every point. You have this: a ball (sphere) of positive charge, spread out. You have this: with negative electrons dotted through it.\",\"what\":\"The feedback reads like a mark scheme, not a teacher: 'You have this:' twice, bracketed alternatives and sentence fragments ('With negative electrons dotted through it.'). The same stilted pattern recurs at 2.12, 3.18 and 4.10.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F4\",\"turn\":\"2.2\",\"quote\":\"A radioactive source is a material that gives out radiation on its own. The next lesson is about it.\",\"what\":\"This is a stand-alone vocabulary message for a term a later lesson teaches, and it is followed by more definition-only messages (alpha particles in 2.2b, 'Deflected means' in 2.3b) before anything happens. She gets three word-boxes in a row with no context.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"2.2\",\"quote\":\"gives out radiation on its own\",\"what\":\"'Radiation' is used to define 'radioactive source' but has not itself been explained. Later, 4.3 defines 'electromagnetic radiation' as waves, so she may think alpha particles are waves too.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"2.3\",\"quote\":\"This is the alpha particle scattering experiment.\",\"what\":\"'Scattering' is never explained. One sentence saying the particles were scattered (sent off in different directions) would fix it.\",\"severity\":\"minor\"},{\"fault\":\"P9\",\"turn\":\"2.3b\",\"quote\":\"Deflected means pushed off a straight path, like a ball glancing off a wall.\",\"what\":\"This is a second everyday comparison, on top of the plum pudding.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.3b\",\"quote\":\"like a ball glancing off a wall\",\"what\":\"The picture is of a ball touching a wall, but the alpha particles are repelled without touching the nucleus (2.10 says 'before they reach it'). The comparison plants the wrong idea of a collision.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.4\",\"quote\":\"If the plum pudding model were right, what would the alpha particles do?\",\"what\":\"She has not been told anything that lets her work this out: that spread-out charge can only push weakly, or that alpha particles are heavy and fast enough to plough through. For a first-time learner it is a guess between three options.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"2.4 don't know (first time)\",\"quote\":\"In the plum pudding model, the positive charge is spread thinly. Could anything push an alpha particle hard?\",\"what\":\"This is a yes/no question shown with the same three buttons, none of which is yes or no. 'Spread thinly' is also a new idea: she was told 'spread out evenly', not that this makes the push weak.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"2.5\",\"quote\":\"most alpha particles went straight through the foil. A few were deflected through large angles. A very small number bounced almost straight back.\",\"what\":\"All three results arrive in one message, and the next question then refers to 'the first result'. They should be built up one at a time.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"2.8\",\"quote\":\"dense means a lot of mass in a small space\",\"what\":\"The definition of dense was already given in 1.1b ('Dense means a lot of mass in a small space', 'packs the same mass into a much smaller space'). Here it is repeated mid-sentence, which breaks up the introduction of the nucleus.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.10 don't know (first time)\",\"quote\":\"The nucleus is tiny. Would many alpha particles be aimed straight at it?\",\"what\":\"This is another yes/no hint shown with the same three option buttons, so her natural answer ('no') has no button.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.12 (all / some / none)\",\"quote\":\"Still needed: the nucleus is dense or holds the positive charge (most of the mass).\",\"what\":\"She is shown the marker's wording with 'or' and brackets, which is muddled as a sentence. It also says the nucleus holds 'most of the mass', which the lesson does not teach until 3.2.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"3.3\",\"quote\":\"Where is most of the mass of an atom?\",\"what\":\"The message immediately before ends 'Yet most of the mass of the atom is in the nucleus.' The answer is given word for word just before the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.3 don't know (first time)\",\"quote\":\"The alpha particles that bounced back hit something dense. Where was it?\",\"what\":\"This says the alpha particles 'hit' the nucleus, but 2.10 taught that they are 'repelled back before they reach it'. The lesson contradicts its own physics.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"3.5\",\"quote\":\"Relative mass compares masses without using kilograms.\",\"what\":\"This does not say what the masses are compared with (the proton counts as 1), so 'relative mass 1' means little to her. 'A very small relative mass' for the electron is also vague.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"3.6\",\"quote\":\"A proton has relative charge +1, a neutron 0 and an electron −1. The electrons are outside the nucleus.\",\"what\":\"There are two separate ideas in one message: a new term with three values, then where the electrons are. The location is tacked on at the end.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"3.7\",\"quote\":\"Which particle is outside the nucleus?\",\"what\":\"The message just before ends 'The electrons are outside the nucleus.' and 3.4b said protons and neutrons are in it. The answer is given directly before the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P13\",\"turn\":\"3.12\",\"quote\":\"An atom has atomic number 11 and mass number 23. How many neutrons does it have?\",\"what\":\"The subtraction neutrons = mass number − atomic number is stated in words at 3.9 but never worked through. The only numbers shown (lithium, 3 + 4 = 7) go the other way, and the lesson file's carbon-12 example has been dropped.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.14\",\"quote\":\"How many protons does ²³⁸₉₂U have?\",\"what\":\"U is not named as uranium. The same happens with N and Mg in 3.16 and with Ar, Ca, O, S and Cl in the quiz. She can still answer, but unnamed symbols are off-putting on first meeting.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"3.16\",\"quote\":\"Which pair are isotopes of the same element?\",\"what\":\"The right option, ¹²₆C and ¹⁴₆C, is exactly the example given in the message before ('Carbon-12 and carbon-14 both have 6 protons'). She can match it without understanding isotopes; use a different element.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.17\",\"quote\":\"An atom can lose or gain electrons. Then it is no longer neutral: it is an ion, a particle with a charge. A lithium atom that loses one electron becomes a positive ion, written Li⁺.\",\"what\":\"Three ideas are packed into one message, dropped between the isotope question and the isotope own-words line. It never says why losing an electron makes the ion positive, and ions are never asked about or practised.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.17\",\"quote\":\"Then it is no longer neutral\",\"what\":\"'Neutral' appears for the first time here. Up to now the lesson has said 'no overall charge' and never linked the two.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.18 (all / some / none)\",\"quote\":\"You have this: atoms with the same number of protons (same element or atomic number).\",\"what\":\"The marker's alternatives in brackets are shown to her as if they were a sentence. It should read as one plain statement.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"4.6\",\"quote\":\"An electron changes level, and its energy falls. What does it do?\",\"what\":\"4.4b and the picture message 4.5 ('emitting brings it down') have just said this, so it is recall of the line above. 'What does it do?' is also vague wording.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"4.7\",\"quote\":\"Later experiments showed that the positive charge of a nucleus is shared by smaller particles, each with the same charge. These are the protons.\",\"what\":\"Protons and neutrons were fully taught in key point 3, so 4.7 and 4.8 present as new discoveries things she has already been using. 'Later' has nothing to attach to, and 'shared by smaller particles' is unclear wording.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F7\",\"turn\":\"4.9 don't know (first time)\",\"quote\":\"Which experiment showed the plum pudding model was wrong, and what did it lead to?\",\"what\":\"After 'don't know' she gets two questions at once, which is harder than the original, and they do not match the three model buttons she is shown.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.9 right answer\",\"quote\":\"the scattering experiment replaced the plum pudding with the nuclear model\",\"what\":\"This is loose wording: an experiment does not replace a model. Its evidence led scientists to replace it.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"The end (summary points 1 to 4)\",\"quote\":\"Summary, point 1 of 4: A ball of spread-out positive charge, with negative electrons dotted through it like plums in a pudding.\",\"what\":\"Point 1 does not say it describes the plum pudding model, or that the model was replaced, so it reads as what an atom is. The summary also leaves out the three results and their conclusions, protons / neutrons / electrons, atomic and mass number, and energy levels.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P14\",\"turn\":\"whole lesson\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on anywhere: no firing of alpha particles at an atom, no building an atom, no moving an electron between levels. The lesson is only Next buttons, three-option questions and a typed line.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"2.1 to 2.3b, 4.1 to 4.5\",\"quote\":\"Button: Next\",\"what\":\"She taps Next through five telling messages in a row before 2.4, and six in a row at the start of key point 4, with nothing to do. Add the answer-before-question recall questions and she is likely to switch off.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"new\",\"instances\":13},{\"fault\":\"F8\",\"instances\":5},{\"fault\":\"F3\",\"instances\":5},{\"fault\":\"F1\",\"instances\":3},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"F4\",\"instances\":1},{\"fault\":\"P9\",\"instances\":1},{\"fault\":\"P13\",\"instances\":1},{\"fault\":\"F7\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1}],\"overall\":\"Not as it stands. Most of the physics is sound and the order is sensible, but three things would mislead her: the hint at 3.3 says the alpha particles 'hit' the nucleus after 2.10 taught they never reach it, the prediction at 2.4 cannot be reasoned out from what she has been told, and summary point 1 states the plum pudding picture as if it were what an atom is. Five questions are answered by the message just before them (1.9, 3.3, 3.7, 3.16, 4.6), several 'don't know' hints ask a question the buttons cannot answer, and the own-words feedback shows her the mark scheme. With no worked example for the neutron sum and nothing hands-on in the whole lesson, I would want these fixed before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "new",
+      "turn": "1.1a don't know (first time)",
+      "quote": "Opposite charges attract. Are two positive charges opposite, or alike?",
+      "what": "The hint asks 'opposite or alike?' but the buttons are still attract / repel / nothing happens, so she cannot answer the question asked. She has also not been told that like charges repel, so 'alike' does not get her to the answer.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.2b",
+      "quote": "Carbon and gold are two of the elements.",
+      "what": "'Elements' is used without saying what an element is. The message has no clear purpose at this point and leaves her wondering why carbon and gold matter.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.8",
+      "quote": "In the plum pudding model, the negative electrons balance the spread-out positive charge. So the whole atom has no overall charge.",
+      "what": "This is the same fact she was given in the reply to 1.6 ('positive charge must balance the negative electrons, so the atom has no overall charge'), said again two messages later.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.9",
+      "quote": "In the plum pudding model, where is the positive charge?",
+      "what": "The message just before said 'the spread-out positive charge', and 1.7 said 'a ball of positive charge, spread out evenly'. She only has to copy the words from the line above.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10 (all / some / none)",
+      "quote": "Yes: your line makes every point. You have this: a ball (sphere) of positive charge, spread out. You have this: with negative electrons dotted through it.",
+      "what": "The feedback reads like a mark scheme, not a teacher: 'You have this:' twice, bracketed alternatives and sentence fragments ('With negative electrons dotted through it.'). The same stilted pattern recurs at 2.12, 3.18 and 4.10.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F4",
+      "turn": "2.2",
+      "quote": "A radioactive source is a material that gives out radiation on its own. The next lesson is about it.",
+      "what": "This is a stand-alone vocabulary message for a term a later lesson teaches, and it is followed by more definition-only messages (alpha particles in 2.2b, 'Deflected means' in 2.3b) before anything happens. She gets three word-boxes in a row with no context.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.2",
+      "quote": "gives out radiation on its own",
+      "what": "'Radiation' is used to define 'radioactive source' but has not itself been explained. Later, 4.3 defines 'electromagnetic radiation' as waves, so she may think alpha particles are waves too.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.3",
+      "quote": "This is the alpha particle scattering experiment.",
+      "what": "'Scattering' is never explained. One sentence saying the particles were scattered (sent off in different directions) would fix it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P9",
+      "turn": "2.3b",
+      "quote": "Deflected means pushed off a straight path, like a ball glancing off a wall.",
+      "what": "This is a second everyday comparison, on top of the plum pudding.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.3b",
+      "quote": "like a ball glancing off a wall",
+      "what": "The picture is of a ball touching a wall, but the alpha particles are repelled without touching the nucleus (2.10 says 'before they reach it'). The comparison plants the wrong idea of a collision.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.4",
+      "quote": "If the plum pudding model were right, what would the alpha particles do?",
+      "what": "She has not been told anything that lets her work this out: that spread-out charge can only push weakly, or that alpha particles are heavy and fast enough to plough through. For a first-time learner it is a guess between three options.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "2.4 don't know (first time)",
+      "quote": "In the plum pudding model, the positive charge is spread thinly. Could anything push an alpha particle hard?",
+      "what": "This is a yes/no question shown with the same three buttons, none of which is yes or no. 'Spread thinly' is also a new idea: she was told 'spread out evenly', not that this makes the push weak.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "2.5",
+      "quote": "most alpha particles went straight through the foil. A few were deflected through large angles. A very small number bounced almost straight back.",
+      "what": "All three results arrive in one message, and the next question then refers to 'the first result'. They should be built up one at a time.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.8",
+      "quote": "dense means a lot of mass in a small space",
+      "what": "The definition of dense was already given in 1.1b ('Dense means a lot of mass in a small space', 'packs the same mass into a much smaller space'). Here it is repeated mid-sentence, which breaks up the introduction of the nucleus.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.10 don't know (first time)",
+      "quote": "The nucleus is tiny. Would many alpha particles be aimed straight at it?",
+      "what": "This is another yes/no hint shown with the same three option buttons, so her natural answer ('no') has no button.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.12 (all / some / none)",
+      "quote": "Still needed: the nucleus is dense or holds the positive charge (most of the mass).",
+      "what": "She is shown the marker's wording with 'or' and brackets, which is muddled as a sentence. It also says the nucleus holds 'most of the mass', which the lesson does not teach until 3.2.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.3",
+      "quote": "Where is most of the mass of an atom?",
+      "what": "The message immediately before ends 'Yet most of the mass of the atom is in the nucleus.' The answer is given word for word just before the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3 don't know (first time)",
+      "quote": "The alpha particles that bounced back hit something dense. Where was it?",
+      "what": "This says the alpha particles 'hit' the nucleus, but 2.10 taught that they are 'repelled back before they reach it'. The lesson contradicts its own physics.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5",
+      "quote": "Relative mass compares masses without using kilograms.",
+      "what": "This does not say what the masses are compared with (the proton counts as 1), so 'relative mass 1' means little to her. 'A very small relative mass' for the electron is also vague.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.6",
+      "quote": "A proton has relative charge +1, a neutron 0 and an electron −1. The electrons are outside the nucleus.",
+      "what": "There are two separate ideas in one message: a new term with three values, then where the electrons are. The location is tacked on at the end.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.7",
+      "quote": "Which particle is outside the nucleus?",
+      "what": "The message just before ends 'The electrons are outside the nucleus.' and 3.4b said protons and neutrons are in it. The answer is given directly before the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P13",
+      "turn": "3.12",
+      "quote": "An atom has atomic number 11 and mass number 23. How many neutrons does it have?",
+      "what": "The subtraction neutrons = mass number − atomic number is stated in words at 3.9 but never worked through. The only numbers shown (lithium, 3 + 4 = 7) go the other way, and the lesson file's carbon-12 example has been dropped.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.14",
+      "quote": "How many protons does ²³⁸₉₂U have?",
+      "what": "U is not named as uranium. The same happens with N and Mg in 3.16 and with Ar, Ca, O, S and Cl in the quiz. She can still answer, but unnamed symbols are off-putting on first meeting.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.16",
+      "quote": "Which pair are isotopes of the same element?",
+      "what": "The right option, ¹²₆C and ¹⁴₆C, is exactly the example given in the message before ('Carbon-12 and carbon-14 both have 6 protons'). She can match it without understanding isotopes; use a different element.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.17",
+      "quote": "An atom can lose or gain electrons. Then it is no longer neutral: it is an ion, a particle with a charge. A lithium atom that loses one electron becomes a positive ion, written Li⁺.",
+      "what": "Three ideas are packed into one message, dropped between the isotope question and the isotope own-words line. It never says why losing an electron makes the ion positive, and ions are never asked about or practised.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.17",
+      "quote": "Then it is no longer neutral",
+      "what": "'Neutral' appears for the first time here. Up to now the lesson has said 'no overall charge' and never linked the two.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.18 (all / some / none)",
+      "quote": "You have this: atoms with the same number of protons (same element or atomic number).",
+      "what": "The marker's alternatives in brackets are shown to her as if they were a sentence. It should read as one plain statement.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.6",
+      "quote": "An electron changes level, and its energy falls. What does it do?",
+      "what": "4.4b and the picture message 4.5 ('emitting brings it down') have just said this, so it is recall of the line above. 'What does it do?' is also vague wording.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.7",
+      "quote": "Later experiments showed that the positive charge of a nucleus is shared by smaller particles, each with the same charge. These are the protons.",
+      "what": "Protons and neutrons were fully taught in key point 3, so 4.7 and 4.8 present as new discoveries things she has already been using. 'Later' has nothing to attach to, and 'shared by smaller particles' is unclear wording.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F7",
+      "turn": "4.9 don't know (first time)",
+      "quote": "Which experiment showed the plum pudding model was wrong, and what did it lead to?",
+      "what": "After 'don't know' she gets two questions at once, which is harder than the original, and they do not match the three model buttons she is shown.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.9 right answer",
+      "quote": "the scattering experiment replaced the plum pudding with the nuclear model",
+      "what": "This is loose wording: an experiment does not replace a model. Its evidence led scientists to replace it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "The end (summary points 1 to 4)",
+      "quote": "Summary, point 1 of 4: A ball of spread-out positive charge, with negative electrons dotted through it like plums in a pudding.",
+      "what": "Point 1 does not say it describes the plum pudding model, or that the model was replaced, so it reads as what an atom is. The summary also leaves out the three results and their conclusions, protons / neutrons / electrons, atomic and mass number, and energy levels.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on anywhere: no firing of alpha particles at an atom, no building an atom, no moving an electron between levels. The lesson is only Next buttons, three-option questions and a typed line.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "2.1 to 2.3b, 4.1 to 4.5",
+      "quote": "Button: Next",
+      "what": "She taps Next through five telling messages in a row before 2.4, and six in a row at the start of key point 4, with nothing to do. Add the answer-before-question recall questions and she is likely to switch off.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 13
+    },
+    {
+      "fault": "F3",
+      "instances": 5
+    },
+    {
+      "fault": "F8",
+      "instances": 5
+    },
+    {
+      "fault": "F1",
+      "instances": 3
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "F4",
+      "instances": 1
+    },
+    {
+      "fault": "P9",
+      "instances": 1
+    },
+    {
+      "fault": "P13",
+      "instances": 1
+    },
+    {
+      "fault": "F7",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it stands. Most of the physics is sound and the order is sensible, but three things would mislead her: the hint at 3.3 says the alpha particles 'hit' the nucleus after 2.10 taught they never reach it, the prediction at 2.4 cannot be reasoned out from what she has been told, and summary point 1 states the plum pudding picture as if it were what an atom is. Five questions are answered by the message just before them (1.9, 3.3, 3.7, 3.16, 4.6), several 'don't know' hints ask a question the buttons cannot answer, and the own-words feedback shows her the mark scheme. With no worked example for the neutron sum and nothing hands-on in the whole lesson, I would want these fixed before she uses it."
+}

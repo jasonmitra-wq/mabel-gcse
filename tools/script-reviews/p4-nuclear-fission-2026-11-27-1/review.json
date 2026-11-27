@@ -1,0 +1,326 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 13695,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 10216,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 5842
+    },
+    "iterations": [
+      {
+        "input_tokens": 13695,
+        "output_tokens": 10216,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.5182,
+  "seconds": 94,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"new\",\"turn\":\"1.1\",\"quote\":\"the two ways to release the huge amounts of energy stored inside atoms\",\"what\":\"Fission and fusion are not the only two ways (radioactive decay also releases nuclear energy), and the energy is stored in the nucleus, not just 'inside atoms'. This is loose physics in the first line.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.1b don't know (first time)\",\"quote\":\"Gamma rays have no mass and no charge. Are they particles or waves?\",\"what\":\"The hint asks 'particles or waves' but none of the three buttons says 'waves'. She has to know that 'electromagnetic radiation' means waves, which the hint does not tell her, so it does not lead to an answer she can pick.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.2\",\"quote\":\"Some very large nuclei, such as uranium-235, are unstable.\",\"what\":\"'Unstable' carries the whole lesson and is never explained (likely to break apart or change). The two recall questions did not cover it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"1.2\",\"quote\":\"Uranium-235, or U-235, is the uranium isotope with mass number 235.\",\"what\":\"'Isotope' and 'mass number' are both used in one message, on top of 'unstable', with no reminder of what either means. The message explains 235 using words she may not remember.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.5\",\"quote\":\"What usually makes a uranium-235 nucleus split?\",\"what\":\"The message just before (1.4) said 'Usually it must first absorb a neutron ... and then it splits'. She only has to copy the last line she read.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.5 don't know (first time)\",\"quote\":\"A particle with no charge can get into the nucleus easily. Which particle is that?\",\"what\":\"The hint brings in a new, unexplained idea (why an uncharged particle gets into a nucleus easily). The buttons are causes ('Being heated', 'Absorbing a neutron'), not particles, so the hint question does not match the choices.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"1.6\",\"quote\":\"As it splits, it gives out 2 or 3 neutrons and gamma rays, and a large amount of energy is released.\",\"what\":\"The message opens with 'it' and never says what 'it' is. The nucleus was last named before the question at 1.5.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"1.6 to 1.9\",\"quote\":\"The two smaller nuclei and the neutrons are the fission products. They all fly apart fast: they all have kinetic energy.\",\"what\":\"Four told messages in a row with only 'Next' (gamma rays, energy, fission products, kinetic energy, fuels), and none of it is asked about before the one-line summary. She is likely to tap through without reading.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"1.8\",\"quote\":\"a neutron is absorbed by a uranium-235 nucleus, which splits into two smaller nuclei and gives out 2 or 3 neutrons\",\"what\":\"The picture's message repeats what 1.3, 1.4 and 1.6 have just said, and the caption under it says it a third time. The picture also leaves out the gamma rays and the energy.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"1.9\",\"quote\":\"The most common fuels for fission are uranium-235 and plutonium-239.\",\"what\":\"'Fuel' is used without saying what it means here; to her, fuel is something you burn. Plutonium-239 appears with no explanation at all, where uranium-235 at least got a line.\",\"severity\":\"minor\"},{\"fault\":\"F15\",\"turn\":\"1.10\",\"quote\":\"You have this: it splits into two smaller nuclei (giving out 2 or 3 neutrons, gamma rays and energy).\",\"what\":\"One marking point bundles four things. If she writes only 'it splits into two' she is told she 'has' the neutrons, gamma rays and energy that she never mentioned.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.10\",\"quote\":\"Yes: your line makes every point. You have this: a large unstable nucleus absorbs a neutron. You have this: it splits into two smaller nuclei\",\"what\":\"The feedback reads like a mark scheme pasted in: 'You have this:' twice in a row after it has already said she made every point. The same template is used at 2.9, 3.8 and 4.5.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"2.1\",\"quote\":\"Each fission gives out 2 or 3 neutrons.\",\"what\":\"This is the third statement of the same fact in a few messages (1.6, 1.8, now 2.1). A short link back would do.\",\"severity\":\"minor\"},{\"fault\":\"P12\",\"turn\":\"2.3\",\"quote\":\"labelled 1 fission, 3 fissions, Uncontrolled, Controlled\",\"what\":\"The picture is labelled 'Uncontrolled' and 'Controlled' before either idea has been taught (they come at 2.5 to 2.7). The message only talks about the reaction growing.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"2.4\",\"quote\":\"The picture shows a chain reaction growing: 1 fission leads to 3\",\"what\":\"The message and picture label just before the question ('1 fission leads to 3', '3 fissions') give the answer to 'How many fissions are in the next round?'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P8\",\"turn\":\"2.4\",\"quote\":\"One fission gives out 3 neutrons, and each causes a new fission. How many fissions are in the next round?\",\"what\":\"The question contains its own answer: 3 neutrons, each causing one fission. A better test would ask about the round after that (9).\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.4\",\"quote\":\"How many fissions are in the next round?\",\"what\":\"'Round' has not been used or explained. The lesson has only said 'again and again'.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"2.5\",\"quote\":\"If nothing controls it, the number of fissions grows very fast\",\"what\":\"The message opens with 'it' before the chain reaction is named. The referent only appears at the end of the second sentence.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.7\",\"quote\":\"In a reactor, some of the neutrons are absorbed so they cannot cause more fissions.\",\"what\":\"Until now 'absorbing a neutron' was exactly what makes a nucleus split; here being absorbed stops fission. The script never says the neutrons are absorbed by something other than the uranium fuel, so this contradicts what she has just learned.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"2.8\",\"quote\":\"How is the chain reaction in a nuclear reactor kept under control?\",\"what\":\"The message immediately before (2.7) gave the answer almost word for word. The right button is also much the longest and repeats that wording.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"3.1\",\"quote\":\"Here, light means a small mass, not light you can see.\",\"what\":\"A new key point opens with 'Here, light means...' before the word 'light' has been used and with no line saying the topic has moved on to joining nuclei. She has no idea what 'here' refers to.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"3.3\",\"quote\":\"In fusion, some of the mass may be turned into the energy of radiation. So fusion releases a large amount of energy.\",\"what\":\"Mass turning into energy is a big new idea dropped in with no explanation. 'May be' sounds unsure, 'the energy of radiation' is not a phrase she will follow, and the 'So' does not explain why the amount is large.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"3.5\",\"quote\":\"What happens in nuclear fusion?\",\"what\":\"The picture message and caption just before it say 'two light nuclei joining into a heavier nucleus', which is the right button nearly word for word.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.8\",\"quote\":\"In one line: what is nuclear fusion?\",\"what\":\"This is the same question as 3.5 ('What happens in nuclear fusion?') three messages later, and the facts about the Sun and electricity in between are not asked about.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.8 (none)\",\"quote\":\"Two light nuclei join (fuse). To form a heavier nucleus (releasing energy).\",\"what\":\"The model answer is chopped into two fragments; 'To form a heavier nucleus (releasing energy).' is not a sentence. It reads as broken.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.8\",\"quote\":\"two light nuclei join (fuse)\",\"what\":\"'Fuse' appears in the feedback, but the lesson has never used or explained the word.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"4.2\",\"quote\":\"Fission breaks a big nucleus apart, usually after it takes in a neutron. Fusion goes the other way: small nuclei combine into a bigger one.\",\"what\":\"This restates what key points 1 and 3 said, with nothing new. She could be asked to make the comparison herself instead.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"4.3\",\"quote\":\"Fusion powers the stars, but is not yet used for electricity on a large scale.\",\"what\":\"This repeats 3.6 and 3.7 almost word for word a few messages later, and the first half repeats 2.6 and 2.7.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"4.4\",\"quote\":\"Which is true of both fission and fusion?\",\"what\":\"4.1 has just said 'both release a large amount of energy', which is the right button word for word.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"4.4 don't know (first time)\",\"quote\":\"One splits and one joins, so it is not that.\",\"what\":\"'It is not that' does not say which option is being ruled out. She has to guess what 'that' refers to.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"4.5\",\"quote\":\"In one line: how are fission and fusion different?\",\"what\":\"4.2 and the wrong-answer replies at 4.4 ('only fission splits a nucleus; fusion joins nuclei') have just given this answer.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.10 (Hydrogen gas)\",\"quote\":\"Not quite: light nuclei are used in fusion.\",\"what\":\"The lesson never said hydrogen nuclei are light nuclei or that hydrogen is used in fusion, so this reply does not connect to the answer she chose.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.7 to 4.12\",\"quote\":\"\\\"One proton and one neutron\\\" / \\\"Two smaller nuclei, roughly equal in size\\\" / \\\"Many tiny pieces\\\"\",\"what\":\"In all six quiz questions the right answer is the middle button, as it is at 1.1b, 1.5, 2.8, 3.5 and 4.4. She will spot the pattern and the quiz will test nothing.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P14\",\"turn\":\"whole lesson\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on anywhere: no chain reaction to try and no control to move, only Next, three-button questions and one-line summaries. A chain reaction is an obvious thing to let her play with (absorb more or fewer neutrons and watch it grow or hold steady).\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"F8\",\"instances\":6},{\"fault\":\"P8\",\"instances\":1},{\"fault\":\"F2\",\"instances\":4},{\"fault\":\"F1\",\"instances\":4},{\"fault\":\"F3\",\"instances\":3},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"F15\",\"instances\":1},{\"fault\":\"P12\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"new\",\"instances\":11}],\"overall\":\"Not as it is. The physics is mostly sound, the order is sensible and there is a summary at the end, but nearly every question can be answered by copying the message just before it, and the right answer sits on the middle button throughout the quiz, so she could finish with full marks having learned little. Three places would confuse a first-time learner: neutrons 'absorbed' to stop fission when absorbing a neutron was what caused it (2.7), the fusion key point opening with 'Here, light means...' out of nowhere (3.1), and mass 'may be turned into the energy of radiation' with no explanation (3.3). I would fix those, move the questions away from their answers, tidy the own-words feedback and add something hands-on for the chain reaction before letting her use it.\"}",
+  "findings": [
+    {
+      "fault": "new",
+      "turn": "1.1",
+      "quote": "the two ways to release the huge amounts of energy stored inside atoms",
+      "what": "Fission and fusion are not the only two ways (radioactive decay also releases nuclear energy), and the energy is stored in the nucleus, not just 'inside atoms'. This is loose physics in the first line.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1b don't know (first time)",
+      "quote": "Gamma rays have no mass and no charge. Are they particles or waves?",
+      "what": "The hint asks 'particles or waves' but none of the three buttons says 'waves'. She has to know that 'electromagnetic radiation' means waves, which the hint does not tell her, so it does not lead to an answer she can pick.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.2",
+      "quote": "Some very large nuclei, such as uranium-235, are unstable.",
+      "what": "'Unstable' carries the whole lesson and is never explained (likely to break apart or change). The two recall questions did not cover it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.2",
+      "quote": "Uranium-235, or U-235, is the uranium isotope with mass number 235.",
+      "what": "'Isotope' and 'mass number' are both used in one message, on top of 'unstable', with no reminder of what either means. The message explains 235 using words she may not remember.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.5",
+      "quote": "What usually makes a uranium-235 nucleus split?",
+      "what": "The message just before (1.4) said 'Usually it must first absorb a neutron ... and then it splits'. She only has to copy the last line she read.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.5 don't know (first time)",
+      "quote": "A particle with no charge can get into the nucleus easily. Which particle is that?",
+      "what": "The hint brings in a new, unexplained idea (why an uncharged particle gets into a nucleus easily). The buttons are causes ('Being heated', 'Absorbing a neutron'), not particles, so the hint question does not match the choices.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "1.6",
+      "quote": "As it splits, it gives out 2 or 3 neutrons and gamma rays, and a large amount of energy is released.",
+      "what": "The message opens with 'it' and never says what 'it' is. The nucleus was last named before the question at 1.5.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "1.6 to 1.9",
+      "quote": "The two smaller nuclei and the neutrons are the fission products. They all fly apart fast: they all have kinetic energy.",
+      "what": "Four told messages in a row with only 'Next' (gamma rays, energy, fission products, kinetic energy, fuels), and none of it is asked about before the one-line summary. She is likely to tap through without reading.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.8",
+      "quote": "a neutron is absorbed by a uranium-235 nucleus, which splits into two smaller nuclei and gives out 2 or 3 neutrons",
+      "what": "The picture's message repeats what 1.3, 1.4 and 1.6 have just said, and the caption under it says it a third time. The picture also leaves out the gamma rays and the energy.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.9",
+      "quote": "The most common fuels for fission are uranium-235 and plutonium-239.",
+      "what": "'Fuel' is used without saying what it means here; to her, fuel is something you burn. Plutonium-239 appears with no explanation at all, where uranium-235 at least got a line.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F15",
+      "turn": "1.10",
+      "quote": "You have this: it splits into two smaller nuclei (giving out 2 or 3 neutrons, gamma rays and energy).",
+      "what": "One marking point bundles four things. If she writes only 'it splits into two' she is told she 'has' the neutrons, gamma rays and energy that she never mentioned.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10",
+      "quote": "Yes: your line makes every point. You have this: a large unstable nucleus absorbs a neutron. You have this: it splits into two smaller nuclei",
+      "what": "The feedback reads like a mark scheme pasted in: 'You have this:' twice in a row after it has already said she made every point. The same template is used at 2.9, 3.8 and 4.5.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.1",
+      "quote": "Each fission gives out 2 or 3 neutrons.",
+      "what": "This is the third statement of the same fact in a few messages (1.6, 1.8, now 2.1). A short link back would do.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P12",
+      "turn": "2.3",
+      "quote": "labelled 1 fission, 3 fissions, Uncontrolled, Controlled",
+      "what": "The picture is labelled 'Uncontrolled' and 'Controlled' before either idea has been taught (they come at 2.5 to 2.7). The message only talks about the reaction growing.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.4",
+      "quote": "The picture shows a chain reaction growing: 1 fission leads to 3",
+      "what": "The message and picture label just before the question ('1 fission leads to 3', '3 fissions') give the answer to 'How many fissions are in the next round?'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P8",
+      "turn": "2.4",
+      "quote": "One fission gives out 3 neutrons, and each causes a new fission. How many fissions are in the next round?",
+      "what": "The question contains its own answer: 3 neutrons, each causing one fission. A better test would ask about the round after that (9).",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.4",
+      "quote": "How many fissions are in the next round?",
+      "what": "'Round' has not been used or explained. The lesson has only said 'again and again'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.5",
+      "quote": "If nothing controls it, the number of fissions grows very fast",
+      "what": "The message opens with 'it' before the chain reaction is named. The referent only appears at the end of the second sentence.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.7",
+      "quote": "In a reactor, some of the neutrons are absorbed so they cannot cause more fissions.",
+      "what": "Until now 'absorbing a neutron' was exactly what makes a nucleus split; here being absorbed stops fission. The script never says the neutrons are absorbed by something other than the uranium fuel, so this contradicts what she has just learned.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.8",
+      "quote": "How is the chain reaction in a nuclear reactor kept under control?",
+      "what": "The message immediately before (2.7) gave the answer almost word for word. The right button is also much the longest and repeats that wording.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.1",
+      "quote": "Here, light means a small mass, not light you can see.",
+      "what": "A new key point opens with 'Here, light means...' before the word 'light' has been used and with no line saying the topic has moved on to joining nuclei. She has no idea what 'here' refers to.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3",
+      "quote": "In fusion, some of the mass may be turned into the energy of radiation. So fusion releases a large amount of energy.",
+      "what": "Mass turning into energy is a big new idea dropped in with no explanation. 'May be' sounds unsure, 'the energy of radiation' is not a phrase she will follow, and the 'So' does not explain why the amount is large.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.5",
+      "quote": "What happens in nuclear fusion?",
+      "what": "The picture message and caption just before it say 'two light nuclei joining into a heavier nucleus', which is the right button nearly word for word.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.8",
+      "quote": "In one line: what is nuclear fusion?",
+      "what": "This is the same question as 3.5 ('What happens in nuclear fusion?') three messages later, and the facts about the Sun and electricity in between are not asked about.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.8 (none)",
+      "quote": "Two light nuclei join (fuse). To form a heavier nucleus (releasing energy).",
+      "what": "The model answer is chopped into two fragments; 'To form a heavier nucleus (releasing energy).' is not a sentence. It reads as broken.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.8",
+      "quote": "two light nuclei join (fuse)",
+      "what": "'Fuse' appears in the feedback, but the lesson has never used or explained the word.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.2",
+      "quote": "Fission breaks a big nucleus apart, usually after it takes in a neutron. Fusion goes the other way: small nuclei combine into a bigger one.",
+      "what": "This restates what key points 1 and 3 said, with nothing new. She could be asked to make the comparison herself instead.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.3",
+      "quote": "Fusion powers the stars, but is not yet used for electricity on a large scale.",
+      "what": "This repeats 3.6 and 3.7 almost word for word a few messages later, and the first half repeats 2.6 and 2.7.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.4",
+      "quote": "Which is true of both fission and fusion?",
+      "what": "4.1 has just said 'both release a large amount of energy', which is the right button word for word.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "4.4 don't know (first time)",
+      "quote": "One splits and one joins, so it is not that.",
+      "what": "'It is not that' does not say which option is being ruled out. She has to guess what 'that' refers to.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.5",
+      "quote": "In one line: how are fission and fusion different?",
+      "what": "4.2 and the wrong-answer replies at 4.4 ('only fission splits a nucleus; fusion joins nuclei') have just given this answer.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.10 (Hydrogen gas)",
+      "quote": "Not quite: light nuclei are used in fusion.",
+      "what": "The lesson never said hydrogen nuclei are light nuclei or that hydrogen is used in fusion, so this reply does not connect to the answer she chose.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.7 to 4.12",
+      "quote": "\"One proton and one neutron\" / \"Two smaller nuclei, roughly equal in size\" / \"Many tiny pieces\"",
+      "what": "In all six quiz questions the right answer is the middle button, as it is at 1.1b, 1.5, 2.8, 3.5 and 4.4. She will spot the pattern and the quiz will test nothing.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on anywhere: no chain reaction to try and no control to move, only Next, three-button questions and one-line summaries. A chain reaction is an obvious thing to let her play with (absorb more or fewer neutrons and watch it grow or hold steady).",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 11
+    },
+    {
+      "fault": "F8",
+      "instances": 6
+    },
+    {
+      "fault": "F2",
+      "instances": 4
+    },
+    {
+      "fault": "F1",
+      "instances": 4
+    },
+    {
+      "fault": "F3",
+      "instances": 3
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    },
+    {
+      "fault": "F15",
+      "instances": 1
+    },
+    {
+      "fault": "P12",
+      "instances": 1
+    },
+    {
+      "fault": "P8",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it is. The physics is mostly sound, the order is sensible and there is a summary at the end, but nearly every question can be answered by copying the message just before it, and the right answer sits on the middle button throughout the quiz, so she could finish with full marks having learned little. Three places would confuse a first-time learner: neutrons 'absorbed' to stop fission when absorbing a neutron was what caused it (2.7), the fusion key point opening with 'Here, light means...' out of nowhere (3.1), and mass 'may be turned into the energy of radiation' with no explanation (3.3). I would fix those, move the questions away from their answers, tidy the own-words feedback and add something hands-on for the chain reaction before letting her use it."
+}

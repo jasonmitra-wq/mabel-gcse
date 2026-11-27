@@ -1,0 +1,362 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 16700,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 10492,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 5987
+    },
+    "iterations": [
+      {
+        "input_tokens": 16700,
+        "output_tokens": 10492,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.55328,
+  "seconds": 95,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from the last lesson. What is the activity of a radioactive source?\",\"what\":\"The lesson opens by testing activity, nuclei and decay before any of them is explained here. A girl meeting the topic for the first time can only guess.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.1a wrong answer (How far its radiation travels)\",\"quote\":\"Not quite: that is its range.\",\"what\":\"\\\"Range\\\" is used as a technical term with no explanation.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.1b right answer\",\"quote\":\"Yes: radioactive decay is random, like rolling dice.\",\"what\":\"She has just tapped \\\"No: decay is random\\\" and the reply opens \\\"Yes:\\\". Replying Yes to a No answer reads oddly.\",\"severity\":\"minor\"},{\"fault\":\"P9\",\"turn\":\"1.2\",\"quote\":\"just as a million coin tosses give almost exactly half heads\",\"what\":\"This is a second everyday comparison, straight after the dice in 1.1b. The checklist allows one.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"1.2\",\"quote\":\"Each decay is random\",\"what\":\"The randomness of decay was stated in the reply to 1.1b one message earlier and is said again here.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"1.3\",\"quote\":\"The half-life of a radioactive isotope\",\"what\":\"\\\"Isotope\\\" is used here, and again in 1.9, 3.1 and 3.2, without ever being explained.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"1.3\",\"quote\":\"The half-life of a radioactive isotope is the time it takes for the number of unstable nuclei in a sample to halve.\",\"what\":\"Three new terms arrive in one sentence: half-life, isotope and unstable nuclei. Until now the lesson has only said \\\"nuclei\\\".\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.4\",\"quote\":\"the time for the activity, or the count rate, to fall to half\",\"what\":\"\\\"Count rate\\\" is used but never defined. The key point's line about what a detector records each second is missing from the script.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"1.6\",\"quote\":\"Each half-life, it halves again.\",\"what\":\"The message opens with \\\"it\\\" before saying what halves. The activity is only named in the next sentence.\",\"severity\":\"minor\"},{\"fault\":\"F9\",\"turn\":\"1.8\",\"quote\":\"Exam questions often go the other way. If a quarter is left, the activity has halved twice: that is 2 half-lives. Write \\\"2 half-lives\\\" in words, not just the number 2.\",\"what\":\"This is exam-technique talk aimed at a reviser, not a first-time learner. \\\"The other way\\\" is not explained, and the message mixes a new idea with a writing tip.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.9 don't know (first time)\",\"quote\":\"Halve once: 1/2. Twice: 1/4. How many halvings give 1/8? (same buttons)\",\"what\":\"The hint asks for a number of halvings (3), but the buttons are still 48, 12 and 18 hours. She cannot answer the question she has just been asked.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.10\",\"quote\":\"You can also give the fall as a ratio. After 2 half-lives, 1/4 of the activity is left, so it has fallen by 3/4 of its starting value.\",\"what\":\"It calls a fraction a \\\"ratio\\\", and \\\"fallen by 3/4\\\" sits next to \\\"1/4 left\\\" with no question to check she can tell the two apart. She is likely to mix them up.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"2.5\",\"quote\":\"the activity falls from 600 Bq to 300 Bq in 4 hours. How long will it take to fall from 300 Bq to 150 Bq?\",\"what\":\"Message 2.4 has just shown exactly this pattern (800 to 400 in 2 hours, 400 to 200 in another 2 hours). She only has to copy it.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"2.5\",\"quote\":\"On a decay graph, the activity falls from 600 Bq to 300 Bq in 4 hours.\",\"what\":\"The key point is reading and drawing graphs, but she never reads a value off a graph or plots a point herself. There is one picture in the whole lesson, the question gives her the numbers in words, and nothing is hands-on.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"2.7\",\"quote\":\"You plot a decay graph. Where should the curve end?\",\"what\":\"Message 2.6 has just said \\\"a smooth curve that never touches the x-axis\\\", and 2.2 said it never reaches zero. The answer was given immediately before the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.7 don't know (first time)\",\"quote\":\"If you keep halving a number, do you ever get exactly zero? (same buttons)\",\"what\":\"The hint is a yes/no question, but the buttons are still the three descriptions of the curve.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"2.8 (Some / None)\",\"quote\":\"Still needed: the half-life is the time between them.\",\"what\":\"\\\"Them\\\" has no clear referent. The first point mentions only one time, so \\\"between them\\\" does not make sense on its own.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.3\",\"quote\":\"Which kind of radiation should a tracer give out?\",\"what\":\"Alpha, beta and gamma have not been mentioned anywhere in this lesson, nor what each can pass through. She cannot answer from what she has been told.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F7\",\"turn\":\"3.3 don't know (first time)\",\"quote\":\"The camera is outside the body. Which radiation gets through skin and muscle?\",\"what\":\"The easier step still depends on knowing the penetrating power of alpha, beta and gamma, which the lesson has not taught. It is no easier for her.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.4\",\"quote\":\"so the patient's total dose stays low\",\"what\":\"\\\"Dose\\\" is used without saying what it means.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"3.5\",\"quote\":\"Why should a tracer have a short half-life?\",\"what\":\"Message 3.4 has just said \\\"its activity falls quickly after the scan, so the patient's total dose stays low\\\", which is the right button almost word for word.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.5 don't know (first time)\",\"quote\":\"Is that good or bad for the patient's dose? (same buttons)\",\"what\":\"The hint asks \\\"good or bad\\\", but the buttons are the three \\\"So it…\\\" sentences. The reply does not fit the choices.\",\"severity\":\"minor\"},{\"fault\":\"P16\",\"turn\":\"3.5 wrong answer (So it stays in the body longer)\",\"quote\":\"a short half-life means it stops being radioactive quickly\",\"what\":\"This contradicts the lesson's own point that activity keeps halving and never reaches zero. It also does not correct the muddle between half-life and how long the tracer stays in the body.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"3.6\",\"quote\":\"A tumour is a lump of cancer cells. Using radiation to kill them is called radiotherapy.\",\"what\":\"Two new terms, tumour and radiotherapy, come in one message.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.8\",\"quote\":\"Both uses expose the patient to ionising radiation\",\"what\":\"\\\"Ionising\\\" is used here but what it does is not described until 4.6.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.9\",\"quote\":\"To judge a use, compare the data with and without it.\",\"what\":\"The wording is muddled. It is not clear what \\\"with and without it\\\" refers to, and a 15-year-old would not know what she is being told to compare.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"3.6 to 3.9\",\"quote\":\"Using radiation to kill them is called radiotherapy.\",\"what\":\"There are four tell-only messages in a row on radiotherapy, risk and perceived risk, with no question on any of them. The own-words question that follows goes back to tracers, so this content is never checked.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"3.10\",\"quote\":\"In one line: why does a medical tracer give out gamma, with a short half-life?\",\"what\":\"The gamma and short half-life reasons have already been told and asked in 3.3, 3.4 and 3.5. This is the third pass before the quiz asks again.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"4.5\",\"quote\":\"Is the fruit radioactive afterwards?\",\"what\":\"Message 4.2 said \\\"An irradiated object does not become radioactive\\\", and the right button repeats it as \\\"No: irradiation does not make it radioactive\\\". The option carries its own explanation.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.5 right answer\",\"quote\":\"Yes: the fruit was exposed to radiation, but no radioactive atoms were left on it.\",\"what\":\"She chose \\\"No\\\" and the reply opens \\\"Yes:\\\". For a split second it reads as \\\"Yes, it is radioactive\\\".\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.5 don't know (first time)\",\"quote\":\"Were any radioactive atoms left on the fruit, or was it only exposed to radiation? (same buttons)\",\"what\":\"The hint is an either/or question, but the buttons are Yes/No/Yes sentences that do not match it.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"4.8\",\"quote\":\"Alpha is the most ionising, so alpha inside the body is the biggest danger\",\"what\":\"Alpha has never been explained in this lesson: what it is, or that it is stopped by skin. So \\\"inside the body\\\" has no reason behind it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"4.11\",\"quote\":\"Two samples have the same number of nuclei. Which gives the bigger dose in the first minute?\",\"what\":\"Message 4.10 has just said \\\"For the same number of nuclei, a short half-life gives a high activity at first\\\". The answer comes directly before the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.11\",\"quote\":\"Two samples have the same number of nuclei. Which gives the bigger dose in the first minute?\",\"what\":\"The question never says the two samples have different half-lives; she learns that only from the buttons. It also treats higher activity as the same thing as bigger dose, which depends on the type of radiation too.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.11 don't know (first time)\",\"quote\":\"Does that mean more or fewer decays each second? (same buttons)\",\"what\":\"The hint asks \\\"more or fewer\\\", but the buttons are about which half-life. The reply does not fit the choices.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"4.19\",\"quote\":\"Background radiation\",\"what\":\"This quiz option uses a term the lesson never taught.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.21\",\"quote\":\"Alpha is the most ionising, and nothing shields you\",\"what\":\"\\\"Nothing shields you\\\" is vague. The lesson never taught that alpha is stopped by skin outside the body or that it \\\"travels the least far\\\", so half the right answer and the wrong-answer reply rest on untaught facts.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"Summary, point 3 of 4\",\"quote\":\"Gamma passes out of the body to the camera, and a short half-life keeps the patient's dose low.\",\"what\":\"The summary line never mentions a tracer, so read on its own it is out of context. It sounds as if a short half-life is always what you want.\",\"severity\":\"minor\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":1},{\"fault\":\"F3\",\"instances\":8},{\"fault\":\"new\",\"instances\":11},{\"fault\":\"P9\",\"instances\":1},{\"fault\":\"F1\",\"instances\":2},{\"fault\":\"F5\",\"instances\":2},{\"fault\":\"F2\",\"instances\":3},{\"fault\":\"F9\",\"instances\":1},{\"fault\":\"F8\",\"instances\":5},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"F7\",\"instances\":1},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1}],\"overall\":\"Not as it is. The half-life arithmetic in key point 1 is sound and well stepped, but the lesson leans on things it never teaches: activity, isotope, count rate, and above all alpha, beta and gamma, so the tracer and alpha-danger questions cannot be answered by a first-time learner. Several questions (2.7, 3.5, 4.5, 4.11) are answered by the message just before them, and several \\\"don't know\\\" hints ask a question the buttons do not fit. I would want those fixed, the alpha/beta/gamma basics told before 3.3, and a real graph for her to read in key point 2 before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from the last lesson. What is the activity of a radioactive source?",
+      "what": "The lesson opens by testing activity, nuclei and decay before any of them is explained here. A girl meeting the topic for the first time can only guess.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1a wrong answer (How far its radiation travels)",
+      "quote": "Not quite: that is its range.",
+      "what": "\"Range\" is used as a technical term with no explanation.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1b right answer",
+      "quote": "Yes: radioactive decay is random, like rolling dice.",
+      "what": "She has just tapped \"No: decay is random\" and the reply opens \"Yes:\". Replying Yes to a No answer reads oddly.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P9",
+      "turn": "1.2",
+      "quote": "just as a million coin tosses give almost exactly half heads",
+      "what": "This is a second everyday comparison, straight after the dice in 1.1b. The checklist allows one.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.2",
+      "quote": "Each decay is random",
+      "what": "The randomness of decay was stated in the reply to 1.1b one message earlier and is said again here.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.3",
+      "quote": "The half-life of a radioactive isotope",
+      "what": "\"Isotope\" is used here, and again in 1.9, 3.1 and 3.2, without ever being explained.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.3",
+      "quote": "The half-life of a radioactive isotope is the time it takes for the number of unstable nuclei in a sample to halve.",
+      "what": "Three new terms arrive in one sentence: half-life, isotope and unstable nuclei. Until now the lesson has only said \"nuclei\".",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.4",
+      "quote": "the time for the activity, or the count rate, to fall to half",
+      "what": "\"Count rate\" is used but never defined. The key point's line about what a detector records each second is missing from the script.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "1.6",
+      "quote": "Each half-life, it halves again.",
+      "what": "The message opens with \"it\" before saying what halves. The activity is only named in the next sentence.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F9",
+      "turn": "1.8",
+      "quote": "Exam questions often go the other way. If a quarter is left, the activity has halved twice: that is 2 half-lives. Write \"2 half-lives\" in words, not just the number 2.",
+      "what": "This is exam-technique talk aimed at a reviser, not a first-time learner. \"The other way\" is not explained, and the message mixes a new idea with a writing tip.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.9 don't know (first time)",
+      "quote": "Halve once: 1/2. Twice: 1/4. How many halvings give 1/8? (same buttons)",
+      "what": "The hint asks for a number of halvings (3), but the buttons are still 48, 12 and 18 hours. She cannot answer the question she has just been asked.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10",
+      "quote": "You can also give the fall as a ratio. After 2 half-lives, 1/4 of the activity is left, so it has fallen by 3/4 of its starting value.",
+      "what": "It calls a fraction a \"ratio\", and \"fallen by 3/4\" sits next to \"1/4 left\" with no question to check she can tell the two apart. She is likely to mix them up.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.5",
+      "quote": "the activity falls from 600 Bq to 300 Bq in 4 hours. How long will it take to fall from 300 Bq to 150 Bq?",
+      "what": "Message 2.4 has just shown exactly this pattern (800 to 400 in 2 hours, 400 to 200 in another 2 hours). She only has to copy it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "2.5",
+      "quote": "On a decay graph, the activity falls from 600 Bq to 300 Bq in 4 hours.",
+      "what": "The key point is reading and drawing graphs, but she never reads a value off a graph or plots a point herself. There is one picture in the whole lesson, the question gives her the numbers in words, and nothing is hands-on.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.7",
+      "quote": "You plot a decay graph. Where should the curve end?",
+      "what": "Message 2.6 has just said \"a smooth curve that never touches the x-axis\", and 2.2 said it never reaches zero. The answer was given immediately before the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.7 don't know (first time)",
+      "quote": "If you keep halving a number, do you ever get exactly zero? (same buttons)",
+      "what": "The hint is a yes/no question, but the buttons are still the three descriptions of the curve.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.8 (Some / None)",
+      "quote": "Still needed: the half-life is the time between them.",
+      "what": "\"Them\" has no clear referent. The first point mentions only one time, so \"between them\" does not make sense on its own.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.3",
+      "quote": "Which kind of radiation should a tracer give out?",
+      "what": "Alpha, beta and gamma have not been mentioned anywhere in this lesson, nor what each can pass through. She cannot answer from what she has been told.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F7",
+      "turn": "3.3 don't know (first time)",
+      "quote": "The camera is outside the body. Which radiation gets through skin and muscle?",
+      "what": "The easier step still depends on knowing the penetrating power of alpha, beta and gamma, which the lesson has not taught. It is no easier for her.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.4",
+      "quote": "so the patient's total dose stays low",
+      "what": "\"Dose\" is used without saying what it means.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.5",
+      "quote": "Why should a tracer have a short half-life?",
+      "what": "Message 3.4 has just said \"its activity falls quickly after the scan, so the patient's total dose stays low\", which is the right button almost word for word.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5 don't know (first time)",
+      "quote": "Is that good or bad for the patient's dose? (same buttons)",
+      "what": "The hint asks \"good or bad\", but the buttons are the three \"So it…\" sentences. The reply does not fit the choices.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P16",
+      "turn": "3.5 wrong answer (So it stays in the body longer)",
+      "quote": "a short half-life means it stops being radioactive quickly",
+      "what": "This contradicts the lesson's own point that activity keeps halving and never reaches zero. It also does not correct the muddle between half-life and how long the tracer stays in the body.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "3.6",
+      "quote": "A tumour is a lump of cancer cells. Using radiation to kill them is called radiotherapy.",
+      "what": "Two new terms, tumour and radiotherapy, come in one message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.8",
+      "quote": "Both uses expose the patient to ionising radiation",
+      "what": "\"Ionising\" is used here but what it does is not described until 4.6.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.9",
+      "quote": "To judge a use, compare the data with and without it.",
+      "what": "The wording is muddled. It is not clear what \"with and without it\" refers to, and a 15-year-old would not know what she is being told to compare.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "3.6 to 3.9",
+      "quote": "Using radiation to kill them is called radiotherapy.",
+      "what": "There are four tell-only messages in a row on radiotherapy, risk and perceived risk, with no question on any of them. The own-words question that follows goes back to tracers, so this content is never checked.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.10",
+      "quote": "In one line: why does a medical tracer give out gamma, with a short half-life?",
+      "what": "The gamma and short half-life reasons have already been told and asked in 3.3, 3.4 and 3.5. This is the third pass before the quiz asks again.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.5",
+      "quote": "Is the fruit radioactive afterwards?",
+      "what": "Message 4.2 said \"An irradiated object does not become radioactive\", and the right button repeats it as \"No: irradiation does not make it radioactive\". The option carries its own explanation.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.5 right answer",
+      "quote": "Yes: the fruit was exposed to radiation, but no radioactive atoms were left on it.",
+      "what": "She chose \"No\" and the reply opens \"Yes:\". For a split second it reads as \"Yes, it is radioactive\".",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.5 don't know (first time)",
+      "quote": "Were any radioactive atoms left on the fruit, or was it only exposed to radiation? (same buttons)",
+      "what": "The hint is an either/or question, but the buttons are Yes/No/Yes sentences that do not match it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.8",
+      "quote": "Alpha is the most ionising, so alpha inside the body is the biggest danger",
+      "what": "Alpha has never been explained in this lesson: what it is, or that it is stopped by skin. So \"inside the body\" has no reason behind it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.11",
+      "quote": "Two samples have the same number of nuclei. Which gives the bigger dose in the first minute?",
+      "what": "Message 4.10 has just said \"For the same number of nuclei, a short half-life gives a high activity at first\". The answer comes directly before the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.11",
+      "quote": "Two samples have the same number of nuclei. Which gives the bigger dose in the first minute?",
+      "what": "The question never says the two samples have different half-lives; she learns that only from the buttons. It also treats higher activity as the same thing as bigger dose, which depends on the type of radiation too.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.11 don't know (first time)",
+      "quote": "Does that mean more or fewer decays each second? (same buttons)",
+      "what": "The hint asks \"more or fewer\", but the buttons are about which half-life. The reply does not fit the choices.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.19",
+      "quote": "Background radiation",
+      "what": "This quiz option uses a term the lesson never taught.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.21",
+      "quote": "Alpha is the most ionising, and nothing shields you",
+      "what": "\"Nothing shields you\" is vague. The lesson never taught that alpha is stopped by skin outside the body or that it \"travels the least far\", so half the right answer and the wrong-answer reply rest on untaught facts.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "Summary, point 3 of 4",
+      "quote": "Gamma passes out of the body to the camera, and a short half-life keeps the patient's dose low.",
+      "what": "The summary line never mentions a tracer, so read on its own it is out of context. It sounds as if a short half-life is always what you want.",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 11
+    },
+    {
+      "fault": "F3",
+      "instances": 8
+    },
+    {
+      "fault": "F8",
+      "instances": 5
+    },
+    {
+      "fault": "F2",
+      "instances": 3
+    },
+    {
+      "fault": "F1",
+      "instances": 2
+    },
+    {
+      "fault": "F5",
+      "instances": 2
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "P9",
+      "instances": 1
+    },
+    {
+      "fault": "F9",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    },
+    {
+      "fault": "F7",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it is. The half-life arithmetic in key point 1 is sound and well stepped, but the lesson leans on things it never teaches: activity, isotope, count rate, and above all alpha, beta and gamma, so the tracer and alpha-danger questions cannot be answered by a first-time learner. Several questions (2.7, 3.5, 4.5, 4.11) are answered by the message just before them, and several \"don't know\" hints ask a question the buttons do not fit. I would want those fixed, the alpha/beta/gamma basics told before 3.3, and a real graph for her to read in key point 2 before she uses it."
+}

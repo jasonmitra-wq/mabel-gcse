@@ -10,7 +10,7 @@
     {
      "id": "1.1",
      "type": "say",
-     "text": "Welcome! This lesson is about splitting a nucleus and joining nuclei together: the two ways to release the huge amounts of energy stored inside atoms."
+     "text": "Welcome! This lesson is about splitting a nucleus and joining nuclei together: two ways to release huge amounts of energy stored in the nucleus."
     },
     {
      "id": "1.1a",
@@ -19,12 +19,12 @@
      "question": "First, two quick questions from earlier lessons. What charge does a neutron have?",
      "options": [
       {
-       "text": "No charge",
-       "branch": "right"
-      },
-      {
        "text": "Positive",
        "branch": "positive"
+      },
+      {
+       "text": "No charge",
+       "branch": "right"
       },
       {
        "text": "Negative",
@@ -39,7 +39,7 @@
      },
      "idk": [
       {
-       "hint": "Protons are positive and electrons are negative. What about the other particle?"
+       "hint": "Protons are positive and electrons are negative. The third particle is neither."
       }
      ],
      "answerWhy": "A neutron has no charge."
@@ -71,7 +71,7 @@
      },
      "idk": [
       {
-       "hint": "Gamma rays have no mass and no charge. Are they particles or waves?"
+       "hint": "Gamma rays have no mass and no charge: they are waves, not particles. Electromagnetic radiation is waves."
       }
      ],
      "answerWhy": "Gamma rays are electromagnetic radiation given out by a nucleus."
@@ -79,7 +79,12 @@
     {
      "id": "1.2",
      "type": "say",
-     "text": "Now this lesson. Some very large nuclei, such as uranium-235, are unstable. Uranium-235, or U-235, is the uranium isotope with mass number 235."
+     "text": "Now this lesson. An unstable nucleus is one that is likely to change or break apart. Some very large nuclei, such as uranium-235, are unstable."
+    },
+    {
+     "id": "1.2b",
+     "type": "say",
+     "text": "Remember: isotopes of an element have different numbers of neutrons, and the mass number counts protons plus neutrons. Uranium-235, or U-235, is the uranium isotope with mass number 235."
     },
     {
      "id": "1.3",
@@ -92,41 +97,41 @@
      "text": "A nucleus can split on its own, but that is rare. Usually it must first absorb a neutron: the neutron is taken into the nucleus, which makes it even more unstable, and then it splits."
     },
     {
-     "id": "1.5",
+     "id": "1.6",
+     "type": "say",
+     "text": "As the nucleus splits, it gives out 2 or 3 neutrons and gamma rays, and a large amount of energy is released."
+    },
+    {
+     "id": "1.6b",
      "type": "ask",
      "kind": "tap",
-     "question": "What usually makes a uranium-235 nucleus split?",
+     "question": "After a uranium-235 nucleus splits, how does each new nucleus compare with the one it came from?",
      "options": [
       {
-       "text": "Absorbing a neutron",
+       "text": "It has fewer protons and neutrons",
        "branch": "right"
       },
       {
-       "text": "Being hit by an electron",
-       "branch": "electron"
+       "text": "It has more protons and neutrons",
+       "branch": "more"
       },
       {
-       "text": "Being heated",
-       "branch": "heat"
+       "text": "It is exactly the same",
+       "branch": "same"
       }
      ],
-     "right": "Yes: the nucleus absorbs a neutron, then splits.",
+     "right": "Yes: the uranium nucleus is shared between two pieces, so each has fewer protons and neutrons.",
      "wrong": {
-      "other": "Not quite: absorbing a neutron.",
-      "electron": "Not quite: electrons are not involved. The nucleus absorbs a neutron, which makes it split.",
-      "heat": "Not quite: heating does not split a nucleus. It absorbs a neutron, which makes it split."
+      "other": "Not quite: it has fewer protons and neutrons.",
+      "more": "Not quite: the uranium nucleus is shared between the two pieces, so each has fewer protons and neutrons.",
+      "same": "Not quite: it is only part of the uranium nucleus, so it has fewer protons and neutrons."
      },
      "idk": [
       {
-       "hint": "A particle with no charge can get into the nucleus easily. Which particle is that?"
+       "hint": "The uranium nucleus breaks into two pieces, so each piece holds only part of it."
       }
      ],
-     "answerWhy": "A uranium-235 nucleus usually splits after it absorbs a neutron."
-    },
-    {
-     "id": "1.6",
-     "type": "say",
-     "text": "As it splits, it gives out 2 or 3 neutrons and gamma rays, and a large amount of energy is released."
+     "answerWhy": "Each smaller nucleus is only part of the uranium nucleus, so it has fewer protons and neutrons."
     },
     {
      "id": "1.7",
@@ -137,12 +142,12 @@
      "id": "1.8",
      "type": "say",
      "picture": "p4-fission",
-     "text": "The picture shows one fission: a neutron is absorbed by a uranium-235 nucleus, which splits into two smaller nuclei and gives out 2 or 3 neutrons."
+     "text": "The picture shows one fission, from start to finish."
     },
     {
      "id": "1.9",
      "type": "say",
-     "text": "The most common fuels for fission are uranium-235 and plutonium-239. Both split easily after absorbing a neutron."
+     "text": "A fuel is something that releases energy. A nuclear fuel is an isotope whose nuclei split easily after absorbing a neutron. The most common are uranium-235 and plutonium-239, an isotope of the element plutonium."
     },
     {
      "id": "1.10",
@@ -150,9 +155,9 @@
      "prompt": "In one line: what happens in nuclear fission?",
      "points": [
       "a large unstable nucleus absorbs a neutron",
-      "it splits into two smaller nuclei (giving out 2 or 3 neutrons, gamma rays and energy)"
+      "it splits into two smaller nuclei"
      ],
-     "idk": "No problem. A good line would be: a large, unstable nucleus absorbs a neutron and splits into two smaller nuclei, giving out 2 or 3 neutrons, gamma rays and energy."
+     "idk": "No problem. A good line would be: in nuclear fission a large, unstable nucleus absorbs a neutron and splits into two smaller nuclei, giving out 2 or 3 neutrons and energy."
     }
    ]
   },
@@ -163,7 +168,7 @@
     {
      "id": "2.1",
      "type": "say",
-     "text": "Each fission gives out 2 or 3 neutrons. Each of those can be absorbed by another uranium nucleus and make it split, giving out more neutrons again."
+     "text": "The 2 or 3 neutrons from each fission can each be absorbed by another uranium nucleus and make it split too, giving out more neutrons again."
     },
     {
      "id": "2.2",
@@ -171,47 +176,42 @@
      "text": "One fission leading to more fissions, again and again, is called a chain reaction."
     },
     {
-     "id": "2.3",
-     "type": "say",
-     "picture": "p4-chain-reaction",
-     "text": "The picture shows a chain reaction growing: 1 fission leads to 3, and each of those to more."
-    },
-    {
      "id": "2.4",
      "type": "ask",
-     "kind": "tap",
-     "question": "One fission gives out 3 neutrons, and each causes a new fission. How many fissions are in the next round?",
-     "options": [
+     "kind": "number",
+     "question": "One fission causes 3 more fissions. Each of those 3 also causes 3 more. How many fissions is that in the third step?",
+     "answer": {
+      "value": 9,
+      "unit": "fissions",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
       {
-       "text": "3",
-       "branch": "right"
+       "value": 6,
+       "branch": "add"
       },
       {
-       "text": "1",
-       "branch": "one"
-      },
-      {
-       "text": "6",
-       "branch": "six"
+       "value": 3,
+       "branch": "same"
       }
      ],
-     "right": "Yes: 3 neutrons give 3 fissions, and then those give 9, and so on.",
+     "right": "Yes: 3 × 3 = 9. The number grows fast: 1, 3, 9, 27…",
      "wrong": {
-      "other": "Not quite: 3.",
-      "one": "Not quite: each of the 3 neutrons causes a fission, so the next round has 3.",
-      "six": "Not quite: one neutron causes one fission. 3 neutrons give 3 fissions in the next round."
+      "other": "Not quite: 9. 3 × 3 = 9.",
+      "add": "Not quite: 9. Each of the 3 fissions causes 3 more, so multiply: 3 × 3 = 9.",
+      "same": "Not quite: 9. Each of the 3 fissions causes 3 more: 3 × 3 = 9."
      },
      "idk": [
       {
-       "hint": "Each neutron causes one new fission. How many neutrons were given out?"
+       "hint": "Each of the 3 fissions causes 3 more. Work out 3 × 3."
       }
      ],
-     "answerWhy": "Each of the 3 neutrons causes one fission, so the next round has 3 fissions."
+     "answerWhy": "Each of the 3 fissions causes 3 more, so the third step has 3 × 3 = 9 fissions."
     },
     {
      "id": "2.5",
      "type": "say",
-     "text": "If nothing controls it, the number of fissions grows very fast and a huge amount of energy is released almost at once. The explosion of a nuclear weapon comes from this uncontrolled chain reaction."
+     "text": "If nothing controls a chain reaction, the number of fissions grows very fast, and a huge amount of energy is released almost at once. The explosion of a nuclear weapon comes from this uncontrolled chain reaction."
     },
     {
      "id": "2.6",
@@ -221,49 +221,55 @@
     {
      "id": "2.7",
      "type": "say",
-     "text": "In a reactor, some of the neutrons are absorbed so they cannot cause more fissions. On average, one neutron from each fission goes on to cause just one more. So the energy is released at a steady rate."
+     "text": "In a reactor, some of the neutrons are absorbed by materials that do not split, so they cannot cause more fissions. On average, one neutron from each fission goes on to cause just one more. So the energy is released at a steady rate."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "picture": "p4-chain-reaction",
+     "text": "The picture shows a chain reaction growing, with the uncontrolled and controlled kinds labelled."
     },
     {
      "id": "2.8",
      "type": "ask",
      "kind": "tap",
-     "question": "How is the chain reaction in a nuclear reactor kept under control?",
+     "question": "In a reactor, fewer neutrons than usual are being absorbed. What happens to the rate at which energy is released?",
      "options": [
       {
-       "text": "Some neutrons are absorbed, so each fission causes only one more",
+       "text": "It stays the same",
+       "branch": "same"
+      },
+      {
+       "text": "It falls",
+       "branch": "falls"
+      },
+      {
+       "text": "It rises",
        "branch": "right"
-      },
-      {
-       "text": "The uranium is kept very cold",
-       "branch": "cold"
-      },
-      {
-       "text": "Gamma rays are stopped by lead",
-       "branch": "gamma"
       }
      ],
-     "right": "Yes: absorbing some neutrons means each fission causes, on average, one more.",
+     "right": "Yes: more neutrons go on to cause fissions, so energy is released faster. That is why reactors keep absorbing them.",
      "wrong": {
-      "other": "Not quite: some neutrons are absorbed, so each fission causes only one more.",
-      "cold": "Not quite: temperature is not how it is controlled. Some neutrons are absorbed, so on average each fission causes just one more.",
-      "gamma": "Not quite: stopping gamma rays keeps people safe, but it does not control the chain reaction. Absorbing neutrons does."
+      "other": "Not quite: it rises.",
+      "same": "Not quite: more free neutrons means more fissions each second, so the energy is released faster.",
+      "falls": "Not quite: fewer absorbed means more neutrons free to cause fissions, so the energy is released faster."
      },
      "idk": [
       {
-       "hint": "Neutrons cause the extra fissions. What could you do to some of them?"
+       "hint": "Absorbed neutrons cannot cause fissions. With fewer absorbed, more are free to cause them."
       }
      ],
-     "answerWhy": "Some neutrons are absorbed, so on average each fission causes just one more and the energy is released steadily."
+     "answerWhy": "With fewer neutrons absorbed, more cause fissions, so the energy is released faster."
     },
     {
      "id": "2.9",
      "type": "own",
      "prompt": "In one line: what is the difference between a reactor and a nuclear weapon?",
      "points": [
-      "in a reactor the chain reaction is controlled (energy released steadily)",
-      "in a weapon it is uncontrolled (energy released all at once)"
+      "in a reactor the chain reaction is controlled",
+      "in a weapon the chain reaction is uncontrolled"
      ],
-     "idk": "No problem. A good line would be: in a reactor the chain reaction is controlled, so energy comes out steadily; in a weapon it is uncontrolled."
+     "idk": "No problem. A good line would be: in a reactor the chain reaction is controlled, so energy comes out steadily; in a nuclear weapon it is uncontrolled."
     }
    ]
   },
@@ -274,7 +280,7 @@
     {
      "id": "3.1",
      "type": "say",
-     "text": "Here, light means a small mass, not light you can see. A light nucleus has only a few protons and neutrons."
+     "text": "Now the opposite of splitting: joining. Here a light nucleus means one with a small mass, with only a few protons and neutrons. It has nothing to do with light you can see."
     },
     {
      "id": "3.2",
@@ -282,47 +288,47 @@
      "text": "Joining two light nuclei together to form a heavier nucleus is called nuclear fusion."
     },
     {
+     "id": "3.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Hydrogen has the lightest nucleus of all. Which of these could be a fusion reaction?",
+     "options": [
+      {
+       "text": "Two hydrogen nuclei join into a helium nucleus",
+       "branch": "right"
+      },
+      {
+       "text": "A uranium nucleus splits in two",
+       "branch": "fission"
+      },
+      {
+       "text": "An electron moves up an energy level",
+       "branch": "electron"
+      }
+     ],
+     "right": "Yes: two light hydrogen nuclei join into a heavier helium nucleus.",
+     "wrong": {
+      "other": "Not quite: two hydrogen nuclei join into a helium nucleus.",
+      "fission": "Not quite: splitting is fission. Fusion joins light nuclei, such as two hydrogen nuclei making a helium nucleus.",
+      "electron": "Not quite: that changes an electron, not a nucleus. Fusion joins light nuclei, such as two hydrogen nuclei making helium."
+     },
+     "idk": [
+      {
+       "hint": "Fusion is joining light nuclei. Only one option has nuclei joining."
+      }
+     ],
+     "answerWhy": "Two hydrogen nuclei joining into a helium nucleus is fusion."
+    },
+    {
      "id": "3.3",
      "type": "say",
-     "text": "In fusion, some of the mass may be turned into the energy of radiation. So fusion releases a large amount of energy."
+     "text": "In fusion, the heavier nucleus has a little less mass than the two light nuclei had. That missing mass has become energy, given out as radiation. A tiny amount of mass makes a huge amount of energy."
     },
     {
      "id": "3.4",
      "type": "say",
      "picture": "p4-fusion",
      "text": "The picture shows two light nuclei joining into a heavier nucleus, with energy released."
-    },
-    {
-     "id": "3.5",
-     "type": "ask",
-     "kind": "tap",
-     "question": "What happens in nuclear fusion?",
-     "options": [
-      {
-       "text": "Two light nuclei join to form a heavier nucleus",
-       "branch": "right"
-      },
-      {
-       "text": "A heavy nucleus splits into two smaller ones",
-       "branch": "fission"
-      },
-      {
-       "text": "Two atoms share their electrons",
-       "branch": "atoms"
-      }
-     ],
-     "right": "Yes: two light nuclei join into a heavier one.",
-     "wrong": {
-      "other": "Not quite: two light nuclei join to form a heavier nucleus.",
-      "fission": "Not quite: that is fission. In fusion, two light nuclei join to form a heavier nucleus.",
-      "atoms": "Not quite: fusion happens to nuclei, not electrons. Two light nuclei join to form a heavier nucleus."
-     },
-     "idk": [
-      {
-       "hint": "Fusion means joining. What joins: nuclei or electrons?"
-      }
-     ],
-     "answerWhy": "In fusion, two light nuclei join to form a heavier nucleus, releasing energy."
     },
     {
      "id": "3.6",
@@ -337,12 +343,11 @@
     {
      "id": "3.8",
      "type": "own",
-     "prompt": "In one line: what is nuclear fusion?",
+     "prompt": "In one line: where does the energy released in fusion come from?",
      "points": [
-      "two light nuclei join (fuse)",
-      "to form a heavier nucleus (releasing energy)"
+      "some of the mass of the nuclei is turned into energy"
      ],
-     "idk": "No problem. A good line would be: nuclear fusion is two light nuclei joining to form a heavier nucleus, which releases energy."
+     "idk": "No problem. A good line would be: in nuclear fusion, some of the mass of the light nuclei is turned into energy, given out as radiation."
     }
    ]
   },
@@ -353,17 +358,7 @@
     {
      "id": "4.1",
      "type": "say",
-     "text": "Fission and fusion are both nuclear reactions: they change nuclei, and both release a large amount of energy. But they work in opposite directions."
-    },
-    {
-     "id": "4.2",
-     "type": "say",
-     "text": "Fission breaks a big nucleus apart, usually after it takes in a neutron. Fusion goes the other way: small nuclei combine into a bigger one."
-    },
-    {
-     "id": "4.3",
-     "type": "say",
-     "text": "Fission is used in nuclear power stations today, with its chain reaction controlled. Fusion powers the stars, but is not yet used for electricity on a large scale."
+     "text": "Fission and fusion are both nuclear reactions: they change nuclei. Now compare them."
     },
     {
      "id": "4.4",
@@ -372,12 +367,12 @@
      "question": "Which is true of both fission and fusion?",
      "options": [
       {
-       "text": "Both release a large amount of energy",
-       "branch": "right"
-      },
-      {
        "text": "Both split a large nucleus",
        "branch": "split"
+      },
+      {
+       "text": "Both release a large amount of energy",
+       "branch": "right"
       },
       {
        "text": "Both are used in power stations today",
@@ -392,7 +387,7 @@
      },
      "idk": [
       {
-       "hint": "One splits and one joins, so it is not that. What do both give out?"
+       "hint": "One of them splits nuclei and the other joins them, so the answer is not about splitting. Think about what both give out."
       }
      ],
      "answerWhy": "Fission and fusion both change nuclei and both release a large amount of energy."
@@ -408,6 +403,11 @@
      "idk": "No problem. A good line would be: fission splits one large nucleus into two smaller ones, while fusion joins two light nuclei into a heavier one."
     },
     {
+     "id": "4.3",
+     "type": "say",
+     "text": "Today, nuclear power stations use fission, with the chain reaction controlled. Fusion is still being developed."
+    },
+    {
      "id": "4.6",
      "type": "say",
      "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
@@ -419,16 +419,16 @@
      "question": "Quiz, question 1 of 6: in fission, what does the nucleus split into?",
      "options": [
       {
-       "text": "Two smaller nuclei, roughly equal in size",
-       "branch": "right"
-      },
-      {
        "text": "Many tiny pieces",
        "branch": "w1"
       },
       {
        "text": "One proton and one neutron",
        "branch": "w2"
+      },
+      {
+       "text": "Two smaller nuclei, roughly equal in size",
+       "branch": "right"
       }
      ],
      "right": "Yes: two smaller nuclei, plus 2 or 3 neutrons.",
@@ -477,12 +477,12 @@
      "question": "Quiz, question 3 of 6: what does an uncontrolled chain reaction cause?",
      "options": [
       {
-       "text": "The explosion of a nuclear weapon",
-       "branch": "right"
-      },
-      {
        "text": "A steady supply of energy",
        "branch": "w1"
+      },
+      {
+       "text": "The explosion of a nuclear weapon",
+       "branch": "right"
       },
       {
        "text": "Nuclear fusion",
@@ -503,18 +503,18 @@
      "id": "4.10",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 4 of 6: which fuel is used in nuclear fission?",
+     "question": "Quiz, question 4 of 6: which is a fuel for nuclear fission?",
      "options": [
-      {
-       "text": "Uranium-235",
-       "branch": "right"
-      },
       {
        "text": "Coal",
        "branch": "w1"
       },
       {
-       "text": "Hydrogen gas",
+       "text": "Uranium-235",
+       "branch": "right"
+      },
+      {
+       "text": "Hydrogen",
        "branch": "w2"
       }
      ],
@@ -522,7 +522,7 @@
      "wrong": {
       "other": "Not quite: uranium-235.",
       "w1": "Not quite: coal is burned, a chemical change. Fission splits nuclei of uranium-235 or plutonium-239.",
-      "w2": "Not quite: light nuclei are used in fusion. Fission uses uranium-235 or plutonium-239."
+      "w2": "Not quite: hydrogen has light nuclei, which are joined in fusion. Fission uses uranium-235 or plutonium-239."
      },
      "idk": [],
      "answerWhy": "The common fission fuels are uranium-235 and plutonium-239.",
@@ -564,12 +564,12 @@
      "question": "Quiz, question 6 of 6: in fusion, where does the energy come from?",
      "options": [
       {
-       "text": "Some of the mass is turned into energy",
-       "branch": "right"
-      },
-      {
        "text": "Neutrons are absorbed",
        "branch": "w1"
+      },
+      {
+       "text": "Some of the mass is turned into energy",
+       "branch": "right"
       },
       {
        "text": "The nuclei are burned",
@@ -583,7 +583,7 @@
       "w2": "Not quite: nothing burns. In fusion some of the mass is turned into the energy of radiation."
      },
      "idk": [],
-     "answerWhy": "In fusion, some of the mass may be turned into the energy of radiation.",
+     "answerWhy": "In fusion, some of the mass is turned into the energy of radiation.",
      "quiz": true
     },
     {

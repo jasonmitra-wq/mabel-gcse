@@ -1,0 +1,269 @@
+# Site test: p5-newtons-laws (lesson, 2026-11-28)
+
+**PASS** · cost $0.0731 (40 tool calls, 32 calls from the site; tutor claude-sonnet-5-5 $0.0329)
+
+## Judge
+
+```json
+{
+  "broken": [],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": []
+}
+```
+
+## Transcript checks (tools/check-transcript.js)
+
+none
+
+## Transcript
+
+    Lesson p5-newtons-laws (Physics › Forces › Newton's laws of motion).
+    [screenshot 01-home-laptop.png] home
+    [screenshot 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p5-laptop.png] lessons-P5
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! This lesson is about the three laws of motion: how forces change the way things move.
+    [screenshot 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (tapped "Next")
+    T1: First, two quick questions from the last lesson. A car speeds up from 0 to 20 m/s in 10 s. What is its acceleration?
+    [side picture after T1: none; newest in the chat: none]
+    S2 (try, tapped the button): 2 m/s²
+    T2: Second: which of these is a contact force?
+      [T2 shown first: Yes: acceleration = change in velocity ÷ time = 20 ÷ 10 = 2 m/s².]
+    S3 (try, tapped the button): friction
+    T3: Now this lesson. Most objects have several forces on them at once. A box on the floor is pulled down by gravity and pushed up by the floor.
+    [screenshot 06-exchange-3-laptop.png] exchange-3
+      [T3 shown first: Yes: friction acts between surfaces that touch.]
+    S4 (tapped "Next")
+    T4: Forces are measured in a unit written N. Its name comes in the next part of the lesson.
+    S5 (tapped "Next")
+    T5: You can replace all the forces on an object with one force that has the same effect. That single force is called the resultant force.
+    S6 (tapped "Next")
+    T6: For forces along one line, add the forces that act the same way and take away those that act the opposite way. For example, 50 N forwards and 20 N backwards make 30 N forwards.
+    [screenshot 07-exchange-6-laptop.png] exchange-6
+    S7 (tapped "Next")
+    T7: A sledge is pulled forwards with 60 N, and friction pulls it back with 25 N. What is the size of the resultant force, in N?
+    S8 (try): 35 n
+    T8: Two people pull a box in opposite directions, each with a force of 40 N. What is the resultant force on the box?
+      [T8 shown first: Yes: 60 − 25 = 35 N, forwards.]
+    S9 (try, tapped the button): 0 n
+    T9: When the resultant force is zero, the forces are balanced. Balanced does not mean there are no forces: they are there, but they cancel.
+    [screenshot 08-exchange-9-laptop.png] exchange-9
+      [T9 shown first: Yes: 40 − 40 = 0 N. The forces cancel.]
+    S10 (tapped "Next")
+    T10: The first law of motion says: if the resultant force on an object is zero, a still object stays still, and a moving object keeps the same velocity. It works the other way too: steady velocity means zero resultant force.
+    S11 (tapped "Next")
+    T11: In everyday life, moving things do slow down and stop. That is because friction and air resistance, the push of the air on moving things, act on them, so the resultant force is not zero.
+    S12 (tapped "Next")
+    T12: A car drives along a straight, level road at a steady 25 m/s. What is the resultant force on it?
+    [screenshot 09-exchange-12-laptop.png] exchange-12
+    S13 (ask): what's air resistance
+    T13: Now, the question again: A car drives along a straight, level road at a steady 25 m/s. What is the resultant force on it?
+      [T13 shown first: Air resistance is a force that pushes against an object as it moves through the air, which works against its motion and slows it down. Friction does a similar job when surfaces rub together, and both are forces that slow real objects down.]
+    S14 (try): zero the forces balance
+    T14: Changing the speed or the direction of an object needs a resultant force.
+      [T14 shown first: Yes: its velocity is not changing, so the resultant force is zero.]
+    S15 (tapped "Next")
+    T15: You push a trolley with a steady force. On carpet, it moves at a steady speed. It then rolls onto smooth tiles, where friction is smaller, and you keep pushing the same. Which is true on the tiles?
+    [screenshot 10-exchange-15-laptop.png] exchange-15
+    S16 (idk): idk
+    T16: On the tiles, the push is bigger than the friction, so the resultant force acts forwards. A forward resultant force changes the speed. Which way?
+      [T16 easier step]
+    S17 (try, tapped the button): it speeds up
+    T17: Objects tend to keep doing what they are already doing: staying still, or moving at a steady velocity. This tendency is called inertia.
+      [T17 shown first: Yes: the push is now bigger than the friction, so there is a forward resultant force and the trolley speeds up.]
+    S18 (tapped "Next")
+    T18: The more mass an object has, the more inertia it has. A lorry is much harder to start or stop than a bicycle.
+    [screenshot 11-exchange-18-laptop.png] exchange-18
+    S19 (tapped "Next")
+    T19: In one line: what does the first law of motion say?
+    S20 (try): if no resultant force object stays same
+    T20: The N stands for the newton, the unit of force, named after the scientist Isaac Newton. The three laws of motion are his, so they are called Newton's laws.
+    [counter now "1/4 covered" after T20; AI calls from the site so far: 6, $0.0029]
+      [T20 shown first: Yes: your line makes the point. You have this: With zero resultant force, an object keeps the same velocity, or stays still.]
+    S21 (tapped "Next")
+    T21: The second law tells you how big the acceleration is. The bigger the resultant force, the bigger the acceleration. The bigger the mass, the amount of matter in the object, the smaller the acceleration.
+    [screenshot 12-exchange-21-laptop.png] exchange-21
+    S22 (tapped "Next")
+    T22: The equation is F = m a: resultant force = mass × acceleration. Here F is the resultant force in newtons (N), m is the mass in kilograms (kg) and a is the acceleration in m/s².
+    S23 (tapped "Next")
+    T23: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [side picture after T23: none; newest in the chat: worked or question card]
+    [worked example under T23: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 13-worked-23-laptop.png] worked-23
+    S24 (tapped "Next")
+    T24: F = m a can be rearranged: a = F ÷ m to find the acceleration, and m = F ÷ a to find the mass.
+    [screenshot 14-exchange-24-laptop.png] exchange-24
+    S25 (tapped "Next")
+    T25: Your turn. A 0.5 kg ball is given an acceleration of 8 m/s². What resultant force acts on it, in N?
+    S26 (try): 4 n
+    T26: Now find an acceleration. A resultant force of 150 N acts on a 50 kg crate. What is its acceleration, in m/s²?
+      [T26 shown first: Yes: F = m a = 0.5 × 8 = 4 N.]
+    S27 (idk): idk
+    T27: Rearrange F = m a to get a = F ÷ m.
+    [screenshot 15-exchange-27-laptop.png] exchange-27
+      [T27 easier step]
+    S28 (try): 150 divided 50
+    T28: Mass measured as force ÷ acceleration, m = F ÷ a, is called inertial mass: it measures how hard an object is to accelerate.
+      [T28 shown first: Yes: a = F ÷ m = 150 ÷ 50 = 3 m/s².]
+    S29 (tapped "Next")
+    T29: The same resultant force acts on an empty shopping trolley and on a full one. Which has the bigger acceleration?
+    S30 (try, tapped the button): the empty trolley
+    T30: In a class experiment, a trolley on a bench is pulled by a string that runs over a pulley, a wheel at the edge of the bench, to masses hanging on the end.
+    [screenshot 16-exchange-30-laptop.png] exchange-30
+      [T30 shown first: Yes: the empty trolley has less mass, so the same force gives it a bigger acceleration.]
+    S31 (tapped "Next")
+    T31: Light gates are electronic timers. They time the trolley, so its acceleration can be worked out.
+    S32 (tapped "Next")
+    T32: The pull on the trolley comes from the hanging masses. To make the pull bigger, masses are moved from the trolley onto the hanging end.
+    S33 (tapped "Next")
+    T33: Why are masses moved from the trolley, rather than new masses added?
+    [screenshot 17-exchange-33-laptop.png] exchange-33
+    S34 (idk): idk
+    T34: Mass also changes the acceleration. Adding new masses would change the total mass. Moving them does not.
+      [T34 easier step]
+    S35 (ask): what does total mass mean
+    T35: Have a go at the question: Why are masses moved from the trolley, rather than new masses added?
+      [T35 shown first: Total mass means the mass of everything being accelerated together, added up. The lesson says F = ma uses the mass of the whole object, and more mass means less acceleration for the same force. So if more is loaded on, that sum gets bigger.]
+    S36 (ask): what is total mass
+    T36: Back to the question: Why are masses moved from the trolley, rather than new masses added?
+    [screenshot 18-exchange-36-laptop.png] exchange-36
+      [T36 shown first: Total mass is the mass of everything that is being accelerated together, so it adds up all the separate masses involved. In F = ma, the "m" is this whole amount, not just one part of it. For example, if a trolley and some small masses all move as one, you count all of them added together.]
+    S37 (try): to keep total mass same
+    T37: In one line: what does F = m a tell you?
+      [T37 shown first: Yes: moving masses changes the force but keeps the total mass the same, so only one thing changes.]
+    S38 (try): force equals mass times accelration
+    T38: The third law is about two objects pushing or pulling on each other. When object A pushes on object B, B pushes back on A with a force of the same size, in the opposite direction.
+    [counter now "2/4 covered" after T38; AI calls from the site so far: 15, $0.0096]
+      [T38 shown first: Here is what a good line says. A bigger resultant force gives a bigger acceleration. A bigger mass gives a smaller acceleration.]
+    S39 (tapped "Next")
+    T39: The two forces are the same kind of force, such as both pushes or both gravity, and they act on different objects. Together they are called a Newton's third law pair.
+    [screenshot 19-exchange-39-laptop.png] exchange-39
+    S40 (tapped "Next")
+    T40: You push on a wall with a force of 30 N. What force does the wall push on you with?
+    [side picture after T40: none; newest in the chat: none]
+    S41 (try): 30 n back towards me
+    T41: A third law pair never cancels out. Only forces acting on the same object can cancel.
+      [T41 shown first: Yes: the wall pushes back on you with 30 N.]
+    S42 (tapped "Next")
+    T42: A rocket engine pushes hot gas downwards. Which force pushes the rocket up?
+    [screenshot 20-exchange-42-laptop.png] exchange-42
+    S43 (what): wdym
+    T43: Now, the question again: A rocket engine pushes hot gas downwards. Which force pushes the rocket up?
+      [T43 shown first: In other words: the rocket itself: something has to push it upwards, and you need to name where that push comes from. The engine is shoving hot gas down, so think about whether anything shoves back on the engine in return.]
+    S44 (try, tapped the button): the gas pushing up on the engine
+    T44: Even gravity comes in pairs. The Earth pulls you down, and you pull the Earth up with a force just as big. The Earth's mass is so huge that your pull hardly moves it.
+      [T44 shown first: Yes: the engine pushes the gas down, so the gas pushes the engine up.]
+    S45 (tapped "Next")
+    T45: In one line: what does the third law of motion say?
+    [screenshot 21-exchange-45-laptop.png] exchange-45
+    S46 (try): if a pushes b then b pushes back
+    T46: The pull of gravity on an object is called weight. Weight is a force, so it is measured in newtons.
+    [counter now "3/4 covered" after T46; AI calls from the site so far: 21, $0.0141]
+      [T46 shown first: Here is what a good line says. When two objects interact, they push or pull on each other with equal and opposite forces.]
+    S47 (tapped "Next")
+    T47: How strongly gravity pulls on each kilogram is called the gravitational field strength, g.
+    S48 (tapped "Next")
+    T48: Gravitational field strength is measured in newtons per kilogram (N/kg). On Earth, g is about 9.8 N/kg.
+    [screenshot 22-exchange-48-laptop.png] exchange-48
+    S49 (tapped "Next")
+    T49: The equation is W = m g: weight = mass × gravitational field strength. Here W is the weight in newtons (N), m is the mass in kilograms (kg) and g is in N/kg. In a question, you are given g.
+    S50 (tapped "Next")
+    T50: Mass stays the same everywhere, but weight changes with g. On the Moon g is about 1.6 N/kg, so you weigh about a sixth as much there.
+    S51 (tapped "Next")
+    T51: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [screenshot 23-exchange-51-laptop.png] exchange-51
+    [side picture after T51: none; newest in the chat: worked or question card]
+    [worked example under T51: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 24-worked-51-laptop.png] worked-51
+    S52 (tapped "Next")
+    T52: A bag has a mass of 5 kg, and g = 9.8 N/kg. What is its weight, in N?
+    S53 (try): w equals m times g
+    T53: Type your answer as a number. A bag has a mass of 5 kg, and g = 9.8 N/kg. What is its weight, in N?
+    S54 (what): wdym
+    T54: Have a go at the question: A bag has a mass of 5 kg, and g = 9.8 N/kg. What is its weight, in N?
+    [screenshot 25-exchange-54-laptop.png] exchange-54
+      [T54 shown first: In other words: how hard gravity pulls down on a bag that has 5 kg of stuff in it. Weight is that pull, measured in newtons, and the lesson gives you W = mg to work it out from the mass and the g number. Put the 5 kg and the 9.]
+    S55 (try): 49 n
+    T55: An apple has a mass of 200 g, and g = 9.8 N/kg. What is its weight, in N? (1000 g = 1 kg.)
+      [T55 shown first: Yes: W = m g = 5 × 9.8 = 49 N.]
+    S56 (try): 1.96 n
+    T56: Weight and mass are directly proportional: double the mass, and the weight doubles.
+      [T56 shown first: Yes: 200 g = 0.2 kg, and 0.2 × 9.8 = 1.96 N.]
+    S57 (tapped "Next")
+    T57: Weight is measured with a newtonmeter: a spring balance marked in newtons.
+    [screenshot 26-exchange-57-laptop.png] exchange-57
+    S58 (tapped "Next")
+    T58: An object's weight can be treated as acting at one point, called its centre of mass. A ruler balances on your finger when your finger is under its centre of mass.
+    S59 (tapped "Next")
+    T59: A diagram that shows one object with every force on it, each as a labelled arrow, is called a free body diagram. Longer arrows show bigger forces.
+    S60 (tapped "Next")
+    T60: For a book resting on a table, the free body diagram has two arrows of the same length: its weight down, and the push up from the table, called the normal contact force. The resultant force is zero.
+    [screenshot 27-exchange-60-laptop.png] exchange-60
+    S61 (tapped "Next")
+    T61: A free body diagram of a falling skydiver shows a 600 N weight down and 450 N of air resistance, the push of the air, up. What is the resultant force?
+    S62 (what): wdym
+    T62: Back to the question: A free body diagram of a falling skydiver shows a 600 N weight down and 450 N of air resistance, the push of the air, up. What is the resultant force?
+      [T62 shown first: In other words: what single force is left over when the skydiver's two forces, one pulling down and one pushing up, are combined. Forces in opposite directions are subtracted, so you take the smaller one away from the bigger one. The leftover amount, and which way it points, is the resultant force.]
+    S63 (idk): idk
+    T63: The forces act in opposite directions. Subtract them, and the resultant points the way of the bigger one.
+    [screenshot 28-exchange-63-laptop.png] exchange-63
+      [T63 easier step]
+    S64 (try, tapped the button): 150 n downwards
+    T64: Forces that are not in a line can be added with a scale drawing. Draw each force as an arrow to scale, tip to tail. The arrow from the start of the first to the end of the last is the resultant.
+      [T64 shown first: Yes: 600 − 450 = 150 N, downwards, the way the bigger force acts.]
+    S65 (tapped "Next")
+    T65: A scale drawing can also split one force into two parts at right angles, such as along the ground and upwards. Together, the two parts have the same effect as the one force.
+    S66 (tapped "Next")
+    T66: In one line: what is weight, and how do you work it out?
+    [screenshot 29-exchange-66-laptop.png] exchange-66
+    S67 (idk): idk
+    T67: Now for a short quiz: six questions on the whole lesson. Take your time.
+      [T67 shown first: No problem. A good line would be: weight is the force of gravity on an object: weight = mass × gravitational field strength.]
+    S68 (tapped "Next")
+    T68: Quiz, question 1 of 6: 80 N pushes a box to the right and 30 N pushes it to the left. What is the resultant force?
+    [side picture after T68: none; newest in the chat: none]
+    S69 (try, tapped the button): 50 n to the right
+    T69: Quiz, question 2 of 6: the resultant force on a moving ball is zero. Which is true?
+    [screenshot 30-exchange-69-laptop.png] exchange-69
+      [T69 shown first: Yes: 80 − 30 = 50 N, to the right.]
+    S70 (try): keeps the same velocity
+    T70: Quiz, question 3 of 6: a 2 kg mass accelerates at 3 m/s². What is the resultant force on it?
+      [T70 shown first: Yes: with no resultant force, its speed and direction stay the same.]
+    S71 (what): wdym
+    T71: Now, the question again: Quiz, question 3 of 6: a 2 kg mass accelerates at 3 m/s². What is the resultant force on it?
+      [T71 shown first: The question is saying that a 2 kg object is speeding up at a steady rate, and it wants to know the total (net) push that is causing this speeding up. Resultant force just means the overall force left over once everything pulling or pushing on it has been added up. The lesson's Second Law links force, mass and acceleration.]
+    S72 (what): wdym
+    T72: Have a go at the question: Quiz, question 3 of 6: a 2 kg mass accelerates at 3 m/s². What is the resultant force on it?
+    [screenshot 31-exchange-72-laptop.png] exchange-72
+      [T72 shown first: In other words: for the total force pushing on a 2 kg object that is speeding up by 3 metres per second every second. "Resultant force" just means the overall force left over after all the pushes and pulls on it are added up. Think about which rule links force, mass and acceleration.]
+    S73 (try, tapped the button): 6 n
+    T73: Quiz, question 4 of 6: a book pushes down on a table. Which force is the other one in its third law pair?
+      [T73 shown first: Yes: F = m a = 2 × 3 = 6 N.]
+    S74 (try, tapped the button): The table pushing up on the book
+    T74: Quiz, question 5 of 6: what is the weight of a 10 kg mass where g = 9.8 N/kg?
+      [T74 shown first: Yes: the pair is the book on the table and the table on the book.]
+    S75 (try, tapped the button): 98 n
+    T75: Quiz, question 6 of 6: which has more inertia, a lorry or a bicycle?
+    [screenshot 32-exchange-75-laptop.png] exchange-75
+      [T75 shown first: Yes: W = m g = 10 × 9.8 = 98 N.]
+    S76 (try, tapped the button): the lorry, as it has more mass
+    T76: That's the end of the quiz: you got 6 out of 6.
+      [T76 shown first: Yes: more mass means more inertia, so the lorry is harder to start or stop.]
+    S77 (tapped "Next")
+    T77: The lesson is finished. Tap a button to go on.
+      [T77 shown first: Summary, point 1 of 4: If the resultant force on an object is zero, a still object stays still and a moving object keeps the same speed and direction.]
+      [T77 shown first: Summary, point 2 of 4: F = m a tells you a bigger resultant force gives a bigger acceleration, and a bigger mass a smaller one.]
+      [T77 shown first: Summary, point 3 of 4: When two objects interact, each pushes or pulls on the other with a force of the same size in the opposite direction.]
+      [T77 shown first: Summary, point 4 of 4: Weight is the force of gravity on an object: weight = mass × gravitational field strength.]
+    [counter now "4/4 covered" after T77; AI calls from the site so far: 32, $0.0335]
+    S78 (closing): ok thx
+    T78: You're welcome. Tap "Go to the slides" or "Home" when you are ready.
+    [screenshot 33-exchange-78-laptop.png] exchange-78
+    S79 (closing, tapped the button): home
+    [S79 left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]
+    [screenshot 34-end-laptop.png] end
+    [tutor-side time: 0.9 minutes over 78 exchanges]

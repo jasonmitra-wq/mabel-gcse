@@ -160,3 +160,11 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-11-27 | p4-radioactivity | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-27/p4-radioactivity-2 | $0.0742
 - 2026-11-27 | p4-half-life | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-27/p4-half-life-2 | $0.0535
 - 2026-11-27 | p4-nuclear-fission | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-27/p4-nuclear-fission-2 | $0.0242
+- 2026-11-28 | p5-forces-motion | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-forces-motion | $0.0533
+- 2026-11-28 | p5-newtons-laws | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-newtons-laws | $0.0731
+- 2026-11-28 | p5-stopping-distance | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-stopping-distance | $0.0416
+- 2026-11-28 | p5-momentum | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-momentum | $0.0418
+- 2026-11-28 | p5-gravity | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-gravity | $0.0399
+- 2026-11-28 | p5-elasticity | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-elasticity | $0.0405
+- 2026-11-28 | p5-moments | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-moments | $0.0337
+- 2026-11-28 | p5-fluid-pressure | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-fluid-pressure | $0.0583

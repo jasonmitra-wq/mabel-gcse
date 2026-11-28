@@ -19,7 +19,8 @@ const Lessons = (() => {
     'p1-energy-stores', 'p1-kinetic-potential', 'p1-conservation', 'p1-efficiency', 'p1-power', 'p1-heating', 'p1-national-grid',
     'p2-current-voltage', 'p2-series-parallel', 'p2-components', 'p2-domestic', 'p2-power-energy', 'p2-static',
     'p3-density', 'p3-changes-of-state', 'p3-pressure',
-    'p4-nuclear-model', 'p4-radioactivity', 'p4-half-life', 'p4-nuclear-fission'];
+    'p4-nuclear-model', 'p4-radioactivity', 'p4-half-life', 'p4-nuclear-fission',
+    'p5-forces-motion', 'p5-newtons-laws', 'p5-stopping-distance', 'p5-momentum', 'p5-gravity', 'p5-elasticity', 'p5-moments', 'p5-fluid-pressure'];
   // Bored-student testers (2026-10-17): true takes these four off the AI lesson
   // (they failed the text tester). Off since 2026-10-17 (planning chat): a
   // tester FAIL is a measure to improve, never a reason to remove a lesson.

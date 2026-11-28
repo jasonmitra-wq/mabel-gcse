@@ -1,0 +1,221 @@
+# Site test: p5-stopping-distance (lesson, 2026-11-28)
+
+**PASS** · cost $0.0416 (30 tool calls, 18 calls from the site; tutor claude-sonnet-5-5 $0.0129)
+
+## Judge
+
+```json
+{
+  "broken": [],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": []
+}
+```
+
+## Transcript checks (tools/check-transcript.js)
+
+none
+
+## Transcript
+
+    Lesson p5-stopping-distance (Physics › Forces › Stopping distance — thinking and braking).
+    [screenshot 01-home-laptop.png] home
+    [screenshot 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p5-laptop.png] lessons-P5
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! This lesson is about how far a car travels before it can stop, and what makes that distance longer.
+    [screenshot 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (tapped "Next")
+    T1: First, two quick questions from the last lesson. A force of 20 N acts on a 4 kg mass, with nothing else pushing on it. What is its acceleration?
+    [side picture after T1: none; newest in the chat: none]
+    S2 (try, tapped the button): 5 m/s²
+    T2: Second: which law of motion says that two objects push on each other with forces of the same size in opposite directions?
+      [T2 shown first: Yes: a = F ÷ m = 20 ÷ 4 = 5 m/s².]
+    S3 (idk): dont know
+    T3: The first law is about zero resultant force, and the second is F = m a. Which one is about pairs of forces?
+    [screenshot 06-exchange-3-laptop.png] exchange-3
+      [T3 easier step]
+    S4 (idk): idk
+    T4: Now this lesson. A driver sees a hazard, such as a child stepping into the road. The car does not stop at once: it keeps going for a while.
+      [T4 shown first: No problem. The third law of motion says two interacting objects push on each other with equal and opposite forces.]
+    S5 (tapped "Next")
+    T5: The whole distance the car travels, from the moment the driver sees the hazard until the car stops, is called the stopping distance. It comes in two parts.
+    S6 (tapped "Next")
+    T6: First, the driver has to notice the hazard and react before pressing the brake. The distance travelled in that time is called the thinking distance.
+    [screenshot 07-exchange-6-laptop.png] exchange-6
+    S7 (tapped "Next")
+    T7: Then the brakes are on and the car slows down. The distance travelled while braking, until the car stops, is called the braking distance.
+    S8 (tapped "Next")
+    T8: Stopping distance = thinking distance + braking distance.
+    S9 (tapped "Next")
+    T9: A car's thinking distance is 12 m and its braking distance is 24 m. What is its stopping distance, in m?
+    [screenshot 08-exchange-9-laptop.png] exchange-9
+    S10 (try): 36 m
+    T10: While the driver is still reacting, the car has not slowed at all. So thinking distance (m) = speed (m/s) × the time the driver takes to react (s).
+      [T10 shown first: Yes: 12 + 24 = 36 m.]
+    S11 (tapped "Next")
+    T11: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [side picture after T11: none; newest in the chat: worked or question card]
+    [worked example under T11: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 09-worked-11-laptop.png] worked-11
+    S12 (tapped "Next")
+    T12: Your turn. A car travels at 20 m/s. The driver takes 0.6 s to react. What is the thinking distance, in m?
+    [screenshot 10-exchange-12-laptop.png] exchange-12
+    S13 (try): 12 m
+    T13: Both parts grow with speed, as the next key points explain. For a typical car, the stopping distance is about 23 m at 13 m/s (30 mph) and about 96 m at 31 m/s (70 mph).
+      [T13 shown first: Yes: 20 × 0.6 = 12 m.]
+    S14 (tapped "Next")
+    T14: A table shows a car's stopping distances: 12 m at 20 mph, 23 m at 30 mph and 36 m at 40 mph. What does that tell you?
+    S15 (try, tapped the button): each extra 10 mph adds more distance than the last
+    T15: In one line: what two parts make up a stopping distance?
+    [screenshot 11-exchange-15-laptop.png] exchange-15
+      [T15 shown first: Yes: the curve gets steeper, so each extra bit of speed adds more stopping distance than the one before.]
+    S16 (try): thinking and braking
+    T16: The time between seeing a hazard and pressing the brake is called the reaction time. Typical reaction times range from about 0.2 s to 0.9 s.
+    [counter now "1/4 covered" after T16; AI calls from the site so far: 2, $0.0004]
+      [T16 shown first: Yes: your line makes every point. You have this: The thinking distance, while the driver reacts. You have this: The braking distance, while the brakes slow the car.]
+    S17 (tapped "Next")
+    T17: Some things make reaction time longer: being tired, drinking alcohol and taking some drugs. Distractions, such as using a phone, also make a driver take longer to react.
+    S18 (tapped "Next")
+    T18: A driver at 15 m/s has a reaction time of 0.5 s. When tired, it is 0.9 s. How much longer is the thinking distance when tired, in m?
+    [screenshot 12-exchange-18-laptop.png] exchange-18
+    S19 (try): 6 m
+    T19: You can measure reaction time with a ruler. Someone holds a ruler upright, with its zero mark level with your open finger and thumb. They let go without warning, and you catch it as fast as you can.
+      [T19 shown first: Yes: alert, 15 × 0.5 = 7.5 m; tired, 15 × 0.9 = 13.5 m. A longer reaction time gives a thinking distance 6 m longer.]
+    S20 (tapped "Next")
+    T20: The further the ruler falls before you catch it, the longer your reaction time. A chart turns the fall into a time: about 5 cm means about 0.1 s, and about 20 cm means about 0.2 s.
+    S21 (tapped "Next")
+    T21: One catch can be lucky or unlucky, so you repeat the test several times.
+    [screenshot 13-exchange-21-laptop.png] exchange-21
+    S22 (tapped "Next")
+    T22: Then take the mean: add up the results and divide by how many there are. A mean is more reliable, which means you can trust it more.
+    S23 (tapped "Next")
+    T23: Three catches give reaction times of 0.25 s, 0.21 s and 0.23 s. What is the mean reaction time, in s?
+    S24 (try): 0.23 s
+    T24: In one line: what makes a driver's thinking distance longer?
+    [screenshot 14-exchange-24-laptop.png] exchange-24
+      [T24 shown first: Yes: 0.25 + 0.21 + 0.23 = 0.69, and 0.69 ÷ 3 = 0.23 s.]
+    S25 (try): slower reaction time
+    T25: Braking distance depends on how hard the brakes slow the car. The force the brakes apply to slow the car down is called the braking force.
+    [counter now "2/4 covered" after T25; AI calls from the site so far: 4, $0.0009]
+      [T25 shown first: Partly there. You have this: A longer reaction time, from tiredness, alcohol, drugs or distractions, makes it longer. Still needed: A higher speed makes it longer.]
+    S26 (tapped "Next")
+    T26: The brakes slow the wheels, and the tyres grip the road. That grip is friction: the force that acts against one surface sliding over another.
+    S27 (tapped "Next")
+    T27: Speed matters most. A car going twice as fast has four times as much energy of movement, because that energy depends on speed squared. With the same braking force, removing four times the energy takes four times the distance.
+    [screenshot 15-exchange-27-laptop.png] exchange-27
+    S28 (tapped "Next")
+    T28: A car's braking distance at 15 m/s is 18 m. On the same road, with the same braking force, what is its braking distance at 30 m/s, in m?
+    [side picture after T28: none; newest in the chat: none]
+    S29 (try): 72 m
+    T29: Wet or icy roads cut the friction between tyres and road, so the braking distance is longer.
+      [T29 shown first: Yes: double the speed gives four times the braking distance: 4 × 18 = 72 m.]
+    S30 (tapped "Next")
+    T30: Worn tyres have shallow grooves, called tread, so they grip the road less.
+    [screenshot 16-exchange-30-laptop.png] exchange-30
+    S31 (tapped "Next")
+    T31: Worn brakes push less hard, so the braking force is smaller too. Each of these makes the car need further to stop.
+    S32 (tapped "Next")
+    T32: Two identical cars brake from the same speed. Car A has worn tyres on an icy road; car B has new tyres on a dry road. Which stops in the shorter distance?
+    S33 (idk): idk
+    T33: Which car has the better grip between its tyres and the road?
+    [screenshot 17-exchange-33-laptop.png] exchange-33
+      [T33 easier step]
+    S34 (try, tapped the button): car b
+    T34: In an emergency, a driver may need to stop within a short distance. The faster the car, the bigger the braking force it needs to stop in that distance.
+      [T34 shown first: Yes: car B has more friction between tyres and road, so a bigger braking force and a shorter braking distance.]
+    S35 (tapped "Next")
+    T35: In one line: name two things that make a braking distance longer.
+    S36 (try): worn tyres icy road
+    T36: A moving car has energy because it is moving. The energy an object has because it is moving is called kinetic energy. The faster it goes, the more kinetic energy it has.
+    [screenshot 18-exchange-36-laptop.png] exchange-36
+    [counter now "3/4 covered" after T36; AI calls from the site so far: 6, $0.0015]
+      [T36 shown first: Here is what a good line says. A higher speed makes the braking distance longer. Wet or icy roads, worn tyres or worn brakes make it longer.]
+    S37 (tapped "Next")
+    T37: After a hard stop, a car's brakes are hot. Where do you think the car's kinetic energy has gone?
+    S38 (try, tapped the button): into heating up the brakes
+    T38: Doing work means a force moving something, which transfers energy. The friction in the brakes does work, moving the car's kinetic energy into the thermal store of the brakes: the energy they hold as heat.
+      [T38 shown first: Yes: the car's kinetic energy ends up heating the brakes.]
+    S39 (tapped "Next")
+    T39: Kinetic energy is Ek = ½ m v²: m is the car's mass in kg, v its speed in m/s, and Ek is in joules.
+    [screenshot 19-exchange-39-laptop.png] exchange-39
+    S40 (tapped "Next")
+    T40: A 1000 kg car moves at 10 m/s. What is its kinetic energy, in J?
+    S41 (ask): whats joules
+    T41: Now, the question again: A 1000 kg car moves at 10 m/s. What is its kinetic energy, in J?
+      [T41 shown first: A joule (J) is the unit that energy is measured in, just like metres measure distance. The lesson uses it for the car's kinetic energy, which is the energy it has because it is moving, so the answer to the question will be a number of joules.]
+    S42 (try): 50000 j
+    T42: Deceleration is how quickly the car slows down: change in speed ÷ time, in m/s². A bigger braking force gives a bigger deceleration.
+    [screenshot 20-exchange-42-laptop.png] exchange-42
+      [T42 shown first: Yes: ½ × 1000 × 10² = 0.5 × 1000 × 100 = 50 000 J.]
+    S43 (tapped "Next")
+    T43: Very large decelerations are dangerous. The brakes can overheat, and the tyres can skid, so the driver loses control.
+    S44 (tapped "Next")
+    T44: In a sudden stop, the people inside decelerate hard too, so big forces act on them. Seat belts and crumple zones help by making the stop take a little longer.
+    S45 (tapped "Next")
+    T45: Overheated brakes work less well, so the car takes longer to stop. This loss of braking from hot brakes is called brake fade.
+    [screenshot 21-exchange-45-laptop.png] exchange-45
+    S46 (tapped "Next")
+    T46: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [side picture after T46: none; newest in the chat: worked or question card]
+    [worked example under T46: buttons seen Show the first step → Next step → Next step → Next step; after the last step: Next]
+    [screenshot 22-worked-46-laptop.png] worked-46
+    S47 (tapped "Next")
+    T47: Your turn. A 1500 kg car slows from 30 m/s to a stop in 5 s. What braking force acts on it, in N?
+    S48 (try): 9000 n
+    T48: In one line: what happens to a car's energy when it brakes?
+    [screenshot 23-exchange-48-laptop.png] exchange-48
+      [T48 shown first: Yes: a = 30 ÷ 5 = 6 m/s², and F = 1500 × 6 = 9000 N.]
+    S49 (try): converts to heat
+    T49: Now for a short quiz: six questions on the whole lesson. Take your time.
+      [T49 shown first: Partly there. Still needed: The friction in the brakes does work. You have this: The car's kinetic energy goes to the thermal store of the brakes.]
+    S50 (tapped "Next")
+    T50: Quiz, question 1 of 6: what is the stopping distance?
+    S51 (idk): idk
+    T51: The car travels both distances, one after the other.
+    [screenshot 24-exchange-51-laptop.png] exchange-51
+      [T51 easier step]
+    S52 (try, tapped the button): thinking distance + braking distance
+    T52: Quiz, question 2 of 6: which of these affects the thinking distance?
+      [T52 shown first: Yes: the two parts added together.]
+    S53 (try, tapped the button): tiredness
+    T53: Quiz, question 3 of 6: a car travels at 25 m/s and the driver's reaction time is 0.4 s. What is the thinking distance?
+      [T53 shown first: Yes: tiredness makes the reaction time longer.]
+    S54 (what): huh
+    T54: Have a go at the question: Quiz, question 3 of 6: a car travels at 25 m/s and the driver's reaction time is 0.4 s. What is the thinking distance?
+    [screenshot 25-exchange-54-laptop.png] exchange-54
+      [T54 shown first: In other words: how far the car travels in the short moment between the driver spotting a hazard and pressing the brake. In that moment the car is still moving at its full speed of 25 m/s, and the moment lasts 0. 4 seconds. So you use the rule: thinking distance = speed × reaction time.]
+    S55 (try, tapped the button): 10 m
+    T55: Quiz, question 4 of 6: a car's speed doubles, with the same braking force. What happens to its braking distance?
+      [T55 shown first: Yes: 25 × 0.4 = 10 m.]
+    S56 (try, tapped the button): it becomes four times as long
+    T56: Quiz, question 5 of 6: why does an icy road make the braking distance longer?
+      [T56 shown first: Yes: double the speed gives four times the braking distance.]
+    S57 (what): wdym
+    T57: Back to the question: Quiz, question 5 of 6: why does an icy road make the braking distance longer?
+    [screenshot 26-exchange-57-laptop.png] exchange-57
+      [T57 shown first: In other words: to explain what happens on an icy road that makes a car need more space to come to a stop. Think about what the tyres and the road surface are doing to each other when the brakes are pressed, and why ice changes that.]
+    S58 (try): less friction
+    T58: Quiz, question 6 of 6: why do brakes get hot when a car stops?
+      [T58 shown first: Yes: the braking force can only slow the car through the grip of the tyres on the road, and ice cuts that friction.]
+    S59 (idk): idk
+    T59: The car loses kinetic energy as it stops. Where does it go?
+      [T59 easier step]
+    S60 (try): friction does work
+    T60: That's the end of the quiz: you got 6 out of 6.
+    [screenshot 27-exchange-60-laptop.png] exchange-60
+      [T60 shown first: Yes: the work done by friction transfers the car's kinetic energy to the brakes' thermal store.]
+    S61 (tapped "Next")
+    T61: The lesson is finished. Tap a button to go on.
+      [T61 shown first: Summary, point 1 of 4: A stopping distance is the thinking distance, while the driver reacts, plus the braking distance, while the brakes slow the car.]
+      [T61 shown first: Summary, point 2 of 4: A driver's thinking distance is longer with a longer reaction time, from tiredness, alcohol, drugs or distractions, or at a higher speed.]
+      [T61 shown first: Summary, point 3 of 4: A braking distance is longer at a higher speed, and on wet or icy roads or with worn tyres or brakes.]
+      [T61 shown first: Summary, point 4 of 4: When a car brakes, the friction in the brakes does work, transferring the car's kinetic energy to the thermal store of the brakes.]
+    [counter now "4/4 covered" after T61; AI calls from the site so far: 18, $0.0132]
+    [side picture after T61: none; newest in the chat: none]
+    S62 (closing, tapped the button): go to the slides
+    [S62 left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]
+    [screenshot 28-end-laptop.png] end
+    [tutor-side time: 0.5 minutes over 61 exchanges]

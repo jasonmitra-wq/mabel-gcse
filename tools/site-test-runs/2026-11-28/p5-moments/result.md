@@ -1,0 +1,186 @@
+# Site test: p5-moments (lesson, 2026-11-28)
+
+**PASS** · cost $0.0337 (26 tool calls, 15 calls from the site; tutor claude-sonnet-5-5 $0.0091)
+
+## Judge
+
+```json
+{
+  "broken": [],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": []
+}
+```
+
+## Transcript checks (tools/check-transcript.js)
+
+none
+
+## Transcript
+
+    Lesson p5-moments (Physics › Forces › Moments, levers and gears).
+    [screenshot 01-home-laptop.png] home
+    [screenshot 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p5-laptop.png] lessons-P5
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! This lesson is about forces that make things turn.
+    [screenshot 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (tapped "Next")
+    T1: First, two quick questions from the last lesson. A force of 8 N stretches a spring by 0.04 m. What is its spring constant?
+    [side picture after T1: none; newest in the chat: none]
+    S2 (try, tapped the button): 200 n/m
+    T2: Second: which kind of deformation leaves an object changed for good?
+      [T2 shown first: Yes: spring constant = force ÷ extension = 8 ÷ 0.04 = 200 N/m.]
+    S3 (try, tapped the button): inelastic deformation
+    T3: Now this lesson. A force can make an object turn, or rotate. Pushing a door open, turning a nut with a spanner and riding a see-saw all use forces that cause rotation.
+    [screenshot 06-exchange-3-laptop.png] exchange-3
+      [T3 shown first: Yes: after inelastic deformation, the object does not go back to its first shape.]
+    S4 (tapped "Next")
+    T4: The fixed point that an object turns about is called the pivot. For a door, it is the hinge.
+    S5 (tapped "Next")
+    T5: The turning effect of a force is called the moment of the force.
+    S6 (tapped "Next")
+    T6: The equation is M = F d: moment = force × distance. M is the moment in newton-metres (Nm), F is the force in newtons (N), the unit of force, and d is the distance from the pivot in metres (m).
+    [screenshot 07-exchange-6-laptop.png] exchange-6
+    S7 (tapped "Next")
+    T7: The distance d is measured from the pivot to the line the force acts along, meeting that line at right angles. This is called the perpendicular distance.
+    S8 (tapped "Next")
+    T8: If you push a door at right angles to it, d is simply the distance from the hinge to where you push. Pushing at a slant makes the perpendicular distance shorter, so the moment is smaller.
+    S9 (tapped "Next")
+    T9: A bigger force, or the same force further from the pivot, gives a bigger moment.
+    [screenshot 08-exchange-9-laptop.png] exchange-9
+    S10 (tapped "Next")
+    T10: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [side picture after T10: none; newest in the chat: worked or question card]
+    [worked example under T10: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 09-worked-10-laptop.png] worked-10
+    S11 (tapped "Next")
+    T11: Your turn. A spanner is pushed with 50 N, 25 cm from the nut, which is the pivot. What is the moment, in Nm? (100 cm = 1 m.)
+    S12 (ask): what's the perpendicular distance
+    T12: Now, the question again: Your turn. A spanner is pushed with 50 N, 25 cm from the nut, which is the pivot. What is the moment, in Nm? (100 cm = 1 m.)
+    [screenshot 10-exchange-12-laptop.png] exchange-12
+      [T12 shown first: The perpendicular distance is the shortest, straight-line distance from the pivot to the line along which the force pushes, meeting that line at a right angle (90°). In the spanner question, the 25 cm is already that distance, so you only need to change it into metres.]
+    S13 (idk): not sure
+    T13: Change 25 cm into metres first: 100 cm = 1 m. Then M = F d.
+      [T13 easier step]
+    S14 (try): 25 cm is 0.25 m
+    T14: A nut is stuck. You can push no harder. Which change gives a bigger moment?
+      [T14 shown first: Not quite: 12.5 Nm. 25 cm = 0.25 m, so M = 50 × 0.25 = 12.5 Nm.]
+    S15 (try, tapped the button): use a longer spanner and push at its end
+    T15: In one line: what is the moment of a force?
+    [screenshot 11-exchange-15-laptop.png] exchange-15
+      [T15 shown first: Yes: the same force further from the pivot gives a bigger moment.]
+    S16 (try): turning effect of a force
+    T16: A moment can turn an object one of two ways: clockwise, the way a clock's hands turn, or anticlockwise, the other way.
+    [counter now "1/3 covered" after T16; AI calls from the site so far: 5, $0.0026]
+      [T16 shown first: Yes: your line makes the point. You have this: The moment is the turning effect of a force.]
+    S17 (tapped "Next")
+    T17: If an object is balanced, it does not turn either way: the total clockwise moment about the pivot equals the total anticlockwise moment about that pivot.
+    S18 (tapped "Next")
+    T18: If there are several forces on one side, add their moments to get the total for that side.
+    [screenshot 12-exchange-18-laptop.png] exchange-18
+    S19 (tapped "Next")
+    T19: On a see-saw, each person's weight, the pull of gravity on them in newtons, pushes their side down.
+    S20 (tapped "Next")
+    T20: A weight left of the pivot turns the see-saw anticlockwise. A weight on the right turns it clockwise.
+    S21 (tapped "Next")
+    T21: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [screenshot 13-exchange-21-laptop.png] exchange-21
+    [worked example under T21: buttons seen Show the first step → Next step → Next step → Next step; after the last step: Next]
+    [screenshot 14-worked-21-laptop.png] worked-21
+    S22 (tapped "Next")
+    T22: Your turn. A child weighing 300 N sits 2 m from the pivot of a see-saw. How far from the pivot must a child weighing 500 N sit on the other side to balance it, in m?
+    S23 (try): need to work it out
+    T23: Two people sit on a balanced see-saw. Which is true of where the heavier person sits?
+      [T23 shown first: The first child's moment is 300 × 2 = 600 Nm, so 500 × d = 600 and d = 1.2 m.]
+    S24 (try, tapped the button): closer to the pivot
+    T24: A metre ruler balances at its middle. An object weighing 2 N hangs 30 cm to the left of the pivot. What force must hang 20 cm to the right to balance it, in N?
+    [screenshot 15-exchange-24-laptop.png] exchange-24
+      [T24 shown first: Yes: a bigger force needs a smaller distance to give the same moment.]
+    S25 (try): 3 n
+    T25: In one line: when is an object balanced?
+      [T25 shown first: Yes: 2 × 0.3 = 0.6 Nm, and 0.6 ÷ 0.2 = 3 N.]
+    S26 (try): clockwise moment equals anticlockwise moment
+    T26: A bar that turns about a pivot is called a lever. A crowbar, a spanner and a wheelbarrow are all levers. For a wheelbarrow, the pivot is the wheel.
+    [counter now "2/3 covered" after T26; AI calls from the site so far: 8, $0.0030]
+      [T26 shown first: Yes: your line makes the point. You have this: When the total clockwise moment equals the total anticlockwise moment.]
+    S27 (tapped "Next")
+    T27: The load is the thing a lever moves or lifts. You push far from the pivot, so your small force makes a big moment.
+    [screenshot 16-exchange-27-laptop.png] exchange-27
+    S28 (tapped "Next")
+    T28: The lever passes your moment on to the load. The load is close to the pivot, so the same moment means a big force on it.
+    S29 (tapped "Next")
+    T29: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [worked example under T29: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 17-worked-29-laptop.png] worked-29
+    S30 (tapped "Next")
+    T30: Your turn. You push down with 100 N on a lever, 1.5 m from the pivot. The load is 0.3 m from the pivot. What force does the lever put on the load, in N?
+    [screenshot 18-exchange-30-laptop.png] exchange-30
+    S31 (idk): not sure
+    T31: Work out your moment: 100 × 1.5. The force on the load gives the same moment at 0.3 m.
+      [T31 easier step]
+    S32 (try): 150 divided by 0.3
+    T32: A wheel with teeth that fit into the teeth of another wheel is called a gear. When one gear turns, its teeth push the next gear round the opposite way.
+      [T32 shown first: Yes: 100 × 1.5 = 150 Nm, and 150 ÷ 0.3 = 500 N.]
+    S33 (tapped "Next")
+    T33: Touching gear teeth push on each other with the same force. A bigger gear's teeth are further from its centre, so that force gives it a bigger moment.
+    [screenshot 19-exchange-33-laptop.png] exchange-33
+    S34 (tapped "Next")
+    T34: A bigger gear also has more teeth, so it goes round fewer times than a small gear turning it: it turns more slowly.
+    S35 (tapped "Next")
+    T35: A large gear turns a small gear. Which is true of the small gear?
+    S36 (ask): why does it turn faster
+    T36: Have a go at the question: A large gear turns a small gear. Which is true of the small gear?
+    [screenshot 20-exchange-36-laptop.png] exchange-36
+      [T36 shown first: The lesson says what happens but not why the small gear turns faster, so the reason comes later in the course. For now, notice that the two gears are linked by their teeth, so one gear pushes the teeth of the next, and that link is what makes them turn together.]
+    S37 (ask): is it the opposite way
+    T37: In one line: what do levers and gears do?
+      [T37 shown first: Not quite: it turns faster, with a smaller moment.]
+    S38 (ask): what do you mean by do
+    T38: Back to the question: In one line: what do levers and gears do?
+      [T38 shown first: Think of what a spanner or a pair of gears is for, and say it in a single line.]
+    S39 (idk): idk
+    T39: Now for a short quiz: six questions on the whole lesson. Take your time.
+    [screenshot 21-exchange-39-laptop.png] exchange-39
+      [T39 shown first: No problem. A good line would be: levers and gears pass on the turning effect of a force: a lever makes a small force into a big one, and a bigger gear turns more slowly with a bigger moment.]
+    S40 (tapped "Next")
+    T40: Quiz, question 1 of 6: what is the unit of a moment?
+    S41 (idk): idk
+    T41: Moment = force × distance. Multiply their units.
+      [T41 easier step]
+    S42 (idk): idk
+    T42: Quiz, question 2 of 6: a 10 N force acts 0.5 m from a pivot. What is its moment?
+    [screenshot 22-exchange-42-laptop.png] exchange-42
+      [T42 shown first: A moment is force (N) × distance (m), so its unit is the newton-metre, Nm.]
+    S43 (try, tapped the button): 5 nm
+    T43: Quiz, question 3 of 6: a child weighing 200 N sits 3 m from a see-saw's pivot. Where must an adult weighing 600 N sit to balance it?
+      [T43 shown first: Yes: 10 × 0.5 = 5 Nm.]
+    S44 (try, tapped the button): 1 m from the pivot
+    T44: Quiz, question 4 of 6: which is true when an object is balanced on a pivot?
+      [T44 shown first: Yes: 200 × 3 = 600 Nm, and 600 ÷ 600 = 1 m.]
+    S45 (try, tapped the button): Total clockwise moment = total anticlockwise moment
+    T45: Quiz, question 5 of 6: why does a long spanner make a stuck nut easier to turn?
+    [screenshot 23-exchange-45-laptop.png] exchange-45
+      [T45 shown first: Yes: the turning effects cancel.]
+    [side picture after T45: none; newest in the chat: none]
+    S46 (try, tapped the button): the same force is further from the pivot
+    T46: Quiz, question 6 of 6: why does a crowbar help you lift a heavy stone?
+      [T46 shown first: Yes: a bigger distance gives a bigger moment from the same force.]
+    S47 (try, tapped the button): a small force far from the pivot gives a big force near it
+    T47: That's the end of the quiz: you got 5 out of 6.
+      [T47 shown first: Yes: your small force far away makes a big moment, which gives a big force on the stone near the pivot.]
+    S48 (tapped "Next")
+    T48: The lesson is finished. Tap a button to go on.
+    [screenshot 24-exchange-48-laptop.png] exchange-48
+      [T48 shown first: Summary, point 1 of 3: The moment of a force is its turning effect: force × perpendicular distance from the pivot.]
+      [T48 shown first: Summary, point 2 of 3: An object is balanced when the total clockwise moment about a pivot equals the total anticlockwise moment about it.]
+      [T48 shown first: Summary, point 3 of 3: Levers and gears pass on the turning effect of a force: a lever makes a small force into a big one, and a bigger gear turns more slowly with a bigger moment.]
+    [counter now "3/3 covered" after T48; AI calls from the site so far: 15, $0.0094]
+    S49 (closing): ok thx
+    T49: You're welcome. Tap "Go to the slides" or "Home" when you are ready.
+    S50 (closing, tapped the button): go to the slides
+    [S50 left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]
+    [screenshot 25-end-laptop.png] end
+    [tutor-side time: 0.4 minutes over 49 exchanges]

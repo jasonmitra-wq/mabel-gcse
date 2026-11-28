@@ -1,0 +1,213 @@
+# Site test: p5-momentum (lesson, 2026-11-28)
+
+**PASS** · cost $0.0418 (32 tool calls, 16 calls from the site; tutor claude-sonnet-5-5 $0.0136)
+
+## Judge
+
+```json
+{
+  "broken": [],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": []
+}
+```
+
+## Transcript checks (tools/check-transcript.js)
+
+none
+
+## Transcript
+
+    Lesson p5-momentum (Physics › Forces › Momentum and collisions).
+    [screenshot 01-home-laptop.png] home
+    [screenshot 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p5-laptop.png] lessons-P5
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! This lesson is about momentum: why a moving lorry is so hard to stop, and what happens when things collide.
+    [screenshot 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (tapped "Next")
+    T1: First, two quick questions from earlier lessons. A 2 kg trolley accelerates at 3 m/s². What is the resultant force on it?
+    [side picture after T1: none; newest in the chat: none]
+    S2 (idk): idk
+    T2: Force = mass × acceleration.
+      [T2 easier step]
+    S3 (ask): whats resultant force
+    T3: Now, the question again: First, two quick questions from earlier lessons. A 2 kg trolley accelerates at 3 m/s². What is the resultant force on it?
+    [screenshot 06-exchange-3-laptop.png] exchange-3
+      [T3 shown first: Resultant force is the single overall force you get when you add up all the forces acting on an object, taking their directions into account. Forces pulling in opposite directions partly cancel out. The lesson gives no more detail on this right now, so fuller coverage comes later in the course.]
+    S4 (try, tapped the button): 6 n
+    T4: Second: which of these is a vector, with a size and a direction?
+      [T4 shown first: Yes: F = m a = 2 × 3 = 6 N.]
+    S5 (idk): idk
+    T5: A vector has a direction. Which of these says which way?
+      [T5 easier step]
+    S6 (idk): idk
+    T6: Now this lesson. A slow, heavy lorry and a fast car can both be very hard to stop. Each has a lot of a quantity that depends on both mass and velocity.
+    [screenshot 07-exchange-6-laptop.png] exchange-6
+      [T6 shown first: No problem. Velocity is speed in a given direction, so it has a size and a direction; speed and mass have no direction.]
+    S7 (tapped "Next")
+    T7: Mass × velocity is called momentum.
+    S8 (tapped "Next")
+    T8: The equation is p = m v. Here p is the momentum in kilogram metres per second (kg m/s), m is the mass in kilograms (kg) and v is the velocity in m/s.
+    S9 (tapped "Next")
+    T9: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [screenshot 08-exchange-9-laptop.png] exchange-9
+    [side picture after T9: none; newest in the chat: worked or question card]
+    [worked example under T9: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 09-worked-9-laptop.png] worked-9
+    S10 (tapped "Next")
+    T10: Your turn. A 60 kg runner moves at 5 m/s. What is the runner's momentum, in kg m/s?
+    S11 (try): 300 kg m/s
+    T11: A 50 g ball moves at 20 m/s. What is its momentum, in kg m/s? (1000 g = 1 kg.)
+      [T11 shown first: Yes: p = m v = 60 × 5 = 300 kg m/s.]
+    S12 (idk): idk
+    T12: 50 g is 50 thousandths of a kilogram: 50 ÷ 1000 = 0.05 kg. Then multiply by the velocity, 20 m/s.
+    [screenshot 10-exchange-12-laptop.png] exchange-12
+      [T12 easier step]
+    S13 (idk): not sure
+    T13: Velocity has a direction, so momentum does too: momentum is a vector quantity.
+      [T13 shown first: 50 g = 0.05 kg, so p = m v = 0.05 × 20 = 1 kg m/s.]
+    S14 (tapped "Next")
+    T14: Pick one direction as positive. Momentum the other way is then negative.
+    S15 (tapped "Next")
+    T15: Two cars of the same mass driving towards each other at the same speed have momenta, the plural of momentum, of the same size: one positive, one negative.
+    [screenshot 11-exchange-15-laptop.png] exchange-15
+    S16 (tapped "Next")
+    T16: To find a total momentum, add the separate momenta, keeping their signs.
+    S17 (tapped "Next")
+    T17: A 2 kg ball moves right at 3 m/s. A 1 kg ball moves left at 4 m/s. Taking right as positive, what is their total momentum, in kg m/s?
+    S18 (try): 2 kg m/s
+    T18: A 1000 kg car moves at 10 m/s. How fast must a 500 kg car move to have the same momentum? (velocity = momentum ÷ mass)
+    [screenshot 12-exchange-18-laptop.png] exchange-18
+      [T18 shown first: Yes: 2 × 3 = +6 kg m/s and 1 × 4 = 4 kg m/s to the left, which is −4. Total: 6 − 4 = 2 kg m/s, to the right.]
+    S19 (try, tapped the button): 20 m/s
+    T19: In one line: what is momentum?
+      [T19 shown first: Yes: 1000 × 10 = 10 000 kg m/s, and 500 × 20 = 10 000 kg m/s.]
+    S20 (idk): mass times velocity
+    T20: When objects collide or push apart, they push on each other, and their momenta change.
+    [counter now "1/3 covered" after T20; AI calls from the site so far: 6, $0.0025]
+      [T20 shown first: Partly there. You have this: Momentum is mass × velocity. Still needed: Momentum has a direction.]
+    S21 (tapped "Next")
+    T21: A group of objects with no outside forces acting on it, such as friction or a push from something else, is called a closed system.
+    [screenshot 13-exchange-21-laptop.png] exchange-21
+    S22 (tapped "Next")
+    T22: In a closed system, the total momentum before an event equals the total momentum after it. This rule is called conservation of momentum.
+    S23 (tapped "Next")
+    T23: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [worked example under T23: buttons seen Show the first step → Next step → Next step → Next step; after the last step: Next]
+    [screenshot 14-worked-23-laptop.png] worked-23
+    S24 (tapped "Next")
+    T24: Your turn. A 4 kg trolley at 5 m/s hits a still 1 kg trolley, and they stick together. How fast do they move off, in m/s?
+    [screenshot 15-exchange-24-laptop.png] exchange-24
+    S25 (idk): idk
+    T25: Momentum before = 4 × 5. After, the trolleys move together with a mass of 5 kg.
+      [T25 easier step]
+    S26 (try): 20 kg m/s
+    T26: In physics, an explosion is any event where things that were still push apart. Before a cannon fires, nothing moves, so the total momentum is zero. After it fires, the ball goes forwards and the cannon rolls back.
+      [T26 shown first: Not quite: 20 kg m/s is the momentum. Divide by the combined mass, 5 kg: 20 ÷ 5 = 4 m/s.]
+    S27 (tapped "Next")
+    T27: Why must the cannon roll backwards as the ball goes forwards?
+    [screenshot 16-exchange-27-laptop.png] exchange-27
+    S28 (try, tapped the button): the total momentum must stay zero
+    T28: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+      [T28 shown first: Yes: the ball's forward momentum is cancelled by the cannon's backward momentum, so the total stays zero.]
+    [worked example under T28: buttons seen Show the first step → Next step → Next step → Next step; after the last step: Next]
+    [screenshot 17-worked-28-laptop.png] worked-28
+    S29 (tapped "Next")
+    T29: Your turn. A 0.02 kg bullet leaves a still 4 kg rifle at 400 m/s. How fast does the rifle move backwards (recoil), in m/s?
+    S30 (try): 2 m/s
+    T30: Momentum is conserved even when something does not seem to move. A snowball hitting a wall passes its momentum to the wall and the Earth, which are so massive they barely move.
+    [screenshot 18-exchange-30-laptop.png] exchange-30
+      [T30 shown first: Yes: the bullet has 0.02 × 400 = 8 kg m/s, so the rifle has 8 kg m/s backwards: 8 ÷ 4 = 2 m/s.]
+    S31 (tapped "Next")
+    T31: In one line: what does conservation of momentum say?
+    S32 (idk): idk
+    T32: A resultant force, the overall force on an object, changes its velocity, so it changes its momentum.
+    [counter now "2/3 covered" after T32; AI calls from the site so far: 8, $0.0025]
+      [T32 shown first: OK. A good line would be: in a closed system, the total momentum before an event equals the total momentum after it.]
+    S33 (tapped "Next")
+    T33: Momentum after minus momentum before is called the change in momentum. The mass stays the same, so it is mass × change in velocity: m Δv, where Δ means "change in".
+    [screenshot 19-exchange-33-laptop.png] exchange-33
+    S34 (tapped "Next")
+    T34: Putting F = m a together with a = Δv ÷ Δt, where Δt is the time taken, gives F = m Δv ÷ Δt.
+    S35 (tapped "Next")
+    T35: In words: force = change in momentum ÷ time taken. F is in newtons (N), m Δv in kg m/s, and Δt, the time taken, in seconds (s).
+    S36 (tapped "Next")
+    T36: Force equals the rate of change of momentum: how much the momentum changes each second.
+    [screenshot 20-exchange-36-laptop.png] exchange-36
+    S37 (tapped "Next")
+    T37: With the same change in momentum, a longer time means a smaller force.
+    S38 (tapped "Next")
+    T38: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [worked example under T38: buttons seen Show the first step → Next step → Next step → Next step; after the last step: Next]
+    [screenshot 21-worked-38-laptop.png] worked-38
+    S39 (tapped "Next")
+    T39: Your turn. The same 0.5 kg ball at 10 m/s is caught with soft hands that stop it in 0.5 s. What force stops it now, in N?
+    [screenshot 22-exchange-39-laptop.png] exchange-39
+    S40 (try): 10 n
+    T40: Why does a crash mat in a gym help when someone lands on it?
+      [T40 shown first: Yes: F = 5 ÷ 0.5 = 10 N, much less than 50 N.]
+    S41 (try, tapped the button): the stop takes longer, so the force is smaller
+    T41: Airbags, seat belts, crumple zones (parts of a car built to crush in a crash), cycle helmets and soft playground surfaces all make a collision last longer, so the force on the person is smaller.
+      [T41 shown first: Yes: the mat makes the stop take longer, so the momentum changes more slowly and the force is smaller.]
+    S42 (tapped "Next")
+    T42: In one line: what does force equal, in terms of momentum?
+    [screenshot 23-exchange-42-laptop.png] exchange-42
+    S43 (idk): idk
+    T43: Now for a short quiz: six questions on the whole lesson. Take your time.
+      [T43 shown first: A good line would be: force equals the change in momentum divided by the time taken, so a longer collision means a smaller force.]
+    S44 (tapped "Next")
+    T44: Quiz, question 1 of 6: what is the unit of momentum?
+    S45 (idk): idk
+    T45: Momentum = mass × velocity. Multiply their units.
+    [screenshot 24-exchange-45-laptop.png] exchange-45
+      [T45 easier step]
+    S46 (what): wdym
+    T46: Have a go at the question: Quiz, question 1 of 6: what is the unit of momentum?
+      [T46 shown first: In other words: what you get when you work out the units of momentum, which is a measuring unit written with letters, just like "metres" or "seconds" is for other quantities. Use the equation we just saw and combine the units of its two parts, mass and velocity, to build that unit.]
+    S47 (try, tapped the button): kg m/s
+    T47: Quiz, question 2 of 6: a 3 kg ball moves at 4 m/s. What is its momentum?
+      [T47 shown first: Yes: kilogram metres per second.]
+    S48 (try, tapped the button): 12 kg m/s
+    T48: Quiz, question 3 of 6: two objects collide in a closed system. Which is true of their total momentum?
+    [screenshot 25-exchange-48-laptop.png] exchange-48
+      [T48 shown first: Yes: 3 × 4 = 12 kg m/s.]
+    S49 (ask): whats a closed system
+    T49: Back to the question: Quiz, question 3 of 6: two objects collide in a closed system. Which is true of their total momentum?
+      [T49 shown first: A closed system is a set-up where no outside forces act on the objects, so only the objects themselves push on each other. Think of two objects colliding with nothing else pulling or pushing them from outside.]
+    S50 (what): wdym
+    T50: Now, the question again: Quiz, question 3 of 6: two objects collide in a closed system. Which is true of their total momentum?
+      [T50 shown first: In other words: two objects that crash into each other with no outside forces pushing on them. It wants you to say what happens to their combined momentum, the two momenta added together, when you compare the moment before the crash with the moment after.]
+    S51 (try, tapped the button): it is the same before and after
+    T51: Quiz, question 4 of 6: two skaters stand still, then push each other apart. Which is true just after?
+    [screenshot 26-exchange-51-laptop.png] exchange-51
+      [T51 shown first: Yes: in a closed system, momentum is conserved.]
+    S52 (try, tapped the button): their momenta are equal and opposite
+    T52: Quiz, question 5 of 6: which is equal to the resultant force on an object?
+      [T52 shown first: Yes: they have equal momentum in opposite directions, so the total is still zero.]
+    S53 (try, tapped the button): change in momentum ÷ time
+    T53: Quiz, question 6 of 6: a 2 kg ball moving at 3 m/s is stopped in 0.2 s. What force stops it?
+      [T53 shown first: Yes: force is the rate of change of momentum.]
+    [side picture after T53: none; newest in the chat: none]
+    S54 (what): wdym
+    T54: Have a go at the question: Quiz, question 6 of 6: a 2 kg ball moving at 3 m/s is stopped in 0.2 s. What force stops it?
+    [screenshot 27-exchange-54-laptop.png] exchange-54
+      [T54 shown first: In other words: to find how big a push is needed to bring a moving ball to a stop in a given time. The ball has a mass of 2 kg and starts at 3 m/s, so you can work out how much momentum it loses. That change in momentum happens over 0.]
+    S55 (try, tapped the button): 30 n
+    T55: That's the end of the quiz: you got 6 out of 6.
+      [T55 shown first: Yes: the change in momentum is 2 × 3 = 6 kg m/s, and 6 ÷ 0.2 = 30 N.]
+    S56 (tapped "Next")
+    T56: The lesson is finished. Tap a button to go on.
+      [T56 shown first: Summary, point 1 of 3: Momentum is mass × velocity, p = m v, measured in kg m/s, and like velocity it has a direction.]
+      [T56 shown first: Summary, point 2 of 3: In a closed system, the total momentum before an event equals the total momentum after it.]
+      [T56 shown first: Summary, point 3 of 3: Force equals the change in momentum divided by the time taken, so a longer collision means a smaller force.]
+    [counter now "3/3 covered" after T56; AI calls from the site so far: 16, $0.0140]
+    S57 (closing): ok thx
+    T57: You're welcome. Tap "Go to the slides" or "Home" when you are ready.
+    [screenshot 28-exchange-57-laptop.png] exchange-57
+    S58 (closing, tapped the button): go to the slides
+    [S58 left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]
+    [screenshot 29-end-laptop.png] end
+    [tutor-side time: 0.5 minutes over 57 exchanges]

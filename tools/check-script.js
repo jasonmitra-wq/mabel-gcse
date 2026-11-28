@@ -65,6 +65,17 @@ function checkAsk(id, q, sub = false) {
     else if (words(q.answerWhy) > 60) bad(id, 'answer with why over 60 words');
   }
 }
+// Key-point count (brief 2026-11-28 scripts catch-up): js/teach.js marks the AI lesson finished only when every
+// lesson key point is ticked, and the script ticks only the key points it has. So the counts must match, and every
+// script kp index must exist in the lesson.
+{
+  const nL = (lesson.keyPoints || []).length, nS = script.keyPoints.length;
+  if (nS !== nL) bad('key points', `script has ${nS} key points, lesson file has ${nL}: the lesson can never be marked finished`);
+  const idx = script.keyPoints.map(kp => kp.kp);
+  idx.forEach(i => { if (!(i >= 0 && i < nL)) bad('key points', `script kp ${i} is not a key point of the lesson file (0..${nL - 1})`); });
+  for (let i = 0; i < nL; i++) if (!idx.includes(i)) bad('key points', `lesson key point ${i} (${(lesson.keyPoints[i] || {}).heading || ''}) has no script key point`);
+  console.log(`${nS === nL && idx.every(i => i >= 0 && i < nL) ? 'ok  ' : 'FAIL'}  key points: script ${nS}, lesson ${nL}`);
+}
 script.keyPoints.forEach((kp, k) => {
   const L = lesson.keyPoints[kp.kp];
   if (!L) bad(`key point ${k + 1}`, 'not in the lesson file');

@@ -1,0 +1,182 @@
+# Site test: p5-gravity (lesson, 2026-11-28)
+
+**PASS** · cost $0.0392 (26 tool calls, 27 calls from the site; tutor claude-sonnet-5-5 $0.0169)
+
+## Judge
+
+```json
+{
+  "broken": [],
+  "looks_wrong": [],
+  "would_quit": false,
+  "fixes": []
+}
+```
+
+## Transcript checks (tools/check-transcript.js)
+
+none
+
+## Transcript
+
+    Lesson p5-gravity (Physics › Forces › Gravity, weight and free-fall).
+    [screenshot 01-home-laptop.png] home
+    [screenshot 02-subjects-laptop.png] subjects
+    [screenshot 03-topics-physics-laptop.png] topics-physics
+    [screenshot 04-lessons-p5-laptop.png] lessons-P5
+    [check] OK: AI lesson opens by default (in TEACH_ENABLED) — AI lesson opened
+    T0: Welcome! This lesson is about gravity: how hard it pulls on things, and how it keeps the Moon going round the Earth.
+    [screenshot 05-ai-lesson-opening-laptop.png] ai-lesson-opening
+    S1 (tapped "Next")
+    T1: First, two quick questions from earlier lessons. What is the momentum of a 2 kg ball moving at 3 m/s?
+    [side picture after T1: none; newest in the chat: none]
+    S2 (ask): whats momentum again
+    T2: Now, the question again: First, two quick questions from earlier lessons. What is the momentum of a 2 kg ball moving at 3 m/s?
+      [T2 shown first: Momentum is a measure of how hard it is to stop a moving object, and it depends on both how heavy the object is and how fast it is going. The lesson content here doesn't cover how to work it out, so that part comes from your earlier lessons.]
+    S3 (try, tapped the button): 6 kg m/s
+    T3: Second: a skydiver is falling at a steady speed. Which is true?
+    [screenshot 06-exchange-3-laptop.png] exchange-3
+      [T3 shown first: Yes: p = m v = 2 × 3 = 6 kg m/s.]
+    S4 (try): air resistence balances
+    T4: Now this lesson. The amount of matter in an object is called mass. It is measured in kilograms (kg), and it is the same wherever the object is: on Earth, on the Moon or in space.
+      [T4 shown first: Yes: the forces balance, so the speed stays steady.]
+    S5 (tapped "Next")
+    T5: The force of gravity pulling on an object is called weight. Weight is a force, so it is measured in newtons (N).
+    S6 (tapped "Next")
+    T6: How hard gravity pulls depends on where you are. Gravity's pull on each kilogram is written g.
+    [screenshot 07-exchange-6-laptop.png] exchange-6
+    S7 (tapped "Next")
+    T7: g is measured in newtons per kilogram (N/kg). On Earth g is about 9.8 N/kg; on the Moon it is about 1.6 N/kg.
+    S8 (tapped "Next")
+    T8: Weight = mass × g, or W = m g, with W in newtons (N), m in kilograms (kg) and g in N/kg.
+    S9 (tapped "Next")
+    T9: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+    [screenshot 08-exchange-9-laptop.png] exchange-9
+    [side picture after T9: none; newest in the chat: worked or question card]
+    [worked example under T9: buttons seen Show the first step → Next step → Next step; after the last step: Next]
+    [screenshot 09-worked-9-laptop.png] worked-9
+    S10 (tapped "Next")
+    T10: Your turn. An astronaut has a mass of 70 kg. On the Moon, g = 1.6 N/kg. What is the astronaut's weight there, in N?
+    S11 (try): 70 times 1.6
+    T11: The astronaut flies back to Earth. Which is true of their mass on Earth?
+      [T11 shown first: Yes: W = m g = 70 × 1.6 = 112 N.]
+    S12 (try): it is the same 70 kg
+    T12: Far out in space, away from planets and stars, g is almost zero, so an object is almost weightless. Its mass has not changed at all.
+    [screenshot 10-exchange-12-laptop.png] exchange-12
+      [T12 shown first: Yes: mass is the amount of matter, so it does not change. Only the weight changes.]
+    S13 (tapped "Next")
+    T13: In one line: what is the difference between mass and weight?
+    S14 (try): mass is matter weight is force
+    T14: Every object with mass pulls on every other one. The region around an object where another mass feels its pull is called a gravitational field.
+    [counter now "1/3 covered" after T14; AI calls from the site so far: 9, $0.0037]
+      [T14 shown first: Partly there. You have this: Mass is the amount of matter and is the same everywhere. Still needed: Weight is the force of gravity on it, which changes with g.]
+    S15 (tapped "Next")
+    T15: The value g, gravity's pull on each kilogram, is the strength of the gravitational field at that place.
+    [screenshot 11-exchange-15-laptop.png] exchange-15
+    S16 (tapped "Next")
+    T16: For this reason, g is called the gravitational field strength.
+    S17 (tapped "Next")
+    T17: A spacecraft moves from close to the Earth to much further away. Which is true of the gravitational field strength there?
+    S18 (idk): dont know
+    T18: Think of a magnet: is its pull stronger close up or far away? Gravity is like that.
+    [screenshot 12-exchange-18-laptop.png] exchange-18
+      [T18 easier step]
+    S19 (try, tapped the button): it is weaker
+    T19: Gravitational fields reach across huge distances. The Sun's field holds the planets, including the Earth, in their paths round it.
+      [T19 shown first: Yes: the field gets weaker further from the Earth, but it never drops to zero.]
+    S20 (tapped "Next")
+    T20: In one line: what is a gravitational field?
+    S21 (what): wdym
+    T21: Have a go at the question: In one line: what is a gravitational field?
+    [screenshot 13-exchange-21-laptop.png] exchange-21
+      [T21 shown first: In other words: to sum up, in just one short sentence, what a gravitational field is and what it does. Think of it as describing the space around something like Earth, and what happens to another object that is placed there.]
+    S22 (try): region where mass feels pull
+    T22: Now, orbits. The Moon goes round the Earth, and the Earth goes round the Sun. Each path round is an orbit. Gravity pulls the Moon towards the Earth, bending its path into a curve round it.
+    [counter now "2/3 covered" after T22; AI calls from the site so far: 13, $0.0063]
+      [T22 shown first: Yes: your line makes the point. You have this: A gravitational field is the region where a mass feels a force of gravity.]
+    S23 (tapped "Next")
+    T23: An object that orbits a planet is called a satellite.
+    S24 (tapped "Next")
+    T24: Moons are natural satellites.
+    [screenshot 14-exchange-24-laptop.png] exchange-24
+    S25 (tapped "Next")
+    T25: Artificial satellites are machines people have put into orbit round the Earth, for weather forecasts, phones and television.
+    S26 (tapped "Next")
+    T26: A satellite is always falling towards the Earth, pulled by gravity. Falling with gravity as the only force on it is called free fall.
+    [side picture after T26: none; newest in the chat: none]
+    S27 (tapped "Next")
+    T27: But a satellite also moves sideways very fast. As it falls, the Earth's curved surface curves away beneath it. So it keeps missing the Earth and goes round in a curve.
+    [screenshot 15-exchange-27-laptop.png] exchange-27
+    S28 (tapped "Next")
+    T28: Why does the Moon not fly off into space?
+    S29 (try): gravity keeps pulling it
+    T29: Anything moving in a circle needs a force towards the centre of the circle. That force is called the centripetal force. For a satellite, gravity provides it.
+      [T29 shown first: Yes: the Earth's gravity keeps pulling it inwards, so it keeps curving round.]
+    S30 (tapped "Next")
+    T30: In the first forces lesson you met velocity: speed in a given direction. Acceleration means the velocity is changing.
+    [screenshot 16-exchange-30-laptop.png] exchange-30
+    S31 (tapped "Next")
+    T31: A satellite orbits the Earth in a circle at a steady speed. Is it accelerating?
+    S32 (try): yes direction keeps changing
+    T32: Further out, gravity is weaker. A weaker pull can only keep a slower satellite on a circle, so satellites further out move more slowly.
+      [T32 shown first: Yes: the speed is steady, but the direction keeps changing, so the velocity changes. That is acceleration, towards the Earth, because gravity pulls it that way.]
+    S33 (tapped "Next")
+    T33: A stable orbit is one where the satellite stays the same distance from the Earth's centre: the radius of its orbit. If the satellite's speed changes, that radius must change too.
+    [screenshot 17-exchange-33-laptop.png] exchange-33
+    S34 (tapped "Next")
+    T34: In one line: what keeps a satellite in orbit?
+    S35 (try): gravity pulling it
+    T35: Now for a short quiz: six questions on the whole lesson. Take your time.
+      [T35 shown first: Partly there. You have this: Gravity pulls the satellite towards the Earth all the time. Still needed: The satellite moves sideways fast enough to keep missing the Earth.]
+    S36 (tapped "Next")
+    T36: Quiz, question 1 of 6: which unit is mass measured in?
+    [screenshot 18-exchange-36-laptop.png] exchange-36
+    S37 (try, tapped the button): kilograms
+    T37: Quiz, question 2 of 6: what is the weight of a 5 kg bag on the Moon, where g = 1.6 N/kg?
+      [T37 shown first: Yes: mass is measured in kilograms (kg).]
+    S38 (what): wdym
+    T38: Back to the question: Quiz, question 2 of 6: what is the weight of a 5 kg bag on the Moon, where g = 1.6 N/kg?
+      [T38 shown first: In other words: how hard gravity pulls on a 5 kg bag when it is on the Moon. Weight is that pull, measured in newtons. The Moon's gravity is weaker than Earth's, and the lesson gives its strength as 1. 6 N/kg.]
+    S39 (idk): idk
+    T39: W = m g, with the Moon's g.
+    [screenshot 19-exchange-39-laptop.png] exchange-39
+      [T39 easier step]
+    S40 (try, tapped the button): 8 n
+    T40: Quiz, question 3 of 6: a rock is taken to the Moon, where g is smaller. Which is true?
+      [T40 shown first: Yes: 5 × 1.6 = 8 N.]
+    S41 (what): wdym
+    T41: Now, the question again: Quiz, question 3 of 6: a rock is taken to the Moon, where g is smaller. Which is true?
+      [T41 shown first: In other words: to compare the same rock on Earth and on the Moon. The Moon pulls on things less strongly than Earth does, so "g is smaller" just means gravity there is weaker. You need to decide what happens to the rock's weight and what happens to its mass when it makes that trip.]
+    S42 (try, tapped the button): Its weight is less; its mass is the same
+    T42: Quiz, question 4 of 6: which of these is a natural satellite?
+    [screenshot 20-exchange-42-laptop.png] exchange-42
+      [T42 shown first: Yes: smaller g means less weight, but the amount of matter does not change.]
+    S43 (what): wdym
+    T43: Have a go at the question: Quiz, question 4 of 6: which of these is a natural satellite?
+      [T43 shown first: In other words: to pick the one thing that orbits a planet and was made by nature, not built by people. A satellite just means something that circles around a bigger body, and "natural" means nobody launched it.]
+    S44 (try, tapped the button): the moon
+    T44: Quiz, question 5 of 6: what provides the centripetal force that keeps the Moon in orbit?
+      [T44 shown first: Yes: the Moon is a natural satellite of the Earth.]
+    S45 (idk): earth's gravity
+    T45: Quiz, question 6 of 6: a satellite moves to a higher, stable orbit. Which is true?
+    [screenshot 21-exchange-45-laptop.png] exchange-45
+      [T45 shown first: Yes: the Earth's gravity pulls the Moon towards the centre of its orbit.]
+    S46 (idk): idk
+    T46: Gravity is weaker higher up.
+      [T46 easier step]
+    S47 (try, tapped the button): it moves more slowly
+    T47: That's the end of the quiz: you got 6 out of 6.
+      [T47 shown first: Yes: gravity is weaker higher up, so a lower speed keeps it in orbit.]
+    S48 (tapped "Next")
+    T48: The lesson is finished. Tap a button to go on.
+    [screenshot 22-exchange-48-laptop.png] exchange-48
+      [T48 shown first: Summary, point 1 of 3: Mass is the amount of matter and is the same everywhere, but weight is the force of gravity on it, W = m g, which changes with g.]
+      [T48 shown first: Summary, point 2 of 3: A gravitational field is the region around an object where another mass feels a force of gravity.]
+      [T48 shown first: Summary, point 3 of 3: A satellite stays in orbit because gravity pulls it towards the Earth while it moves sideways fast enough to keep missing it.]
+    [counter now "3/3 covered" after T48; AI calls from the site so far: 27, $0.0173]
+    S49 (closing): thx
+    T49: You're welcome. Tap "Go to the slides" or "Home" when you are ready.
+    S50 (closing, tapped the button): go to the slides
+    [S50 left the lesson: the page is no longer the AI lesson (a button such as Home or the slides)]
+    [screenshot 23-end-laptop.png] end
+    [tutor-side time: 0.7 minutes over 49 exchanges]

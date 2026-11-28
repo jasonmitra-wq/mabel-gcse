@@ -1,6 +1,6 @@
 {
  "lesson": "p5-forces-motion",
- "version": 1,
+ "version": 2,
  "about": "The scripted AI lesson for p5-forces-motion (2026-11-28, Phase C, brief docs/briefs/2026-11-27-phase-c-physics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p1-energy-stores and p1-kinetic-potential.",
  "keyPoints": [
   {
@@ -645,6 +645,44 @@
      "id": "3.10b",
      "type": "say",
      "text": "A straight line rising from zero marks out a triangle instead: its area is ½ × base × height."
+    },
+    {
+     "id": "3.10c",
+     "type": "say",
+     "text": "If the line is curved, count the squares under it instead. Multiply the number of squares by the distance one square stands for."
+    },
+    {
+     "id": "3.10d",
+     "type": "ask",
+     "kind": "number",
+     "question": "Under a curved velocity-time graph there are 40 squares, and each square stands for 5 m. How far does the object travel, in metres?",
+     "answer": {
+      "value": 200,
+      "unit": "m",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 8,
+       "branch": "divide"
+      },
+      {
+       "value": 45,
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 40 × 5 = 200 m.",
+     "wrong": {
+      "other": "Not quite: 200 m. 40 squares × 5 m each = 200 m.",
+      "divide": "Not quite: 200 m. Multiply the number of squares by the distance each stands for: 40 × 5 = 200 m.",
+      "add": "Not quite: 200 m. Multiply, do not add: 40 × 5 = 200 m."
+     },
+     "idk": [
+      {
+       "hint": "Multiply the number of squares by the distance one square stands for."
+      }
+     ],
+     "answerWhy": "Each of the 40 squares stands for 5 m, so the distance is 40 × 5 = 200 m."
     },
     {
      "id": "3.11",

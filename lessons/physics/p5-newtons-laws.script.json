@@ -1,6 +1,6 @@
 {
  "lesson": "p5-newtons-laws",
- "version": 1,
+ "version": 2,
  "about": "The scripted AI lesson for p5-newtons-laws (2026-11-28, Phase C, brief docs/briefs/2026-11-27-phase-c-physics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p5-forces-motion. Key point 1 says \"the first law of motion\": the word newton is taught in key point 2, where the laws are named after Isaac Newton.",
  "keyPoints": [
   {
@@ -414,53 +414,6 @@
      "answerWhy": "a = F ÷ m, so with the same force the trolley with less mass, the empty one, has the bigger acceleration."
     },
     {
-     "id": "2.9",
-     "type": "say",
-     "text": "In a class experiment, a trolley on a bench is pulled by a string that runs over a pulley, a wheel at the edge of the bench, to masses hanging on the end."
-    },
-    {
-     "id": "2.9c",
-     "type": "say",
-     "text": "Light gates are electronic timers. They time the trolley, so its acceleration can be worked out."
-    },
-    {
-     "id": "2.9b",
-     "type": "say",
-     "text": "The pull on the trolley comes from the hanging masses. To make the pull bigger, masses are moved from the trolley onto the hanging end."
-    },
-    {
-     "id": "2.10",
-     "type": "ask",
-     "kind": "tap",
-     "question": "Why are masses moved from the trolley, rather than new masses added?",
-     "options": [
-      {
-       "text": "To keep the total mass being pulled the same",
-       "branch": "right"
-      },
-      {
-       "text": "To make the trolley go faster",
-       "branch": "faster"
-      },
-      {
-       "text": "To stop the string from breaking",
-       "branch": "string"
-      }
-     ],
-     "right": "Yes: moving masses changes the force but keeps the total mass the same, so only one thing changes.",
-     "wrong": {
-      "other": "Not quite: to keep the total mass being pulled the same.",
-      "faster": "Not quite: the point is a fair test. Moving masses keeps the total mass the same, so only the force changes.",
-      "string": "Not quite: the string is fine either way. Moving masses keeps the total mass the same, so only the force changes."
-     },
-     "idk": [
-      {
-       "hint": "Mass also changes the acceleration. Adding new masses would change the total mass. Moving them does not."
-      }
-     ],
-     "answerWhy": "Moving masses from the trolley to the hanging end changes the force but keeps the total mass the same, so only the force changes."
-    },
-    {
      "id": "2.12",
      "type": "own",
      "prompt": "In one line: what does F = m a tell you?",
@@ -744,6 +697,38 @@
      "text": "A scale drawing can also split one force into two parts at right angles, such as along the ground and upwards. Together, the two parts have the same effect as the one force."
     },
     {
+     "id": "4.12b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A rope pulls a sledge forwards and upwards at a slant. Split into two parts at right angles, which pair does the same job as the pull?",
+     "options": [
+      {
+       "text": "A part along the ground and a part upwards",
+       "branch": "right"
+      },
+      {
+       "text": "Two parts, both along the ground",
+       "branch": "both"
+      },
+      {
+       "text": "A part along the rope and a part backwards",
+       "branch": "back"
+      }
+     ],
+     "right": "Yes: one part pulls the sledge along the ground and one lifts it a little. Together they have the same effect as the pull.",
+     "wrong": {
+      "other": "Not quite: a part along the ground and a part upwards.",
+      "both": "Not quite: the two parts must be at right angles to each other: one along the ground and one upwards.",
+      "back": "Not quite: the two parts must be at right angles, and together do the same job as the pull: one along the ground and one upwards."
+     },
+     "idk": [
+      {
+       "hint": "The two parts are at right angles to each other. The pull is partly forwards and partly upwards."
+      }
+     ],
+     "answerWhy": "The slanted pull can be split into a part along the ground and a part upwards, at right angles, which together have the same effect."
+    },
+    {
      "id": "4.13",
      "type": "own",
      "prompt": "In one line: what is weight, and how do you work it out?",
@@ -752,6 +737,153 @@
       "Weight = mass × gravitational field strength"
      ],
      "idk": "No problem. A good line would be: weight is the force of gravity on an object: weight = mass × gravitational field strength."
+    }
+   ]
+  },
+  {
+   "kp": 4,
+   "heading": "Required practical: force, mass and acceleration",
+   "steps": [
+    {
+     "id": "5.1",
+     "type": "say",
+     "text": "Now a class practical that tests the second law: how force and mass change the acceleration."
+    },
+    {
+     "id": "2.9",
+     "type": "say",
+     "text": "In a class experiment, a trolley on a bench is pulled by a string that runs over a pulley, a wheel at the edge of the bench, to masses hanging on the end."
+    },
+    {
+     "id": "2.9c",
+     "type": "say",
+     "text": "Light gates are electronic timers. They time the trolley, so its acceleration can be worked out."
+    },
+    {
+     "id": "2.9b",
+     "type": "say",
+     "text": "The pull on the trolley comes from the hanging masses. To make the pull bigger, masses are moved from the trolley onto the hanging end."
+    },
+    {
+     "id": "2.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Why are masses moved from the trolley, rather than new masses added?",
+     "options": [
+      {
+       "text": "To keep the total mass being pulled the same",
+       "branch": "right"
+      },
+      {
+       "text": "To make the trolley go faster",
+       "branch": "faster"
+      },
+      {
+       "text": "To stop the string from breaking",
+       "branch": "string"
+      }
+     ],
+     "right": "Yes: moving masses changes the force but keeps the total mass the same, so only one thing changes.",
+     "wrong": {
+      "other": "Not quite: to keep the total mass being pulled the same.",
+      "faster": "Not quite: the point is a fair test. Moving masses keeps the total mass the same, so only the force changes.",
+      "string": "Not quite: the string is fine either way. Moving masses keeps the total mass the same, so only the force changes."
+     },
+     "idk": [
+      {
+       "hint": "Mass also changes the acceleration. Adding new masses would change the total mass. Moving them does not."
+      }
+     ],
+     "answerWhy": "Moving masses from the trolley to the hanging end changes the force but keeps the total mass the same, so only the force changes."
+    },
+    {
+     "id": "5.2",
+     "type": "say",
+     "text": "The quantity you change on purpose is called the independent variable. In the first part of the practical, that is the force."
+    },
+    {
+     "id": "5.3",
+     "type": "say",
+     "text": "The quantity you measure is the dependent variable: here, the acceleration. A quantity you keep the same on purpose is called a control variable."
+    },
+    {
+     "id": "5.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "In the first part, the force goes up and the total mass stays the same. What do you think the graph of acceleration against force looks like?",
+     "options": [
+      {
+       "text": "A straight line through the origin",
+       "branch": "right"
+      },
+      {
+       "text": "A flat line: the acceleration stays the same",
+       "branch": "flat"
+      },
+      {
+       "text": "A line that slopes down",
+       "branch": "down"
+      }
+     ],
+     "right": "Yes: a straight line through the origin. So the acceleration is directly proportional to the force: a ∝ F.",
+     "wrong": {
+      "other": "Not quite: a straight line through the origin.",
+      "flat": "Not quite: a bigger resultant force gives a bigger acceleration, so the line goes up. It is a straight line through the origin: a ∝ F.",
+      "down": "Not quite: more force gives more acceleration, not less. The line is straight and goes through the origin: a ∝ F."
+     },
+     "idk": [
+      {
+       "hint": "F = m a with m kept the same. If F doubles, what happens to a?"
+      }
+     ],
+     "answerWhy": "With the mass kept the same, doubling the force doubles the acceleration, so the graph is a straight line through the origin: a ∝ F."
+    },
+    {
+     "id": "5.5",
+     "type": "say",
+     "text": "In the second part, the hanging masses stay the same, so the force is constant. Masses are added to the trolley, and the acceleration is measured each time."
+    },
+    {
+     "id": "5.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "With more mass on the trolley and the same pull, which is true of the acceleration?",
+     "options": [
+      {
+       "text": "It gets smaller",
+       "branch": "right"
+      },
+      {
+       "text": "It gets bigger",
+       "branch": "bigger"
+      },
+      {
+       "text": "It stays the same",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: the same force on more mass gives less acceleration.",
+     "wrong": {
+      "other": "Not quite: it gets smaller.",
+      "bigger": "Not quite: a = F ÷ m, so with the same force, more mass means less acceleration.",
+      "same": "Not quite: a = F ÷ m, so with the same force, more mass means less acceleration."
+     },
+     "idk": [
+      {
+       "hint": "a = F ÷ m. With F the same, what does a bigger m do?"
+      }
+     ],
+     "answerWhy": "a = F ÷ m, so with the force kept the same, more mass gives a smaller acceleration."
+    },
+    {
+     "id": "5.7",
+     "type": "own",
+     "prompt": "In one line: what does the trolley practical show?",
+     "points": [
+      "With the mass kept the same, the acceleration is directly proportional to the force",
+      "With the force kept the same, more mass gives less acceleration"
+     ],
+     "idk": "No problem. A good line would be: the trolley practical shows that acceleration is directly proportional to force when the mass stays the same, and that more mass gives less acceleration for the same force."
     },
     {
      "id": "4.14",
@@ -927,33 +1059,33 @@
      "id": "4.20",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 6 of 6: which has more inertia, a lorry or a bicycle?",
+     "question": "Quiz, question 6 of 6: in the trolley practical, the force changes and the total mass stays the same. What is the total mass?",
      "options": [
       {
-       "text": "The lorry, as it has more mass",
+       "text": "A control variable",
        "branch": "right"
       },
       {
-       "text": "The bicycle, as it has less mass",
-       "branch": "bike"
+       "text": "The independent variable",
+       "branch": "indep"
       },
       {
-       "text": "Neither: inertia is not about mass",
-       "branch": "neither"
+       "text": "The dependent variable",
+       "branch": "dep"
       }
      ],
-     "right": "Yes: more mass means more inertia, so the lorry is harder to start or stop.",
+     "right": "Yes: it is kept the same on purpose, so it is a control variable.",
      "wrong": {
-      "other": "Not quite: the lorry.",
-      "bike": "Not quite: inertia grows with mass, and the bicycle has less mass. The lorry has more.",
-      "neither": "Not quite: inertia depends on mass. The lorry has more mass, so more inertia."
+      "other": "Not quite: a control variable.",
+      "indep": "Not quite: the independent variable is what you change on purpose, the force. The total mass is kept the same: a control variable.",
+      "dep": "Not quite: the dependent variable is what you measure, the acceleration. The total mass is kept the same: a control variable."
      },
      "idk": [
       {
-       "hint": "Which is harder to start moving or to stop?"
+       "hint": "Is the total mass changed, measured, or kept the same on purpose?"
       }
      ],
-     "answerWhy": "Inertia depends on mass, so the lorry, with more mass, has more inertia.",
+     "answerWhy": "The total mass is kept the same on purpose, so it is a control variable.",
      "quiz": true
     },
     {

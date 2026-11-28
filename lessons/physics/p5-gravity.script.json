@@ -1,6 +1,6 @@
 {
  "lesson": "p5-gravity",
- "version": 1,
+ "version": 2,
  "about": "The scripted AI lesson for p5-gravity (2026-11-28, Phase C, brief docs/briefs/2026-11-27-phase-c-physics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p5-momentum and p5-forces-motion. Key point 1 calls g \"gravity's pull on each kilogram\": the term gravitational field is taught in key point 2, which then names g the gravitational field strength.",
  "keyPoints": [
   {
@@ -255,16 +255,6 @@
      "answerWhy": "The gravitational field strength gets weaker further from the Earth, but it does not drop to zero."
     },
     {
-     "id": "2.3",
-     "type": "say",
-     "text": "Near the Earth's surface, the Earth's field has about the same strength and direction everywhere, pointing down."
-    },
-    {
-     "id": "2.4",
-     "type": "say",
-     "text": "On a diagram, a gravitational field is shown by field lines: arrows pointing towards the centre of the Earth, the way a mass near the Earth would be pulled."
-    },
-    {
      "id": "2.4b",
      "type": "say",
      "text": "Gravitational fields reach across huge distances. The Sun's field holds the planets, including the Earth, in their paths round it."
@@ -391,49 +381,12 @@
     {
      "id": "3.9",
      "type": "say",
-     "text": "Further out, gravity is weaker. A weaker pull can only keep a slower satellite on a circle, so satellites further out move more slowly. They also have further to go round."
+     "text": "Further out, gravity is weaker. A weaker pull can only keep a slower satellite on a circle, so satellites further out move more slowly."
     },
     {
      "id": "3.8",
      "type": "say",
      "text": "A stable orbit is one where the satellite stays the same distance from the Earth's centre: the radius of its orbit. If the satellite's speed changes, that radius must change too."
-    },
-    {
-     "id": "3.10",
-     "type": "say",
-     "text": "The time for one complete orbit is called the orbital period."
-    },
-    {
-     "id": "3.11",
-     "type": "ask",
-     "kind": "tap",
-     "question": "Satellite A orbits higher than satellite B. Which has the longer orbital period?",
-     "options": [
-      {
-       "text": "A, the higher one",
-       "branch": "right"
-      },
-      {
-       "text": "B, the lower one",
-       "branch": "lower"
-      },
-      {
-       "text": "They take the same time",
-       "branch": "same"
-      }
-     ],
-     "right": "Yes: the higher satellite moves more slowly and has further to go, so each orbit takes longer.",
-     "wrong": {
-      "other": "Not quite: A, the higher one.",
-      "lower": "Not quite: the lower one moves faster round a smaller circle, so it takes less time. A takes longer.",
-      "same": "Not quite: the higher satellite moves more slowly round a bigger circle, so it takes longer."
-     },
-     "idk": [
-      {
-       "hint": "The higher satellite moves more slowly and has further to go. What does that do to the time for one orbit?"
-      }
-     ],
-     "answerWhy": "The higher satellite moves more slowly round a bigger circle, so its orbital period is longer."
     },
     {
      "id": "3.12",
@@ -553,33 +506,33 @@
      "id": "3.17",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 4 of 6: which way do the field lines of the Earth's gravitational field point?",
+     "question": "Quiz, question 4 of 6: which of these is a natural satellite?",
      "options": [
       {
-       "text": "Towards the centre of the Earth",
+       "text": "The Moon",
        "branch": "right"
       },
       {
-       "text": "Away from the Earth",
-       "branch": "away"
+       "text": "A weather satellite",
+       "branch": "artificial"
       },
       {
-       "text": "Round the Earth in circles",
-       "branch": "round"
+       "text": "The Sun",
+       "branch": "sun"
       }
      ],
-     "right": "Yes: they point the way a mass would be pulled, towards the centre.",
+     "right": "Yes: the Moon is a natural satellite of the Earth.",
      "wrong": {
-      "other": "Not quite: towards the centre of the Earth.",
-      "away": "Not quite: gravity pulls masses in, so the lines point towards the centre of the Earth.",
-      "round": "Not quite: the lines show the pull on a mass, which is towards the centre of the Earth."
+      "other": "Not quite: the Moon.",
+      "artificial": "Not quite: a weather satellite is a machine people put into orbit, so it is artificial. The Moon is natural.",
+      "sun": "Not quite: the Sun is a star, and the planets orbit it. The Moon is a natural satellite of the Earth."
      },
      "idk": [
       {
-       "hint": "Field lines show which way a mass would be pulled."
+       "hint": "Moons are natural satellites. Which of these is a moon?"
       }
      ],
-     "answerWhy": "Field lines point the way a mass would be pulled: towards the centre of the Earth.",
+     "answerWhy": "The Moon orbits the Earth and was not made by people, so it is a natural satellite.",
      "quiz": true
     },
     {

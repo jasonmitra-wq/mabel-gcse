@@ -168,3 +168,6 @@ One line per run: date | id | mode | result | broken | looks wrong | would quit 
 - 2026-11-28 | p5-elasticity | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-elasticity | $0.0405
 - 2026-11-28 | p5-moments | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-moments | $0.0337
 - 2026-11-28 | p5-fluid-pressure | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-fluid-pressure | $0.0583
+- 2026-11-28 | p5-newtons-laws | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-newtons-laws-2 | $0.0804
+- 2026-11-28 | p5-forces-motion | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-forces-motion-2 | $0.0544
+- 2026-11-28 | p5-gravity | lesson | PASS | 0 | 0 | false | tools/site-test-runs/2026-11-28/p5-gravity-2 | $0.0392

@@ -1,0 +1,712 @@
+{
+ "lesson": "p5-momentum",
+ "version": 1,
+ "about": "The scripted AI lesson for p5-momentum (2026-11-28, Phase C, brief docs/briefs/2026-11-27-phase-c-physics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p5-newtons-laws and p5-stopping-distance.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "Calculating momentum",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about momentum: why a moving lorry is so hard to stop, and what happens when things collide."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from earlier lessons. A 2 kg trolley accelerates at 3 m/s². What is the resultant force on it?",
+     "options": [
+      {
+       "text": "6 N",
+       "branch": "right"
+      },
+      {
+       "text": "1.5 N",
+       "branch": "divide"
+      },
+      {
+       "text": "5 N",
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: F = m a = 2 × 3 = 6 N.",
+     "wrong": {
+      "other": "Not quite: 6 N.",
+      "divide": "Not quite: multiply the mass by the acceleration: 2 × 3 = 6 N.",
+      "add": "Not quite: multiply, do not add: 2 × 3 = 6 N."
+     },
+     "idk": [
+      {
+       "hint": "Force = mass × acceleration."
+      }
+     ],
+     "answerWhy": "F = m a = 2 × 3 = 6 N."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: as a car brakes to a stop, where does its kinetic energy go?",
+     "options": [
+      {
+       "text": "To the thermal store of the brakes",
+       "branch": "right"
+      },
+      {
+       "text": "Back into its fuel",
+       "branch": "fuel"
+      },
+      {
+       "text": "It is destroyed",
+       "branch": "destroyed"
+      }
+     ],
+     "right": "Yes: friction in the brakes does work, and the brakes heat up.",
+     "wrong": {
+      "other": "Not quite: to the thermal store of the brakes.",
+      "fuel": "Not quite: ordinary brakes cannot refill the fuel. The energy goes to the thermal store of the brakes.",
+      "destroyed": "Not quite: energy is never destroyed. It goes to the thermal store of the brakes."
+     },
+     "idk": [
+      {
+       "hint": "Brakes get hot when a car stops."
+      }
+     ],
+     "answerWhy": "Friction in the brakes does work, transferring the kinetic energy to the thermal store of the brakes."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. A slow, heavy lorry and a fast, light bullet are both hard to stop. What they share is a quantity that combines mass and velocity."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "Mass × velocity is called momentum. The equation is p = m v. Here p is the momentum in kilogram metres per second (kg m/s), m is the mass in kilograms (kg) and v is the velocity in m/s."
+    },
+    {
+     "id": "1.4",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A 1500 kg car travels at 20 m/s. What is its momentum?",
+     "steps": [
+      "Write the equation: p = m v.",
+      "Put in the numbers: p = 1500 × 20.",
+      "p = 30 000 kg m/s."
+     ],
+     "answer": {
+      "value": 30000,
+      "unit": "kg m/s"
+     }
+    },
+    {
+     "id": "1.5",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A 60 kg runner moves at 5 m/s. What is the runner's momentum, in kg m/s?",
+     "answer": {
+      "value": 300,
+      "unit": "kg m/s",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 12,
+       "branch": "divide"
+      },
+      {
+       "value": 65,
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: p = m v = 60 × 5 = 300 kg m/s.",
+     "wrong": {
+      "other": "Not quite: 300 kg m/s. p = m v = 60 × 5 = 300 kg m/s.",
+      "divide": "Not quite: 300 kg m/s. Multiply the mass by the velocity: 60 × 5 = 300 kg m/s.",
+      "add": "Not quite: 300 kg m/s. Multiply, do not add: 60 × 5 = 300 kg m/s."
+     },
+     "idk": [
+      {
+       "hint": "Momentum = mass × velocity. Multiply 60 by 5."
+      }
+     ],
+     "answerWhy": "p = m v = 60 × 5 = 300 kg m/s."
+    },
+    {
+     "id": "1.6",
+     "type": "ask",
+     "kind": "number",
+     "question": "A 50 g ball moves at 20 m/s. What is its momentum, in kg m/s?",
+     "answer": {
+      "value": 1,
+      "unit": "kg m/s",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 1000,
+       "branch": "grams"
+      },
+      {
+       "value": 2.5,
+       "branch": "divide"
+      }
+     ],
+     "right": "Yes: 50 g = 0.05 kg, and 0.05 × 20 = 1 kg m/s.",
+     "wrong": {
+      "other": "Not quite: 1 kg m/s. 50 g = 0.05 kg, and p = 0.05 × 20 = 1 kg m/s.",
+      "grams": "Not quite: 1 kg m/s. Change grams to kilograms first: 50 g = 0.05 kg. Then 0.05 × 20 = 1 kg m/s.",
+      "divide": "Not quite: 1 kg m/s. Multiply the mass in kg by the velocity: 0.05 × 20 = 1 kg m/s."
+     },
+     "idk": [
+      {
+       "hint": "Change 50 g into kilograms first: 1000 g = 1 kg."
+      }
+     ],
+     "answerWhy": "50 g = 0.05 kg, so p = m v = 0.05 × 20 = 1 kg m/s."
+    },
+    {
+     "id": "1.7",
+     "type": "say",
+     "text": "Velocity has a direction, so momentum does too. A quantity with a size and a direction is called a vector quantity."
+    },
+    {
+     "id": "1.8",
+     "type": "say",
+     "text": "Pick one direction as positive; momentum the other way is then negative. Two cars of the same mass driving towards each other at the same speed have momenta of the same size, one positive and one negative."
+    },
+    {
+     "id": "1.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A 1000 kg car moves at 10 m/s. How fast must a 500 kg car move to have the same momentum?",
+     "options": [
+      {
+       "text": "20 m/s",
+       "branch": "right"
+      },
+      {
+       "text": "10 m/s",
+       "branch": "same"
+      },
+      {
+       "text": "5 m/s",
+       "branch": "half"
+      }
+     ],
+     "right": "Yes: 1000 × 10 = 10 000 kg m/s, and 500 × 20 = 10 000 kg m/s.",
+     "wrong": {
+      "other": "Not quite: 20 m/s.",
+      "same": "Not quite: with half the mass at the same speed, it has half the momentum. It needs twice the speed: 500 × 20 = 10 000 kg m/s.",
+      "half": "Not quite: a smaller mass needs a bigger speed, not a smaller one. 500 × 20 = 10 000 kg m/s."
+     },
+     "idk": [
+      {
+       "hint": "The first car has 1000 × 10 = 10 000 kg m/s. What speed gives 500 kg the same?"
+      }
+     ],
+     "answerWhy": "The first car has 10 000 kg m/s. The second needs v = 10 000 ÷ 500 = 20 m/s."
+    },
+    {
+     "id": "1.10",
+     "type": "own",
+     "prompt": "In one line: what is momentum?",
+     "points": [
+      "mass multiplied by velocity",
+      "it has a direction"
+     ],
+     "idk": "No problem. A good line would be: momentum is mass × velocity, and like velocity it has a direction."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Conservation of momentum",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "When objects collide or push apart, they push on each other. But their total momentum does not change, as long as nothing outside pushes on them."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "A group of objects with no outside forces acting on it is called a closed system."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "In a closed system, the total momentum before an event equals the total momentum after it. This rule is called conservation of momentum."
+    },
+    {
+     "id": "2.4",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A 2 kg trolley at 3 m/s hits a still 1 kg trolley, and they stick together. How fast do they move off?",
+     "steps": [
+      "Total momentum before: 2 × 3 + 1 × 0 = 6 kg m/s.",
+      "The total after is the same: 6 kg m/s.",
+      "The combined mass is 2 + 1 = 3 kg.",
+      "v = 6 ÷ 3 = 2 m/s."
+     ],
+     "answer": {
+      "value": 2,
+      "unit": "m/s"
+     }
+    },
+    {
+     "id": "2.5",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A 4 kg trolley at 5 m/s hits a still 1 kg trolley, and they stick together. How fast do they move off, in m/s?",
+     "answer": {
+      "value": 4,
+      "unit": "m/s",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 5,
+       "branch": "same"
+      },
+      {
+       "value": 20,
+       "branch": "momentum"
+      }
+     ],
+     "right": "Yes: momentum 4 × 5 = 20 kg m/s, shared by 5 kg: 20 ÷ 5 = 4 m/s.",
+     "wrong": {
+      "other": "Not quite: 4 m/s. Momentum before is 4 × 5 = 20 kg m/s. After, 5 kg carries it: 20 ÷ 5 = 4 m/s.",
+      "same": "Not quite: 4 m/s. The same momentum is now carried by more mass, so they move more slowly: 20 ÷ 5 = 4 m/s.",
+      "momentum": "Not quite: 20 kg m/s is the momentum. Divide by the combined mass, 5 kg: 20 ÷ 5 = 4 m/s."
+     },
+     "idk": [
+      {
+       "hint": "Momentum before = 4 × 5. After, the trolleys move together with a mass of 5 kg."
+      }
+     ],
+     "answerWhy": "Momentum before is 4 × 5 = 20 kg m/s. After, the 5 kg pair has the same momentum, so v = 20 ÷ 5 = 4 m/s."
+    },
+    {
+     "id": "2.6",
+     "type": "say",
+     "text": "Explosions work the same way. Before a cannon fires, nothing moves, so the total momentum is zero. After it fires, the ball goes forwards and the cannon rolls back."
+    },
+    {
+     "id": "2.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Why must the cannon roll backwards as the ball goes forwards?",
+     "options": [
+      {
+       "text": "The momenta must still add up to zero",
+       "branch": "right"
+      },
+      {
+       "text": "The ball pushes air back onto it",
+       "branch": "air"
+      },
+      {
+       "text": "Firing makes the cannon lighter",
+       "branch": "lighter"
+      }
+     ],
+     "right": "Yes: the ball's forward momentum is cancelled by the cannon's backward momentum, so the total stays zero.",
+     "wrong": {
+      "other": "Not quite: the momenta must still add up to zero.",
+      "air": "Not quite: it would roll back even with no air. The total momentum was zero, so the cannon must move back to balance the ball.",
+      "lighter": "Not quite: its mass hardly changes. The total momentum was zero, so the cannon must move back to balance the ball."
+     },
+     "idk": [
+      {
+       "hint": "What was the total momentum before firing? It must be the same after."
+      }
+     ],
+     "answerWhy": "The total momentum was zero before, so after firing the ball's forward momentum must be balanced by the cannon moving back."
+    },
+    {
+     "id": "2.8",
+     "type": "ask",
+     "kind": "number",
+     "question": "A 0.02 kg bullet leaves a still 4 kg rifle at 400 m/s. How fast does the rifle recoil, in m/s?",
+     "answer": {
+      "value": 2,
+      "unit": "m/s",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 400,
+       "branch": "same"
+      },
+      {
+       "value": 8,
+       "branch": "momentum"
+      }
+     ],
+     "right": "Yes: the bullet has 0.02 × 400 = 8 kg m/s, so the rifle has 8 kg m/s backwards: 8 ÷ 4 = 2 m/s.",
+     "wrong": {
+      "other": "Not quite: 2 m/s. The bullet has 0.02 × 400 = 8 kg m/s, so the rifle has 8 kg m/s back: 8 ÷ 4 = 2 m/s.",
+      "same": "Not quite: 2 m/s. The rifle has the same momentum as the bullet, not the same speed. 8 ÷ 4 = 2 m/s.",
+      "momentum": "Not quite: 8 kg m/s is the momentum. Divide by the rifle's mass: 8 ÷ 4 = 2 m/s."
+     },
+     "idk": [
+      {
+       "hint": "Find the bullet's momentum. The rifle has the same amount, backwards."
+      }
+     ],
+     "answerWhy": "The bullet has 0.02 × 400 = 8 kg m/s, so the 4 kg rifle has 8 kg m/s backwards: v = 8 ÷ 4 = 2 m/s."
+    },
+    {
+     "id": "2.9",
+     "type": "say",
+     "text": "Momentum is conserved even when something does not seem to move. A snowball hitting a wall passes its momentum to the wall and the Earth, which are so massive they barely move."
+    },
+    {
+     "id": "2.10",
+     "type": "own",
+     "prompt": "In one line: what does conservation of momentum say?",
+     "points": [
+      "in a closed system",
+      "the total momentum before equals the total after"
+     ],
+     "idk": "No problem. A good line would be: in a closed system, the total momentum before an event equals the total momentum after it."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Force and change in momentum",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "A resultant force on a moving object changes its velocity, so it changes its momentum too. Momentum after minus momentum before is called the change in momentum, m Δv."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "Putting F = m a together with a = Δv ÷ t gives F = m Δv ÷ Δt: force = change in momentum ÷ time taken. F is in newtons (N), m Δv in kg m/s and Δt in seconds (s)."
+    },
+    {
+     "id": "3.3",
+     "type": "say",
+     "text": "Force equals the rate of change of momentum. The same change in momentum spread over a longer time needs a smaller force."
+    },
+    {
+     "id": "3.4",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A 0.5 kg ball at 10 m/s is caught and stopped in 0.1 s. What force stops it?",
+     "steps": [
+      "Change in momentum: 0.5 × 10 = 5 kg m/s.",
+      "Write the equation: F = m Δv ÷ Δt.",
+      "Put in the numbers: F = 5 ÷ 0.1.",
+      "F = 50 N."
+     ],
+     "answer": {
+      "value": 50,
+      "unit": "N"
+     }
+    },
+    {
+     "id": "3.5",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. The same ball is caught with soft hands that stop it in 0.5 s. What force stops it now, in N?",
+     "answer": {
+      "value": 10,
+      "unit": "N",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 2.5,
+       "branch": "times"
+      },
+      {
+       "value": 50,
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: F = 5 ÷ 0.5 = 10 N, much less than 50 N.",
+     "wrong": {
+      "other": "Not quite: 10 N. The change in momentum is still 5 kg m/s, so F = 5 ÷ 0.5 = 10 N.",
+      "times": "Not quite: 10 N. Divide the change in momentum by the time: 5 ÷ 0.5 = 10 N.",
+      "same": "Not quite: 10 N. The longer time means a smaller force: 5 ÷ 0.5 = 10 N."
+     },
+     "idk": [
+      {
+       "hint": "The change in momentum is still 5 kg m/s. Divide it by the new time, 0.5 s."
+      }
+     ],
+     "answerWhy": "The change in momentum is 5 kg m/s, so F = 5 ÷ 0.5 = 10 N: a longer stop means a smaller force."
+    },
+    {
+     "id": "3.6",
+     "type": "say",
+     "text": "Many safety features work like this. Airbags, seat belts and crumple zones make a crash last longer, so the momentum changes more slowly and the force on the people is smaller."
+    },
+    {
+     "id": "3.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Why does a crash mat in a gym help when someone lands on it?",
+     "options": [
+      {
+       "text": "The stop takes longer, so the force is smaller",
+       "branch": "right"
+      },
+      {
+       "text": "It makes the momentum change zero",
+       "branch": "zero"
+      },
+      {
+       "text": "It makes the person lighter",
+       "branch": "lighter"
+      }
+     ],
+     "right": "Yes: the mat makes the stop take longer, so the momentum changes more slowly and the force is smaller.",
+     "wrong": {
+      "other": "Not quite: the stop takes longer, so the force is smaller.",
+      "zero": "Not quite: the person still stops, so their momentum still changes by the same amount. The mat makes it take longer, so the force is smaller.",
+      "lighter": "Not quite: the person's mass does not change. The mat makes the stop take longer, so the force is smaller."
+     },
+     "idk": [
+      {
+       "hint": "The person stops either way. What does the soft mat change about the stop?"
+      }
+     ],
+     "answerWhy": "The change in momentum is the same, but the mat makes the stop take longer, so the rate of change of momentum, and the force, is smaller."
+    },
+    {
+     "id": "3.8",
+     "type": "own",
+     "prompt": "In one line: how does a cycle helmet reduce the force on your head in a crash?",
+     "points": [
+      "it makes the impact last longer",
+      "so the rate of change of momentum and the force are smaller"
+     ],
+     "idk": "No problem. A good line would be: it makes the impact last longer, so the momentum changes more slowly and the force on your head is smaller."
+    },
+    {
+     "id": "3.9",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "3.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: what is the unit of momentum?",
+     "options": [
+      {
+       "text": "kg m/s",
+       "branch": "right"
+      },
+      {
+       "text": "N",
+       "branch": "newton"
+      },
+      {
+       "text": "m/s²",
+       "branch": "accel"
+      }
+     ],
+     "right": "Yes: kilogram metres per second.",
+     "wrong": {
+      "other": "Not quite: kg m/s.",
+      "newton": "Not quite: the newton is the unit of force. Momentum is mass × velocity, in kg m/s.",
+      "accel": "Not quite: m/s² is the unit of acceleration. Momentum is in kg m/s."
+     },
+     "idk": [
+      {
+       "hint": "Momentum = mass × velocity. Multiply their units."
+      }
+     ],
+     "answerWhy": "Momentum is mass (kg) × velocity (m/s), so its unit is kg m/s.",
+     "quiz": true
+    },
+    {
+     "id": "3.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 6: a 3 kg ball moves at 4 m/s. What is its momentum?",
+     "options": [
+      {
+       "text": "12 kg m/s",
+       "branch": "right"
+      },
+      {
+       "text": "0.75 kg m/s",
+       "branch": "divide"
+      },
+      {
+       "text": "7 kg m/s",
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 3 × 4 = 12 kg m/s.",
+     "wrong": {
+      "other": "Not quite: 12 kg m/s.",
+      "divide": "Not quite: multiply the mass by the velocity: 3 × 4 = 12 kg m/s.",
+      "add": "Not quite: multiply, do not add: 3 × 4 = 12 kg m/s."
+     },
+     "idk": [
+      {
+       "hint": "p = m v."
+      }
+     ],
+     "answerWhy": "p = m v = 3 × 4 = 12 kg m/s.",
+     "quiz": true
+    },
+    {
+     "id": "3.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: two objects collide in a closed system. Which is true of their total momentum?",
+     "options": [
+      {
+       "text": "It is the same before and after",
+       "branch": "right"
+      },
+      {
+       "text": "It is bigger after",
+       "branch": "up"
+      },
+      {
+       "text": "It is smaller after",
+       "branch": "down"
+      }
+     ],
+     "right": "Yes: in a closed system, momentum is conserved.",
+     "wrong": {
+      "other": "Not quite: it is the same before and after.",
+      "up": "Not quite: in a closed system the total momentum does not change.",
+      "down": "Not quite: in a closed system the total momentum does not change."
+     },
+     "idk": [
+      {
+       "hint": "Think of conservation of momentum."
+      }
+     ],
+     "answerWhy": "In a closed system, the total momentum before equals the total after.",
+     "quiz": true
+    },
+    {
+     "id": "3.13",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: two skaters stand still, then push each other apart. Which is true just after?",
+     "options": [
+      {
+       "text": "Their momenta are equal and opposite",
+       "branch": "right"
+      },
+      {
+       "text": "The heavier one has more momentum",
+       "branch": "heavier"
+      },
+      {
+       "text": "Neither has any momentum",
+       "branch": "none"
+      }
+     ],
+     "right": "Yes: they have equal momentum in opposite directions, so the total is still zero.",
+     "wrong": {
+      "other": "Not quite: their momenta are equal and opposite.",
+      "heavier": "Not quite: the total must stay zero, so their momenta are equal in size. The heavier one moves more slowly.",
+      "none": "Not quite: both move, so both have momentum. It is equal and opposite, so the total is zero."
+     },
+     "idk": [
+      {
+       "hint": "The total momentum was zero before the push."
+      }
+     ],
+     "answerWhy": "The total momentum stays zero, so the skaters have momenta of equal size in opposite directions.",
+     "quiz": true
+    },
+    {
+     "id": "3.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: which is equal to the resultant force on an object?",
+     "options": [
+      {
+       "text": "Change in momentum ÷ time",
+       "branch": "right"
+      },
+      {
+       "text": "Momentum × time",
+       "branch": "times"
+      },
+      {
+       "text": "Mass ÷ velocity",
+       "branch": "mv"
+      }
+     ],
+     "right": "Yes: force is the rate of change of momentum.",
+     "wrong": {
+      "other": "Not quite: change in momentum ÷ time.",
+      "times": "Not quite: force is the change in momentum divided by the time.",
+      "mv": "Not quite: force is the change in momentum divided by the time."
+     },
+     "idk": [
+      {
+       "hint": "Force is the rate of change of momentum."
+      }
+     ],
+     "answerWhy": "F = m Δv ÷ Δt: force equals the change in momentum divided by the time taken.",
+     "quiz": true
+    },
+    {
+     "id": "3.15",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: how do airbags reduce injuries in a crash?",
+     "options": [
+      {
+       "text": "The stop takes longer, so the force is smaller",
+       "branch": "right"
+      },
+      {
+       "text": "They make the car stop more quickly",
+       "branch": "quicker"
+      },
+      {
+       "text": "They take away the car's momentum",
+       "branch": "remove"
+      }
+     ],
+     "right": "Yes: a longer stop means a smaller rate of change of momentum, so a smaller force.",
+     "wrong": {
+      "other": "Not quite: the stop takes longer, so the force is smaller.",
+      "quicker": "Not quite: a quicker stop would mean a bigger force. Airbags make the stop take longer.",
+      "remove": "Not quite: the person still stops, so the momentum still changes. Airbags make it change more slowly."
+     },
+     "idk": [
+      {
+       "hint": "The person stops either way. What does the airbag change?"
+      }
+     ],
+     "answerWhy": "The airbag makes the stop take longer, so the momentum changes more slowly and the force is smaller.",
+     "quiz": true
+    },
+    {
+     "id": "3.16",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

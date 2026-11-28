@@ -1,0 +1,921 @@
+{
+ "lesson": "p5-newtons-laws",
+ "version": 1,
+ "about": "The scripted AI lesson for p5-newtons-laws (2026-11-28, Phase C, brief docs/briefs/2026-11-27-phase-c-physics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p5-forces-motion. Key point 1 says \"the first law of motion\": the word newton is taught in key point 2, where the laws are named after Isaac Newton.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "The first law of motion: resultant force and inertia",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about the three laws of motion: how forces change the way things move."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from the last lesson. A car speeds up from 0 to 20 m/s in 10 s. What is its acceleration?",
+     "options": [
+      {
+       "text": "2 m/s²",
+       "branch": "right"
+      },
+      {
+       "text": "200 m/s²",
+       "branch": "times"
+      },
+      {
+       "text": "0.5 m/s²",
+       "branch": "flip"
+      }
+     ],
+     "right": "Yes: a = Δv ÷ t = 20 ÷ 10 = 2 m/s².",
+     "wrong": {
+      "other": "Not quite: 2 m/s².",
+      "times": "Not quite: divide the change in velocity by the time: 20 ÷ 10 = 2 m/s².",
+      "flip": "Not quite: divide the change in velocity by the time, not the other way round: 20 ÷ 10 = 2 m/s²."
+     },
+     "idk": [
+      {
+       "hint": "Acceleration = change in velocity ÷ time."
+      }
+     ],
+     "answerWhy": "a = Δv ÷ t = (20 − 0) ÷ 10 = 2 m/s²."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: which of these is a contact force?",
+     "options": [
+      {
+       "text": "Friction",
+       "branch": "right"
+      },
+      {
+       "text": "Gravity",
+       "branch": "gravity"
+      },
+      {
+       "text": "Magnetic force",
+       "branch": "magnet"
+      }
+     ],
+     "right": "Yes: friction acts between surfaces that touch.",
+     "wrong": {
+      "other": "Not quite: friction.",
+      "gravity": "Not quite: gravity acts across a gap, so it is a non-contact force. Friction needs surfaces that touch.",
+      "magnet": "Not quite: magnetic force acts across a gap, so it is a non-contact force. Friction needs surfaces that touch."
+     },
+     "idk": [
+      {
+       "hint": "A contact force needs the objects to touch."
+      }
+     ],
+     "answerWhy": "Friction acts between surfaces that touch, so it is a contact force."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. Most objects have several forces on them at once. A box on the floor is pulled down by gravity and pushed up by the floor."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "You can replace all the forces on an object with one force that has the same effect. That single force is called the resultant force."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "For forces along one line, add the forces that act the same way and take away the forces that act the opposite way. The resultant acts in the direction of the bigger total."
+    },
+    {
+     "id": "1.5",
+     "type": "ask",
+     "kind": "number",
+     "question": "A sledge is pulled forwards with 50 N, and friction pulls it back with 20 N. What is the size of the resultant force, in N?",
+     "answer": {
+      "value": 30,
+      "unit": "N",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 70,
+       "branch": "add"
+      },
+      {
+       "value": 2.5,
+       "branch": "divide"
+      }
+     ],
+     "right": "Yes: 50 − 20 = 30 N, forwards.",
+     "wrong": {
+      "other": "Not quite: 30 N. The forces act opposite ways, so subtract: 50 − 20 = 30 N, forwards.",
+      "add": "Not quite: 30 N. The forces act in opposite directions, so subtract them: 50 − 20 = 30 N.",
+      "divide": "Not quite: 30 N. Forces in opposite directions are subtracted: 50 − 20 = 30 N."
+     },
+     "idk": [
+      {
+       "hint": "The two forces act in opposite directions. Take the smaller from the bigger."
+      }
+     ],
+     "answerWhy": "The forces act in opposite directions, so the resultant is 50 − 20 = 30 N, in the direction of the bigger force."
+    },
+    {
+     "id": "1.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Two people pull a box in opposite directions, each with a force of 40 N. What is the resultant force on the box?",
+     "options": [
+      {
+       "text": "0 N",
+       "branch": "right"
+      },
+      {
+       "text": "80 N",
+       "branch": "add"
+      },
+      {
+       "text": "40 N",
+       "branch": "one"
+      }
+     ],
+     "right": "Yes: 40 − 40 = 0 N. The forces cancel.",
+     "wrong": {
+      "other": "Not quite: 0 N.",
+      "add": "Not quite: the forces act in opposite directions, so subtract them: 40 − 40 = 0 N.",
+      "one": "Not quite: each pull is 40 N, but they act in opposite directions and cancel: 0 N."
+     },
+     "idk": [
+      {
+       "hint": "The two forces are the same size and act opposite ways. What is 40 − 40?"
+      }
+     ],
+     "answerWhy": "The forces are equal and opposite, so the resultant is 40 − 40 = 0 N."
+    },
+    {
+     "id": "1.7",
+     "type": "say",
+     "text": "When the resultant force is zero, the forces are balanced. Balanced does not mean there are no forces: they are there, but they cancel."
+    },
+    {
+     "id": "1.8",
+     "type": "say",
+     "text": "The first law of motion says: if the resultant force on an object is zero, a still object stays still, and a moving object keeps the same speed in the same direction."
+    },
+    {
+     "id": "1.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A car drives along a straight, level road at a steady 25 m/s. What is the resultant force on it?",
+     "options": [
+      {
+       "text": "Zero: the forces on it balance",
+       "branch": "right"
+      },
+      {
+       "text": "Forwards: it needs one to keep going",
+       "branch": "keepgoing"
+      },
+      {
+       "text": "There are no forces on it",
+       "branch": "none"
+      }
+     ],
+     "right": "Yes: its velocity is not changing, so the resultant force is zero.",
+     "wrong": {
+      "other": "Not quite: zero.",
+      "keepgoing": "Not quite: a moving object keeps the same velocity with no resultant force. The engine's push only balances friction and air resistance.",
+      "none": "Not quite: there are forces on it, such as the engine's push and air resistance. They balance, so the resultant is zero."
+     },
+     "idk": [
+      {
+       "hint": "The car's speed and direction are not changing. What does the first law say about the resultant force then?"
+      }
+     ],
+     "answerWhy": "The car's velocity is not changing, so by the first law the resultant force is zero: the forces balance."
+    },
+    {
+     "id": "1.10",
+     "type": "say",
+     "text": "Changing the speed or the direction of an object needs a resultant force. If the forward push is bigger than the friction, the resultant acts forwards and the object speeds up."
+    },
+    {
+     "id": "1.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A trolley rolls at a steady speed from carpet onto smooth tiles, where friction is smaller. The push on it stays the same. Which is true on the tiles?",
+     "options": [
+      {
+       "text": "It speeds up",
+       "branch": "right"
+      },
+      {
+       "text": "It keeps the same speed",
+       "branch": "same"
+      },
+      {
+       "text": "It slows down",
+       "branch": "slow"
+      }
+     ],
+     "right": "Yes: the push is now bigger than the friction, so there is a forward resultant force and the trolley speeds up.",
+     "wrong": {
+      "other": "Not quite: it speeds up.",
+      "same": "Not quite: on the carpet the push and friction balanced. On the tiles friction is smaller, so there is a forward resultant force and it speeds up.",
+      "slow": "Not quite: less friction means less force holding it back. The push wins, so the resultant is forwards and it speeds up."
+     },
+     "idk": [
+      {
+       "hint": "On the carpet, the push and friction balanced. On the tiles, friction is smaller. Which force is now bigger?"
+      }
+     ],
+     "answerWhy": "With less friction, the push is bigger than the friction, so the resultant force acts forwards and the trolley speeds up."
+    },
+    {
+     "id": "1.12",
+     "type": "say",
+     "text": "Objects tend to keep doing what they are already doing: staying still, or moving at a steady velocity. This tendency is called inertia."
+    },
+    {
+     "id": "1.13",
+     "type": "own",
+     "prompt": "In one line: what does the first law of motion say?",
+     "points": [
+      "with zero resultant force a still object stays still",
+      "a moving object keeps the same speed and direction"
+     ],
+     "idk": "No problem. A good line would be: if the resultant force is zero, a still object stays still and a moving object keeps the same speed and direction."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "The second law: F = ma",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "Force is measured in a unit called the newton (N), after the scientist Isaac Newton. The three laws of motion are his, so they are called Newton's laws."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "The second law tells you how big the acceleration is. The bigger the resultant force, the bigger the acceleration. The bigger the mass, the smaller the acceleration."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "The equation is F = m a: resultant force = mass × acceleration. Here F is the resultant force in newtons (N), m is the mass in kilograms (kg) and a is the acceleration in m/s²."
+    },
+    {
+     "id": "2.4",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A 1200 kg car accelerates at 3 m/s². What resultant force acts on it?",
+     "steps": [
+      "Write the equation: F = m a.",
+      "Put in the numbers: F = 1200 × 3.",
+      "F = 3600 N."
+     ],
+     "answer": {
+      "value": 3600,
+      "unit": "N"
+     }
+    },
+    {
+     "id": "2.5",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A resultant force of 150 N acts on a 50 kg crate. What is its acceleration, in m/s²?",
+     "answer": {
+      "value": 3,
+      "unit": "m/s²",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 7500,
+       "branch": "times"
+      },
+      {
+       "value": 0.333,
+       "branch": "flip"
+      }
+     ],
+     "right": "Yes: a = F ÷ m = 150 ÷ 50 = 3 m/s².",
+     "wrong": {
+      "other": "Not quite: 3 m/s². Rearrange F = m a to a = F ÷ m = 150 ÷ 50 = 3 m/s².",
+      "times": "Not quite: 3 m/s². To find a, divide the force by the mass: 150 ÷ 50 = 3 m/s².",
+      "flip": "Not quite: 3 m/s². Divide the force by the mass, not the mass by the force: 150 ÷ 50 = 3 m/s²."
+     },
+     "idk": [
+      {
+       "hint": "Rearrange F = m a to get a = F ÷ m."
+      }
+     ],
+     "answerWhy": "a = F ÷ m = 150 ÷ 50 = 3 m/s²."
+    },
+    {
+     "id": "2.6",
+     "type": "ask",
+     "kind": "number",
+     "question": "A 0.5 kg ball is given an acceleration of 8 m/s². What resultant force acts on it, in N?",
+     "answer": {
+      "value": 4,
+      "unit": "N",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 16,
+       "branch": "divide"
+      },
+      {
+       "value": 32,
+       "branch": "square"
+      },
+      {
+       "value": 0.0625,
+       "branch": "flip"
+      }
+     ],
+     "right": "Yes: F = m a = 0.5 × 8 = 4 N.",
+     "wrong": {
+      "other": "Not quite: 4 N. F = m a = 0.5 × 8 = 4 N.",
+      "divide": "Not quite: 4 N. Multiply the mass by the acceleration: 0.5 × 8 = 4 N.",
+      "square": "Not quite: 4 N. The \"squared\" in m/s² is part of the unit. Do not square the 8: F = 0.5 × 8 = 4 N.",
+      "flip": "Not quite: 4 N. Multiply the mass by the acceleration: 0.5 × 8 = 4 N."
+     },
+     "idk": [
+      {
+       "hint": "Force = mass × acceleration. Multiply 0.5 by 8."
+      }
+     ],
+     "answerWhy": "F = m a = 0.5 × 8 = 4 N."
+    },
+    {
+     "id": "2.7",
+     "type": "say",
+     "text": "Mass also tells you how hard it is to change an object's velocity. Mass measured this way, as force divided by acceleration, is called inertial mass."
+    },
+    {
+     "id": "2.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "The same resultant force acts on an empty shopping trolley and on a full one. Which has the bigger acceleration?",
+     "options": [
+      {
+       "text": "The empty trolley",
+       "branch": "right"
+      },
+      {
+       "text": "The full trolley",
+       "branch": "full"
+      },
+      {
+       "text": "Both have the same",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: the empty trolley has less mass, so the same force gives it a bigger acceleration.",
+     "wrong": {
+      "other": "Not quite: the empty trolley.",
+      "full": "Not quite: more mass means less acceleration for the same force, because a = F ÷ m. The empty trolley accelerates more.",
+      "same": "Not quite: a = F ÷ m, so with the same force, the smaller mass has the bigger acceleration: the empty trolley."
+     },
+     "idk": [
+      {
+       "hint": "a = F ÷ m. With the same F, which trolley has the smaller m?"
+      }
+     ],
+     "answerWhy": "a = F ÷ m, so with the same force the trolley with less mass, the empty one, has the bigger acceleration."
+    },
+    {
+     "id": "2.9",
+     "type": "say",
+     "text": "In a class experiment, a trolley is pulled along a bench by a string over a pulley, with masses hanging on the end. More hanging masses give a bigger force. Light gates measure the acceleration."
+    },
+    {
+     "id": "2.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "In that experiment, you change the pulling force to see how the acceleration changes. What must you keep the same?",
+     "options": [
+      {
+       "text": "The total mass being pulled",
+       "branch": "right"
+      },
+      {
+       "text": "The pulling force",
+       "branch": "force"
+      },
+      {
+       "text": "The acceleration",
+       "branch": "accel"
+      }
+     ],
+     "right": "Yes: keep the total mass the same, so only the force changes.",
+     "wrong": {
+      "other": "Not quite: the total mass being pulled.",
+      "force": "Not quite: the pulling force is what you change on purpose. Keep the total mass the same.",
+      "accel": "Not quite: the acceleration is what you measure. Keep the total mass the same, so only the force changes."
+     },
+     "idk": [
+      {
+       "hint": "You change the force and measure the acceleration. What else could change the acceleration?"
+      }
+     ],
+     "answerWhy": "Mass also changes the acceleration, so keep the total mass the same and only the force changes."
+    },
+    {
+     "id": "2.11",
+     "type": "say",
+     "text": "You can estimate forces on vehicles. A car of about 1000 kg speeding up at about 2 m/s² needs a resultant force of about 1000 × 2 = 2000 N."
+    },
+    {
+     "id": "2.12",
+     "type": "own",
+     "prompt": "In one line: what does F = m a tell you?",
+     "points": [
+      "the resultant force equals mass times acceleration",
+      "a bigger force gives a bigger acceleration"
+     ],
+     "idk": "No problem. A good line would be: the resultant force equals mass × acceleration, so a bigger force gives a bigger acceleration, and a bigger mass a smaller one."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "The third law: interaction pairs",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "The third law is about two objects pushing or pulling on each other. When object A pushes on object B, B pushes back on A with a force of the same size, in the opposite direction."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "The two forces are of the same type and act on different objects. Together they are called a Newton's third law pair."
+    },
+    {
+     "id": "3.3",
+     "type": "ask",
+     "kind": "tap",
+     "question": "You push on a wall with a force of 30 N. What force does the wall push on you with?",
+     "options": [
+      {
+       "text": "30 N, back towards you",
+       "branch": "right"
+      },
+      {
+       "text": "None: walls do not push",
+       "branch": "none"
+      },
+      {
+       "text": "Less than 30 N, as it does not move",
+       "branch": "less"
+      }
+     ],
+     "right": "Yes: the wall pushes back on you with 30 N.",
+     "wrong": {
+      "other": "Not quite: 30 N, back towards you.",
+      "none": "Not quite: the wall does push. By the third law, it pushes back on you with 30 N.",
+      "less": "Not quite: the two forces in a pair are always the same size, so the wall pushes back with 30 N."
+     },
+     "idk": [
+      {
+       "hint": "The third law says the two forces in a pair are the same size and opposite in direction."
+      }
+     ],
+     "answerWhy": "By the third law, the wall pushes back on you with a force of the same size, 30 N, in the opposite direction."
+    },
+    {
+     "id": "3.4",
+     "type": "say",
+     "text": "The two forces in a pair act on different objects, so they never cancel each other out. Only forces acting on the same object can cancel."
+    },
+    {
+     "id": "3.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A rocket engine pushes hot gas downwards. Which force pushes the rocket up?",
+     "options": [
+      {
+       "text": "The gas pushing up on the engine",
+       "branch": "right"
+      },
+      {
+       "text": "The air below pushing up on it",
+       "branch": "air"
+      },
+      {
+       "text": "Gravity pulling the gas down",
+       "branch": "gravity"
+      }
+     ],
+     "right": "Yes: the engine pushes the gas down, so the gas pushes the engine up.",
+     "wrong": {
+      "other": "Not quite: the gas pushing up on the engine.",
+      "air": "Not quite: rockets work in space too, where there is no air. The engine pushes the gas down, so the gas pushes the engine up.",
+      "gravity": "Not quite: gravity pulls things down, not up. The engine pushes the gas down, so the gas pushes the engine up."
+     },
+     "idk": [
+      {
+       "hint": "The engine pushes on the gas. By the third law, what pushes back on the engine?"
+      }
+     ],
+     "answerWhy": "The engine pushes the gas down, so by the third law the gas pushes the engine up with a force of the same size."
+    },
+    {
+     "id": "3.6",
+     "type": "say",
+     "text": "Even gravity comes in pairs. The Earth pulls you down, and you pull the Earth up with a force just as big. The Earth's mass is so huge that your pull hardly moves it."
+    },
+    {
+     "id": "3.7",
+     "type": "own",
+     "prompt": "In one line: what does the third law of motion say?",
+     "points": [
+      "two objects push on each other with equal forces",
+      "in opposite directions"
+     ],
+     "idk": "No problem. A good line would be: when two objects interact, each pushes or pulls on the other with a force of the same size in the opposite direction."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Weight, mass and free body diagrams",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "The pull of gravity on an object is called weight. Weight is a force, so it is measured in newtons."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "How strongly gravity pulls on each kilogram is called the gravitational field strength, g. It is measured in newtons per kilogram (N/kg). On Earth it is about 9.8 N/kg."
+    },
+    {
+     "id": "4.3",
+     "type": "say",
+     "text": "The equation is W = m g: weight = mass × gravitational field strength. Here W is the weight in newtons (N), m is the mass in kilograms (kg) and g is in N/kg. In a question, you are given g."
+    },
+    {
+     "id": "4.4",
+     "type": "ask",
+     "kind": "number",
+     "question": "A bag has a mass of 5 kg, and g = 9.8 N/kg. What is its weight, in N?",
+     "answer": {
+      "value": 49,
+      "unit": "N",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 0.51,
+       "branch": "divide"
+      },
+      {
+       "value": 14.8,
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: W = m g = 5 × 9.8 = 49 N.",
+     "wrong": {
+      "other": "Not quite: 49 N. W = m g = 5 × 9.8 = 49 N.",
+      "divide": "Not quite: 49 N. Multiply the mass by g: 5 × 9.8 = 49 N.",
+      "add": "Not quite: 49 N. Multiply the mass by g, do not add them: 5 × 9.8 = 49 N."
+     },
+     "idk": [
+      {
+       "hint": "Weight = mass × gravitational field strength. Multiply 5 by 9.8."
+      }
+     ],
+     "answerWhy": "W = m g = 5 × 9.8 = 49 N."
+    },
+    {
+     "id": "4.5",
+     "type": "ask",
+     "kind": "number",
+     "question": "An apple has a mass of 200 g, and g = 9.8 N/kg. What is its weight, in N?",
+     "answer": {
+      "value": 1.96,
+      "unit": "N",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 1960,
+       "branch": "grams"
+      }
+     ],
+     "right": "Yes: 200 g = 0.2 kg, and 0.2 × 9.8 = 1.96 N.",
+     "wrong": {
+      "other": "Not quite: 1.96 N. 200 g = 0.2 kg, and W = 0.2 × 9.8 = 1.96 N.",
+      "grams": "Not quite: 1.96 N. Change grams into kilograms first: 200 g = 0.2 kg. Then 0.2 × 9.8 = 1.96 N."
+     },
+     "idk": [
+      {
+       "hint": "Change 200 g into kilograms first: 1000 g = 1 kg."
+      }
+     ],
+     "answerWhy": "200 g = 0.2 kg, so W = m g = 0.2 × 9.8 = 1.96 N."
+    },
+    {
+     "id": "4.6",
+     "type": "say",
+     "text": "Weight and mass are directly proportional: double the mass, and the weight doubles. Weight is measured with a newtonmeter, a spring balance marked in newtons."
+    },
+    {
+     "id": "4.7",
+     "type": "say",
+     "text": "An object's weight can be treated as acting at one point, called its centre of mass."
+    },
+    {
+     "id": "4.8",
+     "type": "say",
+     "text": "A diagram that shows one object with every force on it, each as a labelled arrow, is called a free body diagram. Longer arrows show bigger forces."
+    },
+    {
+     "id": "4.9",
+     "type": "say",
+     "text": "For a book resting on a table, the free body diagram has two arrows the same length: its weight down and the normal contact force up. The resultant force is zero."
+    },
+    {
+     "id": "4.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A free body diagram of a falling skydiver shows a 600 N weight down and 450 N of air resistance up. What is the resultant force?",
+     "options": [
+      {
+       "text": "150 N downwards",
+       "branch": "right"
+      },
+      {
+       "text": "1050 N downwards",
+       "branch": "add"
+      },
+      {
+       "text": "150 N upwards",
+       "branch": "dir"
+      }
+     ],
+     "right": "Yes: 600 − 450 = 150 N, downwards, the way the bigger force acts.",
+     "wrong": {
+      "other": "Not quite: 150 N downwards.",
+      "add": "Not quite: the forces act in opposite directions, so subtract: 600 − 450 = 150 N, downwards.",
+      "dir": "Not quite: the size is right, but the bigger force, the weight, acts downwards. So the resultant is 150 N downwards."
+     },
+     "idk": [
+      {
+       "hint": "The forces act in opposite directions. Subtract them, and the resultant points the way of the bigger one."
+      }
+     ],
+     "answerWhy": "The resultant is 600 − 450 = 150 N, in the direction of the bigger force: downwards."
+    },
+    {
+     "id": "4.11",
+     "type": "say",
+     "text": "Forces that are not in a line can be added with a scale drawing. Draw each force as an arrow to scale, tip to tail. The arrow from the start of the first to the end of the last is the resultant."
+    },
+    {
+     "id": "4.12",
+     "type": "say",
+     "text": "A scale drawing can also split one force into two parts at right angles, such as along the ground and upwards. Together, the two parts have the same effect as the one force."
+    },
+    {
+     "id": "4.13",
+     "type": "own",
+     "prompt": "In one line: what is weight, and how do you work it out?",
+     "points": [
+      "the force of gravity on an object",
+      "weight = mass × gravitational field strength"
+     ],
+     "idk": "No problem. A good line would be: weight is the force of gravity on an object: weight = mass × gravitational field strength."
+    },
+    {
+     "id": "4.14",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "4.15",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: 80 N pushes a box to the right and 30 N pushes it to the left. What is the resultant force?",
+     "options": [
+      {
+       "text": "50 N to the right",
+       "branch": "right"
+      },
+      {
+       "text": "110 N to the right",
+       "branch": "add"
+      },
+      {
+       "text": "50 N to the left",
+       "branch": "dir"
+      }
+     ],
+     "right": "Yes: 80 − 30 = 50 N, to the right.",
+     "wrong": {
+      "other": "Not quite: 50 N to the right.",
+      "add": "Not quite: opposite forces are subtracted: 80 − 30 = 50 N, to the right.",
+      "dir": "Not quite: the bigger force acts to the right, so the resultant does too: 50 N to the right."
+     },
+     "idk": [
+      {
+       "hint": "Opposite forces: subtract, then take the direction of the bigger force."
+      }
+     ],
+     "answerWhy": "80 − 30 = 50 N, in the direction of the bigger force: to the right.",
+     "quiz": true
+    },
+    {
+     "id": "4.16",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 6: the resultant force on a moving ball is zero. Which is true?",
+     "options": [
+      {
+       "text": "It keeps the same velocity",
+       "branch": "right"
+      },
+      {
+       "text": "It slows down and stops",
+       "branch": "stop"
+      },
+      {
+       "text": "It speeds up",
+       "branch": "faster"
+      }
+     ],
+     "right": "Yes: with no resultant force, its speed and direction stay the same.",
+     "wrong": {
+      "other": "Not quite: it keeps the same velocity.",
+      "stop": "Not quite: slowing down needs a resultant force backwards. With zero resultant, it keeps the same velocity.",
+      "faster": "Not quite: speeding up needs a resultant force forwards. With zero resultant, it keeps the same velocity."
+     },
+     "idk": [
+      {
+       "hint": "Think of the first law of motion."
+      }
+     ],
+     "answerWhy": "By the first law, a zero resultant force means the velocity does not change.",
+     "quiz": true
+    },
+    {
+     "id": "4.17",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: a 2 kg mass accelerates at 3 m/s². What is the resultant force on it?",
+     "options": [
+      {
+       "text": "6 N",
+       "branch": "right"
+      },
+      {
+       "text": "1.5 N",
+       "branch": "divide"
+      },
+      {
+       "text": "5 N",
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: F = m a = 2 × 3 = 6 N.",
+     "wrong": {
+      "other": "Not quite: 6 N.",
+      "divide": "Not quite: multiply the mass by the acceleration: 2 × 3 = 6 N.",
+      "add": "Not quite: multiply, do not add: 2 × 3 = 6 N."
+     },
+     "idk": [
+      {
+       "hint": "F = m a."
+      }
+     ],
+     "answerWhy": "F = m a = 2 × 3 = 6 N.",
+     "quiz": true
+    },
+    {
+     "id": "4.18",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: a book pushes down on a table. Which force is the other one in its third law pair?",
+     "options": [
+      {
+       "text": "The table pushing up on the book",
+       "branch": "right"
+      },
+      {
+       "text": "The weight of the book",
+       "branch": "weight"
+      },
+      {
+       "text": "The floor pushing up on the table",
+       "branch": "floor"
+      }
+     ],
+     "right": "Yes: the pair is the book on the table and the table on the book.",
+     "wrong": {
+      "other": "Not quite: the table pushing up on the book.",
+      "weight": "Not quite: the weight is gravity pulling on the book, a different type of force. The pair is the table pushing up on the book.",
+      "floor": "Not quite: that force is between the floor and the table. The pair is the table pushing up on the book."
+     },
+     "idk": [
+      {
+       "hint": "In a pair, the same two objects push on each other."
+      }
+     ],
+     "answerWhy": "A third law pair is between the same two objects: the book pushes on the table, and the table pushes up on the book.",
+     "quiz": true
+    },
+    {
+     "id": "4.19",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: what is the weight of a 10 kg mass where g = 9.8 N/kg?",
+     "options": [
+      {
+       "text": "98 N",
+       "branch": "right"
+      },
+      {
+       "text": "10 N",
+       "branch": "mass"
+      },
+      {
+       "text": "1.02 N",
+       "branch": "divide"
+      }
+     ],
+     "right": "Yes: W = m g = 10 × 9.8 = 98 N.",
+     "wrong": {
+      "other": "Not quite: 98 N.",
+      "mass": "Not quite: 10 kg is the mass. The weight is W = m g = 10 × 9.8 = 98 N.",
+      "divide": "Not quite: multiply the mass by g: 10 × 9.8 = 98 N."
+     },
+     "idk": [
+      {
+       "hint": "W = m g."
+      }
+     ],
+     "answerWhy": "W = m g = 10 × 9.8 = 98 N.",
+     "quiz": true
+    },
+    {
+     "id": "4.20",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: which has more inertia, a lorry or a bicycle?",
+     "options": [
+      {
+       "text": "The lorry, as it has more mass",
+       "branch": "right"
+      },
+      {
+       "text": "The bicycle, as it is lighter",
+       "branch": "bike"
+      },
+      {
+       "text": "Neither: inertia is not about mass",
+       "branch": "neither"
+      }
+     ],
+     "right": "Yes: more mass means more inertia, so the lorry is harder to start or stop.",
+     "wrong": {
+      "other": "Not quite: the lorry.",
+      "bike": "Not quite: inertia grows with mass, so the heavier lorry has more.",
+      "neither": "Not quite: inertia depends on mass. The lorry has more mass, so more inertia."
+     },
+     "idk": [
+      {
+       "hint": "Which is harder to start moving or to stop?"
+      }
+     ],
+     "answerWhy": "Inertia depends on mass, so the lorry, with more mass, has more inertia.",
+     "quiz": true
+    },
+    {
+     "id": "4.21",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

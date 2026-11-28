@@ -1,0 +1,784 @@
+{
+ "lesson": "p5-stopping-distance",
+ "version": 1,
+ "about": "The scripted AI lesson for p5-stopping-distance (2026-11-28, Phase C, brief docs/briefs/2026-11-27-phase-c-physics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p5-newtons-laws.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "Stopping distance = thinking distance + braking distance",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about how far a car travels before it can stop, and what makes that distance longer."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from the last lesson. A resultant force of 20 N acts on a 4 kg mass. What is its acceleration?",
+     "options": [
+      {
+       "text": "5 m/s²",
+       "branch": "right"
+      },
+      {
+       "text": "80 m/s²",
+       "branch": "times"
+      },
+      {
+       "text": "0.2 m/s²",
+       "branch": "flip"
+      }
+     ],
+     "right": "Yes: a = F ÷ m = 20 ÷ 4 = 5 m/s².",
+     "wrong": {
+      "other": "Not quite: 5 m/s².",
+      "times": "Not quite: divide the force by the mass: 20 ÷ 4 = 5 m/s².",
+      "flip": "Not quite: divide the force by the mass, not the mass by the force: 20 ÷ 4 = 5 m/s²."
+     },
+     "idk": [
+      {
+       "hint": "Rearrange F = m a to get a = F ÷ m."
+      }
+     ],
+     "answerWhy": "a = F ÷ m = 20 ÷ 4 = 5 m/s²."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: which law of motion says that two objects push on each other with forces of the same size in opposite directions?",
+     "options": [
+      {
+       "text": "The third law",
+       "branch": "right"
+      },
+      {
+       "text": "The first law",
+       "branch": "first"
+      },
+      {
+       "text": "The second law",
+       "branch": "second"
+      }
+     ],
+     "right": "Yes: the third law.",
+     "wrong": {
+      "other": "Not quite: the third law.",
+      "first": "Not quite: the first law is about zero resultant force. Equal and opposite pairs are the third law.",
+      "second": "Not quite: the second law is F = m a. Equal and opposite pairs are the third law."
+     },
+     "idk": [
+      {
+       "hint": "Think of the law about pairs of forces between two objects."
+      }
+     ],
+     "answerWhy": "The third law of motion says two interacting objects push on each other with equal and opposite forces."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. A driver sees a hazard, such as a child stepping into the road. The car does not stop at once: it keeps going for a while."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "The whole distance the car travels, from the moment the driver sees the hazard until the car stops, is called the stopping distance. It comes in two parts."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "First, the driver has to notice the hazard and react before pressing the brake. The distance travelled in that time is called the thinking distance."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "Then the brakes are on and the car slows down. The distance travelled while braking, until the car stops, is called the braking distance."
+    },
+    {
+     "id": "1.6",
+     "type": "say",
+     "text": "Stopping distance = thinking distance + braking distance."
+    },
+    {
+     "id": "1.7",
+     "type": "ask",
+     "kind": "number",
+     "question": "A car's thinking distance is 12 m and its braking distance is 24 m. What is its stopping distance, in m?",
+     "answer": {
+      "value": 36,
+      "unit": "m",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 12,
+       "branch": "subtract"
+      },
+      {
+       "value": 2,
+       "branch": "divide"
+      },
+      {
+       "value": 288,
+       "branch": "times"
+      }
+     ],
+     "right": "Yes: 12 + 24 = 36 m.",
+     "wrong": {
+      "other": "Not quite: 36 m. Add the two parts: 12 + 24 = 36 m.",
+      "subtract": "Not quite: 36 m. The stopping distance is both parts added together: 12 + 24 = 36 m.",
+      "divide": "Not quite: 36 m. Add the two parts: 12 + 24 = 36 m.",
+      "times": "Not quite: 36 m. Add the two parts, do not multiply them: 12 + 24 = 36 m."
+     },
+     "idk": [
+      {
+       "hint": "Stopping distance = thinking distance + braking distance."
+      }
+     ],
+     "answerWhy": "Stopping distance = thinking distance + braking distance = 12 + 24 = 36 m."
+    },
+    {
+     "id": "1.8",
+     "type": "say",
+     "text": "While the driver is still reacting, the car has not slowed at all. So thinking distance = speed × the time the driver takes to react."
+    },
+    {
+     "id": "1.9",
+     "type": "ask",
+     "kind": "number",
+     "question": "A car travels at 20 m/s. The driver takes 0.6 s to react. What is the thinking distance, in m?",
+     "answer": {
+      "value": 12,
+      "unit": "m",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 33.3,
+       "branch": "divide"
+      },
+      {
+       "value": 20.6,
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 20 × 0.6 = 12 m.",
+     "wrong": {
+      "other": "Not quite: 12 m. Distance = speed × time = 20 × 0.6 = 12 m.",
+      "divide": "Not quite: 12 m. Multiply the speed by the time: 20 × 0.6 = 12 m.",
+      "add": "Not quite: 12 m. Multiply the speed by the time, do not add them: 20 × 0.6 = 12 m."
+     },
+     "idk": [
+      {
+       "hint": "Distance = speed × time. Multiply 20 by 0.6."
+      }
+     ],
+     "answerWhy": "Thinking distance = speed × time to react = 20 × 0.6 = 12 m."
+    },
+    {
+     "id": "1.10",
+     "type": "say",
+     "text": "Both parts grow with speed. At 30 mph, a typical stopping distance is about 23 m. At 70 mph it is about 96 m: about four times as far, at just over twice the speed."
+    },
+    {
+     "id": "1.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A graph shows stopping distance against speed for a car. The line curves upwards, getting steeper as the speed goes up. What does that tell you?",
+     "options": [
+      {
+       "text": "Each extra 10 mph adds more distance than the last",
+       "branch": "right"
+      },
+      {
+       "text": "Stopping distance is directly proportional to speed",
+       "branch": "prop"
+      },
+      {
+       "text": "The car stops more quickly at high speed",
+       "branch": "quick"
+      }
+     ],
+     "right": "Yes: the curve gets steeper, so each extra bit of speed adds more stopping distance than the one before.",
+     "wrong": {
+      "other": "Not quite: each extra 10 mph adds more distance than the last.",
+      "prop": "Not quite: directly proportional would be a straight line through the origin. This line curves upwards, so each extra bit of speed adds more distance.",
+      "quick": "Not quite: the distance gets longer at higher speed, not shorter. The steepening curve means each extra bit of speed adds more distance."
+     },
+     "idk": [
+      {
+       "hint": "A steeper part of the line means the distance rises more for the same rise in speed."
+      }
+     ],
+     "answerWhy": "A curve that gets steeper means each extra bit of speed adds more stopping distance than the last, so it is not directly proportional."
+    },
+    {
+     "id": "1.12",
+     "type": "own",
+     "prompt": "In one line: what two parts make up a stopping distance?",
+     "points": [
+      "the thinking distance, while the driver reacts",
+      "the braking distance, while the brakes slow the car"
+     ],
+     "idk": "No problem. A good line would be: stopping distance is the thinking distance, while the driver reacts, plus the braking distance, while the brakes slow the car."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Factors affecting reaction time and thinking distance",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "The time between seeing a hazard and pressing the brake is called the reaction time. For most people it is between about 0.2 s and 0.9 s."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "Some things make reaction time longer: being tired, drinking alcohol and taking some drugs. Distractions, such as using a phone, also make a driver take longer to react."
+    },
+    {
+     "id": "2.3",
+     "type": "ask",
+     "kind": "number",
+     "question": "A driver at 15 m/s has a reaction time of 0.5 s. When tired, it is 0.9 s. How much longer is the thinking distance when tired, in m?",
+     "answer": {
+      "value": 6,
+      "unit": "m",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 13.5,
+       "branch": "tired"
+      },
+      {
+       "value": 7.5,
+       "branch": "alert"
+      }
+     ],
+     "right": "Yes: alert, 15 × 0.5 = 7.5 m; tired, 15 × 0.9 = 13.5 m. That is 6 m longer.",
+     "wrong": {
+      "other": "Not quite: 6 m. Alert: 15 × 0.5 = 7.5 m. Tired: 15 × 0.9 = 13.5 m. The difference is 6 m.",
+      "tired": "Not quite: 13.5 m is the tired thinking distance. The alert one is 15 × 0.5 = 7.5 m, so it is 13.5 − 7.5 = 6 m longer.",
+      "alert": "Not quite: 7.5 m is the alert thinking distance. The tired one is 15 × 0.9 = 13.5 m, so it is 6 m longer."
+     },
+     "idk": [
+      {
+       "hint": "Work out each thinking distance as speed × reaction time, then take one from the other."
+      }
+     ],
+     "answerWhy": "Alert: 15 × 0.5 = 7.5 m. Tired: 15 × 0.9 = 13.5 m. So tiredness adds 13.5 − 7.5 = 6 m."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "Say a reaction time is longer, not slower: it is a time. A longer reaction time means a longer thinking distance at the same speed."
+    },
+    {
+     "id": "2.5",
+     "type": "say",
+     "text": "You can measure reaction time with a ruler. Someone holds a ruler just above your open hand and drops it without warning. You catch it as fast as you can."
+    },
+    {
+     "id": "2.6",
+     "type": "say",
+     "text": "The further the ruler falls before you catch it, the longer your reaction time. A table turns the distance it fell into a time."
+    },
+    {
+     "id": "2.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "In the ruler test, how could you make the result for one person more reliable?",
+     "options": [
+      {
+       "text": "Repeat it several times and find the mean",
+       "branch": "right"
+      },
+      {
+       "text": "Use a longer ruler",
+       "branch": "longer"
+      },
+      {
+       "text": "Drop it from higher up",
+       "branch": "higher"
+      }
+     ],
+     "right": "Yes: repeating and taking the mean evens out lucky or unlucky catches.",
+     "wrong": {
+      "other": "Not quite: repeat it several times and find the mean.",
+      "longer": "Not quite: a longer ruler does not make one catch less random. Repeat the test and find the mean.",
+      "higher": "Not quite: the ruler should start in the same place each time. Repeat the test and find the mean."
+     },
+     "idk": [
+      {
+       "hint": "One catch can be lucky or unlucky. How could you even that out?"
+      }
+     ],
+     "answerWhy": "Repeating the test several times and finding the mean evens out lucky and unlucky catches."
+    },
+    {
+     "id": "2.8",
+     "type": "own",
+     "prompt": "In one line: what makes a driver's thinking distance longer?",
+     "points": [
+      "a longer reaction time, from tiredness, alcohol, drugs or distractions",
+      "a higher speed"
+     ],
+     "idk": "No problem. A good line would be: a longer reaction time, from tiredness, alcohol, drugs or distractions, or a higher speed, makes the thinking distance longer."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Factors affecting braking distance",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Braking distance depends on how hard the brakes slow the car. The force the brakes apply to slow the car down is called the braking force."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "The brakes slow the wheels, and the tyres grip the road. That grip is friction: the force between two surfaces that stops them sliding over each other."
+    },
+    {
+     "id": "3.3",
+     "type": "say",
+     "text": "Speed matters most. For the same braking force, doubling the speed makes the braking distance four times as long."
+    },
+    {
+     "id": "3.4",
+     "type": "ask",
+     "kind": "number",
+     "question": "A car's braking distance at 15 m/s is 18 m. On the same road, with the same braking force, what is its braking distance at 30 m/s, in m?",
+     "answer": {
+      "value": 72,
+      "unit": "m",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 36,
+       "branch": "double"
+      },
+      {
+       "value": 18,
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: double the speed gives four times the braking distance: 4 × 18 = 72 m.",
+     "wrong": {
+      "other": "Not quite: 72 m. Double the speed means four times the braking distance: 4 × 18 = 72 m.",
+      "double": "Not quite: 72 m. Braking distance does not just double. Double the speed gives four times the distance: 4 × 18 = 72 m.",
+      "same": "Not quite: 72 m. A faster car needs further to stop. Double the speed gives four times the distance: 4 × 18 = 72 m."
+     },
+     "idk": [
+      {
+       "hint": "30 m/s is double 15 m/s. For the same braking force, what does doubling the speed do to the braking distance?"
+      }
+     ],
+     "answerWhy": "Doubling the speed makes the braking distance four times as long: 4 × 18 = 72 m."
+    },
+    {
+     "id": "3.5",
+     "type": "say",
+     "text": "Wet or icy roads cut the friction between tyres and road, and so do worn tyres with little tread. Worn brakes apply less force. Each of these makes the braking distance longer."
+    },
+    {
+     "id": "3.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Which of these makes a car's braking distance longer?",
+     "options": [
+      {
+       "text": "Worn tyres",
+       "branch": "right"
+      },
+      {
+       "text": "A tired driver",
+       "branch": "tired"
+      },
+      {
+       "text": "A driver using a phone",
+       "branch": "phone"
+      }
+     ],
+     "right": "Yes: worn tyres grip the road less, so there is less friction and the car needs further to stop.",
+     "wrong": {
+      "other": "Not quite: worn tyres.",
+      "tired": "Not quite: tiredness makes the reaction time longer, so it affects the thinking distance. Worn tyres affect the braking distance.",
+      "phone": "Not quite: a distraction makes the reaction time longer, so it affects the thinking distance. Worn tyres affect the braking distance."
+     },
+     "idk": [
+      {
+       "hint": "Braking distance is about the car and the road, once the brakes are on. Which of these is about the car?"
+      }
+     ],
+     "answerWhy": "Worn tyres reduce the friction with the road once the brakes are on, so they make the braking distance longer."
+    },
+    {
+     "id": "3.7",
+     "type": "say",
+     "text": "In an emergency, a driver may need to stop within a short distance. The faster the car, the bigger the braking force it needs to stop in that distance."
+    },
+    {
+     "id": "3.8",
+     "type": "own",
+     "prompt": "In one line: name two things that make a braking distance longer.",
+     "points": [
+      "wet or icy roads or worn tyres, which reduce friction",
+      "a higher speed"
+     ],
+     "idk": "No problem. A good line would be: a higher speed makes the braking distance longer, and so do wet or icy roads and worn tyres, which reduce friction."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Energy and braking",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "Now, where does the energy go? The energy a car has because it is moving is called kinetic energy. The faster it goes, the more kinetic energy it has."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "When the brakes are on, the friction between the brakes and the wheel does work. That work transfers the car's kinetic energy to the thermal store of the brakes, so the brakes get hot."
+    },
+    {
+     "id": "4.3",
+     "type": "ask",
+     "kind": "tap",
+     "question": "As a car brakes to a stop, where does most of its kinetic energy go?",
+     "options": [
+      {
+       "text": "To the thermal store of the brakes",
+       "branch": "right"
+      },
+      {
+       "text": "Back into the fuel in the tank",
+       "branch": "fuel"
+      },
+      {
+       "text": "It is destroyed",
+       "branch": "destroyed"
+      }
+     ],
+     "right": "Yes: the work done by friction heats the brakes.",
+     "wrong": {
+      "other": "Not quite: to the thermal store of the brakes.",
+      "fuel": "Not quite: ordinary brakes cannot put energy back into fuel. The work done by friction heats the brakes.",
+      "destroyed": "Not quite: energy is never destroyed. It is transferred to the thermal store of the brakes."
+     },
+     "idk": [
+      {
+       "hint": "The brakes get hot when a car stops. What does that tell you?"
+      }
+     ],
+     "answerWhy": "The friction force does work on the brakes, transferring the kinetic energy to their thermal store, so they heat up."
+    },
+    {
+     "id": "4.4",
+     "type": "say",
+     "text": "Kinetic energy depends on speed squared: Ek = ½ m v², with Ek in joules, m in kg and v in m/s. Double the speed gives four times the kinetic energy to get rid of."
+    },
+    {
+     "id": "4.5",
+     "type": "say",
+     "text": "A bigger braking force gives a bigger deceleration. Very large decelerations are dangerous: the brakes can overheat, and the car can skid so the driver loses control."
+    },
+    {
+     "id": "4.6",
+     "type": "say",
+     "text": "Overheated brakes work less well, so the car takes longer to stop. This loss of braking from hot brakes is called brake fade."
+    },
+    {
+     "id": "4.7",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A 1000 kg car slows from 20 m/s to a stop in 4 s. What braking force acts on it?",
+     "steps": [
+      "Find the deceleration: a = Δv ÷ t = 20 ÷ 4 = 5 m/s².",
+      "Write the equation: F = m a.",
+      "Put in the numbers: F = 1000 × 5.",
+      "F = 5000 N."
+     ],
+     "answer": {
+      "value": 5000,
+      "unit": "N"
+     }
+    },
+    {
+     "id": "4.8",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A 1500 kg car slows from 30 m/s to a stop in 5 s. What braking force acts on it, in N?",
+     "answer": {
+      "value": 9000,
+      "unit": "N",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 45000,
+       "branch": "velocity"
+      },
+      {
+       "value": 6,
+       "branch": "accel"
+      },
+      {
+       "value": 300,
+       "branch": "mass"
+      }
+     ],
+     "right": "Yes: a = 30 ÷ 5 = 6 m/s², and F = 1500 × 6 = 9000 N.",
+     "wrong": {
+      "other": "Not quite: 9000 N. a = 30 ÷ 5 = 6 m/s², then F = m a = 1500 × 6 = 9000 N.",
+      "velocity": "Not quite: 9000 N. Find the deceleration first: 30 ÷ 5 = 6 m/s². Then F = 1500 × 6 = 9000 N.",
+      "accel": "Not quite: 6 m/s² is the deceleration. Multiply by the mass: F = 1500 × 6 = 9000 N.",
+      "mass": "Not quite: 9000 N. Find the deceleration first, 30 ÷ 5 = 6 m/s², then F = m a = 1500 × 6 = 9000 N."
+     },
+     "idk": [
+      {
+       "hint": "First find the deceleration: change in velocity ÷ time. Then use F = m a."
+      }
+     ],
+     "answerWhy": "a = 30 ÷ 5 = 6 m/s², so F = m a = 1500 × 6 = 9000 N."
+    },
+    {
+     "id": "4.9",
+     "type": "own",
+     "prompt": "In one line: what happens to a car's energy when it brakes?",
+     "points": [
+      "friction in the brakes does work",
+      "kinetic energy is transferred to thermal energy in the brakes"
+     ],
+     "idk": "No problem. A good line would be: the friction in the brakes does work, transferring the car's kinetic energy to the thermal store of the brakes."
+    },
+    {
+     "id": "4.10",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "4.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: what is the stopping distance?",
+     "options": [
+      {
+       "text": "Thinking distance + braking distance",
+       "branch": "right"
+      },
+      {
+       "text": "Thinking distance × braking distance",
+       "branch": "times"
+      },
+      {
+       "text": "Braking distance − thinking distance",
+       "branch": "minus"
+      }
+     ],
+     "right": "Yes: the two parts added together.",
+     "wrong": {
+      "other": "Not quite: thinking distance + braking distance.",
+      "times": "Not quite: the two parts are added, not multiplied.",
+      "minus": "Not quite: the two parts are added, not subtracted."
+     },
+     "idk": [
+      {
+       "hint": "The car travels both distances, one after the other."
+      }
+     ],
+     "answerWhy": "Stopping distance = thinking distance + braking distance.",
+     "quiz": true
+    },
+    {
+     "id": "4.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 6: which of these affects the thinking distance?",
+     "options": [
+      {
+       "text": "Tiredness",
+       "branch": "right"
+      },
+      {
+       "text": "Icy roads",
+       "branch": "ice"
+      },
+      {
+       "text": "Worn brakes",
+       "branch": "brakes"
+      }
+     ],
+     "right": "Yes: tiredness makes the reaction time longer.",
+     "wrong": {
+      "other": "Not quite: tiredness.",
+      "ice": "Not quite: icy roads affect the braking distance. Tiredness affects the thinking distance.",
+      "brakes": "Not quite: worn brakes affect the braking distance. Tiredness affects the thinking distance."
+     },
+     "idk": [
+      {
+       "hint": "Thinking distance depends on the driver."
+      }
+     ],
+     "answerWhy": "Tiredness makes the reaction time longer, so it makes the thinking distance longer.",
+     "quiz": true
+    },
+    {
+     "id": "4.13",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: a car travels at 25 m/s and the driver's reaction time is 0.4 s. What is the thinking distance?",
+     "options": [
+      {
+       "text": "10 m",
+       "branch": "right"
+      },
+      {
+       "text": "62.5 m",
+       "branch": "divide"
+      },
+      {
+       "text": "25.4 m",
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 25 × 0.4 = 10 m.",
+     "wrong": {
+      "other": "Not quite: 10 m.",
+      "divide": "Not quite: multiply the speed by the reaction time: 25 × 0.4 = 10 m.",
+      "add": "Not quite: multiply, do not add: 25 × 0.4 = 10 m."
+     },
+     "idk": [
+      {
+       "hint": "Thinking distance = speed × reaction time."
+      }
+     ],
+     "answerWhy": "Thinking distance = speed × reaction time = 25 × 0.4 = 10 m.",
+     "quiz": true
+    },
+    {
+     "id": "4.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: a car's speed doubles, with the same braking force. What happens to its braking distance?",
+     "options": [
+      {
+       "text": "It becomes four times as long",
+       "branch": "right"
+      },
+      {
+       "text": "It becomes twice as long",
+       "branch": "double"
+      },
+      {
+       "text": "It stays the same",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: double the speed gives four times the braking distance.",
+     "wrong": {
+      "other": "Not quite: four times as long.",
+      "double": "Not quite: braking distance goes up with speed squared, so it becomes four times as long.",
+      "same": "Not quite: a faster car needs further to stop: four times as far at double the speed."
+     },
+     "idk": [
+      {
+       "hint": "Kinetic energy depends on speed squared."
+      }
+     ],
+     "answerWhy": "Kinetic energy goes up with speed squared, so double the speed gives four times the braking distance.",
+     "quiz": true
+    },
+    {
+     "id": "4.15",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: why does an icy road make the braking distance longer?",
+     "options": [
+      {
+       "text": "There is less friction between tyres and road",
+       "branch": "right"
+      },
+      {
+       "text": "The driver takes longer to react",
+       "branch": "react"
+      },
+      {
+       "text": "The car gains mass on the ice",
+       "branch": "mass"
+      }
+     ],
+     "right": "Yes: less friction means less braking force.",
+     "wrong": {
+      "other": "Not quite: less friction between tyres and road.",
+      "react": "Not quite: reaction time affects the thinking distance. Ice cuts the friction, so the braking force is smaller.",
+      "mass": "Not quite: the car's mass does not change. Ice cuts the friction, so the braking force is smaller."
+     },
+     "idk": [
+      {
+       "hint": "Ice is slippery. Which force does that reduce?"
+      }
+     ],
+     "answerWhy": "Ice reduces the friction between the tyres and the road, so the braking force is smaller and the car needs further to stop.",
+     "quiz": true
+    },
+    {
+     "id": "4.16",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: why do brakes get hot when a car stops?",
+     "options": [
+      {
+       "text": "Friction does work, moving kinetic energy to them",
+       "branch": "right"
+      },
+      {
+       "text": "The engine heats them up",
+       "branch": "engine"
+      },
+      {
+       "text": "Air resistance heats them up",
+       "branch": "air"
+      }
+     ],
+     "right": "Yes: the work done by friction transfers kinetic energy to the brakes' thermal store.",
+     "wrong": {
+      "other": "Not quite: friction does work, moving kinetic energy to them.",
+      "engine": "Not quite: the heat comes from the car's kinetic energy, transferred by the work done by friction.",
+      "air": "Not quite: the heat comes from the friction in the brakes, which transfers the car's kinetic energy."
+     },
+     "idk": [
+      {
+       "hint": "The car loses kinetic energy as it stops. Where does it go?"
+      }
+     ],
+     "answerWhy": "The friction force in the brakes does work, transferring the car's kinetic energy to the thermal store of the brakes.",
+     "quiz": true
+    },
+    {
+     "id": "4.17",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

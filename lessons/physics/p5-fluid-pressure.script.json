@@ -1,0 +1,719 @@
+{
+ "lesson": "p5-fluid-pressure",
+ "version": 1,
+ "about": "The scripted AI lesson for p5-fluid-pressure (2026-11-28, Phase C, brief docs/briefs/2026-11-27-phase-c-physics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p5-moments and p3-density.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "Pressure in a fluid: p = F/A",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about how liquids and gases push on things: why your ears hurt at the bottom of a pool, and why a ship floats."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from earlier lessons. A 40 N force acts 0.5 m from a pivot. What is its moment?",
+     "options": [
+      {
+       "text": "20 Nm",
+       "branch": "right"
+      },
+      {
+       "text": "80 Nm",
+       "branch": "divide"
+      },
+      {
+       "text": "40.5 Nm",
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: M = F d = 40 × 0.5 = 20 Nm.",
+     "wrong": {
+      "other": "Not quite: 20 Nm.",
+      "divide": "Not quite: multiply the force by the distance: 40 × 0.5 = 20 Nm.",
+      "add": "Not quite: multiply, do not add: 40 × 0.5 = 20 Nm."
+     },
+     "idk": [
+      {
+       "hint": "Moment = force × distance from the pivot."
+      }
+     ],
+     "answerWhy": "M = F d = 40 × 0.5 = 20 Nm."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: a block has a mass of 2 kg and a volume of 0.001 m³. What is its density?",
+     "options": [
+      {
+       "text": "2000 kg/m³",
+       "branch": "right"
+      },
+      {
+       "text": "0.002 kg/m³",
+       "branch": "times"
+      },
+      {
+       "text": "0.0005 kg/m³",
+       "branch": "flip"
+      }
+     ],
+     "right": "Yes: density = mass ÷ volume = 2 ÷ 0.001 = 2000 kg/m³.",
+     "wrong": {
+      "other": "Not quite: 2000 kg/m³.",
+      "times": "Not quite: divide the mass by the volume: 2 ÷ 0.001 = 2000 kg/m³.",
+      "flip": "Not quite: divide the mass by the volume, not the other way round: 2 ÷ 0.001 = 2000 kg/m³."
+     },
+     "idk": [
+      {
+       "hint": "Density = mass ÷ volume."
+      }
+     ],
+     "answerWhy": "Density = mass ÷ volume = 2 ÷ 0.001 = 2000 kg/m³."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. A liquid or a gas is called a fluid, because it can flow."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "The particles of a fluid move about and hit every surface they touch. Together their hits push on the surface at right angles to it. At right angles to a surface is called normal to it."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "The force on each square metre of a surface is called the pressure. The equation is p = F ÷ A: pressure = force normal to a surface ÷ area of that surface."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "F is the force in newtons (N) and A is the area in square metres (m²). Pressure p is measured in a unit called the pascal (Pa): 1 Pa is 1 N/m²."
+    },
+    {
+     "id": "1.6",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A force of 600 N acts on an area of 0.02 m². What is the pressure?",
+     "steps": [
+      "Write the equation: p = F ÷ A.",
+      "Put in the numbers: p = 600 ÷ 0.02.",
+      "p = 30 000 Pa."
+     ],
+     "answer": {
+      "value": 30000,
+      "unit": "Pa"
+     }
+    },
+    {
+     "id": "1.7",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A 500 N box rests on a face 0.5 m long and 0.4 m wide. What pressure does it put on the floor, in Pa?",
+     "answer": {
+      "value": 2500,
+      "unit": "Pa",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 100,
+       "branch": "times"
+      },
+      {
+       "value": 1000,
+       "branch": "length"
+      }
+     ],
+     "right": "Yes: the area is 0.5 × 0.4 = 0.2 m², and 500 ÷ 0.2 = 2500 Pa.",
+     "wrong": {
+      "other": "Not quite: 2500 Pa. Area = 0.5 × 0.4 = 0.2 m², and p = 500 ÷ 0.2 = 2500 Pa.",
+      "times": "Not quite: 2500 Pa. Divide the force by the area: 500 ÷ 0.2 = 2500 Pa.",
+      "length": "Not quite: 2500 Pa. Use the area of the face, 0.5 × 0.4 = 0.2 m², not one length. Then 500 ÷ 0.2 = 2500 Pa."
+     },
+     "idk": [
+      {
+       "hint": "First find the area of the face: length × width. Then p = F ÷ A."
+      }
+     ],
+     "answerWhy": "The area is 0.5 × 0.4 = 0.2 m², so p = F ÷ A = 500 ÷ 0.2 = 2500 Pa."
+    },
+    {
+     "id": "1.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "The same person stands in flat trainers, then in narrow high heels. When is the pressure on the floor bigger?",
+     "options": [
+      {
+       "text": "In the high heels",
+       "branch": "right"
+      },
+      {
+       "text": "In the trainers",
+       "branch": "trainers"
+      },
+      {
+       "text": "It is the same",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: the same force on a smaller area gives a bigger pressure.",
+     "wrong": {
+      "other": "Not quite: in the high heels.",
+      "trainers": "Not quite: trainers spread the force over a bigger area, so the pressure is smaller. Heels give the bigger pressure.",
+      "same": "Not quite: the force is the same, but the heels have a smaller area, so the pressure is bigger."
+     },
+     "idk": [
+      {
+       "hint": "The weight is the same both times. Which shoes have the smaller area touching the floor?"
+      }
+     ],
+     "answerWhy": "The force is the same, but the heels touch a smaller area, so p = F ÷ A is bigger."
+    },
+    {
+     "id": "1.9",
+     "type": "say",
+     "text": "In a fluid, the pressure pushes in every direction: down, up and sideways. It pushes at right angles on every surface it touches."
+    },
+    {
+     "id": "1.10",
+     "type": "own",
+     "prompt": "In one line: what is pressure?",
+     "points": [
+      "the force normal to a surface",
+      "divided by the area of the surface"
+     ],
+     "idk": "No problem. A good line would be: pressure is the force normal to a surface divided by the area of that surface."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Pressure in a liquid increases with depth",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "Dive to the bottom of a pool and your ears feel the pressure. The deeper you go, the taller the column of water above you, so more weight of water pushes down."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "Pressure also grows with the density of the liquid. A denser liquid has more mass in each column, so more weight above the same point."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "The equation is p = h ρ g: pressure = height of the column × density of the liquid × gravitational field strength. h is in metres (m), ρ (rho) in kg/m³ and g in N/kg. You are given it."
+    },
+    {
+     "id": "2.4",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "Water has a density of 1000 kg/m³, and g = 9.8 N/kg. What is the pressure due to the water 2 m below the surface?",
+     "steps": [
+      "Write the equation: p = h ρ g.",
+      "Put in the numbers: p = 2 × 1000 × 9.8.",
+      "p = 19 600 Pa."
+     ],
+     "answer": {
+      "value": 19600,
+      "unit": "Pa"
+     }
+    },
+    {
+     "id": "2.5",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. What is the pressure due to the water 5 m below the surface in the same pool, in Pa?",
+     "answer": {
+      "value": 49000,
+      "unit": "Pa",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 5000,
+       "branch": "nog"
+      },
+      {
+       "value": 19600,
+       "branch": "two"
+      }
+     ],
+     "right": "Yes: p = 5 × 1000 × 9.8 = 49 000 Pa.",
+     "wrong": {
+      "other": "Not quite: 49 000 Pa. p = h ρ g = 5 × 1000 × 9.8 = 49 000 Pa.",
+      "nog": "Not quite: 49 000 Pa. Remember to multiply by g as well: 5 × 1000 × 9.8 = 49 000 Pa.",
+      "two": "Not quite: 19 600 Pa is the pressure at 2 m. At 5 m: 5 × 1000 × 9.8 = 49 000 Pa."
+     },
+     "idk": [
+      {
+       "hint": "Use p = h ρ g with h = 5."
+      }
+     ],
+     "answerWhy": "p = h ρ g = 5 × 1000 × 9.8 = 49 000 Pa."
+    },
+    {
+     "id": "2.6",
+     "type": "ask",
+     "kind": "number",
+     "question": "What is the difference in pressure between 2 m and 5 m below the surface, in Pa?",
+     "answer": {
+      "value": 29400,
+      "unit": "Pa",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 49000,
+       "branch": "deep"
+      },
+      {
+       "value": 68600,
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 49 000 − 19 600 = 29 400 Pa.",
+     "wrong": {
+      "other": "Not quite: 29 400 Pa. 49 000 − 19 600 = 29 400 Pa.",
+      "deep": "Not quite: 49 000 Pa is the pressure at 5 m. Take away the pressure at 2 m: 49 000 − 19 600 = 29 400 Pa.",
+      "add": "Not quite: a difference means subtract: 49 000 − 19 600 = 29 400 Pa."
+     },
+     "idk": [
+      {
+       "hint": "Take the pressure at 2 m away from the pressure at 5 m."
+      }
+     ],
+     "answerWhy": "The difference is 49 000 − 19 600 = 29 400 Pa."
+    },
+    {
+     "id": "2.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Three containers of different shapes are filled with water to the same depth. Where is the pressure at the bottom biggest?",
+     "options": [
+      {
+       "text": "It is the same in all three",
+       "branch": "right"
+      },
+      {
+       "text": "In the widest one",
+       "branch": "wide"
+      },
+      {
+       "text": "In the narrowest one",
+       "branch": "narrow"
+      }
+     ],
+     "right": "Yes: the pressure depends on the depth and the density, not the shape.",
+     "wrong": {
+      "other": "Not quite: it is the same in all three.",
+      "wide": "Not quite: p = h ρ g has no width in it. Same depth and same liquid means the same pressure.",
+      "narrow": "Not quite: p = h ρ g has no width in it. Same depth and same liquid means the same pressure."
+     },
+     "idk": [
+      {
+       "hint": "Look at p = h ρ g. Is there anything in it about the shape of the container?"
+      }
+     ],
+     "answerWhy": "Pressure depends only on depth, density and g, so at the same depth of water the pressure is the same in all three."
+    },
+    {
+     "id": "2.8",
+     "type": "own",
+     "prompt": "In one line: why is the pressure bigger deeper in a liquid?",
+     "points": [
+      "there is a taller column of liquid above",
+      "so more weight pushes down"
+     ],
+     "idk": "No problem. A good line would be: deeper down there is a taller column of liquid above, so more weight pushes down on each square metre."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Upthrust, floating and sinking",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Now think of an object under water. Its bottom surface is deeper than its top surface, so the water pushes up on the bottom harder than it pushes down on the top."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "The difference between the two pushes gives a resultant force upwards on the object. This upward force from a liquid is called upthrust."
+    },
+    {
+     "id": "3.3",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A brick is held under water. Why is there an upthrust on it?",
+     "options": [
+      {
+       "text": "The pressure on its bottom is bigger than on its top",
+       "branch": "right"
+      },
+      {
+       "text": "Water pushes only upwards",
+       "branch": "up"
+      },
+      {
+       "text": "The brick loses weight under water",
+       "branch": "weight"
+      }
+     ],
+     "right": "Yes: its bottom is deeper, so the pressure there is bigger, giving an upward resultant force.",
+     "wrong": {
+      "other": "Not quite: the pressure on its bottom is bigger than on its top.",
+      "up": "Not quite: water pushes on every surface, from every side. The push up on the bottom is bigger than the push down on the top.",
+      "weight": "Not quite: the brick's weight does not change. The water pushes up on its bottom harder than down on its top."
+     },
+     "idk": [
+      {
+       "hint": "Which surface of the brick is deeper: the top or the bottom?"
+      }
+     ],
+     "answerWhy": "The bottom is deeper, so the pressure there is bigger than on the top, which gives a resultant force upwards."
+    },
+    {
+     "id": "3.4",
+     "type": "say",
+     "text": "An object floats when the upthrust equals its weight. It sinks when its weight is bigger than the upthrust, even once it is fully under."
+    },
+    {
+     "id": "3.5",
+     "type": "say",
+     "text": "An object less dense than the liquid floats, and one denser than the liquid sinks. A steel ship floats because, with the air inside its hollow shape, it is less dense than water overall."
+    },
+    {
+     "id": "3.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A large log floats, but a small stone sinks. Why?",
+     "options": [
+      {
+       "text": "The log is less dense than water; the stone is denser",
+       "branch": "right"
+      },
+      {
+       "text": "Big things always float",
+       "branch": "big"
+      },
+      {
+       "text": "The stone is heavier than the log",
+       "branch": "heavy"
+      }
+     ],
+     "right": "Yes: floating depends on density, not size.",
+     "wrong": {
+      "other": "Not quite: the log is less dense than water, and the stone is denser.",
+      "big": "Not quite: big things can sink too, like a large rock. It depends on density: the log is less dense than water.",
+      "heavy": "Not quite: the log is heavier than the stone. What matters is density: the log is less dense than water, the stone denser."
+     },
+     "idk": [
+      {
+       "hint": "Is it about size, or about how much mass is packed into each bit?"
+      }
+     ],
+     "answerWhy": "Floating depends on density: the log is less dense than water, so it floats, and the stone is denser, so it sinks."
+    },
+    {
+     "id": "3.7",
+     "type": "own",
+     "prompt": "In one line: when does an object float?",
+     "points": [
+      "when the upthrust equals its weight",
+      "when it is less dense than the liquid"
+     ],
+     "idk": "No problem. A good line would be: an object floats when the upthrust equals its weight, which happens when it is less dense than the liquid."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Atmospheric pressure",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "The thin layer of air round the Earth is called the atmosphere. It is very thin compared with the size of the Earth."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "Air molecules are always hitting every surface. Their hits make a pressure called atmospheric pressure."
+    },
+    {
+     "id": "4.3",
+     "type": "say",
+     "text": "Higher up, there is less air above a surface, so the weight of air above it is smaller. So the pressure falls as height increases. The air also gets less dense higher up."
+    },
+    {
+     "id": "4.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A climber goes up a high mountain. Which is true of the air pressure at the top?",
+     "options": [
+      {
+       "text": "It is lower: there is less air above",
+       "branch": "right"
+      },
+      {
+       "text": "It is higher: it is closer to space",
+       "branch": "higher"
+      },
+      {
+       "text": "It is the same: air is everywhere",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: less air above means less weight of air, so lower pressure.",
+     "wrong": {
+      "other": "Not quite: it is lower, as there is less air above.",
+      "higher": "Not quite: space has almost no air. Higher up, there is less air above, so the pressure is lower.",
+      "same": "Not quite: there is air everywhere, but less of it above you higher up. So the pressure is lower."
+     },
+     "idk": [
+      {
+       "hint": "At the top, is there more or less air above the climber?"
+      }
+     ],
+     "answerWhy": "At the top of the mountain there is less air above, so less weight of air and a lower pressure."
+    },
+    {
+     "id": "4.5",
+     "type": "own",
+     "prompt": "In one line: why does air pressure fall as you go higher?",
+     "points": [
+      "there is less air above",
+      "so less weight of air pushes down"
+     ],
+     "idk": "No problem. A good line would be: higher up there is less air above you, so a smaller weight of air pushes down and the pressure is lower."
+    },
+    {
+     "id": "4.6",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "4.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: which unit is pressure measured in?",
+     "options": [
+      {
+       "text": "Pascals (Pa)",
+       "branch": "right"
+      },
+      {
+       "text": "Newtons (N)",
+       "branch": "newton"
+      },
+      {
+       "text": "Newton-metres (Nm)",
+       "branch": "nm"
+      }
+     ],
+     "right": "Yes: pascals, where 1 Pa = 1 N/m².",
+     "wrong": {
+      "other": "Not quite: pascals.",
+      "newton": "Not quite: newtons measure force. Pressure is in pascals.",
+      "nm": "Not quite: newton-metres measure moments. Pressure is in pascals."
+     },
+     "idk": [
+      {
+       "hint": "Pressure has its own unit, named after a scientist."
+      }
+     ],
+     "answerWhy": "Pressure is measured in pascals (Pa): 1 Pa = 1 N/m².",
+     "quiz": true
+    },
+    {
+     "id": "4.8",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 6: a force of 100 N acts on an area of 0.5 m². What is the pressure?",
+     "options": [
+      {
+       "text": "200 Pa",
+       "branch": "right"
+      },
+      {
+       "text": "50 Pa",
+       "branch": "times"
+      },
+      {
+       "text": "100.5 Pa",
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 100 ÷ 0.5 = 200 Pa.",
+     "wrong": {
+      "other": "Not quite: 200 Pa.",
+      "times": "Not quite: divide the force by the area: 100 ÷ 0.5 = 200 Pa.",
+      "add": "Not quite: divide the force by the area: 100 ÷ 0.5 = 200 Pa."
+     },
+     "idk": [
+      {
+       "hint": "p = F ÷ A."
+      }
+     ],
+     "answerWhy": "p = F ÷ A = 100 ÷ 0.5 = 200 Pa.",
+     "quiz": true
+    },
+    {
+     "id": "4.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: which way does the pressure in a fluid push on a surface?",
+     "options": [
+      {
+       "text": "At right angles to the surface",
+       "branch": "right"
+      },
+      {
+       "text": "Only downwards",
+       "branch": "down"
+      },
+      {
+       "text": "Along the surface",
+       "branch": "along"
+      }
+     ],
+     "right": "Yes: normal, at right angles, to any surface.",
+     "wrong": {
+      "other": "Not quite: at right angles to the surface.",
+      "down": "Not quite: fluid pressure pushes in every direction, at right angles to each surface.",
+      "along": "Not quite: fluid pressure pushes at right angles to a surface, not along it."
+     },
+     "idk": [
+      {
+       "hint": "Think of the word normal."
+      }
+     ],
+     "answerWhy": "The pressure in a fluid gives a force normal, at right angles, to any surface.",
+     "quiz": true
+    },
+    {
+     "id": "4.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: which two things make the pressure in a liquid bigger?",
+     "options": [
+      {
+       "text": "More depth and a denser liquid",
+       "branch": "right"
+      },
+      {
+       "text": "A wider container and more depth",
+       "branch": "wide"
+      },
+      {
+       "text": "Less depth and a denser liquid",
+       "branch": "less"
+      }
+     ],
+     "right": "Yes: p = h ρ g, so more depth or more density means more pressure.",
+     "wrong": {
+      "other": "Not quite: more depth and a denser liquid.",
+      "wide": "Not quite: the width does not matter. Depth and density do.",
+      "less": "Not quite: less depth gives less pressure. More depth and a denser liquid give more."
+     },
+     "idk": [
+      {
+       "hint": "Look at p = h ρ g."
+      }
+     ],
+     "answerWhy": "p = h ρ g, so a greater depth (h) or a denser liquid (ρ) gives a bigger pressure.",
+     "quiz": true
+    },
+    {
+     "id": "4.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: what causes the upthrust on an object in water?",
+     "options": [
+      {
+       "text": "More pressure on its bottom than on its top",
+       "branch": "right"
+      },
+      {
+       "text": "Water pushing only upwards",
+       "branch": "up"
+      },
+      {
+       "text": "The object losing weight",
+       "branch": "weight"
+      }
+     ],
+     "right": "Yes: the deeper bottom surface feels more pressure.",
+     "wrong": {
+      "other": "Not quite: more pressure on its bottom than on its top.",
+      "up": "Not quite: water pushes from every side. The push up on the bottom is bigger than the push down on the top.",
+      "weight": "Not quite: the weight does not change. The pressure is bigger on the deeper bottom surface."
+     },
+     "idk": [
+      {
+       "hint": "Which surface of the object is deeper?"
+      }
+     ],
+     "answerWhy": "The bottom surface is deeper, so the pressure there is bigger, giving an upward resultant force: the upthrust.",
+     "quiz": true
+    },
+    {
+     "id": "4.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: which is true of atmospheric pressure higher above the ground?",
+     "options": [
+      {
+       "text": "It is lower",
+       "branch": "right"
+      },
+      {
+       "text": "It is higher",
+       "branch": "higher"
+      },
+      {
+       "text": "It is the same",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: there is less air above, so less weight of air.",
+     "wrong": {
+      "other": "Not quite: it is lower.",
+      "higher": "Not quite: higher up there is less air above, so the pressure is lower.",
+      "same": "Not quite: higher up there is less air above, so the pressure is lower."
+     },
+     "idk": [
+      {
+       "hint": "Is there more or less air above you higher up?"
+      }
+     ],
+     "answerWhy": "Higher up there is less air above a surface, so less weight of air and a lower atmospheric pressure.",
+     "quiz": true
+    },
+    {
+     "id": "4.13",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

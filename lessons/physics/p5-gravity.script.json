@@ -1,0 +1,622 @@
+{
+ "lesson": "p5-gravity",
+ "version": 1,
+ "about": "The scripted AI lesson for p5-gravity (2026-11-28, Phase C, brief docs/briefs/2026-11-27-phase-c-physics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p5-momentum and p5-forces-motion. Key point 1 calls g \"gravity's pull on each kilogram\": the term gravitational field is taught in key point 2, which then names g the gravitational field strength.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "Mass and weight",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about gravity: how hard it pulls on things, and how it keeps the Moon and satellites going round the Earth."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from earlier lessons. What is the momentum of a 2 kg ball moving at 3 m/s?",
+     "options": [
+      {
+       "text": "6 kg m/s",
+       "branch": "right"
+      },
+      {
+       "text": "1.5 kg m/s",
+       "branch": "divide"
+      },
+      {
+       "text": "5 kg m/s",
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: p = m v = 2 × 3 = 6 kg m/s.",
+     "wrong": {
+      "other": "Not quite: 6 kg m/s.",
+      "divide": "Not quite: multiply the two numbers: 2 × 3 = 6 kg m/s.",
+      "add": "Not quite: multiply, do not add: 2 × 3 = 6 kg m/s."
+     },
+     "idk": [
+      {
+       "hint": "Momentum = kilograms × velocity. Multiply 2 by 3."
+      }
+     ],
+     "answerWhy": "p = m v = 2 × 3 = 6 kg m/s."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: a skydiver is falling at a steady speed. Which is true?",
+     "options": [
+      {
+       "text": "Air resistance balances the pull of gravity",
+       "branch": "right"
+      },
+      {
+       "text": "The pull of gravity has stopped",
+       "branch": "stopped"
+      },
+      {
+       "text": "The pull of gravity is bigger",
+       "branch": "bigger"
+      }
+     ],
+     "right": "Yes: the forces balance, so the speed stays steady.",
+     "wrong": {
+      "other": "Not quite: air resistance balances the pull of gravity.",
+      "stopped": "Not quite: gravity still pulls. Air resistance has grown to balance it, so the speed is steady.",
+      "bigger": "Not quite: if gravity's pull were bigger, the skydiver would still be speeding up. The two forces balance."
+     },
+     "idk": [
+      {
+       "hint": "A steady speed means the forces balance."
+      }
+     ],
+     "answerWhy": "At a steady speed the forces balance: air resistance equals the pull of gravity."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. The amount of matter in an object is called mass. It is measured in kilograms (kg), and it is the same wherever the object is: on Earth, on the Moon or in space."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "The force of gravity pulling on an object is called weight. Weight is a force, so it is measured in newtons (N)."
+    },
+    {
+     "id": "1.4",
+     "type": "say",
+     "text": "How hard gravity pulls depends on where you are. Gravity's pull on each kilogram is written g, in newtons per kilogram (N/kg). On Earth g is about 9.8 N/kg; on the Moon it is about 1.6 N/kg."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "Weight = mass × g, or W = m g, with W in newtons (N), m in kilograms (kg) and g in N/kg."
+    },
+    {
+     "id": "1.6",
+     "type": "ask",
+     "kind": "number",
+     "question": "An astronaut has a mass of 70 kg. On the Moon, g = 1.6 N/kg. What is the astronaut's weight there, in N?",
+     "answer": {
+      "value": 112,
+      "unit": "N",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 43.75,
+       "branch": "divide"
+      },
+      {
+       "value": 686,
+       "branch": "earth"
+      },
+      {
+       "value": 71.6,
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: W = m g = 70 × 1.6 = 112 N.",
+     "wrong": {
+      "other": "Not quite: 112 N. W = m g = 70 × 1.6 = 112 N.",
+      "divide": "Not quite: 112 N. Multiply the mass by g: 70 × 1.6 = 112 N.",
+      "earth": "Not quite: 686 N is the weight on Earth, with g = 9.8 N/kg. On the Moon use g = 1.6: 70 × 1.6 = 112 N.",
+      "add": "Not quite: 112 N. Multiply the mass by g, do not add: 70 × 1.6 = 112 N."
+     },
+     "idk": [
+      {
+       "hint": "W = m g. Multiply 70 by the Moon's g, 1.6."
+      }
+     ],
+     "answerWhy": "W = m g = 70 × 1.6 = 112 N."
+    },
+    {
+     "id": "1.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "The astronaut flies back to Earth. Which is true of their mass on Earth?",
+     "options": [
+      {
+       "text": "It is the same, 70 kg",
+       "branch": "right"
+      },
+      {
+       "text": "It is bigger, as gravity is stronger",
+       "branch": "bigger"
+      },
+      {
+       "text": "It is 686 kg",
+       "branch": "weight"
+      }
+     ],
+     "right": "Yes: mass is the amount of matter, so it does not change. Only the weight changes.",
+     "wrong": {
+      "other": "Not quite: it is the same, 70 kg.",
+      "bigger": "Not quite: stronger gravity makes the weight bigger, not the mass. The mass stays 70 kg.",
+      "weight": "Not quite: 686 is the weight on Earth, in newtons. The mass stays 70 kg."
+     },
+     "idk": [
+      {
+       "hint": "Mass is the amount of matter. Does the astronaut gain any matter on the way back?"
+      }
+     ],
+     "answerWhy": "Mass is the amount of matter, so it stays 70 kg. Only the weight changes with g."
+    },
+    {
+     "id": "1.8",
+     "type": "say",
+     "text": "Far out in space, away from planets and stars, g is almost zero, so an object is almost weightless. Its mass has not changed at all."
+    },
+    {
+     "id": "1.9",
+     "type": "own",
+     "prompt": "In one line: what is the difference between mass and weight?",
+     "points": [
+      "mass is the amount of matter, the same everywhere",
+      "weight is the force of gravity on it, which changes with g"
+     ],
+     "idk": "No problem. A good line would be: mass is the amount of matter and is the same everywhere, but weight is the force of gravity on it, which changes with g."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Gravitational fields",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "Every object with mass pulls on every other one. The region around an object where another mass feels its pull is called a gravitational field."
+    },
+    {
+     "id": "2.2",
+     "type": "say",
+     "text": "The strength of the field at a place is g, which is called the gravitational field strength. Near the Earth's surface it is about 9.8 N/kg."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "Near the surface, the field has about the same strength and direction everywhere, pointing down. Further from the Earth, the field gets weaker."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "Field lines show a gravitational field. They point towards the centre of the Earth: the way a mass there would be pulled."
+    },
+    {
+     "id": "2.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A satellite moves from close to the Earth to much further away. Which is true of the gravitational field strength there?",
+     "options": [
+      {
+       "text": "It is weaker",
+       "branch": "right"
+      },
+      {
+       "text": "It is the same",
+       "branch": "same"
+      },
+      {
+       "text": "It is zero above the air",
+       "branch": "zero"
+      }
+     ],
+     "right": "Yes: the field gets weaker further from the Earth, but it never drops to zero.",
+     "wrong": {
+      "other": "Not quite: it is weaker.",
+      "same": "Not quite: the field gets weaker with distance from the Earth.",
+      "zero": "Not quite: gravity does not need air. It reaches far into space, just weaker further away."
+     },
+     "idk": [
+      {
+       "hint": "Does the Earth's pull get stronger or weaker as you go further away?"
+      }
+     ],
+     "answerWhy": "The gravitational field strength gets weaker further from the Earth, but it does not drop to zero."
+    },
+    {
+     "id": "2.6",
+     "type": "own",
+     "prompt": "In one line: what is a gravitational field?",
+     "points": [
+      "a region where a mass feels a force of gravity",
+      "it gets weaker further away"
+     ],
+     "idk": "No problem. A good line would be: a gravitational field is the region where a mass feels a force of gravity, and it gets weaker further away."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Orbits",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "Now, orbits. The Moon goes round the Earth, and the Earth goes round the Sun. Each path round is an orbit, and gravity is what keeps them going round."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "Moons are natural satellites: they orbit planets. Artificial satellites are machines people have put into orbit round the Earth, for weather forecasts, phones and television."
+    },
+    {
+     "id": "3.3",
+     "type": "say",
+     "text": "A satellite is always falling towards the Earth, pulled by gravity. Falling with gravity as the only force on it is called free fall."
+    },
+    {
+     "id": "3.4",
+     "type": "say",
+     "text": "But a satellite also moves sideways very fast. As it falls, the Earth's curved surface curves away beneath it. So it keeps missing the Earth and goes round in a curve."
+    },
+    {
+     "id": "3.5",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Why does the Moon not fly off into space?",
+     "options": [
+      {
+       "text": "Gravity keeps pulling it towards the Earth",
+       "branch": "right"
+      },
+      {
+       "text": "There are no forces on it in space",
+       "branch": "none"
+      },
+      {
+       "text": "An outward force balances gravity",
+       "branch": "outward"
+      }
+     ],
+     "right": "Yes: the Earth's gravity keeps pulling it inwards, so it keeps curving round.",
+     "wrong": {
+      "other": "Not quite: gravity keeps pulling it towards the Earth.",
+      "none": "Not quite: with no force it would fly off in a straight line. The Earth's gravity keeps pulling it inwards.",
+      "outward": "Not quite: there is no outward force. The only force is gravity pulling inwards, and that bends its path into a circle."
+     },
+     "idk": [
+      {
+       "hint": "Which force reaches from the Earth to the Moon?"
+      }
+     ],
+     "answerWhy": "The Earth's gravity pulls the Moon inwards all the time, so its path keeps curving round instead of going straight off."
+    },
+    {
+     "id": "3.6",
+     "type": "say",
+     "text": "Anything moving in a circle needs a force towards the centre of the circle. That force is called the centripetal force. For a satellite, gravity provides it."
+    },
+    {
+     "id": "3.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A satellite orbits the Earth in a circle at a steady speed. Is it accelerating?",
+     "options": [
+      {
+       "text": "Yes: its direction keeps changing",
+       "branch": "right"
+      },
+      {
+       "text": "No: its speed is not changing",
+       "branch": "speed"
+      },
+      {
+       "text": "No: there is no force on it",
+       "branch": "none"
+      }
+     ],
+     "right": "Yes: the speed is steady, but the direction keeps changing, so the velocity changes. That is acceleration, towards the Earth.",
+     "wrong": {
+      "other": "Not quite: yes, because its direction keeps changing.",
+      "speed": "Not quite: velocity includes direction. The direction keeps changing, so the velocity changes: it is accelerating.",
+      "none": "Not quite: gravity pulls on it all the time. That force changes its direction, so it is accelerating."
+     },
+     "idk": [
+      {
+       "hint": "Acceleration is a change in velocity, and velocity includes direction. Is its direction changing?"
+      }
+     ],
+     "answerWhy": "In a circular orbit the speed is steady but the direction keeps changing, so the velocity changes: the satellite accelerates towards the Earth."
+    },
+    {
+     "id": "3.8",
+     "type": "say",
+     "text": "For a stable orbit, speed and height go together. If a satellite's speed changes, the radius of its orbit must change too."
+    },
+    {
+     "id": "3.9",
+     "type": "say",
+     "text": "Further out, gravity is weaker, so it provides less centripetal force, and a satellite there moves more slowly. It also has further to go round."
+    },
+    {
+     "id": "3.10",
+     "type": "say",
+     "text": "The time for one complete orbit is called the orbital period."
+    },
+    {
+     "id": "3.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Satellite A orbits higher than satellite B. Which has the longer orbital period?",
+     "options": [
+      {
+       "text": "A, the higher one",
+       "branch": "right"
+      },
+      {
+       "text": "B, the lower one",
+       "branch": "lower"
+      },
+      {
+       "text": "They take the same time",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: A moves more slowly and has further to go, so each orbit takes longer.",
+     "wrong": {
+      "other": "Not quite: A, the higher one.",
+      "lower": "Not quite: the lower one moves faster round a smaller circle, so it takes less time. A takes longer.",
+      "same": "Not quite: the higher satellite moves more slowly round a bigger circle, so it takes longer."
+     },
+     "idk": [
+      {
+       "hint": "The higher satellite moves more slowly and has further to go. What does that do to the time for one orbit?"
+      }
+     ],
+     "answerWhy": "The higher satellite moves more slowly round a bigger circle, so its orbital period is longer."
+    },
+    {
+     "id": "3.12",
+     "type": "own",
+     "prompt": "In one line: what keeps a satellite in orbit?",
+     "points": [
+      "gravity pulls it towards the Earth",
+      "it moves sideways fast enough to keep missing"
+     ],
+     "idk": "No problem. A good line would be: gravity pulls it towards the Earth all the time, but it moves sideways fast enough to keep missing."
+    },
+    {
+     "id": "3.13",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "3.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: which unit is mass measured in?",
+     "options": [
+      {
+       "text": "Kilograms",
+       "branch": "right"
+      },
+      {
+       "text": "Newtons",
+       "branch": "newton"
+      },
+      {
+       "text": "Newtons per kilogram",
+       "branch": "nkg"
+      }
+     ],
+     "right": "Yes: mass is measured in kilograms (kg).",
+     "wrong": {
+      "other": "Not quite: kilograms.",
+      "newton": "Not quite: newtons measure weight, a force. Mass is in kilograms.",
+      "nkg": "Not quite: N/kg is the unit of g. Mass is in kilograms."
+     },
+     "idk": [
+      {
+       "hint": "Mass is the amount of matter, not a force."
+      }
+     ],
+     "answerWhy": "Mass is measured in kilograms (kg); weight, a force, is in newtons.",
+     "quiz": true
+    },
+    {
+     "id": "3.15",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 6: what is the weight of a 5 kg bag where g = 9.8 N/kg?",
+     "options": [
+      {
+       "text": "49 N",
+       "branch": "right"
+      },
+      {
+       "text": "5 N",
+       "branch": "mass"
+      },
+      {
+       "text": "0.51 N",
+       "branch": "divide"
+      }
+     ],
+     "right": "Yes: 5 × 9.8 = 49 N.",
+     "wrong": {
+      "other": "Not quite: 49 N.",
+      "mass": "Not quite: 5 kg is the mass. The weight is 5 × 9.8 = 49 N.",
+      "divide": "Not quite: multiply the mass by g: 5 × 9.8 = 49 N."
+     },
+     "idk": [
+      {
+       "hint": "W = m g."
+      }
+     ],
+     "answerWhy": "W = m g = 5 × 9.8 = 49 N.",
+     "quiz": true
+    },
+    {
+     "id": "3.16",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: a rock is taken to the Moon, where g is smaller. Which is true?",
+     "options": [
+      {
+       "text": "Its weight is less; its mass is the same",
+       "branch": "right"
+      },
+      {
+       "text": "Its mass is less; its weight is the same",
+       "branch": "swap"
+      },
+      {
+       "text": "Its mass and weight are both less",
+       "branch": "both"
+      }
+     ],
+     "right": "Yes: smaller g means less weight, but the amount of matter does not change.",
+     "wrong": {
+      "other": "Not quite: its weight is less, and its mass is the same.",
+      "swap": "Not quite: it is the other way round. The mass stays the same; the weight is less.",
+      "both": "Not quite: the mass stays the same, because the amount of matter does not change. Only the weight is less."
+     },
+     "idk": [
+      {
+       "hint": "Which one depends on g?"
+      }
+     ],
+     "answerWhy": "Weight depends on g, so it is less on the Moon. Mass is the amount of matter, so it stays the same.",
+     "quiz": true
+    },
+    {
+     "id": "3.17",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: which is true of the Earth's gravitational field further from the Earth?",
+     "options": [
+      {
+       "text": "It is weaker",
+       "branch": "right"
+      },
+      {
+       "text": "It is stronger",
+       "branch": "stronger"
+      },
+      {
+       "text": "It stops where the air ends",
+       "branch": "air"
+      }
+     ],
+     "right": "Yes: it gets weaker with distance.",
+     "wrong": {
+      "other": "Not quite: it is weaker.",
+      "stronger": "Not quite: the field gets weaker further away.",
+      "air": "Not quite: gravity does not need air. It reaches far into space, getting weaker."
+     },
+     "idk": [
+      {
+       "hint": "Does the pull get stronger or weaker with distance?"
+      }
+     ],
+     "answerWhy": "The gravitational field gets weaker further from the Earth.",
+     "quiz": true
+    },
+    {
+     "id": "3.18",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: what provides the centripetal force that keeps the Moon in orbit?",
+     "options": [
+      {
+       "text": "The Earth's gravity",
+       "branch": "right"
+      },
+      {
+       "text": "The Moon's own speed",
+       "branch": "speed"
+      },
+      {
+       "text": "Light from the Sun",
+       "branch": "sun"
+      }
+     ],
+     "right": "Yes: the Earth's gravity pulls the Moon towards the centre of its orbit.",
+     "wrong": {
+      "other": "Not quite: the Earth's gravity.",
+      "speed": "Not quite: speed is not a force. The Earth's gravity pulls the Moon inwards.",
+      "sun": "Not quite: light does not hold the Moon in orbit. The Earth's gravity does."
+     },
+     "idk": [
+      {
+       "hint": "The centripetal force pulls towards the centre of the orbit. What is at the centre?"
+      }
+     ],
+     "answerWhy": "The Earth's gravity pulls the Moon towards the centre of its orbit, so it provides the centripetal force.",
+     "quiz": true
+    },
+    {
+     "id": "3.19",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: a satellite moves to a higher, stable orbit. Which is true?",
+     "options": [
+      {
+       "text": "It moves more slowly",
+       "branch": "right"
+      },
+      {
+       "text": "It moves faster",
+       "branch": "faster"
+      },
+      {
+       "text": "Its speed stays the same",
+       "branch": "same"
+      }
+     ],
+     "right": "Yes: gravity is weaker higher up, so a lower speed keeps it in orbit.",
+     "wrong": {
+      "other": "Not quite: it moves more slowly.",
+      "faster": "Not quite: higher orbits are slower, because gravity is weaker there.",
+      "same": "Not quite: for a stable orbit, speed and radius go together. Higher up, it moves more slowly."
+     },
+     "idk": [
+      {
+       "hint": "Gravity is weaker higher up."
+      }
+     ],
+     "answerWhy": "Higher up, gravity is weaker and provides less centripetal force, so a satellite in a higher orbit moves more slowly.",
+     "quiz": true
+    },
+    {
+     "id": "3.20",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

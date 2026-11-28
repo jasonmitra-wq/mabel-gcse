@@ -1,0 +1,779 @@
+{
+ "lesson": "p5-elasticity",
+ "version": 1,
+ "about": "The scripted AI lesson for p5-elasticity (2026-11-28, Phase C, brief docs/briefs/2026-11-27-phase-c-physics.md): every word she sees is written here once and checked (tools/check-script.js, tools/review-lesson.js --script). The AI only marks her typed answers (choosing a branch written here), answers her own questions, and sorts her messages. It opens with two recall questions from p5-gravity.",
+ "keyPoints": [
+  {
+   "kp": 0,
+   "heading": "Changing shape: stretching, bending and compressing",
+   "steps": [
+    {
+     "id": "1.1",
+     "type": "say",
+     "text": "Welcome! This lesson is about stretching, squashing and bending things, and the energy a stretched spring stores."
+    },
+    {
+     "id": "1.1a",
+     "type": "ask",
+     "kind": "tap",
+     "question": "First, two quick questions from the last lesson. What is the weight of a 0.5 kg mass where g = 9.8 N/kg?",
+     "options": [
+      {
+       "text": "4.9 N",
+       "branch": "right"
+      },
+      {
+       "text": "0.5 N",
+       "branch": "mass"
+      },
+      {
+       "text": "19.6 N",
+       "branch": "divide"
+      }
+     ],
+     "right": "Yes: W = m g = 0.5 × 9.8 = 4.9 N.",
+     "wrong": {
+      "other": "Not quite: 4.9 N.",
+      "mass": "Not quite: 0.5 kg is the mass. The weight is W = m g = 0.5 × 9.8 = 4.9 N.",
+      "divide": "Not quite: multiply the mass by g: 0.5 × 9.8 = 4.9 N."
+     },
+     "idk": [
+      {
+       "hint": "Weight = mass × g."
+      }
+     ],
+     "answerWhy": "W = m g = 0.5 × 9.8 = 4.9 N."
+    },
+    {
+     "id": "1.1b",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Second: which force keeps a satellite in its orbit?",
+     "options": [
+      {
+       "text": "Gravity",
+       "branch": "right"
+      },
+      {
+       "text": "Air resistance",
+       "branch": "air"
+      },
+      {
+       "text": "Friction",
+       "branch": "friction"
+      }
+     ],
+     "right": "Yes: gravity provides the centripetal force.",
+     "wrong": {
+      "other": "Not quite: gravity.",
+      "air": "Not quite: there is almost no air up there. Gravity keeps it in orbit.",
+      "friction": "Not quite: nothing rubs on a satellite. Gravity keeps it in orbit."
+     },
+     "idk": [
+      {
+       "hint": "Which force pulls the satellite towards the Earth?"
+      }
+     ],
+     "answerWhy": "Gravity pulls the satellite towards the Earth, providing the centripetal force that keeps it in orbit."
+    },
+    {
+     "id": "1.2",
+     "type": "say",
+     "text": "Now this lesson. Forces can change the shape of an object. You can stretch it, compress it, which means squash it, or bend it."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "A still object needs more than one force on it before its shape can change. With only one force it would not stay still: it would move off in the direction of the force."
+    },
+    {
+     "id": "1.4",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A spring hangs from a clamp with masses on the end, and it is stretched. Which forces stretch it?",
+     "options": [
+      {
+       "text": "The masses pulling down and the clamp pulling up",
+       "branch": "right"
+      },
+      {
+       "text": "Only the masses pulling down",
+       "branch": "masses"
+      },
+      {
+       "text": "Only the clamp pulling up",
+       "branch": "clamp"
+      }
+     ],
+     "right": "Yes: it takes two forces, one at each end, to stretch the still spring.",
+     "wrong": {
+      "other": "Not quite: the masses pulling down and the clamp pulling up.",
+      "masses": "Not quite: with only the masses pulling, the spring would fall. The clamp pulls up too, and the two forces stretch it.",
+      "clamp": "Not quite: the clamp alone would just hold it. The masses pull down too, and the two forces stretch it."
+     },
+     "idk": [
+      {
+       "hint": "With only one force, the spring would move off. What holds it in place while the masses pull?"
+      }
+     ],
+     "answerWhy": "The masses pull down and the clamp pulls up: two forces at the two ends stretch the still spring."
+    },
+    {
+     "id": "1.5",
+     "type": "say",
+     "text": "Some objects go back to their first shape and length when the forces are removed. That kind of change of shape is called elastic deformation."
+    },
+    {
+     "id": "1.6",
+     "type": "say",
+     "text": "Others stay changed when the forces are removed: that is called inelastic deformation. A spring stretched too far stays longer."
+    },
+    {
+     "id": "1.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A plastic bag is stretched so much that it stays longer, even after you let go. What kind of deformation is that?",
+     "options": [
+      {
+       "text": "Inelastic deformation",
+       "branch": "right"
+      },
+      {
+       "text": "Elastic deformation",
+       "branch": "elastic"
+      },
+      {
+       "text": "No deformation at all",
+       "branch": "none"
+      }
+     ],
+     "right": "Yes: it does not go back to its first shape, so it is inelastic deformation.",
+     "wrong": {
+      "other": "Not quite: inelastic deformation.",
+      "elastic": "Not quite: elastic means it goes back to its first shape. The bag stays longer, so it is inelastic.",
+      "none": "Not quite: its shape has changed, so it has deformed. It stays changed, so it is inelastic deformation."
+     },
+     "idk": [
+      {
+       "hint": "Does the bag go back to its first shape when you let go?"
+      }
+     ],
+     "answerWhy": "The bag stays longer when the force is removed, so it has deformed inelastically."
+    },
+    {
+     "id": "1.8",
+     "type": "own",
+     "prompt": "In one line: what is the difference between elastic and inelastic deformation?",
+     "points": [
+      "elastic: it goes back to its first shape",
+      "inelastic: it stays changed"
+     ],
+     "idk": "No problem. A good line would be: after elastic deformation an object goes back to its first shape, but after inelastic deformation it stays changed."
+    }
+   ]
+  },
+  {
+   "kp": 1,
+   "heading": "Force and extension: F = ke",
+   "steps": [
+    {
+     "id": "2.1",
+     "type": "say",
+     "text": "When you stretch a spring, it gets longer. How much longer it gets is called the extension: stretched length minus original length."
+    },
+    {
+     "id": "2.2",
+     "type": "ask",
+     "kind": "number",
+     "question": "A spring is 20 cm long. With a mass hung on it, it is 26 cm long. What is the extension, in cm?",
+     "answer": {
+      "value": 6,
+      "unit": "cm",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 26,
+       "branch": "length"
+      },
+      {
+       "value": 46,
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 26 − 20 = 6 cm.",
+     "wrong": {
+      "other": "Not quite: 6 cm. Extension = stretched length − original length = 26 − 20 = 6 cm.",
+      "length": "Not quite: 26 cm is the stretched length. The extension is how much longer it got: 26 − 20 = 6 cm.",
+      "add": "Not quite: take the original length away: 26 − 20 = 6 cm."
+     },
+     "idk": [
+      {
+       "hint": "Extension = stretched length − original length."
+      }
+     ],
+     "answerWhy": "Extension = 26 − 20 = 6 cm."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "Hang twice the force on a spring and you get twice the extension. Extension is directly proportional to force."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "Proportionality holds only up to a point. Stretched further, the spring stops following the rule. The point where it stops is called the limit of proportionality."
+    },
+    {
+     "id": "2.5",
+     "type": "say",
+     "text": "The equation is F = k e. F is the force in newtons (N), k is the spring constant in newtons per metre (N/m) and e is the extension in metres (m)."
+    },
+    {
+     "id": "2.6",
+     "type": "say",
+     "text": "The spring constant tells you how stiff the spring is. A stiff spring has a big spring constant: it needs a big force to stretch it a little."
+    },
+    {
+     "id": "2.7",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A force of 4 N stretches a spring by 0.08 m. What is its spring constant?",
+     "steps": [
+      "Write the equation: F = k e, so k = F ÷ e.",
+      "Put in the numbers: k = 4 ÷ 0.08.",
+      "k = 50 N/m."
+     ],
+     "answer": {
+      "value": 50,
+      "unit": "N/m"
+     }
+    },
+    {
+     "id": "2.8",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A force of 6 N stretches a spring by 3 cm. What is its spring constant, in N/m?",
+     "answer": {
+      "value": 200,
+      "unit": "N/m",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 2,
+       "branch": "cm"
+      },
+      {
+       "value": 0.18,
+       "branch": "times"
+      },
+      {
+       "value": 0.005,
+       "branch": "flip"
+      }
+     ],
+     "right": "Yes: 3 cm = 0.03 m, and k = 6 ÷ 0.03 = 200 N/m.",
+     "wrong": {
+      "other": "Not quite: 200 N/m. 3 cm = 0.03 m, and k = F ÷ e = 6 ÷ 0.03 = 200 N/m.",
+      "cm": "Not quite: 200 N/m. Change centimetres to metres first: 3 cm = 0.03 m. Then 6 ÷ 0.03 = 200 N/m.",
+      "times": "Not quite: 200 N/m. Divide the force by the extension: 6 ÷ 0.03 = 200 N/m.",
+      "flip": "Not quite: 200 N/m. Divide the force by the extension, not the other way round: 6 ÷ 0.03 = 200 N/m."
+     },
+     "idk": [
+      {
+       "hint": "Change 3 cm into metres first: 100 cm = 1 m. Then k = F ÷ e."
+      }
+     ],
+     "answerWhy": "3 cm = 0.03 m, so k = F ÷ e = 6 ÷ 0.03 = 200 N/m."
+    },
+    {
+     "id": "2.9",
+     "type": "say",
+     "text": "The same equation works for squashing. Then e is how much shorter the object gets, called its compression."
+    },
+    {
+     "id": "2.10",
+     "type": "own",
+     "prompt": "In one line: what does F = k e tell you about a spring?",
+     "points": [
+      "force equals spring constant times extension",
+      "extension is proportional to force up to the limit of proportionality"
+     ],
+     "idk": "No problem. A good line would be: force = spring constant × extension, so the extension is proportional to the force, up to the limit of proportionality."
+    }
+   ]
+  },
+  {
+   "kp": 2,
+   "heading": "Investigating force and extension",
+   "steps": [
+    {
+     "id": "3.1",
+     "type": "say",
+     "text": "In a class practical, you hang a spring from a clamp with a ruler beside it. You measure its length, add masses one at a time, and measure the new length each time."
+    },
+    {
+     "id": "3.2",
+     "type": "say",
+     "text": "The force on the spring is the weight of the masses, worked out with W = m g. Take the original length from each new length to get each extension."
+    },
+    {
+     "id": "3.3",
+     "type": "ask",
+     "kind": "tap",
+     "question": "How should you read the ruler to measure the spring's length accurately?",
+     "options": [
+      {
+       "text": "With your eye level with the bottom of the spring",
+       "branch": "right"
+      },
+      {
+       "text": "From above, looking down the spring",
+       "branch": "above"
+      },
+      {
+       "text": "From below, looking up at it",
+       "branch": "below"
+      }
+     ],
+     "right": "Yes: with your eye level with the mark, you do not read it too high or too low.",
+     "wrong": {
+      "other": "Not quite: with your eye level with the bottom of the spring.",
+      "above": "Not quite: looking from above makes the reading wrong. Keep your eye level with the bottom of the spring.",
+      "below": "Not quite: looking from below makes the reading wrong. Keep your eye level with the bottom of the spring."
+     },
+     "idk": [
+      {
+       "hint": "Reading a scale at an angle gives the wrong value. Where should your eye be?"
+      }
+     ],
+     "answerWhy": "Reading with your eye level with the bottom of the spring stops you reading the ruler too high or too low."
+    },
+    {
+     "id": "3.4",
+     "type": "say",
+     "text": "Then plot force against extension. A graph that is a straight line shows a linear relationship. For a spring the line also goes through the origin, so force and extension are directly proportional."
+    },
+    {
+     "id": "3.5",
+     "type": "say",
+     "text": "Once the limit of proportionality is passed, the graph curves. A relationship with a curved graph is called a non-linear relationship."
+    },
+    {
+     "id": "3.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "On a force-extension graph, the line is straight at first, then starts to curve. What does the curve show?",
+     "options": [
+      {
+       "text": "The limit of proportionality has been passed",
+       "branch": "right"
+      },
+      {
+       "text": "The spring has got stiffer",
+       "branch": "stiffer"
+      },
+      {
+       "text": "No more force is being added",
+       "branch": "noforce"
+      }
+     ],
+     "right": "Yes: after the limit of proportionality, extension is no longer proportional to force, so the line curves.",
+     "wrong": {
+      "other": "Not quite: the limit of proportionality has been passed.",
+      "stiffer": "Not quite: the curve shows the spring has stopped following F = k e. The limit of proportionality has been passed.",
+      "noforce": "Not quite: the force is still going up along the graph. The curve shows the limit of proportionality has been passed."
+     },
+     "idk": [
+      {
+       "hint": "Up to which point is extension proportional to force?"
+      }
+     ],
+     "answerWhy": "The line curves once the limit of proportionality is passed, because extension is then no longer proportional to force."
+    },
+    {
+     "id": "3.7",
+     "type": "say",
+     "text": "On the straight part, the gradient of the force-extension graph is the spring constant: the rise in force divided by the rise in extension."
+    },
+    {
+     "id": "3.8",
+     "type": "ask",
+     "kind": "number",
+     "question": "Between two points on the straight part, the force goes up by 10 N and the extension by 0.25 m. What is the spring constant, in N/m?",
+     "answer": {
+      "value": 40,
+      "unit": "N/m",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 2.5,
+       "branch": "times"
+      },
+      {
+       "value": 0.025,
+       "branch": "flip"
+      }
+     ],
+     "right": "Yes: 10 ÷ 0.25 = 40 N/m.",
+     "wrong": {
+      "other": "Not quite: 40 N/m. Gradient = rise in force ÷ rise in extension = 10 ÷ 0.25 = 40 N/m.",
+      "times": "Not quite: 40 N/m. Divide the force by the extension: 10 ÷ 0.25 = 40 N/m.",
+      "flip": "Not quite: 40 N/m. Divide the force by the extension, not the other way round: 10 ÷ 0.25 = 40 N/m."
+     },
+     "idk": [
+      {
+       "hint": "The gradient is the rise in force divided by the rise in extension."
+      }
+     ],
+     "answerWhy": "The gradient is 10 ÷ 0.25 = 40, so k = 40 N/m."
+    },
+    {
+     "id": "3.9",
+     "type": "own",
+     "prompt": "In one line: what does a straight line through the origin on a force-extension graph tell you?",
+     "points": [
+      "force and extension are directly proportional",
+      "the limit of proportionality has not been passed"
+     ],
+     "idk": "No problem. A good line would be: force and extension are directly proportional there, because the limit of proportionality has not been passed."
+    }
+   ]
+  },
+  {
+   "kp": 3,
+   "heading": "Work done and elastic potential energy",
+   "steps": [
+    {
+     "id": "4.1",
+     "type": "say",
+     "text": "Stretching a spring takes work: your force moves through a distance. Energy stored in a stretched or squashed object is called elastic potential energy."
+    },
+    {
+     "id": "4.2",
+     "type": "say",
+     "text": "If the spring is not stretched past its limit of proportionality, all the work done on it is stored. Let go, and it can give that energy back."
+    },
+    {
+     "id": "4.3",
+     "type": "say",
+     "text": "The equation is Ee = ½ k e²: elastic potential energy = 0.5 × spring constant × extension squared. Ee is in joules (J), k in N/m and e in metres (m). You are given this equation."
+    },
+    {
+     "id": "4.4",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A spring with k = 50 N/m is stretched by 0.08 m. How much elastic potential energy does it store?",
+     "steps": [
+      "Write the equation: Ee = ½ k e².",
+      "Square the extension first: 0.08² = 0.0064.",
+      "Ee = 0.5 × 50 × 0.0064.",
+      "Ee = 0.16 J."
+     ],
+     "answer": {
+      "value": 0.16,
+      "unit": "J"
+     }
+    },
+    {
+     "id": "4.5",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A spring with k = 200 N/m is stretched by 0.1 m. How much elastic potential energy does it store, in J?",
+     "answer": {
+      "value": 1,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 10,
+       "branch": "nosquare"
+      },
+      {
+       "value": 2,
+       "branch": "nohalf"
+      },
+      {
+       "value": 20,
+       "branch": "neither"
+      }
+     ],
+     "right": "Yes: 0.1² = 0.01, and 0.5 × 200 × 0.01 = 1 J.",
+     "wrong": {
+      "other": "Not quite: 1 J. 0.1² = 0.01, so Ee = 0.5 × 200 × 0.01 = 1 J.",
+      "nosquare": "Not quite: 1 J. Square the extension: 0.1² = 0.01. Then 0.5 × 200 × 0.01 = 1 J.",
+      "nohalf": "Not quite: 1 J. Remember the ½: 0.5 × 200 × 0.01 = 1 J.",
+      "neither": "Not quite: 1 J. Square the extension and take half: 0.5 × 200 × 0.1² = 1 J."
+     },
+     "idk": [
+      {
+       "hint": "Square 0.1 first, then multiply by 200 and by 0.5."
+      }
+     ],
+     "answerWhy": "Ee = ½ k e² = 0.5 × 200 × 0.1² = 0.5 × 200 × 0.01 = 1 J."
+    },
+    {
+     "id": "4.6",
+     "type": "ask",
+     "kind": "number",
+     "question": "A spring with k = 400 N/m is stretched by 5 cm. How much energy does it store, in J?",
+     "answer": {
+      "value": 0.5,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 5000,
+       "branch": "cm"
+      },
+      {
+       "value": 10,
+       "branch": "nosquare"
+      }
+     ],
+     "right": "Yes: 5 cm = 0.05 m, 0.05² = 0.0025, and 0.5 × 400 × 0.0025 = 0.5 J.",
+     "wrong": {
+      "other": "Not quite: 0.5 J. 5 cm = 0.05 m, so Ee = 0.5 × 400 × 0.0025 = 0.5 J.",
+      "cm": "Not quite: 0.5 J. Change 5 cm to 0.05 m first. Then 0.5 × 400 × 0.05² = 0.5 J.",
+      "nosquare": "Not quite: 0.5 J. Square the extension: 0.05² = 0.0025. Then 0.5 × 400 × 0.0025 = 0.5 J."
+     },
+     "idk": [
+      {
+       "hint": "Change 5 cm into metres, square it, then multiply by 400 and by 0.5."
+      }
+     ],
+     "answerWhy": "5 cm = 0.05 m, so Ee = 0.5 × 400 × 0.05² = 0.5 × 400 × 0.0025 = 0.5 J."
+    },
+    {
+     "id": "4.7",
+     "type": "own",
+     "prompt": "In one line: what is elastic potential energy, and how do you work it out?",
+     "points": [
+      "energy stored in a stretched or squashed object",
+      "half times spring constant times extension squared"
+     ],
+     "idk": "No problem. A good line would be: elastic potential energy is the energy stored in a stretched or squashed object: Ee = ½ k e²."
+    },
+    {
+     "id": "4.8",
+     "type": "say",
+     "text": "Now for a short quiz: six questions on the whole lesson. Take your time."
+    },
+    {
+     "id": "4.9",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 1 of 6: a spring goes back to its first length when the masses are taken off. What kind of deformation was it?",
+     "options": [
+      {
+       "text": "Elastic",
+       "branch": "right"
+      },
+      {
+       "text": "Inelastic",
+       "branch": "inelastic"
+      },
+      {
+       "text": "Non-linear",
+       "branch": "nonlinear"
+      }
+     ],
+     "right": "Yes: it went back to its first shape, so the deformation was elastic.",
+     "wrong": {
+      "other": "Not quite: elastic.",
+      "inelastic": "Not quite: inelastic means it stays changed. This spring went back, so it was elastic.",
+      "nonlinear": "Not quite: non-linear describes a graph. Going back to its first shape is elastic deformation."
+     },
+     "idk": [
+      {
+       "hint": "Did the spring go back to its first shape?"
+      }
+     ],
+     "answerWhy": "The spring went back to its first shape when the force was removed, so the deformation was elastic.",
+     "quiz": true
+    },
+    {
+     "id": "4.10",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 2 of 6: a spring 15 cm long is stretched to 21 cm. What is its extension?",
+     "options": [
+      {
+       "text": "6 cm",
+       "branch": "right"
+      },
+      {
+       "text": "21 cm",
+       "branch": "length"
+      },
+      {
+       "text": "36 cm",
+       "branch": "add"
+      }
+     ],
+     "right": "Yes: 21 − 15 = 6 cm.",
+     "wrong": {
+      "other": "Not quite: 6 cm.",
+      "length": "Not quite: 21 cm is the stretched length. The extension is 21 − 15 = 6 cm.",
+      "add": "Not quite: subtract the original length: 21 − 15 = 6 cm."
+     },
+     "idk": [
+      {
+       "hint": "Extension = stretched length − original length."
+      }
+     ],
+     "answerWhy": "Extension = 21 − 15 = 6 cm.",
+     "quiz": true
+    },
+    {
+     "id": "4.11",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 3 of 6: a force of 10 N gives an extension of 0.5 m. What is the spring constant?",
+     "options": [
+      {
+       "text": "20 N/m",
+       "branch": "right"
+      },
+      {
+       "text": "5 N/m",
+       "branch": "times"
+      },
+      {
+       "text": "0.05 N/m",
+       "branch": "flip"
+      }
+     ],
+     "right": "Yes: k = 10 ÷ 0.5 = 20 N/m.",
+     "wrong": {
+      "other": "Not quite: 20 N/m.",
+      "times": "Not quite: divide the force by the extension: 10 ÷ 0.5 = 20 N/m.",
+      "flip": "Not quite: divide the force by the extension: 10 ÷ 0.5 = 20 N/m."
+     },
+     "idk": [
+      {
+       "hint": "k = F ÷ e."
+      }
+     ],
+     "answerWhy": "k = F ÷ e = 10 ÷ 0.5 = 20 N/m.",
+     "quiz": true
+    },
+    {
+     "id": "4.12",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 4 of 6: what does the gradient of the straight part of a force-extension graph give?",
+     "options": [
+      {
+       "text": "The spring constant",
+       "branch": "right"
+      },
+      {
+       "text": "The extension",
+       "branch": "extension"
+      },
+      {
+       "text": "The energy stored",
+       "branch": "energy"
+      }
+     ],
+     "right": "Yes: force ÷ extension is the spring constant.",
+     "wrong": {
+      "other": "Not quite: the spring constant.",
+      "extension": "Not quite: the extension is along the bottom. The gradient, force ÷ extension, is the spring constant.",
+      "energy": "Not quite: the gradient is force ÷ extension, which is the spring constant."
+     },
+     "idk": [
+      {
+       "hint": "The gradient is the rise in force ÷ the rise in extension."
+      }
+     ],
+     "answerWhy": "The gradient is force ÷ extension, which is the spring constant k.",
+     "quiz": true
+    },
+    {
+     "id": "4.13",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 5 of 6: what does a graph of a non-linear relationship look like?",
+     "options": [
+      {
+       "text": "A curve",
+       "branch": "right"
+      },
+      {
+       "text": "A straight line through the origin",
+       "branch": "straight"
+      },
+      {
+       "text": "A flat line",
+       "branch": "flat"
+      }
+     ],
+     "right": "Yes: a non-linear relationship gives a curve.",
+     "wrong": {
+      "other": "Not quite: a curve.",
+      "straight": "Not quite: a straight line shows a linear relationship. Non-linear gives a curve.",
+      "flat": "Not quite: non-linear gives a curve."
+     },
+     "idk": [
+      {
+       "hint": "Linear means straight. What is the opposite?"
+      }
+     ],
+     "answerWhy": "A non-linear relationship gives a curved graph.",
+     "quiz": true
+    },
+    {
+     "id": "4.14",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Quiz, question 6 of 6: a spring with k = 100 N/m is stretched by 0.2 m. How much energy does it store?",
+     "options": [
+      {
+       "text": "2 J",
+       "branch": "right"
+      },
+      {
+       "text": "10 J",
+       "branch": "nosquare"
+      },
+      {
+       "text": "4 J",
+       "branch": "nohalf"
+      }
+     ],
+     "right": "Yes: 0.5 × 100 × 0.2² = 0.5 × 100 × 0.04 = 2 J.",
+     "wrong": {
+      "other": "Not quite: 2 J.",
+      "nosquare": "Not quite: square the extension: 0.2² = 0.04. Then 0.5 × 100 × 0.04 = 2 J.",
+      "nohalf": "Not quite: remember the ½: 0.5 × 100 × 0.04 = 2 J."
+     },
+     "idk": [
+      {
+       "hint": "Ee = ½ k e²."
+      }
+     ],
+     "answerWhy": "Ee = ½ k e² = 0.5 × 100 × 0.04 = 2 J.",
+     "quiz": true
+    },
+    {
+     "id": "4.15",
+     "type": "score",
+     "text": "That's the end of the quiz: you got {right} out of {n}."
+    }
+   ]
+  }
+ ],
+ "end": {
+  "text": "The lesson is finished. Tap a button to go on.",
+  "buttons": [
+   "Go to the slides",
+   "Home"
+  ]
+ }
+}

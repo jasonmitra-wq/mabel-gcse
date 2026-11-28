@@ -426,5 +426,5 @@
     return { start, reply, calls, show, shown, points: kps.length };
   }
 
-  return { create, uses, SCRIPTED, SCRIPTED_LESSONS, SCRIPT_POLISH, order, IDK, ownFeedback, summaryLines, plainAnswer, idkOpener, VERSION: 10 };
+  return { create, uses, SCRIPTED, SCRIPTED_LESSONS, SCRIPT_POLISH, order, IDK, ownFeedback, summaryLines, plainAnswer, idkOpener, VERSION: 11 };
 });

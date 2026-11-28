@@ -19,7 +19,7 @@
   "keyPoints": [
     {
       "heading": "Stopping distance = thinking distance + braking distance",
-      "content": "<strong>Stopping distance</strong> is the total distance a vehicle travels before it stops. It starts when the driver first notices a hazard. It has two separate stages.\n\n<strong>Thinking distance</strong>: the distance travelled while the driver reacts, from seeing the hazard to pressing the brake. Thinking distance = speed × reaction time.\n\n<strong>Braking distance</strong>: the distance travelled once the brakes are on, while the car slows to a stop.\n\n<strong>Stopping distance = thinking distance + braking distance</strong>.\n\nExample values:\n- at 30 mph: thinking distance ≈ 9 m, braking distance ≈ 14 m, stopping distance ≈ 23 m\n- at 70 mph: thinking distance ≈ 21 m, braking distance ≈ 75 m, stopping distance ≈ 96 m\n\nThat is roughly 6 car-lengths compared with 24 car-lengths.",
+      "content": "<strong>Stopping distance</strong> is the total distance a vehicle travels before it stops. It starts when the driver first notices a hazard. It has two separate stages.\n\n<strong>Thinking distance</strong>: the distance travelled while the driver reacts, from seeing the hazard to pressing the brake. Thinking distance = speed × reaction time.\n\n<strong>Braking distance</strong>: the distance travelled once the brakes are on, while the car slows to a stop.\n\n<strong>Stopping distance = thinking distance + braking distance</strong>.\n\nExample values:\n- at 30 mph: thinking distance ≈ 9 m, braking distance ≈ 14 m, stopping distance ≈ 23 m\n- at 70 mph: thinking distance ≈ 21 m, braking distance ≈ 75 m, stopping distance ≈ 96 m\n\nThat is roughly 6 car-lengths compared with 24 car-lengths.\n\nYou can use these values to estimate an emergency stop. At 70 mph the stopping distance is about 96 m: about four times the 23 m at 30 mph.\n\nGraphs of stopping distance against speed can be drawn for different vehicles. On such a graph you can read each vehicle's stopping distance at a given speed and compare them.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -49,11 +49,11 @@
     },
     {
       "heading": "Factors affecting reaction time and thinking distance",
-      "content": "Reaction time is the gap between seeing a hazard and pressing the brake. For an alert driver, it is usually 0.2–0.9 seconds. All of these factors make it longer.",
+      "content": "Reaction time is the gap between seeing a hazard and pressing the brake. For an alert driver, it is usually 0.2–0.9 seconds. All of these factors make it longer.\n\nYou can measure reaction time in two simple ways. In the ruler-drop test, someone drops a ruler between your finger and thumb, and you catch it. The further it falls, the longer your reaction time. A computer test times how long you take to press a key after a signal appears.\n\nRepeat the test several times and record each result in a table. Leave out any anomaly, a result far from the others. Then work out the mean of the rest.\n\nYou can then judge a factor from data. At 20 m/s, a reaction time of 0.5 s gives a thinking distance of 10 m. If tiredness makes it 0.8 s, the thinking distance becomes 16 m.",
       "list": [
         { "term": "Alcohol", "definition": "slows brain processing, so reactions are slower" },
         { "term": "Drugs", "definition": "prescription or recreational drugs often impair reaction speed" },
-        { "term": "Tiredness", "definition": "fatigue slows brain responses; severe tiredness can cause microsleep at the wheel" },
+        { "term": "Tiredness", "definition": "fatigue slows brain responses" },
         { "term": "Distractions", "definition": "mobile phone use, adjusting a stereo, or talking to passengers" }
       ],
       "examFlag": true,
@@ -77,7 +77,7 @@
     },
     {
       "heading": "Factors affecting braking distance",
-      "content": "Several factors affect <strong>braking distance</strong>.\n\n<strong>Speed (most important)</strong>: braking distance is proportional to speed squared. Double the speed → <strong>four times</strong> the braking distance. This is because kinetic energy = ½mv², and for a given braking force, braking distance is proportional to KE. At 30 mph, braking distance ≈ 14 m. At 60 mph it is ≈ 55 m, and at 70 mph ≈ 75 m.\n\n<strong>Road surface condition</strong>: wet or icy roads reduce friction between the tyres and the road. So there is less braking force → longer braking distance. Ice reduces friction a great deal.\n\n<strong>Tyre condition</strong>: worn tyres have less tread → less grip → less braking force → longer braking distance. The UK legal minimum tyre tread depth is 1.6 mm.\n\n<strong>Brake condition</strong>: worn or overheated brakes apply less force. Brake fade (overheated brakes losing their effect) can happen on long downhill stretches.",
+      "content": "Several factors affect <strong>braking distance</strong>. The greater the speed of a vehicle, the greater the braking force needed to stop it in a certain distance.\n\n<strong>Speed (most important)</strong>: braking distance is proportional to speed squared. Double the speed → <strong>four times</strong> the braking distance. This is because kinetic energy = ½mv², and for a given braking force, braking distance is proportional to KE. At 30 mph, braking distance ≈ 14 m. At 60 mph it is ≈ 55 m, and at 70 mph ≈ 75 m.\n\n<strong>Road surface condition</strong>: wet or icy roads reduce friction between the tyres and the road. So there is less braking force → longer braking distance. Ice reduces friction a great deal.\n\n<strong>Tyre condition</strong>: worn tyres have less tread → less grip → less braking force → longer braking distance. The UK legal minimum tyre tread depth is 1.6 mm.\n\n<strong>Brake condition</strong>: worn or overheated brakes apply less force. Brake fade (overheated brakes losing their effect) can happen on long downhill stretches.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -103,7 +103,7 @@
     },
     {
       "heading": "Energy analysis of braking",
-      "content": "When the brakes are on, the car slows down. The <strong>kinetic energy of the car is transferred to thermal energy</strong> (heat) in the brakes through friction. Kinetic energy: <strong>KE = ½mv²</strong>.\n\nKE depends on v². So doubling the speed quadruples the KE. That quadruples the braking distance too, if the braking force stays the same.\n\nThe brakes, tyres and road surface all heat up during braking. Very heavy braking can make brakes overheat, for example in emergency stops or on long downhill stretches. This makes them less effective. It is called <strong>brake fade</strong>.\n\n<strong>Large deceleration</strong> = large braking force = KE lost quickly. In emergency braking, the deceleration is very high. Then the forces on passengers are very large. This is why seatbelts and crumple zones are essential. Newton's Second Law: F = ma → braking force = mass × deceleration.",
+      "content": "When the brakes are applied, the friction force between the brakes and the wheel does work. This work reduces the kinetic energy of the vehicle, and the temperature of the brakes increases. The <strong>kinetic energy of the car is transferred to thermal energy</strong> (heat) in the brakes through friction. Kinetic energy: <strong>KE = ½mv²</strong>.\n\nKE depends on v². So doubling the speed quadruples the KE. That quadruples the braking distance too, if the braking force stays the same.\n\nThe brakes, tyres and road surface all heat up during braking. Very heavy braking can make brakes overheat, for example in emergency stops or on long downhill stretches. This makes them less effective. It is called <strong>brake fade</strong>.\n\n<strong>Large deceleration</strong> = large braking force = KE lost quickly. In emergency braking, the deceleration is very high. Then the forces on passengers are very large. This is why seatbelts are essential. Newton's Second Law: F = ma → braking force = mass × deceleration.\n\nLarge decelerations may lead to brakes overheating and/or loss of control. A very large deceleration can make the tyres skid, so the driver can no longer steer.\n\nHigher only: you can estimate a braking force. At 70 mph (about 31 m/s), the braking distance is about 75 m. From v² − u² = 2as, the deceleration is about 31² ÷ (2 × 75) ≈ 6.4 m/s². For a car of about 1200 kg, F = m a ≈ 1200 × 6.4 ≈ 7700 N.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -176,6 +176,12 @@
           "96 m"
         ]
       ]
+    },
+    {
+      "title": "Example results: ruler-drop reaction times for one student",
+      "examFlag": false,
+      "headers": ["Try", "Reaction time (s)"],
+      "rows": [["1", "0.25"], ["2", "0.24"], ["3", "0.41"], ["4", "0.26"]]
     }
   ],
   "checkpoints": {

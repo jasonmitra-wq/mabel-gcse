@@ -3,7 +3,7 @@
   "source_file": "lessons/physics/p5-moments.json",
   "lesson_md5": "09b8490735b825ac3c8477633d7bc65f",
   "model": "claude-opus-5-5",
-  "date": "2026-11-28T13:45:28.951Z",
+  "date": "2026-11-28T15:03:47.372Z",
   "specRefs_sent": [
     "4.5.4"
   ],
@@ -13,15 +13,22 @@
   "stop_reason": "end_turn",
   "usage": {
     "input_tokens": 4764,
-    "output_tokens": 1007
+    "output_tokens": 1322
   },
-  "cost_usd": 0.039196,
+  "cost_usd": 0.045496,
   "status": "OK",
   "result": {
     "lesson": "p5-moments",
     "missing_spec_content": [],
     "above_gcse": [],
-    "factual_errors": [],
+    "factual_errors": [
+      {
+        "field": "keyPoints[0].content",
+        "text": "The turning effect of a force is called the <strong>moment</strong> of the force. It turns about a fixed point called the <strong>pivot</strong>.",
+        "correction": "As written, 'It' refers to the moment. A moment does not turn. It is the object that turns (rotates) about the pivot, and the moment is measured about that pivot. Reword to 'The object turns about a fixed point called the pivot.'",
+        "basis": "own knowledge"
+      }
+    ],
     "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": []

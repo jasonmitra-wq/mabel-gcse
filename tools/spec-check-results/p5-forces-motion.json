@@ -1,9 +1,9 @@
 {
   "lesson": "p5-forces-motion",
   "source_file": "lessons/physics/p5-forces-motion.json",
-  "lesson_md5": "b0cd47732ae5513e7446f86ac967b8b3",
+  "lesson_md5": "a1c1ae00185d4d069bf9e029938faca0",
   "model": "claude-opus-5-5",
-  "date": "2026-11-28T13:41:59.225Z",
+  "date": "2026-11-28T15:00:32.862Z",
   "specRefs_sent": [
     "4.5.1.1",
     "4.5.1.2",
@@ -18,75 +18,55 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 11219,
-    "output_tokens": 4544
+    "input_tokens": 11563,
+    "output_tokens": 4465
   },
-  "cost_usd": 0.135756,
+  "cost_usd": 0.135552,
   "status": "OK",
   "result": {
     "lesson": "p5-forces-motion",
     "missing_spec_content": [
       {
         "specRef": "4.5.6.1.2",
-        "spec_text": "Typical values may be taken as: walking ~ 1.5 m/s running ~ 3 m/s cycling ~ 6 m/s.",
-        "why": "The lesson lists typical speeds for walking, cycling, a motorway car, sound and light. It never gives the typical running speed (~3 m/s), which students must recall."
-      },
-      {
-        "specRef": "4.5.6.1.2",
         "spec_text": "Students should be able to recall typical values of speed for a person walking, running and cycling as well as the typical values of speed for different types of transportation systems.",
-        "why": "The only transport speed given is a car on a motorway (≈ 30 m/s). No other types of transportation system are covered."
-      },
-      {
-        "specRef": "4.5.6.1.2",
-        "spec_text": "The speed of a moving object is rarely constant. When people walk, run or travel in a car their speed is constantly changing. The speed at which a person can walk, run or cycle depends on many factors including: age, terrain, fitness and distance travelled.",
-        "why": "The lesson does not say that real speeds vary, or which factors affect walking, running and cycling speeds."
-      },
-      {
-        "specRef": "4.5.6.1.2",
-        "spec_text": "It is not only moving objects that have varying speed. The speed of sound and the speed of the wind also vary.",
-        "why": "The lesson gives 330 m/s for sound but does not say that the speed of sound and wind speed vary."
-      },
-      {
-        "specRef": "4.5.6.1.2",
-        "spec_text": "Students should be able to make measurements of distance and time and then calculate speeds of objects.",
-        "why": "The lesson does not teach how to measure distance and time to find a speed. It only calculates speed from given values."
-      },
-      {
-        "specRef": "4.5.6.1.3",
-        "spec_text": "(HT only) Students should be able to explain qualitatively, with examples, that motion in a circle involves constant speed but changing velocity.",
-        "why": "Circular motion (constant speed, changing velocity) is not taught anywhere in the lesson."
+        "why": "The lesson gives one transport speed only. keyPoints[1].content says 'Each type of transport has its own typical speed. A car on a motorway, at about 30 m/s, is one example.' It gives no typical values for other transport such as trains, buses, aircraft or a car in town."
       },
       {
         "specRef": "4.5.6.1.4",
-        "spec_text": "(HT only) If an object is accelerating, its speed at any particular time can be determined by drawing a tangent and measuring the gradient of the distance–time graph at that time.",
-        "why": "The lesson says a curved d-t line means changing speed. It never teaches drawing a tangent to find the speed at a given time."
+        "spec_text": "Students should be able to draw distance–time graphs from measurements and extract and interpret lines and slopes of distance–time graphs, translating information between graphical and numerical form.",
+        "why": "The lesson teaches how to interpret d-t graphs. It never teaches how to plot a d-t graph from measured distances and times, such as choosing axes, plotting points and drawing a line or curve."
       },
       {
         "specRef": "4.5.6.1.5",
-        "spec_text": "Students should be able to estimate the magnitude of everyday accelerations.",
-        "why": "No typical everyday accelerations are given or estimated."
+        "spec_text": "draw velocity–time graphs from measurements and interpret lines and slopes to determine acceleration",
+        "why": "The lesson interprets v-t graphs only. It does not teach how to draw one from measurements."
       },
       {
-        "specRef": "4.5.6.1.5",
-        "spec_text": "(HT only) measure, when appropriate, the area under a velocity–time graph by counting squares.",
-        "why": "The lesson only covers areas of triangles and trapeziums. It does not teach counting squares, which is needed for curved v-t graphs."
+        "specRef": "4.5.1.1",
+        "spec_text": "A vector quantity may be represented by an arrow. The length of the arrow represents the magnitude, and the direction of the arrow the direction of the vector quantity.",
+        "why": "Arrow representation is taught only for force, in keyPoints[5].content: 'You can show a force as an arrow.' The scalar and vector key point (keyPoints[0]) does not say that any vector can be shown as an arrow."
+      },
+      {
+        "specRef": "4.5.6.1.1",
+        "spec_text": "Students should be able to express a displacement in terms of both the magnitude and direction.",
+        "why": "The only worked example gives the magnitude but not the direction. keyPoints[0].content says 'Displacement = 500m, in a direction you can find with a scale drawing.' So the student never sees a displacement written out in full with both magnitude and direction."
       }
     ],
     "above_gcse": [
       {
-        "field": "keyPoints[3].content",
-        "text": "s = ½(u + v)t",
-        "why": "This equation is not in the specification. The spec gives only a = Δv/t and v² − u² = 2as. Presenting a full SUVAT set adds a method the student is not required to know and could confuse them."
+        "field": "keyPoints[3].keyTerms[0].def",
+        "text": "The five motion quantities: displacement, initial velocity, final velocity, acceleration, time",
+        "why": "The specification does not use the 'SUVAT' framework. It also defines s as distance ('distance, s, in metres, m'), while this lesson calls s displacement. This could confuse the student about what s means in v² − u² = 2as."
       },
       {
-        "field": "keyPoints[3].content",
-        "text": "These equations link the five motion quantities: ... You are given three values and asked to find a fourth.",
-        "why": "The 'SUVAT' five-variable framework is A-level style. The spec only requires recalling and applying a = Δv/t and applying v² − u² = 2as."
+        "field": "keyPoints[2].content",
+        "text": "The area under a v-t graph equals the distance travelled.",
+        "why": "In the specification, finding distance from the area under a v-t graph is '(HT only)'. The lesson labels counting squares as 'Higher only' but presents the area rule itself as content for every student."
       },
       {
-        "field": "keyPoints[0].content",
-        "text": "Displacement = 500m, in a direction about 53° north of east.",
-        "why": "Finding the 53° angle needs trigonometry (inverse tangent), which this section does not require. The student is not shown how to get the angle, so this could confuse them."
+        "field": "keyPoints[4].content",
+        "text": "On a v-t graph, the skydiver's fall shows a curve that levels off at terminal velocity. Then there is a sharp drop when the parachute opens.",
+        "why": "Drawing and interpreting v-t graphs for objects that reach terminal velocity is '(Physics only)' in the specification. The lesson does not flag it, so Combined Science students may think it is required of them."
       }
     ],
     "factual_errors": [],
@@ -97,27 +77,25 @@
         "spec_term": "distance travelled = speed × time, s = v t (distance, s, in metres)"
       },
       {
-        "field": "keyPoints[3].content",
-        "text": "s (displacement, m)",
-        "spec_term": "distance, s, in metres, m (in v² − u² = 2 a s)"
+        "field": "keyPoints[4].content",
+        "text": "(2) As speed increases, air resistance increases. The net force and the acceleration both decrease.",
+        "spec_term": "resultant force"
       },
       {
-        "field": "keyPoints[4].content",
-        "text": "The net force and the acceleration both decrease.",
+        "field": "revisionCardBullets[9]",
+        "text": "Terminal velocity: air resistance = weight → zero net force → constant velocity",
         "spec_term": "resultant force"
       },
       {
         "field": "keyPoints[4].content",
-        "text": "Parachute opens. Drag increases hugely, so the net force is now upward.",
+        "text": "(4) Parachute opens. Drag increases hugely, so the net force is now upward.",
         "spec_term": "air resistance; resultant force"
-      },
-      {
-        "field": "keyPoints[4].writeBullets[5]",
-        "text": "Parachute opens → massive drag → decelerates to new lower terminal velocity",
-        "spec_term": "air resistance"
       }
     ],
     "checkpoint_mismatch": [],
-    "not_checked": []
+    "not_checked": [
+      "All keyPoints have \"diagram\": null, so there were no diagrams to check.",
+      "Claims about how often or how heavily topics are examined could not be checked against the specification. Examples: keyPoints[2].tutor_note 'Area under v-t graph calculations come up as 6-mark questions'; keyPoints[4].tutor_note 'a very common 4-mark question'; keyPoints[1].tutor_note 'come up almost every year'."
+    ]
   }
 }

@@ -1,9 +1,9 @@
 {
   "lesson": "p5-momentum",
   "source_file": "lessons/physics/p5-momentum.json",
-  "lesson_md5": "e803340a5af05dd9a37927c3755e1736",
+  "lesson_md5": "f7cbd9fdefb715b77b8f71dbedeb8ec1",
   "model": "claude-opus-5-5",
-  "date": "2026-11-28T13:44:06.540Z",
+  "date": "2026-11-28T15:02:18.938Z",
   "specRefs_sent": [
     "4.5.7.1",
     "4.5.7.2",
@@ -14,66 +14,29 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 5619,
-    "output_tokens": 2783
+    "input_tokens": 5606,
+    "output_tokens": 3566
   },
-  "cost_usd": 0.078136,
+  "cost_usd": 0.093744,
   "status": "OK",
   "result": {
     "lesson": "p5-momentum",
-    "missing_spec_content": [
-      {
-        "specRef": "4.5.7.3",
-        "spec_text": "The equations F = m × a and a = (v − u)/t combine to give the equation F = (m ∆ v)/(∆ t)",
-        "why": "The lesson states F = Δp / Δt but never shows that it comes from combining F = m × a with a = (v − u)/t. The specification sets out this link explicitly."
-      },
-      {
-        "specRef": "4.5.7.3",
-        "spec_text": "Students should be able to apply equations relating force, mass, velocity and acceleration to explain how the changes involved are inter-related.",
-        "why": "The lesson does not mention F = m × a or acceleration anywhere. It does not show how force, mass, change in velocity, acceleration and time relate to each other."
-      },
-      {
-        "specRef": "4.5.7.3",
-        "spec_text": "Students should be able to explain safety features such as: air bags, seat belts, gymnasium crash mats, cycle helmets and cushioned surfaces for playgrounds with reference to the concept of rate of change of momentum.",
-        "why": "Seat belts and gymnasium crash mats are named in the specification but never appear in the lesson. Cushioned playground surfaces are only loosely covered by \"padded flooring\" in keyPoints[2].writeBullets."
-      }
-    ],
-    "above_gcse": [
+    "missing_spec_content": [],
+    "above_gcse": [],
+    "factual_errors": [
       {
         "field": "keyPoints[2].content",
-        "text": "The quantity FΔt is called the <strong>impulse</strong>.",
-        "why": "The specification never uses the term 'impulse'. It frames this content as 'force equals the rate of change of momentum'. Teaching impulse as a central idea, and repeating it in introTips, examTip, the table and revisionCardBullets, goes beyond this specification and may confuse the student about which wording earns exam credit."
-      },
-      {
-        "field": "examTip",
-        "text": "They also test the link between impulse and momentum (F = Δp/t or FΔt = Δp).",
-        "why": "This presents impulse as examined content. The specification does not include impulse."
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "Momentum is measured in <strong>kg m/s</strong>, or N s. These units are equivalent.",
-        "why": "The specification gives only kg m/s as the unit of momentum. N s is an extra unit tied to impulse."
+        "text": "Higher only: the equations F = m × a and a = (v − u) / t combine to give <strong>F = m Δv / Δt</strong>.",
+        "correction": "The specification labels this whole section '4.5.7.3 Changes in momentum (physics only)'. It also labels collision calculations '(physics only complete calculations involving an event, such as the collision of two objects.)' The lesson never says this content is physics only. Instead it applies a 'Higher only' label to just this one paragraph. That suggests the rest of the momentum content is foundation-tier, which is wrong. In the AQA specification the whole of 4.5.7 Momentum is Higher Tier only. So the tier label should cover all of it, and 4.5.7.3 and the collision calculations should also be marked physics only.",
+        "basis": "spec (physics-only labels); own knowledge (whole of 4.5.7 is HT only)"
       }
     ],
-    "factual_errors": [],
-    "wrong_terms": [
-      {
-        "field": "keyPoints[2].content",
-        "text": "The relationship is: <strong>F = Δp / Δt</strong>, or rearranged: <strong>FΔt = Δp</strong>.",
-        "spec_term": "F = (m ∆ v)/(∆ t), where m∆v = change in momentum"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "The quantity FΔt is called the <strong>impulse</strong>.",
-        "spec_term": "rate of change of momentum"
-      },
-      {
-        "field": "keyPoints[2].keyTerms[0].term",
-        "text": "Impulse",
-        "spec_term": "rate of change of momentum"
-      }
-    ],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
-    "not_checked": []
+    "not_checked": [
+      "examTips[1]: \"This is the full mark scheme answer.\" I could not check this claim against actual mark schemes. Also, this tip leaves out the phrase 'rate of change of momentum'. The specification asks students to explain safety features \"with reference to the concept of rate of change of momentum\".",
+      "examTip: \"Momentum calculations come up reliably in exams.\" This is a claim about how often topics appear in exams, and I could not check it against the specification.",
+      "All keyPoints have \"diagram\": null. There were no diagrams or images to check."
+    ]
   }
 }

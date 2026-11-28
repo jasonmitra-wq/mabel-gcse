@@ -117,3 +117,192 @@ Spec-check 2 (2026-11-28, tools/spec-check-results/p5-*.json, $0.7885): factual_
 - p5-fluid-pressure | keyPoints[2].content | spec-check 2 (2026-11-28) fact0/fact1 | old «A floating object is less dense than the liquid.» | new «A floating object has a lower average density than the liquid, counting any air inside it.»
 - p5-fluid-pressure | keyPoints[2].content | spec-check 2 (2026-11-28) fact0/fact1 | old «A sinking object is denser than the liquid.» | new «A sinking object has a higher average density than the liquid.»
 - p5-fluid-pressure | keyPoints[2].keyTerms[0].def | spec-check 2 (2026-11-28) fact0/fact1 | old «The resultant upward force on an object in a liquid, caused by greater pressure on its bottom surface than its top» | new «The resultant upward force on an object in a fluid (a liquid or a gas), caused by greater pressure on its bottom surface than its top»
+
+## 2026-11-28 triage (brief docs/briefs/2026-11-28-p5-triage-brief.md; triage docs/briefs/2026-11-28-p5-triage.md, md5 034f8323b194fe7269395087137b52dd; base ff68066)
+
+Higher label: no lesson file had one (the shape rule bans tier labels; see ESCALATIONS), so each Higher paragraph starts "Higher only:", as the brief says. Figures in added text, with sources: running 3 m/s (spec 4.5.6.1.2); car on a motorway 30 m/s (lesson p5-forces-motion keyPoints[1], existing); car 0 to 30 m/s in 10 s = 3 m/s² (lesson p5-forces-motion keyPoints[2] worked example, existing); free fall 9.8 m/s² (spec 4.5.6.1.5); car 1200 kg at 3 m/s² = 3600 N (lesson p5-newtons-laws keyPoints[1] worked example 1, existing); 70 mph braking distance 75 m and stopping distances 23 m and 96 m (lesson p5-stopping-distance keyPoints[0] and [2], existing); 1200 kg car in the stopping-distance estimate (from p5-newtons-laws worked example 1); reaction times 0.5 s and 0.8 s, and the example table 0.24-0.41 s (example data inside the spec range 0.2-0.9 s, spec 4.5.6.3.2). Unsourced, not written: typical speeds of transport other than the motorway car (forces-motion M1; no transport speeds in the spec or the Paper 2 mark schemes, whose only typical speed is "typical walking speed = 1.5m/s"); stopping-distance data for vehicles other than a car (stopping-distance M3). gravity A3: KEEP, the Paper 2 mark schemes use the word: 2H June 2025 04.7 "a gravitational / centripetal / resultant force acts on the satellite".
+
+- p5-forces-motion | keyPoints[0].content | forces-motion A2 | old «Displacement = 500m, in a direction about 53° north of east.» | new «Displacement = 500m, in a direction you can find with a scale drawing.»
+- p5-forces-motion | keyPoints[0].content | forces-motion M5 (HT) | old «'A car drives at 20 m/s due north' gives velocity.» | new «'A car drives at 20 m/s due north' gives velocity.
+
+Higher only: an object moving in a circle at constant speed has a changing velocity. Its speed stays the same, but its direction keeps changing.»
+- p5-forces-motion | keyPoints[1].content | forces-motion M0 | old «- walking ≈ 1.5 m/s
+- cycling» | new «- walking ≈ 1.5 m/s
+- running ≈ 3 m/s
+- cycling»
+- p5-forces-motion | keyPoints[1].content | forces-motion M1, M2, M3, M4 | old «- speed of light ≈ 3 × 10⁸ m/s
+
+» | new «- speed of light ≈ 3 × 10⁸ m/s
+
+Each type of transport has its own typical speed. A car on a motorway, at about 30 m/s, is one example.
+
+Speed is rarely constant. When people walk, run or travel in a car, their speed keeps changing. How fast a person walks, runs or cycles depends on age, terrain, fitness and distance travelled. The speed of sound and the speed of the wind also vary.
+
+To find a speed, measure a distance and a time, then divide the distance by the time. Measure the distance with a tape measure or a trundle wheel. Time it with a stopwatch, or with light gates for short times.
+
+»
+- p5-forces-motion | keyPoints[1].content | forces-motion M6 (HT) | old «A steeper gradient on a d-t graph always means a faster speed.» | new «A steeper gradient on a d-t graph always means a faster speed.
+
+Higher only: if an object is accelerating, find its speed at one time by drawing a tangent to the curve at that time. The gradient of the tangent is the speed.»
+- p5-forces-motion | keyPoints[2].content | forces-motion M7, M8 (HT) | old «For a trapezium: area = ½ × (sum of parallel sides) × height.» | new «For a trapezium: area = ½ × (sum of parallel sides) × height.
+
+Higher only: if the line on a v-t graph is curved, find the area by counting the squares under it. Multiply the number of squares by the distance one square stands for.
+
+Everyday accelerations are a few metres per second squared. A car speeding up from 0 to 30 m/s in 10 s accelerates at 3 m/s². An object falling freely near the Earth accelerates at about 9.8 m/s².»
+- p5-forces-motion | keyPoints[3].content | forces-motion A0, A1 | old «These equations link the five motion quantities:
+- s (displacement, m)
+- u (initial velocity, m/s)
+- v (final velocity, m/s)
+- a (acceleration, m/s²)
+- t (time, s)
+
+You are given three values and asked to find a fourth.
+
+<strong>Equations</strong>:
+• v = u + at
+• s = ½(u + v)t
+• v² = u² + 2as (no time needed)
+
+Worked example 1: a ball rolls from rest (u = 0) with acceleration 2 m/s² for 5s. Find displacement.
+s = ½(u + v)t — but we need v first. v = 0 + 2 × 5 = 10 m/s. s = ½ × (0 + 10) × 5 = <strong>25m</strong>.
+
+Or using v² = u² + 2as: 10² = 0 + 2 × 2 × s → 100 = 4s → s = 25m. ✓
+
+Worked example 2: a car brakes from 20 m/s to rest over 40m. Find deceleration.
+v² = u² + 2as → 0 = 400 + 2a × 40 → 80a = −400 → a = <strong>−5 m/s²</strong> (decelerating at 5 m/s²).» | new «For uniform acceleration, one equation links velocity, acceleration and distance:
+
+<strong>v² − u² = 2 a s</strong>
+- v is the final velocity, in m/s
+- u is the initial velocity, in m/s
+- a is the acceleration, in m/s²
+- s is the distance, in m
+
+It needs no time. You can also rearrange a = (v − u) / t to give v = u + at.
+
+Worked example 1: a ball rolls from rest (u = 0) with an acceleration of 2 m/s² over 25 m. Find its final velocity.
+v² − u² = 2as → v² − 0 = 2 × 2 × 25 = 100 → v = √100 = <strong>10 m/s</strong>.
+
+Worked example 2: a car brakes from 20 m/s to rest over 40 m. Find its deceleration.
+v² − u² = 2as → 0 − 400 = 2 × a × 40 → 80a = −400 → a = <strong>−5 m/s²</strong> (decelerating at 5 m/s²).»
+- p5-forces-motion | keyPoints[3].writeBullets[0] | forces-motion A0, A1 | old «s = displacement (m), u = initial velocity (m/s), v = final velocity (m/s). a = acceleration (m/s²), t = time (s)» | new «v² − u² = 2as: v final velocity (m/s), u initial velocity (m/s), a acceleration (m/s²), s distance (m)»
+- p5-forces-motion | keyPoints[3].writeBullets[1] | forces-motion A0 | old «v = u + at — use when you have u, a, t and want v» | new «v = u + at is a = (v − u)/t rearranged»
+- p5-forces-motion | keyPoints[3].writeBullets[2] | forces-motion A0 | old «s = ½(u + v)t — use when you have u, v, t and want s» | new «»
+- p5-forces-motion | keyPoints[3].writeBullets | forces-motion A0 | old «v² = u² + 2as — use when there is no time given» | new «Use v² − u² = 2as when no time is given»
+- p5-forces-motion | keyPoints[3].writeBullets | forces-motion A1 | old «List known values before choosing which equation to use» | new «Square both velocities before you subtract»
+- p5-forces-motion | keyPoints[3].memTip | forces-motion A1 | old «Write out s, u, v, a, t. Tick off the three you know and circle the one you want. Then pick the equation that contains all four.» | new «v² − u² = 2as has no t in it: use it when the time is not given.»
+- p5-forces-motion | keyPoints[3].tutor_note | forces-motion A1 | old «v² = u² + 2as is the most tested, because it hides time.» | new «v² − u² = 2as is the equation of motion to know, and it hides time.»
+- p5-forces-motion | commonMistakes[2] | forces-motion A1 | old «Using the wrong SUVAT equation. Always list s, u, v, a, t and tick off the known values before choosing.» | new «Forgetting to square the velocities in v² − u² = 2as. Square each velocity before you subtract.»
+- p5-forces-motion | examTips[1] | forces-motion A1 | old «For SUVAT questions, write the five letters s u v a t and tick what you know. It shows at once which equation to use.» | new «For v² − u² = 2as questions, write down v, u, a and s, and mark the one you need to find.»
+- p5-forces-motion | revisionCardBullets[6] | forces-motion A0, A1 | old «SUVAT: v = u + at; s = ½(u+v)t; v² = u² + 2as» | new «Uniform acceleration: v² − u² = 2as; v = u + at is a = (v − u)/t rearranged»
+- p5-forces-motion | revisionCardBullets[7] | forces-motion A1 | old «List s, u, v, a, t and tick known values before choosing equation» | new «Square both velocities first in v² − u² = 2as»
+- p5-forces-motion | revisionCardBullets[11] | forces-motion M0 | old «Typical speeds: walking 1.5, cycling 6, motorway car 30, sound 330 m/s, light 3×10⁸ m/s» | new «Typical speeds: walking 1.5, running 3, cycling 6, motorway car 30, sound 330 m/s, light 3×10⁸ m/s»
+- p5-forces-motion | keyPoints[1].writeBullets | forces-motion M0 | old «Typical speeds: walking 1.5 m/s, cycling 6 m/s, motorway car 30 m/s, sound 330 m/s» | new «Typical speeds: walking 1.5 m/s, running 3 m/s, cycling 6 m/s, motorway car 30 m/s, sound 330 m/s»
+- p5-newtons-laws | keyPoints[1].content | newtons-laws M6, M8, M9 | old «Rearrangements: a = F/m (more force → more acceleration; more mass → less acceleration). m = F/a.» | new «The acceleration of an object is proportional to the resultant force on it, and inversely proportional to its mass. Inversely proportional means that doubling the mass halves the acceleration.
+
+Rearrangements: a = F/m (more force → more acceleration; more mass → less acceleration). m = F/a.»
+- p5-newtons-laws | keyPoints[1].content | newtons-laws M7 (HT), A0 | old «<strong>Inertial mass</strong>: the mass measured by F = ma is called inertial mass. It measures how much the object resists acceleration. Experiments show that inertial mass equals gravitational mass (the mass in W = mg). This holds to extremely high precision.» | new «You can estimate forces for road transport. A car of about 1200 kg accelerating at about 3 m/s² needs a resultant force of about 1200 × 3 ≈ 3600 N. The symbol ~ means "approximately", so this force is ~ 3600 N.
+
+Higher only: <strong>inertial mass</strong> is a measure of how difficult it is to change the velocity of an object. It is defined as the ratio of force over acceleration: m = F ÷ a.»
+- p5-newtons-laws | keyPoints[1].writeBullets[5] | newtons-laws A1 | old «Inertial mass — measured from F = ma; equals gravitational mass in all experiments» | new «Higher only: inertial mass = force ÷ acceleration; how hard it is to change velocity»
+- p5-newtons-laws | keyPoints[1].keyTerms[1].def | newtons-laws A2 (key term, logged) | old «Mass measured by resistance to acceleration using F = ma; equal to gravitational mass» | new «Mass measured by resistance to acceleration using F = ma»
+- p5-newtons-laws | keyPoints[2].content | newtons-laws M11 | old «But the Earth is 6 × 10²⁴ kg, so your pull hardly accelerates it at all.» | new «But the Earth is 6 × 10²⁴ kg, so your pull hardly accelerates it at all.
+
+In equilibrium, as for a book resting on a table, the forces on the book balance. The book's weight and the table's push up are NOT a Third Law pair. They act on the same object, and they are different types of force. The book's weight pairs with the book's pull on the Earth.»
+- p5-newtons-laws | keyPoints[3].content | newtons-laws M0, M1, M2, M3 | old «<strong>Mass</strong> is the amount of matter in an object.» | new «The force of gravity close to the Earth is due to the gravitational field around the Earth. An object's weight depends on the gravitational field strength where it is. The weight of an object may be considered to act at a single point, called its <strong>centre of mass</strong>.
+
+Weight and mass are directly proportional: W ∝ m. The symbol ∝ means "is directly proportional to". Double the mass and the weight doubles. Weight is measured with a calibrated spring-balance, called a <strong>newtonmeter</strong>.
+
+<strong>Mass</strong> is the amount of matter in an object.»
+- p5-newtons-laws | keyPoints[3].content | newtons-laws M4, M5 (HT) | old «If resultant ≠ 0, the object accelerates in the direction of the resultant force.» | new «If resultant ≠ 0, the object accelerates in the direction of the resultant force.
+
+Higher only: to find the resultant of two forces that are not in a line, use a scale drawing. Draw each force as an arrow to scale, tip to tail. The arrow from the start of the first to the end of the second is the resultant. Measure its length and angle for its size and direction. If the arrows join up into a closed shape, the resultant is zero: the object is in equilibrium.
+
+Higher only: a single force can be resolved into two components acting at right angles to each other. The two components together have the same effect as the single force.»
+- p5-newtons-laws | keyPoints[4] (new key point: required practical) | newtons-laws M10 | old «» | new «new key point 4 "Required practical: force, mass and acceleration" (content, writeBullets, keyTerms Independent variable and Control variable, memTip, tutor_note; full text in the file)»
+- p5-newtons-laws | checkpoints["4"] (new, for the new key point) | newtons-laws M10 | old «» | new «new checkpoint "4" (straight line through the origin: acceleration directly proportional to force; correct 0)»
+- p5-stopping-distance | keyPoints[0].content | stopping-distance M4 | old «That is roughly 6 car-lengths compared with 24 car-lengths.» | new «That is roughly 6 car-lengths compared with 24 car-lengths.
+
+You can use these values to estimate an emergency stop. At 70 mph the stopping distance is about 96 m: about four times the 23 m at 30 mph.
+
+Graphs of stopping distance against speed can be drawn for different vehicles. On such a graph you can read each vehicle's stopping distance at a given speed and compare them.»
+- p5-stopping-distance | keyPoints[1].content | stopping-distance M0, M1, M2 | old «All of these factors make it longer.» | new «All of these factors make it longer.
+
+You can measure reaction time in two simple ways. In the ruler-drop test, someone drops a ruler between your finger and thumb, and you catch it. The further it falls, the longer your reaction time. A computer test times how long you take to press a key after a signal appears.
+
+Repeat the test several times and record each result in a table. Leave out any anomaly, a result far from the others. Then work out the mean of the rest.
+
+You can then judge a factor from data. At 20 m/s, a reaction time of 0.5 s gives a thinking distance of 10 m. If tiredness makes it 0.8 s, the thinking distance becomes 16 m.»
+- p5-stopping-distance | keyPoints[1].list[2].definition | stopping-distance A1 | old «fatigue slows brain responses; severe tiredness can cause microsleep at the wheel» | new «fatigue slows brain responses»
+- p5-stopping-distance | keyPoints[2].content | stopping-distance M5 | old «Several factors affect <strong>braking distance</strong>.» | new «Several factors affect <strong>braking distance</strong>. The greater the speed of a vehicle, the greater the braking force needed to stop it in a certain distance.»
+- p5-stopping-distance | keyPoints[3].content | stopping-distance M8 | old «When the brakes are on, the car slows down.» | new «When the brakes are applied, the friction force between the brakes and the wheel does work. This work reduces the kinetic energy of the vehicle, and the temperature of the brakes increases.»
+- p5-stopping-distance | keyPoints[3].content | stopping-distance M6, M7 (HT) | old «Newton's Second Law: F = ma → braking force = mass × deceleration.» | new «Newton's Second Law: F = ma → braking force = mass × deceleration.
+
+Large decelerations may lead to brakes overheating and/or loss of control. A very large deceleration can make the tyres skid, so the driver can no longer steer.
+
+Higher only: you can estimate a braking force. At 70 mph (about 31 m/s), the braking distance is about 75 m. From v² − u² = 2as, the deceleration is about 31² ÷ (2 × 75) ≈ 6.4 m/s². For a car of about 1200 kg, F = m a ≈ 1200 × 6.4 ≈ 7700 N.»
+- p5-stopping-distance | tables[1] (new table) | stopping-distance M1 | old «» | new «new table "Example results: ruler-drop reaction times for one student": tries 1-4: 0.25, 0.24, 0.41, 0.26 s (try 3 is the anomaly; the mean of the rest is 0.25 s)»
+- p5-momentum | keyPoints[0].content | momentum A2 | old «Momentum is measured in <strong>kg m/s</strong>, or N s. These units are equivalent.» | new «Momentum is measured in <strong>kg m/s</strong>.»
+- p5-momentum | keyPoints[0].writeBullets[1] | momentum A2 | old «Units: kg m/s (or N s — equivalent)» | new «Units: kg m/s»
+- p5-momentum | keyPoints[2].heading | momentum A0 (heading, logged) | old «Force, impulse and change in momentum» | new «Force and change in momentum»
+- p5-momentum | keyPoints[2].content | momentum M0, M1 (HT), M2, A0 | old «A <strong>resultant force</strong> acting on an object changes its momentum. The relationship is: <strong>F = Δp / Δt</strong>, or rearranged: <strong>FΔt = Δp</strong>. This means force × time = change in momentum. The quantity FΔt is called the <strong>impulse</strong>. Compare a large force for a short time with a small force for a long time. Both can give the same change in momentum. This explains safety features. Crumple zones and airbags make a collision last longer. That reduces the force felt (same Δp, larger Δt → smaller F). A cycling or motorcycle helmet works the same way.» | new «A <strong>resultant force</strong> acting on an object that is moving, or able to move, changes its momentum.
+
+Higher only: the equations F = m × a and a = (v − u) / t combine to give <strong>F = m Δv / Δt</strong>. Here m Δv is the change in momentum, so force equals the rate of change of momentum. A bigger change in velocity, or a shorter time, means a bigger force.
+
+Rearranged: <strong>FΔt = Δp</strong>, so force × time = change in momentum. Compare a large force for a short time with a small force for a long time. Both can give the same change in momentum.
+
+This explains safety features. Air bags, seat belts, gymnasium crash mats, cycle helmets and cushioned playground surfaces all make an impact last longer. Crumple zones in cars do the same. A longer time means a smaller rate of change of momentum, so a smaller force (same Δp, larger Δt → smaller F).»
+- p5-momentum | keyPoints[2].writeBullets[1] | momentum A0 | old «FΔt = Δp (impulse = change in momentum)» | new «FΔt = Δp (force × time = change in momentum)»
+- p5-momentum | keyPoints[2].writeBullets[4] | momentum M2 | old «Helmets, padded flooring: same principle — extend time of impact» | new «Seat belts, crash mats, helmets, cushioned playground surfaces: same principle — extend the time of impact»
+- p5-momentum | keyPoints[2].keyTerms[0] (Impulse) | momentum A0 (key term, logged) | old «{
+          "term": "Impulse",
+          "def": "Force multiplied by time (FΔt) — equal to the change in momentum; measured in N s (equivalent to kg m/s)"
+        }» | new «»
+- p5-momentum | introTips[2] | momentum A0 | old «Impulse = force × time = change in momentum.» | new «Force × time = change in momentum.»
+- p5-momentum | examTip | momentum A1 | old «They also test the link between impulse and momentum (F = Δp/t or FΔt = Δp).» | new «They also test force as the rate of change of momentum (F = Δp/Δt).»
+- p5-momentum | commonMistakes[1] | momentum A0 | old «Mixing up impulse (FΔt) and work (Fd). Impulse involves time, and work involves distance. They are different ideas.» | new «Mixing up force × time (FΔt) and work done (Fd). FΔt gives a change in momentum and involves time. Work done involves distance.»
+- p5-momentum | examTips[3] | momentum A0, A2 | old «Units check: momentum is kg m/s or N s, which are equivalent. Impulse is also N s. Force is N, time is s — so N × s = N s = kg m/s. All consistent.» | new «Units check: momentum is in kg m/s, force in N and time in s.»
+- p5-momentum | revisionCardBullets[6] | momentum A0 | old «Impulse: FΔt = Δp (force × time = change in momentum)» | new «FΔt = Δp (force × time = change in momentum)»
+- p5-momentum | tables[0].rows[3][1] | momentum A0 (table, logged) | old «Impulse = change in momentum» | new «Force × time = change in momentum»
+- p5-gravity | keyPoints[1].content | gravity A0 | old «Near Earth's surface, the field is roughly uniform (the same strength and direction everywhere near the surface). There, g = 9.8 N/kg.» | new «Near Earth's surface, g = 9.8 N/kg.»
+- p5-gravity | keyPoints[1].content | gravity A0 | old « The gravitational field is shown by field lines pointing towards the centre of the mass. They show the direction of the force on a small test mass.» | new «»
+- p5-gravity | keyPoints[1].writeBullets[2] | gravity A0 | old «Near Earth's surface: approximately uniform field, g = 9.8 N/kg» | new «Near Earth's surface: g = 9.8 N/kg»
+- p5-gravity | keyPoints[1].writeBullets[4] | gravity A0 | old «Field lines point towards centre of mass (direction of force on a small test mass)» | new «»
+- p5-gravity | keyPoints[1].memTip | gravity A0 | old «Gravitational field = region where gravity acts. Field lines point IN (towards the mass).» | new «Gravitational field = region where gravity acts. It gets weaker further from the mass.»
+- p5-gravity | keyPoints[2].content | gravity A1 | old « A higher orbit also has a longer circumference. So the orbital period (the time for one orbit) is longer.» | new «»
+- p5-gravity | keyPoints[2].content | gravity M4, M5 (HT) | old «So a lower speed is needed to stay in orbit.» | new «So a lower speed is needed to stay in orbit.
+
+Planets orbit the Sun. Moons are natural satellites that orbit planets. Artificial satellites are machines that people launch into orbit round the Earth. Gravity keeps all three in their orbits.
+
+Higher only: in a circular orbit, the force of gravity can change the velocity without changing the speed. The speed stays the same, but the direction keeps changing. For a stable orbit, the radius must change if the speed changes.»
+- p5-gravity | keyPoints[2].writeBullets[3] | gravity A1 | old «Higher orbit: weaker gravity → lower orbital speed → longer orbital period» | new «Higher orbit: weaker gravity → lower orbital speed»
+- p5-gravity | keyPoints[2].writeBullets[4] | gravity A1 | old «Satellites in lower orbits move faster and orbit more quickly» | new «Satellites in lower orbits move faster»
+- p5-gravity | keyPoints[2].keyTerms[2] (Orbital period) | gravity A2 (key term, logged) | old «{
+          "term": "Orbital period",
+          "def": "The time taken for one complete orbit — longer for higher orbits"
+        }» | new «»
+- p5-gravity | commonMistakes[2] | gravity A1 | old «Higher orbit = weaker gravity = slower orbital speed = longer period.» | new «Higher orbit = weaker gravity = slower orbital speed.»
+- p5-gravity | revisionCardBullets[7] | gravity A1 | old «Higher orbit: weaker gravity → slower orbital speed → longer orbital period» | new «Higher orbit: weaker gravity → slower orbital speed»
+- p5-fluid-pressure | keyPoints[1].content | fluid-pressure M0 (HT label) | old «The pressure due to a column of liquid is given by <strong>p = hρg</strong>.» | new «Higher only: the pressure due to a column of liquid is given by <strong>p = hρg</strong>.»
+- p5-fluid-pressure | keyPoints[2].content | fluid-pressure M0 (HT label) | old «Think of an object partly or fully under the surface of a liquid.» | new «Higher only: think of an object partly or fully under the surface of a liquid.»
+- p5-fluid-pressure | keyPoints[2].content | fluid-pressure M1 (HT) | old «A sinking object has a higher average density than the liquid.» | new «A sinking object has a higher average density than the liquid.
+
+Upthrust grows with the volume of the object under the surface, and with the density of the liquid.»
+- data/physics-syllabus.json | p5-gravity specRef | gravity D3 (M0-M3: weight content lives in p5-newtons-laws) | old «["4.5.1.3", "4.8.1.3"]» | new «["4.8.1.3"]»
+- p5-momentum | videoLinks[*].url | momentum A0 | old «…search_query=momentum+conservation+impulse+AQA+GCSE+physics» | new «…search_query=momentum+conservation+AQA+GCSE+physics»
+- p5-fluid-pressure.script.json | step 3.2 (the brief names 3.3; the sentence is in 3.2) | brief step 3 (upthrust in any fluid) | old «This upward force from a liquid is called upthrust.» | new «This upward force from a liquid or a gas is called upthrust.» (1 place in the script; TeachScript.VERSION 10 → 11, teach-script v27 → v28)
+- p5-forces-motion | keyPoints[1].content | forces-motion M6 (HT), sentence length | old «Higher only: if an object is accelerating, find its speed at one time by drawing a tangent to the curve at that time.» | new «Higher only: if an object is accelerating, draw a tangent to the curve at the time you want.»
+- p5-momentum | keyPoints[2].content | momentum M2, sentence length | old «A longer time means a smaller rate of change of momentum, so a smaller force (same Δp, larger Δt → smaller F).» | new «A longer time means a smaller rate of change of momentum. So the force is smaller (same Δp, larger Δt → smaller F).»
+- p5-newtons-laws | keyPoints[4].content | newtons-laws M10, sentence length | old «Results: a graph of acceleration against force is a straight line through the origin, so the acceleration is directly proportional to the force.» | new «Results: a graph of acceleration against force is a straight line through the origin. So the acceleration is directly proportional to the force.»
+
+Spec-check 3 (2026-11-28, $0.6743, seven lessons; p5-fluid-pressure not run: one more lesson could have passed the $0.81 limit): factual_errors 4, fixed in one round; checkpoint_mismatch 0 on all seven. "Physics only" labels not added: every P5 lesson belongs to the GCSE Physics course, which teaches all physics-only content.
+
+- p5-stopping-distance | keyPoints[3].content | spec-check 3 fact (stopping-distance, new item) | old «This is why seatbelts and crumple zones are essential.» | new «This is why seatbelts are essential.»
+- p5-momentum | keyPoints[0].content | spec-check 3 fact (momentum: the spec marks all of 4.5.7 HT only) | old «<strong>Momentum</strong> is defined as the product» | new «Higher only: <strong>momentum</strong> is defined as the product»
+- p5-momentum | keyPoints[1].content | spec-check 3 fact (momentum) | old «The <strong>law of conservation of momentum</strong> applies» | new «Higher only: the <strong>law of conservation of momentum</strong> applies»
+- p5-momentum | keyPoints[2].content | spec-check 3 fact (momentum) | old «A <strong>resultant force</strong> acting on an object that is moving, or able to move, changes its momentum.
+
+Higher only: the equations F = m × a» | new «Higher only: a <strong>resultant force</strong> acting on an object that is moving, or able to move, changes its momentum.
+
+The equations F = m × a»
+- p5-gravity | keyPoints[2].content | spec-check 3 fact (gravity, triage M4 wording) | old «Artificial satellites are machines that people launch into orbit round the Earth.» | new «Artificial satellites are machines that people launch into orbit, round the Earth or another body such as the Moon.»
+- p5-moments | keyPoints[0].content | spec-check 3 fact (moments, new item) | old «It turns about a fixed point called the <strong>pivot</strong>.» | new «The object turns about a fixed point called the <strong>pivot</strong>.»

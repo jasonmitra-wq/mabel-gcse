@@ -1,9 +1,9 @@
 {
   "lesson": "p5-stopping-distance",
   "source_file": "lessons/physics/p5-stopping-distance.json",
-  "lesson_md5": "c07a178e0aac75265d76b1396ce53b68",
+  "lesson_md5": "4b03ed710edbb2b79b435e3b6c3dbe9d",
   "model": "claude-opus-5-5",
-  "date": "2026-11-28T13:43:21.726Z",
+  "date": "2026-11-28T15:01:45.042Z",
   "specRefs_sent": [
     "4.5.6.3.1",
     "4.5.6.3.2",
@@ -15,99 +15,44 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7673,
-    "output_tokens": 5213
+    "input_tokens": 8403,
+    "output_tokens": 3902
   },
-  "cost_usd": 0.134952,
+  "cost_usd": 0.111652,
   "status": "OK",
   "result": {
     "lesson": "p5-stopping-distance",
     "missing_spec_content": [
       {
         "specRef": "4.5.6.3.2",
-        "spec_text": "explain methods used to measure human reaction times and recall typical results",
-        "why": "The lesson recalls typical results (0.2–0.9 s) but never describes a way to measure reaction time, such as the ruler-drop test or a computer test."
+        "spec_text": "Reaction times vary from person to person.",
+        "why": "The lesson gives a typical range ('For an alert driver, it is usually 0.2–0.9 seconds', keyPoints[1].content) and factors that lengthen reaction time. It never states that reaction times vary from one person to another."
       },
       {
         "specRef": "4.5.6.3.2",
         "spec_text": "interpret and evaluate measurements from simple methods to measure the different reaction times of students",
-        "why": "The lesson contains no reaction-time measurements to interpret or evaluate. It also does not discuss repeat readings, averages or reliability."
-      },
-      {
-        "specRef": "4.5.6.3.2",
-        "spec_text": "evaluate the effect of various factors on thinking distance based on given data.",
-        "why": "The factors are listed qualitatively. The student is never given data, for example reaction times with and without a distraction, to evaluate."
+        "why": "The lesson only shows repeat results for one student ('Example results: ruler-drop reaction times for one student', tables[1].title). It does not show how to compare or evaluate reaction times between different students. It also does not explain how a ruler-drop distance becomes a time."
       },
       {
         "specRef": "4.5.6.3.1",
         "spec_text": "(Physics only) Students will be required to interpret graphs relating speed to stopping distance for a range of vehicles.",
-        "why": "The lesson has a table for cars only. There are no graphs and no other vehicle types (for example lorries or bicycles)."
-      },
-      {
-        "specRef": "4.5.6.3.1",
-        "spec_text": "(Physics only) Students should be able to estimate how the distance for a vehicle to make an emergency stop varies over a range of speeds typical for that vehicle.",
-        "why": "The table gives standard car values. The student is not shown how to estimate stopping distances, and other vehicles are not covered."
-      },
-      {
-        "specRef": "4.5.6.3.4",
-        "spec_text": "The greater the speed of a vehicle the greater the braking force needed to stop the vehicle in a certain distance.",
-        "why": "The lesson treats braking force as constant and varies the distance. It never states the spec's point that a higher speed needs a larger braking force to stop in the same distance."
-      },
-      {
-        "specRef": "4.5.6.3.4",
-        "spec_text": "Large decelerations may lead to brakes overheating and/or loss of control.",
-        "why": "Overheating is covered, but loss of control (for example skidding) as a danger of large decelerations is never mentioned."
-      },
-      {
-        "specRef": "4.5.6.3.4",
-        "spec_text": "(HT only) estimate the forces involved in the deceleration of road vehicles in typical situations on a public road.",
-        "why": "F = ma is stated, but there is no estimate of a typical braking force from a typical car mass and deceleration (or from speed and stopping distance)."
-      },
-      {
-        "specRef": "4.5.6.3.4",
-        "spec_text": "work done by the friction force between the brakes and the wheel reduces the kinetic energy of the vehicle and the temperature of the brakes increases.",
-        "why": "The main lesson text never states that the work done by the friction force between the brakes and the wheel reduces the kinetic energy. This only appears in a tutor_note. The keyTerms definition of friction refers only to tyre and road."
+        "why": "The lesson only says such graphs exist ('Graphs of stopping distance against speed can be drawn for different vehicles. On such a graph you can read each vehicle's stopping distance at a given speed and compare them.', keyPoints[0].content). No graph is given and no interpretation is practised."
       }
     ],
-    "above_gcse": [
-      {
-        "field": "keyPoints[2].content",
-        "text": "The UK legal minimum tyre tread depth is 1.6 mm.",
-        "why": "This is a legal fact, not specification content."
-      },
-      {
-        "field": "keyPoints[1].list[2].definition",
-        "text": "severe tiredness can cause microsleep at the wheel",
-        "why": "Microsleep is not in the specification. The spec only says tiredness affects reaction time."
-      },
-      {
-        "field": "keyPoints[3].tutor_note",
-        "text": "Braking distance = KE ÷ braking force. This gives the quadratic relationship.",
-        "why": "The spec only requires that a greater speed gives a greater stopping distance for a given braking force. The quantitative v² derivation goes beyond these sections. It is not wrong."
-      }
-    ],
-    "factual_errors": [],
-    "wrong_terms": [
+    "above_gcse": [],
+    "factual_errors": [
       {
         "field": "keyPoints[3].content",
-        "text": "It is called <strong>brake fade</strong>.",
-        "spec_term": "brakes overheating"
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "The <strong>kinetic energy of the car is transferred to thermal energy</strong> (heat) in the brakes through friction.",
-        "spec_term": "work done by the friction force between the brakes and the wheel reduces the kinetic energy of the vehicle and the temperature of the brakes increases"
-      },
-      {
-        "field": "keyTerms (keyPoints[2]) friction.def",
-        "text": "The force between tyre and road surface that allows braking",
-        "spec_term": "friction force between the brakes and the wheel"
+        "text": "In emergency braking, the deceleration is very high. Then the forces on passengers are very large. This is why seatbelts and crumple zones are essential.",
+        "correction": "Crumple zones only reduce forces in a collision, by deforming and increasing the time of impact. They play no part during braking. Seatbelts do restrain passengers during heavy braking. Crumple zones should not be given as a reason linked to braking deceleration.",
+        "basis": "own knowledge"
       }
     ],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "All keyPoints have diagram: null. The tutor_note in keyPoints[0] refers to 'a diagram of a car journey from hazard to stop', but no diagram is provided, so this could not be checked.",
-      "It is assumed that checkpoint keys \"0\"–\"3\" sit with keyPoints[0]–keyPoints[3]. The lesson JSON does not state this mapping explicitly."
+      "keyPoints[0].tutor_note refers to 'a diagram of a car journey from hazard to stop', but every keyPoint has \"diagram\": null. No such diagram exists to check.",
+      "introTips[4] makes a real-world claim that could not be checked against the specification or verified: 'That is why motorway speed limits save so many lives.'"
     ]
   }
 }

@@ -3,7 +3,7 @@
   "source_file": "lessons/physics/p5-elasticity.json",
   "lesson_md5": "ad5a605f069c31d851bf4b17931cf42e",
   "model": "claude-opus-5-5",
-  "date": "2026-11-28T13:45:11.401Z",
+  "date": "2026-11-28T15:03:30.726Z",
   "specRefs_sent": [
     "4.5.3"
   ],
@@ -13,35 +13,21 @@
   "stop_reason": "end_turn",
   "usage": {
     "input_tokens": 6286,
-    "output_tokens": 1903
+    "output_tokens": 1762
   },
-  "cost_usd": 0.063204,
+  "cost_usd": 0.060384,
   "status": "OK",
   "result": {
     "lesson": "p5-elasticity",
     "missing_spec_content": [],
     "above_gcse": [],
     "factual_errors": [],
-    "wrong_terms": [
-      {
-        "field": "keyPoints[0].content",
-        "text": "For a still object, <strong>more than one force</strong> must act to change its shape.",
-        "spec_term": "stationary objects (spec: \"this is limited to stationary objects only\")"
-      },
-      {
-        "field": "revisionCardBullets[0]",
-        "text": "Changing the shape of a still object needs more than one force",
-        "spec_term": "stationary objects (spec: \"this is limited to stationary objects only\")"
-      },
-      {
-        "field": "introTips[0]",
-        "text": "To change the shape of a still object, you need more than one force.",
-        "spec_term": "stationary objects (spec: \"this is limited to stationary objects only\")"
-      }
-    ],
+    "wrong_terms": [],
     "checkpoint_mismatch": [],
     "not_checked": [
-      "All keyPoints have \"diagram\": null, so there were no diagrams or images to check."
+      "The specification text refers to skills by code only, not by content: \"AT skills covered by this practical activity: AT 1 and 2.\", \"WS 3.5\" and \"MS 3b, c, 4a\". It says \"Details of all skills are given in Key opportunities for skills development (page 95).\" The details of these skills were not supplied, so I could not check whether the practical method in keyPoints[2].content (for example \"Hang the spring from a clamp. Put a ruler next to it.\") covers everything those skill codes require.",
+      "The specification says \"This equation is also given in Changes in energy (page 18).\" That section was not supplied, so I could not check that keyPoints[3].content and tables[0] match how Ee = ½ke² is presented there.",
+      "Every keyPoints[].diagram field is null, so there were no diagrams or images to check."
     ]
   }
 }

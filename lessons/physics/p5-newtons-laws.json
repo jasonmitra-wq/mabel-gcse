@@ -44,7 +44,7 @@
     },
     {
       "heading": "Newton's Second Law — F = ma",
-      "content": "<strong>Newton's Second Law</strong>: the resultant force on an object equals its mass times its acceleration. <strong>F = ma</strong>. Unit of force: newton (N). 1N is the force needed to give a mass of 1kg an acceleration of 1 m/s².\n\nRearrangements: a = F/m (more force → more acceleration; more mass → less acceleration). m = F/a.\n\nWorked example 1: a 1200kg car accelerates at 3 m/s². Resultant force = 1200 × 3 = <strong>3600N</strong>.\n\nWorked example 2: a resultant force of 150N acts on a 50kg object. a = F/m = 150 ÷ 50 = <strong>3 m/s²</strong>.\n\nWorked example 3: a force of 20N produces an acceleration of 4 m/s². Mass = F/a = 20 ÷ 4 = <strong>5kg</strong>.\n\n<strong>Inertial mass</strong>: the mass measured by F = ma is called inertial mass. It measures how much the object resists acceleration. Experiments show that inertial mass equals gravitational mass (the mass in W = mg). This holds to extremely high precision.",
+      "content": "<strong>Newton's Second Law</strong>: the resultant force on an object equals its mass times its acceleration. <strong>F = ma</strong>. Unit of force: newton (N). 1N is the force needed to give a mass of 1kg an acceleration of 1 m/s².\n\nThe acceleration of an object is proportional to the resultant force on it, and inversely proportional to its mass. Inversely proportional means that doubling the mass halves the acceleration.\n\nRearrangements: a = F/m (more force → more acceleration; more mass → less acceleration). m = F/a.\n\nWorked example 1: a 1200kg car accelerates at 3 m/s². Resultant force = 1200 × 3 = <strong>3600N</strong>.\n\nWorked example 2: a resultant force of 150N acts on a 50kg object. a = F/m = 150 ÷ 50 = <strong>3 m/s²</strong>.\n\nWorked example 3: a force of 20N produces an acceleration of 4 m/s². Mass = F/a = 20 ÷ 4 = <strong>5kg</strong>.\n\nYou can estimate forces for road transport. A car of about 1200 kg accelerating at about 3 m/s² needs a resultant force of about 1200 × 3 ≈ 3600 N. The symbol ~ means \"approximately\", so this force is ~ 3600 N.\n\nHigher only: <strong>inertial mass</strong> is a measure of how difficult it is to change the velocity of an object. It is defined as the ratio of force over acceleration: m = F ÷ a.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -54,7 +54,7 @@
         "Rearrangements: a = F/m and m = F/a",
         "Greater mass → smaller acceleration for the same force",
         "Greater force → greater acceleration for the same mass",
-        "Inertial mass — measured from F = ma; equals gravitational mass in all experiments"
+        "Higher only: inertial mass = force ÷ acceleration; how hard it is to change velocity"
       ],
       "keyTerms": [
         {
@@ -63,7 +63,7 @@
         },
         {
           "term": "Inertial mass",
-          "def": "Mass measured by resistance to acceleration using F = ma; equal to gravitational mass"
+          "def": "Mass measured by resistance to acceleration using F = ma"
         }
       ],
       "memTip": "Force triangle: F on top, m and a below. Cover what you want to find: m×a = F, F÷m = a, F÷a = m.",
@@ -71,7 +71,7 @@
     },
     {
       "heading": "Newton's Third Law — action and reaction pairs",
-      "content": "<strong>Newton's Third Law</strong>: say object A exerts a force on object B. Then object B exerts an equal and opposite force on object A.\n\nThese are called a <strong>Newton's Third Law pair</strong> (or action-reaction pair). Key properties: equal in size, opposite in direction, the same type of force, and acting on DIFFERENT objects.\n\nThe forces act on different objects, so they CANNOT cancel each other out. Forces only cancel when they act on the SAME object.\n\nExample 1: you push against a wall. You exert a force on the wall (you → wall, pushing right). The wall exerts an equal force back on you (wall → you, pushing left). That is why you don't fall forward. The reaction force acts on you.\n\nExample 2: a rocket expels gas downward at high speed. The engine exerts a force on the gas (downward). By Newton's Third Law, the gas exerts an equal force on the engine (upward). This is the thrust that pushes the rocket along.\n\nExample 3: the Earth pulls you downward (gravity). You pull the Earth upward with exactly the same force. But the Earth is 6 × 10²⁴ kg, so your pull hardly accelerates it at all.",
+      "content": "<strong>Newton's Third Law</strong>: say object A exerts a force on object B. Then object B exerts an equal and opposite force on object A.\n\nThese are called a <strong>Newton's Third Law pair</strong> (or action-reaction pair). Key properties: equal in size, opposite in direction, the same type of force, and acting on DIFFERENT objects.\n\nThe forces act on different objects, so they CANNOT cancel each other out. Forces only cancel when they act on the SAME object.\n\nExample 1: you push against a wall. You exert a force on the wall (you → wall, pushing right). The wall exerts an equal force back on you (wall → you, pushing left). That is why you don't fall forward. The reaction force acts on you.\n\nExample 2: a rocket expels gas downward at high speed. The engine exerts a force on the gas (downward). By Newton's Third Law, the gas exerts an equal force on the engine (upward). This is the thrust that pushes the rocket along.\n\nExample 3: the Earth pulls you downward (gravity). You pull the Earth upward with exactly the same force. But the Earth is 6 × 10²⁴ kg, so your pull hardly accelerates it at all.\n\nIn equilibrium, as for a book resting on a table, the forces on the book balance. The book's weight and the table's push up are NOT a Third Law pair. They act on the same object, and they are different types of force. The book's weight pairs with the book's pull on the Earth.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -94,7 +94,7 @@
     },
     {
       "heading": "Weight, mass and free body diagrams",
-      "content": "<strong>Weight</strong> is the force of gravity acting on an object. Equation: <strong>W = mg</strong>. W in newtons (N), m in kilograms (kg), g = gravitational field strength in N/kg. On Earth's surface, g ≈ 9.8 N/kg. It is sometimes rounded to 10 N/kg in exam calculations. The question will say which to use.\n\n<strong>Mass</strong> is the amount of matter in an object. It is the same everywhere in the universe. <strong>Weight varies with location</strong> because g varies.\n\nWorked example: a 70kg person. On Earth: W = 70 × 9.8 = <strong>686N</strong>. On the Moon (g ≈ 1.6 N/kg): W = 70 × 1.6 = <strong>112N</strong>. In deep space (g ≈ 0): W ≈ 0N. But the mass is still 70kg.\n\n<strong>Free body diagrams</strong> show all the forces acting on a single object. Each force is an arrow from (or on) the object. The arrow length is proportional to the size of the force. The arrow direction shows the direction of the force. Labels should name the force and give its value if known. To find the resultant force, add forces in the same direction and subtract forces in opposite directions. If resultant ≠ 0, the object accelerates in the direction of the resultant force.",
+      "content": "<strong>Weight</strong> is the force of gravity acting on an object. Equation: <strong>W = mg</strong>. W in newtons (N), m in kilograms (kg), g = gravitational field strength in N/kg. On Earth's surface, g ≈ 9.8 N/kg. It is sometimes rounded to 10 N/kg in exam calculations. The question will say which to use.\n\nThe force of gravity close to the Earth is due to the gravitational field around the Earth. An object's weight depends on the gravitational field strength where it is. The weight of an object may be considered to act at a single point, called its <strong>centre of mass</strong>.\n\nWeight and mass are directly proportional: W ∝ m. The symbol ∝ means \"is directly proportional to\". Double the mass and the weight doubles. Weight is measured with a calibrated spring-balance, called a <strong>newtonmeter</strong>.\n\n<strong>Mass</strong> is the amount of matter in an object. It is the same everywhere in the universe. <strong>Weight varies with location</strong> because g varies.\n\nWorked example: a 70kg person. On Earth: W = 70 × 9.8 = <strong>686N</strong>. On the Moon (g ≈ 1.6 N/kg): W = 70 × 1.6 = <strong>112N</strong>. In deep space (g ≈ 0): W ≈ 0N. But the mass is still 70kg.\n\n<strong>Free body diagrams</strong> show all the forces acting on a single object. Each force is an arrow from (or on) the object. The arrow length is proportional to the size of the force. The arrow direction shows the direction of the force. Labels should name the force and give its value if known. To find the resultant force, add forces in the same direction and subtract forces in opposite directions. If resultant ≠ 0, the object accelerates in the direction of the resultant force.\n\nHigher only: to find the resultant of two forces that are not in a line, use a scale drawing. Draw each force as an arrow to scale, tip to tail. The arrow from the start of the first to the end of the second is the resultant. Measure its length and angle for its size and direction. If the arrows join up into a closed shape, the resultant is zero: the object is in equilibrium.\n\nHigher only: a single force can be resolved into two components acting at right angles to each other. The two components together have the same effect as the single force.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -122,6 +122,33 @@
       ],
       "memTip": "Weight = mg. Mass stays, Weight wanders.",
       "tutor_note": "It is easy to write weight in kg. It is always in newtons. Test yourself with quick unit-check questions."
+    },
+    {
+      "heading": "Required practical: force, mass and acceleration",
+      "content": "In this practical you investigate two things. First, the effect of varying the force on the acceleration of an object of constant mass. Second, the effect of varying the mass of an object on the acceleration produced by a constant force.\n\nMethod: a trolley on a bench is pulled by a string. The string runs over a pulley to masses hanging on the end. The weight of the hanging masses gives the pulling force. Light gates time the trolley, and the acceleration is worked out from their readings.\n\nPart 1, changing the force: move masses one at a time from the trolley to the hanger. The force goes up, but the total mass being pulled stays the same. The force is the independent variable, the acceleration is the dependent variable, and the total mass is a control variable.\n\nPart 2, changing the mass: keep the hanging masses the same, so the force is constant. Add masses to the trolley, and measure the acceleration each time.\n\nResults: a graph of acceleration against force is a straight line through the origin. So the acceleration is directly proportional to the force. As the mass goes up with a constant force, the acceleration goes down.",
+      "examFlag": true,
+      "cardFlag": true,
+      "diagram": null,
+      "writeBullets": [
+        "Trolley pulled by a string over a pulley; hanging masses give the force",
+        "Light gates time the trolley so the acceleration can be worked out",
+        "Part 1: move masses from trolley to hanger: force changes, total mass stays the same",
+        "Part 2: constant force; add masses to the trolley",
+        "Acceleration against force: straight line through the origin, so a is proportional to F",
+        "More mass with the same force: less acceleration"
+      ],
+      "keyTerms": [
+        {
+          "term": "Independent variable",
+          "def": "The variable you change on purpose in an investigation"
+        },
+        {
+          "term": "Control variable",
+          "def": "A variable you keep the same on purpose, so it cannot affect the result"
+        }
+      ],
+      "memTip": "Move the masses, do not add them: the force changes but the total mass stays the same.",
+      "tutor_note": "Examiners want 'directly proportional' only for a straight line through the origin. 'Positive correlation' is not the same thing."
     }
   ],
   "tables": [
@@ -204,6 +231,18 @@
       "correct": 0,
       "correctFeedback": "Correct! W = mg = 60 × 1.6 = 96N. Mass stays at 60kg, weight changes with g.",
       "wrongFeedback": "Use W = mg. On the Moon: W = 60 × 1.6 = 96N. The person's mass (60kg) doesn't change, only their weight does."
+    },
+    "4": {
+      "question": "In the trolley practical, the mass stays the same and the force changes. The graph of acceleration against force is a straight line through the origin. What does it show?",
+      "options": [
+        "Acceleration is directly proportional to force",
+        "Acceleration does not depend on the force",
+        "Acceleration is inversely proportional to force",
+        "Acceleration gets smaller as the force grows"
+      ],
+      "correct": 0,
+      "correctFeedback": "Correct. A straight line through the origin means the two quantities are directly proportional.",
+      "wrongFeedback": "A straight line through the origin shows direct proportion. Double the force, and the acceleration doubles."
     }
   },
   "commonMistakes": [

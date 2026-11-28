@@ -1,9 +1,9 @@
 {
   "lesson": "p5-newtons-laws",
   "source_file": "lessons/physics/p5-newtons-laws.json",
-  "lesson_md5": "d9043d1aa08f4885f54f29b473e58564",
+  "lesson_md5": "b03b1dde7648b720c2b75ca691155206",
   "model": "claude-opus-5-5",
-  "date": "2026-11-28T13:42:37.093Z",
+  "date": "2026-11-28T15:01:10.642Z",
   "specRefs_sent": [
     "4.5.1.3",
     "4.5.1.4",
@@ -16,111 +16,54 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 8282,
-    "output_tokens": 5260
+    "input_tokens": 9840,
+    "output_tokens": 4076
   },
-  "cost_usd": 0.138328,
+  "cost_usd": 0.12088,
   "status": "OK",
   "result": {
     "lesson": "p5-newtons-laws",
     "missing_spec_content": [
       {
-        "specRef": "4.5.1.3",
-        "spec_text": "The force of gravity close to the Earth is due to the gravitational field around the Earth.",
-        "why": "The lesson defines weight and g but never explains that gravity near the Earth comes from the Earth's gravitational field."
-      },
-      {
-        "specRef": "4.5.1.3",
-        "spec_text": "The weight of an object may be considered to act at a single point referred to as the object's 'centre of mass'.",
-        "why": "The lesson does not mention centre of mass."
-      },
-      {
-        "specRef": "4.5.1.3",
-        "spec_text": "The weight of an object and the mass of an object are directly proportional.",
-        "why": "The lesson gives W = mg but never states that weight is directly proportional to mass. It also does not introduce the ∝ symbol (MS 3a)."
-      },
-      {
-        "specRef": "4.5.1.3",
-        "spec_text": "Weight is measured using a calibrated spring-balance (a newtonmeter).",
-        "why": "The lesson does not say how weight is measured."
-      },
-      {
-        "specRef": "4.5.1.4",
-        "spec_text": "(HT only) A single force can be resolved into two components acting at right angles to each other. The two component forces together have the same effect as the single force.",
-        "why": "Resolution of forces into components is not taught."
-      },
-      {
-        "specRef": "4.5.1.4",
+        "specRef": "4.5.1.4 Resultant forces",
         "spec_text": "(HT only) Students should be able to use vector diagrams to illustrate resolution of forces, equilibrium situations and determine the resultant of two forces, to include both magnitude and direction (scale drawings only).",
-        "why": "The lesson only adds and subtracts forces along a line. It does not cover vector or scale diagrams for the resultant of two forces at an angle, including magnitude and direction."
+        "why": "The lesson explains scale drawings for finding a resultant and for equilibrium. For resolution it only states the idea, in keyPoints[3].content: \"a single force can be resolved into two components acting at right angles to each other.\" It never shows how to resolve a force into components using a scale vector diagram."
       },
       {
-        "specRef": "4.5.6.2.2",
-        "spec_text": "The acceleration of an object is proportional to the resultant force acting on the object, and inversely proportional to the mass of the object.",
-        "why": "The lesson gives only qualitative statements ('more force → more acceleration; more mass → less acceleration'). It never states the proportional / inversely proportional relationship that the specification requires."
+        "specRef": "4.5.6.2.1 Newton's First Law",
+        "spec_text": "Students should be able to apply Newton's First Law to explain the motion of objects moving with a uniform velocity and objects where the speed and/or direction changes.",
+        "why": "The lesson gives examples of uniform velocity and of slowing down caused by friction. It gives no example of a resultant force changing an object's direction. It does not state the spec point that \"the velocity (speed and/or direction) of an object will only change if a resultant force is acting on the object.\""
       },
       {
-        "specRef": "4.5.6.2.2",
-        "spec_text": "(HT only) Students should be able to explain that: inertial mass is a measure of how difficult it is to change the velocity of an object; inertial mass is defined as the ratio of force over acceleration.",
-        "why": "The lesson says inertial mass is 'the mass measured by F = ma' and lists m = F/a as a rearrangement. It never explicitly defines inertial mass as the ratio of force over acceleration."
-      },
-      {
-        "specRef": "4.5.6.2.2",
+        "specRef": "4.5.6.2.2 Newton's Second Law",
         "spec_text": "Students should be able to estimate the speed, accelerations and forces involved in large accelerations for everyday road transport.",
-        "why": "The lesson does not teach estimation of speeds, accelerations or forces for road transport."
-      },
-      {
-        "specRef": "4.5.6.2.2",
-        "spec_text": "Students should recognise and be able to use the symbol that indicates an approximate value or approximate answer, ~",
-        "why": "The ~ symbol is not introduced. The lesson uses ≈ only."
-      },
-      {
-        "specRef": "4.5.6.2.2",
-        "spec_text": "Required practical activity 7: investigate the effect of varying the force on the acceleration of an object of constant mass, and the effect of varying the mass of an object on the acceleration produced by a constant force.",
-        "why": "The required practical is not mentioned or described."
-      },
-      {
-        "specRef": "4.5.6.2.3",
-        "spec_text": "Students should be able to apply Newton's Third Law to examples of equilibrium situations.",
-        "why": "The Third Law key point uses only a wall, a rocket and Earth–person attraction. It does not apply the Third Law to an equilibrium situation."
+        "why": "The lesson estimates only a force, using a given acceleration: \"A car of about 1200 kg accelerating at about 3 m/s² needs a resultant force of about 1200 × 3 ≈ 3600 N.\" It does not teach students to estimate typical speeds or accelerations for road transport. It also does not deal with large accelerations such as those in braking or collisions."
       }
     ],
     "above_gcse": [
       {
-        "field": "keyPoints[1].content",
-        "text": "Experiments show that inertial mass equals gravitational mass (the mass in W = mg). This holds to extremely high precision.",
-        "why": "The equivalence of inertial and gravitational mass is not in the specification. It adds a distinction that may confuse students who are only required to explain inertial mass as F/a."
+        "field": "keyPoints[0].content",
+        "text": "<strong>Inertia</strong> is the tendency of objects to resist changes in their motion. A more massive object has greater inertia.",
+        "why": "The spec marks inertia as \"(HT only)\". The lesson teaches it as core content with no 'Higher only' label, although it does label other HT content such as inertial mass. Foundation students may think they need to learn it."
       },
       {
-        "field": "keyPoints[1].writeBullets[5]",
-        "text": "Inertial mass — measured from F = ma; equals gravitational mass in all experiments",
-        "why": "This repeats the inertial/gravitational mass equivalence, which goes beyond the specification."
-      },
-      {
-        "field": "keyPoints[1].keyTerms[1].def",
-        "text": "Mass measured by resistance to acceleration using F = ma; equal to gravitational mass",
-        "why": "'Gravitational mass' is not a specification concept at this level."
+        "field": "keyPoints[3].content",
+        "text": "<strong>Free body diagrams</strong> show all the forces acting on a single object.",
+        "why": "In the spec, the use of free body diagrams sits under \"(HT only) Students should be able to: ... use free body diagrams\". The lesson presents this as core content without a 'Higher only' label."
       }
     ],
     "factual_errors": [],
     "wrong_terms": [
       {
-        "field": "keyPoints[0].writeBullets[3]",
-        "text": "Balanced forces ≠ no forces — they just cancel to give zero net force",
-        "spec_term": "resultant force"
-      },
-      {
         "field": "keyPoints[0].content",
-        "text": "This only changes if a resultant (net) force acts on it.",
-        "spec_term": "resultant force"
-      },
-      {
-        "field": "keyPoints[0].content",
-        "text": "Friction and air resistance are forces that act against motion.",
-        "spec_term": "resistive forces"
+        "text": "Friction and air resistance are forces that act against motion. They are what slow real objects down.",
+        "spec_term": "resistive forces (\"when a vehicle travels at a steady speed the resistive forces balance the driving force\")"
       }
     ],
     "checkpoint_mismatch": [],
-    "not_checked": []
+    "not_checked": [
+      "All keyPoints have \"diagram\": null, so no diagrams or images were checked.",
+      "Required practical activity 7 refers to \"AT skills ... AT 1, 2 and 3\" and to \"Key opportunities for skills development (page 96)\". Those skill details were not supplied, so the practical's coverage of them could not be checked."
+    ]
   }
 }

@@ -77,17 +77,20 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - All of them: Yes: your line makes every point. You have this: Mass is the amount of matter and is the same everywhere. You have this: Weight is the force of gravity on it, which changes with g.
    - Some (for example the first only): Partly there. You have this: Mass is the amount of matter and is the same everywhere. Still needed: Weight is the force of gravity on it, which changes with g.
    - None: Here is what a good line says. Mass is the amount of matter and is the same everywhere. Weight is the force of gravity on it, which changes with g.
-   - Don't know: A good line would be: mass is the amount of matter and is the same everywhere, but weight is the force of gravity on it, which changes with g. (with the turn-taking opener)
+   - Don't know: A good line would be: mass is the amount of matter and is the same everywhere, but weight is the force of gravity on it, W = m g, which changes with g. (with the turn-taking opener)
 
 ## Key point 2: Gravitational fields
 
 14. [2.1] Tutor: Every object with mass pulls on every other one. The region around an object where another mass feels its pull is called a gravitational field.
    Button: Next
 
-15. [2.2] Tutor: The value g, gravity's pull on each kilogram, is the strength of the field at that place, so it is called the gravitational field strength.
+15. [2.2] Tutor: The value g, gravity's pull on each kilogram, is the strength of the gravitational field at that place.
    Button: Next
 
-16. [2.5] Tutor asks: A spacecraft moves from close to the Earth to much further away. Which is true of the gravitational field strength there?
+16. [2.2b] Tutor: For this reason, g is called the gravitational field strength.
+   Button: Next
+
+17. [2.5] Tutor asks: A spacecraft moves from close to the Earth to much further away. Which is true of the gravitational field strength there?
    Buttons: "It is zero above the air" / "It is the same" / "It is weaker" (she can also type)
    - Right ("It is weaker"): Yes: the field gets weaker further from the Earth, but it never drops to zero.
    - "It is the same" (wrong idea same: ): Not quite: the field gets weaker with distance from the Earth.
@@ -96,39 +99,42 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The gravitational field strength gets weaker further from the Earth, but it does not drop to zero.
    - She asks to move on or skip: The gravitational field strength gets weaker further from the Earth, but it does not drop to zero.
 
-17. [2.3] Tutor: Near the surface, the field has about the same strength and direction everywhere, pointing down. Further from the Earth, the field gets weaker.
+18. [2.3] Tutor: Near the Earth's surface, the Earth's field has about the same strength and direction everywhere, pointing down.
    Button: Next
 
-18. [2.4] Tutor: On a diagram, a gravitational field is shown by field lines: arrows pointing towards the centre of the Earth, the way a mass near the Earth would be pulled.
+19. [2.4] Tutor: On a diagram, a gravitational field is shown by field lines: arrows pointing towards the centre of the Earth, the way a mass near the Earth would be pulled.
    Button: Next
 
-19. [2.4b] Tutor: Gravitational fields reach across huge distances. The Sun's field holds the planets, including the Earth, in their paths round it.
+20. [2.4b] Tutor: Gravitational fields reach across huge distances. The Sun's field holds the planets, including the Earth, in their paths round it.
    Button: Next
 
-20. [2.6] Tutor: In one line: what is a gravitational field?
+21. [2.6] Tutor: In one line: what is a gravitational field?
    She types one line. The AI checks which of these points it makes: "A gravitational field is the region where a mass feels a force of gravity.".
    - All of them: Yes: your line makes the point. You have this: A gravitational field is the region where a mass feels a force of gravity.
    - None: Here is what a good line says. A gravitational field is the region where a mass feels a force of gravity.
-   - Don't know: A good line would be: a gravitational field is the region where a mass feels a force of gravity, and it gets weaker further away. (with the turn-taking opener)
+   - Don't know: A good line would be: a gravitational field is the region around an object where another mass feels a force of gravity. (with the turn-taking opener)
 
 ## Key point 3: Orbits
 
-21. [3.1] Tutor: Now, orbits. The Moon goes round the Earth, and the Earth goes round the Sun. Each path round is an orbit, and gravity is what keeps them going round.
+22. [3.1] Tutor: Now, orbits. The Moon goes round the Earth, and the Earth goes round the Sun. Each path round is an orbit. Gravity pulls the Moon towards the Earth, bending its path into a curve round it.
    Button: Next
 
-22. [3.2] Tutor: An object that orbits a planet is a satellite. Moons are natural satellites.
+23. [3.2] Tutor: An object that orbits a planet is called a satellite.
    Button: Next
 
-23. [3.2b] Tutor: Artificial satellites are machines people have put into orbit round the Earth, for weather forecasts, phones and television.
+24. [3.2a] Tutor: Moons are natural satellites.
    Button: Next
 
-24. [3.3] Tutor: A satellite is always falling towards the Earth, pulled by gravity. Falling with gravity as the only force on it is called free fall.
+25. [3.2b] Tutor: Artificial satellites are machines people have put into orbit round the Earth, for weather forecasts, phones and television.
    Button: Next
 
-25. [3.4] Tutor: But a satellite also moves sideways very fast. As it falls, the Earth's curved surface curves away beneath it. So it keeps missing the Earth and goes round in a curve.
+26. [3.3] Tutor: A satellite is always falling towards the Earth, pulled by gravity. Falling with gravity as the only force on it is called free fall.
    Button: Next
 
-26. [3.5] Tutor asks: Why does the Moon not fly off into space?
+27. [3.4] Tutor: But a satellite also moves sideways very fast. As it falls, the Earth's curved surface curves away beneath it. So it keeps missing the Earth and goes round in a curve.
+   Button: Next
+
+28. [3.5] Tutor asks: Why does the Moon not fly off into space?
    Buttons: "Gravity keeps pulling it towards the Earth" / "There are no forces on it in space" / "An outward force balances gravity" (she can also type)
    - Right ("Gravity keeps pulling it towards the Earth"): Yes: the Earth's gravity keeps pulling it inwards, so it keeps curving round.
    - "There are no forces on it in space" (wrong idea none: ): Not quite: with no force it would fly off in a straight line. The Earth's gravity keeps pulling it inwards.
@@ -137,50 +143,50 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The Earth's gravity pulls the Moon inwards all the time, so its path keeps curving round instead of going straight off.
    - She asks to move on or skip: The Earth's gravity pulls the Moon inwards all the time, so its path keeps curving round instead of going straight off.
 
-27. [3.6] Tutor: Anything moving in a circle needs a force towards the centre of the circle. That force is called the centripetal force. For a satellite, gravity provides it.
+29. [3.6] Tutor: Anything moving in a circle needs a force towards the centre of the circle. That force is called the centripetal force. For a satellite, gravity provides it.
    Button: Next
 
-28. [3.6b] Tutor: Remember from the first forces lesson: velocity is speed in a given direction, and acceleration is any change in velocity.
+30. [3.6b] Tutor: In the first forces lesson you met velocity: speed in a given direction. Acceleration means the velocity is changing.
    Button: Next
 
-29. [3.7] Tutor asks: A satellite orbits the Earth in a circle at a steady speed. Is it accelerating?
+31. [3.7] Tutor asks: A satellite orbits the Earth in a circle at a steady speed. Is it accelerating?
    Buttons: "Yes: its direction keeps changing" / "No: its speed is not changing" / "No: there is no force on it" (she can also type)
-   - Right ("Yes: its direction keeps changing"): Yes: the speed is steady, but the direction keeps changing, so the velocity changes. That is acceleration, towards the Earth.
+   - Right ("Yes: its direction keeps changing"): Yes: the speed is steady, but the direction keeps changing, so the velocity changes. That is acceleration, towards the Earth, because gravity pulls it that way.
    - "No: its speed is not changing" (wrong idea speed: ): Not quite: velocity includes direction. The direction keeps changing, so the velocity changes: it is accelerating.
    - "No: there is no force on it" (wrong idea none: ): Not quite: gravity pulls on it all the time. That force changes its direction, so it is accelerating.
    - Don't know (first time): Acceleration is a change in velocity, and velocity includes direction. Is its direction changing? (same buttons)
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") In a circular orbit the speed is steady but the direction keeps changing, so the velocity changes: the satellite accelerates towards the Earth.
    - She asks to move on or skip: In a circular orbit the speed is steady but the direction keeps changing, so the velocity changes: the satellite accelerates towards the Earth.
 
-30. [3.8] Tutor: In a stable orbit, a satellite stays the same distance from the Earth's centre: the radius of its orbit. If the satellite's speed changes, that radius must change too.
+32. [3.9] Tutor: Further out, gravity is weaker. A weaker pull can only keep a slower satellite on a circle, so satellites further out move more slowly. They also have further to go round.
    Button: Next
 
-31. [3.10] Tutor: The time for one complete orbit is called the orbital period.
+33. [3.8] Tutor: A stable orbit is one where the satellite stays the same distance from the Earth's centre: the radius of its orbit. If the satellite's speed changes, that radius must change too.
    Button: Next
 
-32. [3.11] Tutor asks: Satellite A orbits higher than satellite B. Which has the longer orbital period?
+34. [3.10] Tutor: The time for one complete orbit is called the orbital period.
+   Button: Next
+
+35. [3.11] Tutor asks: Satellite A orbits higher than satellite B. Which has the longer orbital period?
    Buttons: "A, the higher one" / "They take the same time" / "B, the lower one" (she can also type)
-   - Right ("A, the higher one"): Yes: the higher satellite has further to go, and, as the next message explains, it moves more slowly too. So each orbit takes longer.
+   - Right ("A, the higher one"): Yes: the higher satellite moves more slowly and has further to go, so each orbit takes longer.
    - "B, the lower one" (wrong idea lower: ): Not quite: the lower one moves faster round a smaller circle, so it takes less time. A takes longer.
    - "They take the same time" (wrong idea same: ): Not quite: the higher satellite moves more slowly round a bigger circle, so it takes longer.
    - Don't know (first time): The higher satellite moves more slowly and has further to go. What does that do to the time for one orbit? (same buttons)
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The higher satellite moves more slowly round a bigger circle, so its orbital period is longer.
    - She asks to move on or skip: The higher satellite moves more slowly round a bigger circle, so its orbital period is longer.
 
-33. [3.9] Tutor: Further out, gravity is weaker. A weaker pull can only keep a slower satellite on a circle, so satellites further out move more slowly. They also have further to go round.
-   Button: Next
-
-34. [3.12] Tutor: In one line: what keeps a satellite in orbit?
+36. [3.12] Tutor: In one line: what keeps a satellite in orbit?
    She types one line. The AI checks which of these points it makes: "Gravity pulls the satellite towards the Earth all the time.", "The satellite moves sideways fast enough to keep missing the Earth.".
    - All of them: Yes: your line makes every point. You have this: Gravity pulls the satellite towards the Earth all the time. You have this: The satellite moves sideways fast enough to keep missing the Earth.
    - Some (for example the first only): Partly there. You have this: Gravity pulls the satellite towards the Earth all the time. Still needed: The satellite moves sideways fast enough to keep missing the Earth.
    - None: Here is what a good line says. Gravity pulls the satellite towards the Earth all the time. The satellite moves sideways fast enough to keep missing the Earth.
    - Don't know: A good line would be: a satellite stays in orbit because gravity pulls it towards the Earth while it moves sideways fast enough to keep missing it. (with the turn-taking opener)
 
-35. [3.13] Tutor: Now for a short quiz: six questions on the whole lesson. Take your time.
+37. [3.13] Tutor: Now for a short quiz: six questions on the whole lesson. Take your time.
    Button: Next
 
-36. [3.14] Tutor asks: Quiz, question 1 of 6: which unit is mass measured in?
+38. [3.14] Tutor asks: Quiz, question 1 of 6: which unit is mass measured in?
    Buttons: "Newtons" / "Newtons per kilogram" / "Kilograms" (she can also type)
    - Right ("Kilograms"): Yes: mass is measured in kilograms (kg).
    - "Newtons" (wrong idea newton: ): Not quite: newtons measure weight, a force. Mass is in kilograms.
@@ -189,16 +195,16 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Mass is measured in kilograms (kg); weight, a force, is in newtons.
    - She asks to move on or skip: Mass is measured in kilograms (kg); weight, a force, is in newtons.
 
-37. [3.15] Tutor asks: Quiz, question 2 of 6: what is the weight of a 5 kg bag where g = 9.8 N/kg?
-   Buttons: "0.51 N" / "49 N" / "5 N" (she can also type)
-   - Right ("49 N"): Yes: 5 × 9.8 = 49 N.
-   - "5 N" (wrong idea mass: ): Not quite: 5 kg is the mass. The weight is 5 × 9.8 = 49 N.
-   - "0.51 N" (wrong idea divide: ): Not quite: multiply the mass by g: 5 × 9.8 = 49 N.
-   - Don't know (first time): W = m g. (same buttons)
-   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") W = m g = 5 × 9.8 = 49 N.
-   - She asks to move on or skip: W = m g = 5 × 9.8 = 49 N.
+39. [3.15] Tutor asks: Quiz, question 2 of 6: what is the weight of a 5 kg bag on the Moon, where g = 1.6 N/kg?
+   Buttons: "8 N" / "3.1 N" / "5 N" (she can also type)
+   - Right ("8 N"): Yes: 5 × 1.6 = 8 N.
+   - "5 N" (wrong idea mass: ): Not quite: 5 kg is the mass. The weight is 5 × 1.6 = 8 N.
+   - "3.1 N" (wrong idea divide: ): Not quite: multiply the mass by g: 5 × 1.6 = 8 N.
+   - Don't know (first time): W = m g, with the Moon's g. (same buttons)
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") W = m g = 5 × 1.6 = 8 N.
+   - She asks to move on or skip: W = m g = 5 × 1.6 = 8 N.
 
-38. [3.16] Tutor asks: Quiz, question 3 of 6: a rock is taken to the Moon, where g is smaller. Which is true?
+40. [3.16] Tutor asks: Quiz, question 3 of 6: a rock is taken to the Moon, where g is smaller. Which is true?
    Buttons: "Its weight is less; its mass is the same" / "Its mass and weight are both less" / "Its mass is less; its weight is the same" (she can also type)
    - Right ("Its weight is less; its mass is the same"): Yes: smaller g means less weight, but the amount of matter does not change.
    - "Its mass is less; its weight is the same" (wrong idea swap: ): Not quite: it is the other way round. The mass stays the same; the weight is less.
@@ -207,7 +213,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Weight depends on g, so it is less on the Moon. Mass is the amount of matter, so it stays the same.
    - She asks to move on or skip: Weight depends on g, so it is less on the Moon. Mass is the amount of matter, so it stays the same.
 
-39. [3.17] Tutor asks: Quiz, question 4 of 6: which way do the field lines of the Earth's gravitational field point?
+41. [3.17] Tutor asks: Quiz, question 4 of 6: which way do the field lines of the Earth's gravitational field point?
    Buttons: "Towards the centre of the Earth" / "Round the Earth in circles" / "Away from the Earth" (she can also type)
    - Right ("Towards the centre of the Earth"): Yes: they point the way a mass would be pulled, towards the centre.
    - "Away from the Earth" (wrong idea away: ): Not quite: gravity pulls masses in, so the lines point towards the centre of the Earth.
@@ -216,7 +222,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Field lines point the way a mass would be pulled: towards the centre of the Earth.
    - She asks to move on or skip: Field lines point the way a mass would be pulled: towards the centre of the Earth.
 
-40. [3.18] Tutor asks: Quiz, question 5 of 6: what provides the centripetal force that keeps the Moon in orbit?
+42. [3.18] Tutor asks: Quiz, question 5 of 6: what provides the centripetal force that keeps the Moon in orbit?
    Buttons: "The Moon's own speed" / "The Earth's gravity" / "Light from the Sun" (she can also type)
    - Right ("The Earth's gravity"): Yes: the Earth's gravity pulls the Moon towards the centre of its orbit.
    - "The Moon's own speed" (wrong idea speed: ): Not quite: speed is not a force. The Earth's gravity pulls the Moon inwards.
@@ -225,23 +231,23 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The Earth's gravity pulls the Moon towards the centre of its orbit, so it provides the centripetal force.
    - She asks to move on or skip: The Earth's gravity pulls the Moon towards the centre of its orbit, so it provides the centripetal force.
 
-41. [3.19] Tutor asks: Quiz, question 6 of 6: a satellite moves to a higher, stable orbit. Which is true?
+43. [3.19] Tutor asks: Quiz, question 6 of 6: a satellite moves to a higher, stable orbit. Which is true?
    Buttons: "It moves more slowly" / "It moves faster" / "Its speed stays the same" (she can also type)
    - Right ("It moves more slowly"): Yes: gravity is weaker higher up, so a lower speed keeps it in orbit.
    - "It moves faster" (wrong idea faster: ): Not quite: higher orbits are slower, because gravity is weaker there.
-   - "Its speed stays the same" (wrong idea same: ): Not quite: for a stable orbit, speed and radius go together. Higher up, it moves more slowly.
+   - "Its speed stays the same" (wrong idea same: ): Not quite: a higher orbit has a bigger radius, where gravity is weaker, so the satellite must move more slowly.
    - Don't know (first time): Gravity is weaker higher up. (same buttons)
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Higher up, gravity is weaker and provides less centripetal force, so a satellite in a higher orbit moves more slowly.
    - She asks to move on or skip: Higher up, gravity is weaker and provides less centripetal force, so a satellite in a higher orbit moves more slowly.
 
-42. [3.20] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
+44. [3.20] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
    Button: Next
 
 ## The end
 
-43. Tutor: Summary, point 1 of 3: Mass is the amount of matter and is the same everywhere, but weight is the force of gravity on it, which changes with g.
-44. Tutor: Summary, point 2 of 3: A gravitational field is the region where a mass feels a force of gravity, and it gets weaker further away.
-45. Tutor: Summary, point 3 of 3: A satellite stays in orbit because gravity pulls it towards the Earth while it moves sideways fast enough to keep missing it.
+45. Tutor: Summary, point 1 of 3: Mass is the amount of matter and is the same everywhere, but weight is the force of gravity on it, W = m g, which changes with g.
+46. Tutor: Summary, point 2 of 3: A gravitational field is the region around an object where another mass feels a force of gravity.
+47. Tutor: Summary, point 3 of 3: A satellite stays in orbit because gravity pulls it towards the Earth while it moves sideways fast enough to keep missing it.
 
-46. Tutor: The lesson is finished. Tap a button to go on.
+48. Tutor: The lesson is finished. Tap a button to go on.
    Buttons: "Go to the slides" / "Home"

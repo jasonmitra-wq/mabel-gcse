@@ -1,0 +1,318 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 16922,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11776,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 7424
+    },
+    "iterations": [
+      {
+        "input_tokens": 16922,
+        "output_tokens": 11776,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.6064160000000001,
+  "seconds": 112,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"new\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from the last lesson. What is the weight of a 0.5 kg mass where g = 9.8 N/kg?\",\"what\":\"The lesson opens with a calculation that nothing in this lesson has told her how to do. If she has forgotten W = m g, her first experience is getting stuck. A line saying why weight matters here (it is the force on the spring) would help.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.1b\",\"quote\":\"Second: which force keeps a satellite in its orbit?\",\"what\":\"This recall question has nothing to do with springs and is never used again. It delays the start and cannot be answered from anything this lesson tells her.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"1.2\",\"quote\":\"You can stretch it, as when you pull a spring; compress it, which means squash it; or bend it, as a diver bends a diving board.\",\"what\":\"Three new ideas (stretch, compress, bend) arrive in one message. Compress gets no example, and neither compressing nor bending is ever practised with a question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.4\",\"quote\":\"A spring hangs from a clamp with masses on the end, and it is stretched. Which forces stretch it?\",\"what\":\"The question comes before step 1.3, which teaches that a still object needs more than one force. She has not been told what she needs, and a first-time learner will naturally pick 'Only the masses pulling down'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.4\",\"quote\":\"Yes: it takes two forces, one at each end, to stretch the still spring.\",\"what\":\"'The still spring' reads oddly, and 'still' can be taken as 'yet'. 'A spring that is not moving' would be clearer.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"1.3\",\"quote\":\"A still object needs more than one force on it before its shape can change. With only one force it would not stay still: it would move off in the direction of the force.\",\"what\":\"This repeats what every reply to 1.4 has just told her (two forces; one force alone would just move the spring). The teaching and the question are in the wrong order.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"1.6\",\"quote\":\"Others stay changed when the forces are removed: that is called inelastic deformation.\",\"what\":\"The bubble opens with 'Others', whose referent (objects) is in the previous message. It does not stand on its own.\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"1.5 / 1.6\",\"quote\":\"Some objects go back to their first shape and length when the forces are removed.\",\"what\":\"This makes elastic or inelastic sound like a kind of object. The key point says the same spring is elastic if not stretched too far and inelastic if stretched too far, and the script never tells her that, so she may think springs are always elastic and step 4.2 will not make sense.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.8\",\"quote\":\"Yes: your line makes every point. You have this: After elastic deformation, an object goes back to its first shape. You have this: After inelastic deformation, it stays changed.\",\"what\":\"The praise reads like a marking scheme, with 'You have this:' twice in a row. A teacher would just say 'Yes' and confirm the idea once.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.3\",\"quote\":\"Hang twice the force on a spring and you get twice the extension.\",\"what\":\"You hang masses or weights, not 'force'. It is loose wording at the moment the key rule is introduced.\",\"severity\":\"minor\"},{\"fault\":\"M1\",\"turn\":\"2.4 to 2.7\",\"quote\":\"Proportionality holds only up to a point. Stretched further, the spring stops following the rule.\",\"what\":\"Four tell-and-Next messages run in a row (limit of proportionality, spring constant, equation, worked example) with no question. Neither the limit nor the meaning of 'stiff' is checked before the equation arrives, and she is likely to tap through without reading.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"2.6\",\"quote\":\"The equation linking them is F = k e\",\"what\":\"'Them' has no referent in this message. She has to remember from earlier bubbles that it means force, spring constant and extension.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"2.6\",\"quote\":\"F is the force in newtons (N), k is in newtons per metre (N/m) and e is the extension in metres (m).\",\"what\":\"The equation, three symbols and three units come in one bubble. 'Newtons per metre' is new and is not explained as newtons needed for each metre of stretch.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.8\",\"quote\":\"Your turn. A force of 6 N stretches a spring by 3 cm. What is its spring constant, in N/m? (100 cm = 1 m.)\",\"what\":\"Her first practice adds a unit conversion the worked example never showed, plus dividing by 0.03. Every extension so far has been in cm with no warning that the equation needs metres. A like-for-like question should come first.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"2.9\",\"quote\":\"The same equation works for squashing.\",\"what\":\"'The same equation' is not named in the message. Say F = k e.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.10\",\"quote\":\"In one line: what does F = k e tell you about a spring?\",\"what\":\"The only point checked is 'Force = spring constant × extension', which is just the equation read aloud. A good answer such as 'extension is proportional to force' or 'a stiffer spring needs more force' would be marked as missing the point, yet the don't-know model line includes proportionality.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"2.11\",\"quote\":\"Extension = stretched length − original length.\",\"what\":\"The same sentence has already appeared at 2.1 and in the replies to 2.2. It comes again here, in 3.2 and in 4.10.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.2\",\"quote\":\"Take the original length from each new length to get each extension.\",\"what\":\"The same two lengths are called 'first length', 'original length', 'stretched length' and now 'new length' in different steps. A beginner may think these are different things.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"3.2\",\"quote\":\"The force on the spring is the weight of the masses: W = m g, weight (N) = mass (kg) × g (N/kg). Take the original length from each new length to get each extension.\",\"what\":\"Two separate ideas share one bubble: how to get the force and how to get the extension.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.3\",\"quote\":\"Not quite: looking from above makes the reading wrong. Keep your eye level with the bottom of the spring.\",\"what\":\"Nothing has taught her how to read the ruler before she is asked. The wrong-answer replies only say the reading is 'wrong' without saying why (the mark you see on the ruler shifts when you look at an angle).\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"3.4\",\"quote\":\"Then plot a graph with force up the side and extension along the bottom.\",\"what\":\"The bubble opens with 'Then', depending on the earlier messages. It also puts a second idea, the origin, in the same message.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.6 \\\"The spring has got stiffer\\\"\",\"quote\":\"Not quite: a stiffer spring would give a steeper line, but still straight.\",\"what\":\"This relies on steepness meaning spring constant, which is not taught until 3.7. She cannot follow why stiffer means steeper yet.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.6 \\\"No more force is being added\\\"\",\"quote\":\"Not quite: the force is still going up along the graph.\",\"what\":\"The wording is muddled. Force is up the side, so 'going up along the graph' is unclear and does not really say why her choice was wrong.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.7\",\"quote\":\"On the straight part, the gradient of the force-extension graph is the spring constant: the change in force divided by the change in extension.\",\"what\":\"'Gradient' is used without saying it means how steep the line is. The sentence also leaves it unclear whether the part after the colon defines the gradient or the spring constant.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.8 don't know\",\"quote\":\"The gradient is the rise in force divided by the rise in extension.\",\"what\":\"3.7 said 'change in', and now it is 'rise in'. Extension is along the bottom, so 'rise in extension' is confusing.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.9\",\"quote\":\"In one line: what does a force-extension graph show about a spring?\",\"what\":\"The question is vague and only one point is accepted. A sound answer about the gradient being the spring constant, or the curve showing the limit, would be marked as missing the point, though the don't-know model line includes the gradient.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"4.1\",\"quote\":\"Stretching a spring takes work: your force moves through a distance. Energy stored in a stretched or squashed object is called elastic potential energy.\",\"what\":\"'Work' in its physics sense is used without being explained or linked to energy. A second new term, elastic potential energy, comes in the same bubble, and the step from work to energy stored is not made.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.2\",\"quote\":\"If the spring is not inelastically deformed, so it goes back to its first shape, all the work done on it is stored.\",\"what\":\"'Not inelastically deformed' is a double negative a 15-year-old will stumble on. She has also never been told that a spring can be inelastically deformed.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P4\",\"turn\":\"4.3\",\"quote\":\"The equation is Ee = ½ k e²: elastic potential energy = 0.5 × spring constant × extension squared.\",\"what\":\"The key point says this equation only works up to the limit of proportionality. The script leaves that condition out.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.7\",\"quote\":\"Yes: your line makes every point. You have this: It is energy stored in a stretched or squashed object. You have this: It is worked out with Ee = ½ k e².\",\"what\":\"This is the same marking-scheme style of praise as in 1.8, with 'You have this:' twice.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.10\",\"quote\":\"a spring 15 cm long is stretched to 21 cm. What is its extension?\",\"what\":\"The answer is 6 cm again, as it was in 2.2 and in 2.3b. She can get it right from memory rather than by subtracting.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"whole lesson\",\"quote\":\"Not quite:\",\"what\":\"Every wrong answer in the lesson opens with 'Not quite:' and every right one with 'Yes:'. Over about twenty questions it feels mechanical.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole lesson\",\"quote\":\"In a class practical, you hang a spring from a clamp with a ruler beside it.\",\"what\":\"Nothing in the script is hands-on. The practical is only described, with no spring to load, no readings to take and no graph to plot or watch curve, in a topic that is ideal for it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"Summary, point 3 of 4\",\"quote\":\"A force-extension graph is a straight line through the origin while force and extension are directly proportional, and its gradient is the spring constant.\",\"what\":\"The summary lines are the long 'good line' sentences reused word for word. Each packs two or three ideas into one sentence, which is hard to take in as a final recap.\",\"severity\":\"minor\"}],\"counts\":[{\"fault\":\"new\",\"instances\":17},{\"fault\":\"F2\",\"instances\":4},{\"fault\":\"F1\",\"instances\":2},{\"fault\":\"F3\",\"instances\":2},{\"fault\":\"F5\",\"instances\":2},{\"fault\":\"P4\",\"instances\":2},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1}],\"overall\":\"Not quite as it stands. The sums and their answers are all correct and the wrong-answer replies are mostly well aimed, but she is never told that the same spring deforms elastically or inelastically depending on how far it is stretched, and that will mislead her. Several other things need fixing first: the clamp question comes before its teaching, the first F = k e practice adds a unit conversion the worked example never showed, 'gradient' and 'work' are used without explanation, and two of the own-words checks would reject good answers. There is also nothing hands-on and a long run of tell-and-Next messages in key point 2; with those repaired I would let her use it.\"}",
+  "findings": [
+    {
+      "fault": "new",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from the last lesson. What is the weight of a 0.5 kg mass where g = 9.8 N/kg?",
+      "what": "The lesson opens with a calculation that nothing in this lesson has told her how to do. If she has forgotten W = m g, her first experience is getting stuck. A line saying why weight matters here (it is the force on the spring) would help.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.1b",
+      "quote": "Second: which force keeps a satellite in its orbit?",
+      "what": "This recall question has nothing to do with springs and is never used again. It delays the start and cannot be answered from anything this lesson tells her.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "1.2",
+      "quote": "You can stretch it, as when you pull a spring; compress it, which means squash it; or bend it, as a diver bends a diving board.",
+      "what": "Three new ideas (stretch, compress, bend) arrive in one message. Compress gets no example, and neither compressing nor bending is ever practised with a question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.4",
+      "quote": "A spring hangs from a clamp with masses on the end, and it is stretched. Which forces stretch it?",
+      "what": "The question comes before step 1.3, which teaches that a still object needs more than one force. She has not been told what she needs, and a first-time learner will naturally pick 'Only the masses pulling down'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.4",
+      "quote": "Yes: it takes two forces, one at each end, to stretch the still spring.",
+      "what": "'The still spring' reads oddly, and 'still' can be taken as 'yet'. 'A spring that is not moving' would be clearer.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.3",
+      "quote": "A still object needs more than one force on it before its shape can change. With only one force it would not stay still: it would move off in the direction of the force.",
+      "what": "This repeats what every reply to 1.4 has just told her (two forces; one force alone would just move the spring). The teaching and the question are in the wrong order.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "1.6",
+      "quote": "Others stay changed when the forces are removed: that is called inelastic deformation.",
+      "what": "The bubble opens with 'Others', whose referent (objects) is in the previous message. It does not stand on its own.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "1.5 / 1.6",
+      "quote": "Some objects go back to their first shape and length when the forces are removed.",
+      "what": "This makes elastic or inelastic sound like a kind of object. The key point says the same spring is elastic if not stretched too far and inelastic if stretched too far, and the script never tells her that, so she may think springs are always elastic and step 4.2 will not make sense.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.8",
+      "quote": "Yes: your line makes every point. You have this: After elastic deformation, an object goes back to its first shape. You have this: After inelastic deformation, it stays changed.",
+      "what": "The praise reads like a marking scheme, with 'You have this:' twice in a row. A teacher would just say 'Yes' and confirm the idea once.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.3",
+      "quote": "Hang twice the force on a spring and you get twice the extension.",
+      "what": "You hang masses or weights, not 'force'. It is loose wording at the moment the key rule is introduced.",
+      "severity": "minor"
+    },
+    {
+      "fault": "M1",
+      "turn": "2.4 to 2.7",
+      "quote": "Proportionality holds only up to a point. Stretched further, the spring stops following the rule.",
+      "what": "Four tell-and-Next messages run in a row (limit of proportionality, spring constant, equation, worked example) with no question. Neither the limit nor the meaning of 'stiff' is checked before the equation arrives, and she is likely to tap through without reading.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.6",
+      "quote": "The equation linking them is F = k e",
+      "what": "'Them' has no referent in this message. She has to remember from earlier bubbles that it means force, spring constant and extension.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "2.6",
+      "quote": "F is the force in newtons (N), k is in newtons per metre (N/m) and e is the extension in metres (m).",
+      "what": "The equation, three symbols and three units come in one bubble. 'Newtons per metre' is new and is not explained as newtons needed for each metre of stretch.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8",
+      "quote": "Your turn. A force of 6 N stretches a spring by 3 cm. What is its spring constant, in N/m? (100 cm = 1 m.)",
+      "what": "Her first practice adds a unit conversion the worked example never showed, plus dividing by 0.03. Every extension so far has been in cm with no warning that the equation needs metres. A like-for-like question should come first.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.9",
+      "quote": "The same equation works for squashing.",
+      "what": "'The same equation' is not named in the message. Say F = k e.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.10",
+      "quote": "In one line: what does F = k e tell you about a spring?",
+      "what": "The only point checked is 'Force = spring constant × extension', which is just the equation read aloud. A good answer such as 'extension is proportional to force' or 'a stiffer spring needs more force' would be marked as missing the point, yet the don't-know model line includes proportionality.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.11",
+      "quote": "Extension = stretched length − original length.",
+      "what": "The same sentence has already appeared at 2.1 and in the replies to 2.2. It comes again here, in 3.2 and in 4.10.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.2",
+      "quote": "Take the original length from each new length to get each extension.",
+      "what": "The same two lengths are called 'first length', 'original length', 'stretched length' and now 'new length' in different steps. A beginner may think these are different things.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.2",
+      "quote": "The force on the spring is the weight of the masses: W = m g, weight (N) = mass (kg) × g (N/kg). Take the original length from each new length to get each extension.",
+      "what": "Two separate ideas share one bubble: how to get the force and how to get the extension.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3",
+      "quote": "Not quite: looking from above makes the reading wrong. Keep your eye level with the bottom of the spring.",
+      "what": "Nothing has taught her how to read the ruler before she is asked. The wrong-answer replies only say the reading is 'wrong' without saying why (the mark you see on the ruler shifts when you look at an angle).",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.4",
+      "quote": "Then plot a graph with force up the side and extension along the bottom.",
+      "what": "The bubble opens with 'Then', depending on the earlier messages. It also puts a second idea, the origin, in the same message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.6 \"The spring has got stiffer\"",
+      "quote": "Not quite: a stiffer spring would give a steeper line, but still straight.",
+      "what": "This relies on steepness meaning spring constant, which is not taught until 3.7. She cannot follow why stiffer means steeper yet.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6 \"No more force is being added\"",
+      "quote": "Not quite: the force is still going up along the graph.",
+      "what": "The wording is muddled. Force is up the side, so 'going up along the graph' is unclear and does not really say why her choice was wrong.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.7",
+      "quote": "On the straight part, the gradient of the force-extension graph is the spring constant: the change in force divided by the change in extension.",
+      "what": "'Gradient' is used without saying it means how steep the line is. The sentence also leaves it unclear whether the part after the colon defines the gradient or the spring constant.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.8 don't know",
+      "quote": "The gradient is the rise in force divided by the rise in extension.",
+      "what": "3.7 said 'change in', and now it is 'rise in'. Extension is along the bottom, so 'rise in extension' is confusing.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.9",
+      "quote": "In one line: what does a force-extension graph show about a spring?",
+      "what": "The question is vague and only one point is accepted. A sound answer about the gradient being the spring constant, or the curve showing the limit, would be marked as missing the point, though the don't-know model line includes the gradient.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "4.1",
+      "quote": "Stretching a spring takes work: your force moves through a distance. Energy stored in a stretched or squashed object is called elastic potential energy.",
+      "what": "'Work' in its physics sense is used without being explained or linked to energy. A second new term, elastic potential energy, comes in the same bubble, and the step from work to energy stored is not made.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.2",
+      "quote": "If the spring is not inelastically deformed, so it goes back to its first shape, all the work done on it is stored.",
+      "what": "'Not inelastically deformed' is a double negative a 15-year-old will stumble on. She has also never been told that a spring can be inelastically deformed.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P4",
+      "turn": "4.3",
+      "quote": "The equation is Ee = ½ k e²: elastic potential energy = 0.5 × spring constant × extension squared.",
+      "what": "The key point says this equation only works up to the limit of proportionality. The script leaves that condition out.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.7",
+      "quote": "Yes: your line makes every point. You have this: It is energy stored in a stretched or squashed object. You have this: It is worked out with Ee = ½ k e².",
+      "what": "This is the same marking-scheme style of praise as in 1.8, with 'You have this:' twice.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.10",
+      "quote": "a spring 15 cm long is stretched to 21 cm. What is its extension?",
+      "what": "The answer is 6 cm again, as it was in 2.2 and in 2.3b. She can get it right from memory rather than by subtracting.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "whole lesson",
+      "quote": "Not quite:",
+      "what": "Every wrong answer in the lesson opens with 'Not quite:' and every right one with 'Yes:'. Over about twenty questions it feels mechanical.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson",
+      "quote": "In a class practical, you hang a spring from a clamp with a ruler beside it.",
+      "what": "Nothing in the script is hands-on. The practical is only described, with no spring to load, no readings to take and no graph to plot or watch curve, in a topic that is ideal for it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "Summary, point 3 of 4",
+      "quote": "A force-extension graph is a straight line through the origin while force and extension are directly proportional, and its gradient is the spring constant.",
+      "what": "The summary lines are the long 'good line' sentences reused word for word. Each packs two or three ideas into one sentence, which is hard to take in as a final recap.",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 18
+    },
+    {
+      "fault": "F2",
+      "instances": 4
+    },
+    {
+      "fault": "F5",
+      "instances": 2
+    },
+    {
+      "fault": "F1",
+      "instances": 2
+    },
+    {
+      "fault": "P4",
+      "instances": 2
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "F3",
+      "instances": 2
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "Not quite as it stands. The sums and their answers are all correct and the wrong-answer replies are mostly well aimed, but she is never told that the same spring deforms elastically or inelastically depending on how far it is stretched, and that will mislead her. Several other things need fixing first: the clamp question comes before its teaching, the first F = k e practice adds a unit conversion the worked example never showed, 'gradient' and 'work' are used without explanation, and two of the own-words checks would reject good answers. There is also nothing hands-on and a long run of tell-and-Next messages in key point 2; with those repaired I would let her use it."
+}

@@ -66,20 +66,20 @@
      "right": "Yes: velocity is speed in a given direction, so it is a vector.",
      "wrong": {
       "other": "Not quite: velocity.",
-      "speed": "Not quite: speed has no direction, so it is a scalar. Velocity is speed in a given direction.",
-      "mass": "Not quite: mass has no direction, so it is a scalar. Velocity has a direction."
+      "speed": "Not quite: speed has no direction. Velocity is speed in a given direction.",
+      "mass": "Not quite: mass has no direction. Velocity has a direction."
      },
      "idk": [
       {
        "hint": "A vector has a direction. Which of these says which way?"
       }
      ],
-     "answerWhy": "Velocity is speed in a given direction, so it is a vector; speed and mass are scalars."
+     "answerWhy": "Velocity is speed in a given direction, so it has a size and a direction; speed and mass have no direction."
     },
     {
      "id": "1.2",
      "type": "say",
-     "text": "Now this lesson. A slow, heavy lorry and a fast car can both be hard to stop. What they share is a quantity that combines mass and velocity."
+     "text": "Now this lesson. A slow, heavy lorry and a fast car can both be very hard to stop. Each has a lot of a quantity that depends on both mass and velocity."
     },
     {
      "id": "1.3",
@@ -167,7 +167,7 @@
      },
      "idk": [
       {
-       "hint": "Change 50 g into kilograms first: 1000 g = 1 kg."
+       "hint": "50 g is 50 thousandths of a kilogram: 50 ÷ 1000 = 0.05 kg. Then multiply by the velocity, 20 m/s."
       }
      ],
      "answerWhy": "50 g = 0.05 kg, so p = m v = 0.05 × 20 = 1 kg m/s."
@@ -175,12 +175,22 @@
     {
      "id": "1.7",
      "type": "say",
-     "text": "Velocity has a direction, so momentum does too. A quantity with a size and a direction is called a vector quantity."
+     "text": "Velocity has a direction, so momentum does too: momentum is a vector quantity."
     },
     {
      "id": "1.8",
      "type": "say",
-     "text": "Pick one direction as positive; momentum the other way is then negative. Two cars of the same mass driving towards each other at the same speed have momenta (the plural of momentum) of the same size, one positive and one negative."
+     "text": "Pick one direction as positive. Momentum the other way is then negative."
+    },
+    {
+     "id": "1.8a",
+     "type": "say",
+     "text": "Two cars of the same mass driving towards each other at the same speed have momenta, the plural of momentum, of the same size: one positive, one negative."
+    },
+    {
+     "id": "1.8c",
+     "type": "say",
+     "text": "To find a total momentum, add the separate momenta, keeping their signs."
     },
     {
      "id": "1.8b",
@@ -219,7 +229,7 @@
      "id": "1.9",
      "type": "ask",
      "kind": "tap",
-     "question": "A 1000 kg car moves at 10 m/s. How fast must a 500 kg car move to have the same momentum?",
+     "question": "A 1000 kg car moves at 10 m/s. How fast must a 500 kg car move to have the same momentum? (velocity = momentum ÷ mass)",
      "options": [
       {
        "text": "20 m/s",
@@ -271,7 +281,7 @@
     {
      "id": "2.2",
      "type": "say",
-     "text": "A group of objects with no outside forces acting on it is called a closed system."
+     "text": "A group of objects with no outside forces acting on it, such as friction or a push from something else, is called a closed system."
     },
     {
      "id": "2.3",
@@ -339,11 +349,11 @@
      "question": "Why must the cannon roll backwards as the ball goes forwards?",
      "options": [
       {
-       "text": "The momenta must still add up to zero",
+       "text": "The total momentum must stay zero",
        "branch": "right"
       },
       {
-       "text": "The ball pushes air back onto it",
+       "text": "Firing destroys some momentum",
        "branch": "air"
       },
       {
@@ -354,7 +364,7 @@
      "right": "Yes: the ball's forward momentum is cancelled by the cannon's backward momentum, so the total stays zero.",
      "wrong": {
       "other": "Not quite: the momenta must still add up to zero.",
-      "air": "Not quite: it would roll back even with no air. The total momentum was zero, so the cannon must move back to balance the ball.",
+      "air": "Not quite: momentum is never destroyed in a closed system. The total stays zero, so the cannon must move back to balance the ball.",
       "lighter": "Not quite: its mass hardly changes. The total momentum was zero, so the cannon must move back to balance the ball."
      },
      "idk": [
@@ -365,10 +375,26 @@
      "answerWhy": "The total momentum was zero before, so after firing the ball's forward momentum must be balanced by the cannon moving back."
     },
     {
+     "id": "2.7b",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A 0.05 kg ball leaves a still 2 kg cannon at 100 m/s. How fast does the cannon roll back?",
+     "steps": [
+      "Total momentum before: 0, as nothing moves.",
+      "Ball's momentum after: 0.05 × 100 = 5 kg m/s forwards.",
+      "The cannon must have 5 kg m/s backwards, so the total stays 0.",
+      "v = 5 ÷ 2 = 2.5 m/s backwards."
+     ],
+     "answer": {
+      "value": 2.5,
+      "unit": "m/s"
+     }
+    },
+    {
      "id": "2.8",
      "type": "ask",
      "kind": "number",
-     "question": "A 0.02 kg bullet leaves a still 4 kg rifle at 400 m/s. How fast does the rifle move backwards (recoil), in m/s?",
+     "question": "Your turn. A 0.02 kg bullet leaves a still 4 kg rifle at 400 m/s. How fast does the rifle move backwards (recoil), in m/s?",
      "answer": {
       "value": 2,
       "unit": "m/s",
@@ -420,12 +446,17 @@
     {
      "id": "3.1",
      "type": "say",
-     "text": "A resultant force on an object changes its velocity, so it changes its momentum. Momentum after minus momentum before is called the change in momentum, written m Δv (Δ means \"change in\")."
+     "text": "A resultant force, the overall force on an object, changes its velocity, so it changes its momentum."
+    },
+    {
+     "id": "3.1b",
+     "type": "say",
+     "text": "Momentum after minus momentum before is called the change in momentum. The mass stays the same, so it is mass × change in velocity: m Δv, where Δ means \"change in\"."
     },
     {
      "id": "3.2",
      "type": "say",
-     "text": "Putting F = m a together with a = Δv ÷ Δt gives F = m Δv ÷ Δt."
+     "text": "Putting F = m a together with a = Δv ÷ Δt, where Δt is the time taken, gives F = m Δv ÷ Δt."
     },
     {
      "id": "3.2b",
@@ -435,7 +466,12 @@
     {
      "id": "3.3",
      "type": "say",
-     "text": "Force equals the rate of change of momentum: how much the momentum changes each second. The same change in momentum spread over a longer time needs a smaller force."
+     "text": "Force equals the rate of change of momentum: how much the momentum changes each second."
+    },
+    {
+     "id": "3.3b",
+     "type": "say",
+     "text": "With the same change in momentum, a longer time means a smaller force."
     },
     {
      "id": "3.4",
@@ -443,7 +479,7 @@
      "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
      "question": "A 0.5 kg ball at 10 m/s is caught and stopped in 0.1 s. What force stops it?",
      "steps": [
-      "Change in momentum: 0.5 × 10 = 5 kg m/s.",
+      "Change in momentum: 0 − 0.5 × 10 = −5 kg m/s. Its size is 5 kg m/s; the minus sign shows the force acts against the motion.",
       "Write the equation: F = m Δv ÷ Δt.",
       "Put in the numbers: F = 5 ÷ 0.1.",
       "F = 50 N."
@@ -457,7 +493,7 @@
      "id": "3.5",
      "type": "ask",
      "kind": "number",
-     "question": "Your turn. The same ball is caught with soft hands that stop it in 0.5 s. What force stops it now, in N?",
+     "question": "Your turn. The same 0.5 kg ball at 10 m/s is caught with soft hands that stop it in 0.5 s. What force stops it now, in N?",
      "answer": {
       "value": 10,
       "unit": "N",
@@ -521,7 +557,7 @@
     {
      "id": "3.6",
      "type": "say",
-     "text": "Many safety features work the same way. Airbags, seat belts, crumple zones, cycle helmets and soft playground surfaces all make a collision last longer, so the force on the person is smaller."
+     "text": "Airbags, seat belts, crumple zones (parts of a car built to crush in a crash), cycle helmets and soft playground surfaces all make a collision last longer, so the force on the person is smaller."
     },
     {
      "id": "3.8",
@@ -630,7 +666,7 @@
      },
      "idk": [
       {
-       "hint": "Conservation of momentum says the total momentum in a closed system does not change."
+       "hint": "Think of two trolleys colliding on their own. Can any momentum leave the closed system?"
       }
      ],
      "answerWhy": "In a closed system, the total momentum before equals the total after.",
@@ -659,7 +695,7 @@
      "wrong": {
       "other": "Not quite: their momenta are equal and opposite.",
       "heavier": "Not quite: the total must stay zero, so their momenta are equal in size. The heavier one moves more slowly.",
-      "none": "Not quite: both move, so both have momentum. It is equal and opposite, so the total is zero."
+      "none": "Not quite: both skaters move, so both have momentum. Their momenta are equal and opposite, so the total is zero."
      },
      "idk": [
       {
@@ -706,33 +742,33 @@
      "id": "3.15",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 6 of 6: how do airbags reduce injuries in a crash?",
+     "question": "Quiz, question 6 of 6: a 2 kg ball moving at 3 m/s is stopped in 0.2 s. What force stops it?",
      "options": [
       {
-       "text": "The stop takes longer, so the force is smaller",
+       "text": "30 N",
        "branch": "right"
       },
       {
-       "text": "They make the person stop more quickly",
-       "branch": "quicker"
+       "text": "1.2 N",
+       "branch": "times"
       },
       {
-       "text": "They take away the person's momentum",
-       "branch": "remove"
+       "text": "6 N",
+       "branch": "notime"
       }
      ],
-     "right": "Yes: a longer stop means a smaller rate of change of momentum, so a smaller force.",
+     "right": "Yes: the change in momentum is 2 × 3 = 6 kg m/s, and 6 ÷ 0.2 = 30 N.",
      "wrong": {
-      "other": "Not quite: the stop takes longer, so the force is smaller.",
-      "quicker": "Not quite: a quicker stop would mean a bigger force. Airbags make the stop take longer.",
-      "remove": "Not quite: the person still stops, so their momentum still changes by the same amount. Airbags make it change more slowly."
+      "other": "Not quite: 30 N.",
+      "times": "Not quite: divide the change in momentum by the time: 6 ÷ 0.2 = 30 N.",
+      "notime": "Not quite: 6 kg m/s is the change in momentum. Divide by the time: 6 ÷ 0.2 = 30 N."
      },
      "idk": [
       {
-       "hint": "The person stops either way. What does the airbag change?"
+       "hint": "Find the change in momentum, then divide by the time."
       }
      ],
-     "answerWhy": "The airbag makes the stop take longer, so the momentum changes more slowly and the force is smaller.",
+     "answerWhy": "Change in momentum = 2 × 3 = 6 kg m/s, so F = 6 ÷ 0.2 = 30 N.",
      "quiz": true
     },
     {

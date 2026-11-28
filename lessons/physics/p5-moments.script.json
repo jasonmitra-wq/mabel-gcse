@@ -31,7 +31,7 @@
        "branch": "flip"
       }
      ],
-     "right": "Yes: k = F ÷ e = 8 ÷ 0.04 = 200 N/m.",
+     "right": "Yes: spring constant = force ÷ extension = 8 ÷ 0.04 = 200 N/m.",
      "wrong": {
       "other": "Not quite: 200 N/m.",
       "times": "Not quite: divide the force by the extension: 8 ÷ 0.04 = 200 N/m.",
@@ -71,7 +71,7 @@
      },
      "idk": [
       {
-       "hint": "One kind goes back to its first shape. Which kind does not?"
+       "hint": "Elastic means it springs back. Which word means the opposite?"
       }
      ],
      "answerWhy": "After inelastic deformation the object stays changed; after elastic deformation it goes back to its first shape."
@@ -99,12 +99,17 @@
     {
      "id": "1.6",
      "type": "say",
-     "text": "The distance d must be measured at right angles from the pivot to the line the force acts along. This is called the perpendicular distance."
+     "text": "The distance d is measured from the pivot to the line the force acts along, meeting that line at right angles. This is called the perpendicular distance."
     },
     {
      "id": "1.6b",
      "type": "say",
-     "text": "For a door pushed straight on, d is just the distance from the hinge. Pushing at a slant makes the perpendicular distance shorter, so the moment is smaller."
+     "text": "If you push a door at right angles to it, d is simply the distance from the hinge to where you push. Pushing at a slant makes the perpendicular distance shorter, so the moment is smaller."
+    },
+    {
+     "id": "1.6c",
+     "type": "say",
+     "text": "A bigger force, or the same force further from the pivot, gives a bigger moment."
     },
     {
      "id": "1.7",
@@ -125,7 +130,7 @@
      "id": "1.8",
      "type": "ask",
      "kind": "number",
-     "question": "Your turn. A spanner is pushed with 50 N, 25 cm from the nut. What is the moment, in Nm? (100 cm = 1 m.)",
+     "question": "Your turn. A spanner is pushed with 50 N, 25 cm from the nut, which is the pivot. What is the moment, in Nm? (100 cm = 1 m.)",
      "answer": {
       "value": 12.5,
       "unit": "Nm",
@@ -174,7 +179,7 @@
        "branch": "closer"
       },
       {
-       "text": "Use a shorter spanner",
+       "text": "Push the spanner at a slant",
        "branch": "shorter"
       }
      ],
@@ -182,7 +187,7 @@
      "wrong": {
       "other": "Not quite: use a longer spanner and push at its end.",
       "closer": "Not quite: a force closer to the pivot gives a smaller moment. Push further away, with a longer spanner.",
-      "shorter": "Not quite: a shorter spanner brings your force closer to the pivot, so the moment is smaller. Use a longer one."
+      "shorter": "Not quite: pushing at a slant makes the perpendicular distance shorter, so the moment is smaller. Use a longer spanner and push at its end."
      },
      "idk": [
       {
@@ -217,9 +222,19 @@
      "text": "If an object is balanced, it does not turn either way: the total clockwise moment about the pivot equals the total anticlockwise moment about that pivot."
     },
     {
+     "id": "2.2c",
+     "type": "say",
+     "text": "If there are several forces on one side, add their moments to get the total for that side."
+    },
+    {
      "id": "2.2b",
      "type": "say",
-     "text": "On a see-saw, each person's weight, the pull of gravity on them in newtons, pushes their side down. A weight left of the pivot turns it anticlockwise; one on the right, clockwise."
+     "text": "On a see-saw, each person's weight, the pull of gravity on them in newtons, pushes their side down."
+    },
+    {
+     "id": "2.2d",
+     "type": "say",
+     "text": "A weight left of the pivot turns the see-saw anticlockwise. A weight on the right turns it clockwise."
     },
     {
      "id": "2.3",
@@ -260,7 +275,7 @@
      "right": "Yes: 300 × 2 = 600 Nm, and 600 ÷ 500 = 1.2 m.",
      "wrong": {
       "other": "Not quite: 1.2 m. The first moment is 300 × 2 = 600 Nm, so d = 600 ÷ 500 = 1.2 m.",
-      "swap": "Not quite: 1.2 m. The two moments must be equal: 300 × 2 = 600 Nm, so 500 × d = 600 and d = 1.2 m.",
+      "swap": "Not quite: 1.2 m. You divided the wrong way round. 500 × d must equal 300 × 2 = 600 Nm, so d = 600 ÷ 500 = 1.2 m.",
       "same": "Not quite: 1.2 m. The two moments must be equal: 300 × 2 = 600 Nm, so 500 × d = 600 and d = 1.2 m."
      },
      "idk": [
@@ -306,7 +321,7 @@
      "id": "2.6",
      "type": "ask",
      "kind": "number",
-     "question": "A metre ruler is balanced at its middle. A 2 N weight hangs 30 cm to the left of the pivot. What force, hung 20 cm to the right, balances it, in N?",
+     "question": "A metre ruler balances at its middle. An object weighing 2 N hangs 30 cm to the left of the pivot. What force must hang 20 cm to the right to balance it, in N?",
      "answer": {
       "value": 3,
       "unit": "N",
@@ -363,7 +378,7 @@
     {
      "id": "3.2b",
      "type": "say",
-     "text": "The lever passes that same moment on to the load. The load is close to the pivot, so the same moment means a big force on it."
+     "text": "The lever passes your moment on to the load. The load is close to the pivot, so the same moment means a big force on it."
     },
     {
      "id": "3.3",
@@ -371,9 +386,9 @@
      "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
      "question": "You push down with 50 N on a lever, 2 m from the pivot. The load is 0.5 m from the pivot. What force does the lever put on the load?",
      "steps": [
-      "Your moment: M = F d = 50 × 2 = 100 Nm.",
-      "The load gets the same moment: F × 0.5 = 100.",
-      "F = 100 ÷ 0.5 = 200 N."
+      "Moment of your push: 50 × 2 = 100 Nm.",
+      "The load gets the same moment: load force × 0.5 = 100.",
+      "Load force = 100 ÷ 0.5 = 200 N."
      ],
      "answer": {
       "value": 200,
@@ -421,7 +436,12 @@
     {
      "id": "3.6",
      "type": "say",
-     "text": "Touching gear teeth push on each other with the same force. A bigger gear's teeth are further from its centre, so that force gives it a bigger moment, and it turns more slowly."
+     "text": "Touching gear teeth push on each other with the same force. A bigger gear's teeth are further from its centre, so that force gives it a bigger moment."
+    },
+    {
+     "id": "3.6b",
+     "type": "say",
+     "text": "A bigger gear also has more teeth, so it goes round fewer times than a small gear turning it: it turns more slowly."
     },
     {
      "id": "3.7",
@@ -458,12 +478,11 @@
     {
      "id": "3.8",
      "type": "own",
-     "prompt": "In one line: how does a lever make lifting a heavy load easier?",
+     "prompt": "In one line: what do levers and gears do?",
      "points": [
-      "You push far from the pivot, so a small force makes a big moment.",
-      "The load is near the pivot, so it gets a big force."
+      "Levers and gears pass on the turning effect of a force."
      ],
-     "idk": "No problem. A good line would be: levers and gears pass on the turning effect of a force: a lever turns a small force far from the pivot into a big force near it."
+     "idk": "No problem. A good line would be: levers and gears pass on the turning effect of a force: a lever makes a small force into a big one, and a bigger gear turns more slowly with a bigger moment."
     },
     {
      "id": "3.9",
@@ -540,33 +559,33 @@
      "id": "3.12",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 3 of 6: in M = F d, how is d measured?",
+     "question": "Quiz, question 3 of 6: a child weighing 200 N sits 3 m from a see-saw's pivot. Where must an adult weighing 600 N sit to balance it?",
      "options": [
       {
-       "text": "From the pivot, at right angles to the force",
+       "text": "1 m from the pivot",
        "branch": "right"
       },
       {
-       "text": "From the end of the object",
-       "branch": "end"
+       "text": "9 m from the pivot",
+       "branch": "times"
       },
       {
-       "text": "Along the force arrow",
-       "branch": "arrow"
+       "text": "3 m from the pivot",
+       "branch": "same"
       }
      ],
-     "right": "Yes: the perpendicular distance from the pivot to the line of the force.",
+     "right": "Yes: 200 × 3 = 600 Nm, and 600 ÷ 600 = 1 m.",
      "wrong": {
-      "other": "Not quite: from the pivot, at right angles to the force.",
-      "end": "Not quite: d is measured from the pivot, at right angles to the force.",
-      "arrow": "Not quite: d is measured from the pivot, at right angles to the force."
+      "other": "Not quite: 1 m from the pivot.",
+      "times": "Not quite: the heavier adult sits closer. 200 × 3 = 600 Nm, so d = 600 ÷ 600 = 1 m.",
+      "same": "Not quite: at 3 m the adult's moment would be bigger. 600 Nm ÷ 600 N = 1 m."
      },
      "idk": [
       {
-       "hint": "Think of the words \"perpendicular distance\": measured at right angles to the line of the force."
+       "hint": "Work out the child's moment, then divide it by the adult's weight."
       }
      ],
-     "answerWhy": "d is the perpendicular distance from the pivot to the line the force acts along.",
+     "answerWhy": "The child's moment is 200 × 3 = 600 Nm, so the adult must sit 600 ÷ 600 = 1 m from the pivot.",
      "quiz": true
     },
     {
@@ -639,33 +658,33 @@
      "id": "3.15",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 6 of 6: a large gear turns a small gear. How does the small gear turn?",
+     "question": "Quiz, question 6 of 6: why does a crowbar help you lift a heavy stone?",
      "options": [
       {
-       "text": "Faster, and the opposite way",
+       "text": "A small force far from the pivot gives a big force near it",
        "branch": "right"
       },
       {
-       "text": "More slowly, and the same way",
-       "branch": "slowsame"
+       "text": "It makes the stone lighter",
+       "branch": "lighter"
       },
       {
-       "text": "Faster, and the same way",
-       "branch": "fastsame"
+       "text": "It moves the pivot under your hand",
+       "branch": "pivot"
       }
      ],
-     "right": "Yes: faster, and the opposite way.",
+     "right": "Yes: your small force far away makes a big moment, which gives a big force on the stone near the pivot.",
      "wrong": {
-      "other": "Not quite: faster, and the opposite way.",
-      "slowsame": "Not quite: the small gear turns faster, and touching gears turn opposite ways.",
-      "fastsame": "Not quite: it is faster, but touching gears turn opposite ways."
+      "other": "Not quite: a small force far from the pivot gives a big force near it.",
+      "lighter": "Not quite: the stone's weight does not change. The lever turns your small force into a big force on the stone.",
+      "pivot": "Not quite: the pivot stays near the stone. You push far from it, so a small force makes a big moment."
      },
      "idk": [
       {
-       "hint": "Touching gears push each other round. Which way does the second one go?"
+       "hint": "Where do you push, and where is the stone, compared with the pivot?"
       }
      ],
-     "answerWhy": "The small gear turns faster than the large one, and in the opposite direction.",
+     "answerWhy": "You push far from the pivot, so a small force makes a big moment, which gives a big force on the stone near the pivot.",
      "quiz": true
     },
     {

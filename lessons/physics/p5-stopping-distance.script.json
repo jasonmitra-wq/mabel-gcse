@@ -16,7 +16,7 @@
      "id": "1.1a",
      "type": "ask",
      "kind": "tap",
-     "question": "First, two quick questions from the last lesson. A resultant force of 20 N acts on a 4 kg mass. What is its acceleration?",
+     "question": "First, two quick questions from the last lesson. A force of 20 N acts on a 4 kg mass, with nothing else pushing on it. What is its acceleration?",
      "options": [
       {
        "text": "5 m/s²",
@@ -71,7 +71,7 @@
      },
      "idk": [
       {
-       "hint": "Think of the law about pairs of forces between two objects."
+       "hint": "The first law is about zero resultant force, and the second is F = m a. Which one is about pairs of forces?"
       }
      ],
      "answerWhy": "The third law of motion says two interacting objects push on each other with equal and opposite forces."
@@ -195,13 +195,13 @@
     {
      "id": "1.10",
      "type": "say",
-     "text": "Both parts grow with speed. A typical car's stopping distance is about 23 m at 30 mph (about 13 m/s) and about 96 m at 70 mph (about 31 m/s)."
+     "text": "Both parts grow with speed, as the next key points explain. For a typical car, the stopping distance is about 23 m at 13 m/s (30 mph) and about 96 m at 31 m/s (70 mph)."
     },
     {
      "id": "1.11",
      "type": "ask",
      "kind": "tap",
-     "question": "A graph shows stopping distance against speed for a car. The line curves upwards, getting steeper as the speed goes up. What does that tell you?",
+     "question": "A table shows a car's stopping distances: 12 m at 20 mph, 23 m at 30 mph and 36 m at 40 mph. What does that tell you?",
      "options": [
       {
        "text": "Each extra 10 mph adds more distance than the last",
@@ -224,7 +224,7 @@
      },
      "idk": [
       {
-       "hint": "Compare how much the distance rises over the first 10 mph with how much it rises over the last 10 mph."
+       "hint": "From 20 to 30 mph the distance rises by 11 m. From 30 to 40 mph it rises by 13 m."
       }
      ],
      "answerWhy": "A curve that gets steeper means each extra bit of speed adds more stopping distance than the last."
@@ -248,7 +248,7 @@
     {
      "id": "2.1",
      "type": "say",
-     "text": "The time between seeing a hazard and pressing the brake is called the reaction time. For most people it is between about 0.2 s and 0.9 s."
+     "text": "The time between seeing a hazard and pressing the brake is called the reaction time. Typical reaction times range from about 0.2 s to 0.9 s."
     },
     {
      "id": "2.2",
@@ -296,12 +296,17 @@
     {
      "id": "2.6",
      "type": "say",
-     "text": "The further the ruler falls before you catch it, the longer your reaction time. A fall of about 20 cm means a reaction time of about 0.2 s."
+     "text": "The further the ruler falls before you catch it, the longer your reaction time. A chart turns the fall into a time: about 5 cm means about 0.1 s, and about 20 cm means about 0.2 s."
     },
     {
      "id": "2.6b",
      "type": "say",
-     "text": "One catch can be lucky or unlucky. Repeating the test and taking the mean, the average, gives a more reliable result: one you can trust more."
+     "text": "One catch can be lucky or unlucky, so you repeat the test several times."
+    },
+    {
+     "id": "2.6c",
+     "type": "say",
+     "text": "Then take the mean: add up the results and divide by how many there are. A mean is more reliable, which means you can trust it more."
     },
     {
      "id": "2.7",
@@ -365,7 +370,7 @@
     {
      "id": "3.3",
      "type": "say",
-     "text": "Speed matters most. A car going twice as fast has four times as much energy of movement to get rid of. So, for the same braking force, its braking distance is four times as long."
+     "text": "Speed matters most. A car going twice as fast has four times as much energy of movement, because that energy depends on speed squared. With the same braking force, removing four times the energy takes four times the distance."
     },
     {
      "id": "3.4",
@@ -401,38 +406,6 @@
      "answerWhy": "Doubling the speed makes the braking distance four times as long: 4 × 18 = 72 m."
     },
     {
-     "id": "3.6",
-     "type": "ask",
-     "kind": "tap",
-     "question": "Which of these would make a car's braking distance longer?",
-     "options": [
-      {
-       "text": "Worn tyres",
-       "branch": "right"
-      },
-      {
-       "text": "A tired driver",
-       "branch": "tired"
-      },
-      {
-       "text": "A driver using a phone",
-       "branch": "phone"
-      }
-     ],
-     "right": "Yes: worn tyres grip the road less, so there is less friction and the car needs further to stop.",
-     "wrong": {
-      "other": "Not quite: worn tyres.",
-      "tired": "Not quite: tiredness makes the reaction time longer, so it affects the thinking distance. Worn tyres affect the braking distance.",
-      "phone": "Not quite: a distraction makes the reaction time longer, so it affects the thinking distance. Worn tyres affect the braking distance."
-     },
-     "idk": [
-      {
-       "hint": "Braking distance is about the car and the road, once the brakes are on. Which of these is about the car?"
-      }
-     ],
-     "answerWhy": "Worn tyres reduce the friction with the road once the brakes are on, so they make the braking distance longer."
-    },
-    {
      "id": "3.5",
      "type": "say",
      "text": "Wet or icy roads cut the friction between tyres and road, so the braking distance is longer."
@@ -440,7 +413,44 @@
     {
      "id": "3.5b",
      "type": "say",
-     "text": "Worn tyres, with shallow grooves (tread), grip the road less, and worn brakes apply less force. Both mean the car needs further to stop."
+     "text": "Worn tyres have shallow grooves, called tread, so they grip the road less."
+    },
+    {
+     "id": "3.5c",
+     "type": "say",
+     "text": "Worn brakes push less hard, so the braking force is smaller too. Each of these makes the car need further to stop."
+    },
+    {
+     "id": "3.6",
+     "type": "ask",
+     "kind": "tap",
+     "question": "Two identical cars brake from the same speed. Car A has worn tyres on an icy road; car B has new tyres on a dry road. Which stops in the shorter distance?",
+     "options": [
+      {
+       "text": "Car B",
+       "branch": "right"
+      },
+      {
+       "text": "Car A",
+       "branch": "tired"
+      },
+      {
+       "text": "They stop in the same distance",
+       "branch": "phone"
+      }
+     ],
+     "right": "Yes: car B has more friction between tyres and road, so a bigger braking force and a shorter braking distance.",
+     "wrong": {
+      "other": "Not quite: car B.",
+      "tired": "Not quite: worn tyres and ice both cut the friction, so car A needs further to stop. Car B stops sooner.",
+      "phone": "Not quite: the speeds are the same, but car A has much less friction, so it needs further to stop. Car B stops sooner."
+     },
+     "idk": [
+      {
+       "hint": "Which car has the better grip between its tyres and the road?"
+      }
+     ],
+     "answerWhy": "Car B has new tyres on a dry road, so more friction and a bigger braking force: it stops in the shorter distance."
     },
     {
      "id": "3.7",
@@ -452,9 +462,10 @@
      "type": "own",
      "prompt": "In one line: name two things that make a braking distance longer.",
      "points": [
-      "It names two of these: a higher speed, wet or icy roads, worn tyres, worn brakes."
+      "A higher speed makes the braking distance longer.",
+      "Wet or icy roads, worn tyres or worn brakes make it longer."
      ],
-     "idk": "No problem. A good line would be: a braking distance is longer at a higher speed, and on wet or icy roads or with worn tyres, which reduce friction."
+     "idk": "No problem. A good line would be: a braking distance is longer at a higher speed, and on wet or icy roads or with worn tyres or brakes."
     }
    ]
   },
@@ -471,10 +482,10 @@
      "id": "4.3",
      "type": "ask",
      "kind": "tap",
-     "question": "As a car brakes to a stop, where does most of its kinetic energy go?",
+     "question": "After a hard stop, a car's brakes are hot. Where do you think the car's kinetic energy has gone?",
      "options": [
       {
-       "text": "To the thermal store of the brakes",
+       "text": "Into heating up the brakes",
        "branch": "right"
       },
       {
@@ -486,38 +497,76 @@
        "branch": "destroyed"
       }
      ],
-     "right": "Yes: the work done by friction heats the brakes.",
+     "right": "Yes: the car's kinetic energy ends up heating the brakes.",
      "wrong": {
-      "other": "Not quite: to the thermal store of the brakes.",
-      "fuel": "Not quite: ordinary brakes cannot put energy back into fuel. The work done by friction heats the brakes.",
-      "destroyed": "Not quite: energy is never destroyed. It is transferred to the thermal store of the brakes."
+      "other": "Not quite: into heating up the brakes.",
+      "fuel": "Not quite: ordinary brakes cannot put energy back into fuel. It ends up heating the brakes.",
+      "destroyed": "Not quite: energy is never destroyed. It ends up heating the brakes."
      },
      "idk": [
       {
        "hint": "The brakes get hot when a car stops. What does that tell you?"
       }
      ],
-     "answerWhy": "The friction force does work on the brakes, transferring the kinetic energy to their thermal store, so they heat up."
+     "answerWhy": "The brakes get hot, so the car's kinetic energy has gone into heating them."
     },
     {
      "id": "4.2",
      "type": "say",
-     "text": "Here is how. When the brakes are on, the friction between the brakes and the wheel does work, which transfers energy. It moves the car's kinetic energy into the thermal store of the brakes, so the brakes warm up."
+     "text": "Doing work means a force moving something, which transfers energy. The friction in the brakes does work, moving the car's kinetic energy into the thermal store of the brakes: the energy they hold as heat."
     },
     {
      "id": "4.4",
      "type": "say",
-     "text": "Kinetic energy is Ek = ½ m v²: m is the car's mass in kg, v its speed in m/s and Ek is in joules. Double the speed and Ek is four times as big, so the brakes must work over four times the distance."
+     "text": "Kinetic energy is Ek = ½ m v²: m is the car's mass in kg, v its speed in m/s, and Ek is in joules."
+    },
+    {
+     "id": "4.4b",
+     "type": "ask",
+     "kind": "number",
+     "question": "A 1000 kg car moves at 10 m/s. What is its kinetic energy, in J?",
+     "answer": {
+      "value": 50000,
+      "unit": "J",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 5000,
+       "branch": "nosquare"
+      },
+      {
+       "value": 100000,
+       "branch": "nohalf"
+      }
+     ],
+     "right": "Yes: ½ × 1000 × 10² = 0.5 × 1000 × 100 = 50 000 J.",
+     "wrong": {
+      "other": "Not quite: 50 000 J. Ek = ½ × 1000 × 10² = 0.5 × 1000 × 100 = 50 000 J.",
+      "nosquare": "Not quite: 50 000 J. Square the speed first: 10² = 100. Then 0.5 × 1000 × 100 = 50 000 J.",
+      "nohalf": "Not quite: 50 000 J. Remember the ½: 0.5 × 1000 × 100 = 50 000 J."
+     },
+     "idk": [
+      {
+       "hint": "Square the speed, then multiply by the mass and by 0.5."
+      }
+     ],
+     "answerWhy": "Ek = ½ m v² = 0.5 × 1000 × 10² = 50 000 J."
     },
     {
      "id": "4.5",
      "type": "say",
-     "text": "Deceleration is how quickly the car slows down. A bigger braking force gives a bigger deceleration."
+     "text": "Deceleration is how quickly the car slows down: change in speed ÷ time, in m/s². A bigger braking force gives a bigger deceleration."
     },
     {
      "id": "4.5b",
      "type": "say",
      "text": "Very large decelerations are dangerous. The brakes can overheat, and the tyres can skid, so the driver loses control."
+    },
+    {
+     "id": "4.5c",
+     "type": "say",
+     "text": "In a sudden stop, the people inside decelerate hard too, so big forces act on them. Seat belts and crumple zones help by making the stop take a little longer."
     },
     {
      "id": "4.6",
@@ -530,7 +579,7 @@
      "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
      "question": "A 1000 kg car slows from 20 m/s to a stop in 4 s. What braking force acts on it?",
      "steps": [
-      "Find the deceleration: change in velocity ÷ time = 20 ÷ 4 = 5 m/s².",
+      "Find the deceleration: change in speed ÷ time = 20 ÷ 4 = 5 m/s².",
       "Use F = m a: force (N) = mass (kg) × acceleration (m/s²).",
       "Put in the numbers: F = 1000 × 5.",
       "F = 5000 N."
@@ -714,7 +763,7 @@
      "right": "Yes: double the speed gives four times the braking distance.",
      "wrong": {
       "other": "Not quite: four times as long.",
-      "double": "Not quite: braking distance goes up with speed squared, so it becomes four times as long.",
+      "double": "Not quite: double the speed gives four times the braking distance, because kinetic energy depends on speed squared.",
       "same": "Not quite: a faster car needs further to stop: four times as far at double the speed."
      },
      "idk": [
@@ -744,7 +793,7 @@
        "branch": "mass"
       }
      ],
-     "right": "Yes: less friction means less braking force.",
+     "right": "Yes: the braking force can only slow the car through the grip of the tyres on the road, and ice cuts that friction.",
      "wrong": {
       "other": "Not quite: less friction between tyres and road.",
       "react": "Not quite: reaction time affects the thinking distance. Ice cuts the friction, so the braking force is smaller.",
@@ -765,7 +814,7 @@
      "question": "Quiz, question 6 of 6: why do brakes get hot when a car stops?",
      "options": [
       {
-       "text": "Friction does work, filling their thermal store",
+       "text": "Friction does work, heating them up",
        "branch": "right"
       },
       {
@@ -779,7 +828,7 @@
      ],
      "right": "Yes: the work done by friction transfers the car's kinetic energy to the brakes' thermal store.",
      "wrong": {
-      "other": "Not quite: friction does work, filling their thermal store.",
+      "other": "Not quite: friction does work, heating them up.",
       "engine": "Not quite: the heat comes from the car's kinetic energy, transferred by the work done by friction.",
       "air": "Not quite: the heat comes from the friction in the brakes, which transfers the car's kinetic energy."
      },

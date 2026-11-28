@@ -1,0 +1,292 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 14864,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 10761,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 7055
+    },
+    "iterations": [
+      {
+        "input_tokens": 14864,
+        "output_tokens": 10761,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.5493520000000001,
+  "seconds": 100,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from the last lesson. A force of 8 N stretches a spring by 0.04 m. What is its spring constant?\",\"what\":\"The lesson opens with a calculation from another lesson. A first-time learner who knows only this lesson has never been told what a spring constant is, so her first experience is a question she cannot do.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F10\",\"turn\":\"1.1a right answer\",\"quote\":\"Yes: k = F ÷ e = 8 ÷ 0.04 = 200 N/m.\",\"what\":\"k, F and e are used without saying what each stands for. Only the don't-know branch names them.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"1.1b\",\"quote\":\"Second: which kind of deformation leaves an object changed for good?\",\"what\":\"\\\"Deformation\\\", \\\"inelastic\\\", \\\"elastic\\\" and \\\"compression\\\" are all used in the question and its buttons without being explained anywhere in this lesson.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F7\",\"turn\":\"1.1b don't know (first time)\",\"quote\":\"One kind goes back to its first shape. Which kind does not?\",\"what\":\"This is the same question in other words, not an easier step. It still depends on her knowing the terms.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.6\",\"quote\":\"The distance d must be measured at right angles from the pivot to the line the force acts along. This is called the perpendicular distance.\",\"what\":\"The wording is muddled: the distance is at right angles to the line of the force, not \\\"at right angles from the pivot\\\". With no picture, a 15-year-old will not be able to see what \\\"the line the force acts along\\\" means.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.6b\",\"quote\":\"For a door pushed straight on, d is just the distance from the hinge. Pushing at a slant makes the perpendicular distance shorter, so the moment is smaller.\",\"what\":\"\\\"Pushed straight on\\\" is vague (it means at right angles to the door) and \\\"the distance from the hinge\\\" does not say to where. That a slanted push shortens the distance is asserted with no picture or reason.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.8\",\"quote\":\"A spanner is pushed with 50 N, 25 cm from the nut. What is the moment, in Nm?\",\"what\":\"She has not been told that the nut is the pivot for a spanner. That is first said in a wrong-answer reply at 3.14.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.9\",\"quote\":\"\\\"Use a longer spanner and push at its end\\\" / \\\"Use a shorter spanner\\\" / \\\"Push closer to the nut\\\"\",\"what\":\"The two wrong options say the same thing and the right one is the odd one out and the longest, so she can pick it without thinking about M = F d.\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"1.10\",\"quote\":\"Yes: the same force further from the pivot gives a bigger moment.\",\"what\":\"Key point 1 also says a bigger force gives a bigger moment. That is never told or asked before the key point closes; only the distance half is covered.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.10\",\"quote\":\"Yes: your line makes the point. You have this: The moment is the turning effect of a force.\",\"what\":\"Stilted feedback that reads like a marking scheme, not a teacher. The same wording comes back at 2.7.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"2.1\",\"quote\":\"clockwise, the way a clock's hands turn, or anticlockwise, the other way\",\"what\":\"Two new terms arrive in one message. Both are explained, so it is a small point.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.2\",\"quote\":\"the total clockwise moment about the pivot equals the total anticlockwise moment about that pivot\",\"what\":\"\\\"Total\\\" is never explained (adding the moments when there is more than one force on a side) and never practised. It is also a long, dense sentence to meet cold.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"2.2b\",\"quote\":\"On a see-saw, each person's weight, the pull of gravity on them in newtons, pushes their side down. A weight left of the pivot turns it anticlockwise; one on the right, clockwise.\",\"what\":\"Three ideas in one message: what weight is (tucked into an aside), that it pushes the side down, and which side turns which way. The last needs a picture to follow.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"2.3\",\"quote\":\"Here is a worked example. Tap \\\"Show the first step\\\" under it to see each step in turn.\",\"what\":\"The same instruction is given word for word at 1.7, 2.3 and 3.3. She needs it once.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.4 wrong answer 3.33\",\"quote\":\"Not quite: 1.2 m. The two moments must be equal: 300 × 2 = 600 Nm, so 500 × d = 600 and d = 1.2 m.\",\"what\":\"The reply is identical to the one for \\\"2\\\" and does not tell her what she did wrong, which was to multiply by the wrong weight and divide by the other.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.6\",\"quote\":\"A 2 N weight hangs 30 cm to the left of the pivot. What force, hung 20 cm to the right, balances it, in N?\",\"what\":\"\\\"Weight\\\" is now used for an object, just after being defined as a force, and \\\"a force, hung\\\" is odd wording. This is also the first time she must find a force rather than a distance, with no example of that.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"3.2b\",\"quote\":\"The lever passes that same moment on to the load.\",\"what\":\"\\\"That same moment\\\" refers to the previous message; nothing in this message says which moment is meant.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.3\",\"quote\":\"Your moment: M = F d = 50 × 2 = 100 Nm. ... The load gets the same moment: F × 0.5 = 100.\",\"what\":\"F stands for her 50 N push in one step and for the unknown force on the load in the next. A beginner may read it as the same F.\",\"severity\":\"minor\"},{\"fault\":\"P16\",\"turn\":\"3.6\",\"quote\":\"A bigger gear's teeth are further from its centre, so that force gives it a bigger moment, and it turns more slowly.\",\"what\":\"\\\"And it turns more slowly\\\" is tacked on with no reason, so it reads as if the bigger moment causes the slower turning. The message also carries three ideas at once and never says the gear's centre is its pivot.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P7\",\"turn\":\"3.7 don't know (first time)\",\"quote\":\"The small gear has fewer teeth, so it has to go round more times for each turn of the large gear.\",\"what\":\"The real reason for the speed difference appears for the first time in a hint that only some learners see. It is a new idea, not an easier step, and it should have been taught at 3.6.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.8 don't know\",\"quote\":\"A good line would be: levers and gears pass on the turning effect of a force: a lever turns a small force far from the pivot into a big force near it.\",\"what\":\"The question was only about levers, but the model line starts with gears. It also does not match the two points she is marked against, and has two colons in one sentence.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.8 all of them\",\"quote\":\"Yes: your line makes every point. You have this: You push far from the pivot, so a small force makes a big moment. You have this: The load is near the pivot, so it gets a big force.\",\"what\":\"\\\"You have this:\\\" twice in a row reads like a machine. \\\"In one line\\\" also asks for two separate points, which is a lot for one line.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.9\",\"quote\":\"Now for a short quiz: six questions on the whole lesson.\",\"what\":\"The quiz has no balanced-moment calculation and nothing on levers, so it is not the whole lesson. The hardest ideas go untested.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.12\",\"quote\":\"\\\"Along the force arrow\\\"\",\"what\":\"No \\\"force arrow\\\" has been mentioned or shown in the lesson. Both wrong options also get exactly the same reply, so neither says why her choice was wrong.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"3.15\",\"quote\":\"Quiz, question 6 of 6: a large gear turns a small gear. How does the small gear turn?\",\"what\":\"This is the same question, with the same stem, as 3.7 only eight steps earlier. It tests memory of that answer, not understanding.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.15 don't know (first time)\",\"quote\":\"Touching gears push each other round. Which way does the second one go?\",\"what\":\"The hint only helps with direction. It gives nothing on faster or slower, which is the other half of every option.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"Summary, point 3 of 3\",\"quote\":\"Levers and gears pass on the turning effect of a force: a lever turns a small force far from the pivot into a big force near it.\",\"what\":\"Gears are named and then nothing is said about them, so the summary leaves out what she learned about big and small gears.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole script\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on and no picture is mentioned anywhere: no see-saw to balance, no spanner to lengthen, no gears to turn. Perpendicular distance, clockwise and anticlockwise, and gears all need a diagram, and she may get bored (M1).\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":1},{\"fault\":\"F10\",\"instances\":1},{\"fault\":\"F3\",\"instances\":1},{\"fault\":\"F7\",\"instances\":1},{\"fault\":\"P4\",\"instances\":1},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"P6\",\"instances\":1},{\"fault\":\"F1\",\"instances\":2},{\"fault\":\"F2\",\"instances\":1},{\"fault\":\"P16\",\"instances\":1},{\"fault\":\"P7\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":15}],\"overall\":\"Not quite as it is. The calculation steps in key points 1 and 2 are sound and well sequenced, with good worked examples, wrong-answer replies and a summary. But the lesson opens with two questions from another lesson that a first-time learner cannot answer, and perpendicular distance is explained in muddled words with no picture. The gears message (3.6) says the big gear turns more slowly without giving the reason, which only appears in a hint. I would cut or move the opening recap, add diagrams and something to try, and fix 1.6, 3.6 and the 3.8 model line before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from the last lesson. A force of 8 N stretches a spring by 0.04 m. What is its spring constant?",
+      "what": "The lesson opens with a calculation from another lesson. A first-time learner who knows only this lesson has never been told what a spring constant is, so her first experience is a question she cannot do.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F10",
+      "turn": "1.1a right answer",
+      "quote": "Yes: k = F ÷ e = 8 ÷ 0.04 = 200 N/m.",
+      "what": "k, F and e are used without saying what each stands for. Only the don't-know branch names them.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1b",
+      "quote": "Second: which kind of deformation leaves an object changed for good?",
+      "what": "\"Deformation\", \"inelastic\", \"elastic\" and \"compression\" are all used in the question and its buttons without being explained anywhere in this lesson.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F7",
+      "turn": "1.1b don't know (first time)",
+      "quote": "One kind goes back to its first shape. Which kind does not?",
+      "what": "This is the same question in other words, not an easier step. It still depends on her knowing the terms.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.6",
+      "quote": "The distance d must be measured at right angles from the pivot to the line the force acts along. This is called the perpendicular distance.",
+      "what": "The wording is muddled: the distance is at right angles to the line of the force, not \"at right angles from the pivot\". With no picture, a 15-year-old will not be able to see what \"the line the force acts along\" means.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.6b",
+      "quote": "For a door pushed straight on, d is just the distance from the hinge. Pushing at a slant makes the perpendicular distance shorter, so the moment is smaller.",
+      "what": "\"Pushed straight on\" is vague (it means at right angles to the door) and \"the distance from the hinge\" does not say to where. That a slanted push shortens the distance is asserted with no picture or reason.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.8",
+      "quote": "A spanner is pushed with 50 N, 25 cm from the nut. What is the moment, in Nm?",
+      "what": "She has not been told that the nut is the pivot for a spanner. That is first said in a wrong-answer reply at 3.14.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.9",
+      "quote": "\"Use a longer spanner and push at its end\" / \"Use a shorter spanner\" / \"Push closer to the nut\"",
+      "what": "The two wrong options say the same thing and the right one is the odd one out and the longest, so she can pick it without thinking about M = F d.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "1.10",
+      "quote": "Yes: the same force further from the pivot gives a bigger moment.",
+      "what": "Key point 1 also says a bigger force gives a bigger moment. That is never told or asked before the key point closes; only the distance half is covered.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10",
+      "quote": "Yes: your line makes the point. You have this: The moment is the turning effect of a force.",
+      "what": "Stilted feedback that reads like a marking scheme, not a teacher. The same wording comes back at 2.7.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "2.1",
+      "quote": "clockwise, the way a clock's hands turn, or anticlockwise, the other way",
+      "what": "Two new terms arrive in one message. Both are explained, so it is a small point.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.2",
+      "quote": "the total clockwise moment about the pivot equals the total anticlockwise moment about that pivot",
+      "what": "\"Total\" is never explained (adding the moments when there is more than one force on a side) and never practised. It is also a long, dense sentence to meet cold.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "2.2b",
+      "quote": "On a see-saw, each person's weight, the pull of gravity on them in newtons, pushes their side down. A weight left of the pivot turns it anticlockwise; one on the right, clockwise.",
+      "what": "Three ideas in one message: what weight is (tucked into an aside), that it pushes the side down, and which side turns which way. The last needs a picture to follow.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.3",
+      "quote": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+      "what": "The same instruction is given word for word at 1.7, 2.3 and 3.3. She needs it once.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.4 wrong answer 3.33",
+      "quote": "Not quite: 1.2 m. The two moments must be equal: 300 × 2 = 600 Nm, so 500 × d = 600 and d = 1.2 m.",
+      "what": "The reply is identical to the one for \"2\" and does not tell her what she did wrong, which was to multiply by the wrong weight and divide by the other.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.6",
+      "quote": "A 2 N weight hangs 30 cm to the left of the pivot. What force, hung 20 cm to the right, balances it, in N?",
+      "what": "\"Weight\" is now used for an object, just after being defined as a force, and \"a force, hung\" is odd wording. This is also the first time she must find a force rather than a distance, with no example of that.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.2b",
+      "quote": "The lever passes that same moment on to the load.",
+      "what": "\"That same moment\" refers to the previous message; nothing in this message says which moment is meant.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3",
+      "quote": "Your moment: M = F d = 50 × 2 = 100 Nm. ... The load gets the same moment: F × 0.5 = 100.",
+      "what": "F stands for her 50 N push in one step and for the unknown force on the load in the next. A beginner may read it as the same F.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P16",
+      "turn": "3.6",
+      "quote": "A bigger gear's teeth are further from its centre, so that force gives it a bigger moment, and it turns more slowly.",
+      "what": "\"And it turns more slowly\" is tacked on with no reason, so it reads as if the bigger moment causes the slower turning. The message also carries three ideas at once and never says the gear's centre is its pivot.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P7",
+      "turn": "3.7 don't know (first time)",
+      "quote": "The small gear has fewer teeth, so it has to go round more times for each turn of the large gear.",
+      "what": "The real reason for the speed difference appears for the first time in a hint that only some learners see. It is a new idea, not an easier step, and it should have been taught at 3.6.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.8 don't know",
+      "quote": "A good line would be: levers and gears pass on the turning effect of a force: a lever turns a small force far from the pivot into a big force near it.",
+      "what": "The question was only about levers, but the model line starts with gears. It also does not match the two points she is marked against, and has two colons in one sentence.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.8 all of them",
+      "quote": "Yes: your line makes every point. You have this: You push far from the pivot, so a small force makes a big moment. You have this: The load is near the pivot, so it gets a big force.",
+      "what": "\"You have this:\" twice in a row reads like a machine. \"In one line\" also asks for two separate points, which is a lot for one line.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.9",
+      "quote": "Now for a short quiz: six questions on the whole lesson.",
+      "what": "The quiz has no balanced-moment calculation and nothing on levers, so it is not the whole lesson. The hardest ideas go untested.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.12",
+      "quote": "\"Along the force arrow\"",
+      "what": "No \"force arrow\" has been mentioned or shown in the lesson. Both wrong options also get exactly the same reply, so neither says why her choice was wrong.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.15",
+      "quote": "Quiz, question 6 of 6: a large gear turns a small gear. How does the small gear turn?",
+      "what": "This is the same question, with the same stem, as 3.7 only eight steps earlier. It tests memory of that answer, not understanding.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.15 don't know (first time)",
+      "quote": "Touching gears push each other round. Which way does the second one go?",
+      "what": "The hint only helps with direction. It gives nothing on faster or slower, which is the other half of every option.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "Summary, point 3 of 3",
+      "quote": "Levers and gears pass on the turning effect of a force: a lever turns a small force far from the pivot into a big force near it.",
+      "what": "Gears are named and then nothing is said about them, so the summary leaves out what she learned about big and small gears.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole script",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on and no picture is mentioned anywhere: no see-saw to balance, no spanner to lengthen, no gears to turn. Perpendicular distance, clockwise and anticlockwise, and gears all need a diagram, and she may get bored (M1).",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 15
+    },
+    {
+      "fault": "F1",
+      "instances": 2
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "F10",
+      "instances": 1
+    },
+    {
+      "fault": "F3",
+      "instances": 1
+    },
+    {
+      "fault": "F7",
+      "instances": 1
+    },
+    {
+      "fault": "P4",
+      "instances": 1
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "P6",
+      "instances": 1
+    },
+    {
+      "fault": "F2",
+      "instances": 1
+    },
+    {
+      "fault": "P16",
+      "instances": 1
+    },
+    {
+      "fault": "P7",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "Not quite as it is. The calculation steps in key points 1 and 2 are sound and well sequenced, with good worked examples, wrong-answer replies and a summary. But the lesson opens with two questions from another lesson that a first-time learner cannot answer, and perpendicular distance is explained in muddled words with no picture. The gears message (3.6) says the big gear turns more slowly without giving the reason, which only appears in a hint. I would cut or move the opening recap, add diagrams and something to try, and fix 1.6, 3.6 and the 3.8 model line before she uses it."
+}

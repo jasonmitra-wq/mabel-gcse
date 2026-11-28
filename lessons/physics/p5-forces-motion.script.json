@@ -39,7 +39,7 @@
      },
      "idk": [
       {
-       "hint": "The unit is named after James Joule."
+       "hint": "Power is measured in watts and force in newtons. Energy has a unit of its own."
       }
      ],
      "answerWhy": "Energy is measured in joules (J)."
@@ -79,17 +79,22 @@
     {
      "id": "1.2",
      "type": "say",
-     "text": "Now this lesson. A quantity is anything you can measure, such as a mass or a length. Every quantity has a size: a number with a unit, such as 5 kg or 20 m. Its size is also called its magnitude."
+     "text": "Now this lesson. A quantity is anything you can measure, such as a mass or a length. Every quantity has a size: a number with a unit, such as 5 kg or 20 m."
     },
     {
      "id": "1.3",
      "type": "say",
-     "text": "Some quantities need only a size. Mass is one: 5 kg is 5 kg, whichever way you point. A quantity that has only a size is called a scalar."
+     "text": "Some quantities need only a size. Mass is one: a mass of 5 kg has no direction. A quantity that has only a size is called a scalar."
     },
     {
      "id": "1.4",
      "type": "say",
      "text": "Other quantities also need a direction. Walking 10 m to the left does not take you to the same place as walking 10 m to the right. A quantity with a size and a direction is called a vector."
+    },
+    {
+     "id": "1.4b",
+     "type": "say",
+     "text": "Energy, speed and temperature are scalars. Velocity, force and weight are vectors."
     },
     {
      "id": "1.5",
@@ -131,12 +136,12 @@
     {
      "id": "1.7",
      "type": "say",
-     "text": "But where do you end up? The two parts of the walk make a right-angled triangle, so Pythagoras gives the straight line: 500 m, about 53° north of east. The straight-line distance from start to finish, with its direction, is called the displacement."
+     "text": "But where do you end up? The two parts of the walk make a right-angled triangle, so Pythagoras gives the straight line: √(300² + 400²) = 500 m, in a direction between north and east. The straight-line distance from start to finish, with its direction, is called the displacement."
     },
     {
      "id": "1.7b",
      "type": "say",
-     "text": "Displacement has a size and a direction, so it is a vector. Distance is its scalar partner: just how far, with no direction."
+     "text": "Displacement has a size and a direction, so it is a vector."
     },
     {
      "id": "1.8",
@@ -178,7 +183,7 @@
     {
      "id": "1.10",
      "type": "say",
-     "text": "Velocity is speed in a given direction, so velocity is a vector: it is displacement ÷ time. 20 m/s is a speed. 20 m/s due north is a velocity."
+     "text": "Velocity is speed in a given direction, so velocity is a vector. 20 m/s is a speed. 20 m/s due north is a velocity."
     },
     {
      "id": "1.11",
@@ -236,7 +241,7 @@
     {
      "id": "2.2",
      "type": "say",
-     "text": "The equation is v = s ÷ t: speed = distance ÷ time. Here v is the speed in metres per second (m/s), s is the distance in metres (m) and t is the time in seconds."
+     "text": "The equation is v = s ÷ t: speed = distance ÷ time. Here v is the speed in m/s, s is the distance in metres (m) and t is the time in seconds. Careful: the unit symbol for seconds is also s."
     },
     {
      "id": "2.3",
@@ -295,34 +300,34 @@
      "id": "2.6",
      "type": "ask",
      "kind": "number",
-     "question": "A train travels 3 km in 100 s. What is its average speed, in m/s? (1 km = 1000 m.)",
+     "question": "A train travels 3 km at 30 m/s. How long does it take, in s? (1 km = 1000 m.)",
      "answer": {
-      "value": 30,
-      "unit": "m/s",
+      "value": 100,
+      "unit": "s",
       "tolerance": 0.01
      },
      "wrongValues": [
       {
-       "value": 0.03,
+       "value": 0.1,
        "branch": "km"
       },
       {
-       "value": 300000,
+       "value": 90000,
        "branch": "times"
       }
      ],
-     "right": "Yes: 3 km is 3000 m, and 3000 ÷ 100 = 30 m/s.",
+     "right": "Yes: 3 km = 3000 m, and t = s ÷ v = 3000 ÷ 30 = 100 s.",
      "wrong": {
-      "other": "Not quite: 30 m/s. 3 km is 3000 m, and 3000 ÷ 100 = 30 m/s.",
-      "km": "Not quite: 30 m/s. Change the kilometres into metres first: 3 km = 3000 m. Then 3000 ÷ 100 = 30 m/s.",
-      "times": "Not quite: 30 m/s. Divide the distance by the time: 3000 m ÷ 100 s = 30 m/s."
+      "other": "Not quite: 100 s. 3 km = 3000 m, and t = s ÷ v = 3000 ÷ 30 = 100 s.",
+      "km": "Not quite: 100 s. Change the kilometres to metres first: 3 km = 3000 m. Then 3000 ÷ 30 = 100 s.",
+      "times": "Not quite: 100 s. Time = distance ÷ speed: 3000 ÷ 30 = 100 s."
      },
      "idk": [
       {
-       "hint": "First change 3 km into metres: 1 km = 1000 m. Then divide by the time."
+       "hint": "Change 3 km to metres, then use t = s ÷ v."
       }
      ],
-     "answerWhy": "3 km = 3000 m, so v = s ÷ t = 3000 ÷ 100 = 30 m/s."
+     "answerWhy": "3 km = 3000 m, so t = s ÷ v = 3000 ÷ 30 = 100 s."
     },
     {
      "id": "2.7",
@@ -480,7 +485,7 @@
     {
      "id": "3.2b",
      "type": "say",
-     "text": "m/s² is read as \"metres per second squared\". An acceleration of 3 m/s² means the velocity goes up by 3 m/s every second."
+     "text": "An acceleration of 3 m/s² means the velocity goes up by 3 m/s every second."
     },
     {
      "id": "3.3",
@@ -634,7 +639,12 @@
     {
      "id": "3.10",
      "type": "say",
-     "text": "Distance = speed × time, so on a velocity-time graph the area between the line and the time axis is the distance travelled. A straight line rising from zero makes a triangle: area = ½ × base × height."
+     "text": "Distance = speed × time. A flat line at 10 m/s for 5 s marks out a rectangle under it: 10 × 5 = 50, the distance in metres. So the area under a velocity-time graph is the distance travelled."
+    },
+    {
+     "id": "3.10b",
+     "type": "say",
+     "text": "A straight line rising from zero marks out a triangle instead: its area is ½ × base × height."
     },
     {
      "id": "3.11",
@@ -692,7 +702,12 @@
     {
      "id": "4.2",
      "type": "say",
-     "text": "The equation is v² − u² = 2 a s: final velocity squared minus starting velocity squared = 2 × acceleration × distance. v and u are in m/s, a is the acceleration in m/s² and s is the distance in metres (m)."
+     "text": "The equation is v² − u² = 2 a s. v is the final velocity and u the starting velocity, both in m/s; a is the acceleration in m/s² and s is the distance in metres (m)."
+    },
+    {
+     "id": "4.2b",
+     "type": "say",
+     "text": "Starting \"from rest\" means starting still, at 0 m/s, so then u = 0."
     },
     {
      "id": "4.3",
@@ -800,11 +815,11 @@
     {
      "id": "4.7",
      "type": "own",
-     "prompt": "In one line: which equation links velocity, acceleration and distance when the time is not given?",
+     "prompt": "In one line: when would you use v² − u² = 2 a s rather than another equation?",
      "points": [
-      "The equation is v² − u² = 2 a s."
+      "You use it when the time is not known."
      ],
-     "idk": "No problem. A good line would be: the equation v² − u² = 2 a s links the final and starting velocities, the acceleration and the distance."
+     "idk": "No problem. A good line would be: you use v² − u² = 2 a s when you know velocities, acceleration or distance, but not the time."
     }
    ]
   },
@@ -825,7 +840,12 @@
     {
      "id": "5.3",
      "type": "say",
-     "text": "The pull of gravity on an object is its weight. Some objects fall with only their weight acting: no air pushes back on them. Falling under gravity alone is called free fall."
+     "text": "The pull of gravity on an object is its weight."
+    },
+    {
+     "id": "5.3b",
+     "type": "say",
+     "text": "Air pushes back on anything moving through it: that push is air resistance. If it is small enough to ignore, an object falls with only its weight acting. Falling under gravity alone is called free fall."
     },
     {
      "id": "5.4",
@@ -859,7 +879,7 @@
      },
      "idk": [
       {
-       "hint": "With no air, both are in free fall. Does mass change the acceleration in free fall?"
+       "hint": "Anything in free fall accelerates at about 9.8 m/s². Does that number depend on mass?"
       }
      ],
      "answerWhy": "In free fall everything accelerates at about 9.8 m/s² whatever its mass, so they land at the same time."
@@ -867,7 +887,7 @@
     {
      "id": "5.6",
      "type": "say",
-     "text": "In air it is different. Air pushes back on anything moving through it: this push is air resistance. As a falling object gets faster, the air resistance on it gets bigger."
+     "text": "In air it is different. Air resistance pushes up while the weight pulls down. As a falling object gets faster, the air resistance gets bigger, so the overall force down, and the acceleration, get smaller."
     },
     {
      "id": "5.7",
@@ -892,11 +912,11 @@
      "wrong": {
       "other": "Not quite: when air resistance equals the weight.",
       "zero": "Not quite: the weight stays the same all the way down. The air resistance grows until it equals the weight.",
-      "bigger": "Not quite: air resistance grows only until it equals the weight. Then the forces cancel, and it stops growing."
+      "bigger": "Not quite: if air resistance were bigger than the weight, the skydiver would slow down, and the air resistance would shrink again. It settles where the two are equal."
      },
      "idk": [
       {
-       "hint": "Air resistance grows as the skydiver speeds up. The weight stays the same. When would the two be equal?"
+       "hint": "The weight stays the same, and air resistance keeps growing as the speed rises. Think of the moment the two forces cancel."
       }
      ],
      "answerWhy": "Air resistance grows with speed until it equals the weight. Then the forces cancel and the skydiver stops speeding up."
@@ -907,41 +927,9 @@
      "text": "With the forces cancelling, a moving object keeps the same speed: it does not stop. That steady falling speed is called the terminal velocity."
     },
     {
-     "id": "5.8",
-     "type": "ask",
-     "kind": "tap",
-     "question": "A skydiver is falling at terminal velocity. Which is true of the forces on the skydiver?",
-     "options": [
-      {
-       "text": "Air resistance equals the weight",
-       "branch": "right"
-      },
-      {
-       "text": "The weight is bigger than air resistance",
-       "branch": "bigger"
-      },
-      {
-       "text": "There are no forces at all",
-       "branch": "none"
-      }
-     ],
-     "right": "Yes: at terminal velocity the air resistance equals the weight, so the speed stays steady.",
-     "wrong": {
-      "other": "Not quite: air resistance equals the weight.",
-      "bigger": "Not quite: if the weight were bigger, the skydiver would still be speeding up. At terminal velocity the two forces are equal.",
-      "none": "Not quite: both forces still act. They are equal, so they cancel and the speed stays steady."
-     },
-     "idk": [
-      {
-       "hint": "At terminal velocity the speed stops changing. What must be true of the up and down forces for that?"
-      }
-     ],
-     "answerWhy": "At terminal velocity the air resistance equals the weight, so the forces cancel and the speed stays the same."
-    },
-    {
      "id": "5.9",
      "type": "say",
-     "text": "When a skydiver opens a parachute, the air resistance jumps up and becomes bigger than the weight. The skydiver slows down until the forces are equal again, at a new, lower terminal velocity."
+     "text": "When a skydiver opens a parachute, the air resistance jumps up, becomes bigger than the weight, and the skydiver slows down. As the speed falls, so does the air resistance, until it equals the weight again: a new, lower terminal velocity."
     },
     {
      "id": "5.11",
@@ -961,17 +949,22 @@
     {
      "id": "6.1",
      "type": "say",
-     "text": "A force is a push or a pull on an object. It always comes from the object interacting with another object."
+     "text": "A force is a push or a pull on an object, measured in newtons (N). It always comes from the object interacting with another object."
     },
     {
      "id": "6.2",
      "type": "say",
-     "text": "Some forces need the objects to touch. A force between objects that are touching is called a contact force. Friction, air resistance and the tension in a rope are contact forces."
+     "text": "Some forces need the objects to touch. A force between objects that are touching is called a contact force."
     },
     {
      "id": "6.2b",
      "type": "say",
-     "text": "Friction is the force that resists one surface sliding over another. Tension is the pull in a stretched rope or string."
+     "text": "Friction is one: the force that resists one surface sliding over another. Air resistance is another."
+    },
+    {
+     "id": "6.2c",
+     "type": "say",
+     "text": "Tension is a contact force too: the pull in a stretched rope or string."
     },
     {
      "id": "6.3",
@@ -981,7 +974,12 @@
     {
      "id": "6.4",
      "type": "say",
-     "text": "Other forces act across a gap. A force between objects that are apart is called a non-contact force. Gravity, magnetic force and electrostatic force, between charged objects, are examples."
+     "text": "Other forces act across a gap. A force between objects that are apart is called a non-contact force. Gravity is one."
+    },
+    {
+     "id": "6.4b",
+     "type": "say",
+     "text": "Magnetic force, from a magnet, and electrostatic force, between objects with an electric charge, are non-contact forces too."
     },
     {
      "id": "6.5",
@@ -1142,33 +1140,33 @@
      "id": "6.13",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 3 of 6: what does the gradient of a velocity-time graph show?",
+     "question": "Quiz, question 3 of 6: on a distance-time graph, what does a flat line show?",
      "options": [
       {
-       "text": "The acceleration",
+       "text": "The object is standing still",
        "branch": "right"
       },
       {
-       "text": "The distance travelled",
-       "branch": "area"
+       "text": "It moves at a steady speed",
+       "branch": "steady"
       },
       {
-       "text": "The time taken",
-       "branch": "time"
+       "text": "It is speeding up",
+       "branch": "faster"
       }
      ],
-     "right": "Yes: the gradient of a velocity-time graph is the acceleration.",
+     "right": "Yes: the distance is not changing, so the object is still.",
      "wrong": {
-      "other": "Not quite: the acceleration.",
-      "area": "Not quite: the distance travelled is the area under the graph. The gradient is the acceleration.",
-      "time": "Not quite: time runs along the bottom. The gradient is the acceleration."
+      "other": "Not quite: the object is standing still.",
+      "steady": "Not quite: a steady speed is a straight line sloping up. A flat line means the distance is not changing.",
+      "faster": "Not quite: speeding up gives a curve getting steeper. A flat line means the distance is not changing."
      },
      "idk": [
       {
-       "hint": "The gradient shows how fast the quantity up the side changes. Here that is velocity."
+       "hint": "On a flat line, does the distance change as time goes on?"
       }
      ],
-     "answerWhy": "The gradient of a velocity-time graph shows how quickly the velocity changes: the acceleration.",
+     "answerWhy": "A flat line on a distance-time graph means the distance is not changing, so the object is standing still.",
      "quiz": true
     },
     {
@@ -1208,33 +1206,33 @@
      "id": "6.15",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 5 of 6: on a velocity-time graph, what does the area under the line show?",
+     "question": "Quiz, question 5 of 6: with no air resistance, which falling objects accelerate fastest?",
      "options": [
       {
-       "text": "The distance travelled",
+       "text": "They all accelerate at the same rate",
        "branch": "right"
       },
       {
-       "text": "The acceleration",
-       "branch": "gradient"
+       "text": "The heaviest ones",
+       "branch": "heavy"
       },
       {
-       "text": "The time taken",
-       "branch": "time"
+       "text": "The lightest ones",
+       "branch": "light"
       }
      ],
-     "right": "Yes: the area under a velocity-time graph is the distance travelled.",
+     "right": "Yes: in free fall everything accelerates at about 9.8 m/s².",
      "wrong": {
-      "other": "Not quite: the distance travelled.",
-      "gradient": "Not quite: the acceleration is the gradient. The area under the line is the distance travelled.",
-      "time": "Not quite: time runs along the bottom. The area under the line is the distance travelled."
+      "other": "Not quite: they all accelerate at the same rate.",
+      "heavy": "Not quite: in free fall mass makes no difference. All accelerate at about 9.8 m/s².",
+      "light": "Not quite: in free fall mass makes no difference. All accelerate at about 9.8 m/s²."
      },
      "idk": [
       {
-       "hint": "Distance = speed × time. Which part of the graph multiplies velocity by time?"
+       "hint": "In free fall, does mass change the acceleration?"
       }
      ],
-     "answerWhy": "The area under a velocity-time graph is velocity × time, which is the distance travelled.",
+     "answerWhy": "In free fall every object accelerates at about 9.8 m/s², whatever its mass.",
      "quiz": true
     },
     {

@@ -1,0 +1,338 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 15499,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 12876,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 8284
+    },
+    "iterations": [
+      {
+        "input_tokens": 15499,
+        "output_tokens": 12876,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.639032,
+  "seconds": 123,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from earlier lessons. A 2 kg trolley accelerates at 3 m/s². What is the resultant force on it?\",\"what\":\"The lesson opens by testing F = m a, acceleration and resultant force, none of which it has taught. A first-time learner can only guess, and her first experience of the lesson is getting something wrong.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"L3\",\"turn\":\"1.1b\",\"quote\":\"Second: which of these is a vector, with a size and a direction?\",\"what\":\"She has not been told the difference between speed and velocity, so she cannot choose between them from anything the lesson has said. It is written as a revision check.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.1b \\\"Speed\\\" / \\\"Mass\\\" / still doesn't know\",\"quote\":\"speed has no direction, so it is a scalar\",\"what\":\"The word scalar is used in three replies and is never explained anywhere in the lesson.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"1.7\",\"quote\":\"A quantity with a size and a direction is called a vector quantity.\",\"what\":\"This is given as a new definition, but 1.1b already said a vector has a size and a direction and already asked her about it. It should have been taught here first and asked afterwards.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.2\",\"quote\":\"What they share is a quantity that combines mass and velocity.\",\"what\":\"This is loose. The lorry and the car do not share one quantity; each has a large amount of it. \\\"Combines\\\" is vague too, when the next message says it is a multiplication.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.5 (all wrong-answer branches, and the same pattern on every question)\",\"quote\":\"Not quite: 300 kg m/s. Multiply the mass by the velocity: 60 × 5 = 300 kg m/s.\",\"what\":\"Every wrong answer is met with the full answer straight away, with no hint and no second try. She never gets to correct herself.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F7\",\"turn\":\"1.6 don't know (first time)\",\"quote\":\"Change 50 g into kilograms first: 1000 g = 1 kg.\",\"what\":\"The hint only repeats the conversion already printed in the question, so it is no easier. It should help her do the conversion, for example by asking what 50 ÷ 1000 is.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"1.8\",\"quote\":\"Pick one direction as positive; momentum the other way is then negative. Two cars of the same mass driving towards each other at the same speed have momenta (the plural of momentum) of the same size, one positive and one negative.\",\"what\":\"One message carries the sign rule, a new word (momenta) and a two-car example. The sign rule is the hard idea here and needs its own message.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.8b\",\"quote\":\"Taking right as positive, what is their total momentum, in kg m/s?\",\"what\":\"She has never been told that a total momentum is found by adding the separate momenta with their signs. The question needs two calculations, a sign and an addition with no example first.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"1.9 and its don't know (first time)\",\"quote\":\"The first car has 1000 × 10 = 10 000 kg m/s. Divide that by 500 kg to find the speed.\",\"what\":\"Finding a velocity from a momentum (v = p ÷ m) has not been taught. The hint tells her to divide without saying why, and the lesson switches between \\\"speed\\\" and \\\"velocity\\\".\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.10 (all of them)\",\"quote\":\"Yes: your line makes every point. You have this: Momentum is mass × velocity. You have this: Momentum has a direction.\",\"what\":\"This reads like a mark scheme, not a teacher. \\\"You have this:\\\" twice in a row is stilted and she would not see it as a reply to what she wrote.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P4\",\"turn\":\"1.10 (end of key point 1)\",\"quote\":\"Momentum is mass × velocity. Momentum has a direction.\",\"what\":\"Key point 1 says momentum can also be measured in N s, and that is never taught. The lesson also never says outright that momentum is a vector quantity; she has to infer it from 1.7.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.2\",\"quote\":\"A group of objects with no outside forces acting on it is called a closed system.\",\"what\":\"\\\"Outside forces\\\" is abstract and comes with no example such as friction or a push from something not in the group. She will not be able to tell when a system is closed.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.7\",\"quote\":\"\\\"The ball pushes air back onto it\\\" / \\\"The momenta must still add up to zero\\\" / \\\"Firing makes the cannon lighter\\\"\",\"what\":\"Only one option mentions momentum, in a section about momentum, so she can pick it without understanding. The air option is also oddly worded.\",\"severity\":\"minor\"},{\"fault\":\"P13\",\"turn\":\"2.8\",\"quote\":\"A 0.02 kg bullet leaves a still 4 kg rifle at 400 m/s. How fast does the rifle move backwards (recoil), in m/s?\",\"what\":\"This is the first explosion calculation and there is no worked example for it. The only worked example was a stick-together collision; this one has a decimal mass and a different method.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.10 (all of them)\",\"quote\":\"Yes: your line makes the point. You have this: In a closed system, the total momentum before an event equals the total momentum after it.\",\"what\":\"The same stilted mark-scheme wording as 1.10. There is also no reply for a half-right line that says \\\"same before and after\\\" but leaves out the closed system.\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"2.10 (end of key point 2)\",\"quote\":\"In a closed system, the total momentum before an event equals the total momentum after it.\",\"what\":\"Key point 2 includes the collision equation m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂, with u and v as initial and final velocity. The script never shows it and never has a collision where both objects are moving.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F5\",\"turn\":\"3.1\",\"quote\":\"A resultant force on an object changes its velocity, so it changes its momentum. Momentum after minus momentum before is called the change in momentum, written m Δv (Δ means \\\"change in\\\").\",\"what\":\"One message brings in resultant force (never explained), change in momentum, the Δ sign and the expression m Δv. That is too much at once for a first-time learner.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"3.1\",\"quote\":\"written m Δv\",\"what\":\"She was taught that momentum is p, so change in momentum should be Δp, as in the lesson file. It is not explained why it is m Δv (mass unchanged, Δv the change in velocity).\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F10\",\"turn\":\"3.2\",\"quote\":\"Putting F = m a together with a = Δv ÷ Δt gives F = m Δv ÷ Δt.\",\"what\":\"The equation appears before Δt is named or any units are given; those only come in the next message.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"L3\",\"turn\":\"3.2\",\"quote\":\"Putting F = m a together with a = Δv ÷ Δt gives\",\"what\":\"This assumes she knows F = m a and a = Δv ÷ Δt and can follow an algebraic substitution. The second equation appears nowhere else in the lesson.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P6\",\"turn\":\"3.3\",\"quote\":\"Force equals the rate of change of momentum: how much the momentum changes each second. The same change in momentum spread over a longer time needs a smaller force.\",\"what\":\"Two ideas in one message: a new phrase (rate of change), which restates the previous message, and the longer-time-smaller-force result. The second is the key idea of the section and should be led up to, not told.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.4\",\"quote\":\"Change in momentum: 0.5 × 10 = 5 kg m/s.\",\"what\":\"3.1 defined change in momentum as after minus before, which here is 0 − 5 = −5 kg m/s. The sign is dropped without comment, after key point 1 taught her that signs matter, and nothing says the force acts against the motion.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"3.5\",\"quote\":\"The same ball is caught with soft hands that stop it in 0.5 s.\",\"what\":\"The question depends on the mass and speed from the worked example card, which are not in this message. She has to remember or scroll back for 0.5 kg and 10 m/s.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"3.7\",\"quote\":\"Why does a crash mat in a gym help when someone lands on it?\",\"what\":\"The answer was stated at 3.3 (\\\"spread over a longer time needs a smaller force\\\") and again in the 3.5 don't-know reply (\\\"a longer stop means a smaller force\\\"). She only has to match the wording.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"3.6\",\"quote\":\"Many safety features work the same way.\",\"what\":\"\\\"The same way\\\" refers to the crash mat in the previous question, which is not in this message.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.6\",\"quote\":\"Airbags, seat belts, crumple zones, cycle helmets and soft playground surfaces all make a collision last longer\",\"what\":\"\\\"Crumple zones\\\" is not explained. Five examples in one list go past without any of them being pictured or explained.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.8 (all of them)\",\"quote\":\"Yes: your line makes the point. You have this: Force equals the change in momentum divided by the time taken.\",\"what\":\"The same stilted mark-scheme feedback as 1.10 and 2.10.\",\"severity\":\"minor\"},{\"fault\":\"P4\",\"turn\":\"3.8 (end of key point 3)\",\"quote\":\"Force equals the change in momentum divided by the time taken.\",\"what\":\"Key point 3 teaches impulse (FΔt = Δp, force × time = change in momentum). The word impulse and the rearranged form never appear in the script.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.12 don't know (first time)\",\"quote\":\"Conservation of momentum says the total momentum in a closed system does not change.\",\"what\":\"The first reply to \\\"don't know\\\" simply gives the answer and then shows the same buttons, so it is not a hint. The 3.14 hint (\\\"Force is the rate of change of momentum.\\\") does much the same.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.13 \\\"Neither has any momentum\\\"\",\"quote\":\"It is equal and opposite, so the total is zero.\",\"what\":\"\\\"It\\\" refers to two momenta, so it should read \\\"Their momenta are equal and opposite\\\".\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"3.15\",\"quote\":\"\\\"The stop takes longer, so the force is smaller\\\"\",\"what\":\"The right option is word for word the right option from 3.7, and 3.6 said the same about airbags. She can answer by recognising the sentence.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole script\",\"quote\":\"Here is a worked example. Tap \\\"Show the first step\\\" under it to see each step in turn.\",\"what\":\"There is nothing hands-on and no picture anywhere: no trolleys to collide, no before-and-after diagram, no arrows for direction. Collisions and recoil need to be seen.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"M1\",\"turn\":\"whole script\",\"quote\":\"Your turn. A 4 kg trolley at 5 m/s hits a still 1 kg trolley, and they stick together.\",\"what\":\"The lesson is 45 steps of text and arithmetic with the same tell, example, your-turn pattern three times. I would expect her to lose interest well before the quiz.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":3},{\"fault\":\"F3\",\"instances\":2},{\"fault\":\"F1\",\"instances\":1},{\"fault\":\"F2\",\"instances\":2},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"F7\",\"instances\":1},{\"fault\":\"F8\",\"instances\":2},{\"fault\":\"F10\",\"instances\":1},{\"fault\":\"P4\",\"instances\":3},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"P13\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"new\",\"instances\":13}],\"overall\":\"No, not as it stands. The sums are right and key points 1 and 2 are mostly sound, but the lesson opens with two questions on F = m a and vectors that a first-time learner cannot answer, and it uses \\\"scalar\\\" and \\\"resultant force\\\" without explaining them. Key point 3 would lose her: it derives F = m Δv ÷ Δt from equations she has not met, writes change in momentum as m Δv when she was taught p, and leaves out impulse. Total momentum, rearranging p = m v and recoil are also asked before they are taught, wrong answers get no second try, and there is no picture or hands-on activity anywhere, so I would want those fixed before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from earlier lessons. A 2 kg trolley accelerates at 3 m/s². What is the resultant force on it?",
+      "what": "The lesson opens by testing F = m a, acceleration and resultant force, none of which it has taught. A first-time learner can only guess, and her first experience of the lesson is getting something wrong.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.1b",
+      "quote": "Second: which of these is a vector, with a size and a direction?",
+      "what": "She has not been told the difference between speed and velocity, so she cannot choose between them from anything the lesson has said. It is written as a revision check.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1b \"Speed\" / \"Mass\" / still doesn't know",
+      "quote": "speed has no direction, so it is a scalar",
+      "what": "The word scalar is used in three replies and is never explained anywhere in the lesson.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.7",
+      "quote": "A quantity with a size and a direction is called a vector quantity.",
+      "what": "This is given as a new definition, but 1.1b already said a vector has a size and a direction and already asked her about it. It should have been taught here first and asked afterwards.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.2",
+      "quote": "What they share is a quantity that combines mass and velocity.",
+      "what": "This is loose. The lorry and the car do not share one quantity; each has a large amount of it. \"Combines\" is vague too, when the next message says it is a multiplication.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.5 (all wrong-answer branches, and the same pattern on every question)",
+      "quote": "Not quite: 300 kg m/s. Multiply the mass by the velocity: 60 × 5 = 300 kg m/s.",
+      "what": "Every wrong answer is met with the full answer straight away, with no hint and no second try. She never gets to correct herself.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F7",
+      "turn": "1.6 don't know (first time)",
+      "quote": "Change 50 g into kilograms first: 1000 g = 1 kg.",
+      "what": "The hint only repeats the conversion already printed in the question, so it is no easier. It should help her do the conversion, for example by asking what 50 ÷ 1000 is.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "1.8",
+      "quote": "Pick one direction as positive; momentum the other way is then negative. Two cars of the same mass driving towards each other at the same speed have momenta (the plural of momentum) of the same size, one positive and one negative.",
+      "what": "One message carries the sign rule, a new word (momenta) and a two-car example. The sign rule is the hard idea here and needs its own message.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.8b",
+      "quote": "Taking right as positive, what is their total momentum, in kg m/s?",
+      "what": "She has never been told that a total momentum is found by adding the separate momenta with their signs. The question needs two calculations, a sign and an addition with no example first.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "1.9 and its don't know (first time)",
+      "quote": "The first car has 1000 × 10 = 10 000 kg m/s. Divide that by 500 kg to find the speed.",
+      "what": "Finding a velocity from a momentum (v = p ÷ m) has not been taught. The hint tells her to divide without saying why, and the lesson switches between \"speed\" and \"velocity\".",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10 (all of them)",
+      "quote": "Yes: your line makes every point. You have this: Momentum is mass × velocity. You have this: Momentum has a direction.",
+      "what": "This reads like a mark scheme, not a teacher. \"You have this:\" twice in a row is stilted and she would not see it as a reply to what she wrote.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P4",
+      "turn": "1.10 (end of key point 1)",
+      "quote": "Momentum is mass × velocity. Momentum has a direction.",
+      "what": "Key point 1 says momentum can also be measured in N s, and that is never taught. The lesson also never says outright that momentum is a vector quantity; she has to infer it from 1.7.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.2",
+      "quote": "A group of objects with no outside forces acting on it is called a closed system.",
+      "what": "\"Outside forces\" is abstract and comes with no example such as friction or a push from something not in the group. She will not be able to tell when a system is closed.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.7",
+      "quote": "\"The ball pushes air back onto it\" / \"The momenta must still add up to zero\" / \"Firing makes the cannon lighter\"",
+      "what": "Only one option mentions momentum, in a section about momentum, so she can pick it without understanding. The air option is also oddly worded.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P13",
+      "turn": "2.8",
+      "quote": "A 0.02 kg bullet leaves a still 4 kg rifle at 400 m/s. How fast does the rifle move backwards (recoil), in m/s?",
+      "what": "This is the first explosion calculation and there is no worked example for it. The only worked example was a stick-together collision; this one has a decimal mass and a different method.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.10 (all of them)",
+      "quote": "Yes: your line makes the point. You have this: In a closed system, the total momentum before an event equals the total momentum after it.",
+      "what": "The same stilted mark-scheme wording as 1.10. There is also no reply for a half-right line that says \"same before and after\" but leaves out the closed system.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "2.10 (end of key point 2)",
+      "quote": "In a closed system, the total momentum before an event equals the total momentum after it.",
+      "what": "Key point 2 includes the collision equation m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂, with u and v as initial and final velocity. The script never shows it and never has a collision where both objects are moving.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F5",
+      "turn": "3.1",
+      "quote": "A resultant force on an object changes its velocity, so it changes its momentum. Momentum after minus momentum before is called the change in momentum, written m Δv (Δ means \"change in\").",
+      "what": "One message brings in resultant force (never explained), change in momentum, the Δ sign and the expression m Δv. That is too much at once for a first-time learner.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "3.1",
+      "quote": "written m Δv",
+      "what": "She was taught that momentum is p, so change in momentum should be Δp, as in the lesson file. It is not explained why it is m Δv (mass unchanged, Δv the change in velocity).",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F10",
+      "turn": "3.2",
+      "quote": "Putting F = m a together with a = Δv ÷ Δt gives F = m Δv ÷ Δt.",
+      "what": "The equation appears before Δt is named or any units are given; those only come in the next message.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "L3",
+      "turn": "3.2",
+      "quote": "Putting F = m a together with a = Δv ÷ Δt gives",
+      "what": "This assumes she knows F = m a and a = Δv ÷ Δt and can follow an algebraic substitution. The second equation appears nowhere else in the lesson.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.3",
+      "quote": "Force equals the rate of change of momentum: how much the momentum changes each second. The same change in momentum spread over a longer time needs a smaller force.",
+      "what": "Two ideas in one message: a new phrase (rate of change), which restates the previous message, and the longer-time-smaller-force result. The second is the key idea of the section and should be led up to, not told.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.4",
+      "quote": "Change in momentum: 0.5 × 10 = 5 kg m/s.",
+      "what": "3.1 defined change in momentum as after minus before, which here is 0 − 5 = −5 kg m/s. The sign is dropped without comment, after key point 1 taught her that signs matter, and nothing says the force acts against the motion.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.5",
+      "quote": "The same ball is caught with soft hands that stop it in 0.5 s.",
+      "what": "The question depends on the mass and speed from the worked example card, which are not in this message. She has to remember or scroll back for 0.5 kg and 10 m/s.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.7",
+      "quote": "Why does a crash mat in a gym help when someone lands on it?",
+      "what": "The answer was stated at 3.3 (\"spread over a longer time needs a smaller force\") and again in the 3.5 don't-know reply (\"a longer stop means a smaller force\"). She only has to match the wording.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "3.6",
+      "quote": "Many safety features work the same way.",
+      "what": "\"The same way\" refers to the crash mat in the previous question, which is not in this message.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.6",
+      "quote": "Airbags, seat belts, crumple zones, cycle helmets and soft playground surfaces all make a collision last longer",
+      "what": "\"Crumple zones\" is not explained. Five examples in one list go past without any of them being pictured or explained.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.8 (all of them)",
+      "quote": "Yes: your line makes the point. You have this: Force equals the change in momentum divided by the time taken.",
+      "what": "The same stilted mark-scheme feedback as 1.10 and 2.10.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P4",
+      "turn": "3.8 (end of key point 3)",
+      "quote": "Force equals the change in momentum divided by the time taken.",
+      "what": "Key point 3 teaches impulse (FΔt = Δp, force × time = change in momentum). The word impulse and the rearranged form never appear in the script.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.12 don't know (first time)",
+      "quote": "Conservation of momentum says the total momentum in a closed system does not change.",
+      "what": "The first reply to \"don't know\" simply gives the answer and then shows the same buttons, so it is not a hint. The 3.14 hint (\"Force is the rate of change of momentum.\") does much the same.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.13 \"Neither has any momentum\"",
+      "quote": "It is equal and opposite, so the total is zero.",
+      "what": "\"It\" refers to two momenta, so it should read \"Their momenta are equal and opposite\".",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.15",
+      "quote": "\"The stop takes longer, so the force is smaller\"",
+      "what": "The right option is word for word the right option from 3.7, and 3.6 said the same about airbags. She can answer by recognising the sentence.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole script",
+      "quote": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+      "what": "There is nothing hands-on and no picture anywhere: no trolleys to collide, no before-and-after diagram, no arrows for direction. Collisions and recoil need to be seen.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "M1",
+      "turn": "whole script",
+      "quote": "Your turn. A 4 kg trolley at 5 m/s hits a still 1 kg trolley, and they stick together.",
+      "what": "The lesson is 45 steps of text and arithmetic with the same tell, example, your-turn pattern three times. I would expect her to lose interest well before the quiz.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 13
+    },
+    {
+      "fault": "L3",
+      "instances": 3
+    },
+    {
+      "fault": "P4",
+      "instances": 3
+    },
+    {
+      "fault": "F3",
+      "instances": 2
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "F2",
+      "instances": 2
+    },
+    {
+      "fault": "F8",
+      "instances": 2
+    },
+    {
+      "fault": "F1",
+      "instances": 1
+    },
+    {
+      "fault": "F7",
+      "instances": 1
+    },
+    {
+      "fault": "P13",
+      "instances": 1
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "F10",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    }
+  ],
+  "overall": "No, not as it stands. The sums are right and key points 1 and 2 are mostly sound, but the lesson opens with two questions on F = m a and vectors that a first-time learner cannot answer, and it uses \"scalar\" and \"resultant force\" without explaining them. Key point 3 would lose her: it derives F = m Δv ÷ Δt from equations she has not met, writes change in momentum as m Δv when she was taught p, and leaves out impulse. Total momentum, rearranging p = m v and recoil are also asked before they are taught, wrong answers get no second try, and there is no picture or hands-on activity anywhere, so I would want those fixed before she uses it."
+}

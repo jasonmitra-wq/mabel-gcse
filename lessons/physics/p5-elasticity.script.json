@@ -79,7 +79,12 @@
     {
      "id": "1.2",
      "type": "say",
-     "text": "Now this lesson. Forces can change the shape of an object. You can stretch it, as when you pull a spring; compress it, which means squash it; or bend it, as a diver bends a diving board."
+     "text": "Now this lesson. Forces can change the shape of an object. You can stretch it, as when you pull a spring; compress it, which means squash it, as when you sit on a cushion; or bend it, as a diver bends a diving board."
+    },
+    {
+     "id": "1.3",
+     "type": "say",
+     "text": "A still object needs more than one force on it before its shape can change. With only one force it would not stay still: it would move off in the direction of the force."
     },
     {
      "id": "1.4",
@@ -100,7 +105,7 @@
        "branch": "clamp"
       }
      ],
-     "right": "Yes: it takes two forces, one at each end, to stretch the still spring.",
+     "right": "Yes: it takes two forces, one at each end, to stretch a spring that is not moving.",
      "wrong": {
       "other": "Not quite: the masses pulling down and the clamp pulling up.",
       "masses": "Not quite: with only the masses pulling, the spring would fall. The clamp pulls up too, and the two forces stretch it.",
@@ -114,11 +119,6 @@
      "answerWhy": "The masses pull down and the clamp pulls up: two forces at the two ends stretch the still spring."
     },
     {
-     "id": "1.3",
-     "type": "say",
-     "text": "A still object needs more than one force on it before its shape can change. With only one force it would not stay still: it would move off in the direction of the force."
-    },
-    {
      "id": "1.5",
      "type": "say",
      "text": "Some objects go back to their first shape and length when the forces are removed. That kind of change of shape is called elastic deformation."
@@ -126,7 +126,7 @@
     {
      "id": "1.6",
      "type": "say",
-     "text": "Others stay changed when the forces are removed: that is called inelastic deformation."
+     "text": "Other objects stay changed when the forces are removed: that is called inelastic deformation. The same spring can do both: elastic when stretched a little, inelastic when stretched too far."
     },
     {
      "id": "1.7",
@@ -217,7 +217,7 @@
     {
      "id": "2.3",
      "type": "say",
-     "text": "Hang twice the force on a spring and you get twice the extension. Extension is directly proportional to force."
+     "text": "Hang twice the weight on a spring and you get twice the extension. Extension is directly proportional to force."
     },
     {
      "id": "2.3b",
@@ -265,7 +265,7 @@
     {
      "id": "2.6",
      "type": "say",
-     "text": "The equation linking them is F = k e: force = spring constant × extension. F is the force in newtons (N), k is in newtons per metre (N/m) and e is the extension in metres (m)."
+     "text": "The equation linking force, spring constant and extension is F = k e. F is in newtons (N) and e in metres (m). k is in newtons per metre (N/m): the force needed for each metre of extension."
     },
     {
      "id": "2.7",
@@ -324,14 +324,14 @@
     {
      "id": "2.9",
      "type": "say",
-     "text": "The same equation works for squashing. Then e is how much shorter the object gets, called its compression."
+     "text": "F = k e also works for squashing. Then e is how much shorter the object gets, called its compression."
     },
     {
      "id": "2.10",
      "type": "own",
      "prompt": "In one line: what does F = k e tell you about a spring?",
      "points": [
-      "Force = spring constant × extension."
+      "The extension is proportional to the force."
      ],
      "idk": "No problem. A good line would be: for a spring, force = spring constant × extension, so the extension is proportional to the force up to the limit of proportionality."
     }
@@ -376,12 +376,12 @@
     {
      "id": "3.1",
      "type": "say",
-     "text": "In a class practical, you hang a spring from a clamp with a ruler beside it. You measure its length, add masses one at a time, and measure the new length each time."
+     "text": "In a class practical, you hang a spring from a clamp with a ruler beside it. You measure its original length, then add masses one at a time and measure the stretched length each time."
     },
     {
      "id": "3.2",
      "type": "say",
-     "text": "The force on the spring is the weight of the masses: W = m g, weight (N) = mass (kg) × g (N/kg). Take the original length from each new length to get each extension."
+     "text": "The force on the spring is the weight of the hanging masses: W = m g, weight (N) = mass (kg) × g (N/kg)."
     },
     {
      "id": "3.3",
@@ -405,8 +405,8 @@
      "right": "Yes: with your eye level with the bottom of the spring, you do not read the ruler too high or too low.",
      "wrong": {
       "other": "Not quite: with your eye level with the bottom of the spring.",
-      "above": "Not quite: looking from above makes the reading wrong. Keep your eye level with the bottom of the spring.",
-      "below": "Not quite: looking from below makes the reading wrong. Keep your eye level with the bottom of the spring."
+      "above": "Not quite: from above, the mark you line up with looks lower or higher than it really is. Keep your eye level with the bottom of the spring.",
+      "below": "Not quite: from below, the mark you line up with looks higher or lower than it really is. Keep your eye level with the bottom of the spring."
      },
      "idk": [
       {
@@ -418,7 +418,12 @@
     {
      "id": "3.4",
      "type": "say",
-     "text": "Then plot a graph with force up the side and extension along the bottom. The origin is the corner where both are zero."
+     "text": "The results go on a graph, with force up the side and extension along the bottom."
+    },
+    {
+     "id": "3.4a",
+     "type": "say",
+     "text": "The origin is the corner of the graph where both force and extension are zero."
     },
     {
      "id": "3.4b",
@@ -447,8 +452,8 @@
      "right": "Yes: after the limit of proportionality, extension is no longer proportional to force, so the line curves.",
      "wrong": {
       "other": "Not quite: the limit of proportionality has been passed.",
-      "stiffer": "Not quite: a stiffer spring would give a steeper line, but still straight. A curve means the limit of proportionality has been passed.",
-      "noforce": "Not quite: the force is still going up along the graph. The curve shows the limit of proportionality has been passed."
+      "stiffer": "Not quite: a stiffer spring needs more force for each centimetre, which would make a straight line steeper, not curved. A curve means the limit of proportionality has been passed.",
+      "noforce": "Not quite: the force up the side keeps rising as masses are added. The curve shows the limit of proportionality has been passed."
      },
      "idk": [
       {
@@ -465,7 +470,7 @@
     {
      "id": "3.7",
      "type": "say",
-     "text": "On the straight part, the gradient of the force-extension graph is the spring constant: the change in force divided by the change in extension."
+     "text": "The gradient is how steep the line is. On the straight part, the gradient of the force-extension graph is the spring constant: the change in force ÷ the change in extension."
     },
     {
      "id": "3.8",
@@ -495,7 +500,7 @@
      },
      "idk": [
       {
-       "hint": "The gradient is the rise in force divided by the rise in extension."
+       "hint": "The gradient is the change in force divided by the change in extension: 10 ÷ 0.25."
       }
      ],
      "answerWhy": "The gradient is 10 ÷ 0.25 = 40, so k = 40 N/m."
@@ -503,11 +508,11 @@
     {
      "id": "3.9",
      "type": "own",
-     "prompt": "In one line: what does a force-extension graph show about a spring?",
+     "prompt": "In one line: what does a straight line through the origin on a force-extension graph show?",
      "points": [
-      "A straight line through the origin shows force and extension are directly proportional."
+      "It shows that force and extension are directly proportional."
      ],
-     "idk": "No problem. A good line would be: a force-extension graph is a straight line through the origin while force and extension are directly proportional, and its gradient is the spring constant."
+     "idk": "No problem. A good line would be: a straight line through the origin on a force-extension graph shows that force and extension are directly proportional; its gradient is the spring constant."
     }
    ]
   },
@@ -518,17 +523,22 @@
     {
      "id": "4.1",
      "type": "say",
-     "text": "Stretching a spring takes work: your force moves through a distance. Energy stored in a stretched or squashed object is called elastic potential energy."
+     "text": "When a force moves something, it does work: it transfers energy. Stretching a spring takes work, because your force moves through a distance."
+    },
+    {
+     "id": "4.1b",
+     "type": "say",
+     "text": "Energy stored in a stretched or squashed object is called elastic potential energy."
     },
     {
      "id": "4.2",
      "type": "say",
-     "text": "If the spring is not inelastically deformed, so it goes back to its first shape, all the work done on it is stored. Let go, and it can give that energy back."
+     "text": "If the spring goes back to its original shape afterwards, all the work done on it is stored. Let go, and it can give that energy back."
     },
     {
      "id": "4.3",
      "type": "say",
-     "text": "The equation is Ee = ½ k e²: elastic potential energy = 0.5 × spring constant × extension squared. Ee is in joules (J), k in N/m and e in metres (m). It is given in the exam."
+     "text": "The equation is Ee = ½ k e²: elastic potential energy = 0.5 × spring constant × extension squared. Ee is in joules (J), k in N/m and e in metres (m). It works up to the limit of proportionality."
     },
     {
      "id": "4.4",
@@ -669,33 +679,33 @@
      "id": "4.10",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 2 of 6: a spring 15 cm long is stretched to 21 cm. What is its extension?",
+     "question": "Quiz, question 2 of 6: a spring 15 cm long is stretched to 23 cm. What is its extension?",
      "options": [
       {
-       "text": "6 cm",
+       "text": "8 cm",
        "branch": "right"
       },
       {
-       "text": "21 cm",
+       "text": "23 cm",
        "branch": "length"
       },
       {
-       "text": "36 cm",
+       "text": "38 cm",
        "branch": "add"
       }
      ],
-     "right": "Yes: 21 − 15 = 6 cm.",
+     "right": "Yes: 23 − 15 = 8 cm.",
      "wrong": {
-      "other": "Not quite: 6 cm.",
-      "length": "Not quite: 21 cm is the stretched length. The extension is 21 − 15 = 6 cm.",
-      "add": "Not quite: subtract the original length: 21 − 15 = 6 cm."
+      "other": "Not quite: 8 cm.",
+      "length": "Not quite: 23 cm is the stretched length. The extension is 23 − 15 = 8 cm.",
+      "add": "Not quite: subtract the original length: 23 − 15 = 8 cm."
      },
      "idk": [
       {
        "hint": "Extension = stretched length − original length."
       }
      ],
-     "answerWhy": "Extension = 21 − 15 = 6 cm.",
+     "answerWhy": "Extension = 23 − 15 = 8 cm.",
      "quiz": true
     },
     {

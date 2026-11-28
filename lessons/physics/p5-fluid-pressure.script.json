@@ -84,7 +84,12 @@
     {
      "id": "1.3",
      "type": "say",
-     "text": "A fluid is made of tiny particles that move about and hit every surface they touch, from every side: up, down and sideways. Their hits push on each surface at right angles to it. At right angles to a surface is called normal to it."
+     "text": "A fluid is made of tiny particles that move about and hit every surface they touch, from every side: up, down and sideways."
+    },
+    {
+     "id": "1.3b",
+     "type": "say",
+     "text": "The particles' hits push on each surface at right angles to it. At right angles to a surface is called normal to it."
     },
     {
      "id": "1.4",
@@ -100,8 +105,9 @@
      "id": "1.6",
      "type": "worked",
      "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
-     "question": "A force of 600 N acts on an area of 0.02 m². What is the pressure?",
+     "question": "A box pushes on the floor with a force of 600 N. The face it rests on is 0.2 m by 0.1 m. What is the pressure?",
      "steps": [
+      "Find the area: 0.2 × 0.1 = 0.02 m².",
       "Write the equation: p = F ÷ A.",
       "Put in the numbers: p = 600 ÷ 0.02.",
       "p = 30 000 Pa."
@@ -204,12 +210,17 @@
     {
      "id": "2.3",
      "type": "say",
-     "text": "The equation is p = h ρ g: pressure = height of the column × density of the liquid × gravitational field strength."
+     "text": "The equation is p = h ρ g: pressure = height of the column × density of the liquid × gravitational field strength (gravity's pull on each kilogram)."
     },
     {
      "id": "2.3b",
      "type": "say",
-     "text": "h is in metres (m); ρ (rho), the density, is in kg/m³; g, gravity's pull on each kilogram, is in N/kg. You are given this equation in the exam."
+     "text": "p is in pascals and h, the height, in metres (m). ρ, the Greek letter rho, is the density in kg/m³, and g is in N/kg."
+    },
+    {
+     "id": "2.3c",
+     "type": "say",
+     "text": "You are given this equation in the exam."
     },
     {
      "id": "2.4",
@@ -296,7 +307,7 @@
      "id": "2.7",
      "type": "ask",
      "kind": "tap",
-     "question": "Three containers of different shapes are filled with water to the same depth. Where is the pressure at the bottom biggest?",
+     "question": "Three containers, one wide, one narrow and one that widens at the top, are filled with water to the same depth. Where is the pressure at the bottom biggest?",
      "options": [
       {
        "text": "It is the same in all three",
@@ -314,8 +325,8 @@
      "right": "Yes: the pressure depends on the depth and the density, not the shape.",
      "wrong": {
       "other": "Not quite: it is the same in all three.",
-      "wide": "Not quite: a wider container holds more water, but it is spread over a bigger bottom, so the force on each square metre is the same. Only depth and density matter.",
-      "narrow": "Not quite: a narrow container holds less water, but over a smaller bottom, so the force on each square metre is the same. Only depth and density matter."
+      "wide": "Not quite: the pressure at a point depends only on the depth of water above it and the water's density, not on the container's shape. Same depth, same pressure.",
+      "narrow": "Not quite: the pressure at a point depends only on the depth of water above it and the water's density, not on the container's shape. Same depth, same pressure."
      },
      "idk": [
       {
@@ -358,7 +369,7 @@
        "branch": "weight"
       }
      ],
-     "right": "Yes: its bottom is deeper, so the pressure there is bigger, giving an upward resultant force.",
+     "right": "Yes: its bottom is deeper, so the pressure there is bigger, giving an overall force upwards.",
      "wrong": {
       "other": "Not quite: the pressure on its bottom is bigger than on its top.",
       "up": "Not quite: water pushes on every surface, from every side. The push up on the bottom is bigger than the push down on the top.",
@@ -366,15 +377,15 @@
      },
      "idk": [
       {
-       "hint": "Which surface of the brick is deeper: the top or the bottom?"
+       "hint": "The bottom of the brick is deeper than its top, and pressure is bigger deeper down."
       }
      ],
-     "answerWhy": "The bottom is deeper, so the pressure there is bigger than on the top, which gives a resultant force upwards."
+     "answerWhy": "The bottom is deeper, so the pressure there is bigger than on the top, which gives an overall force upwards."
     },
     {
      "id": "3.1",
      "type": "say",
-     "text": "Now think of an object under water. Its bottom surface is deeper than its top surface, so the water pushes up on the bottom harder than it pushes down on the top."
+     "text": "The upward push comes from depth. An object's bottom surface is deeper than its top surface, so the water pushes up on the bottom harder than it pushes down on the top."
     },
     {
      "id": "3.2",
@@ -384,7 +395,12 @@
     {
      "id": "3.4",
      "type": "say",
-     "text": "The more of an object goes under, the bigger the upthrust, until it is fully under. An object floats when the upthrust equals its weight. If its weight is still bigger once it is fully under, it sinks."
+     "text": "Push an object further under and its bottom goes deeper, so the upthrust grows, until the object is fully under."
+    },
+    {
+     "id": "3.4b",
+     "type": "say",
+     "text": "An object floats when the upthrust equals its weight. If its weight is still bigger once it is fully under, it sinks."
     },
     {
      "id": "3.6",
@@ -421,7 +437,7 @@
     {
      "id": "3.5",
      "type": "say",
-     "text": "Floating links to density. An object less dense than the liquid gets enough upthrust before it is fully under, so it floats. A steel ship floats because, with the air inside its hollow shape, it is less dense than water overall."
+     "text": "Density decides it. An object less dense than the liquid floats; an object denser than the liquid sinks. A steel ship floats because, with the air inside, it is less dense than water overall."
     },
     {
      "id": "3.7",
@@ -455,23 +471,23 @@
      "question": "A climber goes up a high mountain. What do you think the air pressure is like at the top?",
      "options": [
       {
-       "text": "It is lower: there is less air above",
+       "text": "It is lower",
        "branch": "right"
       },
       {
-       "text": "It is higher: it is closer to space",
+       "text": "It is higher",
        "branch": "higher"
       },
       {
-       "text": "It is the same: air is everywhere",
+       "text": "It is the same",
        "branch": "same"
       }
      ],
-     "right": "Yes: less air above means less weight of air, so lower pressure.",
+     "right": "Yes: it is lower. The next message explains why.",
      "wrong": {
-      "other": "Not quite: it is lower, as there is less air above.",
-      "higher": "Not quite: space has almost no air. Higher up, there is less air above, so the pressure is lower.",
-      "same": "Not quite: there is air everywhere, but less of it above you higher up. So the pressure is lower."
+      "other": "Not quite: it is lower.",
+      "higher": "Not quite: it is lower at the top. The next message explains why.",
+      "same": "Not quite: it is lower at the top. The next message explains why."
      },
      "idk": [
       {
@@ -488,7 +504,7 @@
     {
      "id": "4.3b",
      "type": "say",
-     "text": "The air also gets thinner, or less dense, higher up, because there is less air above pressing down on it."
+     "text": "The air is also less dense higher up: fewer molecules in each cubic metre, so fewer hits on each surface."
     },
     {
      "id": "4.5",
@@ -574,33 +590,33 @@
      "id": "4.9",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 3 of 6: which way does the pressure in a fluid push on a surface?",
+     "question": "Quiz, question 3 of 6: water has a density of 1000 kg/m³, and g = 9.8 N/kg. What is the pressure due to the water 3 m down?",
      "options": [
       {
-       "text": "At right angles to the surface",
+       "text": "29 400 Pa",
        "branch": "right"
       },
       {
-       "text": "Only downwards",
-       "branch": "down"
+       "text": "3000 Pa",
+       "branch": "nog"
       },
       {
-       "text": "Along the surface",
-       "branch": "along"
+       "text": "9800 Pa",
+       "branch": "noh"
       }
      ],
-     "right": "Yes: normal, at right angles, to any surface.",
+     "right": "Yes: 3 × 1000 × 9.8 = 29 400 Pa.",
      "wrong": {
-      "other": "Not quite: at right angles to the surface.",
-      "down": "Not quite: fluid pressure pushes in every direction, at right angles to each surface.",
-      "along": "Not quite: fluid pressure pushes at right angles to a surface, not along it."
+      "other": "Not quite: 29 400 Pa.",
+      "nog": "Not quite: multiply by g too: 3 × 1000 × 9.8 = 29 400 Pa.",
+      "noh": "Not quite: multiply by the depth too: 3 × 1000 × 9.8 = 29 400 Pa."
      },
      "idk": [
       {
-       "hint": "Think of the word normal."
+       "hint": "p = h ρ g."
       }
      ],
-     "answerWhy": "The pressure in a fluid gives a force normal, at right angles, to any surface.",
+     "answerWhy": "p = h ρ g = 3 × 1000 × 9.8 = 29 400 Pa.",
      "quiz": true
     },
     {
@@ -643,7 +659,7 @@
      "question": "Quiz, question 5 of 6: which of these floats in water?",
      "options": [
       {
-       "text": "A solid object less dense than water",
+       "text": "An object less dense than water",
        "branch": "right"
       },
       {
@@ -657,7 +673,7 @@
      ],
      "right": "Yes: an object less dense than water floats.",
      "wrong": {
-      "other": "Not quite: a solid object less dense than water.",
+      "other": "Not quite: an object less dense than water.",
       "large": "Not quite: a large rock still sinks. It depends on density: less dense than water floats.",
       "heavy": "Not quite: a heavy log can float. It depends on density: less dense than water floats."
      },

@@ -30,23 +30,27 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 4. [1.2] Tutor: Now this lesson. A liquid or a gas is called a fluid, because it can flow.
    Button: Next
 
-5. [1.3] Tutor: A fluid is made of tiny particles that move about and hit every surface they touch, from every side: up, down and sideways. Their hits push on each surface at right angles to it. At right angles to a surface is called normal to it.
+5. [1.3] Tutor: A fluid is made of tiny particles that move about and hit every surface they touch, from every side: up, down and sideways.
    Button: Next
 
-6. [1.4] Tutor: The force on each square metre of a surface is called the pressure. The equation is p = F ÷ A: pressure = force normal to a surface ÷ area of that surface.
+6. [1.3b] Tutor: The particles' hits push on each surface at right angles to it. At right angles to a surface is called normal to it.
    Button: Next
 
-7. [1.5] Tutor: F is the force in newtons (N) and A is the area in square metres (m²). Pressure p is measured in a unit called the pascal (Pa): 1 Pa is 1 N/m².
+7. [1.4] Tutor: The force on each square metre of a surface is called the pressure. The equation is p = F ÷ A: pressure = force normal to a surface ÷ area of that surface.
    Button: Next
 
-8. [1.6] Tutor: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
-   The card: "Worked example: A force of 600 N acts on an area of 0.02 m². What is the pressure?"
-   She taps "Show the first step": Write the equation: p = F ÷ A.
+8. [1.5] Tutor: F is the force in newtons (N) and A is the area in square metres (m²). Pressure p is measured in a unit called the pascal (Pa): 1 Pa is 1 N/m².
+   Button: Next
+
+9. [1.6] Tutor: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+   The card: "Worked example: A box pushes on the floor with a force of 600 N. The face it rests on is 0.2 m by 0.1 m. What is the pressure?"
+   She taps "Show the first step": Find the area: 0.2 × 0.1 = 0.02 m².
+   She taps "Next step": Write the equation: p = F ÷ A.
    She taps "Next step": Put in the numbers: p = 600 ÷ 0.02.
    She taps "Next step": p = 30 000 Pa.
    After the last step: Next. (If she types an answer instead: "Yes, that's right: 30000 Pa." or "Not quite: it's 30000 Pa. The steps on the card show how.")
 
-9. [1.7] Tutor asks: Your turn. A box weighs 500 N, so it pushes on the floor with 500 N. The face it rests on is 0.5 m long and 0.4 m wide. What pressure does it put on the floor, in Pa?
+10. [1.7] Tutor asks: Your turn. A box weighs 500 N, so it pushes on the floor with 500 N. The face it rests on is 0.5 m long and 0.4 m wide. What pressure does it put on the floor, in Pa?
    She types a number.
    - Right (2500 Pa): Yes: the area is 0.5 × 0.4 = 0.2 m², and 500 ÷ 0.2 = 2500 Pa.
    - She types 100 (wrong idea times): Not quite: 2500 Pa. Divide the force by the area: 500 ÷ 0.2 = 2500 Pa.
@@ -56,7 +60,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The area is 0.5 × 0.4 = 0.2 m², so p = F ÷ A = 500 ÷ 0.2 = 2500 Pa.
    - She asks to move on or skip: The area is 0.5 × 0.4 = 0.2 m², so p = F ÷ A = 500 ÷ 0.2 = 2500 Pa.
 
-10. [1.8] Tutor asks: The same person stands in flat trainers, then in narrow high heels. When is the pressure on the floor bigger?
+11. [1.8] Tutor asks: The same person stands in flat trainers, then in narrow high heels. When is the pressure on the floor bigger?
    Buttons: "In the trainers" / "In the high heels" / "It is the same" (she can also type)
    - Right ("In the high heels"): Yes: the same force on a smaller area gives a bigger pressure.
    - "In the trainers" (wrong idea trainers: ): Not quite: trainers spread the force over a bigger area, so the pressure is smaller. Heels give the bigger pressure.
@@ -65,7 +69,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The force is the same, but the heels touch a smaller area, so p = F ÷ A is bigger.
    - She asks to move on or skip: The force is the same, but the heels touch a smaller area, so p = F ÷ A is bigger.
 
-11. [1.10] Tutor: In one line: what is pressure?
+12. [1.10] Tutor: In one line: what is pressure?
    She types one line. The AI checks which of these points it makes: "Pressure is the force on each square metre of a surface: force ÷ area.".
    - All of them: Yes: your line makes the point. You have this: Pressure is the force on each square metre of a surface: force ÷ area.
    - None: Here is what a good line says. Pressure is the force on each square metre of a surface: force ÷ area.
@@ -73,26 +77,29 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## Key point 2: Pressure in a liquid increases with depth
 
-12. [2.1] Tutor: Dive to the bottom of a pool and your ears feel the pressure. The deeper you go, the taller the column of water above you, the water stacked straight above you. So more weight of water pushes down.
+13. [2.1] Tutor: Dive to the bottom of a pool and your ears feel the pressure. The deeper you go, the taller the column of water above you, the water stacked straight above you. So more weight of water pushes down.
    Button: Next
 
-13. [2.2] Tutor: Density is how much mass is packed into each cubic metre. A denser liquid has more mass in each column, so more weight above the same point: more pressure.
+14. [2.2] Tutor: Density is how much mass is packed into each cubic metre. A denser liquid has more mass in each column, so more weight above the same point: more pressure.
    Button: Next
 
-14. [2.3] Tutor: The equation is p = h ρ g: pressure = height of the column × density of the liquid × gravitational field strength.
+15. [2.3] Tutor: The equation is p = h ρ g: pressure = height of the column × density of the liquid × gravitational field strength (gravity's pull on each kilogram).
    Button: Next
 
-15. [2.3b] Tutor: h is in metres (m); ρ (rho), the density, is in kg/m³; g, gravity's pull on each kilogram, is in N/kg. You are given this equation in the exam.
+16. [2.3b] Tutor: p is in pascals and h, the height, in metres (m). ρ, the Greek letter rho, is the density in kg/m³, and g is in N/kg.
    Button: Next
 
-16. [2.4] Tutor: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
+17. [2.3c] Tutor: You are given this equation in the exam.
+   Button: Next
+
+18. [2.4] Tutor: Here is a worked example. Tap "Show the first step" under it to see each step in turn.
    The card: "Worked example: In a pool, water has a density of 1000 kg/m³, and g = 9.8 N/kg. What is the pressure due to the water 2 m below the surface?"
    She taps "Show the first step": Write the equation: p = h ρ g.
    She taps "Next step": Put in the numbers: p = 2 × 1000 × 9.8.
    She taps "Next step": p = 19 600 Pa.
    After the last step: Next. (If she types an answer instead: "Yes, that's right: 19600 Pa." or "Not quite: it's 19600 Pa. The steps on the card show how.")
 
-17. [2.5] Tutor asks: Your turn. What is the pressure due to the water 5 m below the surface in the same pool, in Pa?
+19. [2.5] Tutor asks: Your turn. What is the pressure due to the water 5 m below the surface in the same pool, in Pa?
    She types a number.
    - Right (49000 Pa): Yes: p = 5 × 1000 × 9.8 = 49 000 Pa.
    - She types 5000 (wrong idea nog): Not quite: 49 000 Pa. Remember to multiply by g as well: 5 × 1000 × 9.8 = 49 000 Pa.
@@ -102,7 +109,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") p = h ρ g = 5 × 1000 × 9.8 = 49 000 Pa.
    - She asks to move on or skip: p = h ρ g = 5 × 1000 × 9.8 = 49 000 Pa.
 
-18. [2.6] Tutor asks: What is the difference in pressure between 2 m and 5 m below the surface, in Pa?
+20. [2.6] Tutor asks: What is the difference in pressure between 2 m and 5 m below the surface, in Pa?
    She types a number.
    - Right (29400 Pa): Yes: 49 000 − 19 600 = 29 400 Pa.
    - She types 49000 (wrong idea deep): Not quite: 49 000 Pa is the pressure at 5 m. Take away the pressure at 2 m: 49 000 − 19 600 = 29 400 Pa.
@@ -112,16 +119,16 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The difference is 49 000 − 19 600 = 29 400 Pa.
    - She asks to move on or skip: The difference is 49 000 − 19 600 = 29 400 Pa.
 
-19. [2.7] Tutor asks: Three containers of different shapes are filled with water to the same depth. Where is the pressure at the bottom biggest?
-   Buttons: "It is the same in all three" / "In the widest one" / "In the narrowest one" (she can also type)
+21. [2.7] Tutor asks: Three containers, one wide, one narrow and one that widens at the top, are filled with water to the same depth. Where is the pressure at the bottom biggest?
+   Buttons: "In the narrowest one" / "It is the same in all three" / "In the widest one" (she can also type)
    - Right ("It is the same in all three"): Yes: the pressure depends on the depth and the density, not the shape.
-   - "In the widest one" (wrong idea wide: ): Not quite: a wider container holds more water, but it is spread over a bigger bottom, so the force on each square metre is the same. Only depth and density matter.
-   - "In the narrowest one" (wrong idea narrow: ): Not quite: a narrow container holds less water, but over a smaller bottom, so the force on each square metre is the same. Only depth and density matter.
+   - "In the widest one" (wrong idea wide: ): Not quite: the pressure at a point depends only on the depth of water above it and the water's density, not on the container's shape. Same depth, same pressure.
+   - "In the narrowest one" (wrong idea narrow: ): Not quite: the pressure at a point depends only on the depth of water above it and the water's density, not on the container's shape. Same depth, same pressure.
    - Don't know (first time): Look at p = h ρ g. Is there anything in it about the shape of the container? (same buttons)
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Pressure depends only on depth, density and g, so at the same depth of water the pressure is the same in all three.
    - She asks to move on or skip: Pressure depends only on depth, density and g, so at the same depth of water the pressure is the same in all three.
 
-20. [2.8] Tutor: In one line: why is the pressure bigger deeper in a liquid?
+22. [2.8] Tutor: In one line: why is the pressure bigger deeper in a liquid?
    She types one line. The AI checks which of these points it makes: "Deeper down there is a taller column of liquid above, so more weight pushes down.".
    - All of them: Yes: your line makes the point. You have this: Deeper down there is a taller column of liquid above, so more weight pushes down.
    - None: Here is what a good line says. Deeper down there is a taller column of liquid above, so more weight pushes down.
@@ -129,25 +136,28 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## Key point 3: Upthrust, floating and sinking
 
-21. [3.3] Tutor asks: A brick held under water is pushed upwards by the water. Where do you think that upward push comes from?
+23. [3.3] Tutor asks: A brick held under water is pushed upwards by the water. Where do you think that upward push comes from?
    Buttons: "Water pushes only upwards" / "The brick loses weight under water" / "The pressure on its bottom is bigger than on its top" (she can also type)
-   - Right ("The pressure on its bottom is bigger than on its top"): Yes: its bottom is deeper, so the pressure there is bigger, giving an upward resultant force.
+   - Right ("The pressure on its bottom is bigger than on its top"): Yes: its bottom is deeper, so the pressure there is bigger, giving an overall force upwards.
    - "Water pushes only upwards" (wrong idea up: ): Not quite: water pushes on every surface, from every side. The push up on the bottom is bigger than the push down on the top.
    - "The brick loses weight under water" (wrong idea weight: ): Not quite: the brick's weight does not change. The water pushes up on its bottom harder than down on its top.
-   - Don't know (first time): Which surface of the brick is deeper: the top or the bottom? (same buttons)
-   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The bottom is deeper, so the pressure there is bigger than on the top, which gives a resultant force upwards.
-   - She asks to move on or skip: The bottom is deeper, so the pressure there is bigger than on the top, which gives a resultant force upwards.
+   - Don't know (first time): The bottom of the brick is deeper than its top, and pressure is bigger deeper down. (same buttons)
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The bottom is deeper, so the pressure there is bigger than on the top, which gives an overall force upwards.
+   - She asks to move on or skip: The bottom is deeper, so the pressure there is bigger than on the top, which gives an overall force upwards.
 
-22. [3.1] Tutor: Now think of an object under water. Its bottom surface is deeper than its top surface, so the water pushes up on the bottom harder than it pushes down on the top.
+24. [3.1] Tutor: The upward push comes from depth. An object's bottom surface is deeper than its top surface, so the water pushes up on the bottom harder than it pushes down on the top.
    Button: Next
 
-23. [3.2] Tutor: The difference between the two pushes gives an overall force upwards on the object. This upward force from a liquid is called upthrust.
+25. [3.2] Tutor: The difference between the two pushes gives an overall force upwards on the object. This upward force from a liquid is called upthrust.
    Button: Next
 
-24. [3.4] Tutor: The more of an object goes under, the bigger the upthrust, until it is fully under. An object floats when the upthrust equals its weight. If its weight is still bigger once it is fully under, it sinks.
+26. [3.4] Tutor: Push an object further under and its bottom goes deeper, so the upthrust grows, until the object is fully under.
    Button: Next
 
-25. [3.6] Tutor asks: A large log floats, but a small stone sinks. Why do you think that is?
+27. [3.4b] Tutor: An object floats when the upthrust equals its weight. If its weight is still bigger once it is fully under, it sinks.
+   Button: Next
+
+28. [3.6] Tutor asks: A large log floats, but a small stone sinks. Why do you think that is?
    Buttons: "Big things always float" / "The stone is heavier than the log" / "The log is less dense than water; the stone is denser" (she can also type)
    - Right ("The log is less dense than water; the stone is denser"): Yes: floating depends on density, not size.
    - "Big things always float" (wrong idea big: ): Not quite: big things can sink too, like a large rock. It depends on density: the log is less dense than water.
@@ -156,10 +166,10 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Floating depends on density: the log is less dense than water, so it floats, and the stone is denser, so it sinks.
    - She asks to move on or skip: Floating depends on density: the log is less dense than water, so it floats, and the stone is denser, so it sinks.
 
-26. [3.5] Tutor: Floating links to density. An object less dense than the liquid gets enough upthrust before it is fully under, so it floats. A steel ship floats because, with the air inside its hollow shape, it is less dense than water overall.
+29. [3.5] Tutor: Density decides it. An object less dense than the liquid floats; an object denser than the liquid sinks. A steel ship floats because, with the air inside, it is less dense than water overall.
    Button: Next
 
-27. [3.7] Tutor: In one line: when does an object float?
+30. [3.7] Tutor: In one line: when does an object float?
    She types one line. The AI checks which of these points it makes: "An object floats when the upthrust equals its weight.".
    - All of them: Yes: your line makes the point. You have this: An object floats when the upthrust equals its weight.
    - None: Here is what a good line says. An object floats when the upthrust equals its weight.
@@ -167,37 +177,37 @@ At any point she can ask a question of her own. The AI answers it from the lesso
 
 ## Key point 4: Atmospheric pressure
 
-28. [4.1] Tutor: The thin layer of air round the Earth is called the atmosphere. It is very thin compared with the size of the Earth.
+31. [4.1] Tutor: The thin layer of air round the Earth is called the atmosphere. It is very thin compared with the size of the Earth.
    Button: Next
 
-29. [4.2] Tutor: Air is made of particles called molecules. They are always hitting every surface, and their hits make a pressure called atmospheric pressure.
+32. [4.2] Tutor: Air is made of particles called molecules. They are always hitting every surface, and their hits make a pressure called atmospheric pressure.
    Button: Next
 
-30. [4.4] Tutor asks: A climber goes up a high mountain. What do you think the air pressure is like at the top?
-   Buttons: "It is higher: it is closer to space" / "It is the same: air is everywhere" / "It is lower: there is less air above" (she can also type)
-   - Right ("It is lower: there is less air above"): Yes: less air above means less weight of air, so lower pressure.
-   - "It is higher: it is closer to space" (wrong idea higher: ): Not quite: space has almost no air. Higher up, there is less air above, so the pressure is lower.
-   - "It is the same: air is everywhere" (wrong idea same: ): Not quite: there is air everywhere, but less of it above you higher up. So the pressure is lower.
+33. [4.4] Tutor asks: A climber goes up a high mountain. What do you think the air pressure is like at the top?
+   Buttons: "It is higher" / "It is the same" / "It is lower" (she can also type)
+   - Right ("It is lower"): Yes: it is lower. The next message explains why.
+   - "It is higher" (wrong idea higher: ): Not quite: it is lower at the top. The next message explains why.
+   - "It is the same" (wrong idea same: ): Not quite: it is lower at the top. The next message explains why.
    - Don't know (first time): At the top, is there more or less air above the climber? (same buttons)
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") At the top of the mountain there is less air above, so less weight of air and a lower pressure.
    - She asks to move on or skip: At the top of the mountain there is less air above, so less weight of air and a lower pressure.
 
-31. [4.3] Tutor: Higher up, there is less air above a surface, so the weight of air above it is smaller. So atmospheric pressure falls as height increases.
+34. [4.3] Tutor: Higher up, there is less air above a surface, so the weight of air above it is smaller. So atmospheric pressure falls as height increases.
    Button: Next
 
-32. [4.3b] Tutor: The air also gets thinner, or less dense, higher up, because there is less air above pressing down on it.
+35. [4.3b] Tutor: The air is also less dense higher up: fewer molecules in each cubic metre, so fewer hits on each surface.
    Button: Next
 
-33. [4.5] Tutor: In one line: why does air pressure fall as you go higher?
+36. [4.5] Tutor: In one line: why does air pressure fall as you go higher?
    She types one line. The AI checks which of these points it makes: "Higher up there is less air above, so less weight of air pushes down.".
    - All of them: Yes: your line makes the point. You have this: Higher up there is less air above, so less weight of air pushes down.
    - None: Here is what a good line says. Higher up there is less air above, so less weight of air pushes down.
    - Don't know: A good line would be: air pressure falls as you go higher because there is less air above, so a smaller weight of air pushes down. (with the turn-taking opener)
 
-34. [4.6] Tutor: Now for a short quiz: six questions on the whole lesson. Take your time.
+37. [4.6] Tutor: Now for a short quiz: six questions on the whole lesson. Take your time.
    Button: Next
 
-35. [4.7] Tutor asks: Quiz, question 1 of 6: which unit is pressure measured in?
+38. [4.7] Tutor asks: Quiz, question 1 of 6: which unit is pressure measured in?
    Buttons: "Pascals (Pa)" / "Newton-metres (Nm)" / "Newtons (N)" (she can also type)
    - Right ("Pascals (Pa)"): Yes: pascals, where 1 Pa = 1 N/m².
    - "Newtons (N)" (wrong idea newton: ): Not quite: newtons measure force. Pressure is in pascals.
@@ -206,7 +216,7 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Pressure is measured in pascals (Pa): 1 Pa = 1 N/m².
    - She asks to move on or skip: Pressure is measured in pascals (Pa): 1 Pa = 1 N/m².
 
-36. [4.8] Tutor asks: Quiz, question 2 of 6: a force of 100 N acts on an area of 0.5 m². What is the pressure?
+39. [4.8] Tutor asks: Quiz, question 2 of 6: a force of 100 N acts on an area of 0.5 m². What is the pressure?
    Buttons: "50 Pa" / "200 Pa" / "100.5 Pa" (she can also type)
    - Right ("200 Pa"): Yes: 100 ÷ 0.5 = 200 Pa.
    - "50 Pa" (wrong idea times: ): Not quite: divide the force by the area: 100 ÷ 0.5 = 200 Pa.
@@ -215,16 +225,16 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") p = F ÷ A = 100 ÷ 0.5 = 200 Pa.
    - She asks to move on or skip: p = F ÷ A = 100 ÷ 0.5 = 200 Pa.
 
-37. [4.9] Tutor asks: Quiz, question 3 of 6: which way does the pressure in a fluid push on a surface?
-   Buttons: "Along the surface" / "At right angles to the surface" / "Only downwards" (she can also type)
-   - Right ("At right angles to the surface"): Yes: normal, at right angles, to any surface.
-   - "Only downwards" (wrong idea down: ): Not quite: fluid pressure pushes in every direction, at right angles to each surface.
-   - "Along the surface" (wrong idea along: ): Not quite: fluid pressure pushes at right angles to a surface, not along it.
-   - Don't know (first time): Think of the word normal. (same buttons)
-   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The pressure in a fluid gives a force normal, at right angles, to any surface.
-   - She asks to move on or skip: The pressure in a fluid gives a force normal, at right angles, to any surface.
+40. [4.9] Tutor asks: Quiz, question 3 of 6: water has a density of 1000 kg/m³, and g = 9.8 N/kg. What is the pressure due to the water 3 m down?
+   Buttons: "3000 Pa" / "29 400 Pa" / "9800 Pa" (she can also type)
+   - Right ("29 400 Pa"): Yes: 3 × 1000 × 9.8 = 29 400 Pa.
+   - "3000 Pa" (wrong idea nog: ): Not quite: multiply by g too: 3 × 1000 × 9.8 = 29 400 Pa.
+   - "9800 Pa" (wrong idea noh: ): Not quite: multiply by the depth too: 3 × 1000 × 9.8 = 29 400 Pa.
+   - Don't know (first time): p = h ρ g. (same buttons)
+   - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") p = h ρ g = 3 × 1000 × 9.8 = 29 400 Pa.
+   - She asks to move on or skip: p = h ρ g = 3 × 1000 × 9.8 = 29 400 Pa.
 
-38. [4.10] Tutor asks: Quiz, question 4 of 6: which two things make the pressure in a liquid bigger?
+41. [4.10] Tutor asks: Quiz, question 4 of 6: which two things make the pressure in a liquid bigger?
    Buttons: "More depth and a denser liquid" / "Less depth and a denser liquid" / "A wider container and more depth" (she can also type)
    - Right ("More depth and a denser liquid"): Yes: p = h ρ g, so more depth or more density means more pressure.
    - "A wider container and more depth" (wrong idea wide: ): Not quite: the width does not matter. Depth and density do.
@@ -233,16 +243,16 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") p = h ρ g, so a greater depth (h) or a denser liquid (ρ) gives a bigger pressure.
    - She asks to move on or skip: p = h ρ g, so a greater depth (h) or a denser liquid (ρ) gives a bigger pressure.
 
-39. [4.11] Tutor asks: Quiz, question 5 of 6: which of these floats in water?
-   Buttons: "Any large object" / "Any heavy object" / "A solid object less dense than water" (she can also type)
-   - Right ("A solid object less dense than water"): Yes: an object less dense than water floats.
+42. [4.11] Tutor asks: Quiz, question 5 of 6: which of these floats in water?
+   Buttons: "Any large object" / "Any heavy object" / "An object less dense than water" (she can also type)
+   - Right ("An object less dense than water"): Yes: an object less dense than water floats.
    - "Any large object" (wrong idea large: ): Not quite: a large rock still sinks. It depends on density: less dense than water floats.
    - "Any heavy object" (wrong idea heavy: ): Not quite: a heavy log can float. It depends on density: less dense than water floats.
    - Don't know (first time): Is it about size, weight or density? (same buttons)
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") Floating depends on density: an object less dense than water floats, whatever its size.
    - She asks to move on or skip: Floating depends on density: an object less dense than water floats, whatever its size.
 
-40. [4.12] Tutor asks: Quiz, question 6 of 6: which is true of the atmosphere?
+43. [4.12] Tutor asks: Quiz, question 6 of 6: which is true of the atmosphere?
    Buttons: "It is thicker than the Earth is wide" / "It reaches as far as the Moon" / "It is thin compared with the size of the Earth" (she can also type)
    - Right ("It is thin compared with the size of the Earth"): Yes: the atmosphere is a thin layer of air round the Earth.
    - "It reaches as far as the Moon" (wrong idea moon: ): Not quite: the Moon is far beyond the air. The atmosphere is a thin layer round the Earth.
@@ -251,15 +261,15 @@ At any point she can ask a question of her own. The AI answers it from the lesso
    - Still doesn't know: (an opener at most every other time: none, "No problem.", none, "OK.", none, "Fair enough.") The atmosphere is a thin layer of air, thin compared with the size of the Earth.
    - She asks to move on or skip: The atmosphere is a thin layer of air, thin compared with the size of the Earth.
 
-41. [4.13] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
+44. [4.13] Tutor: That's the end of the quiz: you got <her number right> out of <the number asked>.
    Button: Next
 
 ## The end
 
-42. Tutor: Summary, point 1 of 4: Pressure is the force normal to a surface divided by the area of that surface.
-43. Tutor: Summary, point 2 of 4: Pressure is bigger deeper in a liquid because there is a taller column of liquid above, so more weight pushes down on each square metre.
-44. Tutor: Summary, point 3 of 4: An object floats when the upthrust equals its weight, which happens when it is less dense than the liquid.
-45. Tutor: Summary, point 4 of 4: Air pressure falls as you go higher because there is less air above, so a smaller weight of air pushes down.
+45. Tutor: Summary, point 1 of 4: Pressure is the force normal to a surface divided by the area of that surface.
+46. Tutor: Summary, point 2 of 4: Pressure is bigger deeper in a liquid because there is a taller column of liquid above, so more weight pushes down on each square metre.
+47. Tutor: Summary, point 3 of 4: An object floats when the upthrust equals its weight, which happens when it is less dense than the liquid.
+48. Tutor: Summary, point 4 of 4: Air pressure falls as you go higher because there is less air above, so a smaller weight of air pushes down.
 
-46. Tutor: The lesson is finished. Tap a button to go on.
+49. Tutor: The lesson is finished. Tap a button to go on.
    Buttons: "Go to the slides" / "Home"

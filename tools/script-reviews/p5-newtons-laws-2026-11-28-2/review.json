@@ -1,0 +1,316 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 18817,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 12545,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 8200
+    },
+    "iterations": [
+      {
+        "input_tokens": 18817,
+        "output_tokens": 12545,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.652336,
+  "seconds": 120,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from the last lesson. A car speeds up from 0 to 20 m/s in 10 s. What is its acceleration?\",\"what\":\"The lesson opens by testing acceleration, velocity and m/s², which this lesson never explains. Key point 2 depends on acceleration, so a girl who does not have it secure is lost from the first question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.2\",\"quote\":\"Forces are measured in units written N.\",\"what\":\"N is used all through key point 1 without its name. She is only told it stands for newton at 2.1, so she has no way to read '50 N' aloud.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"1.2\",\"quote\":\"Most objects have several forces on them at once. A box on the floor is pulled down by gravity and pushed up by the floor. Forces are measured in units written N.\",\"what\":\"Three things in one message: several forces at once, the box example, and the unit. The unit sentence is bolted on and does not belong with the other two.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"1.8b\",\"quote\":\"That is because friction and air resistance act on them, so the resultant force is not zero.\",\"what\":\"Air resistance is used here and in the 1.9 replies without explanation. It is only glossed as 'the push of the air' at 4.10.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.9\",\"quote\":\"A car drives along a straight, level road at a steady 25 m/s. What is the resultant force on it?\",\"what\":\"She has only been told 'zero resultant means steady velocity'. This asks the reverse (steady velocity means zero resultant), and the idea that makes that safe ('Changing the speed or the direction of an object needs a resultant force') only comes at 1.10, after the question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F7\",\"turn\":\"1.9 don't know (first time)\",\"quote\":\"What does the first law say about the resultant force then?\",\"what\":\"This is not an easier step. It sends her back to a law that was stated the other way round, so a girl who is stuck stays stuck.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.11\",\"quote\":\"A trolley rolls at a steady speed from carpet onto smooth tiles, where friction is smaller. The push on it stays the same.\",\"what\":\"'Rolls' suggests nobody is pushing, then a push appears in the next sentence. She should be told at the start that someone pushes the trolley with a steady force.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.11 don't know (first time)\",\"quote\":\"Which way does the resultant force act now? (same buttons)\",\"what\":\"The hint asks which way the resultant acts, but the buttons are 'It speeds up', 'It keeps the same speed' and 'It slows down'. None of the buttons answers the question just asked.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.13\",\"quote\":\"Yes: your line makes the point. You have this: With zero resultant force, an object keeps the same velocity, or stays still.\",\"what\":\"'You have this:' followed by a stock sentence is stilted and reads like a marking machine. The same wording returns at 2.12 and 3.7.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.13 (None)\",\"quote\":\"Here is what a good line says. With zero resultant force, an object keeps the same velocity, or stays still.\",\"what\":\"If her line was wrong, this does not say so or say what was wrong with it. It just shows a model answer, as do the 'None' replies at 2.12, 3.7 and 4.13.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"2.1\",\"quote\":\"Force is measured in a unit called the newton (N)\",\"what\":\"The unit of force was already given at 1.2 and has been used for a whole key point. This says it again as if new, when the name should have come at 1.2.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"2.4b\",\"quote\":\"You can rearrange it: a = F ÷ m to find the acceleration, and m = F ÷ a to find the mass.\",\"what\":\"'it' means F = m a, which is not in this message. The worked-example card sits between the equation and this line.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P13\",\"turn\":\"2.4b\",\"quote\":\"a = F ÷ m to find the acceleration, and m = F ÷ a to find the mass\",\"what\":\"Two rearrangements are stated in one line with no worked example of either. She is then asked to use a = F ÷ m cold at 2.5, and m = F ÷ a is never practised at all.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.5\",\"quote\":\"Your turn. A resultant force of 150 N acts on a 50 kg crate.\",\"what\":\"'Your turn' comes on the second practice question, after she has already had her turn at 2.6. The step ids suggest the two questions were swapped and the wording not updated.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"2.7\",\"quote\":\"Mass found as force ÷ acceleration, m = F ÷ a, is called inertial mass.\",\"what\":\"A second idea and a new term are added to the message about inertia. She is given no reason why mass needs another name, and nothing ever uses it again.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"2.7\",\"quote\":\"the more mass, the harder it is to change an object's velocity\",\"what\":\"This is the same fact as 1.12b ('The more mass an object has, the more inertia it has'), said again.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"2.8\",\"quote\":\"The same resultant force acts on an empty shopping trolley and on a full one. Which has the bigger acceleration?\",\"what\":\"The message just before says more mass makes velocity harder to change, 2.2 says bigger mass means smaller acceleration, and 1.12b used the same full and empty trolley. She can answer by recall, not by thinking.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"2.9\",\"quote\":\"a trolley on a bench is pulled by a string over a pulley, with masses hanging on the end. Light gates, electronic timers, measure the acceleration.\",\"what\":\"Pulley and light gates are both new in one message. 'Light gates, electronic timers, measure' is hard to parse, and light gates time the trolley so that acceleration can be worked out; they do not measure it directly.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"2.9b\",\"quote\":\"To make the force bigger, masses are moved from the trolley to the hanger.\",\"what\":\"She has not been told that the pull on the trolley is the weight of the hanging masses (weight is not taught until key point 4). 'The hanger' has not been mentioned, so she cannot see why moving masses changes the force.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"2.10\",\"quote\":\"That way the total mass being pulled stays the same.\",\"what\":\"The message just before the question gives the answer almost word for word. The right button is 'The total mass being pulled'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.11\",\"quote\":\"You can estimate forces on vehicles. A car of about 1000 kg speeding up at about 2 m/s² needs a resultant force of about 1000 × 2 = 2000 N.\",\"what\":\"This arrives from nowhere between the experiment and the summing-up, with no question. It is nearly the same sum as the worked example, so it reads as a stray repeat.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.12\",\"quote\":\"In one line: what does F = m a tell you?\",\"what\":\"The only point checked is 'The resultant force equals mass × acceleration', which is just reading the symbols aloud. The useful ideas (bigger force means bigger acceleration, bigger mass means smaller) appear only in the don't-know reply.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"3.4\",\"quote\":\"The two forces in a pair act on different objects\",\"what\":\"3.2 has already said 'they act on different objects'. The new idea here, that they therefore cannot cancel, could be given without repeating it.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"4.3b\",\"quote\":\"Mass is the amount of matter in an object, in kilograms, and it is the same everywhere.\",\"what\":\"Mass has been used since 1.12b and throughout F = m a. It is only said what it is here, near the end of the lesson.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"4.3b\",\"quote\":\"Weight changes with g: on the Moon g is about 1.6 N/kg, so you weigh about a sixth as much there.\",\"what\":\"Two ideas share one message: what mass is, and that weight changes from place to place. The mass-versus-weight difference is the point pupils most often muddle, so each deserves its own message and a question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.5\",\"quote\":\"An apple has a mass of 200 g, and g = 9.8 N/kg. What is its weight, in N?\",\"what\":\"Nothing has warned her to change grams to kilograms, so most first-timers will type 1960 and be told the answer straight away. A teacher would give one line on grams and kilograms first, or let her try again.\",\"severity\":\"minor\"},{\"fault\":\"M1\",\"turn\":\"4.6 to 4.9\",\"quote\":\"Weight is measured with a newtonmeter: a spring balance marked in newtons.\",\"what\":\"Five told messages in a row (proportionality, newtonmeter, centre of mass, free body diagram, the book on the table) with only Next to tap. This follows six told steps at 4.1 to 4.3c, so she will stop reading.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.9\",\"quote\":\"the free body diagram has two arrows of the same length: its weight down, and the push up from the table, called the normal contact force\",\"what\":\"Free body diagrams are described only in words here and at 4.8; nothing in the script shows her one or asks her to read or draw one. A diagram topic taught without a diagram will not stick.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.11\",\"quote\":\"Draw each force as an arrow to scale, tip to tail. The arrow from the start of the first to the end of the last is the resultant.\",\"what\":\"Adding forces at an angle by scale drawing is put into one message with no picture, no example and no question, and 'tip to tail' is unexplained. It is also not in the lesson's key points, so she cannot follow it or see why it is here.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"4.12\",\"quote\":\"A scale drawing can also split one force into two parts at right angles, such as along the ground and upwards.\",\"what\":\"Splitting a force into two parts is a hard idea, given in two sentences with no picture, example or question. It is outside the key points, and a first-time learner will get nothing from it.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"4.13\",\"quote\":\"Yes: your line makes every point. You have this: Weight is the force of gravity on an object. You have this: Weight = mass × gravitational field strength.\",\"what\":\"'You have this:' twice in one reply is clumsy and mechanical. One plain sentence of feedback would do.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole script\",\"quote\":\"In a class experiment, a trolley on a bench is pulled by a string over a pulley\",\"what\":\"There is nothing for her to try anywhere in the lesson: no force arrows to move, no trolley to pull. The one practical is only described in words.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":1},{\"fault\":\"F3\",\"instances\":3},{\"fault\":\"P6\",\"instances\":3},{\"fault\":\"F7\",\"instances\":1},{\"fault\":\"F1\",\"instances\":3},{\"fault\":\"F2\",\"instances\":1},{\"fault\":\"P13\",\"instances\":1},{\"fault\":\"F8\",\"instances\":2},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"M1\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":14}],\"overall\":\"Not quite as it stands. The core of key points 1 to 3 is sound physics in short, clear messages, and most wrong-answer replies are helpful. But I would not let her loose on the experiment section (2.9 to 2.10): the pulley, light gates and hanger are unexplained, and the question's answer is given just before it. The end of key point 4 is the other problem: scale drawings and splitting forces are told in words with no picture or question, after a long run of Next-only messages. I would also fix the 1.9 and 1.11 questions and give a worked example for the rearranged equation, and remember that the lesson assumes she already has acceleration.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from the last lesson. A car speeds up from 0 to 20 m/s in 10 s. What is its acceleration?",
+      "what": "The lesson opens by testing acceleration, velocity and m/s², which this lesson never explains. Key point 2 depends on acceleration, so a girl who does not have it secure is lost from the first question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.2",
+      "quote": "Forces are measured in units written N.",
+      "what": "N is used all through key point 1 without its name. She is only told it stands for newton at 2.1, so she has no way to read '50 N' aloud.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "1.2",
+      "quote": "Most objects have several forces on them at once. A box on the floor is pulled down by gravity and pushed up by the floor. Forces are measured in units written N.",
+      "what": "Three things in one message: several forces at once, the box example, and the unit. The unit sentence is bolted on and does not belong with the other two.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.8b",
+      "quote": "That is because friction and air resistance act on them, so the resultant force is not zero.",
+      "what": "Air resistance is used here and in the 1.9 replies without explanation. It is only glossed as 'the push of the air' at 4.10.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.9",
+      "quote": "A car drives along a straight, level road at a steady 25 m/s. What is the resultant force on it?",
+      "what": "She has only been told 'zero resultant means steady velocity'. This asks the reverse (steady velocity means zero resultant), and the idea that makes that safe ('Changing the speed or the direction of an object needs a resultant force') only comes at 1.10, after the question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F7",
+      "turn": "1.9 don't know (first time)",
+      "quote": "What does the first law say about the resultant force then?",
+      "what": "This is not an easier step. It sends her back to a law that was stated the other way round, so a girl who is stuck stays stuck.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.11",
+      "quote": "A trolley rolls at a steady speed from carpet onto smooth tiles, where friction is smaller. The push on it stays the same.",
+      "what": "'Rolls' suggests nobody is pushing, then a push appears in the next sentence. She should be told at the start that someone pushes the trolley with a steady force.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.11 don't know (first time)",
+      "quote": "Which way does the resultant force act now? (same buttons)",
+      "what": "The hint asks which way the resultant acts, but the buttons are 'It speeds up', 'It keeps the same speed' and 'It slows down'. None of the buttons answers the question just asked.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.13",
+      "quote": "Yes: your line makes the point. You have this: With zero resultant force, an object keeps the same velocity, or stays still.",
+      "what": "'You have this:' followed by a stock sentence is stilted and reads like a marking machine. The same wording returns at 2.12 and 3.7.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.13 (None)",
+      "quote": "Here is what a good line says. With zero resultant force, an object keeps the same velocity, or stays still.",
+      "what": "If her line was wrong, this does not say so or say what was wrong with it. It just shows a model answer, as do the 'None' replies at 2.12, 3.7 and 4.13.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.1",
+      "quote": "Force is measured in a unit called the newton (N)",
+      "what": "The unit of force was already given at 1.2 and has been used for a whole key point. This says it again as if new, when the name should have come at 1.2.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.4b",
+      "quote": "You can rearrange it: a = F ÷ m to find the acceleration, and m = F ÷ a to find the mass.",
+      "what": "'it' means F = m a, which is not in this message. The worked-example card sits between the equation and this line.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P13",
+      "turn": "2.4b",
+      "quote": "a = F ÷ m to find the acceleration, and m = F ÷ a to find the mass",
+      "what": "Two rearrangements are stated in one line with no worked example of either. She is then asked to use a = F ÷ m cold at 2.5, and m = F ÷ a is never practised at all.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.5",
+      "quote": "Your turn. A resultant force of 150 N acts on a 50 kg crate.",
+      "what": "'Your turn' comes on the second practice question, after she has already had her turn at 2.6. The step ids suggest the two questions were swapped and the wording not updated.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "2.7",
+      "quote": "Mass found as force ÷ acceleration, m = F ÷ a, is called inertial mass.",
+      "what": "A second idea and a new term are added to the message about inertia. She is given no reason why mass needs another name, and nothing ever uses it again.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.7",
+      "quote": "the more mass, the harder it is to change an object's velocity",
+      "what": "This is the same fact as 1.12b ('The more mass an object has, the more inertia it has'), said again.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.8",
+      "quote": "The same resultant force acts on an empty shopping trolley and on a full one. Which has the bigger acceleration?",
+      "what": "The message just before says more mass makes velocity harder to change, 2.2 says bigger mass means smaller acceleration, and 1.12b used the same full and empty trolley. She can answer by recall, not by thinking.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "2.9",
+      "quote": "a trolley on a bench is pulled by a string over a pulley, with masses hanging on the end. Light gates, electronic timers, measure the acceleration.",
+      "what": "Pulley and light gates are both new in one message. 'Light gates, electronic timers, measure' is hard to parse, and light gates time the trolley so that acceleration can be worked out; they do not measure it directly.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "2.9b",
+      "quote": "To make the force bigger, masses are moved from the trolley to the hanger.",
+      "what": "She has not been told that the pull on the trolley is the weight of the hanging masses (weight is not taught until key point 4). 'The hanger' has not been mentioned, so she cannot see why moving masses changes the force.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "2.10",
+      "quote": "That way the total mass being pulled stays the same.",
+      "what": "The message just before the question gives the answer almost word for word. The right button is 'The total mass being pulled'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.11",
+      "quote": "You can estimate forces on vehicles. A car of about 1000 kg speeding up at about 2 m/s² needs a resultant force of about 1000 × 2 = 2000 N.",
+      "what": "This arrives from nowhere between the experiment and the summing-up, with no question. It is nearly the same sum as the worked example, so it reads as a stray repeat.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.12",
+      "quote": "In one line: what does F = m a tell you?",
+      "what": "The only point checked is 'The resultant force equals mass × acceleration', which is just reading the symbols aloud. The useful ideas (bigger force means bigger acceleration, bigger mass means smaller) appear only in the don't-know reply.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "3.4",
+      "quote": "The two forces in a pair act on different objects",
+      "what": "3.2 has already said 'they act on different objects'. The new idea here, that they therefore cannot cancel, could be given without repeating it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.3b",
+      "quote": "Mass is the amount of matter in an object, in kilograms, and it is the same everywhere.",
+      "what": "Mass has been used since 1.12b and throughout F = m a. It is only said what it is here, near the end of the lesson.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "4.3b",
+      "quote": "Weight changes with g: on the Moon g is about 1.6 N/kg, so you weigh about a sixth as much there.",
+      "what": "Two ideas share one message: what mass is, and that weight changes from place to place. The mass-versus-weight difference is the point pupils most often muddle, so each deserves its own message and a question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.5",
+      "quote": "An apple has a mass of 200 g, and g = 9.8 N/kg. What is its weight, in N?",
+      "what": "Nothing has warned her to change grams to kilograms, so most first-timers will type 1960 and be told the answer straight away. A teacher would give one line on grams and kilograms first, or let her try again.",
+      "severity": "minor"
+    },
+    {
+      "fault": "M1",
+      "turn": "4.6 to 4.9",
+      "quote": "Weight is measured with a newtonmeter: a spring balance marked in newtons.",
+      "what": "Five told messages in a row (proportionality, newtonmeter, centre of mass, free body diagram, the book on the table) with only Next to tap. This follows six told steps at 4.1 to 4.3c, so she will stop reading.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.9",
+      "quote": "the free body diagram has two arrows of the same length: its weight down, and the push up from the table, called the normal contact force",
+      "what": "Free body diagrams are described only in words here and at 4.8; nothing in the script shows her one or asks her to read or draw one. A diagram topic taught without a diagram will not stick.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.11",
+      "quote": "Draw each force as an arrow to scale, tip to tail. The arrow from the start of the first to the end of the last is the resultant.",
+      "what": "Adding forces at an angle by scale drawing is put into one message with no picture, no example and no question, and 'tip to tail' is unexplained. It is also not in the lesson's key points, so she cannot follow it or see why it is here.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "4.12",
+      "quote": "A scale drawing can also split one force into two parts at right angles, such as along the ground and upwards.",
+      "what": "Splitting a force into two parts is a hard idea, given in two sentences with no picture, example or question. It is outside the key points, and a first-time learner will get nothing from it.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "4.13",
+      "quote": "Yes: your line makes every point. You have this: Weight is the force of gravity on an object. You have this: Weight = mass × gravitational field strength.",
+      "what": "'You have this:' twice in one reply is clumsy and mechanical. One plain sentence of feedback would do.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole script",
+      "quote": "In a class experiment, a trolley on a bench is pulled by a string over a pulley",
+      "what": "There is nothing for her to try anywhere in the lesson: no force arrows to move, no trolley to pull. The one practical is only described in words.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 14
+    },
+    {
+      "fault": "F3",
+      "instances": 3
+    },
+    {
+      "fault": "P6",
+      "instances": 3
+    },
+    {
+      "fault": "F1",
+      "instances": 3
+    },
+    {
+      "fault": "F8",
+      "instances": 2
+    },
+    {
+      "fault": "L3",
+      "instances": 1
+    },
+    {
+      "fault": "F7",
+      "instances": 1
+    },
+    {
+      "fault": "F2",
+      "instances": 1
+    },
+    {
+      "fault": "P13",
+      "instances": 1
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    },
+    {
+      "fault": "M1",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "Not quite as it stands. The core of key points 1 to 3 is sound physics in short, clear messages, and most wrong-answer replies are helpful. But I would not let her loose on the experiment section (2.9 to 2.10): the pulley, light gates and hanger are unexplained, and the question's answer is given just before it. The end of key point 4 is the other problem: scale drawings and splitting forces are told in words with no picture or question, after a long run of Next-only messages. I would also fix the 1.9 and 1.11 questions and give a worked example for the rearranged equation, and remember that the lesson assumes she already has acceleration."
+}

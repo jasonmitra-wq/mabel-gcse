@@ -9,6 +9,11 @@
     "Orbits work because gravity provides the centripetal force. The object is always falling towards the Earth. But it moves sideways fast enough that it keeps missing."
   ],
   "intro": "Gravity is the force that holds the universe together. It keeps planets in orbit around stars and moons in orbit around planets. It keeps you on the ground. It is also what gives you weight. This topic covers how gravity works, how to calculate weight, and how gravity controls orbits. It is essential P5 physics.",
+  "basics": [
+    {"idea":"A force","text":"A force is a push or a pull. Forces are measured in newtons (N)."},
+    {"idea":"Mass","text":"Mass is the amount of matter in an object, measured in kilograms (kg)."},
+    {"idea":"Orbit","text":"An orbit is the path one object takes round another, like the Moon round the Earth."}
+  ],
   "keyPoints": [
     {
       "heading": "Mass vs weight — a crucial distinction",
@@ -142,16 +147,16 @@
       "wrongFeedback": "Use W = mg. W = 60 × 9.8 = 588 N. The mass is 60 kg (unchanged). Weight is a force in newtons. A common mistake is thinking weight = mass — it doesn't. Weight is mass × gravitational field strength."
     },
     "1": {
-      "question": "Why does a satellite in a higher orbit travel more slowly than one in a lower orbit?",
+      "question": "A space probe travels away from the Earth. What happens to the Earth's gravitational field strength where the probe is?",
       "options": [
-        "Higher orbits are further from the Sun, so solar wind slows the satellite",
-        "Further out, gravity is weaker, so it holds the satellite in orbit at a lower speed",
-        "Higher orbits have more atmospheric drag, slowing the satellite down",
-        "Satellites at higher orbits have greater mass, which reduces their speed"
+        "It stays at 9.8 N/kg all the way out",
+        "It gets weaker as the distance increases",
+        "It drops to zero once the probe leaves the air",
+        "It gets stronger as the probe speeds up"
       ],
       "correct": 1,
-      "correctFeedback": "Right. At a greater orbital radius, Earth's gravitational field is weaker. Gravity provides less centripetal force, so a lower speed is needed to stay in orbit.",
-      "wrongFeedback": "Further from Earth, the gravitational field strength is weaker, because gravity decreases with distance. So gravity provides less centripetal force. A satellite there needs a lower speed to stay in a circular orbit. Higher orbits = weaker gravity = slower orbital speed = longer orbital period."
+      "correctFeedback": "Correct. Field strength falls with distance from the centre of the Earth. It is about 9.8 N/kg only near the surface.",
+      "wrongFeedback": "Field strength decreases with distance from the centre of the mass. Near Earth's surface it is about 9.8 N/kg. Further out it is weaker, but it does not drop to zero."
     },
     "2": {
       "question": "A satellite circles Earth at a steady height. Why does it not fall down to Earth?",
@@ -187,7 +192,6 @@
     "Orbiting object in continuous free fall — sideways velocity keeps it missing Earth",
     "Gravity provides centripetal force for circular orbital motion",
     "Higher orbit: weaker gravity → slower orbital speed → longer orbital period",
-    "Geostationary satellites: 24-hour period, same position above Earth",
     "Astronauts feel weightless in orbit because they are in continuous free fall"
   ],
   "videos": [

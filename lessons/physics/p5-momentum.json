@@ -9,6 +9,11 @@
     "Impulse = force × time = change in momentum. Compare a larger force for a shorter time with a smaller force for a longer time. Both can give the same change in momentum."
   ],
   "intro": "Momentum measures how hard it is to stop something that is moving. A slow lorry can have the same momentum as a fast car. Stopping either one in the same time takes the same force. In a closed system, momentum is conserved in collisions and explosions. That makes it one of the most powerful tools in mechanics.",
+  "basics": [
+    {"idea":"Mass","text":"Mass is the amount of matter in an object, measured in kilograms (kg)."},
+    {"idea":"Velocity","text":"Velocity is speed in a given direction. It is measured in metres per second (m/s)."},
+    {"idea":"Grams and kilograms","text":"1000 g = 1 kg, so 50 g is 0.05 kg."}
+  ],
   "keyPoints": [
     {
       "heading": "Calculating momentum",
@@ -121,16 +126,16 @@
   ],
   "checkpoints": {
     "0": {
-      "question": "A 2 kg ball moving at 5 m/s hits a 3 kg ball that is not moving. They stick together. What is their combined velocity after the collision?",
+      "question": "A cyclist and bike have a mass of 70 kg and move at 6 m/s. What is their momentum?",
       "options": [
-        "5 m/s",
-        "2 m/s",
-        "3 m/s",
-        "10 m/s"
+        "11.7 kg m/s",
+        "420 kg m/s",
+        "76 kg m/s",
+        "420 N"
       ],
       "correct": 1,
-      "correctFeedback": "Correct. Total momentum before = 2 × 5 + 3 × 0 = 10 kg m/s. After: (2 + 3) × v = 10, so v = 10/5 = 2 m/s.",
-      "wrongFeedback": "Use conservation of momentum: total before = total after. Before: p = 2 × 5 + 3 × 0 = 10 kg m/s. After: the combined mass is 2 + 3 = 5 kg. The momentum is still 10 kg m/s. So v = 10 ÷ 5 = 2 m/s. The velocity is less because the total mass increased."
+      "correctFeedback": "Correct. p = m v = 70 × 6 = 420 kg m/s.",
+      "wrongFeedback": "Use p = m v. Multiply the mass by the velocity: 70 × 6 = 420. Momentum is measured in kg m/s, not newtons."
     },
     "1": {
       "question": "Two skaters stand still on the ice. They push each other apart. What is their total momentum just after the push?",
@@ -149,7 +154,7 @@
       "options": [
         "They reduce the total change in momentum during the collision",
         "They increase the time of the collision, which reduces the force experienced by passengers",
-        "They absorb kinetic energy and convert it to electrical energy",
+        "They make the car stop in a shorter time, which reduces the force",
         "They increase the mass of the car, reducing deceleration"
       ],
       "correct": 1,

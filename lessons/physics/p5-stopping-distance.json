@@ -11,6 +11,11 @@
     "Speed and braking distance have a quadratic relationship. That is why motorway speed limits save so many lives."
   ],
   "intro": "Every road safety rule comes from the physics of stopping distance. That includes speed limits, drink-drive limits and the two-second rule. Say something goes wrong ahead of you on a motorway. Your car does not stop the moment your brain spots danger. Your brain takes time to take it in and react. Then your brakes take time to bring the car to a halt. The physics of each stage explains a lot. A tired driver at 70 mph needs far more than twice the road space of an alert driver at 35 mph. It is also why worn tyres and icy roads are so dangerous, even at modest speeds.",
+  "basics": [
+    {"idea":"Speed × time","text":"Distance = speed × time. At 10 m/s for 2 s, a car travels 20 m."},
+    {"idea":"Friction","text":"Friction is a force that acts against one surface sliding over another."},
+    {"idea":"Kinetic energy","text":"A moving object has energy in its kinetic store. The faster it moves, the more it has."}
+  ],
   "keyPoints": [
     {
       "heading": "Stopping distance = thinking distance + braking distance",
@@ -49,8 +54,7 @@
         { "term": "Alcohol", "definition": "slows brain processing, so reactions are slower" },
         { "term": "Drugs", "definition": "prescription or recreational drugs often impair reaction speed" },
         { "term": "Tiredness", "definition": "fatigue slows brain responses; severe tiredness can cause microsleep at the wheel" },
-        { "term": "Distractions", "definition": "mobile phone use, adjusting a stereo, or talking to passengers" },
-        { "term": "Age", "definition": "reaction times tend to slow with age" }
+        { "term": "Distractions", "definition": "mobile phone use, adjusting a stereo, or talking to passengers" }
       ],
       "examFlag": true,
       "cardFlag": true,
@@ -188,16 +192,16 @@
       "wrongFeedback": "Thinking distance = speed × reaction time = 20 m/s × 0.6 s = 12 m. The car travels 12 m before the brakes are even on."
     },
     "1": {
-      "question": "A car's braking distance at 20 m/s is 25 m. What would the braking distance be at 40 m/s, on the same road?",
+      "question": "Which of these would make a driver's thinking distance longer?",
       "options": [
-        "100 m",
-        "50 m",
-        "12.5 m",
-        "200 m"
+        "The driver is tired",
+        "The road is wet",
+        "The tyres are worn",
+        "The brakes are worn"
       ],
       "correct": 0,
-      "correctFeedback": "Correct! Braking distance ∝ v². The speed doubles → the distance quadruples: 25 × 4 = 100 m.",
-      "wrongFeedback": "Braking distance is proportional to speed squared. Double the speed → (2)² = 4 times the braking distance: 25 × 4 = 100 m. Not 50 m. It is quadratic, not linear."
+      "correctFeedback": "Correct. Tiredness makes the reaction time longer. At the same speed, the car travels further before the brakes go on.",
+      "wrongFeedback": "Thinking distance depends on the driver's reaction time. Tiredness makes that time longer. Wet roads and worn tyres or brakes affect the braking distance instead."
     },
     "2": {
       "question": "A car brakes at the same speed on a wet road instead of a dry one. Why is its braking distance longer?",

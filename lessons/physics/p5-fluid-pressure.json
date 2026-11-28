@@ -9,6 +9,11 @@
     "Higher up in the atmosphere, there is less air above you. So the pressure is lower."
   ],
   "intro": "Your ears can hurt at the bottom of a swimming pool. A boat floats, but a stone sinks. In this lesson you learn what pressure in a fluid is and how to calculate it. You learn why it changes with depth, and what makes things float. You also learn why the air pressure gets lower as you go higher.",
+  "basics": [
+    {"idea":"Area","text":"Area is how much surface something covers. A rectangle's area is length × width, in square metres (m²)."},
+    {"idea":"Density","text":"Density is how much mass is packed into each cubic metre: density = mass ÷ volume."},
+    {"idea":"Particles","text":"Liquids and gases are made of tiny particles that move about all the time."}
+  ],
   "keyPoints": [
     {
       "heading": "Pressure in a fluid: p = F/A",
@@ -62,7 +67,7 @@
     },
     {
       "heading": "Upthrust, floating and sinking",
-      "content": "Think of an object partly or fully under the surface of a liquid. The bottom surface is deeper than the top surface. So the pressure on the bottom is greater than the pressure on the top.\n\nThis creates a resultant force upwards. This force is called the <strong>upthrust</strong>.\n\nWhether an object floats or sinks depends on its weight and the upthrust.\n- An object <strong>floats</strong> when the upthrust equals its weight. A floating object is less dense than the liquid.\n- An object <strong>sinks</strong> when its weight is greater than the upthrust, even when it is fully under the surface. A sinking object is denser than the liquid.",
+      "content": "Think of an object partly or fully under the surface of a liquid. The bottom surface is deeper than the top surface. So the pressure on the bottom is greater than the pressure on the top.\n\nThis creates a resultant force upwards. This force is called the <strong>upthrust</strong>.\n\nWhether an object floats or sinks depends on its weight and the upthrust.\n- An object <strong>floats</strong> when the upthrust equals its weight. A floating object has a lower average density than the liquid, counting any air inside it.\n- An object <strong>sinks</strong> when its weight is greater than the upthrust, even when it is fully under the surface. A sinking object has a higher average density than the liquid.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -75,7 +80,7 @@
       "keyTerms": [
         {
           "term": "Upthrust",
-          "def": "The resultant upward force on an object in a liquid, caused by greater pressure on its bottom surface than its top"
+          "def": "The resultant upward force on an object in a fluid (a liquid or a gas), caused by greater pressure on its bottom surface than its top"
         }
       ],
       "memTip": "Bottom is deeper, so it is pushed harder. That push up is upthrust.",

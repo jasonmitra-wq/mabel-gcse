@@ -1,9 +1,9 @@
 {
   "lesson": "p5-stopping-distance",
   "source_file": "lessons/physics/p5-stopping-distance.json",
-  "lesson_md5": "e54a3a4234b9db27536f1e8359bc8044",
+  "lesson_md5": "c07a178e0aac75265d76b1396ce53b68",
   "model": "claude-opus-5-5",
-  "date": "2026-11-28T10:13:41.160Z",
+  "date": "2026-11-28T13:43:21.726Z",
   "specRefs_sent": [
     "4.5.6.3.1",
     "4.5.6.3.2",
@@ -15,10 +15,10 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 7568,
-    "output_tokens": 5295
+    "input_tokens": 7673,
+    "output_tokens": 5213
   },
-  "cost_usd": 0.136172,
+  "cost_usd": 0.134952,
   "status": "OK",
   "result": {
     "lesson": "p5-stopping-distance",
@@ -26,126 +26,88 @@
       {
         "specRef": "4.5.6.3.2",
         "spec_text": "explain methods used to measure human reaction times and recall typical results",
-        "why": "The lesson gives the typical range of 0.2–0.9 s. It never explains how reaction time is measured, for example the ruler-drop test or a computer-based test."
+        "why": "The lesson recalls typical results (0.2–0.9 s) but never describes a way to measure reaction time, such as the ruler-drop test or a computer test."
       },
       {
         "specRef": "4.5.6.3.2",
         "spec_text": "interpret and evaluate measurements from simple methods to measure the different reaction times of students",
-        "why": "There are no reaction-time measurements to interpret or evaluate, and repeat readings, averages and variation between students are not discussed."
+        "why": "The lesson contains no reaction-time measurements to interpret or evaluate. It also does not discuss repeat readings, averages or reliability."
       },
       {
         "specRef": "4.5.6.3.2",
         "spec_text": "evaluate the effect of various factors on thinking distance based on given data.",
-        "why": "Factors are listed descriptively. The student is never asked to evaluate their effect from given data."
+        "why": "The factors are listed qualitatively. The student is never given data, for example reaction times with and without a distraction, to evaluate."
       },
       {
         "specRef": "4.5.6.3.1",
         "spec_text": "(Physics only) Students will be required to interpret graphs relating speed to stopping distance for a range of vehicles.",
-        "why": "The lesson has a car-only table and no speed–stopping distance graph. It does not cover other vehicles such as lorries or bicycles."
+        "why": "The lesson has a table for cars only. There are no graphs and no other vehicle types (for example lorries or bicycles)."
+      },
+      {
+        "specRef": "4.5.6.3.1",
+        "spec_text": "(Physics only) Students should be able to estimate how the distance for a vehicle to make an emergency stop varies over a range of speeds typical for that vehicle.",
+        "why": "The table gives standard car values. The student is not shown how to estimate stopping distances, and other vehicles are not covered."
       },
       {
         "specRef": "4.5.6.3.4",
         "spec_text": "The greater the speed of a vehicle the greater the braking force needed to stop the vehicle in a certain distance.",
-        "why": "The lesson presents speed only as increasing braking distance at constant force. It never states this converse relationship."
+        "why": "The lesson treats braking force as constant and varies the distance. It never states the spec's point that a higher speed needs a larger braking force to stop in the same distance."
       },
       {
         "specRef": "4.5.6.3.4",
         "spec_text": "Large decelerations may lead to brakes overheating and/or loss of control.",
-        "why": "Overheating and forces on passengers are covered. Loss of control (for example skidding when the wheels lock) is not mentioned."
+        "why": "Overheating is covered, but loss of control (for example skidding) as a danger of large decelerations is never mentioned."
       },
       {
         "specRef": "4.5.6.3.4",
         "spec_text": "(HT only) estimate the forces involved in the deceleration of road vehicles in typical situations on a public road.",
-        "why": "F = ma is quoted, but there is no worked estimate using typical car mass, speed and deceleration."
+        "why": "F = ma is stated, but there is no estimate of a typical braking force from a typical car mass and deceleration (or from speed and stopping distance)."
+      },
+      {
+        "specRef": "4.5.6.3.4",
+        "spec_text": "work done by the friction force between the brakes and the wheel reduces the kinetic energy of the vehicle and the temperature of the brakes increases.",
+        "why": "The main lesson text never states that the work done by the friction force between the brakes and the wheel reduces the kinetic energy. This only appears in a tutor_note. The keyTerms definition of friction refers only to tyre and road."
       }
     ],
     "above_gcse": [
       {
         "field": "keyPoints[2].content",
         "text": "The UK legal minimum tyre tread depth is 1.6 mm.",
-        "why": "This is a legal detail that the specification does not require. It is not physics content."
+        "why": "This is a legal fact, not specification content."
       },
       {
         "field": "keyPoints[1].list[2].definition",
         "text": "severe tiredness can cause microsleep at the wheel",
-        "why": "Microsleep is not in the specification. It adds a term the student does not need."
+        "why": "Microsleep is not in the specification. The spec only says tiredness affects reaction time."
       },
       {
-        "field": "keyPoints[1].list[4]",
-        "text": "Age: reaction times tend to slow with age",
-        "why": "The specification lists only tiredness, drugs, alcohol and distractions. Adding age to a list the lesson presents as the key factors may lead students to give it as an answer the specification does not name."
-      },
-      {
-        "field": "keyPoints[3].content",
-        "text": "It is called <strong>brake fade</strong>.",
-        "why": "Brake fade is not a specification term. The specification only requires 'brakes overheating'."
+        "field": "keyPoints[3].tutor_note",
+        "text": "Braking distance = KE ÷ braking force. This gives the quadratic relationship.",
+        "why": "The spec only requires that a greater speed gives a greater stopping distance for a given braking force. The quantitative v² derivation goes beyond these sections. It is not wrong."
       }
     ],
-    "factual_errors": [
-      {
-        "field": "keyPoints[0].content",
-        "text": "That is roughly four car-lengths compared with 24 car-lengths.",
-        "correction": "The standard Highway Code comparison is about 6 car-lengths at 30 mph (23 m) and 24 car-lengths at 70 mph (96 m). 'Four' is inconsistent with the 24 car-lengths for 96 m, because it implies a different car length.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].keyTerms[0].def",
-        "text": "The force applied by the brakes to decelerate the vehicle; transferred from kinetic energy to thermal energy in the brakes",
-        "correction": "A force is not transferred between energy stores. The work done by the friction force reduces the kinetic energy of the vehicle and increases the temperature of the brakes.",
-        "basis": "spec"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "This is because kinetic energy = ½mv², and braking distance is proportional to KE.",
-        "correction": "Braking distance is proportional to KE only for a given (constant) braking force. The specification states the speed link 'For a given braking force'.",
-        "basis": "spec"
-      },
-      {
-        "field": "keyPoints[1].list[0].definition",
-        "text": "slows brain processing significantly — the biggest single impairment",
-        "correction": "Nothing supports ranking alcohol as the single biggest impairment. The specification lists tiredness, drugs and alcohol without ranking them, and the effect depends on the amount.",
-        "basis": "own knowledge"
-      },
-      {
-        "field": "keyPoints[2].content",
-        "text": "Ice can reduce friction to nearly zero.",
-        "correction": "Ice greatly reduces friction, but the friction between tyres and ice is still well above zero. 'Nearly zero' is an exaggeration.",
-        "basis": "own knowledge"
-      }
-    ],
+    "factual_errors": [],
     "wrong_terms": [
       {
         "field": "keyPoints[3].content",
-        "text": "The <strong>kinetic energy of the car is transferred to thermal energy</strong> (heat) in the brakes through friction.",
-        "spec_term": "work done by the friction force between the brakes and the wheel ... the temperature of the brakes increases"
-      },
-      {
-        "field": "checkpoints.3.options[0]",
-        "text": "Kinetic energy transferred to thermal energy (heat) in the brakes",
-        "spec_term": "the temperature of the brakes increases (thermal energy, not 'heat')"
-      },
-      {
-        "field": "keyPoints[3].keyTerms[1].term",
-        "text": "brake fade",
+        "text": "It is called <strong>brake fade</strong>.",
         "spec_term": "brakes overheating"
       },
       {
-        "field": "keyPoints[2].content",
-        "text": "worn tyres have less tread → less grip → less braking force",
-        "spec_term": "friction force"
-      }
-    ],
-    "checkpoint_mismatch": [
+        "field": "keyPoints[3].content",
+        "text": "The <strong>kinetic energy of the car is transferred to thermal energy</strong> (heat) in the brakes through friction.",
+        "spec_term": "work done by the friction force between the brakes and the wheel reduces the kinetic energy of the vehicle and the temperature of the brakes increases"
+      },
       {
-        "checkpoint": "checkpoints.1: A car's braking distance at 20 m/s is 25 m. What would the braking distance be at 40 m/s, on the same road?",
-        "key_point": "keyPoints[1].heading: Factors affecting reaction time and thinking distance",
-        "why": "This checkpoint tests the quadratic link between speed and braking distance, which is taught in keyPoints[2]. It does not test the reaction-time factors in the key point it sits with, and no checkpoint tests reaction-time factors at all."
+        "field": "keyTerms (keyPoints[2]) friction.def",
+        "text": "The force between tyre and road surface that allows braking",
+        "spec_term": "friction force between the brakes and the wheel"
       }
     ],
+    "checkpoint_mismatch": [],
     "not_checked": [
-      "All diagram fields are null, so there were no images to check.",
-      "Claims about exam mark allocation, e.g. examTips[0] 'It is a one-mark calculation' and examTips[1] 'This earns the explanation mark', cannot be checked against the specification text supplied.",
-      "The table values were checked only against own knowledge of the standard Highway Code figures. They agree within rounding."
+      "All keyPoints have diagram: null. The tutor_note in keyPoints[0] refers to 'a diagram of a car journey from hazard to stop', but no diagram is provided, so this could not be checked.",
+      "It is assumed that checkpoint keys \"0\"–\"3\" sit with keyPoints[0]–keyPoints[3]. The lesson JSON does not state this mapping explicitly."
     ]
   }
 }

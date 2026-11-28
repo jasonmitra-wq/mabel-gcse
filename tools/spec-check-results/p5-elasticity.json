@@ -1,9 +1,9 @@
 {
   "lesson": "p5-elasticity",
   "source_file": "lessons/physics/p5-elasticity.json",
-  "lesson_md5": "5773cff051a1fd64b4cf7c7c979152be",
+  "lesson_md5": "ad5a605f069c31d851bf4b17931cf42e",
   "model": "claude-opus-5-5",
-  "date": "2026-11-28T10:15:53.110Z",
+  "date": "2026-11-28T13:45:11.401Z",
   "specRefs_sent": [
     "4.5.3"
   ],
@@ -12,23 +12,16 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 6069,
-    "output_tokens": 2089
+    "input_tokens": 6286,
+    "output_tokens": 1903
   },
-  "cost_usd": 0.066056,
+  "cost_usd": 0.063204,
   "status": "OK",
   "result": {
     "lesson": "p5-elasticity",
     "missing_spec_content": [],
     "above_gcse": [],
-    "factual_errors": [
-      {
-        "field": "keyPoints[2].keyTerms[0].def",
-        "text": "A straight-line graph through the origin; the two quantities are directly proportional",
-        "correction": "A linear relationship gives a straight-line graph. It does not have to pass through the origin. Only a straight line that passes through the origin shows direct proportionality. The same wording appears in keyPoints[2].content (\"A <strong>linear</strong> relationship gives a straight line through the origin\"), keyPoints[2].writeBullets[3] and revisionCardBullets[5]. These suggest that 'linear' and 'directly proportional' mean the same thing.",
-        "basis": "own knowledge"
-      }
-    ],
+    "factual_errors": [],
     "wrong_terms": [
       {
         "field": "keyPoints[0].content",
@@ -38,24 +31,17 @@
       {
         "field": "revisionCardBullets[0]",
         "text": "Changing the shape of a still object needs more than one force",
-        "spec_term": "stationary objects"
+        "spec_term": "stationary objects (spec: \"this is limited to stationary objects only\")"
       },
       {
-        "field": "keyPoints[0].writeBullets[1]",
-        "text": "A still object needs more than one force to change shape",
-        "spec_term": "stationary objects"
+        "field": "introTips[0]",
+        "text": "To change the shape of a still object, you need more than one force.",
+        "spec_term": "stationary objects (spec: \"this is limited to stationary objects only\")"
       }
     ],
-    "checkpoint_mismatch": [
-      {
-        "checkpoint": "3",
-        "key_point": "keyPoints[3].content: \"Up to the limit of proportionality, you can work out the energy stored with this equation.\"",
-        "why": "The question says only that the spring \"is not inelastically deformed\". The key point allows Ee = ½ke² only up to the limit of proportionality. A spring can deform elastically beyond the limit of proportionality. So the condition given in the question does not support using the equation. The question should say that the limit of proportionality is not exceeded."
-      }
-    ],
+    "checkpoint_mismatch": [],
     "not_checked": [
-      "The specification refers to AT skills 1 and 2, WS 3.5 and MS 3b, 3c and 4a, and points to 'Key opportunities for skills development (page 95)'. The details of these skills were not provided, so I could not check whether the practical method meets them.",
-      "Every diagram field in the lesson is null, so there were no diagrams or images to check."
+      "All keyPoints have \"diagram\": null, so there were no diagrams or images to check."
     ]
   }
 }

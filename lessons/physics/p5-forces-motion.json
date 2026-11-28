@@ -9,6 +9,11 @@
     "Equations of motion questions nearly always give you three values and ask for a fourth. Find your u, v, a, s and t before writing anything."
   ],
   "intro": "Every road sign, speed camera and sat-nav relies on the physics in this topic. Speed, velocity and acceleration let us describe motion precisely. Being precise is how you pick up every mark in the exam.",
+  "basics": [
+    {"idea":"Metres and seconds","text":"Distance is measured in metres (m) and time in seconds (s). 1 km is 1000 m."},
+    {"idea":"Graph axes","text":"A graph has two lines called axes. The x-axis runs along the bottom. The y-axis runs up the side. Each axis shows a quantity and its unit."},
+    {"idea":"Squares and square roots","text":"5² means 5 × 5 = 25. The square root of 25 is 5, because 5 × 5 = 25."}
+  ],
   "keyPoints": [
     {
       "heading": "Scalar and vector quantities",
@@ -71,7 +76,7 @@
         { "term": "Acceleration", "def": "Rate of change of velocity, measured in m/s²; can be positive (speeding up) or negative (slowing down)" },
         { "term": "Deceleration", "def": "Negative acceleration — the object is slowing down" }
       ],
-      "memTip": "v-t graph: Gradient = Acceleration, Area = Distance. GA-D: 'Gonna Ace D-grade no more!'",
+      "memTip": "v-t graph: gradient = acceleration; area under the line = distance travelled.",
       "tutor_note": "Area under v-t graph calculations come up as 6-mark questions. Practise splitting shapes into rectangles and triangles."
     },
     {
@@ -185,18 +190,18 @@
       "wrongFeedback": "On a v-t graph, the gradient = acceleration. It's on a d-t graph that gradient = speed."
     },
     "3": {
-      "question": "A motorcycle accelerates from 5 m/s to 25 m/s in 4s. What is its acceleration?",
-      "options": ["5 m/s²", "6.25 m/s²", "20 m/s²", "0.2 m/s²"],
+      "question": "A cyclist starts from rest and accelerates at 2 m/s² over 16 m. What is the cyclist's final velocity?",
+      "options": ["8 m/s", "64 m/s", "32 m/s", "4 m/s"],
       "correct": 0,
-      "correctFeedback": "Correct! a = (v − u) / t = (25 − 5) / 4 = 20/4 = 5 m/s².",
-      "wrongFeedback": "Use a = (v − u) / t = (25 − 5) / 4 = 5 m/s². Remember to subtract initial from final velocity first."
+      "correctFeedback": "Correct. v² = u² + 2as = 0 + 2 × 2 × 16 = 64, so v = √64 = 8 m/s.",
+      "wrongFeedback": "Use v² = u² + 2as. From rest, u = 0, so v² = 2 × 2 × 16 = 64. Then take the square root: v = 8 m/s."
     },
     "4": {
-      "question": "A ball is dropped from rest and falls freely under gravity (g = 9.8 m/s²) for 3s. How far does it fall?",
-      "options": ["44.1 m", "29.4 m", "88.2 m", "9.8 m"],
+      "question": "Why does a falling skydiver stop speeding up and reach terminal velocity?",
+      "options": ["Air resistance grows with speed until it equals the weight", "The weight of the skydiver gets smaller during the fall", "Gravity stops acting once the skydiver is falling fast", "Air resistance becomes bigger than the weight and stays so"],
       "correct": 0,
-      "correctFeedback": "Correct! s = ½at² = ½ × 9.8 × 9 = 44.1m (using u = 0, so s = ½(u+v)t or v = at = 29.4, s = ½ × 29.4 × 3 = 44.1m).",
-      "wrongFeedback": "Use v = u + at first: v = 0 + 9.8 × 3 = 29.4 m/s. Then s = ½(u+v)t = ½ × 29.4 × 3 = 44.1m."
+      "correctFeedback": "Correct. Air resistance rises with speed until it equals the weight. The resultant force is then zero, so the speed stays constant.",
+      "wrongFeedback": "Air resistance grows as the skydiver speeds up. When it equals the weight, the resultant force is zero. With no resultant force there is no acceleration, so the speed stays constant."
     },
     "5": {
       "question": "Which of these is a non-contact force?",

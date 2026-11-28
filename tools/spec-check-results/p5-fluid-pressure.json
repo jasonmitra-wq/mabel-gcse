@@ -1,9 +1,9 @@
 {
   "lesson": "p5-fluid-pressure",
   "source_file": "lessons/physics/p5-fluid-pressure.json",
-  "lesson_md5": "8e2c27cee08f89519b21bc090042a311",
+  "lesson_md5": "2a6e8ae2723549b0e9928e475fb416ef",
   "model": "claude-opus-5-5",
-  "date": "2026-11-28T10:16:29.501Z",
+  "date": "2026-11-28T13:45:39.108Z",
   "specRefs_sent": [
     "4.5.5.1.1",
     "4.5.5.1.2",
@@ -14,32 +14,50 @@
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 5999,
-    "output_tokens": 2191
+    "input_tokens": 6160,
+    "output_tokens": 2877
   },
-  "cost_usd": 0.067816,
+  "cost_usd": 0.08218,
   "status": "OK",
   "result": {
     "lesson": "p5-fluid-pressure",
-    "missing_spec_content": [],
-    "above_gcse": [
+    "missing_spec_content": [
       {
-        "field": "keyPoints[1].content",
-        "text": "The pressure due to a column of liquid is given by <strong>p = hρg</strong>. You are given this equation in the exam.",
-        "why": "The specification heading reads \"4.5.5.1.2 Pressure in a fluid 2 (HT only)\". This section covers p = hρg, pressure differences at different depths, upthrust, and floating and sinking. The lesson teaches all of it (keyPoints[1], keyPoints[2], checkpoints 1 and 2, tables[0].rows[1]) as required for every student and never marks it Higher tier only. A Foundation-tier student could think they must learn this content."
+        "specRef": "4.5.5.1.2",
+        "spec_text": "4.5.5.1.2 Pressure in a fluid 2 (HT only)",
+        "why": "The spec marks p = hρg, pressure differences with depth, upthrust and floating/sinking as Higher Tier only. The lesson never says so. It mixes this content with the all-tier content of 4.5.5.1.1 and 4.5.5.2, so a Foundation student cannot tell which parts they need."
+      },
+      {
+        "specRef": "4.5.5.1.2",
+        "spec_text": "Students should be able to describe the factors which influence floating and sinking.",
+        "why": "Only partly covered. The lesson gives the outcomes (upthrust = weight; weight > upthrust; less/more dense than the liquid). It does not describe what makes the upthrust bigger or smaller. It does not link the density of the liquid or how much of the object is submerged to the size of the upthrust. It does not explain that a floating object sinks in until the upthrust equals its weight."
       }
     ],
-    "factual_errors": [],
+    "above_gcse": [],
+    "factual_errors": [
+      {
+        "field": "keyPoints[2].content",
+        "text": "A floating object is less dense than the liquid. ... A sinking object is denser than the liquid.",
+        "correction": "What matters is the object's average density, including any air or hollow space inside it. A steel boat floats because its average density is less than the water's, even though steel is denser than water. This matters because the lesson's intro says \"A boat floats, but a stone sinks.\" Also, an object whose average density equals the liquid's neither rises nor sinks.",
+        "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[2].keyTerms[0].def",
+        "text": "The resultant upward force on an object in a liquid, caused by greater pressure on its bottom surface than its top",
+        "correction": "Upthrust acts on objects in any fluid, liquid or gas (for example, a balloon in air). The spec describes it for any partially or totally submerged object, and the lesson itself defines a fluid as \"a liquid or a gas\". Limiting the definition to liquids is incomplete.",
+        "basis": "own knowledge"
+      }
+    ],
     "wrong_terms": [
       {
-        "field": "revisionCardBullets[1]",
-        "text": "p = F/A: pressure (Pa) = force (N) ÷ area (m²)",
-        "spec_term": "pressure = (force normal to a surface)/(area of that surface)"
+        "field": "basics[0].text",
+        "text": "A rectangle's area is length × width, in square metres (m²).",
+        "spec_term": "metres squared, m^2"
       },
       {
         "field": "keyPoints[2].writeBullets[0]",
         "text": "Submerged object: greater pressure on the bottom surface than the top",
-        "spec_term": "A partially (or totally) submerged object experiences a greater pressure on the bottom surface than on the top surface."
+        "spec_term": "A partially (or totally) submerged object"
       }
     ],
     "checkpoint_mismatch": [],

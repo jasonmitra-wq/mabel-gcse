@@ -31,7 +31,7 @@
        "branch": "flip"
       }
      ],
-     "right": "Yes: a = Δv ÷ t = 20 ÷ 10 = 2 m/s².",
+     "right": "Yes: acceleration = change in velocity ÷ time = 20 ÷ 10 = 2 m/s².",
      "wrong": {
       "other": "Not quite: 2 m/s².",
       "times": "Not quite: divide the change in velocity by the time: 20 ÷ 10 = 2 m/s².",
@@ -39,10 +39,10 @@
      },
      "idk": [
       {
-       "hint": "Acceleration = change in velocity ÷ time."
+       "hint": "Acceleration = change in velocity ÷ time. The velocity changes by 20 m/s in 10 s."
       }
      ],
-     "answerWhy": "a = Δv ÷ t = (20 − 0) ÷ 10 = 2 m/s²."
+     "answerWhy": "Acceleration = change in velocity ÷ time = (20 − 0) ÷ 10 = 2 m/s²."
     },
     {
      "id": "1.1b",
@@ -79,7 +79,7 @@
     {
      "id": "1.2",
      "type": "say",
-     "text": "Now this lesson. Most objects have several forces on them at once. A box on the floor is pulled down by gravity and pushed up by the floor."
+     "text": "Now this lesson. Most objects have several forces on them at once. A box on the floor is pulled down by gravity and pushed up by the floor. Forces are measured in units written N."
     },
     {
      "id": "1.3",
@@ -89,40 +89,40 @@
     {
      "id": "1.4",
      "type": "say",
-     "text": "For forces along one line, add the forces that act the same way and take away the forces that act the opposite way. The resultant acts in the direction of the bigger total."
+     "text": "For forces along one line, add the forces that act the same way and take away those that act the opposite way. For example, 50 N forwards and 20 N backwards make 30 N forwards."
     },
     {
      "id": "1.5",
      "type": "ask",
      "kind": "number",
-     "question": "A sledge is pulled forwards with 50 N, and friction pulls it back with 20 N. What is the size of the resultant force, in N?",
+     "question": "A sledge is pulled forwards with 60 N, and friction pulls it back with 25 N. What is the size of the resultant force, in N?",
      "answer": {
-      "value": 30,
+      "value": 35,
       "unit": "N",
       "tolerance": 0.01
      },
      "wrongValues": [
       {
-       "value": 70,
+       "value": 85,
        "branch": "add"
       },
       {
-       "value": 2.5,
+       "value": 2.4,
        "branch": "divide"
       }
      ],
-     "right": "Yes: 50 − 20 = 30 N, forwards.",
+     "right": "Yes: 60 − 25 = 35 N, forwards.",
      "wrong": {
-      "other": "Not quite: 30 N. The forces act opposite ways, so subtract: 50 − 20 = 30 N, forwards.",
-      "add": "Not quite: 30 N. The forces act in opposite directions, so subtract them: 50 − 20 = 30 N.",
-      "divide": "Not quite: 30 N. Forces in opposite directions are subtracted: 50 − 20 = 30 N."
+      "other": "Not quite: 35 N. The forces act opposite ways, so subtract: 60 − 25 = 35 N, forwards.",
+      "add": "Not quite: 35 N. The forces act in opposite directions, so subtract them: 60 − 25 = 35 N.",
+      "divide": "Not quite: 35 N. Forces in opposite directions are subtracted: 60 − 25 = 35 N."
      },
      "idk": [
       {
        "hint": "The two forces act in opposite directions. Take the smaller from the bigger."
       }
      ],
-     "answerWhy": "The forces act in opposite directions, so the resultant is 50 − 20 = 30 N, in the direction of the bigger force."
+     "answerWhy": "The forces act in opposite directions, so the resultant is 60 − 25 = 35 N, in the direction of the bigger force."
     },
     {
      "id": "1.6",
@@ -164,7 +164,12 @@
     {
      "id": "1.8",
      "type": "say",
-     "text": "The first law of motion says: if the resultant force on an object is zero, a still object stays still, and a moving object keeps the same speed in the same direction."
+     "text": "The first law of motion says: if the resultant force on an object is zero, a still object stays still, and a moving object keeps the same speed in the same direction: the same velocity."
+    },
+    {
+     "id": "1.8b",
+     "type": "say",
+     "text": "In everyday life, moving things do slow down and stop. That is because friction and air resistance act on them, so the resultant force is not zero."
     },
     {
      "id": "1.9",
@@ -188,8 +193,8 @@
      "right": "Yes: its velocity is not changing, so the resultant force is zero.",
      "wrong": {
       "other": "Not quite: zero.",
-      "keepgoing": "Not quite: a moving object keeps the same velocity with no resultant force. The engine's push only balances friction and air resistance.",
-      "none": "Not quite: there are forces on it, such as the engine's push and air resistance. They balance, so the resultant is zero."
+      "keepgoing": "Not quite: a moving object keeps the same velocity with no resultant force. The driving force only balances the friction and air resistance holding it back.",
+      "none": "Not quite: there are forces on it, such as the driving force and air resistance. They balance, so the resultant is zero."
      },
      "idk": [
       {
@@ -201,7 +206,7 @@
     {
      "id": "1.10",
      "type": "say",
-     "text": "Changing the speed or the direction of an object needs a resultant force. If the forward push is bigger than the friction, the resultant acts forwards and the object speeds up."
+     "text": "Changing the speed or the direction of an object needs a resultant force."
     },
     {
      "id": "1.11",
@@ -230,7 +235,7 @@
      },
      "idk": [
       {
-       "hint": "On the carpet, the push and friction balanced. On the tiles, friction is smaller. Which force is now bigger?"
+       "hint": "On the carpet, the push and friction balanced. On the tiles, friction is smaller but the push is the same. Which way does the resultant force act now?"
       }
      ],
      "answerWhy": "With less friction, the push is bigger than the friction, so the resultant force acts forwards and the trolley speeds up."
@@ -241,14 +246,18 @@
      "text": "Objects tend to keep doing what they are already doing: staying still, or moving at a steady velocity. This tendency is called inertia."
     },
     {
+     "id": "1.12b",
+     "type": "say",
+     "text": "The more mass an object has, the more inertia it has. A full trolley is harder to start or stop than an empty one."
+    },
+    {
      "id": "1.13",
      "type": "own",
      "prompt": "In one line: what does the first law of motion say?",
      "points": [
-      "with zero resultant force a still object stays still",
-      "a moving object keeps the same speed and direction"
+      "With zero resultant force, an object keeps the same velocity, or stays still."
      ],
-     "idk": "No problem. A good line would be: if the resultant force is zero, a still object stays still and a moving object keeps the same speed and direction."
+     "idk": "No problem. A good line would be: if the resultant force on an object is zero, a still object stays still and a moving object keeps the same speed and direction."
     }
    ]
   },
@@ -287,37 +296,9 @@
      }
     },
     {
-     "id": "2.5",
-     "type": "ask",
-     "kind": "number",
-     "question": "Your turn. A resultant force of 150 N acts on a 50 kg crate. What is its acceleration, in m/s²?",
-     "answer": {
-      "value": 3,
-      "unit": "m/s²",
-      "tolerance": 0.01
-     },
-     "wrongValues": [
-      {
-       "value": 7500,
-       "branch": "times"
-      },
-      {
-       "value": 0.333,
-       "branch": "flip"
-      }
-     ],
-     "right": "Yes: a = F ÷ m = 150 ÷ 50 = 3 m/s².",
-     "wrong": {
-      "other": "Not quite: 3 m/s². Rearrange F = m a to a = F ÷ m = 150 ÷ 50 = 3 m/s².",
-      "times": "Not quite: 3 m/s². To find a, divide the force by the mass: 150 ÷ 50 = 3 m/s².",
-      "flip": "Not quite: 3 m/s². Divide the force by the mass, not the mass by the force: 150 ÷ 50 = 3 m/s²."
-     },
-     "idk": [
-      {
-       "hint": "Rearrange F = m a to get a = F ÷ m."
-      }
-     ],
-     "answerWhy": "a = F ÷ m = 150 ÷ 50 = 3 m/s²."
+     "id": "2.4b",
+     "type": "say",
+     "text": "You can rearrange it: a = F ÷ m to find the acceleration, and m = F ÷ a to find the mass."
     },
     {
      "id": "2.6",
@@ -358,9 +339,42 @@
      "answerWhy": "F = m a = 0.5 × 8 = 4 N."
     },
     {
+     "id": "2.5",
+     "type": "ask",
+     "kind": "number",
+     "question": "Your turn. A resultant force of 150 N acts on a 50 kg crate. What is its acceleration, in m/s²?",
+     "answer": {
+      "value": 3,
+      "unit": "m/s²",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 7500,
+       "branch": "times"
+      },
+      {
+       "value": 0.333,
+       "branch": "flip"
+      }
+     ],
+     "right": "Yes: a = F ÷ m = 150 ÷ 50 = 3 m/s².",
+     "wrong": {
+      "other": "Not quite: 3 m/s². Rearrange F = m a to a = F ÷ m = 150 ÷ 50 = 3 m/s².",
+      "times": "Not quite: 3 m/s². To find a, divide the force by the mass: 150 ÷ 50 = 3 m/s².",
+      "flip": "Not quite: 3 m/s². Divide the force by the mass, not the mass by the force: 150 ÷ 50 = 3 m/s²."
+     },
+     "idk": [
+      {
+       "hint": "Rearrange F = m a to get a = F ÷ m."
+      }
+     ],
+     "answerWhy": "a = F ÷ m = 150 ÷ 50 = 3 m/s²."
+    },
+    {
      "id": "2.7",
      "type": "say",
-     "text": "Mass also tells you how hard it is to change an object's velocity. Mass measured this way, as force divided by acceleration, is called inertial mass."
+     "text": "Mass links back to inertia: the more mass, the harder it is to change an object's velocity. Mass found as force ÷ acceleration, m = F ÷ a, is called inertial mass."
     },
     {
      "id": "2.8",
@@ -397,7 +411,12 @@
     {
      "id": "2.9",
      "type": "say",
-     "text": "In a class experiment, a trolley is pulled along a bench by a string over a pulley, with masses hanging on the end. More hanging masses give a bigger force. Light gates measure the acceleration."
+     "text": "In a class experiment, a trolley on a bench is pulled by a string over a pulley, with masses hanging on the end. Light gates, electronic timers, measure the acceleration."
+    },
+    {
+     "id": "2.9b",
+     "type": "say",
+     "text": "To make the force bigger, masses are moved from the trolley to the hanger. That way the total mass being pulled stays the same."
     },
     {
      "id": "2.10",
@@ -441,8 +460,7 @@
      "type": "own",
      "prompt": "In one line: what does F = m a tell you?",
      "points": [
-      "the resultant force equals mass times acceleration",
-      "a bigger force gives a bigger acceleration"
+      "The resultant force equals mass × acceleration."
      ],
      "idk": "No problem. A good line would be: the resultant force equals mass × acceleration, so a bigger force gives a bigger acceleration, and a bigger mass a smaller one."
     }
@@ -460,7 +478,7 @@
     {
      "id": "3.2",
      "type": "say",
-     "text": "The two forces are of the same type and act on different objects. Together they are called a Newton's third law pair."
+     "text": "The two forces are the same kind of force, such as both pushes or both gravity, and they act on different objects. Together they are called a Newton's third law pair."
     },
     {
      "id": "3.3",
@@ -541,8 +559,7 @@
      "type": "own",
      "prompt": "In one line: what does the third law of motion say?",
      "points": [
-      "two objects push on each other with equal forces",
-      "in opposite directions"
+      "When two objects interact, they push or pull on each other with equal and opposite forces."
      ],
      "idk": "No problem. A good line would be: when two objects interact, each pushes or pulls on the other with a force of the same size in the opposite direction."
     }
@@ -560,12 +577,37 @@
     {
      "id": "4.2",
      "type": "say",
-     "text": "How strongly gravity pulls on each kilogram is called the gravitational field strength, g. It is measured in newtons per kilogram (N/kg). On Earth it is about 9.8 N/kg."
+     "text": "How strongly gravity pulls on each kilogram is called the gravitational field strength, g."
+    },
+    {
+     "id": "4.2b",
+     "type": "say",
+     "text": "Gravitational field strength is measured in newtons per kilogram (N/kg). On Earth, g is about 9.8 N/kg."
     },
     {
      "id": "4.3",
      "type": "say",
      "text": "The equation is W = m g: weight = mass × gravitational field strength. Here W is the weight in newtons (N), m is the mass in kilograms (kg) and g is in N/kg. In a question, you are given g."
+    },
+    {
+     "id": "4.3b",
+     "type": "say",
+     "text": "Mass is the amount of matter in an object, in kilograms, and it is the same everywhere. Weight changes with g: on the Moon g is about 1.6 N/kg, so you weigh about a sixth as much there."
+    },
+    {
+     "id": "4.3c",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A 70 kg person stands on Earth, where g = 9.8 N/kg. What is their weight?",
+     "steps": [
+      "Write the equation: W = m g.",
+      "Put in the numbers: W = 70 × 9.8.",
+      "W = 686 N."
+     ],
+     "answer": {
+      "value": 686,
+      "unit": "N"
+     }
     },
     {
      "id": "4.4",
@@ -631,12 +673,17 @@
     {
      "id": "4.6",
      "type": "say",
-     "text": "Weight and mass are directly proportional: double the mass, and the weight doubles. Weight is measured with a newtonmeter, a spring balance marked in newtons."
+     "text": "Weight and mass are directly proportional: double the mass, and the weight doubles."
+    },
+    {
+     "id": "4.6b",
+     "type": "say",
+     "text": "Weight is measured with a newtonmeter: a spring balance marked in newtons."
     },
     {
      "id": "4.7",
      "type": "say",
-     "text": "An object's weight can be treated as acting at one point, called its centre of mass."
+     "text": "An object's weight can be treated as acting at one point, called its centre of mass. A ruler balances on your finger when your finger is under its centre of mass."
     },
     {
      "id": "4.8",
@@ -646,13 +693,13 @@
     {
      "id": "4.9",
      "type": "say",
-     "text": "For a book resting on a table, the free body diagram has two arrows the same length: its weight down and the normal contact force up. The resultant force is zero."
+     "text": "For a book resting on a table, the free body diagram has two arrows of the same length: its weight down, and the push up from the table, called the normal contact force. The resultant force is zero."
     },
     {
      "id": "4.10",
      "type": "ask",
      "kind": "tap",
-     "question": "A free body diagram of a falling skydiver shows a 600 N weight down and 450 N of air resistance up. What is the resultant force?",
+     "question": "A free body diagram of a falling skydiver shows a 600 N weight down and 450 N of air resistance, the push of the air, up. What is the resultant force?",
      "options": [
       {
        "text": "150 N downwards",
@@ -695,8 +742,8 @@
      "type": "own",
      "prompt": "In one line: what is weight, and how do you work it out?",
      "points": [
-      "the force of gravity on an object",
-      "weight = mass × gravitational field strength"
+      "Weight is the force of gravity on an object.",
+      "Weight = mass × gravitational field strength."
      ],
      "idk": "No problem. A good line would be: weight is the force of gravity on an object: weight = mass × gravitational field strength."
     },
@@ -881,7 +928,7 @@
        "branch": "right"
       },
       {
-       "text": "The bicycle, as it is lighter",
+       "text": "The bicycle, as it has less mass",
        "branch": "bike"
       },
       {
@@ -892,7 +939,7 @@
      "right": "Yes: more mass means more inertia, so the lorry is harder to start or stop.",
      "wrong": {
       "other": "Not quite: the lorry.",
-      "bike": "Not quite: inertia grows with mass, so the heavier lorry has more.",
+      "bike": "Not quite: inertia grows with mass, and the bicycle has less mass. The lorry has more.",
       "neither": "Not quite: inertia depends on mass. The lorry has more mass, so more inertia."
      },
      "idk": [

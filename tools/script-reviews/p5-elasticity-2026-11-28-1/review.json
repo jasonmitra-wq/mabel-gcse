@@ -1,0 +1,351 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 16059,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 12646,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 8046
+    },
+    "iterations": [
+      {
+        "input_tokens": 16059,
+        "output_tokens": 12646,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.6343120000000001,
+  "seconds": 121,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from the last lesson. What is the weight of a 0.5 kg mass where g = 9.8 N/kg?\",\"what\":\"The lesson opens by testing something it has not taught. A girl meeting this for the first time has never been told what g is or how to find a weight, so her first experience is a question she cannot do.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F10\",\"turn\":\"1.1a don't know (first time)\",\"quote\":\"Weight = mass × g.\",\"what\":\"The equation is used without saying what g is or what units W, m and g are in. As a hint it tells her nothing if she does not already know g.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"L3\",\"turn\":\"1.1b\",\"quote\":\"Second: which force keeps a satellite in its orbit?\",\"what\":\"Satellites and orbits have nothing to do with stretching springs and nothing in this lesson has taught them. It assumes earlier lessons and distracts her before the topic has started.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.1b\",\"quote\":\"Yes: gravity provides the centripetal force.\",\"what\":\"'Centripetal force' is used in the right-answer reply and in the final don't-know reply, and is never explained anywhere in the lesson.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P4\",\"turn\":\"1.2\",\"quote\":\"You can stretch it, compress it, which means squash it, or bend it.\",\"what\":\"Bending is named once and never explained or given an example (the diving board, forces at different places on a beam). None of the three ways gets an example, yet key point 1 is treated as taught.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.4\",\"quote\":\"A still object needs more than one force on it before its shape can change.\",\"what\":\"The message just before the question says more than one force is needed, and only one of the three options has two forces. She can pick it without thinking about the spring.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.4 don't know (first time)\",\"quote\":\"What holds it in place while the masses pull? (same buttons)\",\"what\":\"The hint asks a different question from the one on screen. The honest answer to 'what holds it in place' is the clamp, which steers her to the wrong button 'Only the clamp pulling up'.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P16\",\"turn\":\"1.4 wrong answer 'Only the clamp pulling up'\",\"quote\":\"Not quite: the clamp alone would just hold it.\",\"what\":\"This contradicts what 1.3 has just taught, that with only one force an object would not stay still. By the lesson's own rule the clamp alone would move the spring, not hold it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"1.7\",\"quote\":\"Others stay changed when the forces are removed: that is called inelastic deformation. A spring stretched too far stays longer.\",\"what\":\"The question straight after uses the same words ('it stays longer') about a bag. The answer has been handed to her in the message before.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.8\",\"quote\":\"Yes: your line makes every point. You have this: elastic: it goes back to its first shape. You have this: inelastic: it stays changed.\",\"what\":\"The feedback reads like a marking checklist, not a teacher: 'You have this:' twice, with colons piled on colons. A 15-year-old would find it odd and hard to read.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"2.5\",\"quote\":\"The equation is F = k e.\",\"what\":\"'The equation' arrives with no statement of what it is the equation for. The message before was about the limit of proportionality, so the link to 'twice the force, twice the extension' is not made.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"2.5\",\"quote\":\"k is the spring constant in newtons per metre (N/m)\",\"what\":\"'Spring constant' is used, with a strange new unit, before anything says what it means. The explanation only comes in the next message.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.3 to 2.7\",\"quote\":\"Extension is directly proportional to force.\",\"what\":\"Five telling messages in a row (direct proportion, limit of proportionality, the equation, spring constant, worked example) with no question. Direct proportion and the limit are not checked at all before she is asked to calculate.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.7\",\"quote\":\"Write the equation: F = k e, so k = F ÷ e.\",\"what\":\"The rearrangement is done in one jump with no reason given. A first-time learner who is shaky on algebra will not see where k = F ÷ e comes from.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.8\",\"quote\":\"Your turn. A force of 6 N stretches a spring by 3 cm. What is its spring constant, in N/m?\",\"what\":\"Her first practice question hides a cm-to-m conversion that was never shown. 2.2 used cm and the worked example used metres. She will most likely type 2 and be marked wrong for something she was not taught.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"P16\",\"turn\":\"2.9\",\"quote\":\"Then e is how much shorter the object gets, called its compression.\",\"what\":\"The lesson file does not call this length 'its compression'. In 1.2 'compress' meant the act of squashing, so the same word now means two things.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.10\",\"quote\":\"In one line: what does F = k e tell you about a spring?\",\"what\":\"The question is too vague for her to know that two points are wanted. The limit of proportionality is not in the equation at all, so a sensible answer gets 'Still needed'.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.10\",\"quote\":\"Partly there. You have this: force equals spring constant times extension. Still needed: extension is proportional to force up to the limit of proportionality.\",\"what\":\"Same checklist-style feedback as 1.8: stilted 'You have this:' and 'Still needed:' lines, not a reply to what she actually wrote.\",\"severity\":\"minor\"},{\"fault\":\"P10\",\"turn\":\"3.1\",\"quote\":\"In a class practical, you hang a spring from a clamp with a ruler beside it.\",\"what\":\"The practical starts cold. No question first checks she is ready, for example what you need to measure to find an extension or how you would find the force from the masses.\",\"severity\":\"minor\"},{\"fault\":\"F10\",\"turn\":\"3.2\",\"quote\":\"The force on the spring is the weight of the masses, worked out with W = m g.\",\"what\":\"W = m g is used without ever saying in a taught message what W, m and g stand for or their units. It appeared only in the feedback to the opening recall question.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.3 right answer\",\"quote\":\"Yes: with your eye level with the mark, you do not read it too high or too low.\",\"what\":\"The option she chose said 'the bottom of the spring' but the reply talks about 'the mark', which has not been mentioned. The wrong-answer replies only say it 'makes the reading wrong' without saying why.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"3.4\",\"quote\":\"A graph that is a straight line shows a linear relationship. For a spring the line also goes through the origin, so force and extension are directly proportional.\",\"what\":\"Two new terms ('linear relationship' and 'origin') plus plotting the graph and the link to direct proportion, all in one message. That is too much at once.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.4\",\"quote\":\"the line also goes through the origin\",\"what\":\"'Origin' is never explained. She has not been told it is the point where both force and extension are zero.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.4\",\"quote\":\"Then plot force against extension.\",\"what\":\"She is not told which quantity goes on which axis and no graph is shown. Everything about the graph in 3.4 to 3.9 is words only, which is hard to picture for someone who has never seen it.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"3.6\",\"quote\":\"Once the limit of proportionality is passed, the graph curves.\",\"what\":\"The message before the question states the answer almost word for word. The question then asks what the curve shows.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.6 wrong answer 'The spring has got stiffer'\",\"quote\":\"Not quite: the curve shows the spring has stopped following F = k e.\",\"what\":\"The reply does not deal with her idea. It never says why 'stiffer' is wrong; it just restates the right answer.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.7\",\"quote\":\"the rise in force divided by the rise in extension\",\"what\":\"'Rise in extension' is muddled if extension is along the bottom; a teacher would say 'change in force divided by change in extension'. 'Gradient' is also given no plain meaning such as how steep the line is.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.9\",\"quote\":\"Yes: your line makes every point. You have this: force and extension are directly proportional. You have this: the limit of proportionality has not been passed.\",\"what\":\"Same stilted checklist feedback as 1.8 and 2.10.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"4.1\",\"quote\":\"Stretching a spring takes work: your force moves through a distance. Energy stored in a stretched or squashed object is called elastic potential energy.\",\"what\":\"Two new ideas in one message: 'work' (given only a half-explanation) and 'elastic potential energy'. The message does not say that the work done is what becomes the stored energy.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P16\",\"turn\":\"4.2\",\"quote\":\"If the spring is not stretched past its limit of proportionality, all the work done on it is stored.\",\"what\":\"The lesson file says 'if the spring is not inelastically deformed'. The script has swapped in the limit of proportionality, which is a different condition; this is the tutor's own science.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.3\",\"quote\":\"You are given this equation.\",\"what\":\"Given where? The lesson file says 'in the exam'; without that the sentence makes no sense to her. The message also drops the condition that the equation only works up to the limit of proportionality.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.7 none\",\"quote\":\"Here is what a good line says. Energy stored in a stretched or squashed object. Half times spring constant times extension squared.\",\"what\":\"The 'good line' is two sentence fragments, not a line she could copy as a model. It has the same checklist feel as the other own-words replies.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.12 wrong answer 'The extension'\",\"quote\":\"Not quite: the extension is along the bottom.\",\"what\":\"The lesson never told her which axis extension goes on, so this correction relies on something she was not taught.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.13 wrong answer 'A flat line'\",\"quote\":\"Not quite: non-linear gives a curve.\",\"what\":\"The reply just states the answer and does not say why a flat line is wrong (it is still a straight line).\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"Summary, point 3 of 4\",\"quote\":\"Force and extension are directly proportional there, because the limit of proportionality has not been passed.\",\"what\":\"'There' points at nothing. The sentence was lifted from the answer to the graph question, so without 'a straight line through the origin' it makes no sense.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F1\",\"turn\":\"Summary, point 3 of 4\",\"quote\":\"Force and extension are directly proportional there, because the limit of proportionality has not been passed.\",\"what\":\"This repeats summary point 2 (proportional up to the limit of proportionality). The summary says nothing about the practical or the gradient, which is what key point 3 actually taught.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P14\",\"turn\":\"whole lesson (1.1 to 4.15)\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on anywhere in the script: no spring to stretch, no masses to add, no graph to build. It is 44 steps of reading and buttons, and she would get bored (M1).\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":2},{\"fault\":\"F10\",\"instances\":2},{\"fault\":\"F3\",\"instances\":3},{\"fault\":\"P4\",\"instances\":1},{\"fault\":\"F8\",\"instances\":3},{\"fault\":\"P16\",\"instances\":3},{\"fault\":\"F2\",\"instances\":2},{\"fault\":\"F5\",\"instances\":2},{\"fault\":\"P10\",\"instances\":1},{\"fault\":\"F1\",\"instances\":1},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":16}],\"overall\":\"No, not as it is. The sums are right and most of the physics is sound, but the lesson opens with two questions she cannot answer (weight with g, and a satellite question that brings in 'centripetal force'), and the don't-know hint at 1.4 points her to a wrong button. Her first calculation at 2.8 hides a cm-to-m trap she was never shown, the graph work is words only with 'origin' and the axes unexplained, and three questions are answered by the message just before them. I would want those fixed, along with the 'there' in summary point 3, the changed condition at 4.2, and something hands-on with a spring and a graph, before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from the last lesson. What is the weight of a 0.5 kg mass where g = 9.8 N/kg?",
+      "what": "The lesson opens by testing something it has not taught. A girl meeting this for the first time has never been told what g is or how to find a weight, so her first experience is a question she cannot do.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F10",
+      "turn": "1.1a don't know (first time)",
+      "quote": "Weight = mass × g.",
+      "what": "The equation is used without saying what g is or what units W, m and g are in. As a hint it tells her nothing if she does not already know g.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.1b",
+      "quote": "Second: which force keeps a satellite in its orbit?",
+      "what": "Satellites and orbits have nothing to do with stretching springs and nothing in this lesson has taught them. It assumes earlier lessons and distracts her before the topic has started.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1b",
+      "quote": "Yes: gravity provides the centripetal force.",
+      "what": "'Centripetal force' is used in the right-answer reply and in the final don't-know reply, and is never explained anywhere in the lesson.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P4",
+      "turn": "1.2",
+      "quote": "You can stretch it, compress it, which means squash it, or bend it.",
+      "what": "Bending is named once and never explained or given an example (the diving board, forces at different places on a beam). None of the three ways gets an example, yet key point 1 is treated as taught.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.4",
+      "quote": "A still object needs more than one force on it before its shape can change.",
+      "what": "The message just before the question says more than one force is needed, and only one of the three options has two forces. She can pick it without thinking about the spring.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.4 don't know (first time)",
+      "quote": "What holds it in place while the masses pull? (same buttons)",
+      "what": "The hint asks a different question from the one on screen. The honest answer to 'what holds it in place' is the clamp, which steers her to the wrong button 'Only the clamp pulling up'.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P16",
+      "turn": "1.4 wrong answer 'Only the clamp pulling up'",
+      "quote": "Not quite: the clamp alone would just hold it.",
+      "what": "This contradicts what 1.3 has just taught, that with only one force an object would not stay still. By the lesson's own rule the clamp alone would move the spring, not hold it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.7",
+      "quote": "Others stay changed when the forces are removed: that is called inelastic deformation. A spring stretched too far stays longer.",
+      "what": "The question straight after uses the same words ('it stays longer') about a bag. The answer has been handed to her in the message before.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.8",
+      "quote": "Yes: your line makes every point. You have this: elastic: it goes back to its first shape. You have this: inelastic: it stays changed.",
+      "what": "The feedback reads like a marking checklist, not a teacher: 'You have this:' twice, with colons piled on colons. A 15-year-old would find it odd and hard to read.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.5",
+      "quote": "The equation is F = k e.",
+      "what": "'The equation' arrives with no statement of what it is the equation for. The message before was about the limit of proportionality, so the link to 'twice the force, twice the extension' is not made.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.5",
+      "quote": "k is the spring constant in newtons per metre (N/m)",
+      "what": "'Spring constant' is used, with a strange new unit, before anything says what it means. The explanation only comes in the next message.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.3 to 2.7",
+      "quote": "Extension is directly proportional to force.",
+      "what": "Five telling messages in a row (direct proportion, limit of proportionality, the equation, spring constant, worked example) with no question. Direct proportion and the limit are not checked at all before she is asked to calculate.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.7",
+      "quote": "Write the equation: F = k e, so k = F ÷ e.",
+      "what": "The rearrangement is done in one jump with no reason given. A first-time learner who is shaky on algebra will not see where k = F ÷ e comes from.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8",
+      "quote": "Your turn. A force of 6 N stretches a spring by 3 cm. What is its spring constant, in N/m?",
+      "what": "Her first practice question hides a cm-to-m conversion that was never shown. 2.2 used cm and the worked example used metres. She will most likely type 2 and be marked wrong for something she was not taught.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "P16",
+      "turn": "2.9",
+      "quote": "Then e is how much shorter the object gets, called its compression.",
+      "what": "The lesson file does not call this length 'its compression'. In 1.2 'compress' meant the act of squashing, so the same word now means two things.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.10",
+      "quote": "In one line: what does F = k e tell you about a spring?",
+      "what": "The question is too vague for her to know that two points are wanted. The limit of proportionality is not in the equation at all, so a sensible answer gets 'Still needed'.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.10",
+      "quote": "Partly there. You have this: force equals spring constant times extension. Still needed: extension is proportional to force up to the limit of proportionality.",
+      "what": "Same checklist-style feedback as 1.8: stilted 'You have this:' and 'Still needed:' lines, not a reply to what she actually wrote.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P10",
+      "turn": "3.1",
+      "quote": "In a class practical, you hang a spring from a clamp with a ruler beside it.",
+      "what": "The practical starts cold. No question first checks she is ready, for example what you need to measure to find an extension or how you would find the force from the masses.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F10",
+      "turn": "3.2",
+      "quote": "The force on the spring is the weight of the masses, worked out with W = m g.",
+      "what": "W = m g is used without ever saying in a taught message what W, m and g stand for or their units. It appeared only in the feedback to the opening recall question.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3 right answer",
+      "quote": "Yes: with your eye level with the mark, you do not read it too high or too low.",
+      "what": "The option she chose said 'the bottom of the spring' but the reply talks about 'the mark', which has not been mentioned. The wrong-answer replies only say it 'makes the reading wrong' without saying why.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "3.4",
+      "quote": "A graph that is a straight line shows a linear relationship. For a spring the line also goes through the origin, so force and extension are directly proportional.",
+      "what": "Two new terms ('linear relationship' and 'origin') plus plotting the graph and the link to direct proportion, all in one message. That is too much at once.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.4",
+      "quote": "the line also goes through the origin",
+      "what": "'Origin' is never explained. She has not been told it is the point where both force and extension are zero.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.4",
+      "quote": "Then plot force against extension.",
+      "what": "She is not told which quantity goes on which axis and no graph is shown. Everything about the graph in 3.4 to 3.9 is words only, which is hard to picture for someone who has never seen it.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.6",
+      "quote": "Once the limit of proportionality is passed, the graph curves.",
+      "what": "The message before the question states the answer almost word for word. The question then asks what the curve shows.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.6 wrong answer 'The spring has got stiffer'",
+      "quote": "Not quite: the curve shows the spring has stopped following F = k e.",
+      "what": "The reply does not deal with her idea. It never says why 'stiffer' is wrong; it just restates the right answer.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.7",
+      "quote": "the rise in force divided by the rise in extension",
+      "what": "'Rise in extension' is muddled if extension is along the bottom; a teacher would say 'change in force divided by change in extension'. 'Gradient' is also given no plain meaning such as how steep the line is.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.9",
+      "quote": "Yes: your line makes every point. You have this: force and extension are directly proportional. You have this: the limit of proportionality has not been passed.",
+      "what": "Same stilted checklist feedback as 1.8 and 2.10.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "4.1",
+      "quote": "Stretching a spring takes work: your force moves through a distance. Energy stored in a stretched or squashed object is called elastic potential energy.",
+      "what": "Two new ideas in one message: 'work' (given only a half-explanation) and 'elastic potential energy'. The message does not say that the work done is what becomes the stored energy.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P16",
+      "turn": "4.2",
+      "quote": "If the spring is not stretched past its limit of proportionality, all the work done on it is stored.",
+      "what": "The lesson file says 'if the spring is not inelastically deformed'. The script has swapped in the limit of proportionality, which is a different condition; this is the tutor's own science.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.3",
+      "quote": "You are given this equation.",
+      "what": "Given where? The lesson file says 'in the exam'; without that the sentence makes no sense to her. The message also drops the condition that the equation only works up to the limit of proportionality.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.7 none",
+      "quote": "Here is what a good line says. Energy stored in a stretched or squashed object. Half times spring constant times extension squared.",
+      "what": "The 'good line' is two sentence fragments, not a line she could copy as a model. It has the same checklist feel as the other own-words replies.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.12 wrong answer 'The extension'",
+      "quote": "Not quite: the extension is along the bottom.",
+      "what": "The lesson never told her which axis extension goes on, so this correction relies on something she was not taught.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.13 wrong answer 'A flat line'",
+      "quote": "Not quite: non-linear gives a curve.",
+      "what": "The reply just states the answer and does not say why a flat line is wrong (it is still a straight line).",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "Summary, point 3 of 4",
+      "quote": "Force and extension are directly proportional there, because the limit of proportionality has not been passed.",
+      "what": "'There' points at nothing. The sentence was lifted from the answer to the graph question, so without 'a straight line through the origin' it makes no sense.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F1",
+      "turn": "Summary, point 3 of 4",
+      "quote": "Force and extension are directly proportional there, because the limit of proportionality has not been passed.",
+      "what": "This repeats summary point 2 (proportional up to the limit of proportionality). The summary says nothing about the practical or the gradient, which is what key point 3 actually taught.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson (1.1 to 4.15)",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on anywhere in the script: no spring to stretch, no masses to add, no graph to build. It is 44 steps of reading and buttons, and she would get bored (M1).",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 16
+    },
+    {
+      "fault": "F3",
+      "instances": 3
+    },
+    {
+      "fault": "F8",
+      "instances": 3
+    },
+    {
+      "fault": "P16",
+      "instances": 3
+    },
+    {
+      "fault": "L3",
+      "instances": 2
+    },
+    {
+      "fault": "F10",
+      "instances": 2
+    },
+    {
+      "fault": "F2",
+      "instances": 2
+    },
+    {
+      "fault": "F5",
+      "instances": 2
+    },
+    {
+      "fault": "P4",
+      "instances": 1
+    },
+    {
+      "fault": "P10",
+      "instances": 1
+    },
+    {
+      "fault": "F1",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "No, not as it is. The sums are right and most of the physics is sound, but the lesson opens with two questions she cannot answer (weight with g, and a satellite question that brings in 'centripetal force'), and the don't-know hint at 1.4 points her to a wrong button. Her first calculation at 2.8 hides a cm-to-m trap she was never shown, the graph work is words only with 'origin' and the axes unexplained, and three questions are answered by the message just before them. I would want those fixed, along with the 'there' in summary point 3, the changed condition at 4.2, and something hands-on with a spring and a graph, before she uses it."
+}

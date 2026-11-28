@@ -1,0 +1,332 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 15042,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 10331,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 5841
+    },
+    "iterations": [
+      {
+        "input_tokens": 15042,
+        "output_tokens": 10331,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.533576,
+  "seconds": 98,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"L3\",\"turn\":\"1.1a\",\"quote\":\"First, two quick questions from earlier lessons. A 40 N force acts 0.5 m from a pivot. What is its moment?\",\"what\":\"The lesson opens by testing moments, which she has not been taught here and which this lesson never uses. A first-time learner can only guess, and may start by getting one wrong.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.1a\",\"quote\":\"A 40 N force acts 0.5 m from a pivot. What is its moment?\",\"what\":\"\\\"Moment\\\" and \\\"pivot\\\" are used with no explanation. The only help is the bare formula after she says she does not know.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F10\",\"turn\":\"1.1a\",\"quote\":\"Yes: M = F d = 40 × 0.5 = 20 Nm.\",\"what\":\"The symbols M, F and d are used without saying what each one stands for or its unit. The same bare equation appears in the \\\"still doesn't know\\\" and skip replies.\",\"severity\":\"minor\"},{\"fault\":\"L3\",\"turn\":\"1.1b\",\"quote\":\"Second: a block has a mass of 2 kg and a volume of 0.001 m³. What is its density?\",\"what\":\"This assumes she already knows density and its equation. Nothing in the lesson has told her what density is, so she cannot answer from what she has been given.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.3\",\"quote\":\"The particles of a fluid move about and hit every surface they touch.\",\"what\":\"\\\"Particles\\\" is used as if she already has the particle picture of liquids and gases. One sentence saying a fluid is made of tiny moving particles would fix it.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.7\",\"quote\":\"A 500 N box rests on a face 0.5 m long and 0.4 m wide. What pressure does it put on the floor, in Pa?\",\"what\":\"Her first practice question needs an extra step (area = length × width) that the worked example did not show. \\\"Rests on a face\\\" is also awkward wording she may not follow.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.7\",\"quote\":\"A 500 N box\",\"what\":\"She has not been told that the box's weight is the force pressing on the floor. \\\"A 500 N box\\\" will not obviously mean F = 500 N to a beginner.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"1.9\",\"quote\":\"It pushes at right angles on every surface it touches.\",\"what\":\"This repeats 1.3 (\\\"hit every surface they touch… push on the surface at right angles to it\\\"). Only \\\"in every direction\\\" is new, and it arrives after the practice instead of with the idea.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.10\",\"quote\":\"The AI checks which of these points it makes: \\\"the force normal to a surface\\\", \\\"divided by the area of the surface\\\".\",\"what\":\"The lesson defined pressure in 1.4 as \\\"the force on each square metre of a surface\\\". If she repeats that, she may be told \\\"Still needed: divided by the area\\\", marking down the lesson's own definition.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.10 all of them\",\"quote\":\"Yes: your line makes every point. You have this: the force normal to a surface. You have this: divided by the area of the surface.\",\"what\":\"This is stilted, machine-like feedback. \\\"You have this\\\" twice, followed by sentence fragments, does not read as a teacher talking, and the same template is reused in 2.8, 3.7 and 4.5.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.10 none\",\"quote\":\"Here is what a good line says. The force normal to a surface. Divided by the area of the surface.\",\"what\":\"The model answer is given as two broken fragments, not one sentence. She never sees the good line written out whole on this branch.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"2.1\",\"quote\":\"the taller the column of water above you\",\"what\":\"\\\"Column of water\\\" is used without saying what it means (the water directly above you, like a tall stack). The whole of key point 2 depends on this picture.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"2.2\",\"quote\":\"Pressure also grows with the density of the liquid. A denser liquid has more mass in each column\",\"what\":\"Density has never been explained in this lesson, only quizzed as recall. \\\"Denser\\\" needs a line such as \\\"more mass packed into each cubic metre\\\".\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"2.3\",\"quote\":\"gravitational field strength\",\"what\":\"The term is used with no explanation. She is not told that g is the weight of each kilogram, about 9.8 N/kg on Earth.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F2\",\"turn\":\"2.3\",\"quote\":\"You are given it.\",\"what\":\"Given what, and where? The line means the equation is on the exam sheet, but it does not say so. Exam talk also sits oddly for someone meeting the topic for the first time.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"2.3\",\"quote\":\"The equation is p = h ρ g: pressure = height of the column × density of the liquid × gravitational field strength. h is in metres (m), ρ (rho) in kg/m³ and g in N/kg. You are given it.\",\"what\":\"One bubble carries a new equation, three symbols (one a Greek letter), three units and an exam note. That should be split, as p = F ÷ A was across 1.4 and 1.5.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.5\",\"quote\":\"in the same pool\",\"what\":\"The worked example never mentioned a pool, only \\\"water\\\" at 2 m. \\\"The same pool\\\" points to something she has not been given.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.7\",\"quote\":\"Not quite: p = h ρ g has no width in it. Same depth and same liquid means the same pressure.\",\"what\":\"The lesson has just taught that pressure comes from the weight of water above, so \\\"the widest one\\\" is a sensible answer. The reply only points at the formula and never says that a wider container has more weight spread over more area, so each square metre carries the same.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"2.8 none\",\"quote\":\"Here is what a good line says. There is a taller column of liquid above. So more weight pushes down.\",\"what\":\"The model answer is again given as chopped fragments, not the single good line the question asked for.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"3.2\",\"quote\":\"gives a resultant force upwards on the object. This upward force from a liquid is called upthrust.\",\"what\":\"\\\"Resultant force\\\" is used unexplained, in the same message that introduces the new word \\\"upthrust\\\".\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"3.3\",\"quote\":\"A brick is held under water. Why is there an upthrust on it?\",\"what\":\"The answer was stated in the two messages just before (\\\"the water pushes up on the bottom harder than it pushes down on the top\\\"). She only has to pick out the sentence she has just read.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.4\",\"quote\":\"It sinks when its weight is bigger than the upthrust, even once it is fully under.\",\"what\":\"\\\"Even once it is fully under\\\" will not mean anything to her. She has not been told that upthrust grows as more of the object goes under and stops growing once it is fully submerged.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.5\",\"quote\":\"An object less dense than the liquid floats, and one denser than the liquid sinks.\",\"what\":\"The density rule is set down beside the upthrust-and-weight rule with nothing linking them. Later, 3.7 says \\\"which happens when it is less dense\\\" as though this had been explained.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"3.6\",\"quote\":\"A large log floats, but a small stone sinks. Why?\",\"what\":\"The message immediately before said \\\"An object less dense than the liquid floats, and one denser than the liquid sinks\\\". The right option is that sentence again.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.7 some\",\"quote\":\"Partly there. You have this: when the upthrust equals its weight. Still needed: when it is less dense than the liquid.\",\"what\":\"\\\"When the upthrust equals its weight\\\" is a complete, correct one-line answer. She is told she is only partly there because she did not also give a second, different answer.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"3.7 none\",\"quote\":\"Here is what a good line says. When the upthrust equals its weight. When it is less dense than the liquid.\",\"what\":\"Two disconnected fragments are offered as \\\"a good line\\\". It reads as two separate answers, with nothing to say how they relate.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"4.2\",\"quote\":\"Air molecules are always hitting every surface.\",\"what\":\"The lesson has said \\\"particles\\\" until now and switches to \\\"molecules\\\" without saying they are the particles of the air.\",\"severity\":\"minor\"},{\"fault\":\"P6\",\"turn\":\"4.3\",\"quote\":\"Higher up, there is less air above a surface, so the weight of air above it is smaller. So the pressure falls as height increases. The air also gets less dense higher up.\",\"what\":\"Three ideas are in one message: less air above, pressure falls with height, and the air gets less dense. The last is tacked on with no explanation.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"4.4\",\"quote\":\"A climber goes up a high mountain. Which is true of the air pressure at the top?\",\"what\":\"The message just before said \\\"the pressure falls as height increases\\\" and gave the reason. The right button repeats both.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F8\",\"turn\":\"4.5\",\"quote\":\"In one line: why does air pressure fall as you go higher?\",\"what\":\"The right option in 4.4 (\\\"It is lower: there is less air above\\\") and its reply (\\\"less air above means less weight of air, so lower pressure\\\") have just given this answer word for word. She only has to copy it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.5 none\",\"quote\":\"Here is what a good line says. There is less air above. So less weight of air pushes down.\",\"what\":\"The model answer is again in fragments, and it does not mention the pressure she was asked about.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.7 don't know (first time)\",\"quote\":\"Pressure has its own unit, named after a scientist.\",\"what\":\"She was never told the pascal is named after a scientist. The newton is named after one too, so the hint does not separate the options.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.8 \\\"100.5 Pa\\\"\",\"quote\":\"Not quite: divide the force by the area: 100 ÷ 0.5 = 200 Pa.\",\"what\":\"The reply does not fit the mistake. She added the two numbers, and it should say so, as the 1.1a reply does with \\\"multiply, do not add\\\".\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"4.11\",\"quote\":\"\\\"More pressure on its bottom than on its top\\\" / \\\"Water pushing only upwards\\\" / \\\"The object losing weight\\\"\",\"what\":\"The quiz question reuses 3.3 with the same three options barely reworded. It tests whether she remembers the button, not whether she understands.\",\"severity\":\"minor\"},{\"fault\":\"F1\",\"turn\":\"4.12\",\"quote\":\"which is true of atmospheric pressure higher above the ground?\",\"what\":\"This is the same question as 4.4, asked a few minutes earlier, and as 4.5. It is the third time she is asked the same thing in one key point.\",\"severity\":\"minor\"},{\"fault\":\"P14\",\"turn\":\"whole lesson\",\"quote\":\"Button: Next\",\"what\":\"There is nothing hands-on and no picture anywhere in the script: no column of water, no three containers, no arrows on a submerged block. This topic depends on diagrams, and key points 3 and 4 are read-then-click with no calculation or activity, so she is likely to drift.\",\"severity\":\"a teacher would correct it\"}],\"counts\":[{\"fault\":\"L3\",\"instances\":2},{\"fault\":\"F3\",\"instances\":7},{\"fault\":\"F10\",\"instances\":1},{\"fault\":\"F1\",\"instances\":3},{\"fault\":\"F2\",\"instances\":1},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"F8\",\"instances\":4},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":15}],\"overall\":\"No, not as it stands. The physics is mostly sound and the worked examples and calculation practice are fine, but the lesson opens with two recall questions on moments and density that a first-time learner cannot answer, and then relies on density, column, gravitational field strength and resultant force without explaining them. The containers question (2.7) is answered only by pointing at the formula, which will leave her sensible \\\"more water, more weight\\\" idea uncorrected, and 3.7 tells her a correct answer is only \\\"partly there\\\". Key points 3 and 4 mostly ask her to repeat the sentence she has just read, and there is no picture or hands-on activity, so I would want these fixed before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "L3",
+      "turn": "1.1a",
+      "quote": "First, two quick questions from earlier lessons. A 40 N force acts 0.5 m from a pivot. What is its moment?",
+      "what": "The lesson opens by testing moments, which she has not been taught here and which this lesson never uses. A first-time learner can only guess, and may start by getting one wrong.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.1a",
+      "quote": "A 40 N force acts 0.5 m from a pivot. What is its moment?",
+      "what": "\"Moment\" and \"pivot\" are used with no explanation. The only help is the bare formula after she says she does not know.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F10",
+      "turn": "1.1a",
+      "quote": "Yes: M = F d = 40 × 0.5 = 20 Nm.",
+      "what": "The symbols M, F and d are used without saying what each one stands for or its unit. The same bare equation appears in the \"still doesn't know\" and skip replies.",
+      "severity": "minor"
+    },
+    {
+      "fault": "L3",
+      "turn": "1.1b",
+      "quote": "Second: a block has a mass of 2 kg and a volume of 0.001 m³. What is its density?",
+      "what": "This assumes she already knows density and its equation. Nothing in the lesson has told her what density is, so she cannot answer from what she has been given.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.3",
+      "quote": "The particles of a fluid move about and hit every surface they touch.",
+      "what": "\"Particles\" is used as if she already has the particle picture of liquids and gases. One sentence saying a fluid is made of tiny moving particles would fix it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.7",
+      "quote": "A 500 N box rests on a face 0.5 m long and 0.4 m wide. What pressure does it put on the floor, in Pa?",
+      "what": "Her first practice question needs an extra step (area = length × width) that the worked example did not show. \"Rests on a face\" is also awkward wording she may not follow.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.7",
+      "quote": "A 500 N box",
+      "what": "She has not been told that the box's weight is the force pressing on the floor. \"A 500 N box\" will not obviously mean F = 500 N to a beginner.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.9",
+      "quote": "It pushes at right angles on every surface it touches.",
+      "what": "This repeats 1.3 (\"hit every surface they touch… push on the surface at right angles to it\"). Only \"in every direction\" is new, and it arrives after the practice instead of with the idea.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10",
+      "quote": "The AI checks which of these points it makes: \"the force normal to a surface\", \"divided by the area of the surface\".",
+      "what": "The lesson defined pressure in 1.4 as \"the force on each square metre of a surface\". If she repeats that, she may be told \"Still needed: divided by the area\", marking down the lesson's own definition.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10 all of them",
+      "quote": "Yes: your line makes every point. You have this: the force normal to a surface. You have this: divided by the area of the surface.",
+      "what": "This is stilted, machine-like feedback. \"You have this\" twice, followed by sentence fragments, does not read as a teacher talking, and the same template is reused in 2.8, 3.7 and 4.5.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10 none",
+      "quote": "Here is what a good line says. The force normal to a surface. Divided by the area of the surface.",
+      "what": "The model answer is given as two broken fragments, not one sentence. She never sees the good line written out whole on this branch.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.1",
+      "quote": "the taller the column of water above you",
+      "what": "\"Column of water\" is used without saying what it means (the water directly above you, like a tall stack). The whole of key point 2 depends on this picture.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.2",
+      "quote": "Pressure also grows with the density of the liquid. A denser liquid has more mass in each column",
+      "what": "Density has never been explained in this lesson, only quizzed as recall. \"Denser\" needs a line such as \"more mass packed into each cubic metre\".",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.3",
+      "quote": "gravitational field strength",
+      "what": "The term is used with no explanation. She is not told that g is the weight of each kilogram, about 9.8 N/kg on Earth.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.3",
+      "quote": "You are given it.",
+      "what": "Given what, and where? The line means the equation is on the exam sheet, but it does not say so. Exam talk also sits oddly for someone meeting the topic for the first time.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "2.3",
+      "quote": "The equation is p = h ρ g: pressure = height of the column × density of the liquid × gravitational field strength. h is in metres (m), ρ (rho) in kg/m³ and g in N/kg. You are given it.",
+      "what": "One bubble carries a new equation, three symbols (one a Greek letter), three units and an exam note. That should be split, as p = F ÷ A was across 1.4 and 1.5.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.5",
+      "quote": "in the same pool",
+      "what": "The worked example never mentioned a pool, only \"water\" at 2 m. \"The same pool\" points to something she has not been given.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.7",
+      "quote": "Not quite: p = h ρ g has no width in it. Same depth and same liquid means the same pressure.",
+      "what": "The lesson has just taught that pressure comes from the weight of water above, so \"the widest one\" is a sensible answer. The reply only points at the formula and never says that a wider container has more weight spread over more area, so each square metre carries the same.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8 none",
+      "quote": "Here is what a good line says. There is a taller column of liquid above. So more weight pushes down.",
+      "what": "The model answer is again given as chopped fragments, not the single good line the question asked for.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.2",
+      "quote": "gives a resultant force upwards on the object. This upward force from a liquid is called upthrust.",
+      "what": "\"Resultant force\" is used unexplained, in the same message that introduces the new word \"upthrust\".",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.3",
+      "quote": "A brick is held under water. Why is there an upthrust on it?",
+      "what": "The answer was stated in the two messages just before (\"the water pushes up on the bottom harder than it pushes down on the top\"). She only has to pick out the sentence she has just read.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.4",
+      "quote": "It sinks when its weight is bigger than the upthrust, even once it is fully under.",
+      "what": "\"Even once it is fully under\" will not mean anything to her. She has not been told that upthrust grows as more of the object goes under and stops growing once it is fully submerged.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.5",
+      "quote": "An object less dense than the liquid floats, and one denser than the liquid sinks.",
+      "what": "The density rule is set down beside the upthrust-and-weight rule with nothing linking them. Later, 3.7 says \"which happens when it is less dense\" as though this had been explained.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.6",
+      "quote": "A large log floats, but a small stone sinks. Why?",
+      "what": "The message immediately before said \"An object less dense than the liquid floats, and one denser than the liquid sinks\". The right option is that sentence again.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.7 some",
+      "quote": "Partly there. You have this: when the upthrust equals its weight. Still needed: when it is less dense than the liquid.",
+      "what": "\"When the upthrust equals its weight\" is a complete, correct one-line answer. She is told she is only partly there because she did not also give a second, different answer.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "3.7 none",
+      "quote": "Here is what a good line says. When the upthrust equals its weight. When it is less dense than the liquid.",
+      "what": "Two disconnected fragments are offered as \"a good line\". It reads as two separate answers, with nothing to say how they relate.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.2",
+      "quote": "Air molecules are always hitting every surface.",
+      "what": "The lesson has said \"particles\" until now and switches to \"molecules\" without saying they are the particles of the air.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P6",
+      "turn": "4.3",
+      "quote": "Higher up, there is less air above a surface, so the weight of air above it is smaller. So the pressure falls as height increases. The air also gets less dense higher up.",
+      "what": "Three ideas are in one message: less air above, pressure falls with height, and the air gets less dense. The last is tacked on with no explanation.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.4",
+      "quote": "A climber goes up a high mountain. Which is true of the air pressure at the top?",
+      "what": "The message just before said \"the pressure falls as height increases\" and gave the reason. The right button repeats both.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.5",
+      "quote": "In one line: why does air pressure fall as you go higher?",
+      "what": "The right option in 4.4 (\"It is lower: there is less air above\") and its reply (\"less air above means less weight of air, so lower pressure\") have just given this answer word for word. She only has to copy it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.5 none",
+      "quote": "Here is what a good line says. There is less air above. So less weight of air pushes down.",
+      "what": "The model answer is again in fragments, and it does not mention the pressure she was asked about.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.7 don't know (first time)",
+      "quote": "Pressure has its own unit, named after a scientist.",
+      "what": "She was never told the pascal is named after a scientist. The newton is named after one too, so the hint does not separate the options.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.8 \"100.5 Pa\"",
+      "quote": "Not quite: divide the force by the area: 100 ÷ 0.5 = 200 Pa.",
+      "what": "The reply does not fit the mistake. She added the two numbers, and it should say so, as the 1.1a reply does with \"multiply, do not add\".",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.11",
+      "quote": "\"More pressure on its bottom than on its top\" / \"Water pushing only upwards\" / \"The object losing weight\"",
+      "what": "The quiz question reuses 3.3 with the same three options barely reworded. It tests whether she remembers the button, not whether she understands.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F1",
+      "turn": "4.12",
+      "quote": "which is true of atmospheric pressure higher above the ground?",
+      "what": "This is the same question as 4.4, asked a few minutes earlier, and as 4.5. It is the third time she is asked the same thing in one key point.",
+      "severity": "minor"
+    },
+    {
+      "fault": "P14",
+      "turn": "whole lesson",
+      "quote": "Button: Next",
+      "what": "There is nothing hands-on and no picture anywhere in the script: no column of water, no three containers, no arrows on a submerged block. This topic depends on diagrams, and key points 3 and 4 are read-then-click with no calculation or activity, so she is likely to drift.",
+      "severity": "a teacher would correct it"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 15
+    },
+    {
+      "fault": "F3",
+      "instances": 7
+    },
+    {
+      "fault": "F8",
+      "instances": 4
+    },
+    {
+      "fault": "F1",
+      "instances": 3
+    },
+    {
+      "fault": "L3",
+      "instances": 2
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "F10",
+      "instances": 1
+    },
+    {
+      "fault": "F2",
+      "instances": 1
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    }
+  ],
+  "overall": "No, not as it stands. The physics is mostly sound and the worked examples and calculation practice are fine, but the lesson opens with two recall questions on moments and density that a first-time learner cannot answer, and then relies on density, column, gravitational field strength and resultant force without explaining them. The containers question (2.7) is answered only by pointing at the formula, which will leave her sensible \"more water, more weight\" idea uncorrected, and 3.7 tells her a correct answer is only \"partly there\". Key points 3 and 4 mostly ask her to repeat the sentence she has just read, and there is no picture or hands-on activity, so I would want these fixed before she uses it."
+}

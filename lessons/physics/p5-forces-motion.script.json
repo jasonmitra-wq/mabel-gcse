@@ -79,7 +79,7 @@
     {
      "id": "1.2",
      "type": "say",
-     "text": "Now this lesson. Every quantity in physics has a size: a number with a unit, such as 5 kg or 20 m. The size of a quantity is also called its magnitude."
+     "text": "Now this lesson. A quantity is anything you can measure, such as a mass or a length. Every quantity has a size: a number with a unit, such as 5 kg or 20 m. Its size is also called its magnitude."
     },
     {
      "id": "1.3",
@@ -89,7 +89,7 @@
     {
      "id": "1.4",
      "type": "say",
-     "text": "Other quantities also need a direction. A push of 10 newtons to the left does not do the same as 10 newtons to the right. A quantity with a size and a direction is called a vector."
+     "text": "Other quantities also need a direction. Walking 10 m to the left does not take you to the same place as walking 10 m to the right. A quantity with a size and a direction is called a vector."
     },
     {
      "id": "1.5",
@@ -131,7 +131,12 @@
     {
      "id": "1.7",
      "type": "say",
-     "text": "But where do you end up? In a straight line from your start, you are 500 m away, about 53° north of east. The straight-line distance from start to finish, with its direction, is called the displacement."
+     "text": "But where do you end up? The two parts of the walk make a right-angled triangle, so Pythagoras gives the straight line: 500 m, about 53° north of east. The straight-line distance from start to finish, with its direction, is called the displacement."
+    },
+    {
+     "id": "1.7b",
+     "type": "say",
+     "text": "Displacement has a size and a direction, so it is a vector. Distance is its scalar partner: just how far, with no direction."
     },
     {
      "id": "1.8",
@@ -173,7 +178,7 @@
     {
      "id": "1.10",
      "type": "say",
-     "text": "Velocity is speed in a given direction, so velocity is a vector. 20 m/s is a speed. 20 m/s due north is a velocity."
+     "text": "Velocity is speed in a given direction, so velocity is a vector: it is displacement ÷ time. 20 m/s is a speed. 20 m/s due north is a velocity."
     },
     {
      "id": "1.11",
@@ -194,7 +199,7 @@
        "branch": "speedchange"
       }
      ],
-     "right": "Yes: the speed stays the same, but the direction changes all the way round. A change of direction is a change of velocity.",
+     "right": "Right: the speed stays the same, but the direction changes all the way round. A change of direction is a change of velocity.",
      "wrong": {
       "other": "Not quite: no, because the direction keeps changing.",
       "speed": "Not quite: the speed is steady, but velocity includes direction. Going round a circle, the direction changes all the time, so the velocity changes.",
@@ -212,8 +217,8 @@
      "type": "own",
      "prompt": "In one line: what is the difference between a scalar and a vector?",
      "points": [
-      "a scalar has a size only",
-      "a vector has a size and a direction"
+      "A scalar has a size only.",
+      "A vector has a size and a direction."
      ],
      "idk": "No problem. A good line would be: a scalar has only a size, but a vector has a size and a direction."
     }
@@ -231,12 +236,12 @@
     {
      "id": "2.2",
      "type": "say",
-     "text": "The equation is s = v t: distance travelled = speed × time. Here s is the distance in metres (m), v is the speed in metres per second (m/s) and t is the time in seconds (s)."
+     "text": "The equation is v = s ÷ t: speed = distance ÷ time. Here v is the speed in metres per second (m/s), s is the distance in metres (m) and t is the time in seconds."
     },
     {
      "id": "2.3",
      "type": "say",
-     "text": "Rearranged for speed: v = s ÷ t. Rearranged for time: t = s ÷ v."
+     "text": "Rearranged for distance: s = v t. Rearranged for time: t = s ÷ v."
     },
     {
      "id": "2.4",
@@ -290,7 +295,7 @@
      "id": "2.6",
      "type": "ask",
      "kind": "number",
-     "question": "A train travels 3 km in 100 s. What is its average speed, in m/s?",
+     "question": "A train travels 3 km in 100 s. What is its average speed, in m/s? (1 km = 1000 m.)",
      "answer": {
       "value": 30,
       "unit": "m/s",
@@ -370,7 +375,7 @@
     {
      "id": "2.11",
      "type": "say",
-     "text": "How steep a line is, found from how far it rises divided by how far it runs along, is called the gradient. On a distance-time graph, the gradient is the speed."
+     "text": "The steepness of a line is called the gradient. To find it, divide how far the line rises by how far it runs along. On a distance-time graph, the gradient is the speed."
     },
     {
      "id": "2.12",
@@ -452,8 +457,7 @@
      "type": "own",
      "prompt": "In one line: what does the gradient of a distance-time graph tell you?",
      "points": [
-      "it gives the speed",
-      "steeper means faster"
+      "The gradient of a distance-time graph is the speed."
      ],
      "idk": "No problem. A good line would be: the gradient of a distance-time graph is the speed, so a steeper line means a faster speed."
     }
@@ -472,6 +476,11 @@
      "id": "3.2",
      "type": "say",
      "text": "The equation is a = Δv ÷ t: acceleration = change in velocity ÷ time taken. Here a is the acceleration in metres per second squared (m/s²), Δv is the change in velocity in m/s and t is the time in seconds (s)."
+    },
+    {
+     "id": "3.2b",
+     "type": "say",
+     "text": "m/s² is read as \"metres per second squared\". An acceleration of 3 m/s² means the velocity goes up by 3 m/s every second."
     },
     {
      "id": "3.3",
@@ -541,15 +550,19 @@
      "id": "3.7",
      "type": "ask",
      "kind": "number",
-     "question": "A cyclist slows from 8 m/s to 2 m/s in 3 s. What is the size of the deceleration, in m/s²?",
+     "question": "A cyclist slows from 8 m/s to 2 m/s in 3 s. What is the acceleration, in m/s²?",
      "answer": {
-      "value": 2,
+      "value": -2,
       "unit": "m/s²",
       "tolerance": 0.01
      },
      "wrongValues": [
       {
-       "value": 2.67,
+       "value": 2,
+       "branch": "sign"
+      },
+      {
+       "value": -2.67,
        "branch": "start"
       },
       {
@@ -561,24 +574,30 @@
        "branch": "add"
       }
      ],
-     "right": "Yes: the velocity falls by 8 − 2 = 6 m/s, and 6 ÷ 3 = 2 m/s².",
+     "right": "Yes: Δv = 2 − 8 = −6 m/s, and −6 ÷ 3 = −2 m/s². The minus sign means a deceleration of 2 m/s².",
      "wrong": {
-      "other": "Not quite: 2 m/s². The change is 8 − 2 = 6 m/s, and 6 ÷ 3 = 2 m/s².",
-      "start": "Not quite: 2 m/s². Use the change in velocity, not the starting velocity: 8 − 2 = 6 m/s, and 6 ÷ 3 = 2 m/s².",
-      "final": "Not quite: 2 m/s². Use the change in velocity, not the final velocity: 8 − 2 = 6 m/s, and 6 ÷ 3 = 2 m/s².",
-      "add": "Not quite: 2 m/s². Subtract the velocities to find the change: 8 − 2 = 6 m/s. Then 6 ÷ 3 = 2 m/s²."
+      "other": "Not quite: −2 m/s². Δv = final − starting = 2 − 8 = −6 m/s, and −6 ÷ 3 = −2 m/s².",
+      "sign": "Nearly: the size is right, but the velocity falls, so Δv = 2 − 8 = −6 m/s and a = −2 m/s². The minus sign shows it is a deceleration.",
+      "start": "Not quite: −2 m/s². Use the change in velocity, not the starting velocity: 2 − 8 = −6 m/s, and −6 ÷ 3 = −2 m/s².",
+      "final": "Not quite: −2 m/s². Use the change in velocity, not the final velocity: 2 − 8 = −6 m/s, and −6 ÷ 3 = −2 m/s².",
+      "add": "Not quite: −2 m/s². Subtract the velocities: final − starting = 2 − 8 = −6 m/s. Then −6 ÷ 3 = −2 m/s²."
      },
      "idk": [
       {
-       "hint": "The velocity drops from 8 m/s to 2 m/s. How much does it change by? Divide that by 3 s."
+       "hint": "Δv = final velocity − starting velocity = 2 − 8. Then divide by 3 s."
       }
      ],
-     "answerWhy": "The change in velocity is 8 − 2 = 6 m/s, so the deceleration is 6 ÷ 3 = 2 m/s²."
+     "answerWhy": "Δv = 2 − 8 = −6 m/s, so a = Δv ÷ t = −6 ÷ 3 = −2 m/s²: a deceleration of 2 m/s²."
     },
     {
      "id": "3.8",
      "type": "say",
-     "text": "A velocity-time graph has velocity up the side and time along the bottom. Its gradient is the acceleration. A flat line means a steady velocity, with no acceleration."
+     "text": "A velocity-time graph has velocity up the side and time along the bottom."
+    },
+    {
+     "id": "3.8b",
+     "type": "say",
+     "text": "The gradient of a velocity-time graph is the acceleration. A flat line means the velocity is steady: there is no acceleration."
     },
     {
      "id": "3.9",
@@ -615,7 +634,7 @@
     {
      "id": "3.10",
      "type": "say",
-     "text": "The area under a velocity-time graph is the distance travelled. A straight line rising from zero makes a triangle, with area = ½ × base × height."
+     "text": "Distance = speed × time, so on a velocity-time graph the area between the line and the time axis is the distance travelled. A straight line rising from zero makes a triangle: area = ½ × base × height."
     },
     {
      "id": "3.11",
@@ -655,8 +674,7 @@
      "type": "own",
      "prompt": "In one line: what is acceleration?",
      "points": [
-      "how quickly the velocity changes",
-      "the change in velocity divided by the time"
+      "Acceleration is how quickly the velocity changes."
      ],
      "idk": "No problem. A good line would be: acceleration is how quickly the velocity changes: the change in velocity divided by the time taken."
     }
@@ -733,7 +751,7 @@
     {
      "id": "4.5",
      "type": "worked",
-     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "text": "Here is a second worked example, this time finding the acceleration of a braking car. Tap \"Show the first step\" under it.",
      "question": "A car brakes from 20 m/s to a stop in 40 m. What is its acceleration?",
      "steps": [
       "Write the equation: v² − u² = 2 a s.",
@@ -770,7 +788,7 @@
      "wrong": {
       "other": "Not quite: 1 m/s². 6² − 4² = 20, and 20 = 2 × a × 10, so a = 20 ÷ 20 = 1 m/s².",
       "notwo": "Not quite: 1 m/s². Remember the 2: 20 = 2 × a × 10 = 20a, so a = 1 m/s².",
-      "nosquare": "Not quite: 1 m/s². Square each velocity first: 6² − 4² = 36 − 16 = 20. Then 20 = 2 × a × 10, so a = 1 m/s²."
+      "nosquare": "Not quite: 1 m/s². Square each velocity first, 6² − 4² = 36 − 16 = 20, and remember the 2: 20 = 2 × a × 10, so a = 1 m/s²."
      },
      "idk": [
       {
@@ -784,10 +802,9 @@
      "type": "own",
      "prompt": "In one line: which equation links velocity, acceleration and distance when the time is not given?",
      "points": [
-      "final velocity squared minus starting velocity squared",
-      "equals 2 × acceleration × distance"
+      "The equation is v² − u² = 2 a s."
      ],
-     "idk": "No problem. A good line would be: v² − u² = 2 a s: final velocity squared minus starting velocity squared equals 2 × acceleration × distance."
+     "idk": "No problem. A good line would be: the equation v² − u² = 2 a s links the final and starting velocities, the acceleration and the distance."
     }
    ]
   },
@@ -798,7 +815,7 @@
     {
      "id": "5.1",
      "type": "say",
-     "text": "Acceleration that stays the same is called uniform: the velocity changes by the same amount every second, so its graph has no bends."
+     "text": "Acceleration that stays the same is called uniform: the velocity changes by the same amount every second. On a velocity-time graph, uniform acceleration is a straight sloping line."
     },
     {
      "id": "5.2",
@@ -808,12 +825,12 @@
     {
      "id": "5.3",
      "type": "say",
-     "text": "Some things fall with only their weight acting on them: there is no air resistance. Falling under gravity alone is called free fall."
+     "text": "The pull of gravity on an object is its weight. Some objects fall with only their weight acting: no air pushes back on them. Falling under gravity alone is called free fall."
     },
     {
      "id": "5.4",
      "type": "say",
-     "text": "Near the Earth's surface, anything in free fall accelerates at about 9.8 m/s². Its mass makes no difference."
+     "text": "Near the Earth's surface, anything in free fall accelerates at about 9.8 m/s²."
     },
     {
      "id": "5.5",
@@ -850,12 +867,44 @@
     {
      "id": "5.6",
      "type": "say",
-     "text": "In air it is different. As a falling object gets faster, the air resistance pushing up on it gets bigger."
+     "text": "In air it is different. Air pushes back on anything moving through it: this push is air resistance. As a falling object gets faster, the air resistance on it gets bigger."
     },
     {
      "id": "5.7",
+     "type": "ask",
+     "kind": "tap",
+     "question": "A skydiver keeps speeding up, and the air resistance keeps growing. When does the skydiver stop speeding up?",
+     "options": [
+      {
+       "text": "When air resistance equals the weight",
+       "branch": "right"
+      },
+      {
+       "text": "When the weight drops to zero",
+       "branch": "zero"
+      },
+      {
+       "text": "When air resistance is bigger than the weight",
+       "branch": "bigger"
+      }
+     ],
+     "right": "Yes: once air resistance is as big as the weight, the up and down forces are equal and cancel.",
+     "wrong": {
+      "other": "Not quite: when air resistance equals the weight.",
+      "zero": "Not quite: the weight stays the same all the way down. The air resistance grows until it equals the weight.",
+      "bigger": "Not quite: air resistance grows only until it equals the weight. Then the forces cancel, and it stops growing."
+     },
+     "idk": [
+      {
+       "hint": "Air resistance grows as the skydiver speeds up. The weight stays the same. When would the two be equal?"
+      }
+     ],
+     "answerWhy": "Air resistance grows with speed until it equals the weight. Then the forces cancel and the skydiver stops speeding up."
+    },
+    {
+     "id": "5.7b",
      "type": "say",
-     "text": "In time, the air resistance grows until it is as big as the weight. The up and down forces are then equal, so the object stops speeding up. That steady speed is called the terminal velocity."
+     "text": "With the forces cancelling, a moving object keeps the same speed: it does not stop. That steady falling speed is called the terminal velocity."
     },
     {
      "id": "5.8",
@@ -892,49 +941,16 @@
     {
      "id": "5.9",
      "type": "say",
-     "text": "When the parachute opens, the air resistance jumps up and becomes bigger than the weight. The skydiver slows down until the forces are equal again, at a new, lower terminal velocity."
-    },
-    {
-     "id": "5.10",
-     "type": "ask",
-     "kind": "tap",
-     "question": "A ball dropped from a tall building keeps getting faster for a while. Why does it stop speeding up?",
-     "options": [
-      {
-       "text": "Air resistance grows until it equals the weight",
-       "branch": "right"
-      },
-      {
-       "text": "Gravity gets weaker as it falls",
-       "branch": "gravity"
-      },
-      {
-       "text": "Its weight gets smaller as it falls",
-       "branch": "weight"
-      }
-     ],
-     "right": "Yes: the air resistance grows with speed until it equals the weight.",
-     "wrong": {
-      "other": "Not quite: the air resistance grows until it equals the weight.",
-      "gravity": "Not quite: gravity stays the same near the ground. It is the air resistance that grows with speed, until it equals the weight.",
-      "weight": "Not quite: the ball's weight does not change. The air resistance grows with speed until it equals the weight."
-     },
-     "idk": [
-      {
-       "hint": "Which force changes as the ball gets faster?"
-      }
-     ],
-     "answerWhy": "Air resistance increases with speed until it equals the weight. Then the forces cancel and the ball falls at its terminal velocity."
+     "text": "When a skydiver opens a parachute, the air resistance jumps up and becomes bigger than the weight. The skydiver slows down until the forces are equal again, at a new, lower terminal velocity."
     },
     {
      "id": "5.11",
      "type": "own",
      "prompt": "In one line: why does a falling skydiver reach a steady speed?",
      "points": [
-      "air resistance increases with speed",
-      "until it equals the weight"
+      "Air resistance grows as the speed increases until it equals the weight."
      ],
-     "idk": "No problem. A good line would be: air resistance grows as the speed increases until it equals the weight, so the forces cancel and the speed stays steady."
+     "idk": "No problem. A good line would be: a falling skydiver's air resistance grows as the speed increases until it equals the weight, so the forces cancel and the speed stays steady."
     }
    ]
   },
@@ -953,6 +969,11 @@
      "text": "Some forces need the objects to touch. A force between objects that are touching is called a contact force. Friction, air resistance and the tension in a rope are contact forces."
     },
     {
+     "id": "6.2b",
+     "type": "say",
+     "text": "Friction is the force that resists one surface sliding over another. Tension is the pull in a stretched rope or string."
+    },
+    {
      "id": "6.3",
      "type": "say",
      "text": "The push up from a surface on whatever rests on it, such as a floor on your feet, is the normal contact force."
@@ -960,7 +981,7 @@
     {
      "id": "6.4",
      "type": "say",
-     "text": "Other forces act across a gap. A force between objects that are apart is called a non-contact force. Gravity, magnetic force and electrostatic force are examples."
+     "text": "Other forces act across a gap. A force between objects that are apart is called a non-contact force. Gravity, magnetic force and electrostatic force, between charged objects, are examples."
     },
     {
      "id": "6.5",
@@ -969,30 +990,30 @@
      "question": "Which of these is a contact force?",
      "options": [
       {
-       "text": "The tension in a rope",
+       "text": "A foot kicking a ball",
        "branch": "right"
       },
       {
-       "text": "Gravity",
+       "text": "The Earth pulling on the Moon",
        "branch": "gravity"
       },
       {
-       "text": "Magnetic force",
+       "text": "A magnet pulling a pin",
        "branch": "magnet"
       }
      ],
-     "right": "Yes: the rope must touch what it pulls, so tension is a contact force.",
+     "right": "Yes: the foot must touch the ball to push it, so that is a contact force.",
      "wrong": {
-      "other": "Not quite: the tension in a rope.",
-      "gravity": "Not quite: gravity pulls across a gap, even through space. It is a non-contact force. Tension is a contact force.",
-      "magnet": "Not quite: a magnet can pull without touching. It is a non-contact force. Tension is a contact force."
+      "other": "Not quite: a foot kicking a ball.",
+      "gravity": "Not quite: the Earth pulls the Moon across empty space, so gravity is a non-contact force. A kick needs the foot to touch the ball.",
+      "magnet": "Not quite: a magnet can pull a pin from a distance, so that is a non-contact force. A kick needs the foot to touch the ball."
      },
      "idk": [
       {
        "hint": "A contact force needs the objects to touch. Which of these only works by touching?"
       }
      ],
-     "answerWhy": "A rope must touch what it pulls, so tension is a contact force. Gravity and magnetic force act across a gap."
+     "answerWhy": "A kick only works when the foot touches the ball, so it is a contact force. Gravity and magnetic force act across a gap."
     },
     {
      "id": "6.6",
@@ -1041,8 +1062,8 @@
      "type": "own",
      "prompt": "In one line: what is the difference between a contact force and a non-contact force?",
      "points": [
-      "a contact force needs the objects to touch",
-      "a non-contact force acts between objects that are apart"
+      "A contact force needs the objects to touch.",
+      "A non-contact force acts between objects that are apart."
      ],
      "idk": "No problem. A good line would be: a contact force acts between objects that touch, but a non-contact force acts between objects that are apart."
     },
@@ -1088,33 +1109,33 @@
      "id": "6.12",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 2 of 6: a sprinter runs 100 m in 10 s. What is the average speed?",
+     "question": "Quiz, question 2 of 6: a ball starts from rest and speeds up at 2 m/s² over 9 m. What is its final velocity?",
      "options": [
       {
-       "text": "10 m/s",
+       "text": "6 m/s",
        "branch": "right"
       },
       {
-       "text": "1000 m/s",
-       "branch": "times"
+       "text": "36 m/s",
+       "branch": "noroot"
       },
       {
-       "text": "0.1 m/s",
-       "branch": "flip"
+       "text": "18 m/s",
+       "branch": "times"
       }
      ],
-     "right": "Yes: 100 ÷ 10 = 10 m/s.",
+     "right": "Yes: v² = 2 × 2 × 9 = 36, so v = 6 m/s.",
      "wrong": {
-      "other": "Not quite: 10 m/s.",
-      "times": "Not quite: divide the distance by the time: 100 ÷ 10 = 10 m/s.",
-      "flip": "Not quite: divide the distance by the time, not the other way round: 100 ÷ 10 = 10 m/s."
+      "other": "Not quite: 6 m/s.",
+      "noroot": "Not quite: 36 is v². Take the square root: v = 6 m/s.",
+      "times": "Not quite: use v² − u² = 2 a s: v² = 2 × 2 × 9 = 36, so v = 6 m/s."
      },
      "idk": [
       {
-       "hint": "Speed = distance ÷ time."
+       "hint": "From rest, u = 0, so v² = 2 × a × s."
       }
      ],
-     "answerWhy": "v = s ÷ t = 100 ÷ 10 = 10 m/s.",
+     "answerWhy": "v² − u² = 2 a s with u = 0 gives v² = 2 × 2 × 9 = 36, so v = 6 m/s.",
      "quiz": true
     },
     {
@@ -1187,33 +1208,33 @@
      "id": "6.15",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 5 of 6: which is true when a falling object reaches terminal velocity?",
+     "question": "Quiz, question 5 of 6: on a velocity-time graph, what does the area under the line show?",
      "options": [
       {
-       "text": "Air resistance equals its weight",
+       "text": "The distance travelled",
        "branch": "right"
       },
       {
-       "text": "Its weight has dropped to zero",
-       "branch": "zero"
+       "text": "The acceleration",
+       "branch": "gradient"
       },
       {
-       "text": "It is still speeding up",
-       "branch": "faster"
+       "text": "The time taken",
+       "branch": "time"
       }
      ],
-     "right": "Yes: the forces are equal, so the speed stays steady.",
+     "right": "Yes: the area under a velocity-time graph is the distance travelled.",
      "wrong": {
-      "other": "Not quite: air resistance equals its weight.",
-      "zero": "Not quite: the weight stays the same. Air resistance has grown to equal it.",
-      "faster": "Not quite: at terminal velocity the speed is steady, because air resistance equals the weight."
+      "other": "Not quite: the distance travelled.",
+      "gradient": "Not quite: the acceleration is the gradient. The area under the line is the distance travelled.",
+      "time": "Not quite: time runs along the bottom. The area under the line is the distance travelled."
      },
      "idk": [
       {
-       "hint": "At terminal velocity the speed stays the same."
+       "hint": "Distance = speed × time. Which part of the graph multiplies velocity by time?"
       }
      ],
-     "answerWhy": "At terminal velocity the air resistance equals the weight, so the forces cancel and the speed is steady.",
+     "answerWhy": "The area under a velocity-time graph is velocity × time, which is the distance travelled.",
      "quiz": true
     },
     {

@@ -39,7 +39,7 @@
      },
      "idk": [
       {
-       "hint": "Moment = force × distance from the pivot."
+       "hint": "Moment = force × distance from the pivot: 40 × 0.5."
       }
      ],
      "answerWhy": "M = F d = 40 × 0.5 = 20 Nm."
@@ -71,7 +71,7 @@
      },
      "idk": [
       {
-       "hint": "Density = mass ÷ volume."
+       "hint": "Density = mass ÷ volume: 2 kg ÷ 0.001 m³."
       }
      ],
      "answerWhy": "Density = mass ÷ volume = 2 ÷ 0.001 = 2000 kg/m³."
@@ -84,7 +84,7 @@
     {
      "id": "1.3",
      "type": "say",
-     "text": "The particles of a fluid move about and hit every surface they touch. Together their hits push on the surface at right angles to it. At right angles to a surface is called normal to it."
+     "text": "A fluid is made of tiny particles that move about and hit every surface they touch, from every side: up, down and sideways. Their hits push on each surface at right angles to it. At right angles to a surface is called normal to it."
     },
     {
      "id": "1.4",
@@ -115,7 +115,7 @@
      "id": "1.7",
      "type": "ask",
      "kind": "number",
-     "question": "Your turn. A 500 N box rests on a face 0.5 m long and 0.4 m wide. What pressure does it put on the floor, in Pa?",
+     "question": "Your turn. A box weighs 500 N, so it pushes on the floor with 500 N. The face it rests on is 0.5 m long and 0.4 m wide. What pressure does it put on the floor, in Pa?",
      "answer": {
       "value": 2500,
       "unit": "Pa",
@@ -177,17 +177,11 @@
      "answerWhy": "The force is the same, but the heels touch a smaller area, so p = F ÷ A is bigger."
     },
     {
-     "id": "1.9",
-     "type": "say",
-     "text": "In a fluid, the pressure pushes in every direction: down, up and sideways. It pushes at right angles on every surface it touches."
-    },
-    {
      "id": "1.10",
      "type": "own",
      "prompt": "In one line: what is pressure?",
      "points": [
-      "the force normal to a surface",
-      "divided by the area of the surface"
+      "Pressure is the force on each square metre of a surface: force ÷ area."
      ],
      "idk": "No problem. A good line would be: pressure is the force normal to a surface divided by the area of that surface."
     }
@@ -200,23 +194,28 @@
     {
      "id": "2.1",
      "type": "say",
-     "text": "Dive to the bottom of a pool and your ears feel the pressure. The deeper you go, the taller the column of water above you, so more weight of water pushes down."
+     "text": "Dive to the bottom of a pool and your ears feel the pressure. The deeper you go, the taller the column of water above you, the water stacked straight above you. So more weight of water pushes down."
     },
     {
      "id": "2.2",
      "type": "say",
-     "text": "Pressure also grows with the density of the liquid. A denser liquid has more mass in each column, so more weight above the same point."
+     "text": "Density is how much mass is packed into each cubic metre. A denser liquid has more mass in each column, so more weight above the same point: more pressure."
     },
     {
      "id": "2.3",
      "type": "say",
-     "text": "The equation is p = h ρ g: pressure = height of the column × density of the liquid × gravitational field strength. h is in metres (m), ρ (rho) in kg/m³ and g in N/kg. You are given it."
+     "text": "The equation is p = h ρ g: pressure = height of the column × density of the liquid × gravitational field strength."
+    },
+    {
+     "id": "2.3b",
+     "type": "say",
+     "text": "h is in metres (m); ρ (rho), the density, is in kg/m³; g, gravity's pull on each kilogram, is in N/kg. You are given this equation in the exam."
     },
     {
      "id": "2.4",
      "type": "worked",
      "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
-     "question": "Water has a density of 1000 kg/m³, and g = 9.8 N/kg. What is the pressure due to the water 2 m below the surface?",
+     "question": "In a pool, water has a density of 1000 kg/m³, and g = 9.8 N/kg. What is the pressure due to the water 2 m below the surface?",
      "steps": [
       "Write the equation: p = h ρ g.",
       "Put in the numbers: p = 2 × 1000 × 9.8.",
@@ -315,8 +314,8 @@
      "right": "Yes: the pressure depends on the depth and the density, not the shape.",
      "wrong": {
       "other": "Not quite: it is the same in all three.",
-      "wide": "Not quite: p = h ρ g has no width in it. Same depth and same liquid means the same pressure.",
-      "narrow": "Not quite: p = h ρ g has no width in it. Same depth and same liquid means the same pressure."
+      "wide": "Not quite: a wider container holds more water, but it is spread over a bigger bottom, so the force on each square metre is the same. Only depth and density matter.",
+      "narrow": "Not quite: a narrow container holds less water, but over a smaller bottom, so the force on each square metre is the same. Only depth and density matter."
      },
      "idk": [
       {
@@ -330,10 +329,9 @@
      "type": "own",
      "prompt": "In one line: why is the pressure bigger deeper in a liquid?",
      "points": [
-      "there is a taller column of liquid above",
-      "so more weight pushes down"
+      "Deeper down there is a taller column of liquid above, so more weight pushes down."
      ],
-     "idk": "No problem. A good line would be: deeper down there is a taller column of liquid above, so more weight pushes down on each square metre."
+     "idk": "No problem. A good line would be: pressure is bigger deeper in a liquid because there is a taller column of liquid above, so more weight pushes down on each square metre."
     }
    ]
   },
@@ -342,20 +340,10 @@
    "heading": "Upthrust, floating and sinking",
    "steps": [
     {
-     "id": "3.1",
-     "type": "say",
-     "text": "Now think of an object under water. Its bottom surface is deeper than its top surface, so the water pushes up on the bottom harder than it pushes down on the top."
-    },
-    {
-     "id": "3.2",
-     "type": "say",
-     "text": "The difference between the two pushes gives a resultant force upwards on the object. This upward force from a liquid is called upthrust."
-    },
-    {
      "id": "3.3",
      "type": "ask",
      "kind": "tap",
-     "question": "A brick is held under water. Why is there an upthrust on it?",
+     "question": "A brick held under water is pushed upwards by the water. Where do you think that upward push comes from?",
      "options": [
       {
        "text": "The pressure on its bottom is bigger than on its top",
@@ -384,20 +372,25 @@
      "answerWhy": "The bottom is deeper, so the pressure there is bigger than on the top, which gives a resultant force upwards."
     },
     {
-     "id": "3.4",
+     "id": "3.1",
      "type": "say",
-     "text": "An object floats when the upthrust equals its weight. It sinks when its weight is bigger than the upthrust, even once it is fully under."
+     "text": "Now think of an object under water. Its bottom surface is deeper than its top surface, so the water pushes up on the bottom harder than it pushes down on the top."
     },
     {
-     "id": "3.5",
+     "id": "3.2",
      "type": "say",
-     "text": "An object less dense than the liquid floats, and one denser than the liquid sinks. A steel ship floats because, with the air inside its hollow shape, it is less dense than water overall."
+     "text": "The difference between the two pushes gives an overall force upwards on the object. This upward force from a liquid is called upthrust."
+    },
+    {
+     "id": "3.4",
+     "type": "say",
+     "text": "The more of an object goes under, the bigger the upthrust, until it is fully under. An object floats when the upthrust equals its weight. If its weight is still bigger once it is fully under, it sinks."
     },
     {
      "id": "3.6",
      "type": "ask",
      "kind": "tap",
-     "question": "A large log floats, but a small stone sinks. Why?",
+     "question": "A large log floats, but a small stone sinks. Why do you think that is?",
      "options": [
       {
        "text": "The log is less dense than water; the stone is denser",
@@ -426,12 +419,16 @@
      "answerWhy": "Floating depends on density: the log is less dense than water, so it floats, and the stone is denser, so it sinks."
     },
     {
+     "id": "3.5",
+     "type": "say",
+     "text": "Floating links to density. An object less dense than the liquid gets enough upthrust before it is fully under, so it floats. A steel ship floats because, with the air inside its hollow shape, it is less dense than water overall."
+    },
+    {
      "id": "3.7",
      "type": "own",
      "prompt": "In one line: when does an object float?",
      "points": [
-      "when the upthrust equals its weight",
-      "when it is less dense than the liquid"
+      "An object floats when the upthrust equals its weight."
      ],
      "idk": "No problem. A good line would be: an object floats when the upthrust equals its weight, which happens when it is less dense than the liquid."
     }
@@ -449,18 +446,13 @@
     {
      "id": "4.2",
      "type": "say",
-     "text": "Air molecules are always hitting every surface. Their hits make a pressure called atmospheric pressure."
-    },
-    {
-     "id": "4.3",
-     "type": "say",
-     "text": "Higher up, there is less air above a surface, so the weight of air above it is smaller. So the pressure falls as height increases. The air also gets less dense higher up."
+     "text": "Air is made of particles called molecules. They are always hitting every surface, and their hits make a pressure called atmospheric pressure."
     },
     {
      "id": "4.4",
      "type": "ask",
      "kind": "tap",
-     "question": "A climber goes up a high mountain. Which is true of the air pressure at the top?",
+     "question": "A climber goes up a high mountain. What do you think the air pressure is like at the top?",
      "options": [
       {
        "text": "It is lower: there is less air above",
@@ -489,14 +481,23 @@
      "answerWhy": "At the top of the mountain there is less air above, so less weight of air and a lower pressure."
     },
     {
+     "id": "4.3",
+     "type": "say",
+     "text": "Higher up, there is less air above a surface, so the weight of air above it is smaller. So atmospheric pressure falls as height increases."
+    },
+    {
+     "id": "4.3b",
+     "type": "say",
+     "text": "The air also gets thinner, or less dense, higher up, because there is less air above pressing down on it."
+    },
+    {
      "id": "4.5",
      "type": "own",
      "prompt": "In one line: why does air pressure fall as you go higher?",
      "points": [
-      "there is less air above",
-      "so less weight of air pushes down"
+      "Higher up there is less air above, so less weight of air pushes down."
      ],
-     "idk": "No problem. A good line would be: higher up there is less air above you, so a smaller weight of air pushes down and the pressure is lower."
+     "idk": "No problem. A good line would be: air pressure falls as you go higher because there is less air above, so a smaller weight of air pushes down."
     },
     {
      "id": "4.6",
@@ -530,7 +531,7 @@
      },
      "idk": [
       {
-       "hint": "Pressure has its own unit, named after a scientist."
+       "hint": "The unit is named after Blaise Pascal, a French scientist."
       }
      ],
      "answerWhy": "Pressure is measured in pascals (Pa): 1 Pa = 1 N/m².",
@@ -559,7 +560,7 @@
      "wrong": {
       "other": "Not quite: 200 Pa.",
       "times": "Not quite: divide the force by the area: 100 ÷ 0.5 = 200 Pa.",
-      "add": "Not quite: divide the force by the area: 100 ÷ 0.5 = 200 Pa."
+      "add": "Not quite: you added. Divide the force by the area: 100 ÷ 0.5 = 200 Pa."
      },
      "idk": [
       {
@@ -639,66 +640,66 @@
      "id": "4.11",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 5 of 6: what causes the upthrust on an object in water?",
+     "question": "Quiz, question 5 of 6: which of these floats in water?",
      "options": [
       {
-       "text": "More pressure on its bottom than on its top",
+       "text": "A solid object less dense than water",
        "branch": "right"
       },
       {
-       "text": "Water pushing only upwards",
-       "branch": "up"
+       "text": "Any large object",
+       "branch": "large"
       },
       {
-       "text": "The object losing weight",
-       "branch": "weight"
+       "text": "Any heavy object",
+       "branch": "heavy"
       }
      ],
-     "right": "Yes: the deeper bottom surface feels more pressure.",
+     "right": "Yes: an object less dense than water floats.",
      "wrong": {
-      "other": "Not quite: more pressure on its bottom than on its top.",
-      "up": "Not quite: water pushes from every side. The push up on the bottom is bigger than the push down on the top.",
-      "weight": "Not quite: the weight does not change. The pressure is bigger on the deeper bottom surface."
+      "other": "Not quite: a solid object less dense than water.",
+      "large": "Not quite: a large rock still sinks. It depends on density: less dense than water floats.",
+      "heavy": "Not quite: a heavy log can float. It depends on density: less dense than water floats."
      },
      "idk": [
       {
-       "hint": "Which surface of the object is deeper?"
+       "hint": "Is it about size, weight or density?"
       }
      ],
-     "answerWhy": "The bottom surface is deeper, so the pressure there is bigger, giving an upward resultant force: the upthrust.",
+     "answerWhy": "Floating depends on density: an object less dense than water floats, whatever its size.",
      "quiz": true
     },
     {
      "id": "4.12",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 6 of 6: which is true of atmospheric pressure higher above the ground?",
+     "question": "Quiz, question 6 of 6: which is true of the atmosphere?",
      "options": [
       {
-       "text": "It is lower",
+       "text": "It is thin compared with the size of the Earth",
        "branch": "right"
       },
       {
-       "text": "It is higher",
-       "branch": "higher"
+       "text": "It reaches as far as the Moon",
+       "branch": "moon"
       },
       {
-       "text": "It is the same",
-       "branch": "same"
+       "text": "It is thicker than the Earth is wide",
+       "branch": "thick"
       }
      ],
-     "right": "Yes: there is less air above, so less weight of air.",
+     "right": "Yes: the atmosphere is a thin layer of air round the Earth.",
      "wrong": {
-      "other": "Not quite: it is lower.",
-      "higher": "Not quite: higher up there is less air above, so the pressure is lower.",
-      "same": "Not quite: higher up there is less air above, so the pressure is lower."
+      "other": "Not quite: it is thin compared with the size of the Earth.",
+      "moon": "Not quite: the Moon is far beyond the air. The atmosphere is a thin layer round the Earth.",
+      "thick": "Not quite: the atmosphere is a thin layer, much thinner than the Earth is wide."
      },
      "idk": [
       {
-       "hint": "Is there more or less air above you higher up?"
+       "hint": "Think of a layer of air like the skin on an apple."
       }
      ],
-     "answerWhy": "Higher up there is less air above a surface, so less weight of air and a lower atmospheric pressure.",
+     "answerWhy": "The atmosphere is a thin layer of air, thin compared with the size of the Earth.",
      "quiz": true
     },
     {

@@ -1,0 +1,371 @@
+{
+  "model": "claude-fable-5-2",
+  "stop_reason": "end_turn",
+  "effort": "medium",
+  "usage": {
+    "input_tokens": 16300,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11021,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard",
+    "output_tokens_details": {
+      "thinking_tokens": 6169
+    },
+    "iterations": [
+      {
+        "input_tokens": 16300,
+        "output_tokens": 11021,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ]
+  },
+  "cost": 0.57124,
+  "seconds": 106,
+  "screenshots": [],
+  "raw": "{\"findings\":[{\"fault\":\"F10\",\"turn\":\"1.1a don't know (first time)\",\"quote\":\"Rearrange F = m a to get a = F ÷ m.\",\"what\":\"The equation is given in bare symbols, with no reminder that F is the resultant force in N, m the mass in kg and a the acceleration in m/s². A girl who has forgotten last lesson gets nothing from this hint.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.7 wrong answers\",\"quote\":\"Not quite: 36 m. Add the two parts: 12 + 24 = 36 m.\",\"what\":\"Every wrong answer is met with the full answer at once, here and on every typed question (1.9, 2.3, 3.4, 4.8). She never gets a hint and a second go, so a slip teaches her nothing.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"1.7 don't know (first time)\",\"quote\":\"Stopping distance = thinking distance + braking distance.\",\"what\":\"This repeats message 1.6 word for word. It is not an easier step and does not point her to the two numbers or ask anything smaller.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F10\",\"turn\":\"1.8\",\"quote\":\"So thinking distance = speed × the time the driver takes to react.\",\"what\":\"The equation is stated without units (speed in m/s, time in s, distance in m). The next question then uses those units cold.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P13\",\"turn\":\"1.9\",\"quote\":\"A car travels at 20 m/s. The driver takes 0.6 s to react. What is the thinking distance, in m?\",\"what\":\"She is asked to calculate with the new equation straight away, with no worked example first.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.10\",\"quote\":\"Both parts grow with speed.\",\"what\":\"Nothing so far has said that braking distance depends on speed; that comes in key point 3. This is an unsupported claim at this stage.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.10\",\"quote\":\"At 30 mph, a typical stopping distance is about 23 m. At 70 mph it is about 96 m: about four times as far, at just over twice the speed.\",\"what\":\"The lesson has used m/s until now and switches to mph without comment. Also, 70 is 2.3 times 30, so 'just over twice' is loose and blurs the 'double speed, four times' rule taught later.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.11\",\"quote\":\"A graph shows stopping distance against speed for a car. The line curves upwards, getting steeper as the speed goes up. What does that tell you?\",\"what\":\"She is asked to interpret a graph that is only described in words, never shown. A first-time learner needs to see the curve.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F3\",\"turn\":\"1.11\",\"quote\":\"Stopping distance is directly proportional to speed\",\"what\":\"'Directly proportional' appears in an answer option without ever having been explained in the lesson.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"1.11 wrong answer (proportional)\",\"quote\":\"directly proportional would be a straight line through the origin\",\"what\":\"'Through the origin' is used with no explanation, to correct a term that was itself never explained.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"1.11 wrong answer (quick)\",\"quote\":\"Not quite: the distance gets longer at higher speed, not shorter.\",\"what\":\"She chose 'stops more quickly', which is about time. The reply answers about distance being 'shorter', which she did not say, so it does not fit her answer.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"1.11 don't know (first time)\",\"quote\":\"A steeper part of the line means the distance rises more for the same rise in speed.\",\"what\":\"The hint is the right option in other words, and the same buttons are then shown again. It hands her the answer rather than giving an easier step.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"1.12\",\"quote\":\"Yes: your line makes every point. You have this: the thinking distance, while the driver reacts. You have this: the braking distance, while the brakes slow the car.\",\"what\":\"The feedback reads like a marking machine: 'You have this:' twice, as sentence fragments. A teacher would say it as one natural sentence.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.8\",\"quote\":\"Partly there. You have this: a longer reaction time, from tiredness, alcohol, drugs or distractions. Still needed: a higher speed.\",\"what\":\"Same stilted 'You have this / Still needed' fragments. She may also write only 'being tired' and be told she 'has' the whole list, which is not what she wrote.\",\"severity\":\"minor\"},{\"fault\":\"F2\",\"turn\":\"2.4\",\"quote\":\"Say a reaction time is longer, not slower: it is a time.\",\"what\":\"This corrects a mistake nobody has made and comes from nowhere. It reads as an exam tip for someone revising, not teaching for a first-time learner.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F1\",\"turn\":\"2.4\",\"quote\":\"A longer reaction time means a longer thinking distance at the same speed.\",\"what\":\"She has just calculated exactly this in 2.3 (tiredness adds 6 m). It is told again as if new, after the question instead of before it.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.5\",\"quote\":\"Someone holds a ruler just above your open hand and drops it without warning.\",\"what\":\"The method is described loosely. The ruler hangs vertically with its zero level with your open finger and thumb, and you read where you catch it. 'Just above your open hand' does not let her picture how a distance is read.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P14\",\"turn\":\"2.5\",\"quote\":\"You can measure reaction time with a ruler.\",\"what\":\"The one practical is only described; she is not asked to try it or given results to work with. The whole lesson has no picture, widget or hands-on step, only Next buttons and questions, and she is likely to get bored.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"2.6\",\"quote\":\"A table turns the distance it fell into a time.\",\"what\":\"This is vague: which table, and why does distance give time? One example would help, such as 'a fall of 20 cm means about 0.2 s'.\",\"severity\":\"minor\"},{\"fault\":\"F3\",\"turn\":\"2.7\",\"quote\":\"how could you make the result for one person more reliable?\",\"what\":\"'Reliable' and 'mean' are used without explanation.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"2.7\",\"quote\":\"Repeat it several times and find the mean\",\"what\":\"Repeating and averaging has not been taught anywhere in the lesson. She can only answer this from other science lessons, not from what she has been told here.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.2\",\"quote\":\"That grip is friction: the force between two surfaces that stops them sliding over each other.\",\"what\":\"Friction opposes sliding and still acts while surfaces slide; it does not simply 'stop' sliding. The message also runs brakes-on-wheels and tyres-on-road together without saying which friction is meant.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.3\",\"quote\":\"For the same braking force, doubling the speed makes the braking distance four times as long.\",\"what\":\"This surprising rule is stated with no reason at all. She can only memorise it, and the kinetic energy reason in 4.4 is never tied back to it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"3.5\",\"quote\":\"Wet or icy roads cut the friction between tyres and road, and so do worn tyres with little tread. Worn brakes apply less force. Each of these makes the braking distance longer.\",\"what\":\"Three separate factors (road, tyres, brakes) are packed into one message.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"3.5\",\"quote\":\"worn tyres with little tread\",\"what\":\"'Tread' is not explained.\",\"severity\":\"minor\"},{\"fault\":\"F8\",\"turn\":\"3.6\",\"quote\":\"Which of these makes a car's braking distance longer?\",\"what\":\"The message just before said worn tyres make the braking distance longer, and 'Worn tyres' is the right button. She only has to copy it.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"3.7\",\"quote\":\"The faster the car, the bigger the braking force it needs to stop in that distance.\",\"what\":\"This idea is dropped in on its own, with no reason given, and is never asked about or used again. It sits oddly between a question and the own-words line.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"3.8\",\"quote\":\"Partly there. You have this: wet or icy roads or worn tyres, which reduce friction. Still needed: a higher speed.\",\"what\":\"She was asked to 'name two things'. If she writes 'icy roads and worn tyres' she has done exactly that, yet is told she is only partly there. The marking does not match the question, and worn brakes are not counted at all.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F2\",\"turn\":\"4.1\",\"quote\":\"Now, where does the energy go?\",\"what\":\"The message opens by asking about 'the energy' before any energy has been mentioned, so she does not know what energy is meant.\",\"severity\":\"minor\"},{\"fault\":\"F5\",\"turn\":\"4.2\",\"quote\":\"the friction between the brakes and the wheel does work. That work transfers the car's kinetic energy to the thermal store of the brakes\",\"what\":\"'Does work' and 'thermal store' are both new terms, used in one message with neither explained.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"F8\",\"turn\":\"4.3\",\"quote\":\"As a car brakes to a stop, where does most of its kinetic energy go?\",\"what\":\"The message just before said the kinetic energy goes 'to the thermal store of the brakes', which is the wording of the right button.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F10\",\"turn\":\"4.4\",\"quote\":\"Ek = ½ m v², with Ek in joules, m in kg and v in m/s.\",\"what\":\"Units are given, but m is never named as the mass of the car or v as its speed.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P13\",\"turn\":\"4.4\",\"quote\":\"Kinetic energy depends on speed squared: Ek = ½ m v²\",\"what\":\"The equation is given with no worked example and no practice question. It is never used with numbers.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.4\",\"quote\":\"Double the speed gives four times the kinetic energy to get rid of.\",\"what\":\"The lesson stops short of the point: four times the energy needs four times the distance for the same braking force. The link back to the rule in 3.3 is left for her to guess.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"F3\",\"turn\":\"4.5\",\"quote\":\"A bigger braking force gives a bigger deceleration.\",\"what\":\"'Deceleration' is used without being explained as how quickly the car slows down.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"P6\",\"turn\":\"4.5\",\"quote\":\"Very large decelerations are dangerous: the brakes can overheat, and the car can skid so the driver loses control.\",\"what\":\"Force and deceleration, overheating, and skidding are three ideas in one message. Nothing explains why any of them happens.\",\"severity\":\"minor\"},{\"fault\":\"F10\",\"turn\":\"4.7\",\"quote\":\"Find the deceleration: a = Δv ÷ t = 20 ÷ 4 = 5 m/s².\",\"what\":\"This equation, and the symbol Δ, appear for the first time inside the worked example with no statement of what the symbols mean. F = m a is likewise not restated with its symbols and units in this lesson.\",\"severity\":\"would confuse or mislead her\"},{\"fault\":\"new\",\"turn\":\"4.9\",\"quote\":\"kinetic energy is transferred to thermal energy in the brakes\",\"what\":\"The feedback says 'thermal energy in the brakes' where the teaching said 'thermal store of the brakes', so the wording is inconsistent. It also uses the same stilted 'You have this:' fragments.\",\"severity\":\"minor\"},{\"fault\":\"new\",\"turn\":\"4.14 don't know\",\"quote\":\"Kinetic energy goes up with speed squared, so double the speed gives four times the braking distance.\",\"what\":\"The lesson never taught why more kinetic energy means more braking distance, so the 'so' does not follow for her. The first hint ('Kinetic energy depends on speed squared.') is no easier, and the wrong-answer reply 'goes up with speed squared' is also new wording.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.15\",\"quote\":\"Yes: less friction means less braking force.\",\"what\":\"3.1 defined braking force as the force the brakes apply. Nothing explained that the tyres' grip on the road limits it, so this reply relies on a link she was never given.\",\"severity\":\"a teacher would correct it\"},{\"fault\":\"new\",\"turn\":\"4.16\",\"quote\":\"Friction does work, moving kinetic energy to them\",\"what\":\"This is loose physics: kinetic energy is not moved into the brakes, it is transferred to their thermal store. The option contradicts the careful wording used elsewhere.\",\"severity\":\"minor\"}],\"counts\":[{\"fault\":\"F10\",\"instances\":4},{\"fault\":\"F1\",\"instances\":2},{\"fault\":\"F2\",\"instances\":2},{\"fault\":\"F3\",\"instances\":5},{\"fault\":\"F5\",\"instances\":1},{\"fault\":\"F8\",\"instances\":3},{\"fault\":\"P6\",\"instances\":2},{\"fault\":\"P13\",\"instances\":2},{\"fault\":\"P14\",\"instances\":1},{\"fault\":\"new\",\"instances\":19}],\"overall\":\"Not as it is. Key points 1 and 2 are mostly sound and the sums are right, but key points 3 and 4 lean on terms she has never met (work, thermal store, deceleration, Δv, directly proportional), and the 'four times' rule is never explained or joined to kinetic energy. Three questions (3.6, 4.3 and the 1.11 hint) are answered just before they are asked, the 3.8 marking penalises a correct answer, and every wrong answer is given away with no second try. With no graph, no picture and nothing to do with her hands, I would want those fixed before she uses it.\"}",
+  "findings": [
+    {
+      "fault": "F10",
+      "turn": "1.1a don't know (first time)",
+      "quote": "Rearrange F = m a to get a = F ÷ m.",
+      "what": "The equation is given in bare symbols, with no reminder that F is the resultant force in N, m the mass in kg and a the acceleration in m/s². A girl who has forgotten last lesson gets nothing from this hint.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.7 wrong answers",
+      "quote": "Not quite: 36 m. Add the two parts: 12 + 24 = 36 m.",
+      "what": "Every wrong answer is met with the full answer at once, here and on every typed question (1.9, 2.3, 3.4, 4.8). She never gets a hint and a second go, so a slip teaches her nothing.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "1.7 don't know (first time)",
+      "quote": "Stopping distance = thinking distance + braking distance.",
+      "what": "This repeats message 1.6 word for word. It is not an easier step and does not point her to the two numbers or ask anything smaller.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F10",
+      "turn": "1.8",
+      "quote": "So thinking distance = speed × the time the driver takes to react.",
+      "what": "The equation is stated without units (speed in m/s, time in s, distance in m). The next question then uses those units cold.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P13",
+      "turn": "1.9",
+      "quote": "A car travels at 20 m/s. The driver takes 0.6 s to react. What is the thinking distance, in m?",
+      "what": "She is asked to calculate with the new equation straight away, with no worked example first.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10",
+      "quote": "Both parts grow with speed.",
+      "what": "Nothing so far has said that braking distance depends on speed; that comes in key point 3. This is an unsupported claim at this stage.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.10",
+      "quote": "At 30 mph, a typical stopping distance is about 23 m. At 70 mph it is about 96 m: about four times as far, at just over twice the speed.",
+      "what": "The lesson has used m/s until now and switches to mph without comment. Also, 70 is 2.3 times 30, so 'just over twice' is loose and blurs the 'double speed, four times' rule taught later.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.11",
+      "quote": "A graph shows stopping distance against speed for a car. The line curves upwards, getting steeper as the speed goes up. What does that tell you?",
+      "what": "She is asked to interpret a graph that is only described in words, never shown. A first-time learner needs to see the curve.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.11",
+      "quote": "Stopping distance is directly proportional to speed",
+      "what": "'Directly proportional' appears in an answer option without ever having been explained in the lesson.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "1.11 wrong answer (proportional)",
+      "quote": "directly proportional would be a straight line through the origin",
+      "what": "'Through the origin' is used with no explanation, to correct a term that was itself never explained.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "1.11 wrong answer (quick)",
+      "quote": "Not quite: the distance gets longer at higher speed, not shorter.",
+      "what": "She chose 'stops more quickly', which is about time. The reply answers about distance being 'shorter', which she did not say, so it does not fit her answer.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "1.11 don't know (first time)",
+      "quote": "A steeper part of the line means the distance rises more for the same rise in speed.",
+      "what": "The hint is the right option in other words, and the same buttons are then shown again. It hands her the answer rather than giving an easier step.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "1.12",
+      "quote": "Yes: your line makes every point. You have this: the thinking distance, while the driver reacts. You have this: the braking distance, while the brakes slow the car.",
+      "what": "The feedback reads like a marking machine: 'You have this:' twice, as sentence fragments. A teacher would say it as one natural sentence.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.8",
+      "quote": "Partly there. You have this: a longer reaction time, from tiredness, alcohol, drugs or distractions. Still needed: a higher speed.",
+      "what": "Same stilted 'You have this / Still needed' fragments. She may also write only 'being tired' and be told she 'has' the whole list, which is not what she wrote.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F2",
+      "turn": "2.4",
+      "quote": "Say a reaction time is longer, not slower: it is a time.",
+      "what": "This corrects a mistake nobody has made and comes from nowhere. It reads as an exam tip for someone revising, not teaching for a first-time learner.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F1",
+      "turn": "2.4",
+      "quote": "A longer reaction time means a longer thinking distance at the same speed.",
+      "what": "She has just calculated exactly this in 2.3 (tiredness adds 6 m). It is told again as if new, after the question instead of before it.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.5",
+      "quote": "Someone holds a ruler just above your open hand and drops it without warning.",
+      "what": "The method is described loosely. The ruler hangs vertically with its zero level with your open finger and thumb, and you read where you catch it. 'Just above your open hand' does not let her picture how a distance is read.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P14",
+      "turn": "2.5",
+      "quote": "You can measure reaction time with a ruler.",
+      "what": "The one practical is only described; she is not asked to try it or given results to work with. The whole lesson has no picture, widget or hands-on step, only Next buttons and questions, and she is likely to get bored.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "2.6",
+      "quote": "A table turns the distance it fell into a time.",
+      "what": "This is vague: which table, and why does distance give time? One example would help, such as 'a fall of 20 cm means about 0.2 s'.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F3",
+      "turn": "2.7",
+      "quote": "how could you make the result for one person more reliable?",
+      "what": "'Reliable' and 'mean' are used without explanation.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "2.7",
+      "quote": "Repeat it several times and find the mean",
+      "what": "Repeating and averaging has not been taught anywhere in the lesson. She can only answer this from other science lessons, not from what she has been told here.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.2",
+      "quote": "That grip is friction: the force between two surfaces that stops them sliding over each other.",
+      "what": "Friction opposes sliding and still acts while surfaces slide; it does not simply 'stop' sliding. The message also runs brakes-on-wheels and tyres-on-road together without saying which friction is meant.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.3",
+      "quote": "For the same braking force, doubling the speed makes the braking distance four times as long.",
+      "what": "This surprising rule is stated with no reason at all. She can only memorise it, and the kinetic energy reason in 4.4 is never tied back to it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "3.5",
+      "quote": "Wet or icy roads cut the friction between tyres and road, and so do worn tyres with little tread. Worn brakes apply less force. Each of these makes the braking distance longer.",
+      "what": "Three separate factors (road, tyres, brakes) are packed into one message.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "3.5",
+      "quote": "worn tyres with little tread",
+      "what": "'Tread' is not explained.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F8",
+      "turn": "3.6",
+      "quote": "Which of these makes a car's braking distance longer?",
+      "what": "The message just before said worn tyres make the braking distance longer, and 'Worn tyres' is the right button. She only has to copy it.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "3.7",
+      "quote": "The faster the car, the bigger the braking force it needs to stop in that distance.",
+      "what": "This idea is dropped in on its own, with no reason given, and is never asked about or used again. It sits oddly between a question and the own-words line.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "3.8",
+      "quote": "Partly there. You have this: wet or icy roads or worn tyres, which reduce friction. Still needed: a higher speed.",
+      "what": "She was asked to 'name two things'. If she writes 'icy roads and worn tyres' she has done exactly that, yet is told she is only partly there. The marking does not match the question, and worn brakes are not counted at all.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F2",
+      "turn": "4.1",
+      "quote": "Now, where does the energy go?",
+      "what": "The message opens by asking about 'the energy' before any energy has been mentioned, so she does not know what energy is meant.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F5",
+      "turn": "4.2",
+      "quote": "the friction between the brakes and the wheel does work. That work transfers the car's kinetic energy to the thermal store of the brakes",
+      "what": "'Does work' and 'thermal store' are both new terms, used in one message with neither explained.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "F8",
+      "turn": "4.3",
+      "quote": "As a car brakes to a stop, where does most of its kinetic energy go?",
+      "what": "The message just before said the kinetic energy goes 'to the thermal store of the brakes', which is the wording of the right button.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F10",
+      "turn": "4.4",
+      "quote": "Ek = ½ m v², with Ek in joules, m in kg and v in m/s.",
+      "what": "Units are given, but m is never named as the mass of the car or v as its speed.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P13",
+      "turn": "4.4",
+      "quote": "Kinetic energy depends on speed squared: Ek = ½ m v²",
+      "what": "The equation is given with no worked example and no practice question. It is never used with numbers.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.4",
+      "quote": "Double the speed gives four times the kinetic energy to get rid of.",
+      "what": "The lesson stops short of the point: four times the energy needs four times the distance for the same braking force. The link back to the rule in 3.3 is left for her to guess.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "F3",
+      "turn": "4.5",
+      "quote": "A bigger braking force gives a bigger deceleration.",
+      "what": "'Deceleration' is used without being explained as how quickly the car slows down.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "P6",
+      "turn": "4.5",
+      "quote": "Very large decelerations are dangerous: the brakes can overheat, and the car can skid so the driver loses control.",
+      "what": "Force and deceleration, overheating, and skidding are three ideas in one message. Nothing explains why any of them happens.",
+      "severity": "minor"
+    },
+    {
+      "fault": "F10",
+      "turn": "4.7",
+      "quote": "Find the deceleration: a = Δv ÷ t = 20 ÷ 4 = 5 m/s².",
+      "what": "This equation, and the symbol Δ, appear for the first time inside the worked example with no statement of what the symbols mean. F = m a is likewise not restated with its symbols and units in this lesson.",
+      "severity": "would confuse or mislead her"
+    },
+    {
+      "fault": "new",
+      "turn": "4.9",
+      "quote": "kinetic energy is transferred to thermal energy in the brakes",
+      "what": "The feedback says 'thermal energy in the brakes' where the teaching said 'thermal store of the brakes', so the wording is inconsistent. It also uses the same stilted 'You have this:' fragments.",
+      "severity": "minor"
+    },
+    {
+      "fault": "new",
+      "turn": "4.14 don't know",
+      "quote": "Kinetic energy goes up with speed squared, so double the speed gives four times the braking distance.",
+      "what": "The lesson never taught why more kinetic energy means more braking distance, so the 'so' does not follow for her. The first hint ('Kinetic energy depends on speed squared.') is no easier, and the wrong-answer reply 'goes up with speed squared' is also new wording.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.15",
+      "quote": "Yes: less friction means less braking force.",
+      "what": "3.1 defined braking force as the force the brakes apply. Nothing explained that the tyres' grip on the road limits it, so this reply relies on a link she was never given.",
+      "severity": "a teacher would correct it"
+    },
+    {
+      "fault": "new",
+      "turn": "4.16",
+      "quote": "Friction does work, moving kinetic energy to them",
+      "what": "This is loose physics: kinetic energy is not moved into the brakes, it is transferred to their thermal store. The option contradicts the careful wording used elsewhere.",
+      "severity": "minor"
+    }
+  ],
+  "counts": [
+    {
+      "fault": "new",
+      "instances": 19
+    },
+    {
+      "fault": "F3",
+      "instances": 5
+    },
+    {
+      "fault": "F10",
+      "instances": 4
+    },
+    {
+      "fault": "F8",
+      "instances": 3
+    },
+    {
+      "fault": "F1",
+      "instances": 2
+    },
+    {
+      "fault": "P13",
+      "instances": 2
+    },
+    {
+      "fault": "F2",
+      "instances": 2
+    },
+    {
+      "fault": "P6",
+      "instances": 2
+    },
+    {
+      "fault": "P14",
+      "instances": 1
+    },
+    {
+      "fault": "F5",
+      "instances": 1
+    }
+  ],
+  "overall": "Not as it is. Key points 1 and 2 are mostly sound and the sums are right, but key points 3 and 4 lean on terms she has never met (work, thermal store, deceleration, Δv, directly proportional), and the 'four times' rule is never explained or joined to kinetic energy. Three questions (3.6, 4.3 and the 1.11 hint) are answered just before they are asked, the 3.8 marking penalises a correct answer, and every wrong answer is given away with no second try. With no graph, no picture and nothing to do with her hands, I would want those fixed before she uses it."
+}

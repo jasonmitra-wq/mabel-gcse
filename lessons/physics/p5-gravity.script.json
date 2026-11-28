@@ -10,7 +10,7 @@
     {
      "id": "1.1",
      "type": "say",
-     "text": "Welcome! This lesson is about gravity: how hard it pulls on things, and how it keeps the Moon and satellites going round the Earth."
+     "text": "Welcome! This lesson is about gravity: how hard it pulls on things, and how it keeps the Moon going round the Earth."
     },
     {
      "id": "1.1a",
@@ -39,7 +39,7 @@
      },
      "idk": [
       {
-       "hint": "Momentum = kilograms × velocity. Multiply 2 by 3."
+       "hint": "Momentum is the 2 kg multiplied by the 3 m/s."
       }
      ],
      "answerWhy": "p = m v = 2 × 3 = 6 kg m/s."
@@ -71,7 +71,7 @@
      },
      "idk": [
       {
-       "hint": "A steady speed means the forces balance."
+       "hint": "Gravity pulls the skydiver down and the air pushes up. For the speed to stay steady, how must those two compare?"
       }
      ],
      "answerWhy": "At a steady speed the forces balance: air resistance equals the pull of gravity."
@@ -89,7 +89,12 @@
     {
      "id": "1.4",
      "type": "say",
-     "text": "How hard gravity pulls depends on where you are. Gravity's pull on each kilogram is written g, in newtons per kilogram (N/kg). On Earth g is about 9.8 N/kg; on the Moon it is about 1.6 N/kg."
+     "text": "How hard gravity pulls depends on where you are. Gravity's pull on each kilogram is written g."
+    },
+    {
+     "id": "1.4b",
+     "type": "say",
+     "text": "g is measured in newtons per kilogram (N/kg). On Earth g is about 9.8 N/kg; on the Moon it is about 1.6 N/kg."
     },
     {
      "id": "1.5",
@@ -97,10 +102,25 @@
      "text": "Weight = mass × g, or W = m g, with W in newtons (N), m in kilograms (kg) and g in N/kg."
     },
     {
+     "id": "1.5b",
+     "type": "worked",
+     "text": "Here is a worked example. Tap \"Show the first step\" under it to see each step in turn.",
+     "question": "A 10 kg bag is on Earth, where g = 9.8 N/kg. What is its weight?",
+     "steps": [
+      "Write the equation: W = m g.",
+      "Put in the numbers: W = 10 × 9.8.",
+      "W = 98 N."
+     ],
+     "answer": {
+      "value": 98,
+      "unit": "N"
+     }
+    },
+    {
      "id": "1.6",
      "type": "ask",
      "kind": "number",
-     "question": "An astronaut has a mass of 70 kg. On the Moon, g = 1.6 N/kg. What is the astronaut's weight there, in N?",
+     "question": "Your turn. An astronaut has a mass of 70 kg. On the Moon, g = 1.6 N/kg. What is the astronaut's weight there, in N?",
      "answer": {
       "value": 112,
       "unit": "N",
@@ -149,7 +169,7 @@
        "branch": "bigger"
       },
       {
-       "text": "It is 686 kg",
+       "text": "It is 9.8 times bigger",
        "branch": "weight"
       }
      ],
@@ -157,7 +177,7 @@
      "wrong": {
       "other": "Not quite: it is the same, 70 kg.",
       "bigger": "Not quite: stronger gravity makes the weight bigger, not the mass. The mass stays 70 kg.",
-      "weight": "Not quite: 686 is the weight on Earth, in newtons. The mass stays 70 kg."
+      "weight": "Not quite: on Earth the weight is 70 × 9.8 = 686 N, but that is a force, in newtons. The mass stays 70 kg."
      },
      "idk": [
       {
@@ -176,8 +196,8 @@
      "type": "own",
      "prompt": "In one line: what is the difference between mass and weight?",
      "points": [
-      "mass is the amount of matter, the same everywhere",
-      "weight is the force of gravity on it, which changes with g"
+      "Mass is the amount of matter and is the same everywhere.",
+      "Weight is the force of gravity on it, which changes with g."
      ],
      "idk": "No problem. A good line would be: mass is the amount of matter and is the same everywhere, but weight is the force of gravity on it, which changes with g."
     }
@@ -195,23 +215,13 @@
     {
      "id": "2.2",
      "type": "say",
-     "text": "The strength of the field at a place is g, which is called the gravitational field strength. Near the Earth's surface it is about 9.8 N/kg."
-    },
-    {
-     "id": "2.3",
-     "type": "say",
-     "text": "Near the surface, the field has about the same strength and direction everywhere, pointing down. Further from the Earth, the field gets weaker."
-    },
-    {
-     "id": "2.4",
-     "type": "say",
-     "text": "Field lines show a gravitational field. They point towards the centre of the Earth: the way a mass there would be pulled."
+     "text": "The value g, gravity's pull on each kilogram, is the strength of the field at that place, so it is called the gravitational field strength."
     },
     {
      "id": "2.5",
      "type": "ask",
      "kind": "tap",
-     "question": "A satellite moves from close to the Earth to much further away. Which is true of the gravitational field strength there?",
+     "question": "A spacecraft moves from close to the Earth to much further away. Which is true of the gravitational field strength there?",
      "options": [
       {
        "text": "It is weaker",
@@ -234,18 +244,32 @@
      },
      "idk": [
       {
-       "hint": "Does the Earth's pull get stronger or weaker as you go further away?"
+       "hint": "Think of a magnet: is its pull stronger close up or far away? Gravity is like that."
       }
      ],
      "answerWhy": "The gravitational field strength gets weaker further from the Earth, but it does not drop to zero."
+    },
+    {
+     "id": "2.3",
+     "type": "say",
+     "text": "Near the surface, the field has about the same strength and direction everywhere, pointing down. Further from the Earth, the field gets weaker."
+    },
+    {
+     "id": "2.4",
+     "type": "say",
+     "text": "On a diagram, a gravitational field is shown by field lines: arrows pointing towards the centre of the Earth, the way a mass near the Earth would be pulled."
+    },
+    {
+     "id": "2.4b",
+     "type": "say",
+     "text": "Gravitational fields reach across huge distances. The Sun's field holds the planets, including the Earth, in their paths round it."
     },
     {
      "id": "2.6",
      "type": "own",
      "prompt": "In one line: what is a gravitational field?",
      "points": [
-      "a region where a mass feels a force of gravity",
-      "it gets weaker further away"
+      "A gravitational field is the region where a mass feels a force of gravity."
      ],
      "idk": "No problem. A good line would be: a gravitational field is the region where a mass feels a force of gravity, and it gets weaker further away."
     }
@@ -263,7 +287,12 @@
     {
      "id": "3.2",
      "type": "say",
-     "text": "Moons are natural satellites: they orbit planets. Artificial satellites are machines people have put into orbit round the Earth, for weather forecasts, phones and television."
+     "text": "An object that orbits a planet is a satellite. Moons are natural satellites."
+    },
+    {
+     "id": "3.2b",
+     "type": "say",
+     "text": "Artificial satellites are machines people have put into orbit round the Earth, for weather forecasts, phones and television."
     },
     {
      "id": "3.3",
@@ -313,6 +342,11 @@
      "text": "Anything moving in a circle needs a force towards the centre of the circle. That force is called the centripetal force. For a satellite, gravity provides it."
     },
     {
+     "id": "3.6b",
+     "type": "say",
+     "text": "Remember from the first forces lesson: velocity is speed in a given direction, and acceleration is any change in velocity."
+    },
+    {
      "id": "3.7",
      "type": "ask",
      "kind": "tap",
@@ -347,12 +381,7 @@
     {
      "id": "3.8",
      "type": "say",
-     "text": "For a stable orbit, speed and height go together. If a satellite's speed changes, the radius of its orbit must change too."
-    },
-    {
-     "id": "3.9",
-     "type": "say",
-     "text": "Further out, gravity is weaker, so it provides less centripetal force, and a satellite there moves more slowly. It also has further to go round."
+     "text": "In a stable orbit, a satellite stays the same distance from the Earth's centre: the radius of its orbit. If the satellite's speed changes, that radius must change too."
     },
     {
      "id": "3.10",
@@ -378,7 +407,7 @@
        "branch": "same"
       }
      ],
-     "right": "Yes: A moves more slowly and has further to go, so each orbit takes longer.",
+     "right": "Yes: the higher satellite has further to go, and, as the next message explains, it moves more slowly too. So each orbit takes longer.",
      "wrong": {
       "other": "Not quite: A, the higher one.",
       "lower": "Not quite: the lower one moves faster round a smaller circle, so it takes less time. A takes longer.",
@@ -392,14 +421,19 @@
      "answerWhy": "The higher satellite moves more slowly round a bigger circle, so its orbital period is longer."
     },
     {
+     "id": "3.9",
+     "type": "say",
+     "text": "Further out, gravity is weaker. A weaker pull can only keep a slower satellite on a circle, so satellites further out move more slowly. They also have further to go round."
+    },
+    {
      "id": "3.12",
      "type": "own",
      "prompt": "In one line: what keeps a satellite in orbit?",
      "points": [
-      "gravity pulls it towards the Earth",
-      "it moves sideways fast enough to keep missing"
+      "Gravity pulls the satellite towards the Earth all the time.",
+      "The satellite moves sideways fast enough to keep missing the Earth."
      ],
-     "idk": "No problem. A good line would be: gravity pulls it towards the Earth all the time, but it moves sideways fast enough to keep missing."
+     "idk": "No problem. A good line would be: a satellite stays in orbit because gravity pulls it towards the Earth while it moves sideways fast enough to keep missing it."
     },
     {
      "id": "3.13",
@@ -509,33 +543,33 @@
      "id": "3.17",
      "type": "ask",
      "kind": "tap",
-     "question": "Quiz, question 4 of 6: which is true of the Earth's gravitational field further from the Earth?",
+     "question": "Quiz, question 4 of 6: which way do the field lines of the Earth's gravitational field point?",
      "options": [
       {
-       "text": "It is weaker",
+       "text": "Towards the centre of the Earth",
        "branch": "right"
       },
       {
-       "text": "It is stronger",
-       "branch": "stronger"
+       "text": "Away from the Earth",
+       "branch": "away"
       },
       {
-       "text": "It stops where the air ends",
-       "branch": "air"
+       "text": "Round the Earth in circles",
+       "branch": "round"
       }
      ],
-     "right": "Yes: it gets weaker with distance.",
+     "right": "Yes: they point the way a mass would be pulled, towards the centre.",
      "wrong": {
-      "other": "Not quite: it is weaker.",
-      "stronger": "Not quite: the field gets weaker further away.",
-      "air": "Not quite: gravity does not need air. It reaches far into space, getting weaker."
+      "other": "Not quite: towards the centre of the Earth.",
+      "away": "Not quite: gravity pulls masses in, so the lines point towards the centre of the Earth.",
+      "round": "Not quite: the lines show the pull on a mass, which is towards the centre of the Earth."
      },
      "idk": [
       {
-       "hint": "Does the pull get stronger or weaker with distance?"
+       "hint": "Field lines show which way a mass would be pulled."
       }
      ],
-     "answerWhy": "The gravitational field gets weaker further from the Earth.",
+     "answerWhy": "Field lines point the way a mass would be pulled: towards the centre of the Earth.",
      "quiz": true
     },
     {

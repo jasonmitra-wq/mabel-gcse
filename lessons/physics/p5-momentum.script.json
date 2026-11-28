@@ -48,43 +48,48 @@
      "id": "1.1b",
      "type": "ask",
      "kind": "tap",
-     "question": "Second: as a car brakes to a stop, where does its kinetic energy go?",
+     "question": "Second: which of these is a vector, with a size and a direction?",
      "options": [
       {
-       "text": "To the thermal store of the brakes",
+       "text": "Velocity",
        "branch": "right"
       },
       {
-       "text": "Back into its fuel",
-       "branch": "fuel"
+       "text": "Speed",
+       "branch": "speed"
       },
       {
-       "text": "It is destroyed",
-       "branch": "destroyed"
+       "text": "Mass",
+       "branch": "mass"
       }
      ],
-     "right": "Yes: friction in the brakes does work, and the brakes heat up.",
+     "right": "Yes: velocity is speed in a given direction, so it is a vector.",
      "wrong": {
-      "other": "Not quite: to the thermal store of the brakes.",
-      "fuel": "Not quite: ordinary brakes cannot refill the fuel. The energy goes to the thermal store of the brakes.",
-      "destroyed": "Not quite: energy is never destroyed. It goes to the thermal store of the brakes."
+      "other": "Not quite: velocity.",
+      "speed": "Not quite: speed has no direction, so it is a scalar. Velocity is speed in a given direction.",
+      "mass": "Not quite: mass has no direction, so it is a scalar. Velocity has a direction."
      },
      "idk": [
       {
-       "hint": "Brakes get hot when a car stops."
+       "hint": "A vector has a direction. Which of these says which way?"
       }
      ],
-     "answerWhy": "Friction in the brakes does work, transferring the kinetic energy to the thermal store of the brakes."
+     "answerWhy": "Velocity is speed in a given direction, so it is a vector; speed and mass are scalars."
     },
     {
      "id": "1.2",
      "type": "say",
-     "text": "Now this lesson. A slow, heavy lorry and a fast, light bullet are both hard to stop. What they share is a quantity that combines mass and velocity."
+     "text": "Now this lesson. A slow, heavy lorry and a fast car can both be hard to stop. What they share is a quantity that combines mass and velocity."
     },
     {
      "id": "1.3",
      "type": "say",
-     "text": "Mass × velocity is called momentum. The equation is p = m v. Here p is the momentum in kilogram metres per second (kg m/s), m is the mass in kilograms (kg) and v is the velocity in m/s."
+     "text": "Mass × velocity is called momentum."
+    },
+    {
+     "id": "1.3b",
+     "type": "say",
+     "text": "The equation is p = m v. Here p is the momentum in kilogram metres per second (kg m/s), m is the mass in kilograms (kg) and v is the velocity in m/s."
     },
     {
      "id": "1.4",
@@ -138,7 +143,7 @@
      "id": "1.6",
      "type": "ask",
      "kind": "number",
-     "question": "A 50 g ball moves at 20 m/s. What is its momentum, in kg m/s?",
+     "question": "A 50 g ball moves at 20 m/s. What is its momentum, in kg m/s? (1000 g = 1 kg.)",
      "answer": {
       "value": 1,
       "unit": "kg m/s",
@@ -175,7 +180,40 @@
     {
      "id": "1.8",
      "type": "say",
-     "text": "Pick one direction as positive; momentum the other way is then negative. Two cars of the same mass driving towards each other at the same speed have momenta of the same size, one positive and one negative."
+     "text": "Pick one direction as positive; momentum the other way is then negative. Two cars of the same mass driving towards each other at the same speed have momenta (the plural of momentum) of the same size, one positive and one negative."
+    },
+    {
+     "id": "1.8b",
+     "type": "ask",
+     "kind": "number",
+     "question": "A 2 kg ball moves right at 3 m/s. A 1 kg ball moves left at 4 m/s. Taking right as positive, what is their total momentum, in kg m/s?",
+     "answer": {
+      "value": 2,
+      "unit": "kg m/s",
+      "tolerance": 0.01
+     },
+     "wrongValues": [
+      {
+       "value": 10,
+       "branch": "add"
+      },
+      {
+       "value": -2,
+       "branch": "sign"
+      }
+     ],
+     "right": "Yes: 2 × 3 = +6 kg m/s and 1 × 4 = 4 kg m/s to the left, which is −4. Total: 6 − 4 = 2 kg m/s, to the right.",
+     "wrong": {
+      "other": "Not quite: 2 kg m/s. Right is +6 kg m/s and left is −4 kg m/s, so the total is 6 − 4 = 2 kg m/s.",
+      "add": "Not quite: 2 kg m/s. The balls move in opposite directions, so one momentum is negative: 6 − 4 = 2 kg m/s.",
+      "sign": "Not quite: 2 kg m/s. Right is positive, and the bigger momentum, 6 kg m/s, is to the right: 6 − 4 = +2 kg m/s."
+     },
+     "idk": [
+      {
+       "hint": "Work out each momentum. The one moving left counts as negative."
+      }
+     ],
+     "answerWhy": "The right-moving ball has +6 kg m/s and the left-moving one −4 kg m/s, so the total is +2 kg m/s."
     },
     {
      "id": "1.9",
@@ -204,7 +242,7 @@
      },
      "idk": [
       {
-       "hint": "The first car has 1000 × 10 = 10 000 kg m/s. What speed gives 500 kg the same?"
+       "hint": "The first car has 1000 × 10 = 10 000 kg m/s. Divide that by 500 kg to find the speed."
       }
      ],
      "answerWhy": "The first car has 10 000 kg m/s. The second needs v = 10 000 ÷ 500 = 20 m/s."
@@ -214,10 +252,10 @@
      "type": "own",
      "prompt": "In one line: what is momentum?",
      "points": [
-      "mass multiplied by velocity",
-      "it has a direction"
+      "Momentum is mass × velocity.",
+      "Momentum has a direction."
      ],
-     "idk": "No problem. A good line would be: momentum is mass × velocity, and like velocity it has a direction."
+     "idk": "No problem. A good line would be: momentum is mass × velocity, p = m v, measured in kg m/s, and like velocity it has a direction."
     }
    ]
   },
@@ -228,7 +266,7 @@
     {
      "id": "2.1",
      "type": "say",
-     "text": "When objects collide or push apart, they push on each other. But their total momentum does not change, as long as nothing outside pushes on them."
+     "text": "When objects collide or push apart, they push on each other, and their momenta change."
     },
     {
      "id": "2.2",
@@ -292,7 +330,7 @@
     {
      "id": "2.6",
      "type": "say",
-     "text": "Explosions work the same way. Before a cannon fires, nothing moves, so the total momentum is zero. After it fires, the ball goes forwards and the cannon rolls back."
+     "text": "In physics, an explosion is any event where things that were still push apart. Before a cannon fires, nothing moves, so the total momentum is zero. After it fires, the ball goes forwards and the cannon rolls back."
     },
     {
      "id": "2.7",
@@ -330,7 +368,7 @@
      "id": "2.8",
      "type": "ask",
      "kind": "number",
-     "question": "A 0.02 kg bullet leaves a still 4 kg rifle at 400 m/s. How fast does the rifle recoil, in m/s?",
+     "question": "A 0.02 kg bullet leaves a still 4 kg rifle at 400 m/s. How fast does the rifle move backwards (recoil), in m/s?",
      "answer": {
       "value": 2,
       "unit": "m/s",
@@ -369,8 +407,7 @@
      "type": "own",
      "prompt": "In one line: what does conservation of momentum say?",
      "points": [
-      "in a closed system",
-      "the total momentum before equals the total after"
+      "In a closed system, the total momentum before an event equals the total momentum after it."
      ],
      "idk": "No problem. A good line would be: in a closed system, the total momentum before an event equals the total momentum after it."
     }
@@ -383,17 +420,22 @@
     {
      "id": "3.1",
      "type": "say",
-     "text": "A resultant force on a moving object changes its velocity, so it changes its momentum too. Momentum after minus momentum before is called the change in momentum, m Δv."
+     "text": "A resultant force on an object changes its velocity, so it changes its momentum. Momentum after minus momentum before is called the change in momentum, written m Δv (Δ means \"change in\")."
     },
     {
      "id": "3.2",
      "type": "say",
-     "text": "Putting F = m a together with a = Δv ÷ t gives F = m Δv ÷ Δt: force = change in momentum ÷ time taken. F is in newtons (N), m Δv in kg m/s and Δt in seconds (s)."
+     "text": "Putting F = m a together with a = Δv ÷ Δt gives F = m Δv ÷ Δt."
+    },
+    {
+     "id": "3.2b",
+     "type": "say",
+     "text": "In words: force = change in momentum ÷ time taken. F is in newtons (N), m Δv in kg m/s, and Δt, the time taken, in seconds (s)."
     },
     {
      "id": "3.3",
      "type": "say",
-     "text": "Force equals the rate of change of momentum. The same change in momentum spread over a longer time needs a smaller force."
+     "text": "Force equals the rate of change of momentum: how much the momentum changes each second. The same change in momentum spread over a longer time needs a smaller force."
     },
     {
      "id": "3.4",
@@ -445,11 +487,6 @@
      "answerWhy": "The change in momentum is 5 kg m/s, so F = 5 ÷ 0.5 = 10 N: a longer stop means a smaller force."
     },
     {
-     "id": "3.6",
-     "type": "say",
-     "text": "Many safety features work like this. Airbags, seat belts and crumple zones make a crash last longer, so the momentum changes more slowly and the force on the people is smaller."
-    },
-    {
      "id": "3.7",
      "type": "ask",
      "kind": "tap",
@@ -482,14 +519,18 @@
      "answerWhy": "The change in momentum is the same, but the mat makes the stop take longer, so the rate of change of momentum, and the force, is smaller."
     },
     {
+     "id": "3.6",
+     "type": "say",
+     "text": "Many safety features work the same way. Airbags, seat belts, crumple zones, cycle helmets and soft playground surfaces all make a collision last longer, so the force on the person is smaller."
+    },
+    {
      "id": "3.8",
      "type": "own",
-     "prompt": "In one line: how does a cycle helmet reduce the force on your head in a crash?",
+     "prompt": "In one line: what does force equal, in terms of momentum?",
      "points": [
-      "it makes the impact last longer",
-      "so the rate of change of momentum and the force are smaller"
+      "Force equals the change in momentum divided by the time taken."
      ],
-     "idk": "No problem. A good line would be: it makes the impact last longer, so the momentum changes more slowly and the force on your head is smaller."
+     "idk": "No problem. A good line would be: force equals the change in momentum divided by the time taken, so a longer collision means a smaller force."
     },
     {
      "id": "3.9",
@@ -589,7 +630,7 @@
      },
      "idk": [
       {
-       "hint": "Think of conservation of momentum."
+       "hint": "Conservation of momentum says the total momentum in a closed system does not change."
       }
      ],
      "answerWhy": "In a closed system, the total momentum before equals the total after.",
@@ -651,7 +692,7 @@
      "wrong": {
       "other": "Not quite: change in momentum ÷ time.",
       "times": "Not quite: force is the change in momentum divided by the time.",
-      "mv": "Not quite: force is the change in momentum divided by the time."
+      "mv": "Not quite: mass and velocity are multiplied to give momentum. Force is the change in momentum divided by the time."
      },
      "idk": [
       {
@@ -672,11 +713,11 @@
        "branch": "right"
       },
       {
-       "text": "They make the car stop more quickly",
+       "text": "They make the person stop more quickly",
        "branch": "quicker"
       },
       {
-       "text": "They take away the car's momentum",
+       "text": "They take away the person's momentum",
        "branch": "remove"
       }
      ],
@@ -684,7 +725,7 @@
      "wrong": {
       "other": "Not quite: the stop takes longer, so the force is smaller.",
       "quicker": "Not quite: a quicker stop would mean a bigger force. Airbags make the stop take longer.",
-      "remove": "Not quite: the person still stops, so the momentum still changes. Airbags make it change more slowly."
+      "remove": "Not quite: the person still stops, so their momentum still changes by the same amount. Airbags make it change more slowly."
      },
      "idk": [
       {

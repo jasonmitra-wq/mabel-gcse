@@ -191,3 +191,34 @@ the examiner reports (E105 to E107, E109, E110: electrons said to deflect alpha
 particles, absorption and emission the wrong way round, a neutron that "hits"
 rather than is absorbed, "atoms fuse").
 
+
+## Phase C, P5 Forces (forces and motion, Newton's laws, stopping, momentum, gravity, springs, moments, pressure)
+
+Brief docs/briefs/2026-11-27-phase-c-physics.md, step B1. Sources opened on
+2026-11-28 (IOPSpark misconception pages, found through its sitemap and read in
+the browser pane); the wording is ours. Outside the pilot, as for M15–M46.
+Examiner errors E112 to E140 are in data/exam/p5-outcomes.md (local).
+
+| Id | Misconception (our words) | Lesson | Source (opened) |
+|---|---|---|---|
+| M47 | Speed and velocity are the same thing; the direction is an optional extra. | p5-forces-motion | IOPSpark, "Many students conflate velocity with speed": https://spark.iop.org/many-students-conflate-velocity-speed |
+| M48 | Acceleration is always in the direction the object moves, so a car slowing down is not accelerating. | p5-forces-motion | IOPSpark, "Many students think that an object's acceleration is always in the direction in which the object is moving": https://spark.iop.org/many-students-think-objects-acceleration-always-direction-which-object-moving |
+| M49 | Graphs read as pictures: a rising line on a distance-time graph means going uphill. | p5-forces-motion | IOPSpark, "Some pupils interpret distance-time and speed-time graphs as though they were 'pictures' of a situation": https://spark.iop.org/some-pupils-interpret-distance-time-and-speed-time-graphs-though-they-were-pictures-situation |
+| M50 | A heavier object falls faster than a lighter one of the same shape. | p5-forces-motion, p5-gravity | IOPSpark, "Many students think a heavier object will fall faster than a lighter one of the same general shape or size": https://spark.iop.org/many-students-think-heavier-object-will-fall-faster-lighter-one-same-general-shape-or-size |
+| M51 | A force is needed to keep something moving at a steady speed; a bigger force means a bigger speed. | p5-newtons-laws | IOPSpark, "Many students think that a force is needed to keep an object moving with a constant speed": https://spark.iop.org/many-students-think-force-needed-keep-object-moving-constant-speed |
+| M52 | The two forces of a third-law pair can differ in size: the bigger object pushes harder. | p5-newtons-laws, p5-momentum | IOPSpark, "Many students who do recognise that forces arise in pairs think that the two forces in a pair may differ in size": https://spark.iop.org/many-students-who-do-recognise-forces-arise-pairs-think-two-forces-pair-may-differ-size |
+| M53 | Friction and the normal reaction mixed up; the two forces of a pair thought to act on the same object (first and third laws confused). | p5-newtons-laws | IOPSpark, "Some students confuse friction and the normal reaction": https://spark.iop.org/some-students-confuse-friction-and-normal-reaction |
+| M54 | Mass and weight are two words for the same thing. | p5-gravity | IOPSpark, "Many students think of mass and weight as alternative words for the same property": https://spark.iop.org/many-students-think-mass-and-weight-alternative-words-same-property |
+| M55 | There is no gravity in space, beyond the atmosphere, so a satellite floats. | p5-gravity | IOPSpark, "Many students think that an object beyond the Earth's atmosphere (in space) does not experience a force of gravity": https://spark.iop.org/many-students-think-object-beyond-earths-atmosphere-space-does-not-experience-force-gravity |
+| M56 | Something moving in a circle feels a force outwards (a centrifugal force). | p5-gravity | IOPSpark, "Many students think that an object moving in a circle experiences a force away from the centre of the circle": https://spark.iop.org/many-students-think-object-moving-circle-experiences-force-away-centre-circle-centrifugal-force |
+| M57 | Momentum is conserved only when the objects visibly move after a collision (not when a snowball hits a wall). | p5-momentum | IOPSpark, "Many students think conservation of momentum in collisions applies only when objects visibly move post-collision": https://spark.iop.org/many-students-think-conservation-momentum-collisions-applies-only-when-objects-visibly-move-post |
+| M58 | Momentum and kinetic energy not told apart, nor which one is conserved. | p5-momentum | IOPSpark, "Many students are unable to distinguish clearly between momentum and kinetic energy…": https://spark.iop.org/many-students-are-unable-distinguish-clearly-between-momentum-and-kinetic-energy-and-recognize |
+| M59 | Pressure acts only downwards. | p5-fluid-pressure | IOPSpark, "Many students think that pressure only acts downwards": https://spark.iop.org/many-students-think-pressure-only-acts-downwards |
+| M60 | Heavy things sink and light things float, whatever their shape and size. | p5-fluid-pressure | IOPSpark, "Some students think that heavy objects sink and light object float regardless of shape and size": https://spark.iop.org/some-students-think-heavy-objects-sink-and-light-object-float-regardless-shape-and-size |
+
+## Not found (P5)
+
+No IOPSpark misconception page was found on stopping distances, springs (Hooke's
+law, elastic potential energy) or moments; the evidence there is the examiner
+reports (E124 to E128, E133 to E136: length used for extension, "slower" reaction
+times, braking factors listed not explained, "momentum" for "moment").

@@ -250,3 +250,11 @@ One line per real call: date | lesson | status | findings | tokens in/out | cost
 - 2026-11-27 | p4-radioactivity | OK | missing_spec_content 0, above_gcse 0, factual_errors 0, wrong_terms 0, checkpoint_mismatch 0, not_checked 1 | 9384/2419 | $0.0859
 - 2026-11-27 | p4-half-life | OK | missing_spec_content 1, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 1 | 8817/2388 | $0.0830
 - 2026-11-27 | p4-nuclear-fission | OK | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 3 | 6837/1835 | $0.0640
+- 2026-11-28 | p5-forces-motion | OK | missing_spec_content 11, above_gcse 3, factual_errors 2, wrong_terms 7, checkpoint_mismatch 2, not_checked 3 | 11024/6363 | $0.1714
+- 2026-11-28 | p5-newtons-laws | OK | missing_spec_content 12, above_gcse 3, factual_errors 2, wrong_terms 0, checkpoint_mismatch 1, not_checked 0 | 8109/4726 | $0.1270
+- 2026-11-28 | p5-stopping-distance | OK | missing_spec_content 7, above_gcse 4, factual_errors 5, wrong_terms 4, checkpoint_mismatch 1, not_checked 3 | 7568/5295 | $0.1362
+- 2026-11-28 | p5-momentum | OK | missing_spec_content 3, above_gcse 2, factual_errors 4, wrong_terms 2, checkpoint_mismatch 1, not_checked 3 | 5567/4569 | $0.1136
+- 2026-11-28 | p5-gravity | OK | missing_spec_content 8, above_gcse 6, factual_errors 4, wrong_terms 1, checkpoint_mismatch 1, not_checked 3 | 5729/5736 | $0.1376
+- 2026-11-28 | p5-elasticity | OK | missing_spec_content 0, above_gcse 0, factual_errors 1, wrong_terms 3, checkpoint_mismatch 1, not_checked 2 | 6069/2089 | $0.0661
+- 2026-11-28 | p5-moments | OK | missing_spec_content 1, above_gcse 0, factual_errors 1, wrong_terms 0, checkpoint_mismatch 0, not_checked 0 | 4605/1905 | $0.0565
+- 2026-11-28 | p5-fluid-pressure | OK | missing_spec_content 0, above_gcse 1, factual_errors 0, wrong_terms 2, checkpoint_mismatch 0, not_checked 0 | 5999/2191 | $0.0678

@@ -12,7 +12,7 @@
   "keyPoints": [
     {
       "heading": "Scalar and vector quantities",
-      "content": "Physics quantities are split into two types. <strong>Scalar quantities</strong> have magnitude (size) only. There is no direction attached. Examples include distance, speed, mass, energy and temperature. <strong>Vector quantities</strong> have both magnitude AND direction. You must state both to fully describe them. Examples include displacement, velocity, acceleration, force and weight.\n\n<strong>Distance</strong> (m) is how far an object has moved along its path. It is scalar. <strong>Displacement</strong> (m) is how far an object is from its starting point, and in which direction. It is vector. Example: you walk 300m east then 400m north. Distance = 700m. Displacement = 500m at an angle north-east. You can work out this straight-line distance from start to finish using Pythagoras.\n\n<strong>Speed</strong> (m/s) = distance ÷ time. It is scalar. <strong>Velocity</strong> (m/s) = displacement ÷ time. It is vector. Speed and velocity can have the same number. But velocity must always include a direction. 'A car drives at 20 m/s' gives speed. 'A car drives at 20 m/s due north' gives velocity.",
+      "content": "Physics quantities are split into two types. <strong>Scalar quantities</strong> have magnitude (size) only. There is no direction attached. Examples include distance, speed, mass, energy and temperature. <strong>Vector quantities</strong> have both magnitude AND direction. You must state both to fully describe them. Examples include displacement, velocity, acceleration, force and weight.\n\n<strong>Distance</strong> (m) is how far an object has moved along its path. It is scalar. <strong>Displacement</strong> (m) is how far an object is from its starting point, and in which direction. It is vector. Example: you walk 300m east then 400m north. Distance = 700m. Displacement = 500m, in a direction about 53° north of east. You can work out this straight-line distance from start to finish using Pythagoras.\n\n<strong>Speed</strong> (m/s) = distance ÷ time. It is scalar. <strong>Velocity</strong> (m/s) = displacement ÷ time. It is vector. Speed and velocity can have the same number. But velocity must always include a direction. 'A car drives at 20 m/s' gives speed. 'A car drives at 20 m/s due north' gives velocity.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -34,7 +34,7 @@
     },
     {
       "heading": "Speed, velocity and distance-time graphs",
-      "content": "<strong>Average speed</strong> = total distance ÷ total time. Equation: <strong>v = d/t</strong>. Rearrangements: d = vt, t = d/v.\n\nWorked example: a cyclist travels 450m in 30s. Speed = 450 ÷ 30 = <strong>15 m/s</strong>.\n\nTypical speeds to remember:\n- walking ≈ 1.5 m/s\n- cycling ≈ 6 m/s\n- car on a motorway ≈ 30 m/s\n- speed of sound in air ≈ 340 m/s\n- speed of light ≈ 3 × 10⁸ m/s\n\n<strong>Distance-time (d-t) graphs</strong>: the gradient (slope) of a d-t graph equals the speed. A <strong>horizontal line</strong> means the object is stationary (distance not changing). A <strong>straight diagonal line</strong> means constant speed (distance increasing at a steady rate). A <strong>curved line</strong> means the speed is changing. If the curve is getting steeper, the object is speeding up. If it is flattening, it is slowing down. A steeper gradient on a d-t graph always means a faster speed.",
+      "content": "<strong>Average speed</strong> = total distance ÷ total time. Equation: <strong>v = d/t</strong>. Rearrangements: d = vt, t = d/v.\n\nWorked example: a cyclist travels 450m in 30s. Speed = 450 ÷ 30 = <strong>15 m/s</strong>.\n\nTypical speeds to remember:\n- walking ≈ 1.5 m/s\n- cycling ≈ 6 m/s\n- car on a motorway ≈ 30 m/s\n- speed of sound in air ≈ 330 m/s\n- speed of light ≈ 3 × 10⁸ m/s\n\n<strong>Distance-time (d-t) graphs</strong>: the gradient (slope) of a d-t graph equals the speed. A <strong>horizontal line</strong> means the object is stationary (distance not changing). A <strong>straight diagonal line</strong> means constant speed (distance increasing at a steady rate). A <strong>curved line</strong> means the speed is changing. If the curve is getting steeper, the object is speeding up. If it is flattening, it is slowing down. A steeper gradient on a d-t graph always means a faster speed.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -44,7 +44,7 @@
         "Horizontal line on d-t graph — object is stationary",
         "Straight diagonal line — constant (steady) speed",
         "Curved line on d-t graph — changing speed (acceleration or deceleration)",
-        "Typical speeds: walking 1.5 m/s, cycling 6 m/s, motorway car 30 m/s, sound 340 m/s"
+        "Typical speeds: walking 1.5 m/s, cycling 6 m/s, motorway car 30 m/s, sound 330 m/s"
       ],
       "keyTerms": [
         { "term": "Average speed", "def": "Total distance divided by total time for a journey" },
@@ -158,6 +158,18 @@
     }
   ],
   "checkpoints": {
+    "0": {
+      "question": "A cyclist rides at 6 m/s towards the west. Is this a speed or a velocity, and why?",
+      "options": [
+        "Velocity, because it gives a size and a direction",
+        "Speed, because the direction does not change the number",
+        "Velocity, because its unit is metres per second",
+        "Speed, because it says how fast the cyclist moves"
+      ],
+      "correct": 0,
+      "correctFeedback": "Yes. It gives a size, 6 m/s, and a direction, west. A quantity with both is a vector, so this is a velocity.",
+      "wrongFeedback": "It is a velocity. A velocity gives a size and a direction, and this one says west. Speed and velocity share the unit m/s, so the unit cannot tell them apart."
+    },
     "1": {
       "question": "A car travels 240m in 8s at constant speed. What is its speed?",
       "options": ["30 m/s", "248 m/s", "232 m/s", "3 m/s"],
@@ -223,7 +235,7 @@
     "Free fall: all objects fall at g ≈ 9.8 m/s² ignoring air resistance",
     "Terminal velocity: air resistance = weight → zero net force → constant velocity",
     "Skydiver: accelerates → terminal velocity → parachute → decelerates → new terminal velocity",
-    "Typical speeds: walking 1.5, cycling 6, motorway car 30, sound 340 m/s, light 3×10⁸ m/s",
+    "Typical speeds: walking 1.5, cycling 6, motorway car 30, sound 330 m/s, light 3×10⁸ m/s",
     "Contact forces (touching): friction, air resistance, tension, normal contact force",
     "Non-contact forces (separated): gravitational, electrostatic, magnetic; force is a vector"
   ],

@@ -14,7 +14,7 @@
   "keyPoints": [
     {
       "heading": "Stopping distance = thinking distance + braking distance",
-      "content": "<strong>Stopping distance</strong> is the total distance a vehicle travels before it stops. It starts when the driver first notices a hazard. It has two separate stages.\n\n<strong>Thinking distance</strong>: the distance travelled while the driver reacts, from seeing the hazard to pressing the brake. Thinking distance = speed × reaction time.\n\n<strong>Braking distance</strong>: the distance travelled once the brakes are on, while the car slows to a stop.\n\n<strong>Stopping distance = thinking distance + braking distance</strong>.\n\nExample values:\n- at 30 mph: thinking distance ≈ 9 m, braking distance ≈ 14 m, stopping distance ≈ 23 m\n- at 70 mph: thinking distance ≈ 21 m, braking distance ≈ 75 m, stopping distance ≈ 96 m\n\nThat is roughly four car-lengths compared with 24 car-lengths.",
+      "content": "<strong>Stopping distance</strong> is the total distance a vehicle travels before it stops. It starts when the driver first notices a hazard. It has two separate stages.\n\n<strong>Thinking distance</strong>: the distance travelled while the driver reacts, from seeing the hazard to pressing the brake. Thinking distance = speed × reaction time.\n\n<strong>Braking distance</strong>: the distance travelled once the brakes are on, while the car slows to a stop.\n\n<strong>Stopping distance = thinking distance + braking distance</strong>.\n\nExample values:\n- at 30 mph: thinking distance ≈ 9 m, braking distance ≈ 14 m, stopping distance ≈ 23 m\n- at 70 mph: thinking distance ≈ 21 m, braking distance ≈ 75 m, stopping distance ≈ 96 m\n\nThat is roughly 6 car-lengths compared with 24 car-lengths.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -46,7 +46,7 @@
       "heading": "Factors affecting reaction time and thinking distance",
       "content": "Reaction time is the gap between seeing a hazard and pressing the brake. For an alert driver, it is usually 0.2–0.9 seconds. All of these factors make it longer.",
       "list": [
-        { "term": "Alcohol", "definition": "slows brain processing significantly — the biggest single impairment" },
+        { "term": "Alcohol", "definition": "slows brain processing, so reactions are slower" },
         { "term": "Drugs", "definition": "prescription or recreational drugs often impair reaction speed" },
         { "term": "Tiredness", "definition": "fatigue slows brain responses; severe tiredness can cause microsleep at the wheel" },
         { "term": "Distractions", "definition": "mobile phone use, adjusting a stereo, or talking to passengers" },
@@ -73,7 +73,7 @@
     },
     {
       "heading": "Factors affecting braking distance",
-      "content": "Several factors affect <strong>braking distance</strong>.\n\n<strong>Speed (most important)</strong>: braking distance is proportional to speed squared. Double the speed → <strong>four times</strong> the braking distance. This is because kinetic energy = ½mv², and braking distance is proportional to KE. At 30 mph, braking distance ≈ 14 m. At 60 mph it is ≈ 55 m, and at 70 mph ≈ 75 m.\n\n<strong>Road surface condition</strong>: wet or icy roads reduce friction between the tyres and the road. So there is less braking force → longer braking distance. Ice can reduce friction to nearly zero.\n\n<strong>Tyre condition</strong>: worn tyres have less tread → less grip → less braking force → longer braking distance. The UK legal minimum tyre tread depth is 1.6 mm.\n\n<strong>Brake condition</strong>: worn or overheated brakes apply less force. Brake fade (overheated brakes losing their effect) can happen on long downhill stretches.",
+      "content": "Several factors affect <strong>braking distance</strong>.\n\n<strong>Speed (most important)</strong>: braking distance is proportional to speed squared. Double the speed → <strong>four times</strong> the braking distance. This is because kinetic energy = ½mv², and for a given braking force, braking distance is proportional to KE. At 30 mph, braking distance ≈ 14 m. At 60 mph it is ≈ 55 m, and at 70 mph ≈ 75 m.\n\n<strong>Road surface condition</strong>: wet or icy roads reduce friction between the tyres and the road. So there is less braking force → longer braking distance. Ice reduces friction a great deal.\n\n<strong>Tyre condition</strong>: worn tyres have less tread → less grip → less braking force → longer braking distance. The UK legal minimum tyre tread depth is 1.6 mm.\n\n<strong>Brake condition</strong>: worn or overheated brakes apply less force. Brake fade (overheated brakes losing their effect) can happen on long downhill stretches.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -87,7 +87,7 @@
       "keyTerms": [
         {
           "term": "braking force",
-          "def": "The force applied by the brakes to decelerate the vehicle; transferred from kinetic energy to thermal energy in the brakes"
+          "def": "The force applied by the brakes to decelerate the vehicle; the work it does transfers kinetic energy to thermal energy in the brakes"
         },
         {
           "term": "friction",
@@ -198,6 +198,18 @@
       "correct": 0,
       "correctFeedback": "Correct! Braking distance ∝ v². The speed doubles → the distance quadruples: 25 × 4 = 100 m.",
       "wrongFeedback": "Braking distance is proportional to speed squared. Double the speed → (2)² = 4 times the braking distance: 25 × 4 = 100 m. Not 50 m. It is quadratic, not linear."
+    },
+    "2": {
+      "question": "A car brakes at the same speed on a wet road instead of a dry one. Why is its braking distance longer?",
+      "options": [
+        "There is less friction, so the braking force is smaller",
+        "The driver's reaction time is longer on a wet road",
+        "Water on the car adds mass, so it is harder to stop",
+        "The car's kinetic energy is larger on a wet road"
+      ],
+      "correct": 0,
+      "correctFeedback": "Yes. Water cuts the friction between the tyres and the road. With less braking force, the car needs further to stop.",
+      "wrongFeedback": "Water on the road cuts the friction between the tyres and the road. So the braking force is smaller. The car takes a longer distance to lose its kinetic energy."
     },
     "3": {
       "question": "Which energy transfer happens in the brakes as a car stops?",

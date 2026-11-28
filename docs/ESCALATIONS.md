@@ -615,3 +615,24 @@ tools/check-transcript.js, proven by tools/check-polish.js (each fails with the 
   positive charge" and the reply read back "You have this: the atom is a ball of positive charge, spread out evenly."
 - Open: P4 has no hands-on widget (every review's P14). A chain-reaction or absorber widget would be new shared code.
 
+
+## Phase C P5 Forces (2026-11-28)
+
+- Open, P5 old checkpoints keyed to the wrong key point (spec-check checkpoint_mismatch, 2026-11-28; lesson-auditor
+  9fd883f-1 list B). Not changed: C0 only adds missing checkpoints. p5-forces-motion "3" (a = Δv/t from key point 2) and
+  "4" (a free-fall distance from key point 3; nothing on terminal velocity; its feedback uses s = ½at², which the lesson
+  does not teach); p5-gravity "1" (orbital speed, key point 2); p5-momentum "0" (a collision, key point 1; nothing tests
+  p = mv); p5-stopping-distance "1" (braking distance and speed squared, key point 2; nothing tests the reaction-time
+  factors). Each key point now has a checkpoint key, but momentum key point 0 and stopping-distance key point 1 are
+  not tested by one. Decide: rewrite these five checkpoints so each tests its own key point.
+- Open, P5 lesson-file faults found by the lesson-auditor (9fd883f-1 list C) that the spec-check did not raise, not
+  changed: p5-gravity revisionCardBullets[8] geostationary satellites (taught in no key point); p5-forces-motion
+  keyPoints[2].memTip is a joke phrase ("Gonna Ace D-grade no more!"); p5-momentum checkpoints["2"].options[2] is close
+  to absurd (crumple zones make electrical energy); p5-newtons-laws key point 3 repeats p5-gravity key point 0 (mass
+  versus weight, W = mg, the same 70 kg example); p5-stopping-distance keyPoints[1].list "Age" is not in the spec list.
+- Open, check-rewrite reads any added checkpoint key as "checkpoints: keys changed" (as for G5 on 2026-11-27).
+- Note: the lesson-auditor agent file's md5 is 33c032bc83fcb781b5043d3378f6a5ac on this PC (the runbook records
+  bd6484be683355a5ff38abc61f4ee9f9). Not edited; probably line endings. Check from a fresh pull.
+- Note: P5 is the first Physics Paper 2 topic. Paper 2 (8463/2F, 2H, specimen to June 2025, 50 files) was downloaded
+  2026-11-28 with Jason's go-ahead (data/exam/MANIFEST.md). Jason also approved adding the P5 lessons to TEACH_ENABLED
+  (js/lessons.js) with SCRIPTED_LESSONS in B5.

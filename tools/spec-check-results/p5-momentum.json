@@ -1,91 +1,104 @@
 {
   "lesson": "p5-momentum",
   "source_file": "lessons/physics/p5-momentum.json",
-  "lesson_md5": "1bcf9169f05c31d28c6317f9b73e7bf2",
+  "lesson_md5": "bbf4584279308a066ead0304fb22238f",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:49:08.140Z",
+  "date": "2026-11-28T10:14:26.166Z",
   "specRefs_sent": [
     "4.5.7.1",
     "4.5.7.2",
     "4.5.7.3"
   ],
+  "blocking_only": false,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 5308,
-    "output_tokens": 4095
+    "input_tokens": 5567,
+    "output_tokens": 4569
   },
-  "cost_usd": 0.103132,
+  "cost_usd": 0.113648,
   "status": "OK",
   "result": {
     "lesson": "p5-momentum",
     "missing_spec_content": [
       {
         "specRef": "4.5.7.3",
-        "spec_text": "The equations F = m × a and a = (v − u)/t combine to give the equation F = (m ∆ v)/(∆ t) where m∆v = change in momentum",
-        "why": "The lesson states F = Δp / Δt but never shows that it comes from combining F = ma with a = (v − u)/t. The spec also requires students to 'apply equations relating force, mass, velocity and acceleration to explain how the changes involved are inter-related'. Without the derivation, that link to F = ma and acceleration is not taught."
+        "spec_text": "The equations F = m × a and a = (v − u)/t combine to give the equation F = (m ∆ v)/(∆ t)",
+        "why": "The lesson states F = Δp / Δt but never shows that it comes from combining F = m × a with a = (v − u)/t."
+      },
+      {
+        "specRef": "4.5.7.3",
+        "spec_text": "Students should be able to apply equations relating force, mass, velocity and acceleration to explain how the changes involved are inter-related.",
+        "why": "The lesson never links momentum change to F = ma or acceleration. It does not show how force, mass, velocity and acceleration relate to each other."
       },
       {
         "specRef": "4.5.7.3",
         "spec_text": "Students should be able to explain safety features such as: air bags, seat belts, gymnasium crash mats, cycle helmets and cushioned surfaces for playgrounds with reference to the concept of rate of change of momentum.",
-        "why": "The lesson covers air bags and cycle helmets, and adds crumple zones and 'padded flooring' (keyPoints[2].writeBullets). It never mentions seat belts, gymnasium crash mats or cushioned surfaces for playgrounds, which are listed in the spec."
+        "why": "Seat belts and gymnasium crash mats are never mentioned. The lesson covers crumple zones, airbags, helmets and 'padded flooring' only."
       }
     ],
     "above_gcse": [
       {
         "field": "keyPoints[2].content",
         "text": "The quantity FΔt is called the <strong>impulse</strong>.",
-        "why": "The term 'impulse' does not appear in these spec sections. The spec frames the idea only as 'force equals the rate of change of momentum'. The lesson repeats the term in introTips[2], examTip, keyTerms, tables and commonMistakes[1] ('Mixing up impulse (FΔt) and work (Fd)'). This adds vocabulary the student is not required to know and may confuse them."
+        "why": "The specification does not use the term 'impulse'. It frames this content as change in momentum and rate of change of momentum. The extra term is used throughout the lesson (examTip, introTips[2], table, keyTerms) and may confuse the student about what is required."
       },
       {
         "field": "keyPoints[0].content",
         "text": "Momentum is measured in <strong>kg m/s</strong>, or N s. These units are equivalent.",
-        "why": "The spec gives only kg m/s for momentum ('momentum, p, in kilograms metre per second, kg m/s'). The N s alternative goes beyond the spec. It is repeated in examTips[3] and keyTerms."
+        "why": "The specification gives only kg m/s as the unit of momentum. N s is not required and is tied to the non-spec impulse idea."
       }
     ],
     "factual_errors": [
       {
         "field": "intro",
         "text": "Momentum is always conserved in collisions and explosions.",
-        "correction": "Total momentum is conserved only in a closed system: 'In a closed system, the total momentum before an event is equal to the total momentum after the event.'",
+        "correction": "Momentum is conserved only in a closed system. The specification says 'In a closed system, the total momentum before an event is equal to the total momentum after the event.'",
         "basis": "spec"
       },
       {
         "field": "keyPoints[1].memTip",
         "text": "Total momentum before = total momentum after. Always.",
-        "correction": "Conservation holds only in a closed system, meaning no external resultant force acts. It is not true 'always'. This also contradicts the lesson's own keyPoints[1].content.",
+        "correction": "This is only true in a closed system, where no external forces act. The specification says 'In a closed system, the total momentum before an event is equal to the total momentum after the event.'",
         "basis": "spec"
+      },
+      {
+        "field": "intro",
+        "text": "A slow lorry can have the same momentum as a fast car. Stopping either one takes the same effort.",
+        "correction": "Equal momenta mean the same change in momentum (force × time) is needed to stop each vehicle. The force needed depends on the stopping time. The energy that must be transferred differs: the lighter, faster car has more kinetic energy. 'The same effort' is misleading.",
+        "basis": "own knowledge"
       },
       {
         "field": "revisionCardBullets[4]",
         "text": "Explosion: before p = 0; after: two objects move in opposite directions with equal magnitude momenta",
-        "correction": "Total momentum before an explosion is zero only if the system starts at rest. The result of equal and opposite momenta applies only to two fragments from a system at rest. The same over-generalisation appears in keyPoints[1].writeBullets: 'Explosion: before = 0; after = equal and opposite momenta (sum still = 0)'.",
+        "correction": "Total momentum before an explosion is zero only if the system starts at rest. An explosion can also produce more than two fragments. What always holds in a closed system is that total momentum after equals total momentum before.",
         "basis": "own knowledge"
       }
     ],
     "wrong_terms": [
       {
         "field": "keyPoints[2].content",
-        "text": "This means force × time = change in momentum. The quantity FΔt is called the <strong>impulse</strong>.",
-        "spec_term": "force equals the rate of change of momentum"
+        "text": "The relationship is: <strong>F = Δp / Δt</strong>, or rearranged: <strong>FΔt = Δp</strong>.",
+        "spec_term": "F = (m ∆ v)/(∆ t), where m∆v = change in momentum"
       },
       {
-        "field": "keyPoints[2].content",
-        "text": "<strong>F = Δp / Δt</strong>",
-        "spec_term": "F = (m ∆ v)/(∆ t) where m∆v = change in momentum"
+        "field": "tables[0].rows[3]",
+        "text": "Impulse = change in momentum",
+        "spec_term": "change in momentum / rate of change of momentum"
       }
     ],
     "checkpoint_mismatch": [
       {
         "checkpoint": "0: A 2 kg ball moving at 5 m/s hits a 3 kg ball that is not moving. They stick together. What is their combined velocity after the collision?",
-        "key_point": "keyPoints[0] 'Calculating momentum': Momentum is defined as the product of an object's mass and its velocity. The equation is: p = mv.",
-        "why": "The question requires conservation of momentum (total before = total after, with masses combined after the collision). That idea is taught in keyPoints[1], not in keyPoints[0]. Key point 0 only supports calculating p = mv for one object, so it does not support the answer."
+        "key_point": "keyPoints[0] 'Calculating momentum': p = mv. Example: a 1,500 kg car travelling at 20 m/s has momentum = 1,500 × 20 = 30,000 kg m/s.",
+        "why": "The question needs conservation of momentum and a combined mass after a collision. Those are taught in keyPoints[1], not in keyPoints[0], which only covers p = mv for a single object."
       }
     ],
     "not_checked": [
-      "Checkpoint keys '0' and '2' are assumed to correspond to keyPoints[0] and keyPoints[2]. There is no checkpoint for keyPoints[1].",
-      "All diagram fields are null, so there were no diagrams to check.",
-      "The spec marks conservation calculations and 4.5.7.3 as '(physics only)'. The lesson does not say which content is physics-only. Whether it is meant for combined science students as well could not be checked."
+      "examTips[1] claims 'This is the full mark scheme answer.' I cannot check this against a mark scheme.",
+      "examTip claims 'Momentum calculations come up reliably in exams.' I cannot check exam frequency.",
+      "The specification marks the collision calculations in 4.5.7.2 and all of 4.5.7.3 as physics only. The lesson does not say this, and I cannot check which route (physics only or combined science) the student is taking."
     ]
   }
 }

@@ -8,7 +8,7 @@
     "Conservation of momentum is the key idea. In any collision or explosion, total momentum before = total momentum after. This is true as long as no outside forces act.",
     "Impulse = force × time = change in momentum. Compare a larger force for a shorter time with a smaller force for a longer time. Both can give the same change in momentum."
   ],
-  "intro": "Momentum measures how hard it is to stop something that is moving. A slow lorry can have the same momentum as a fast car. Stopping either one takes the same effort. Momentum is always conserved in collisions and explosions. That makes it one of the most powerful tools in mechanics.",
+  "intro": "Momentum measures how hard it is to stop something that is moving. A slow lorry can have the same momentum as a fast car. Stopping either one in the same time takes the same force. In a closed system, momentum is conserved in collisions and explosions. That makes it one of the most powerful tools in mechanics.",
   "keyPoints": [
     {
       "heading": "Calculating momentum",
@@ -58,7 +58,7 @@
           "def": "A system in which no external forces act, so momentum is conserved"
         }
       ],
-      "memTip": "Total momentum before = total momentum after. Always."
+      "memTip": "Total momentum before = total momentum after, in a closed system."
     },
     {
       "heading": "Force, impulse and change in momentum",
@@ -132,6 +132,18 @@
       "correctFeedback": "Correct. Total momentum before = 2 × 5 + 3 × 0 = 10 kg m/s. After: (2 + 3) × v = 10, so v = 10/5 = 2 m/s.",
       "wrongFeedback": "Use conservation of momentum: total before = total after. Before: p = 2 × 5 + 3 × 0 = 10 kg m/s. After: the combined mass is 2 + 3 = 5 kg. The momentum is still 10 kg m/s. So v = 10 ÷ 5 = 2 m/s. The velocity is less because the total mass increased."
     },
+    "1": {
+      "question": "Two skaters stand still on the ice. They push each other apart. What is their total momentum just after the push?",
+      "options": [
+        "Zero, just as it was before they pushed",
+        "Equal to the faster skater's momentum",
+        "Equal to the heavier skater's momentum",
+        "Twice the momentum of either skater"
+      ],
+      "correct": 0,
+      "correctFeedback": "Yes. The total was zero before, so it is zero after. The two skaters have equal momentum in opposite directions, so they cancel.",
+      "wrongFeedback": "Before the push, nothing moves, so the total momentum is zero. Momentum is conserved, so the total is still zero after. The skaters move apart with equal momentum in opposite directions."
+    },
     "2": {
       "question": "Why do crumple zones in cars reduce injury in a crash?",
       "options": [
@@ -162,7 +174,7 @@
     "Momentum is a vector — has direction; opposite directions = opposite signs",
     "Conservation of momentum: total before = total after (closed system)",
     "Applies to collisions AND explosions",
-    "Explosion: before p = 0; after: two objects move in opposite directions with equal magnitude momenta",
+    "Explosion from rest: before p = 0; after, the momenta of the parts still add up to zero",
     "Force-momentum: F = Δp / Δt (force = change in momentum ÷ time)",
     "Impulse: FΔt = Δp (force × time = change in momentum)",
     "Safety devices (crumple zones, airbags, helmets): increase collision time → reduce force",

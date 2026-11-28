@@ -1,144 +1,133 @@
 {
   "lesson": "p5-forces-motion",
   "source_file": "lessons/physics/p5-forces-motion.json",
-  "lesson_md5": "298ef201842ca5d35cc9c34833a80694",
+  "lesson_md5": "c4459431e2a41f45bfeba28c1243f5d1",
   "model": "claude-opus-5-5",
-  "date": "2026-10-16T17:46:38.360Z",
+  "date": "2026-11-28T10:12:10.474Z",
   "specRefs_sent": [
     "4.5.1.1",
+    "4.5.1.2",
     "4.5.6.1.1",
     "4.5.6.1.2",
     "4.5.6.1.3",
     "4.5.6.1.4",
     "4.5.6.1.5"
   ],
+  "blocking_only": false,
+  "decided_file": null,
   "model_returned": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "usage": {
-    "input_tokens": 9584,
-    "output_tokens": 6751
+    "input_tokens": 11024,
+    "output_tokens": 6363
   },
-  "cost_usd": 0.173356,
+  "cost_usd": 0.171356,
   "status": "OK",
   "result": {
     "lesson": "p5-forces-motion",
     "missing_spec_content": [
       {
-        "specRef": "4.5.1.1",
-        "spec_text": "A vector quantity may be represented by an arrow. The length of the arrow represents the magnitude, and the direction of the arrow the direction of the vector quantity.",
-        "why": "The lesson never explains that vectors can be shown as arrows, or that arrow length shows magnitude and arrow direction shows direction."
+        "specRef": "4.5.6.1.2",
+        "spec_text": "running ~ 3 m/s ... Students should be able to recall typical values of speed for a person walking, running and cycling",
+        "why": "The lesson gives typical speeds for walking, cycling, a car, sound and light. It never gives a typical running speed (keyPoints[1].content, keyPoints[1].writeBullets, revisionCardBullets)."
       },
       {
         "specRef": "4.5.6.1.2",
-        "spec_text": "The speed of a moving object is rarely constant. When people walk, run or travel in a car their speed is constantly changing.",
-        "why": "The lesson does not teach that real speeds are rarely constant."
-      },
-      {
-        "specRef": "4.5.6.1.2",
-        "spec_text": "The speed at which a person can walk, run or cycle depends on many factors including: age, terrain, fitness and distance travelled.",
-        "why": "The factors that affect a person's speed are not mentioned."
-      },
-      {
-        "specRef": "4.5.6.1.2",
-        "spec_text": "running ~ 3 m/s",
-        "why": "The typical running speed is missing. The lesson lists walking, cycling, car, sound and light, but not running, which the spec requires students to recall."
-      },
-      {
-        "specRef": "4.5.6.1.2",
-        "spec_text": "as well as the typical values of speed for different types of transportation systems.",
-        "why": "Only one transport value is given ('car on a motorway ≈ 30 m/s'). Other transport systems (for example trains or planes) are not covered."
+        "spec_text": "The speed of a moving object is rarely constant... The speed at which a person can walk, run or cycle depends on many factors including: age, terrain, fitness and distance travelled.",
+        "why": "The lesson does not say that real speeds are rarely constant. It does not name the factors that affect how fast a person walks, runs or cycles."
       },
       {
         "specRef": "4.5.6.1.2",
         "spec_text": "It is not only moving objects that have varying speed. The speed of sound and the speed of the wind also vary.",
-        "why": "The lesson does not say that the speed of sound and wind speed vary."
-      },
-      {
-        "specRef": "4.5.6.1.2",
-        "spec_text": "A typical value for the speed of sound in air is 330 m/s.",
-        "why": "The spec's typical value (330 m/s) is not taught. The lesson gives 'speed of sound in air ≈ 340 m/s' (keyPoints[1].content, keyPoints[1].writeBullets[5], revisionCardBullets[11]). That is physically reasonable, but it is not the value the spec states."
+        "why": "The lesson gives one fixed value for the speed of sound. It never says that the speed of sound or the speed of the wind varies."
       },
       {
         "specRef": "4.5.6.1.2",
         "spec_text": "Students should be able to make measurements of distance and time and then calculate speeds of objects.",
-        "why": "The lesson does not cover how to measure distance and time practically to find a speed."
+        "why": "The lesson does not explain how to measure distance and time in order to work out a speed."
       },
       {
         "specRef": "4.5.6.1.3",
         "spec_text": "(HT only) Students should be able to explain qualitatively, with examples, that motion in a circle involves constant speed but changing velocity.",
-        "why": "Circular motion at constant speed but changing velocity is not taught."
+        "why": "Circular motion (constant speed but changing velocity) is not covered anywhere in the lesson."
       },
       {
         "specRef": "4.5.6.1.4",
         "spec_text": "(HT only) If an object is accelerating, its speed at any particular time can be determined by drawing a tangent and measuring the gradient of the distance–time graph at that time.",
-        "why": "The lesson says a curved d-t line means changing speed, but never teaches drawing a tangent to find the speed at a particular time."
+        "why": "keyPoints[1].content says only that 'A curved line means the speed is changing'. It never teaches drawing a tangent to find the speed at one instant."
       },
       {
         "specRef": "4.5.6.1.4",
-        "spec_text": "Students should be able to draw distance–time graphs from measurements and extract and interpret lines and slopes of distance–time graphs, translating information between graphical and numerical form.",
-        "why": "Drawing d-t graphs from measured data is not covered. Only interpreting graph shapes is taught."
+        "spec_text": "Students should be able to draw distance–time graphs from measurements and extract and interpret lines and slopes of distance–time graphs",
+        "why": "The lesson teaches how to read distance–time graphs but not how to draw one from measurements."
       },
       {
         "specRef": "4.5.6.1.5",
         "spec_text": "Students should be able to estimate the magnitude of everyday accelerations.",
-        "why": "No typical everyday acceleration values are given, and the lesson does not show how to estimate them."
-      },
-      {
-        "specRef": "4.5.6.1.5",
-        "spec_text": "draw velocity–time graphs from measurements and interpret lines and slopes to determine acceleration",
-        "why": "Drawing v-t graphs from measured data is not covered."
+        "why": "The lesson gives no typical everyday accelerations and no practice in estimating them."
       },
       {
         "specRef": "4.5.6.1.5",
         "spec_text": "(HT only) measure, when appropriate, the area under a velocity–time graph by counting squares.",
-        "why": "Counting squares to find the area under a v-t graph is not taught. Only the triangle and trapezium formulas are given."
+        "why": "keyPoints[2].content teaches only triangle and trapezium areas. Counting squares, which is needed for curved graphs, is never mentioned."
       },
       {
         "specRef": "4.5.6.1.5",
-        "spec_text": "An object falling through a fluid initially accelerates due to the force of gravity. Eventually the resultant force will be zero and the object will move at its terminal velocity.",
-        "why": "Terminal velocity is taught only for falling through air. The general idea of falling through any fluid (for example a liquid) is not mentioned."
+        "spec_text": "draw velocity–time graphs from measurements and interpret lines and slopes to determine acceleration",
+        "why": "The lesson does not teach how to draw a velocity–time graph from measurements."
+      },
+      {
+        "specRef": "4.5.6.1.5",
+        "spec_text": "Investigation to measure the effect of air resistance on a falling object eg a model parachute.",
+        "why": "The suggested investigation into air resistance on a falling object is not mentioned."
       }
     ],
     "above_gcse": [
       {
         "field": "keyPoints[3].content",
-        "text": "s = ½(u + v)t",
-        "why": "This equation is not in the specification. The spec only requires a = Δv/t and v² − u² = 2as for uniform acceleration. Teaching extra 'SUVAT' equations could confuse students about which equations they must know."
+        "text": "• v = u + at\n• s = ½(u + v)t",
+        "why": "These sections give only a = Δv/t and v² − u² = 2as. These two extra equations are not in the specification text."
       },
       {
-        "field": "keyPoints[3].heading",
-        "text": "Equations of motion (SUVAT)",
-        "why": "The spec does not use the term 'SUVAT' or present a set of equations of motion. The 'three values, find a fourth' framework goes beyond the spec."
+        "field": "keyPoints[3].keyTerms[0]",
+        "text": "SUVAT: The five motion quantities: displacement, initial velocity, final velocity, acceleration, time",
+        "why": "'SUVAT' is an A-level way of organising these equations and is not a specification term. Putting it at the centre of the key point suggests the student must use a full set of equations they are not required to know."
       },
       {
         "field": "checkpoints.4.correctFeedback",
         "text": "s = ½at² = ½ × 9.8 × 9 = 44.1m",
-        "why": "s = ½at² is not in the specification and is not taught anywhere in the lesson."
-      },
-      {
-        "field": "introTips[2]",
-        "text": "Equations of motion questions nearly always give you three values and ask for a fourth. Find your u, v, a, s and t before writing anything.",
-        "why": "This assumes a SUVAT-style problem framework that the spec does not require."
+        "why": "s = ½at² is not in the specification. It is not taught anywhere in the lesson either."
       }
     ],
     "factual_errors": [
       {
         "field": "keyPoints[0].content",
         "text": "Displacement = 500m at an angle north-east.",
-        "correction": "For 300 m east then 400 m north, the displacement is 500 m at about 53° north of east (a bearing of about 037°). This is not north-east, which would be 45°. The spec says students must 'express a displacement in terms of both the magnitude and direction', so the direction should be stated precisely.",
+        "correction": "North-east means 45°. The actual direction is about 53° north of east (bearing about 037°), because tan⁻¹(400/300) ≈ 53°. The specification requires the student to 'express a displacement in terms of both the magnitude and direction', so the direction should be stated correctly.",
         "basis": "own knowledge"
+      },
+      {
+        "field": "keyPoints[1].content",
+        "text": "speed of sound in air ≈ 340 m/s",
+        "correction": "The specification states 'A typical value for the speed of sound in air is 330 m/s.' 340 m/s is a reasonable real-world value, but the lesson should give the specification value of 330 m/s. The same applies to the speed of sound value in keyPoints[1].writeBullets and revisionCardBullets.",
+        "basis": "spec"
       }
     ],
     "wrong_terms": [
       {
         "field": "keyPoints[1].content",
         "text": "Equation: <strong>v = d/t</strong>. Rearrangements: d = vt, t = d/v.",
-        "spec_term": "s = v t (distance travelled = speed × time), with distance given the symbol s"
+        "spec_term": "s = v t (distance, s, in metres)"
       },
       {
         "field": "keyPoints[3].content",
         "text": "s (displacement, m)",
-        "spec_term": "distance, s, in metres, m (the spec defines s in v² − u² = 2as as distance)"
+        "spec_term": "distance, s, in metres, m (in v² − u² = 2 a s)"
+      },
+      {
+        "field": "keyPoints[3].content",
+        "text": "v² = u² + 2as (no time needed)",
+        "spec_term": "v² − u² = 2 a s"
       },
       {
         "field": "keyPoints[4].content",
@@ -151,37 +140,32 @@
         "spec_term": "air resistance; resultant force"
       },
       {
-        "field": "revisionCardBullets[9]",
-        "text": "Terminal velocity: air resistance = weight → zero net force → constant velocity",
-        "spec_term": "resultant force"
+        "field": "keyPoints[4].memTip",
+        "text": "T for Two forces balanced (weight = drag). No net force → no acceleration.",
+        "spec_term": "air resistance; resultant force"
       },
       {
-        "field": "keyPoints[4].writeBullets[5]",
-        "text": "Parachute opens → massive drag → decelerates to new lower terminal velocity",
-        "spec_term": "air resistance"
+        "field": "keyPoints[2].content",
+        "text": "a = (v − u) / t",
+        "spec_term": "a = (∆ v)/t (acceleration = change in velocity / time taken)"
       }
     ],
     "checkpoint_mismatch": [
       {
-        "checkpoint": "1",
-        "key_point": "keyPoints[0] (Scalar and vector quantities)",
-        "why": "This assumes checkpoint '1' sits with the first key point. It asks for a speed calculation ('A car travels 240m in 8s...'), which is taught in keyPoints[1]. It does not test the scalar/vector distinction."
+        "checkpoint": "checkpoints.4: A ball is dropped from rest and falls freely under gravity (g = 9.8 m/s²) for 3s. How far does it fall?",
+        "key_point": "keyPoints[4]: Terminal velocity and non-uniform acceleration",
+        "why": "Key point 4 is about uniform and non-uniform acceleration, free fall and terminal velocity. It gives no method for working out distance fallen. The question actually tests the equations in keyPoints[3]. The correctFeedback also uses s = ½at², which the lesson never teaches. Nothing about terminal velocity is tested."
       },
       {
-        "checkpoint": "2",
-        "key_point": "keyPoints[1] (Speed, velocity and distance-time graphs)",
-        "why": "This assumes checkpoint '2' sits with the second key point. It asks what the gradient of a velocity-time graph shows, which is taught in keyPoints[2], not in the distance-time key point."
-      },
-      {
-        "checkpoint": "4",
-        "key_point": "keyPoints[3] (Equations of motion) / keyPoints[4] (free fall)",
-        "why": "The correctFeedback uses 's = ½at²', which no key point teaches. The answer 44.1 m is correct and can be reached with the taught equations (v = u + at, then s = ½(u + v)t), as the wrongFeedback shows. However, the main feedback relies on an untaught equation."
+        "checkpoint": "checkpoints.3: A motorcycle accelerates from 5 m/s to 25 m/s in 4s. What is its acceleration?",
+        "key_point": "keyPoints[3]: Equations of motion (SUVAT)",
+        "why": "The question is answered with a = (v − u)/t from keyPoints[2], as the feedback shows. It does not test choosing or using the equations of motion in keyPoints[3], such as v² = u² + 2as."
       }
     ],
     "not_checked": [
-      "The lesson does not say which key point each checkpoint sits with. The mismatches above assume checkpoint N follows keyPoints[N-1]. There are 4 checkpoints and 5 key points, so keyPoints[4] (terminal velocity) has no checkpoint under that assumption.",
-      "Claims about exam frequency and mark values (for example 'Area under v-t graph calculations come up as 6-mark questions', 'Gradient calculations on d-t graphs come up almost every year', 'v² = u² + 2as is the most tested', 'a very common 4-mark question') cannot be checked against the specification text.",
-      "All diagram fields are null, so there were no diagrams or images to check."
+      "All keyPoints have \"diagram\": null, so no diagrams were provided. Graph shapes (for example the skydiver velocity–time graph) are described only in words and could not be checked against a drawn graph.",
+      "Claims about exam frequency and mark values could not be checked, for example tutor_note 'Gradient calculations on d-t graphs come up almost every year', 'come up as 6-mark questions' and 'a very common 4-mark question'.",
+      "It is assumed that checkpoint keys '0' to '5' match keyPoints[0] to keyPoints[5] by index. The lesson JSON does not state this mapping."
     ]
   }
 }

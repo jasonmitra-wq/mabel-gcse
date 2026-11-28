@@ -46,7 +46,7 @@
     },
     {
       "heading": "Gravitational fields",
-      "content": "A <strong>gravitational field</strong> is a region of space where a mass experiences a gravitational force. All objects with mass create a gravitational field around them. The field strength decreases with distance from the centre of the mass. Near Earth's surface, the field is roughly uniform (the same in all directions near the surface). There, g = 9.8 N/kg. As you move further from Earth (e.g. into orbit), the field strength decreases. The gravitational field is shown by field lines pointing towards the centre of the mass. They show the direction of the force on a small test mass. Gravitational fields act over large distances. They explain why planets orbit stars. The Sun's gravitational field reaches billions of kilometres.",
+      "content": "A <strong>gravitational field</strong> is a region of space where a mass experiences a gravitational force. All objects with mass create a gravitational field around them. The field strength decreases with distance from the centre of the mass. Near Earth's surface, the field is roughly uniform (the same strength and direction everywhere near the surface). There, g = 9.8 N/kg. As you move further from Earth (e.g. into orbit), the field strength decreases. The gravitational field is shown by field lines pointing towards the centre of the mass. They show the direction of the force on a small test mass. Gravitational fields act over large distances. They explain why planets orbit stars. The Sun's gravitational field reaches billions of kilometres.",
       "examFlag": false,
       "cardFlag": true,
       "diagram": null,
@@ -67,7 +67,7 @@
     },
     {
       "heading": "Orbits — free fall and centripetal force",
-      "content": "An object in orbit around a planet is really in continuous <strong>free fall</strong>. Gravity means it is always falling towards the planet. But it also has a high tangential velocity (sideways speed). So it keeps 'missing' the planet and falls in a curve. The result is a circular (or elliptical) orbit. <strong>Gravity provides the centripetal force</strong> that keeps the object in its curved path. For a circular orbit at a fixed height, the speed must be exactly right. Too fast, and the object escapes. Too slow, and it falls back to Earth. <strong>Higher orbits</strong>: the gravitational field is weaker, so less centripetal force is needed. The orbital speed is lower. A higher orbit also has a longer circumference. So the orbital period (the time for one orbit) is longer.",
+      "content": "An object in orbit around a planet is really in continuous <strong>free fall</strong>. Gravity means it is always falling towards the planet. But it also has a high tangential velocity (sideways speed). So it keeps 'missing' the planet and falls in a curve. The result is a circular (or elliptical) orbit. <strong>Gravity provides the centripetal force</strong> that keeps the object in its curved path. For a circular orbit at a fixed height, the speed must be exactly right. If the speed changes, the radius of the orbit must change too. <strong>Higher orbits</strong>: the gravitational field is weaker, so gravity provides less centripetal force. So a lower speed is needed to stay in orbit. A higher orbit also has a longer circumference. So the orbital period (the time for one orbit) is longer.",
       "examFlag": true,
       "cardFlag": true,
       "diagram": null,
@@ -145,20 +145,32 @@
       "question": "Why does a satellite in a higher orbit travel more slowly than one in a lower orbit?",
       "options": [
         "Higher orbits are further from the Sun, so solar wind slows the satellite",
-        "Further from Earth, the gravitational field is weaker. So less centripetal force, and therefore less speed, is needed to stay in orbit",
+        "Further out, gravity is weaker, so it holds the satellite in orbit at a lower speed",
         "Higher orbits have more atmospheric drag, slowing the satellite down",
         "Satellites at higher orbits have greater mass, which reduces their speed"
       ],
       "correct": 1,
-      "correctFeedback": "Right. At a greater orbital radius, Earth's gravitational field is weaker. Less centripetal force is needed, which goes with a lower orbital speed.",
-      "wrongFeedback": "Further from Earth, the gravitational field strength is weaker, because gravity decreases with distance. So less centripetal force is needed to stay in a circular orbit. Less centripetal force goes with a lower orbital speed. Higher orbits = weaker gravity = slower orbital speed = longer orbital period."
+      "correctFeedback": "Right. At a greater orbital radius, Earth's gravitational field is weaker. Gravity provides less centripetal force, so a lower speed is needed to stay in orbit.",
+      "wrongFeedback": "Further from Earth, the gravitational field strength is weaker, because gravity decreases with distance. So gravity provides less centripetal force. A satellite there needs a lower speed to stay in a circular orbit. Higher orbits = weaker gravity = slower orbital speed = longer orbital period."
+    },
+    "2": {
+      "question": "A satellite circles Earth at a steady height. Why does it not fall down to Earth?",
+      "options": [
+        "It is falling, but its sideways speed keeps it missing Earth",
+        "There is no gravity that far above the surface of the Earth",
+        "Its engines push it upwards all the time to balance gravity",
+        "The Moon's pull on it balances the pull of the Earth on it"
+      ],
+      "correct": 0,
+      "correctFeedback": "Yes. Gravity pulls it towards Earth all the time. Its sideways speed means it keeps missing, so it falls in a curve.",
+      "wrongFeedback": "Gravity still pulls the satellite, so it is falling all the time. It also moves sideways very fast. So it keeps missing Earth and goes round in an orbit."
     }
   },
   "commonMistakes": [
     "Mixing up mass and weight. Mass is in kg and never changes. Weight is in N and depends on gravity. A very common exam mistake is using kg for weight, or N for mass.",
     "Saying 'astronauts in orbit have no gravity'. They do. The gravitational field reaches far into space. They feel weightless because they are in continuous free fall. Everything around them is falling at the same rate.",
     "Thinking higher orbit = faster speed. The opposite is true. Higher orbit = weaker gravity = slower orbital speed = longer period.",
-    "Not using g = 9.8 N/kg in calculations. The gravitational field strength on Earth is 9.8 N/kg. Use 10 N/kg only if told to round. Always check which value the exam question specifies."
+    "Not using the value of g the question gives. On Earth, g is about 9.8 N/kg. In a calculation, always use the value you are given."
   ],
   "examTips": [
     "For W = mg calculations, state the formula and substitute values clearly. Include units in your answer (N for weight). Show all working.",
